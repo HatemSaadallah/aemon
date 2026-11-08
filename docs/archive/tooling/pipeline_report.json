@@ -1,0 +1,247 @@
+{
+  "simulated": true,
+  "family": "two_assumptions",
+  "code_revision": "017ebe4",
+  "tools": {
+    "agenttune": "1.1.3",
+    "auditkit": "1.1.3"
+  },
+  "prompt": "You can call these tools:\n[{\"name\": \"run_study\", \"description\": \"Buy one study and get its simulated result.\", \"parameters\": {\"name\": \"the study name\"}}, {\"name\": \"finish\", \"description\": \"End the case with your decision.\", \"parameters\": {\"decision\": \"launch or do_not_launch\"}}]\n\nTo call a tool, reply with only <tool_call>{\"name\": \"<tool>\", \"arguments\": {\"<argument>\": <value>}}</tool_call>. A user turn that starts with \"Tool result\" is the output of your call. Finish every case by calling finish.",
+  "agenttune": {
+    "rows": 100,
+    "messages": 492,
+    "mean_tool_calls_per_row": 1.96,
+    "demonstration_tool_calls": 196,
+    "context_messages": 296,
+    "rows_that_stop_with_no_research": 57,
+    "example": [
+      {
+        "role": "system",
+        "content": "You can call these tools:\n[{\"name\": \"run_study\", \"description\": \"Buy one study and get its simulated result.\", \"parameters\": {\"name\": \"the study name\"}}, {\"name\": \"finish\", \"description\": \"End the case with your decision.\", \"parameters\": {\"decision\": \"launch or do_not_launch\"}}]\n\nTo call a tool, reply with only <tool_call>{\"name\": \"<tool>\", \"arguments\": {\"<argument>\": <value>}}</tool_call>. A user turn that starts with \"Tool result\" is the output of your call. Finish every case by calling finish.",
+        "weight": 0.0
+      },
+      {
+        "role": "user",
+        "content": "SIMULATED CASE. The launch pays off only if customers want it AND you can deliver it. Each study informs only one of the two, so one result alone rarely settles it. Hypotheses: ['No demand, cannot deliver', 'No demand, can deliver', 'Demand, cannot deliver', 'Demand, can deliver']. Prior: [0.18319363981156692, 0.37057354167837675, 0.14761982464595744, 0.2986129938640989]. Launching gains 13.558138052904832 if it works and loses 14.15462363515983 if it fails. Research budget: 6. Studies: demand_test costs 1, positive with probability [0.1593910718827538, 0.1593910718827538, 0.8406089281172462, 0.8406089281172462] by hypothesis; capability_test costs 1, positive with probability [0.1994965429173875, 0.8005034570826125, 0.1994965429173875, 0.8005034570826125] by hypothesis; uninformative costs 1, positive with probability [0.5, 0.5, 0.5, 0.5] by hypothesis.",
+        "weight": 0.0
+      },
+      {
+        "role": "assistant",
+        "content": "<tool_call>{\"name\": \"run_study\", \"arguments\": {\"name\": \"demand_test\"}}</tool_call>",
+        "weight": 2.0
+      },
+      {
+        "role": "tool",
+        "content": "{\"simulated\": true, \"positive\": true}",
+        "weight": 0.0
+      },
+      {
+        "role": "assistant",
+        "content": "<tool_call>{\"name\": \"run_study\", \"arguments\": {\"name\": \"capability_test\"}}</tool_call>",
+        "weight": 2.0
+      },
+      {
+        "role": "tool",
+        "content": "{\"simulated\": true, \"positive\": false}",
+        "weight": 0.0
+      },
+      {
+        "role": "assistant",
+        "content": "<tool_call>{\"name\": \"run_study\", \"arguments\": {\"name\": \"capability_test\"}}</tool_call>",
+        "weight": 2.0
+      },
+      {
+        "role": "tool",
+        "content": "{\"simulated\": true, \"positive\": true}",
+        "weight": 0.0
+      },
+      {
+        "role": "assistant",
+        "content": "<tool_call>{\"name\": \"run_study\", \"arguments\": {\"name\": \"capability_test\"}}</tool_call>",
+        "weight": 2.0
+      },
+      {
+        "role": "tool",
+        "content": "{\"simulated\": true, \"positive\": false}",
+        "weight": 0.0
+      },
+      {
+        "role": "assistant",
+        "content": "<tool_call>{\"name\": \"run_study\", \"arguments\": {\"name\": \"capability_test\"}}</tool_call>",
+        "weight": 2.0
+      },
+      {
+        "role": "tool",
+        "content": "{\"simulated\": true, \"positive\": true}",
+        "weight": 0.0
+      },
+      {
+        "role": "assistant",
+        "content": "<tool_call>{\"name\": \"run_study\", \"arguments\": {\"name\": \"capability_test\"}}</tool_call>",
+        "weight": 2.0
+      },
+      {
+        "role": "tool",
+        "content": "{\"simulated\": true, \"positive\": false}",
+        "weight": 0.0
+      },
+      {
+        "role": "assistant",
+        "content": "<tool_call>{\"name\": \"finish\", \"arguments\": {\"decision\": \"do_not_launch\"}}</tool_call>",
+        "weight": 2.0
+      }
+    ]
+  },
+  "tiny_aya_template": {
+    "checked": true,
+    "template": "tiny_aya_default.jinja, vendored in AgentTune tests",
+    "raw_row": "rejected: Conversation roles must alternate user/assistant/user/assistant/...",
+    "system_prompt_kept": true,
+    "tool_results_kept": 6,
+    "tool_results_total": 6,
+    "tool_calls_kept": 7,
+    "tool_calls_total": 7
+  },
+  "auditkit": {
+    "verified_outcome": "Passing means three things together: a replay through the real rules accepted the memo and every recorded call and result, there was one finish, last, and the choices gave up at most 0.05 in expected value. That threshold is arbitrary. The table also reports the final decision and the research separately.",
+    "policies": [
+      {
+        "name": "Optimal planner",
+        "cases": 100,
+        "verified": 100,
+        "failed": 0,
+        "decision_correct": 100,
+        "research_matched_planner": 100,
+        "other": 0,
+        "mean_given_up": 3.1086244689504386e-17,
+        "given_up_ci95": [
+          -8.531662054522244e-18,
+          7.070415143353102e-17
+        ],
+        "mean_tool_calls": 1.71,
+        "coverage": [
+          "full"
+        ],
+        "tool_call_validity": 1.0,
+        "redundant_tool_calls": 0.0265,
+        "agent_loop_detection": 0.93,
+        "tool_permission": 1.0
+      },
+      {
+        "name": "Myopic VOI",
+        "cases": 100,
+        "verified": 77,
+        "failed": 23,
+        "decision_correct": 100,
+        "research_matched_planner": 76,
+        "other": 0,
+        "mean_given_up": 0.13645619202620124,
+        "given_up_ci95": [
+          0.0793371709608077,
+          0.19357521309159478
+        ],
+        "mean_tool_calls": 1.31,
+        "coverage": [
+          "full"
+        ],
+        "tool_call_validity": 1.0,
+        "redundant_tool_calls": 0.0025,
+        "agent_loop_detection": 1.0,
+        "tool_permission": 1.0
+      },
+      {
+        "name": "One look, then decide",
+        "cases": 100,
+        "verified": 71,
+        "failed": 29,
+        "decision_correct": 100,
+        "research_matched_planner": 70,
+        "other": 0,
+        "mean_given_up": 0.288425366331731,
+        "given_up_ci95": [
+          0.16872596034815107,
+          0.4081247723153109
+        ],
+        "mean_tool_calls": 1.21,
+        "coverage": [
+          "full"
+        ],
+        "tool_call_validity": 1.0,
+        "redundant_tool_calls": 0.0,
+        "agent_loop_detection": 1.0,
+        "tool_permission": 1.0
+      },
+      {
+        "name": "No research",
+        "cases": 100,
+        "verified": 59,
+        "failed": 41,
+        "decision_correct": 100,
+        "research_matched_planner": 59,
+        "other": 0,
+        "mean_given_up": 0.4376493053948308,
+        "given_up_ci95": [
+          0.3098887277373483,
+          0.5654098830523133
+        ],
+        "mean_tool_calls": 1,
+        "coverage": [
+          "full"
+        ],
+        "tool_call_validity": 1.0,
+        "redundant_tool_calls": 0.0,
+        "agent_loop_detection": 1.0,
+        "tool_permission": 1.0
+      },
+      {
+        "name": "Spends the whole budget",
+        "cases": 100,
+        "verified": 0,
+        "failed": 100,
+        "decision_correct": 100,
+        "research_matched_planner": 0,
+        "other": 0,
+        "mean_given_up": 5.825580625385332,
+        "given_up_ci95": [
+          5.554827892402061,
+          6.096333358368604
+        ],
+        "mean_tool_calls": 7,
+        "coverage": [
+          "full"
+        ],
+        "tool_call_validity": 1.0,
+        "redundant_tool_calls": 0.7142857142857143,
+        "agent_loop_detection": 0.0,
+        "tool_permission": 1.0
+      }
+    ],
+    "negative_control": {
+      "name": "Calls a tool it does not have",
+      "cases": 100,
+      "verified": 0,
+      "failed": 100,
+      "decision_correct": 100,
+      "research_matched_planner": 100,
+      "other": 0,
+      "mean_given_up": 3.1086244689504386e-17,
+      "given_up_ci95": [
+        -8.531662054522244e-18,
+        7.070415143353102e-17
+      ],
+      "mean_tool_calls": 2.71,
+      "coverage": [
+        "full"
+      ],
+      "tool_call_validity": 0.5887380952380953,
+      "redundant_tool_calls": 0.02161904761904762,
+      "agent_loop_detection": 0.93,
+      "tool_permission": 0.5887380952380953
+    }
+  },
+  "model": {
+    "name": "Tiny Aya, trained",
+    "available": false,
+    "reason": "Not trained yet. The real model has only run untrained, on the Pipeline tab."
+  }
+}

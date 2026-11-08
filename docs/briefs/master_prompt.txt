@@ -1,0 +1,303 @@
+MASTER PROMPT: RESEARCH, CHALLENGE, AND PROTOTYPE SCIENTIFIC DECISION-MAKING AGENTS
+
+Act as my research collaborator and ML engineering partner. Help me identify, test, and develop a defensible hackathon project at the intersection of agentic fine-tuning, scientific decision-making, causal business theories, and learning under uncertainty.
+
+I want you to move from source verification to competing ideas to small executable experiments. Challenge weak assumptions and report negative results. Do not stop at a literature summary, a list of fashionable agent frameworks, or a polished pitch with no testable mechanism.
+
+This is a self-contained handoff. You do not have access to my earlier conversations. Use the context and sources below, inspect any attached papers, and clearly distinguish verified facts, interpretations, proposals, and things you have actually tested.
+
+1. MY CONTEXT AND OBJECTIVE
+
+I am a Master's student in AI at Bocconi University. My team, Two-eyed Ravens, registered for the Agentic Fine-tuning track of the Lexsi AI Safety and Alignment Hackathon, organized by Lexsi Labs with Cohere Labs and Hugging Face.
+
+I am interested in the work of Arnaldo Camuffo, Alfonso Gambardella, Andrea Pignataro, and the ION Management Science Lab at SDA Bocconi. I would like a project that is intellectually connected to this research, technically meaningful, feasible for a small student team, and worth discussing with researchers afterward. Do not imply affiliation, endorsement, or access to their internal data or software.
+
+I have not committed to a project. An experiment-selection agent is a promising starting hypothesis, not a decision you must justify. You may recommend a better direction if your evidence and experiments support it.
+
+The goal is to find a useful behavior that a small tool-using model can learn, build a reproducible prototype, and demonstrate whether training improves it.
+
+2. HACKATHON CONSTRAINTS: VERIFY BEFORE COMMITTING
+
+Official website: https://hackathon.lexsi.ai
+Discord: https://discord.gg/dtEDQ2Z3eg
+
+The following is a snapshot from research conducted on November 1, 2026. Verify the current rules and dates; do not assume this snapshot is current when you receive this prompt.
+
+- Selected track: Agentic Fine-tuning.
+- The website listed a November 14, 2026 initial submission deadline, shortlist announcement by November 16, further finalist work through November 21, and Demo Day on November 22. The email's November 1-21 event range is not the same as the initial submission deadline. The deadline timezone was not specified in the text reviewed.
+- Teams of 1-3 members; each person participates through one team.
+- Projects must be developed during the hackathon.
+- Use a permitted dense, open-weights Cohere Labs LLM. The website listed Tiny Aya variants and Aya Expanse 8B/32B. Verify the exact allowed checkpoint, license, tool-call format, hardware needs, and training compatibility.
+- Track 3 lists AgentTune and AuditKIT. The general requirement to combine at least two track repositories explicitly has a Track 3 exception; do not invent a two-repository minimum for this track. Confirm the precise requirements and use the evaluation tools meaningfully where appropriate.
+- Publish created models, adapters, logs, and datasets on Hugging Face. A public project/demo or repository and a write-up are expected; the website lists an HF Article and an HF Space if relevant.
+- Show more than one before/after metric and explain the tasks, data, model, method, and practical improvement.
+- An optional, preferred cost/ROI comparison was listed. Any such calculation must use measured or clearly labeled assumed costs and realistic workloads.
+- Registered teams joining Discord were offered limited $20 Hugging Face credits, subject to eligibility and redemption limits. Do not assume we have received credits or can train within that amount.
+- Published Track 3 topics include reliable tool calling, efficient trajectories, agentic distillation, agentic RAG, synthetic multi-hop training data, data/database agents, business workflow agents, self-healing, and reward design/reward-hacking defenses.
+
+Tool sources:
+- AgentTune repository: https://github.com/Lexsi-Labs/AgentTune
+- AgentTune documentation: https://agenttune.lexsi.ai
+- AuditKIT documentation: https://auditkit.lexsi.ai
+- AuditKIT repository: https://github.com/Lexsi-Labs/AuditKIT
+
+AgentTune supports training tool-using agents from trajectories: sequences of model actions, tool calls, observations, and outcomes. Its documentation describes supervised/distillation and reinforcement-learning paths, rewards, evaluation, and workflow features. Verify actual APIs and supported paths in the current code; do not assume every advertised feature works for our chosen model.
+
+AuditKIT supports evaluation, comparisons, metrics, and experiment tracking. We will still need to define domain-specific correctness checks. Do not assume decision regret, calibration, or our simulator's scoring are built-in metrics.
+
+3. THE TWO FOUNDATIONAL PAPERS
+
+Read the full attached PDFs if available. Filenames may have duplicate-upload suffixes; identify papers by title, authors, and contents. If the attachments are unavailable, use legitimate public versions and state any access limitations. Do not pretend to have read unavailable sections.
+
+A. Camuffo, Gambardella, and Pignataro, "Theory-Driven Strategic Management Decisions," Strategy Science, 2024.
+DOI: https://doi.org/10.1287/stsc.2024.0173
+Public version: https://iris.unibocconi.it/retrieve/05facbdc-1a38-416d-8e71-a196b1849ad9/camuffo-et-al-2024-theory-driven-strategic-management-decisions.pdf
+
+Starting interpretation to verify:
+- Strategic decisions may lack sufficient historical data.
+- A central task is constructing and selecting theories about how value could be created before choosing actions.
+- A theory makes assumptions, relevant variables, and relationships explicit; experiments help select and revise theories.
+- The formal treatment distinguishes uncertainty about outcomes from uncertainty about model parameters and beliefs.
+- Results about uncertainty, multiple theories, and surprising experiments depend on the model's assumptions. Do not turn them into an unconditional rule to choose the strangest hypothesis or maximize uncertainty.
+
+B. Camuffo, Gambardella, and Pignataro, "Framing Strategic Decisions in the Digital World."
+The uploaded manuscript is dated November 2021; the lab lists the published article in Strategic Management Review, 2023, volume 4, pages 127-160.
+Official publication catalogue: https://www.sdabocconi.it/en/faculty-research/research/ion-management-science-lab/output/
+
+Starting interpretation to verify:
+- Automation can free managerial attention from frequent, routine decisions for infrequent strategic choices.
+- Framing the problem, building a theory, and collecting evidence are central to these choices.
+- Human judgment matters for goals, problem definition, and genuinely unfamiliar situations.
+- Knowledge growth is a central theme. Investigation can change the decision space itself; learning is not always updating probabilities over a fixed list of possibilities.
+
+Do not treat a finite simulator as a complete representation of fundamental or Knightian uncertainty. Explain which parts of this framework the prototype operationalizes and which parts remain outside its scope.
+
+4. ADDITIONAL RESEARCH TO INVESTIGATE
+
+Prioritize the most relevant sources rather than exhaustively summarizing every publication. Use publisher versions when abstracts or dates disagree with institutional summaries.
+
+A. Camuffo, Gambardella, Kazemi, and Pandey, "Beyond Black Boxes: Designing and Testing Agentic AI Systems for Strategy," Strategy Science, 2026.
+https://pubsonline.informs.org/doi/10.1287/stsc.2025.0432
+Institutional record: https://iris.unibocconi.it/handle/11565/4078662
+
+This is particularly important. It presents Aristotle and a randomized experiment with 976 managers comparing a streamlined three-agent system, general AI assistance, and no AI assistance. The publisher's text reports heterogeneous results: agentic AI did not raise expert-rated theory quality on average, but experienced managers benefited without confidence inflation; highly educated participants showed confidence gains without corresponding quality improvements. General AI had modest average expert-rated quality gains in the publisher's account. Avoid the inaccurate blanket summary that all AI had zero quality benefit.
+
+These are evaluations of theories and assessed probability of success, not demonstrated long-run business profits. Examine what was actually randomized, measured, and compared. Consider the distinction between an agent's calibrated probabilities and a human user's confidence: improving the former does not establish improvement in the latter.
+
+Public evaluation repository linked by the paper:
+https://github.com/abhinavbocconi/AI-TheoryBasedDecisions_LLMEvaluation
+It compares human and LLM assessments of business theories. Do not assume it contains the full Aristotle application. Inspect data, rubrics, licenses, and reproducibility. The README described 981 participants whereas the published study describes 976; resolve sample/filter differences before reusing counts or results.
+
+B. Camuffo, Cordova, Gambardella, and Spina, "A Scientific Approach to Entrepreneurial Decision Making: Evidence from a Randomized Control Trial," Management Science, 2020 issue, online 2019.
+https://pubsonline.informs.org/doi/10.1287/mnsc.2018.3249
+A trial involving 116 Italian startups comparing scientific hypothesis testing with a control receiving general training. Investigate the intervention and measured outcomes, not just the abstract's conclusion.
+
+C. Camuffo, Gambardella, Messinese, Novelli, Paolucci, and Spina, "A scientific approach to entrepreneurial decision-making: Large-scale replication and extension," Strategic Management Journal, 2024.
+https://onlinelibrary.wiley.com/doi/full/10.1002/smj.3580
+Public PDF: https://iris.unibocconi.it/retrieve/a0e6e21c-f804-4dfe-8b56-4e39f7d7e25a/SMJ-CamuffoGambardella-2024.pdf
+Four trials involving 759 firms; findings include increased idea termination and a selective pattern of strategic pivots. Do not simplify this to "more pivots is always better" or "all treated firms became more successful."
+
+Camuffo's faculty page links public data for RCTs 1-4:
+https://mgmt-tech.unibocconi.eu/faculty/arnaldo-camuffo
+Inspect the actual dataset and reuse terms before deciding whether it is suitable. Firm-level trial data should not automatically be treated as agent training trajectories.
+
+D. "Bayesian Entrepreneurship," edited by Agrawal, Camuffo, Gambardella, Gans, Scott, and Stern.
+https://mitpress.mit.edu/9780262052153/bayesian-entrepreneurship/
+MIT Press lists April 14, 2026, although the lab catalogue previously listed 2025. Relevant themes: formation of prior beliefs, experimentation, learning, and strategic choice. Verify accessible chapters and dates.
+
+E. Camuffo, Gambardella, and Kazemi, "Internal initial conditions and path dependence: an experimental and AI-synthetic study of theories and awareness of unknown events," Industrial and Corporate Change, 2025.
+https://academic.oup.com/icc/article/34/6/1280/8374073
+Relevant to initial beliefs, awareness, lock-in, and changing the hypotheses under consideration. Distinguish evidence from human experiments from synthetic AI experiments.
+
+F. Camuffo, Espinosa, Gambardella, and Pignataro, "CEO Succession Under Anticipatory Awareness Misalignment," Organization Science, 2026.
+https://pubsonline.informs.org/doi/10.1287/orsc.2025.20384
+A theoretical model of differences between board and CEO beliefs about a firm's strategic potential. Potential inspiration for exposing conflicting assumptions, not evidence that an agent can reliably hire CEOs.
+
+Also explore relevant linked work on theory formation, project selection, information acquisition, scientific decision-making, and evaluating AI in strategy. Clearly label working papers, theoretical models, empirical studies, and product descriptions.
+
+5. THE BOCCONI / ION RESEARCH AND TOOL ECOSYSTEM
+
+- IMSL home: https://imsl.unibocconi.it/
+- Research catalogue: https://imsl.unibocconi.it/research
+- People and roles: https://imsl.unibocconi.it/about
+- SDA Bocconi lab page: https://www.sdabocconi.it/en/faculty-research/research/ion-management-science-lab/
+- AIDEC, the AI and Strategic Decision-Making unit at Bocconi's BAFFI Research Centre: https://baffi.unibocconi.eu/research-units/ai-and-strategic-decision-making-aidec
+
+The lab lists Camuffo and Gambardella, both Bocconi professors, and Andrea Pignataro, founder and CEO of ION Group, as founding directors. AIDEC lists Gambardella as director. Verify current roles. Keep the academic labs, ION Group, ION Foundation, and separate institutional initiatives distinct.
+
+Relevant systems described by the lab:
+
+- Aristotle: https://imsl.unibocconi.it/aristotle
+- Capabilities, including AutoAri and Peirce: https://imsl.unibocconi.it/aristotle/capabilities
+- Architecture: https://imsl.unibocconi.it/aristotle/architecture
+Aristotle supports problem framing, competing causal theories of value, and experiments. The architecture page describes problem, theory, and experiment agents. AutoAri automates more of this workflow. Peirce is described as an abductive pipeline that starts from surprises, proposes causes, and develops ideas with evidence and further checks. Socrates supports learning through cases and coaching.
+
+- Leonardo: https://imsl.unibocconi.it/leonardo
+Described as an agentic research platform for causal questions, evidence synthesis, causal maps, and research gaps.
+
+- Copernicus: https://imsl.unibocconi.it/copernicus
+Described as a system for creating measurement rubrics and evaluating text with multiple prompts and repeated sampling. Examples include measuring features of scientific reasoning.
+
+These descriptions establish overlap, not independently verified effectiveness. Do not claim we are inventing the first AI strategy advisor. Determine what is publicly accessible, request-only, documented, open-source, or unverified. Do not contact researchers or request access on my behalf.
+
+6. RELATED AGENTS, BENCHMARKS, AND REUSABLE METHODS
+
+A. BoxingGym
+https://github.com/kanishkg/boxing-gym
+https://arxiv.org/abs/2501.01540
+Simulated environments for experimental design and model discovery. Agents collect observations, propose or revise models, and make predictions. Metrics include prediction error and expected information gain. It is a benchmark/environment framework, not a ready-made business advisor. Consider adapting one environment or borrowing its design principles for a business setting. Examine the costs of computing information-gain rewards.
+
+B. Fisher-R1 and P-Bench
+https://github.com/jmu27/FisherR1
+https://arxiv.org/abs/2608.07437
+An open-weight statistical hypothesis-testing agent trained with synthetic executable tasks and verified rewards; P-Bench contains 425 hypothesis-testing tasks. A close methodological reference for training reliable analysis. It primarily evaluates hypotheses against available datasets; it does not automatically solve sequential experiment selection or strategic framing. Check release completeness, licenses, and actual available code/models. Do not substitute its checkpoint for the hackathon's required model.
+
+C. Google Co-Scientist
+https://research.google/blog/accelerating-scientific-breakthroughs-with-an-ai-co-scientist/
+https://arxiv.org/abs/2502.18864
+https://docs.cloud.google.com/gemini/enterprise/docs/co-scientist
+Architecture for generating, critiquing, ranking, and refining scientific hypotheses. Documentation describes restricted access. Use it as a reference for comparing rival hypotheses, without assuming downloadable code or that agent agreement validates a hypothesis.
+
+D. Sakana AI's research agents
+https://github.com/SakanaAI/AI-Scientist-v2
+https://pub.sakana.ai/agentic-scientist/
+https://github.com/SakanaAI/AI-Scientist-v3
+The Agentic Scientist was described in October 2026 as a framework coordinating coding agents through hypotheses, experiments, ablations, evaluation, and reporting. Learn from its evidence handling and reproducibility. Verify current versions and requirements. Distinguish orchestration around existing models from training the agent's own policy.
+
+E. Agent Laboratory
+https://github.com/SamuelSchmidgall/AgentLaboratory
+https://agentlaboratory.github.io/
+A research workflow spanning literature review, plans, experiments, and reports, with human feedback. Useful for workflow ideas, but likely broader than a two-week student prototype needs.
+
+Search beyond this seed list for close prior work on sequential information acquisition, active learning, Bayesian experimental design, causal discovery, hypothesis revision, calibrated abstention, and agents trained with verifiable rewards. Prefer relevant primary papers and official repositories over generic agent directories.
+
+7. CANDIDATE DIRECTIONS TO CHALLENGE
+
+Generate 4-6 meaningfully different candidates. Consider these starting points but do not force them all into one product:
+
+- Experiment-selection agent: chooses which business experiment to run next under a budget, updates beliefs, and decides when to stop.
+- Evidence-challenging agent: identifies a consequential assumption in a proposed strategy, proposes a competing explanation, and seeks evidence that could discriminate between them. It should also recognize when the original strategy is supported.
+- Hypothesis-revision agent: detects when none of its original theories explains new observations and expands or revises the hypothesis space.
+- Reliable analysis agent: selects and executes an appropriate statistical analysis, checks assumptions, and translates the result into a bounded business recommendation.
+- Causal-evidence agent: retrieves evidence for specific causal links, distinguishes causal support from correlation, and identifies which uncertainty requires a new experiment.
+- Stakeholder-belief agent: makes disagreements about assumptions explicit and chooses questions or tests that would help resolve them.
+
+For each candidate specify the user, concrete decision, available tools, multi-step task, trainable behavior, data source, verifiable outcome, closest prior work, feasible contribution, failure modes, compute needs, and minimal demonstration.
+
+Use this as OUR working assessment rubric, not an official judging rubric:
+- Measurable and trustworthy evaluation: 20%.
+- Feasibility with our time and compute: 20%.
+- A meaningful role for agentic fine-tuning: 15%.
+- Faithful connection to the research: 15%.
+- Practical usefulness: 10%.
+- Differentiation from existing work: 10%.
+- Clarity of demonstration: 10%.
+
+Scores must include short rationales and uncertainty. Do not let invented numerical precision hide missing evidence.
+
+8. EXECUTION WORKFLOW
+
+Phase 1: Establish the facts and research landscape.
+
+Read the attachments and verify the highest-priority sources. Produce a compact evidence matrix: source, status/date, actual contribution, limitations, available artifacts, and relevance. Explain the papers accurately in plain language, then map their concepts to possible agent behaviors.
+
+Inspect available compute and the working repository if you have terminal access. Read local instructions first. Report GPU type/VRAM if present, feasible model sizes, available packages, and whether credentials are available without printing secret values. Do not assume access to a GPU or paid services.
+
+Ask at most three targeted questions only if the answers materially affect work, such as existing GPU access, budget, or daily time. Continue independent research and CPU-based environment work while these remain unanswered. Default to low-cost local experiments and no paid API/GPU spending.
+
+Phase 2: Compare ideas and choose experiments that resolve uncertainty.
+
+Rank 4-6 candidates using the rubric. Select two finalists. For each, identify the riskiest assumption and the cheapest useful test. Recommend one primary candidate and one fallback. Explain what evidence would reverse the recommendation.
+
+Explicitly ask whether fine-tuning is warranted. Compare it with a stronger prompt, a fixed workflow, a classical statistical policy, and a hard-coded planner where relevant. If a simple method already solves the task, narrow or revise the challenge rather than manufacturing an LLM advantage.
+
+Phase 3: Implement a minimal environment and baseline when tools permit.
+
+For an experiment-selection direction, a possible environment is a product-launch decision with hidden customer segments and uncertain responses to price, product quality, or brand trust. The agent can query records, request specified studies, run simulated interventions, and use a statistics/calculation tool. Research actions have costs; stopping leads to a final recommendation.
+
+This example is optional. Choose the smallest environment that tests the actual research question. Avoid a large UI, multi-agent bureaucracy, or many domains before the central behavior works.
+
+Define:
+- Hidden state and stochastic data-generating process.
+- Agent-visible observations and the manager's goals and constraints.
+- Competing hypotheses and, where appropriate, a way to propose a missing hypothesis.
+- Tool names, typed arguments, outputs, preconditions, and costs.
+- Valid actions, stopping conditions, budget limits, and final decisions.
+- Scoring grounded in the simulator or verified data.
+- Reproducible seeds, scenario generation, and train/validation/test separation.
+
+Keep hidden parameters, future observations, answer keys, and oracle scores inaccessible to the agent. The trainer/evaluator can use information that the acting agent cannot. Label every simulated observation as simulated in outputs and demos.
+
+Implement a smoke test on a few scenarios, then a bounded pilot sufficient to reveal failures. Report sample size and uncertainty. If tools, model access, or compute are missing, provide runnable code and exact commands and identify which steps were not executed.
+
+Phase 4: Design and, if resources allow, run a small training pilot.
+
+Choose the smallest permitted Cohere checkpoint whose actual tool-use and training compatibility you verify. First validate a forward pass, tool round trip, short rollout, and one training step before launching a longer job.
+
+Compare practical options: supervised learning from verified trajectories, distillation from a stronger teacher if affordable and permitted, and reinforcement learning on executable rewards. Give a concrete reason for the chosen method. Treat LoRA/QLoRA and quantization compatibility as things to verify, not magic solutions to all memory limits.
+
+Create or collect training trajectories with clear provenance. Include failed investigations, supported hypotheses, rejected hypotheses, informative null results, and cases where stopping or saying evidence is insufficient is correct. Do not train only on polished success stories.
+
+Record checkpoint, code revision, package versions, configuration, seed, data split, hardware, runtime, and cost. Label estimated versus measured memory/runtime/cost. Stop or reduce scope when the resource assumptions fail.
+
+9. EVALUATION AND REWARD DESIGN
+
+Specify the claim BEFORE designing its evaluation. Distinguish tool-call correctness, task performance, scientific reasoning behavior, and effects on human decision-makers.
+
+Use the same underlying model, tools, budgets, and held-out scenarios when comparing:
+- Base model with a reasonable prompt.
+- Base model with a carefully designed scientific-decision prompt/workflow.
+- Fine-tuned model.
+- A simple non-LLM policy and, if tractable, a stronger statistical/oracle reference.
+
+A larger teacher model may be an extra reference, with its different compute cost made explicit. Hold out scenario families or causal structures as well as random seeds when feasible; do not claim generalization from renamed copies of training examples. Use validation for reward/prompt tuning and preserve a final test set.
+
+Choose at least three meaningful metrics, potentially:
+- Decision quality or regret: expected payoff lost relative to a defined optimal action in the simulated world. Define what the oracle knows; do not compare against clairvoyance about future random outcomes.
+- Research cost and final payoff after those costs; avoid double-counting costs in regret and reward.
+- Accuracy and calibration of explicit probabilities across many held-out predictions, using proper scoring rules such as Brier score or log loss where appropriate.
+- Correct belief revision under evidence that supports or contradicts a hypothesis.
+- Appropriate stopping or abstention.
+- Valid tool calls, unnecessary calls, task completion, latency, and actual compute cost.
+
+Expected information gain is not identical to business value. An experiment may reduce uncertainty about an irrelevant parameter while leaving the decision unchanged. Prefer value of information or decision-aware rewards when tractable, and explain any proxy.
+
+For reinforcement learning, define a reward the environment can actually compute. Do not reward confidence, persuasive prose, always rejecting the user's idea, or merely following a checklist. Consider reward hacking through excessive testing, fake evidence, abstaining on every case, exploiting a simulator artifact, or calling a scoring/oracle tool.
+
+Test matching cases where the user's initial hypothesis is right and wrong. Include noisy evidence, conflicting studies, redundant experiments, budget exhaustion, uninformative tests, and at least one shift from training conditions. An adversarial critique should improve truth-seeking, not just increase disagreement.
+
+Use LLM judges only where necessary and document their weaknesses. Prefer executable checks for numerical facts and known simulated outcomes. Agreement among LLMs or a causal-looking graph is not proof of causal identification.
+
+10. LIMITS THAT MUST REMAIN VISIBLE
+
+- A synthetic environment demonstrates performance within defined assumptions. It does not validate real market demand or prove improved managerial outcomes.
+- LLM-generated customer interviews are not independent empirical evidence of customer behavior.
+- A confidence-calibrated agent does not automatically reduce human overconfidence; that would require a separate human study.
+- The papers motivate hypotheses about an AI system. Human training interventions do not establish that the same intervention will work for an LLM.
+- More agents, more tool calls, more experiments, and longer explanations are not inherently better.
+- Public code availability does not establish reliable operation, a reusable license, or compatibility with our stack.
+- A literature search can identify closest known work but cannot prove global novelty.
+- We should report negative or mixed findings honestly, including when prompting or a simple policy beats fine-tuning.
+
+11. EXPECTED OUTPUTS
+
+Organize the work so I can reuse it with another assistant. Keep explanations concise, but do not skip steps in technical reasoning.
+
+Deliver:
+1. An evidence-backed research map with clickable primary-source links and dates.
+2. A comparison of 4-6 project candidates and a justified primary/fallback choice.
+3. A one-page project specification: user problem, hypothesis, closest prior work, contribution, agent tools, data, training, evaluation, and scope limits.
+4. A runnable minimal environment and baseline if coding tools are available, with setup commands and a short README.
+5. Actual pilot results where run; otherwise clearly labeled experiment plans. Include failures and unresolved questions.
+6. A realistic training plan with resource estimates and a smaller fallback.
+7. A schedule working backward from the verified deadline, with checkpoints and explicit reasons to abandon or narrow the idea.
+8. A short research pitch suitable for discussing with the professors, framed as our proposal rather than their endorsement.
+9. A handoff note recording decisions, experiments, sources, versions, and next actions.
+
+Do not fabricate completed training, citations, measurements, cost savings, compatibility, or access. Use ordinary source URLs in saved artifacts. Keep observations, interpretations, and recommendations distinguishable.
+
+Work in an isolated project directory, preserve existing files, and follow applicable environment instructions. Proceed with reversible research and local checks. Do not spend money, launch lengthy paid jobs, publish artifacts, contact people, or modify live systems without explicit authorization. Never disclose secrets or place them in logs or public artifacts.
+
+START NOW
+
+Begin with the two attached papers and Beyond Black Boxes. Verify the hackathon's current requirements. Identify the three most consequential findings for our project, compare the candidate directions, and then perform the cheapest useful baseline experiment available. Do not stop to ask me which of several vague ideas I like before doing this work. If an essential capability is unavailable, state that precisely and continue the parts that are possible.

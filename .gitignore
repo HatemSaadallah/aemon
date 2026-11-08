@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.safetensors
+*.bin
+*.pt
+*.pth
+.cache/
+tooling/real_model/live/
+
+# build output of the editable install
+*.egg-info/
+
+# the React frontend: dependencies and build output
+app/web/node_modules/
+app/web/dist/
+reports/strategy/claude_ledger.judge.lock

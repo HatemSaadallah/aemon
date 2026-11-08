@@ -1,0 +1,382 @@
+{
+ "note": "Rows from the same teacher episodes, built two ways. Rows are not independent: many come from each episode.",
+ "full_history": {
+  "prompt": "staged",
+  "compact": false,
+  "limit": 8192,
+  "rows": 1145,
+  "by_stage": {
+   "brief": {
+    "kept": 45,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 1449,
+    "max_tokens": 1449
+   },
+   "frame": {
+    "kept": 45,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 1959,
+    "max_tokens": 2066
+   },
+   "evidence": {
+    "kept": 181,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 2382,
+    "max_tokens": 2875
+   },
+   "theories": {
+    "kept": 328,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 3721,
+    "max_tokens": 5640
+   },
+   "assessment": {
+    "kept": 165,
+    "refused": 4,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 0.98,
+    "median_tokens": 5645,
+    "max_tokens": 9330
+   },
+   "challenge": {
+    "kept": 42,
+    "refused": 3,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 0.93,
+    "median_tokens": 6213,
+    "max_tokens": 9433
+   },
+   "challenge_reading": {
+    "kept": 5,
+    "refused": 2,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 0.71,
+    "median_tokens": 6373,
+    "max_tokens": 9629
+   },
+   "test": {
+    "kept": 114,
+    "refused": 7,
+    "ungrounded_ids": 0,
+    "new_numbers": 46,
+    "retained": 0.94,
+    "median_tokens": 6864,
+    "max_tokens": 10278
+   },
+   "position": {
+    "kept": 69,
+    "refused": 28,
+    "ungrounded_ids": 0,
+    "new_numbers": 1,
+    "retained": 0.71,
+    "median_tokens": 7546,
+    "max_tokens": 10848
+   },
+   "new_evidence": {
+    "kept": 18,
+    "refused": 9,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 0.67,
+    "median_tokens": 7848,
+    "max_tokens": 10968
+   },
+   "update": {
+    "kept": 15,
+    "refused": 12,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 0.56,
+    "median_tokens": 8144,
+    "max_tokens": 11286
+   },
+   "conclude": {
+    "kept": 17,
+    "refused": 36,
+    "ungrounded_ids": 0,
+    "new_numbers": 2,
+    "retained": 0.32,
+    "median_tokens": 8669,
+    "max_tokens": 11808
+   }
+  },
+  "by_company": {
+   "3m": {
+    "kept": 71,
+    "refused": 14
+   },
+   "cotral": {
+    "kept": 252,
+    "refused": 24
+   },
+   "embrace": {
+    "kept": 95,
+    "refused": 5
+   },
+   "festool": {
+    "kept": 46,
+    "refused": 2
+   },
+   "hellberg": {
+    "kept": 142,
+    "refused": 28
+   },
+   "hilti": {
+    "kept": 63,
+    "refused": 9
+   },
+   "oxo": {
+    "kept": 87,
+    "refused": 1
+   },
+   "portwest": {
+    "kept": 69,
+    "refused": 6
+   },
+   "sievi": {
+    "kept": 61,
+    "refused": 1
+   },
+   "superior": {
+    "kept": 88,
+    "refused": 10
+   },
+   "zarges": {
+    "kept": 70,
+    "refused": 1
+   }
+  },
+  "episodes": {
+   "attempted": 56,
+   "accepted": 45,
+   "rejected": {
+    "replay did not reach an accepted finish": 11
+   },
+   "attempted_by_company": {
+    "hellberg": 10,
+    "sievi": 4,
+    "festool": 4,
+    "zarges": 4,
+    "3m": 4,
+    "cotral": 10,
+    "superior": 4,
+    "portwest": 4,
+    "oxo": 4,
+    "hilti": 4,
+    "embrace": 4
+   },
+   "accepted_by_company": {
+    "hellberg": 6,
+    "sievi": 3,
+    "zarges": 3,
+    "3m": 3,
+    "cotral": 10,
+    "superior": 4,
+    "portwest": 3,
+    "oxo": 4,
+    "hilti": 3,
+    "festool": 2,
+    "embrace": 4
+   }
+  }
+ },
+ "compact": {
+  "prompt": "compact",
+  "compact": true,
+  "limit": 8192,
+  "rows": 1145,
+  "by_stage": {
+   "brief": {
+    "kept": 45,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 1473,
+    "max_tokens": 1473
+   },
+   "frame": {
+    "kept": 45,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 2206,
+    "max_tokens": 2379
+   },
+   "evidence": {
+    "kept": 181,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 2251,
+    "max_tokens": 2494
+   },
+   "theories": {
+    "kept": 328,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 2614,
+    "max_tokens": 3450
+   },
+   "assessment": {
+    "kept": 169,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 3473,
+    "max_tokens": 4465
+   },
+   "challenge": {
+    "kept": 45,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 3508,
+    "max_tokens": 4370
+   },
+   "challenge_reading": {
+    "kept": 7,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 3660,
+    "max_tokens": 4396
+   },
+   "test": {
+    "kept": 121,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 46,
+    "retained": 1.0,
+    "median_tokens": 3884,
+    "max_tokens": 4908
+   },
+   "position": {
+    "kept": 97,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 1,
+    "retained": 1.0,
+    "median_tokens": 4183,
+    "max_tokens": 5236
+   },
+   "new_evidence": {
+    "kept": 27,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 4267,
+    "max_tokens": 5052
+   },
+   "update": {
+    "kept": 27,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 0,
+    "retained": 1.0,
+    "median_tokens": 4504,
+    "max_tokens": 5311
+   },
+   "conclude": {
+    "kept": 53,
+    "refused": 0,
+    "ungrounded_ids": 0,
+    "new_numbers": 2,
+    "retained": 1.0,
+    "median_tokens": 4674,
+    "max_tokens": 5640
+   }
+  },
+  "by_company": {
+   "3m": {
+    "kept": 85
+   },
+   "cotral": {
+    "kept": 276
+   },
+   "embrace": {
+    "kept": 100
+   },
+   "festool": {
+    "kept": 48
+   },
+   "hellberg": {
+    "kept": 170
+   },
+   "hilti": {
+    "kept": 72
+   },
+   "oxo": {
+    "kept": 88
+   },
+   "portwest": {
+    "kept": 75
+   },
+   "sievi": {
+    "kept": 62
+   },
+   "superior": {
+    "kept": 98
+   },
+   "zarges": {
+    "kept": 71
+   }
+  },
+  "episodes": {
+   "attempted": 56,
+   "accepted": 45,
+   "rejected": {
+    "replay did not reach an accepted finish": 11
+   },
+   "attempted_by_company": {
+    "hellberg": 10,
+    "sievi": 4,
+    "festool": 4,
+    "zarges": 4,
+    "3m": 4,
+    "cotral": 10,
+    "superior": 4,
+    "portwest": 4,
+    "oxo": 4,
+    "hilti": 4,
+    "embrace": 4
+   },
+   "accepted_by_company": {
+    "hellberg": 6,
+    "sievi": 3,
+    "zarges": 3,
+    "3m": 3,
+    "cotral": 10,
+    "superior": 4,
+    "portwest": 3,
+    "oxo": 4,
+    "hilti": 3,
+    "festool": 2,
+    "embrace": 4
+   }
+  }
+ }
+}

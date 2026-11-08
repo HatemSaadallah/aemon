@@ -1,0 +1,148 @@
+{
+ "what": "Development evaluation runs that ran while the cluster home was over its 50 GB quota (2026-11-07, about 19:20-19:30). They are excluded from every analysis; nothing was deleted.",
+ "jobs_cancelled": [
+  {
+   "job": 745203,
+   "name": "dev_final"
+  },
+  {
+   "job": 745204,
+   "name": "dev_second_newstate"
+  }
+ ],
+ "cause": "11 of 15 base-arm episodes of dev_final failed in the harness with OSError Errno 122 Disk quota exceeded; the remaining episodes and both adapter arms ran on a full disk.",
+ "outputs_moved_to": "runs/eval/invalid_quota_20261107/ on the cluster (copied to the laptop backup)",
+ "files": [
+  {
+   "file": "dev_final_adapter.episodes.jsonl",
+   "sha256": "32ad2263ffbd6c14496e1724f815053fc04cd26ef38e3524fc88f7d8731decec"
+  },
+  {
+   "file": "dev_final_adapter.log",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+   "file": "dev_final_adapter.server.log",
+   "sha256": "6df09d54d8a2afd03973a53403c456275a553d6b71cfb0e1247b0e8f4dad6a2a"
+  },
+  {
+   "file": "dev_final_base.episodes.jsonl",
+   "sha256": "a8354d2eac4f0fa3486c579e854375a58f844c1c0f1f96351d1fa1e0d8dbd32b"
+  },
+  {
+   "file": "dev_final_base.json",
+   "sha256": "585edaca54c0bc4ae57ea07bda496bfe04b98923775135de037849e85db22039"
+  },
+  {
+   "file": "dev_final_base.log",
+   "sha256": "3b2d159b7d9c9abd0abbc7b9f89d7fbe1619a1bebf73c0fcb3f66924f74b6bf4"
+  },
+  {
+   "file": "dev_final_base.server.log",
+   "sha256": "5d79c77d50ec22ef3c3069735800e1ec5b2a89c0a6e3a668166eabc98c11edb2"
+  },
+  {
+   "file": "dev_final_conversion.json",
+   "sha256": "1b09ff7708aee9b98c05aa72e3afe42c820a6bb47ec79ea32753bec6d9528d68"
+  },
+  {
+   "file": "dev_final_conversion.server.log",
+   "sha256": "381f3700bebeed5143abcd7af6b156d061e701bfc2de32a7968dcee1964767c3"
+  },
+  {
+   "file": "dev_second_newstate_adapter.episodes.jsonl",
+   "sha256": "8e8d77222f8152afce52bb5bf770d4c7e9a5fcd1eb99f3ba6aacc2044b94a18b"
+  },
+  {
+   "file": "dev_second_newstate_adapter.log",
+   "sha256": "816e7d4da6472d63dd0f9a5019c255ad4e07cff2b0965e9f5d88d0127575532a"
+  },
+  {
+   "file": "dev_second_newstate_adapter.server.log",
+   "sha256": "90b6222518d15a7478d5c0cbbaa0257fc767dc2fe97dd11937984d9b384888ef"
+  },
+  {
+   "file": "dev_second_newstate_conversion.json",
+   "sha256": "0f941c1875613e2d76247de560fc393542ef3818c5374349a7a07bbb359cc3f8"
+  },
+  {
+   "file": "dev_second_newstate_conversion.server.log",
+   "sha256": "f6b171f87f8fb28075ba2bb04e09a3efb2206541044b252ff57608891abae325"
+  }
+ ],
+ "provenance": {
+  "file": "runs/eval/provenance.jsonl",
+  "excluded_lines_1_based": [
+   110,
+   115
+  ],
+  "entries": [
+   {
+    "line": 110,
+    "case": "hellberg-base",
+    "episode": "cc810f56649b1fb9bfaf56c1bff025e1b37c5137dcd6fd252475b8ccc80c4f88",
+    "model_id": "09e91f6936f0",
+    "line_sha256": "91dbcf34b606e19304b0be37dbcf050f5571f0484f8fca1710d8f2a6159c4e67"
+   },
+   {
+    "line": 111,
+    "case": "hellberg-new-evidence-looks",
+    "episode": "5989971defba391e3d3af396487d51ea7570e79fe3a2c5ff0b376a918aa13aed",
+    "model_id": "09e91f6936f0",
+    "line_sha256": "3744a0fdf4b790f05fdb675aaa51619535cac6935bddb047ec0c843560f73163"
+   },
+   {
+    "line": 112,
+    "case": "hellberg-new-evidence-comfort",
+    "episode": "2bd92387a75c7c71693fe21575273d05bec18b8ad0185127242f6974ae818fb6",
+    "model_id": "09e91f6936f0",
+    "line_sha256": "1b341718d689bc771274bf6095f6ca689e8cfc8323d4657615863c316aac9d01"
+   },
+   {
+    "line": 113,
+    "case": "deere-new-evidence-irrelevant",
+    "episode": "5fa4acebd394d912436c1426eb1ed8c39b67e6ed1d4b2a736eb7cb6148879de0",
+    "model_id": "09e91f6936f0",
+    "line_sha256": "33287ca73640650994f2c91bccf71180953818a9a406eaa02f71b005ea78a9a0"
+   },
+   {
+    "line": 114,
+    "case": "hellberg-new-evidence-looks",
+    "episode": "7e16e9c6c4cd725036b8a2b562189f33f52ba2d157544106be1cdd941393d71e",
+    "model_id": "2e1ec3d022f2",
+    "line_sha256": "9510c09e055f628cd0cd6ca7f8d6fc7d0ea37091e8ff5b2c09f01dbf73f6343e"
+   },
+   {
+    "line": 115,
+    "case": "hellberg-new-evidence-comfort",
+    "episode": "8c7387312efaf4500b6d2617a58a851d3e71c3e3807c71315f11a74cb2e37d36",
+    "model_id": "2e1ec3d022f2",
+    "line_sha256": "443a602ec6210178928166ab62fe1d3dd201a9708400cd6dce8132c590039970"
+   }
+  ],
+  "note": "Lines 110-113 are the four dev_final base episodes, 114-115 two dev_second_newstate adapter episodes, all written before the reruns started at 19:38. Episode ids are deterministic per case, seed and configuration, so a valid rerun of the same case carries the same id; the rerun entries are at lines 131-145 (base compact), 116-130 (base staged) and 146-175 (both adapter arms)."
+ },
+ "reruns": {
+  "dev_final": 745247,
+  "dev_second_newstate": 745248,
+  "dev_base_staged": 745205
+ },
+ "used_in_analysis": "only the four rerun reports in reports/judge/dev/ (dev_final_base, dev_base_staged_base, dev_second_newstate_adapter, dev_final_adapter); no invalid run was judged",
+ "reason": "disk_quota_infrastructure_failure",
+ "scope": "The whole affected campaigns are ineligible, including episodes that appear to have finished, not only the 11 that raised.",
+ "timeline": {
+  "quota_full_detected": "about 19:25 (first OSError in dev_final base arm)",
+  "quota_recovered": "about 19:36 (Aya Expanse 32B gguf deleted, 30 of 50 GB used)",
+  "jobs": {
+   "745203 dev_final": "start 19:19:15, cancelled 19:29:43: excluded",
+   "745204 dev_second_newstate": "start 19:19:15, cancelled 19:29:43: excluded",
+   "745205 dev_base_staged": "pending, then held while pending; start 19:37:39 after recovery: valid",
+   "745209 conversion diagnosis": "pending, then held while pending; start 19:37:39 after recovery: valid",
+   "745245, 745246": "resubmissions cancelled at 19:37:50 before starting (sbatch --export split CASES on commas); infrastructure retry log only",
+   "745247 dev_final": "start 19:42:57, full original configuration (15 cases, same seeds and budgets): valid",
+   "745248 dev_second_newstate": "start 19:44:49, full original configuration: valid"
+  }
+ },
+ "infrastructure_retry": "745203 -> 745245 (cancelled before start) -> 745247; 745204 -> 745246 (cancelled before start) -> 745248. Whole campaigns rerun, no case selection, one attempt each as originally configured.",
+ "enforcement": "No tool reads runs/eval/provenance.jsonl to select runs: judge_packets.py, judge_report.py and the summaries take explicit report files, and training rows read only the teacher manifest. Any later ledger scan must drop the six lines listed here."
+}

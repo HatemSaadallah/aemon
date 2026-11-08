@@ -1,0 +1,22 @@
+Failed to load /home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Failed to load /home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/torchao/_C_cutlass_90a.abi3.so
+
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]
+Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 1842.03it/s]
+
+Loading weights:   0%|          | 0/18 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 18/18 [00:00<00:00, 1169.43it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]/home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/agenttune/agentic/rollout_engines/rollout_factory.py:1737: UserWarning: The chat template of /tmp/grpo_gpu_d57gtyz7/model ignores `tools`; adding the tool schemas to the system prompt and folding tool results into user turns (tools_fallback_prompt).
+  traj = _execute_trajectory(
+[transformers] Passing `generation_config` together with generation-related arguments=({'max_new_tokens', 'do_sample', 'temperature', 'pad_token_id', 'disable_compile'}) is deprecated and will be removed in future versions. Please pass either a `generation_config` object OR all generation parameters explicitly, but not both.
+/home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/bitsandbytes/backends/cuda/ops.py:957: UserWarning: inner dimension (32) is not aligned for fast kernel with blocksize=64, falling back to slower implementation.
+  warn(
+
+100%|██████████| 1/1 [00:01<00:00,  1.03s/it]
+                                             
+{'train_runtime': '1.046', 'train_samples_per_second': '1.913', 'train_steps_per_second': '0.956', 'train_loss': '0.696', 'num_tokens': '5808', 'completions/mean_length': '129', 'completions/min_length': '2', 'completions/max_length': '256', 'completions/clipped_ratio': '0.5', 'completions/mean_terminated_length': '2', 'completions/min_terminated_length': '2', 'completions/max_terminated_length': '2', 'rewards/combined_reward(<lambda>)/mean': '0.5', 'rewards/combined_reward(<lambda>)/std': '0.7071', 'reward': '0.5', 'reward_std': '0.7071', 'frac_reward_zero_std': '0', 'entropy': '5.602', 'clip_ratio/low_mean': '0', 'clip_ratio/low_min': '0', 'clip_ratio/high_mean': '0', 'clip_ratio/high_max': '0', 'clip_ratio/region_mean': '0', 'step_time': '0.9796', 'epoch': '0.5'}
+
+100%|██████████| 1/1 [00:01<00:00,  1.03s/it]
+100%|██████████| 1/1 [00:01<00:00,  1.05s/it]
+{"tiny_random_model": true, "devices": ["cuda:0"], "optimizer_steps": 1, "linear4bit_modules": 28, "real_generate": true, "quant_lora": true, "tool_calls_executed": 0, "parameters_changed_by_step": 14, "parameters_total": 28, "grad_norm_sum": 0.011006355285644531, "cuda_peak_MB": 187}

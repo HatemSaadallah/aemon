@@ -1,0 +1,15 @@
+{
+  "tiny_random_model": true,
+  "devices": [
+    "cuda:0"
+  ],
+  "optimizer_steps": 1,
+  "linear4bit_modules": 28,
+  "real_generate": true,
+  "quant_lora": true,
+  "tool_calls_executed": 0,
+  "parameters_changed_by_step": 14,
+  "parameters_total": 28,
+  "grad_norm_sum": 0.011006355285644531,
+  "cuda_peak_MB": 187
+}

@@ -1,0 +1,627 @@
+{
+ "note": "Held out for the final test. Development runs never load this file.",
+ "cases": [
+  {
+   "company": "Electrolux Professional Group",
+   "question": "Should Electrolux Professional Group develop a differentiated consumer proposition for a specific use case, beyond its existing professional laundry offering? What evidence would justify that investment?",
+   "brief": "Electrolux Professional Group makes commercial laundry and food-service equipment, and has been listed separately from AB Electrolux since 2020. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "epro",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "epro-base",
+   "premise_records": [
+    "epro-selfservice-formats",
+    "epro-consumer-operated",
+    "epro-offering-professional-customers"
+   ],
+   "test_warranted": true,
+   "split": "heldout",
+   "shared_scopes": []
+  },
+  {
+   "company": "Electrolux Professional Group",
+   "question": "Should Electrolux Professional Group develop a differentiated consumer proposition for a specific use case, beyond its existing professional laundry offering? What evidence would justify that investment?",
+   "brief": "Electrolux Professional Group makes commercial laundry and food-service equipment, and has been listed separately from AB Electrolux since 2020. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "epro",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "epro-new-evidence-irrelevant",
+   "premise_records": [
+    "epro-selfservice-formats",
+    "epro-consumer-operated",
+    "epro-offering-professional-customers"
+   ],
+   "test_warranted": true,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Aquaporin A/S",
+   "question": "Should Aquaporin A/S develop a differentiated consumer proposition for a specific use case, beyond its existing water-membrane offering? What evidence would justify that investment?",
+   "brief": "Aquaporin A/S is a Danish company that developed biomimetic water-treatment membranes, including membranes used in drinking-water purifiers. You have not been told how far it already reaches individual buyers, or what its current position is, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data may not be complete, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "aqp",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "aqp-base",
+   "premise_records": [
+    "aqp-philips-china-supply-2023",
+    "aqp-vestel-rafine-pro-2024",
+    "aqp-one-purifier-2021",
+    "aqp-fy2024-drinking-water-drop"
+   ],
+   "test_warranted": false,
+   "split": "heldout",
+   "shared_scopes": []
+  },
+  {
+   "company": "Aquaporin A/S",
+   "question": "Should Aquaporin A/S develop a differentiated consumer proposition for a specific use case, beyond its existing water-membrane offering? What evidence would justify that investment?",
+   "brief": "Aquaporin A/S is a Danish company that developed biomimetic water-treatment membranes, including membranes used in drinking-water purifiers. You have not been told how far it already reaches individual buyers, or what its current position is, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data may not be complete, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "aqp",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "aqp-new-evidence-irrelevant",
+   "premise_records": [
+    "aqp-philips-china-supply-2023",
+    "aqp-vestel-rafine-pro-2024",
+    "aqp-one-purifier-2021",
+    "aqp-fy2024-drinking-water-drop"
+   ],
+   "test_warranted": false,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Simonelli Group",
+   "question": "Should Simonelli Group develop a differentiated consumer proposition for a specific use case, beyond its existing professional espresso-equipment offering? What evidence would justify that investment?",
+   "brief": "Simonelli Group makes commercial espresso machines and grinders under the Nuova Simonelli and Victoria Arduino brands. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data may not be fully public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "simo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "simo-base",
+   "premise_records": [
+    "simo-ns-oscar-mood-page",
+    "simo-ns-home-category",
+    "simo-va-e1prima-page",
+    "simo-dcn-oscar-mood-2021",
+    "simo-beanscene-prima-domestic"
+   ],
+   "test_warranted": true,
+   "split": "heldout",
+   "shared_scopes": []
+  },
+  {
+   "company": "Simonelli Group",
+   "question": "Should Simonelli Group develop a differentiated consumer proposition for a specific use case, beyond its existing professional espresso-equipment offering? What evidence would justify that investment?",
+   "brief": "Simonelli Group makes commercial espresso machines and grinders under the Nuova Simonelli and Victoria Arduino brands. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data may not be fully public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "simo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "simo-new-evidence-irrelevant",
+   "premise_records": [
+    "simo-ns-oscar-mood-page",
+    "simo-ns-home-category",
+    "simo-va-e1prima-page",
+    "simo-dcn-oscar-mood-2021",
+    "simo-beanscene-prima-domestic"
+   ],
+   "test_warranted": true,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "RATIONAL AG",
+   "question": "Should RATIONAL develop a differentiated proposition for home cooks, building on its commercial combi-steamer technology, or stay with professional kitchens? What evidence would justify either choice?",
+   "brief": "RATIONAL AG is a German maker of combi-steamers and other cooking systems for commercial kitchens. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data is partly public, so say what you could not find or reconcile. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures.",
+   "scope": "rational",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "rational-base",
+   "premise_records": [],
+   "test_warranted": false,
+   "split": "heldout",
+   "shared_scopes": []
+  },
+  {
+   "company": "RATIONAL AG",
+   "question": "Should RATIONAL develop a differentiated proposition for home cooks, building on its commercial combi-steamer technology, or stay with professional kitchens? What evidence would justify either choice?",
+   "brief": "RATIONAL AG is a German maker of combi-steamers and other cooking systems for commercial kitchens. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data is partly public, so say what you could not find or reconcile. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures.",
+   "scope": "rational",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "rational-new-evidence-irrelevant",
+   "premise_records": [],
+   "test_warranted": false,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Electrolux Professional Group",
+   "question": "Should Electrolux Professional Group develop a differentiated consumer proposition for a specific use case, beyond its existing professional laundry offering? What evidence would justify that investment?",
+   "brief": "Electrolux Professional Group makes commercial laundry and food-service equipment, and has been listed separately from AB Electrolux since 2020. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "epro",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "epro-new-evidence-undermines-durability",
+   "premise_records": [
+    "epro-selfservice-formats",
+    "epro-consumer-operated",
+    "epro-offering-professional-customers"
+   ],
+   "test_warranted": true,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-EPRO-UPDATE",
+     "type": "synthetic",
+     "title": "Simulated durability-and-repairability proposition test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. Treat the following only as a what-if. In this hypothetical randomized study, 800 household washing-machine buyers eligible for the same professional-derived washer offer were assigned equally to two descriptions. Both descriptions showed the same machine, brand, price, warranty, availability, service terms and verified specifications. One emphasized durability and repairability; the other emphasized washing performance and the upfront price. No discount or extra service was added. The outcome was a paid, refundable purchase reservation remaining uncancelled after 30 days, counted among all 400 assigned buyers per arm. There were 32 reservations in the durability-and-repairability description arm and 72 in the performance-and-price description arm. This tests the incremental effect of the description in this recruited population, not actual appliance lifetime, delivery capability, market size, profitability or sustained repurchase. A weaker result would not refute a different channel or product theory.",
+     "access_limitation": "Entirely hypothetical case-author construction; no study was conducted.",
+     "scope": "epro",
+     "geography": "hypothetical; not specified",
+     "population": "synthetic recruited buyers or users"
+    },
+    "targets": [
+     "\\bdurab\\w*",
+     "\\brepair\\w*",
+     "\\blongev\\w*",
+     "\\blong[- ](?:life|lasting)\\b",
+     "\\blifetime\\b",
+     "\\bservice life\\b"
+    ],
+    "direction": "undermines",
+    "design": {
+     "pair_id": "epro-durability-v1",
+     "target_mechanism": "durability-and-repairability proposition",
+     "assignment": "randomized 400 per arm",
+     "outcome": "paid refundable reservation or enrollment retained at day 30",
+     "treatment_count": 32,
+     "control_count": 72,
+     "treatment_n": 400,
+     "control_n": 400,
+     "observed_risk_difference": -0.1,
+     "interpretation": "case-author expected directional evidence for the targeted mechanism only; recommendation changes are not required",
+     "status": "draft for review; freeze before any held-out model output"
+    }
+   }
+  },
+  {
+   "company": "Electrolux Professional Group",
+   "question": "Should Electrolux Professional Group develop a differentiated consumer proposition for a specific use case, beyond its existing professional laundry offering? What evidence would justify that investment?",
+   "brief": "Electrolux Professional Group makes commercial laundry and food-service equipment, and has been listed separately from AB Electrolux since 2020. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "epro",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "epro-new-evidence-favours-durability",
+   "premise_records": [
+    "epro-selfservice-formats",
+    "epro-consumer-operated",
+    "epro-offering-professional-customers"
+   ],
+   "test_warranted": true,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-EPRO-UPDATE",
+     "type": "synthetic",
+     "title": "Simulated durability-and-repairability proposition test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. Treat the following only as a what-if. In this hypothetical randomized study, 800 household washing-machine buyers eligible for the same professional-derived washer offer were assigned equally to two descriptions. Both descriptions showed the same machine, brand, price, warranty, availability, service terms and verified specifications. One emphasized durability and repairability; the other emphasized washing performance and the upfront price. No discount or extra service was added. The outcome was a paid, refundable purchase reservation remaining uncancelled after 30 days, counted among all 400 assigned buyers per arm. There were 72 reservations in the durability-and-repairability description arm and 32 in the performance-and-price description arm. This tests the incremental effect of the description in this recruited population, not actual appliance lifetime, delivery capability, market size, profitability or sustained repurchase. A weaker result would not refute a different channel or product theory.",
+     "access_limitation": "Entirely hypothetical case-author construction; no study was conducted.",
+     "scope": "epro",
+     "geography": "hypothetical; not specified",
+     "population": "synthetic recruited buyers or users"
+    },
+    "targets": [
+     "\\bdurab\\w*",
+     "\\brepair\\w*",
+     "\\blongev\\w*",
+     "\\blong[- ](?:life|lasting)\\b",
+     "\\blifetime\\b",
+     "\\bservice life\\b"
+    ],
+    "direction": "supports",
+    "design": {
+     "pair_id": "epro-durability-v1",
+     "target_mechanism": "durability-and-repairability proposition",
+     "assignment": "randomized 400 per arm",
+     "outcome": "paid refundable reservation or enrollment retained at day 30",
+     "treatment_count": 72,
+     "control_count": 32,
+     "treatment_n": 400,
+     "control_n": 400,
+     "observed_risk_difference": 0.1,
+     "interpretation": "case-author expected directional evidence for the targeted mechanism only; recommendation changes are not required",
+     "status": "draft for review; freeze before any held-out model output"
+    }
+   }
+  },
+  {
+   "company": "Aquaporin A/S",
+   "question": "Should Aquaporin A/S develop a differentiated consumer proposition for a specific use case, beyond its existing water-membrane offering? What evidence would justify that investment?",
+   "brief": "Aquaporin A/S is a Danish company that developed biomimetic water-treatment membranes, including membranes used in drinking-water purifiers. You have not been told how far it already reaches individual buyers, or what its current position is, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data may not be complete, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "aqp",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "aqp-new-evidence-undermines-maintenance",
+   "premise_records": [
+    "aqp-philips-china-supply-2023",
+    "aqp-vestel-rafine-pro-2024",
+    "aqp-one-purifier-2021",
+    "aqp-fy2024-drinking-water-drop"
+   ],
+   "test_warranted": false,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-AQP-UPDATE",
+     "type": "synthetic",
+     "title": "Simulated maintenance-convenience proposition test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. Treat the following only as a what-if. In this hypothetical randomized study, 800 households already using a compatible drinking-water purifier received the same membrane specifications, water-quality information, brand, warranty and total annual price. Half were offered a prepaid plan with scheduled cartridge delivery and replacement reminders; half were offered a prepaid self-service cartridge plan without that delivery schedule or reminders. There were no discounts. The outcome was a paid plan enrollment remaining uncancelled after 30 days, counted among all 400 assigned households per arm. This what-if assumes an authorised operator can legally supply and service the offer; it does not change the dossier evidence about Aquaporin's insolvency or financing. There were 60 plan enrollments in the scheduled-delivery-and-reminder plan arm and 120 in the self-service cartridge plan arm. This tests willingness to enroll in a maintenance offer under that conditional supply assumption, not membrane efficacy, correct long-term filter use, market size, company solvency or Aquaporin's ability to fund an offer. An unchanged business recommendation can be justified by those other constraints.",
+     "access_limitation": "Entirely hypothetical case-author construction; no study was conducted.",
+     "scope": "aqp",
+     "geography": "hypothetical; not specified",
+     "population": "synthetic recruited buyers or users"
+    },
+    "targets": [
+     "\\bmaintenan\\w*",
+     "\\bcartridge\\w*",
+     "\\bfilter[- ](?:change|replacement)\\w*",
+     "\\breplac\\w* (?:the |a )?(?:filter|cartridge)\\w*",
+     "\\b(?:scheduled|automatic) delivery\\b",
+     "\\bservice[- ]plan\\w*",
+     "\\bsubscription\\w*"
+    ],
+    "direction": "undermines",
+    "design": {
+     "pair_id": "aqp-maintenance-v1",
+     "target_mechanism": "maintenance-convenience proposition",
+     "assignment": "randomized 400 per arm",
+     "outcome": "paid refundable reservation or enrollment retained at day 30",
+     "treatment_count": 60,
+     "control_count": 120,
+     "treatment_n": 400,
+     "control_n": 400,
+     "observed_risk_difference": -0.15,
+     "interpretation": "case-author expected directional evidence for the targeted mechanism only; recommendation changes are not required",
+     "status": "draft for review; freeze before any held-out model output"
+    }
+   }
+  },
+  {
+   "company": "Aquaporin A/S",
+   "question": "Should Aquaporin A/S develop a differentiated consumer proposition for a specific use case, beyond its existing water-membrane offering? What evidence would justify that investment?",
+   "brief": "Aquaporin A/S is a Danish company that developed biomimetic water-treatment membranes, including membranes used in drinking-water purifiers. You have not been told how far it already reaches individual buyers, or what its current position is, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data may not be complete, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "aqp",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "aqp-new-evidence-favours-maintenance",
+   "premise_records": [
+    "aqp-philips-china-supply-2023",
+    "aqp-vestel-rafine-pro-2024",
+    "aqp-one-purifier-2021",
+    "aqp-fy2024-drinking-water-drop"
+   ],
+   "test_warranted": false,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-AQP-UPDATE",
+     "type": "synthetic",
+     "title": "Simulated maintenance-convenience proposition test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. Treat the following only as a what-if. In this hypothetical randomized study, 800 households already using a compatible drinking-water purifier received the same membrane specifications, water-quality information, brand, warranty and total annual price. Half were offered a prepaid plan with scheduled cartridge delivery and replacement reminders; half were offered a prepaid self-service cartridge plan without that delivery schedule or reminders. There were no discounts. The outcome was a paid plan enrollment remaining uncancelled after 30 days, counted among all 400 assigned households per arm. This what-if assumes an authorised operator can legally supply and service the offer; it does not change the dossier evidence about Aquaporin's insolvency or financing. There were 120 plan enrollments in the scheduled-delivery-and-reminder plan arm and 60 in the self-service cartridge plan arm. This tests willingness to enroll in a maintenance offer under that conditional supply assumption, not membrane efficacy, correct long-term filter use, market size, company solvency or Aquaporin's ability to fund an offer. An unchanged business recommendation can be justified by those other constraints.",
+     "access_limitation": "Entirely hypothetical case-author construction; no study was conducted.",
+     "scope": "aqp",
+     "geography": "hypothetical; not specified",
+     "population": "synthetic recruited buyers or users"
+    },
+    "targets": [
+     "\\bmaintenan\\w*",
+     "\\bcartridge\\w*",
+     "\\bfilter[- ](?:change|replacement)\\w*",
+     "\\breplac\\w* (?:the |a )?(?:filter|cartridge)\\w*",
+     "\\b(?:scheduled|automatic) delivery\\b",
+     "\\bservice[- ]plan\\w*",
+     "\\bsubscription\\w*"
+    ],
+    "direction": "supports",
+    "design": {
+     "pair_id": "aqp-maintenance-v1",
+     "target_mechanism": "maintenance-convenience proposition",
+     "assignment": "randomized 400 per arm",
+     "outcome": "paid refundable reservation or enrollment retained at day 30",
+     "treatment_count": 120,
+     "control_count": 60,
+     "treatment_n": 400,
+     "control_n": 400,
+     "observed_risk_difference": 0.15,
+     "interpretation": "case-author expected directional evidence for the targeted mechanism only; recommendation changes are not required",
+     "status": "draft for review; freeze before any held-out model output"
+    }
+   }
+  },
+  {
+   "company": "Simonelli Group",
+   "question": "Should Simonelli Group develop a differentiated consumer proposition for a specific use case, beyond its existing professional espresso-equipment offering? What evidence would justify that investment?",
+   "brief": "Simonelli Group makes commercial espresso machines and grinders under the Nuova Simonelli and Victoria Arduino brands. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data may not be fully public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "simo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "simo-new-evidence-undermines-learning",
+   "premise_records": [
+    "simo-ns-oscar-mood-page",
+    "simo-ns-home-category",
+    "simo-va-e1prima-page",
+    "simo-dcn-oscar-mood-2021",
+    "simo-beanscene-prima-domestic"
+   ],
+   "test_warranted": true,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-SIMO-UPDATE",
+     "type": "synthetic",
+     "title": "Simulated home-barista learning proposition test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. Treat the following only as a what-if. In this hypothetical randomized study, 800 home espresso enthusiasts considering the same Simonelli single-group machine were assigned equally to two offers. Machine, brand, price, warranty, availability and total contact time were identical. One offer included a structured hands-on home-barista setup lesson; the other included an equal-length product-specification orientation without a skill lesson. There were no discounts. The outcome was a paid, refundable machine reservation remaining uncancelled after 30 days, counted among all 400 assigned enthusiasts per arm. There were 32 reservations in the home-barista-lesson offer arm and 72 in the product-specification-orientation offer arm. This tests the incremental effect of this learning offer among recruited enthusiasts, not a need for a new machine, demand among ordinary coffee drinkers, commercial margins or lasting skill retention. It does not show that every hobby or status mechanism is true or false.",
+     "access_limitation": "Entirely hypothetical case-author construction; no study was conducted.",
+     "scope": "simo",
+     "geography": "hypothetical; not specified",
+     "population": "synthetic recruited buyers or users"
+    },
+    "targets": [
+     "\\blearn\\w*",
+     "\\bskill\\w*",
+     "\\btrain\\w*",
+     "\\bcoach\\w*",
+     "\\bonboard\\w*",
+     "\\beducat\\w*",
+     "\\bknow[- ]how\\b"
+    ],
+    "direction": "undermines",
+    "design": {
+     "pair_id": "simo-learning-v1",
+     "target_mechanism": "home-barista learning proposition",
+     "assignment": "randomized 400 per arm",
+     "outcome": "paid refundable reservation or enrollment retained at day 30",
+     "treatment_count": 32,
+     "control_count": 72,
+     "treatment_n": 400,
+     "control_n": 400,
+     "observed_risk_difference": -0.1,
+     "interpretation": "case-author expected directional evidence for the targeted mechanism only; recommendation changes are not required",
+     "status": "draft for review; freeze before any held-out model output"
+    }
+   }
+  },
+  {
+   "company": "Simonelli Group",
+   "question": "Should Simonelli Group develop a differentiated consumer proposition for a specific use case, beyond its existing professional espresso-equipment offering? What evidence would justify that investment?",
+   "brief": "Simonelli Group makes commercial espresso machines and grinders under the Nuova Simonelli and Victoria Arduino brands. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data may not be fully public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "simo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "simo-new-evidence-favours-learning",
+   "premise_records": [
+    "simo-ns-oscar-mood-page",
+    "simo-ns-home-category",
+    "simo-va-e1prima-page",
+    "simo-dcn-oscar-mood-2021",
+    "simo-beanscene-prima-domestic"
+   ],
+   "test_warranted": true,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-SIMO-UPDATE",
+     "type": "synthetic",
+     "title": "Simulated home-barista learning proposition test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. Treat the following only as a what-if. In this hypothetical randomized study, 800 home espresso enthusiasts considering the same Simonelli single-group machine were assigned equally to two offers. Machine, brand, price, warranty, availability and total contact time were identical. One offer included a structured hands-on home-barista setup lesson; the other included an equal-length product-specification orientation without a skill lesson. There were no discounts. The outcome was a paid, refundable machine reservation remaining uncancelled after 30 days, counted among all 400 assigned enthusiasts per arm. There were 72 reservations in the home-barista-lesson offer arm and 32 in the product-specification-orientation offer arm. This tests the incremental effect of this learning offer among recruited enthusiasts, not a need for a new machine, demand among ordinary coffee drinkers, commercial margins or lasting skill retention. It does not show that every hobby or status mechanism is true or false.",
+     "access_limitation": "Entirely hypothetical case-author construction; no study was conducted.",
+     "scope": "simo",
+     "geography": "hypothetical; not specified",
+     "population": "synthetic recruited buyers or users"
+    },
+    "targets": [
+     "\\blearn\\w*",
+     "\\bskill\\w*",
+     "\\btrain\\w*",
+     "\\bcoach\\w*",
+     "\\bonboard\\w*",
+     "\\beducat\\w*",
+     "\\bknow[- ]how\\b"
+    ],
+    "direction": "supports",
+    "design": {
+     "pair_id": "simo-learning-v1",
+     "target_mechanism": "home-barista learning proposition",
+     "assignment": "randomized 400 per arm",
+     "outcome": "paid refundable reservation or enrollment retained at day 30",
+     "treatment_count": 72,
+     "control_count": 32,
+     "treatment_n": 400,
+     "control_n": 400,
+     "observed_risk_difference": 0.1,
+     "interpretation": "case-author expected directional evidence for the targeted mechanism only; recommendation changes are not required",
+     "status": "draft for review; freeze before any held-out model output"
+    }
+   }
+  },
+  {
+   "company": "RATIONAL AG",
+   "question": "Should RATIONAL develop a differentiated proposition for home cooks, building on its commercial combi-steamer technology, or stay with professional kitchens? What evidence would justify either choice?",
+   "brief": "RATIONAL AG is a German maker of combi-steamers and other cooking systems for commercial kitchens. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data is partly public, so say what you could not find or reconcile. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures.",
+   "scope": "rational",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "rational-new-evidence-favours-installation",
+   "premise_records": [],
+   "test_warranted": false,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-RATIONAL-UPDATE",
+     "type": "synthetic",
+     "title": "Simulated installation-coordination offer test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. No study was conducted. Treat this as a what-if only. In a hypothetical randomized offer test, 800 recruited home cooks considering the same professional-derived combi-steamer were assigned equally to two offers. Both showed identical equipment, brand, cooking specifications, total installed price, warranty, available delivery dates and eventual plumbing/electrical work. One offer bundled an installation coordinator and a site-readiness checklist; the other required the purchaser to arrange the same qualified installers directly. Contact time was matched and neither offer gave a discount. All recruited homes were eligible for the stated installation work. The outcome was a paid refundable reservation remaining uncancelled after 30 days among all 400 assigned households per arm. There were 72 reservations for the coordinated-installation offer and 32 for the purchaser-arranged offer. This tests whether coordination friction changes choice in that recruited group. It does not show that the appliance fits ordinary kitchens, eliminates drain or power requirements, earns a margin, or justifies diverting resources from professional customers. It does not establish market size or a need for new RATIONAL hardware. A business recommendation can remain unchanged while belief about this narrow coordination mechanism changes.",
+     "access_limitation": "Entirely hypothetical case-author construction; no study was conducted.",
+     "scope": "rational",
+     "geography": "hypothetical; not specified",
+     "population": "synthetic eligible home cooks"
+    },
+    "targets": [
+     "\\binstall(?:ation|er)\\w*",
+     "\\bsite[- ]readiness\\b",
+     "\\bcoordina\\w*"
+    ],
+    "direction": "supports",
+    "design": {
+     "pair_id": "rational-installation-v1",
+     "target_mechanism": "installation coordination friction",
+     "assignment": "randomized 400 per arm",
+     "outcome": "paid refundable reservation remaining uncancelled after 30 days",
+     "treatment_count": 72,
+     "control_count": 32,
+     "treatment_n": 400,
+     "control_n": 400,
+     "observed_risk_difference": 0.1,
+     "interpretation": "directional evidence for coordination friction only; no required business recommendation reversal",
+     "status": "pre-evaluation amendment for review"
+    }
+   }
+  },
+  {
+   "company": "RATIONAL AG",
+   "question": "Should RATIONAL develop a differentiated proposition for home cooks, building on its commercial combi-steamer technology, or stay with professional kitchens? What evidence would justify either choice?",
+   "brief": "RATIONAL AG is a German maker of combi-steamers and other cooking systems for commercial kitchens. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data is partly public, so say what you could not find or reconcile. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures.",
+   "scope": "rational",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "rational-new-evidence-undermines-installation",
+   "premise_records": [],
+   "test_warranted": false,
+   "split": "heldout",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-RATIONAL-UPDATE",
+     "type": "synthetic",
+     "title": "Simulated installation-coordination offer test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. No study was conducted. Treat this as a what-if only. In a hypothetical randomized offer test, 800 recruited home cooks considering the same professional-derived combi-steamer were assigned equally to two offers. Both showed identical equipment, brand, cooking specifications, total installed price, warranty, available delivery dates and eventual plumbing/electrical work. One offer bundled an installation coordinator and a site-readiness checklist; the other required the purchaser to arrange the same qualified installers directly. Contact time was matched and neither offer gave a discount. All recruited homes were eligible for the stated installation work. The outcome was a paid refundable reservation remaining uncancelled after 30 days among all 400 assigned households per arm. There were 32 reservations for the coordinated-installation offer and 72 for the purchaser-arranged offer. This tests whether coordination friction changes choice in that recruited group. It does not show that the appliance fits ordinary kitchens, eliminates drain or power requirements, earns a margin, or justifies diverting resources from professional customers. It does not establish market size or a need for new RATIONAL hardware. A business recommendation can remain unchanged while belief about this narrow coordination mechanism changes.",
+     "access_limitation": "Entirely hypothetical case-author construction; no study was conducted.",
+     "scope": "rational",
+     "geography": "hypothetical; not specified",
+     "population": "synthetic eligible home cooks"
+    },
+    "targets": [
+     "\\binstall(?:ation|er)\\w*",
+     "\\bsite[- ]readiness\\b",
+     "\\bcoordina\\w*"
+    ],
+    "direction": "undermines",
+    "design": {
+     "pair_id": "rational-installation-v1",
+     "target_mechanism": "installation coordination friction",
+     "assignment": "randomized 400 per arm",
+     "outcome": "paid refundable reservation remaining uncancelled after 30 days",
+     "treatment_count": 32,
+     "control_count": 72,
+     "treatment_n": 400,
+     "control_n": 400,
+     "observed_risk_difference": -0.1,
+     "interpretation": "directional evidence for coordination friction only; no required business recommendation reversal",
+     "status": "pre-evaluation amendment for review"
+    }
+   }
+  }
+ ]
+}

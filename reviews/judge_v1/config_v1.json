@@ -1,0 +1,37 @@
+{
+  "version": "judge-v1",
+  "dimensions": [
+    "problem_framing",
+    "causal_mechanism",
+    "distinct_theories",
+    "assumptions_predictions",
+    "evidence_judgement",
+    "seeking_challenge",
+    "experiment_design",
+    "revision",
+    "recommendation"
+  ],
+  "minimum_positive_clusters": 20,
+  "minimum_negative_clusters": 20,
+  "minimum_rate": 0.8,
+  "minimum_wilson_lower": 0.8,
+  "z": 1.96,
+  "teacher_model": "command-a-plus-05-2026-Q4_K_M",
+  "candidate_model": "aya-expanse-32b-Q4_K_M",
+  "qualification_status": "not_run",
+  "note": "Six anchors are development controls only; a separate blinded qualification set is required.",
+  "artifact_sha256": {
+    "judge_prompt_v1.txt": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+    "rubric_v1.md": "1446bef787f5964d1393ce86979d649b0dc3e7db05b3aebc42776c60521058ce",
+    "anchors_v1.jsonl": "0e09646ba463debd2729743b6ccff6720b26104fe9af1e5c980f8daf03084a28",
+    "anchor_key_v1.jsonl": "c8f44f4434d4e97ed778848fa96ca30f2367667019cdc145024e2839c8d1c8e7",
+    "qualification_packets_v1.jsonl": "1cefa79a53cbda130cfa48c82a1c10f1208614f57924ac7b9632315a0b3c642d",
+    "qualification_key_v1.jsonl": "3f9f948ebc90c0f699ed7cd81a12d4b3aecda0c61e680f178834ca890cf8149d",
+    "qualification_blind.jsonl": "665d8056d55b3480a7c42339ba3f1bc13d0df41c50c196581a37a0a2fc990bd1"
+  },
+  "generation": {
+    "temperature": 0,
+    "max_tokens": 3000,
+    "required_effective_context": 8192
+  }
+}

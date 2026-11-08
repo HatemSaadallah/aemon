@@ -1,0 +1,22 @@
+0.00.077.292 I srv  llama_server: initializing ...
+0.00.077.313 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.079.705 I srv  init_listene: The UI is disabled
+0.00.079.706 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.079.800 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.083.639 I srv    load_model: loading model '/home/CLUSTER_ACCOUNT/lexsi/models/tiny-aya-global-bf16.gguf'
+0.01.008.516 W load: special_eos_id is not in special_eog_ids - the tokenizer config may be incorrect
+0.13.370.297 W llama_context: n_ctx_seq (12288) > n_ctx_train (8192) -- possible training context overflow
+0.13.390.863 I cmn          init: llama threadpool init, n_threads = 24
+0.13.609.551 W srv    load_model: the slot context (12288) exceeds the training context of the model (8192) - capping
+0.13.625.337 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 8192, kv_unified = 'false'
+0.13.634.629 I srv  server_run_i: model loaded
+0.13.634.637 I srv  server_on_li: listening on http://127.0.0.1:20313
+2.25.047.305 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+2.25.050.577 I slot launch_slot_: id  0 | task 1 | processing task, is_child = 0
+2.25.951.673 I slot print_timing: id  0 | task 1 | prompt eval time =     524.12 ms /  1490 tokens (    0.35 ms per token,  2842.85 tokens per second)
+2.25.951.677 I slot print_timing: id  0 | task 1 |        eval time =     374.95 ms /    32 tokens (   12.10 ms per token,    82.68 tokens per second)
+2.25.951.678 I slot print_timing: id  0 | task 1 |       total time =     899.07 ms /  1522 tokens
+2.25.951.679 I slot print_timing: id  0 | task 1 |    graphs reused =         31
+2.25.951.679 I slot print_timing: id  0 | task 1 |   graph reallocs =          0    /     0        (same size) / (changed size)
+2.25.952.002 I slot      release: id  0 | task 1 | stop processing: n_tokens = 1521, truncated = 0
+2.27.883.983 I srv    operator(): operator(): cleaning up before exit...

@@ -1,0 +1,25 @@
+{
+ "gate": "conversion-v2",
+ "passed": true,
+ "failures": [],
+ "points": 9,
+ "min_cosine": 0.999687,
+ "max_residual": 0.0725,
+ "greedy_divergences": [
+  {
+   "case": "hellberg-new-evidence-favours-looks",
+   "stage": "theories",
+   "offset": 22,
+   "peft_margins": [
+    13.25,
+    0.0
+   ],
+   "base_alone_diverged": false
+  }
+ ],
+ "gguf_sha256": "be8a6b004dee357e6feab9a1404fc7f5c9dbbe3c3eeb79cbb4e97fb7cea0c1bd",
+ "thresholds": {
+  "min_cosine": 0.99,
+  "max_residual": 0.15
+ }
+}

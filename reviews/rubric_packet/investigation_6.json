@@ -1,0 +1,53 @@
+{
+ "company": "Moldex-Metric",
+ "frame": {
+  "objective": "Determine if Moldex-Metric should expand its sales from workplaces to direct consumer markets, identifying potential consumer segments, value proposition, and key investigation areas before investing.",
+  "constraints": [
+   "No company data on consumer sales or pricing",
+   "Test budget of 20,000 EUR and 12-week limit are analyst assumptions"
+  ],
+  "alternatives": [
+   "Focus on existing workplace sales",
+   "Explore direct-to-consumer (DTC) model",
+   "Target specific consumer segments (e.g., DIYers, hobbyists, remote workers)"
+  ]
+ },
+ "searches": [
+  "Direct-to-consumer hearing protection strategies, consumer segments for hearing protection, pricing models, consumer vs."
+ ],
+ "theories": {
+  "T1": {
+   "claim": "Moldex-Metric can successfully transition to direct-to-consumer sales by targeting specific segments with a value proposition emphasizing safety, convenience, and product quality.",
+   "who_benefits": "Moldex-Metric, consumers seeking hearing protection, and potential partners in the DTC channel.",
+   "why_behaviour_changes": "Consumers increasingly prioritize hearing protection for health and safety, and direct sales can reduce distribution costs.",
+   "how_value_is_captured": "Revenue from direct sales, increased brand awareness, and potential partnerships.",
+   "assumptions": [
+    "Consumers are willing to pay a premium for hearing protection",
+    "Moldex-Metric can effectively market its products to new segments",
+    "Distribution costs can be offset by direct sales"
+   ],
+   "predictions": [
+    "Direct sales can increase revenue by 15-20% within 12 weeks",
+    "Target segments (e.g., DIYers, hobbyists) show higher willingness to pay"
+   ],
+   "status": "open"
+  }
+ },
+ "assessments": [],
+ "tests": {},
+ "revisions": [],
+ "final": {
+  "recommendation": "Moldex-Metric should not pursue direct-to-consumer sales without further investigation. Instead, focus on optimizing workplace sales and exploring partnerships for DTC channels.",
+  "target_customer": "Workplaces seeking hearing protection solutions",
+  "value_proposition": "Safe, high-quality hearing protection at competitive prices through workplace distribution",
+  "favoured_theory": "T1",
+  "next_action": "Conduct consumer surveys to identify new segments and refine value proposition",
+  "uncertainty": "Consumer willingness to pay for hearing protection is uncertain",
+  "would_change_if": [
+   "New data shows high demand for hearing protection among specific segments"
+  ],
+  "evidence_ids": [
+   "apple-en352"
+  ]
+ }
+}

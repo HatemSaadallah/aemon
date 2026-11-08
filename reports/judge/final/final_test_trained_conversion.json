@@ -1,0 +1,231 @@
+{
+ "summary": {
+  "prompts": 8,
+  "first_token_agrees_with_adapter": 8,
+  "mean_greedy_tokens_agreeing_with_adapter": 27.0,
+  "of": 32,
+  "worst_logprob_gap_with_adapter": 0.2987,
+  "first_token_changed_by_adapter_in_peft": 8,
+  "worst_logprob_gap_without_adapter": 0.1711,
+  "worst_gap_added_by_adapter_conversion": 0.237,
+  "passed": false
+ },
+ "gate": {
+  "first_token_agrees_on_every_prompt": true,
+  "greedy_agreement_at_least_75_percent": true,
+  "conversion_adds_at_most_0.15_to_base_gap": false,
+  "logprob_gap_at_most_0.5": true,
+  "adapter_changes_some_first_token_or_logprobs": true
+ },
+ "results": [
+  {
+   "case": "hellberg-new-evidence-comfort",
+   "stage": "brief",
+   "prompt_tokens": 1490,
+   "adapter_on": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 15,
+    "of": 15,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.18
+   },
+   "adapter_off": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.0757
+   },
+   "adapter_effect_in_peft": {
+    "same_first_token": false,
+    "greedy_tokens_agreeing": 0,
+    "of": 32,
+    "top10_overlap": 6,
+    "max_logprob_gap_on_shared": 13.2063
+   }
+  },
+  {
+   "case": "hellberg-new-evidence-favours-looks",
+   "stage": "challenge_reading",
+   "prompt_tokens": 4650,
+   "adapter_on": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 26,
+    "of": 26,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.079
+   },
+   "adapter_off": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.1264
+   },
+   "adapter_effect_in_peft": {
+    "same_first_token": false,
+    "greedy_tokens_agreeing": 0,
+    "of": 32,
+    "top10_overlap": 5,
+    "max_logprob_gap_on_shared": 12.0704
+   }
+  },
+  {
+   "case": "hellberg-base",
+   "stage": "theories",
+   "prompt_tokens": 3201,
+   "adapter_on": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 9,
+    "max_logprob_gap_on_shared": 0.0713
+   },
+   "adapter_off": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.1711
+   },
+   "adapter_effect_in_peft": {
+    "same_first_token": false,
+    "greedy_tokens_agreeing": 0,
+    "of": 32,
+    "top10_overlap": 4,
+    "max_logprob_gap_on_shared": 14.6104
+   }
+  },
+  {
+   "case": "hellberg-new-evidence-irrelevant",
+   "stage": "theories",
+   "prompt_tokens": 2982,
+   "adapter_on": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 21,
+    "of": 24,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.2987
+   },
+   "adapter_off": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 6,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.0617
+   },
+   "adapter_effect_in_peft": {
+    "same_first_token": false,
+    "greedy_tokens_agreeing": 0,
+    "of": 32,
+    "top10_overlap": 4,
+    "max_logprob_gap_on_shared": 13.5494
+   }
+  },
+  {
+   "case": "tanita-new-evidence-irrelevant",
+   "stage": "theories",
+   "prompt_tokens": 2772,
+   "adapter_on": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 26,
+    "of": 26,
+    "top10_overlap": 9,
+    "max_logprob_gap_on_shared": 0.1305
+   },
+   "adapter_off": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 9,
+    "max_logprob_gap_on_shared": 0.1364
+   },
+   "adapter_effect_in_peft": {
+    "same_first_token": false,
+    "greedy_tokens_agreeing": 0,
+    "of": 32,
+    "top10_overlap": 4,
+    "max_logprob_gap_on_shared": 13.7775
+   }
+  },
+  {
+   "case": "neumann-new-evidence-irrelevant",
+   "stage": "theories",
+   "prompt_tokens": 3075,
+   "adapter_on": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.1201
+   },
+   "adapter_off": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.0587
+   },
+   "adapter_effect_in_peft": {
+    "same_first_token": false,
+    "greedy_tokens_agreeing": 0,
+    "of": 32,
+    "top10_overlap": 5,
+    "max_logprob_gap_on_shared": 13.346
+   }
+  },
+  {
+   "case": "deere-new-evidence-irrelevant",
+   "stage": "assessment",
+   "prompt_tokens": 3937,
+   "adapter_on": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.0975
+   },
+   "adapter_off": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.1129
+   },
+   "adapter_effect_in_peft": {
+    "same_first_token": false,
+    "greedy_tokens_agreeing": 0,
+    "of": 32,
+    "top10_overlap": 6,
+    "max_logprob_gap_on_shared": 13.8662
+   }
+  },
+  {
+   "case": "acr-new-evidence-irrelevant",
+   "stage": "position",
+   "prompt_tokens": 4413,
+   "adapter_on": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 32,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.179
+   },
+   "adapter_off": {
+    "same_first_token": true,
+    "greedy_tokens_agreeing": 1,
+    "of": 32,
+    "top10_overlap": 10,
+    "max_logprob_gap_on_shared": 0.102
+   },
+   "adapter_effect_in_peft": {
+    "same_first_token": false,
+    "greedy_tokens_agreeing": 0,
+    "of": 32,
+    "top10_overlap": 4,
+    "max_logprob_gap_on_shared": 13.5497
+   }
+  }
+ ],
+ "note": "bf16 on both sides; small gaps are expected from different kernels"
+}

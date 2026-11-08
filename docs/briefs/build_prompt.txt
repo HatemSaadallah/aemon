@@ -1,0 +1,118 @@
+BUILD PROMPT: FINE-TUNE A BUSINESS ANALYSIS AGENT WITH LEXSI TOOLS
+
+You are my ML engineering partner. Implement a focused business-analysis agent for Track 3, Agentic Fine-tuning, of the Lexsi AI Safety and Alignment Hackathon. Start from the existing project and work toward a functioning trained agent, a fair before/after evaluation, and a clear demonstration. Research supports implementation; the next goal is executable progress.
+
+OBJECTIVE
+
+Build a small agent that reads business evidence, formalizes the decision, uses tools to select worthwhile investigations, incorporates their results, and makes a justified product-launch recommendation under a research budget.
+
+Fine-tune its underlying permitted Cohere model using AgentTune. Evaluate the base and fine-tuned model using AuditKIT plus our verifiable business metrics. Measure whether training reduces errors and wasted investigations while improving decisions. Improvement is a hypothesis to test, not a result to promise.
+
+The first version covers one decision: whether to launch a product. It is a simulated business-analysis environment with explicit assumptions and known scoring. Do not expand into a general consulting platform, investment adviser, autonomous company, or large multi-agent system.
+
+CONTEXT AND MATERIALS
+
+Team: Two-eyed Ravens. Track: Agentic Fine-tuning.
+
+The private repository is https://github.com/HatemSaadallah/lexsi-ai-hackathon . A local checkout or an attached lexsi-ai-hackathon-main.zip may be provided. Use the supplied working copy if present. Read its current instructions, README, PLAN.md, HANDOFF.md, BASELINE.md, tooling/TOOLING.md, and tooling/redteam/findings.md before editing. Check actual files and current state; documents may lag behind implementation. Preserve unrelated work and private materials. Do not assume authorization recorded in old collaboration logs applies to new external actions.
+
+The reviewed snapshot contains:
+- A standard-library simulator and classical policies: no research, random testing, information gain, myopic value of information, and exact Bayesian planning.
+- A harder conjunctive family where both demand and delivery capability must hold for launch to succeed.
+- Reproducible CPU results and tests. The original environment is nearly solved by simple policies.
+- Toy/random-model GPU checks and an AgentTune-to-AuditKIT bridge check.
+- No demonstrated real Tiny Aya episode, real-checkpoint training, or useful fine-tuning result in that snapshot.
+
+Previous hardware reports describe an RTX 4060 Laptop GPU with 8 GB VRAM and limited free disk. Treat these as historical reports, not properties of your current execution environment. Inspect current hardware and free space. Real-model access, memory, tokenizer behavior, tool formatting, and training feasibility must be verified.
+
+The intellectual basis is Camuffo, Gambardella, and Pignataro's work on scientific strategic decision-making: make assumptions explicit, compare explanations, collect useful evidence, revise beliefs, and decide when to act. The uploaded papers and RESEARCH.md provide context. The contribution is improving a model's execution of a defined workflow. Do not claim to solve fundamental uncertainty or improve human managerial outcomes without corresponding evidence.
+
+REQUIRED STACK AND PRIMARY SOURCES
+
+- Rules: https://hackathon.lexsi.ai/
+- Kickoff deck: https://hackathon.lexsi.ai/kickoff-slides/
+- AgentTune: https://github.com/Lexsi-Labs/AgentTune and https://agenttune.lexsi.ai/
+- AuditKIT: https://github.com/Lexsi-Labs/AuditKIT and https://auditkit.lexsi.ai/
+- Optional CuratorKIT: https://curatorkit.lexsi.ai/latest/
+- Candidate checkpoint: https://huggingface.co/CohereLabs/tiny-aya-global
+
+Use a currently permitted Cohere checkpoint. Verify current official rules, model access, license, exact revision, and supported training path. The kickoff deck specifies November 14, 2026, end of day AoE for initial submission; verify the date if this prompt is used later. Plan to finish internally on November 14.
+
+AgentTune must perform a meaningful part of actual fine-tuning, not just wrap inference while an unrelated script does all training. If its API delegates to TRL or requires a custom trainer factory, explain and test that integration. AuditKIT must evaluate real agent episodes, not only a fabricated example. Keep models, tools, prompts, and budgets aligned across comparisons.
+
+Prefer a small supervised fine-tuning/distillation pilot using verified tool trajectories. Do not force reinforcement learning onto constrained hardware. Verify the Track 3 scope for planner-generated demonstrations; describe their provenance accurately rather than calling them stronger-LLM teacher outputs. Add CuratorKIT only if it materially helps data quality. Do not add SafeTune, CircuitKIT, or other libraries solely to increase the repository count.
+
+IMPLEMENTATION PLAN
+
+Phase 1 — Resolve access and prove the real-model path.
+
+Inspect the existing environment and reproduce the relevant existing checks once. Load the real permitted checkpoint and tokenizer with a feasible precision/quantization configuration. Complete a forward pass, one model-generated valid tool call, and a short episode ending in a model-chosen decision. Then run one genuine optimizer step through the intended AgentTune training path. Verify finite loss, meaningful gradients, and saved/reloaded adapter behavior. Toy-model probes do not replace these checks.
+
+If access is blocked, identify the exact user action needed without revealing tokens. Continue environment and dataset work while waiting. Never automatically delete caches or change shared environments. Estimate training resources only after measuring real-model behavior.
+
+Phase 2 — Complete the task and tool interface.
+
+Implement one agent with these tools, adapting names to existing code where sensible:
+- read_case: returns a simulated memo, study descriptions, decision objective, and constraints.
+- set_problem: records the agent's structured interpretation of the case.
+- plan_investigation: computes possible investigations and stopping values from the agent's supplied model.
+- run_study: spends a specified research cost and returns a simulated observation/report.
+- record_result: records the agent's interpretation of an observation and updates its supplied model.
+- finish: records the actual launch/do-not-launch recommendation, explicit probabilities, evidence references, assumptions, and limitations.
+
+Fix the current schema mismatch before implementing the harder task. One prior_viable probability with binary study likelihoods cannot generally preserve the demand/capability information needed by the conjunctive family. Represent named joint hypotheses, a prior probability vector, payoffs for each action/state, study likelihoods by hypothesis, and costs/budget. Validate dimensions, normalization, probability bounds, and finite values. Use the existing Scenario representation if appropriate.
+
+The planning tool must support the declared planning horizon; do not silently expose only myopic values in a task designed to require lookahead. Its calculations use the agent's extracted inputs, not hidden answer keys. This allows extraction mistakes to affect the workflow and remain measurable.
+
+Preserve research spending and observation history across calls. Prevent resetting a budget through set_problem, double-recording an observation, fabricating an observation, or reusing an expired study result. Give observations unique IDs and validate their use. Do not supply hidden states, seeds, correct structured inputs, or evaluator objects to the model.
+
+An insufficient-evidence statement may describe uncertainty, but it still needs a defined operational consequence and score. Do not give abstention a free pass. Match the final recommendation to the agent's own action; never silently substitute the planner's better action during evaluation.
+
+Phase 3 — Build a small but meaningful benchmark and run the base agent.
+
+Create cases with business memos and study reports rendered into prose from known synthetic scenarios. Cover:
+- Research is useful versus stopping immediately is best.
+- Informative but irrelevant evidence.
+- Tight budgets and redundant or uninformative studies.
+- Demand and capability requiring complementary investigations.
+- Contradictory observations and noisy studies.
+- Changed study names, likelihoods, wording, and number formats.
+- Matching cases with a manager advocating launch versus opposing it, while actual evidence is unchanged.
+
+Only the case narrative and tool responses go to the agent. Keep initial assumptions distinct from observations. Label synthetic content clearly. The final test must use untouched scenario instances and held-out narrative templates; do not count multiple fields or paired versions of one scenario as independent observations.
+
+Run 5-10 smoke cases first. Then use a bounded exploratory base-model pilot, initially around 30-50 underlying scenarios if runtime permits. Compare a reasonable prompt with a stronger workflow prompt using schema validation and a fixed retry budget. Include the simple parser-plus-planner and correct-input planner as controls. Record concrete errors before choosing what to train.
+
+If the strongest prompt already solves the benchmark reliably, report that finding and identify a practically relevant remaining difficulty. Do not manufacture arbitrary complexity merely to make a model fail.
+
+Phase 4 — Create verified demonstrations and fine-tune.
+
+Use the planner and executable checks to create correct structured tool trajectories. Pilot with roughly 200-500 verified training episodes if resources permit; these are starting caps, not mandatory dataset sizes or guaranteed adequate samples. Keep validation and test cases separate before generation.
+
+Use varied business wording and include correct stopping, supported launches, rejected launches, and uncertainty. Each trajectory needs source scenario ID, generator version, observations, actions, and verification status. Avoid paper text and confidential material. If using a language model to paraphrase cases, verify all numerical and causal facts against the original scenario.
+
+Verify AgentTune's expected trajectory schema and loss masking. Train on the assistant's intended actions/outputs, not hidden oracle fields or accidental tool-result targets. First overfit a tiny diagnostic set to check the pipeline, then run one bounded supervised pilot with LoRA/quantization if actually supported. Freeze the final training configuration before final evaluation. Keep all failed runs visible.
+
+Phase 5 — Evaluate the saved adapter against the strong baseline.
+
+Reload the saved adapter and evaluate it using AuditKIT on the same tasks/tools/budgets as the base model. Preserve real EventLogs and implement project-specific scoring explicitly. Check the existing bridge gotcha: a finish tool call may not populate episode.final_answer; evaluate the actual finish event rather than marking every episode as failed.
+
+Primary outcome: decision value after research costs, or loss relative to the defined Bayesian planner. Score the action actually taken. Define the planner's information and integrate observation noise where tractable; a single terminal path can outperform its initial expected-value reference by chance, so aggregate appropriately.
+
+Secondary outcomes: exact field interpretation, valid tool calls, task completion, unnecessary spending/calls, probability accuracy/calibration, latency, and tokens. Separate business decision quality from format compliance. Charge research cost once. Report confidence intervals clustered by underlying scenario and the effective sample size. Fix the final evaluation size before seeing final-test outcomes; if resources limit precision, say so.
+
+The required comparison is strongest prompted base model versus fine-tuned same model with the same workflow. Larger models and classical controls are additional references. Report negative results, overhead, and cases where training hurts. Never claim improvement from one optimizer step, parameters changing, lower training loss alone, or a cherry-picked demonstration.
+
+Phase 6 — Prepare a clear demo and submission materials.
+
+Create a simple CLI or small interface showing the memo, extracted assumptions, tool calls, study costs, observations, final recommendation, and uncertainties. Show original and trained agents on the same cases without exposing hidden answer keys in their prompts.
+
+Prepare a concise README, reproducible commands, pinned versions/revisions, model/adapter card, dataset card, before/after table, limitations, and an HF Article draft following the current checklist. Separate public deliverables from the private repository's PDFs, extracts, logs, and credentials. Prepare publication locally; do not publish without explicit authorization.
+
+WORKING RULES AND DELIVERABLES
+
+Work incrementally in the existing project, following local instructions and preserving others' work. Default to reversible local actions and a small measured pilot. Do not spend money, start long paid jobs, contact people, upload private material, or delete files without authorization. Do not assume stored credentials may be exposed or copied. Keep dependencies isolated. Record what you actually executed versus what remains proposed or blocked.
+
+Deliver runnable code, meaningful tests, frozen experiment configurations, verified trajectories, a saved adapter if training succeeds, real evaluation results, demo commands, and submission drafts. Maintain a short handoff describing current state, results, blockers, and the next executable action. Provide timing and resource estimates grounded in measurements.
+
+Begin now by auditing the current checkout, identifying the smallest missing pieces, and attempting the real-model episode. Explain the implementation decisions briefly and proceed through the phases while resources allow. Ask only for essential missing information. Do not restart the broad literature review or spend the turn producing another plan instead of implementing it.

@@ -1,0 +1,127 @@
+{
+ "company": "Cotral Lab",
+ "frame": {
+  "objective": "Determine if Cotral Lab should expand its sales from employers to consumers, and if so, which consumer segments and value proposition to target.",
+  "constraints": [
+   "Cotral Lab has not publicly disclosed its plans to sell directly to consumers.",
+   "The company\u2019s current sales are primarily to employers, with no indication of a shift to consumer markets.",
+   "Financial data is not publicly available, so economic assumptions are speculative."
+  ],
+  "alternatives": [
+   "Do not enter the consumer market at all, focusing on employer sales.",
+   "Target a niche consumer segment (e.g., audiophiles, fitness enthusiasts) with a premium value proposition.",
+   "Expand to a broader consumer market (e.g., students, remote workers) with a mass-market value proposition.",
+   "Focus on B2B2C (Business-to-Business-to-Consumer) models, such as partnerships with employers for employee wellness programs.",
+   "Investigate the feasibility of a subscription model for hearing protection among consumers."
+  ]
+ },
+ "searches": [
+  "Hearing protection market trends, consumer demand, and competitor strategies"
+ ],
+ "theories": {
+  "T1": {
+   "claim": "Apple\u2019s marketing of AirPods Pro 2/3 with hearing protection features suggests a shift toward consumer-oriented hearing protection solutions, potentially indicating a latent demand for such products.",
+   "who_benefits": "Apple (via increased sales of AirPods Pro 2/3), hearing protection manufacturers, and consumers seeking noise-canceling solutions.",
+   "why_behaviour_changes": "Consumers may now prioritize hearing protection as a feature in premium audio devices, driven by awareness of noise-induced hearing loss and the need for workplace safety.",
+   "how_value_is_captured": "Apple captures value through higher sales of AirPods Pro 2/3, while hearing protection manufacturers benefit from increased demand for noise-canceling products.",
+   "assumptions": [
+    "Consumers are willing to pay a premium for hearing protection features in audio devices.",
+    "Apple\u2019s marketing strategy effectively communicates the value of hearing protection to its target audience.",
+    "The EN 352 standard remains relevant in the market."
+   ],
+   "predictions": [
+    "Increased adoption of hearing protection features in consumer electronics.",
+    "Competitors may introduce similar features to maintain market share.",
+    "Consumers may demand more noise-canceling options in future devices."
+   ],
+   "status": "kept"
+  },
+  "T2": {
+   "claim": "Lyreco\u2019s acquisition of Intersafe and Elacin suggests a strategic shift toward hearing protection solutions, potentially indicating a broader market opportunity beyond employer sales.",
+   "who_benefits": "Lyreco (diversification of product offerings), hearing protection manufacturers, and consumers seeking noise-canceling solutions.",
+   "why_behaviour_changes": "The acquisition may signal Lyreco\u2019s recognition of hearing protection as a growing consumer market, driven by health and wellness trends.",
+   "how_value_is_captured": "Lyreco captures value through expanded product lines, while hearing protection manufacturers benefit from increased demand.",
+   "assumptions": [
+    "The acquisition is a strategic move to enter the consumer hearing protection market.",
+    "Lyreco\u2019s diversification strategy aligns with consumer trends in noise-canceling devices.",
+    "The acquisition is not purely a cost-cutting measure."
+   ],
+   "predictions": [
+    "Lyreco may introduce hearing protection solutions in its existing product portfolio.",
+    "Competitors may respond by entering the consumer hearing protection market.",
+    "Consumers may increasingly view hearing protection as a standard feature in premium audio devices."
+   ],
+   "status": "rejected"
+  },
+  "T3": {
+   "claim": "Sordin\u2019s focus on hunting and shooting enthusiasts suggests a niche market for hearing protection, potentially indicating a latent demand for specialized hearing solutions.",
+   "who_benefits": "Sordin (diversification of product lines), hearing protection manufacturers, and niche consumers seeking tailored solutions.",
+   "why_behaviour_changes": "Hunters and shooters may prioritize hearing protection due to noise-canceling needs, driving demand for specialized products.",
+   "how_value_is_captured": "Sordin captures value through niche market expansion, while hearing protection manufacturers benefit from increased demand.",
+   "assumptions": [
+    "Hunters and shooters are a distinct consumer segment with specific hearing protection needs.",
+    "The X2 series addresses these needs effectively.",
+    "The market for hearing protection in this niche is growing."
+   ],
+   "predictions": [
+    "Sordin may introduce specialized hearing protection products for hunting and shooting.",
+    "Competitors may enter the niche market with similar offerings.",
+    "Consumers may increasingly seek hearing protection tailored to specific activities."
+   ],
+   "status": "open"
+  }
+ },
+ "assessments": [
+  {
+   "theory_id": "T1",
+   "evidence_id": "apple-en352",
+   "direction": "supports",
+   "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+   "class": "company_claim"
+  }
+ ],
+ "tests": {},
+ "revisions": [
+  {
+   "theory_id": "T1",
+   "status": "kept",
+   "reason": "Evidence from Apple\u2019s marketing strategy supports T1, indicating a potential shift toward consumer-oriented hearing protection solutions.",
+   "evidence_ids": [
+    "apple-en352"
+   ]
+  },
+  {
+   "theory_id": "T2",
+   "status": "rejected",
+   "reason": "The provided evidence contradicts T2, as the acquisition of Intersafe and Elacin aligns with a B2B2C strategy rather than direct consumer sales.",
+   "evidence_ids": [
+    "ela-lyreco"
+   ]
+  },
+  {
+   "theory_id": "T2",
+   "status": "rejected",
+   "reason": "The provided evidence contradicts T2, as the acquisition of Intersafe and Elacin aligns with a B2B2C strategy rather than direct consumer sales.",
+   "evidence_ids": [
+    "ela-lyreco"
+   ]
+  },
+  {
+   "theory_id": "T2",
+   "status": "rejected",
+   "reason": "The provided evidence contradicts T2, as the acquisition of Intersafe and Elacin aligns with a B2B2C strategy rather than direct consumer sales.",
+   "evidence_ids": [
+    "ela-lyreco"
+   ]
+  },
+  {
+   "theory_id": "T2",
+   "status": "rejected",
+   "reason": "The provided evidence contradicts T2, as the acquisition of Intersafe and Elacin aligns with a B2B2C strategy rather than direct consumer sales.",
+   "evidence_ids": [
+    "ela-lyreco"
+   ]
+  }
+ ],
+ "final": null
+}

@@ -1,0 +1,111 @@
+{
+ "company": "Cotral Lab",
+ "frame": {
+  "objective": "Determine if Cotral Lab should expand its sales from employers to consumers, and if so, which consumer segments and value proposition to target.",
+  "constraints": [
+   "Cotral Lab has not publicly disclosed its plans to sell directly to consumers.",
+   "The company\u2019s current sales are primarily to employers, with no indication of a shift to consumer markets.",
+   "Financial data is not publicly available, so economic assumptions are speculative."
+  ],
+  "alternatives": [
+   "Do not enter the consumer market at all, focusing on employer sales.",
+   "Target a niche consumer segment (e.g., audiophiles, fitness enthusiasts) with a premium value proposition.",
+   "Expand to a broader consumer market (e.g., all workers) with a mass-market value proposition.",
+   "Focus on B2B2C (Business-to-Business-to-Consumer) models, such as partnerships with employers for employee wellness programs.",
+   "Investigate the feasibility of a subscription model for hearing protection among consumers."
+  ]
+ },
+ "searches": [
+  "why people do not wear earplugs at music events",
+  "trial of earplugs at music events",
+  "earplugs comfort appearance young adults",
+  "earplugs for sleeping noise",
+  "Hearing protection adoption among young adults, barriers to use, and consumer behavior in music events."
+ ],
+ "theories": {
+  "T1": {
+   "claim": "Gen Z\u2019s hearing damage at music events stems from a combination of social stigma, lack of awareness, and inadequate hearing protection options, driving demand for discreet, user-friendly solutions.",
+   "who_benefits": "Cotral Lab, hearing protection manufacturers, and employers seeking employee wellness programs.",
+   "why_behaviour_changes": "Gen Z avoids wearing earplugs due to embarrassment, lack of awareness, and perceived discomfort, prompting a shift toward discreet, user-friendly solutions.",
+   "how_value_is_captured": "Premium pricing for discreet, high-quality hearing protection, partnerships with employers for employee wellness programs, and subscription-based models.",
+   "assumptions": [
+    "Gen Z prioritizes social acceptance and discretion when choosing hearing protection.",
+    "employers are willing to invest in hearing protection programs for employee wellness.",
+    "Discreet, high-quality hearing protection is a viable alternative to traditional earplugs."
+   ],
+   "predictions": [
+    "Gen Z will increasingly adopt discreet hearing protection solutions if they are perceived as socially acceptable and user-friendly.",
+    "Employers will prioritize hearing protection programs for employee wellness, driving demand for employer partnerships."
+   ],
+   "status": "open"
+  },
+  "T2": {
+   "claim": "Gen Z\u2019s hearing damage at music events is driven by a combination of social stigma, lack of awareness, and inadequate hearing protection options. This creates an opportunity for Cotral Lab to position itself as a provider of discreet, high-quality hearing protection tailored to Gen Z\u2019s needs.",
+   "who_benefits": "Cotral Lab, hearing protection manufacturers, employers seeking employee wellness programs.",
+   "why_behaviour_changes": "Gen Z avoids wearing earplugs due to embarrassment and lack of awareness, prompting a shift toward discreet, user-friendly solutions.",
+   "how_value_is_captured": "Premium pricing for discreet hearing protection, partnerships with employers for employee wellness programs, and subscription-based models.",
+   "assumptions": [
+    "Gen Z prioritizes social acceptance and discretion when choosing hearing protection.",
+    "Employers are willing to invest in hearing protection programs for employee wellness.",
+    "Discreet, high-quality hearing protection is a viable alternative to traditional earplugs."
+   ],
+   "predictions": [
+    "Gen Z will increasingly adopt discreet hearing protection solutions if they are perceived as socially acceptable and user-friendly.",
+    "Employers will prioritize hearing protection programs for employee wellness, driving demand for employer partnerships."
+   ],
+   "status": "open"
+  },
+  "T3": {
+   "claim": "Hearing protection adoption among young adults is driven by a combination of workplace wellness initiatives, employer-driven programs, and a growing awareness of noise-induced hearing damage. This creates an opportunity for Cotral Lab to position itself as a provider of discreet, high-quality hearing protection tailored to employers and their employees.",
+   "who_benefits": "Cotral Lab, hearing protection manufacturers, employers seeking employee wellness programs.",
+   "why_behaviour_changes": "Employers are increasingly investing in hearing protection programs to promote employee wellness, while young adults are becoming more aware of noise-induced hearing damage. This drives demand for discreet, high-quality hearing protection.",
+   "how_value_is_captured": "Employer partnerships for wellness programs, premium pricing for discreet hearing protection, and subscription-based models.",
+   "assumptions": [
+    "Employers are willing to invest in hearing protection programs for employee wellness.",
+    "Young adults are becoming more aware of noise-induced hearing damage.",
+    "Discreet, high-quality hearing protection is a viable alternative to traditional earplugs."
+   ],
+   "predictions": [
+    "Employers will prioritize hearing protection programs for employee wellness, driving demand for employer partnerships.",
+    "Young adults will increasingly adopt discreet hearing protection solutions if they are perceived as socially acceptable and user-friendly."
+   ],
+   "status": "open"
+  },
+  "T4": {
+   "claim": "Gen Z\u2019s hearing damage at music events is driven by a combination of social stigma, lack of awareness, and inadequate hearing protection options, creating an opportunity for Cotral Lab to position itself as a provider of discreet, high-quality hearing protection tailored to Gen Z\u2019s needs.",
+   "who_benefits": "Cotral Lab, hearing protection manufacturers, employers seeking employee wellness programs.",
+   "why_behaviour_changes": "Gen Z avoids wearing earplugs due to embarrassment and lack of awareness, prompting a shift toward discreet, user-friendly solutions.",
+   "how_value_is_captured": "Premium pricing for discreet hearing protection, partnerships with employers for employee wellness programs, and subscription-based models.",
+   "assumptions": [
+    "Gen Z prioritizes social acceptance and discretion when choosing hearing protection.",
+    "Employers are willing to invest in hearing protection programs for employee wellness.",
+    "Discreet, high-quality hearing protection is a viable alternative to traditional earplugs."
+   ],
+   "predictions": [
+    "Gen Z will increasingly adopt discreet hearing protection solutions if they are perceived as socially acceptable and user-friendly.",
+    "Employers will prioritize hearing protection programs for employee wellness, driving demand for employer partnerships."
+   ],
+   "status": "open"
+  },
+  "T5": {
+   "claim": "The hearing protection market is expanding due to increasing awareness of noise-induced hearing damage, particularly among young adults. This creates an opportunity for Cotral Lab to position itself as a provider of discreet, high-quality hearing protection tailored to employers and their employees.",
+   "who_benefits": "Cotral Lab, hearing protection manufacturers, employers seeking employee wellness programs.",
+   "why_behaviour_changes": "Employers are increasingly investing in hearing protection programs to promote employee wellness, while young adults are becoming more aware of noise-induced hearing damage. This drives demand for discreet, high-quality hearing protection.",
+   "how_value_is_captured": "Employer partnerships for wellness programs, premium pricing for discreet hearing protection, and subscription-based models.",
+   "assumptions": [
+    "Employers are willing to invest in hearing protection programs for employee wellness.",
+    "Young adults are becoming more aware of noise-induced hearing damage.",
+    "Discreet, high-quality hearing protection is a viable alternative to traditional earplugs."
+   ],
+   "predictions": [
+    "Employers will prioritize hearing protection programs for employee wellness, driving demand for employer partnerships.",
+    "Young adults will increasingly adopt discreet hearing protection solutions if they are perceived as socially acceptable and user-friendly."
+   ],
+   "status": "open"
+  }
+ },
+ "assessments": [],
+ "tests": {},
+ "revisions": [],
+ "final": null
+}

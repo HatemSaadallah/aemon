@@ -1,0 +1,61 @@
+{
+ "kind": "synthetic_counterexample_not_model_evidence",
+ "probabilities": {
+  "peft_off": [
+   0.6,
+   0.4
+  ],
+  "gguf_off": [
+   0.64,
+   0.36
+  ],
+  "peft_on": [
+   0.8,
+   0.2
+  ],
+  "gguf_on": [
+   0.78,
+   0.22
+  ]
+ },
+ "old_on_gap": 0.09531017980432477,
+ "old_off_gap": 0.10536051565782645,
+ "old_added_gap": -0.01005033585350168,
+ "aligned_effect": {
+  "tokens": [
+   {
+    "token_id": 0,
+    "status": "observed",
+    "peft_on": -0.2231435513142097,
+    "gguf_on": -0.2484613592984996,
+    "peft_off": -0.5108256237659907,
+    "gguf_off": -0.4462871026284195,
+    "peft_effect": 0.287682072451781,
+    "gguf_effect": 0.19782574332991987,
+    "effect_difference": -0.08985632912186114,
+    "on_error": -0.025317807984289897,
+    "off_error": 0.06453852113757125
+   },
+   {
+    "token_id": 1,
+    "status": "observed",
+    "peft_on": -1.6094379124341003,
+    "gguf_on": -1.5141277326297755,
+    "peft_off": -0.916290731874155,
+    "gguf_off": -1.0216512475319814,
+    "peft_effect": -0.6931471805599453,
+    "gguf_effect": -0.49247648509779407,
+    "effect_difference": 0.20067069546215122,
+    "on_error": 0.09531017980432477,
+    "off_error": -0.10536051565782645
+   }
+  ],
+  "observed": 2,
+  "requested": 2,
+  "max_abs_on_error": 0.09531017980432477,
+  "max_abs_off_error": 0.10536051565782645,
+  "max_abs_effect_difference": 0.20067069546215122,
+  "note": "Diagnostic on this fixed support, not a maximum over different token sets or a qualification score."
+ },
+ "selection_eligible": false
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · Strategy Lab</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="login-page">
+  <main class="login-main">
+    <form class="card login-card" id="login" novalidate>
+      <h1>Strategy Lab</h1>
+      <p class="muted">Sign in to investigate a company with the agent.</p>
+      <label for="name">Name</label>
+      <input id="name" name="name" autocomplete="username" autocapitalize="none" spellcheck="false" required maxlength="64">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256">
+      <p class="small bad-text" id="login-error" role="alert" hidden></p>
+      <button type="submit" class="primary" id="login-submit">Sign in</button>
+      <p class="muted small">Accounts are created on this computer with <code>python app/users.py add NAME</code>.</p>
+    </form>
+  </main>
+  <script src="/static/login.js"></script>
+</body>
+</html>

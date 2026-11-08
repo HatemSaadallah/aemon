@@ -1,0 +1,46 @@
+{
+  "selection_eligible": false,
+  "kind": "saved_cluster_receipt_inventory",
+  "files": {
+    "second_adapter_config.json": {
+      "sha256": "76a899facfb871fd57474f239a3f5d132e158cce77b2bd705bcf9853f9d4d1d1",
+      "bytes": 1198
+    },
+    "student_third_train_conversion.json": {
+      "sha256": "37d3bd8cd1f61d8cb10cfbc5b52ca6b1751d2c1809115778692cbcf85f89b147",
+      "bytes": 5609,
+      "prefix_sum": 187,
+      "common_length_sum": 205,
+      "observed_forks": 1,
+      "short_exhausted": 4
+    },
+    "third_adapter_config.json": {
+      "sha256": "3559e85951063a4ebbda8ff387e954dfa894efa83bd716d312c89aed14a31655",
+      "bytes": 1198
+    },
+    "val_second_conversion.json": {
+      "sha256": "0f941c1875613e2d76247de560fc393542ef3818c5374349a7a07bbb359cc3f8",
+      "bytes": 5600,
+      "prefix_sum": 202,
+      "common_length_sum": 205,
+      "observed_forks": 1,
+      "short_exhausted": 4
+    },
+    "val_third_conversion.json": {
+      "sha256": "37d3bd8cd1f61d8cb10cfbc5b52ca6b1751d2c1809115778692cbcf85f89b147",
+      "bytes": 5609,
+      "prefix_sum": 187,
+      "common_length_sum": 205,
+      "observed_forks": 1,
+      "short_exhausted": 4
+    },
+    "val_third_diag_conversion.json": {
+      "sha256": "37d3bd8cd1f61d8cb10cfbc5b52ca6b1751d2c1809115778692cbcf85f89b147",
+      "bytes": 5609,
+      "prefix_sum": 187,
+      "common_length_sum": 205,
+      "observed_forks": 1,
+      "short_exhausted": 4
+    }
+  }
+}

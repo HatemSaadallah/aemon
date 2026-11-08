@@ -1,0 +1,32 @@
+{
+  "source": "https://huggingface.co/CohereLabs/tiny-aya-global-GGUF/resolve/a602ea7eeec3a4ad6f77a1b8cf6a53512824922b/tiny-aya-global-q4_k_m.gguf",
+  "repo": "CohereLabs/tiny-aya-global-GGUF",
+  "revision": "a602ea7eeec3a4ad6f77a1b8cf6a53512824922b",
+  "file": "tiny-aya-global-q4_k_m.gguf",
+  "gated_base_repo_revision": "af89d219b53ed9b13b8a4645f9c8028973510324",
+  "metadata": {
+    "general.architecture": "cohere2",
+    "general.type": "model",
+    "general.name": "Tiny Aya Global",
+    "general.size_label": "3.3B",
+    "general.license": "cc-by-nc-4.0",
+    "general.languages": [
+      "en"
+    ],
+    "cohere2.block_count": 36,
+    "cohere2.context_length": 500000,
+    "cohere2.embedding_length": 2048,
+    "cohere2.feed_forward_length": 11008,
+    "cohere2.attention.head_count": 16,
+    "cohere2.attention.head_count_kv": 4,
+    "cohere2.rope.freq_base": 50000.0,
+    "cohere2.attention.layer_norm_epsilon": 9.999999747378752e-06,
+    "cohere2.attention.key_length": 128,
+    "cohere2.attention.value_length": 128,
+    "cohere2.logit_scale": 1.0,
+    "cohere2.attention.sliding_window": 4096,
+    "cohere2.vocab_size": 262144,
+    "cohere2.rope.dimension_count": 128,
+    "cohere2.rope.scaling.type": "none"
+  }
+}

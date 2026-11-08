@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-03",
+  "offline_checker_probes": 14,
+  "http_smoke": "passed",
+  "candidate_inference": "not_run",
+  "candidate_qualified": false,
+  "config_sha256": "c7aebf735fbd526af26211d05c1e7a7333db4706ec455c8080820c253d8786c2",
+  "scope": "scripted checker fixtures and loopback HTTP only; no model or cluster calls"
+}

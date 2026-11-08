@@ -1,0 +1,40 @@
+{
+  "judge": "claude",
+  "instrument_sha256": "1647ce9c35c88f2f6787a42401736be790b3313805851673bc97b21685e9ed9c",
+  "status": "not_qualified",
+  "statistics": {
+    "positive": {
+      "correct": 9,
+      "n": 12,
+      "clusters": 12,
+      "rate": 0.75,
+      "wilson_95": [
+        0.46768966087934005,
+        0.9110599603710386
+      ]
+    },
+    "negative": {
+      "correct": 20,
+      "n": 20,
+      "clusters": 20,
+      "rate": 1.0,
+      "wilson_95": [
+        0.8388698745050667,
+        1.0
+      ]
+    }
+  },
+  "errors": [
+    "dceb298d728e6400: judgment differs from raw response",
+    "fd3dd4bf556b1979: judgment differs from raw response",
+    "905b97e65b2c040a: judgment differs from raw response",
+    "98f75c4ab626299a: judgment differs from raw response",
+    "0e3184f1b3aa2234: 'response'",
+    "4ad06106624594e9: judgment differs from raw response",
+    "a6d915eadf1afca1: judgment differs from raw response",
+    "9319af467672f93d: judgment differs from raw response"
+  ],
+  "missed_required_flags": [],
+  "evaluation_only": true,
+  "note": "Frozen config_v1 statistical rule and keys, with separately declared API/CLI transport settings. No claim of natural-episode accuracy or training suitability."
+}

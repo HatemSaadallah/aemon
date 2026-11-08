@@ -1,0 +1,26 @@
+{
+ "gate": "conversion-v2",
+ "passed": true,
+ "failures": [],
+ "points": 11,
+ "min_cosine": 0.998963,
+ "max_residual": 0.0803,
+ "greedy_divergences": [
+  {
+   "case": "hellberg-new-evidence-irrelevant",
+   "stage": "theories",
+   "offset": 21,
+   "peft_margins": [
+    0.0,
+    0.9999999999999999,
+    11.375
+   ],
+   "base_alone_diverged": true
+  }
+ ],
+ "gguf_sha256": "41794b5756b9e0f87c58dd14e451756d15c897d595886dee9921181298fdb9d1",
+ "thresholds": {
+  "min_cosine": 0.99,
+  "max_residual": 0.15
+ }
+}

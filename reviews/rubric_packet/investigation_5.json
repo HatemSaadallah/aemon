@@ -1,0 +1,149 @@
+{
+ "company": "Moldex-Metric",
+ "frame": {
+  "objective": "Find out whether any consumer group offers Moldex a worthwhile new business before committing money",
+  "constraints": [
+   "Financial data is not public",
+   "Sells through distributors today",
+   "Hearing protectors may fall under strict PPE rules"
+  ],
+  "alternatives": [
+   "Launch a branded consumer earplug",
+   "Supply venues and event operators as a business customer",
+   "Offer foam plugs for sleep",
+   "Stay with workplace customers and do not enter"
+  ]
+ },
+ "searches": [
+  "music events ear plugs use trial availability",
+  "nonusers never considering hearing protection",
+  "looks comfort appreciation earplugs",
+  "promoters free ear protection Switzerland",
+  "earplugs for sleeping flying",
+  "hyperacusis do not wear earplugs all the time",
+  "Moldex distributors where to buy"
+ ],
+ "theories": {
+  "T1": {
+   "claim": "Appearance holds back use among concert-goers, so a discreet redesign would open a consumer segment for an industrial maker.",
+   "who_benefits": "People who attend loud music events and avoid visible earplugs",
+   "why_behaviour_changes": "Embarrassment falls when the product does not look like workwear, so they keep it in.",
+   "how_value_is_captured": "A branded product sold at a higher price per pair than bulk workplace plugs",
+   "assumptions": [
+    "Embarrassment, not forgetting, is what stops wearing"
+   ],
+   "predictions": [
+    "Observed wearing is higher for a discreet design than for a plain plug when both are available at the same price"
+   ],
+   "status": "open"
+  },
+  "T2": {
+   "claim": "People do not wear protection because it is not to hand at the moment of need, so supply through venues matters more than redesign.",
+   "who_benefits": "Event-goers who did not plan ahead, and venues that want to protect audiences",
+   "why_behaviour_changes": "A prompt and a plug at the door turn a forgotten intention into use.",
+   "how_value_is_captured": "Bulk sales to venue operators, close to how the company already sells through business buyers",
+   "assumptions": [
+    "Venues will pay for or stock plugs",
+    "Forgetting explains more non-use than dislike does"
+   ],
+   "predictions": [
+    "Observed wearing is higher where plugs are offered at the door than where the same plugs are only sold online beforehand"
+   ],
+   "status": "open"
+  },
+  "T3": {
+   "claim": "Sleepers have a stronger recurring need than concert-goers, so foam plugs for sleep are a better first consumer market than music.",
+   "who_benefits": "Adults whose sleep is disturbed by noise",
+   "why_behaviour_changes": "Disturbed sleep is felt every night, so the problem reminds them to buy again.",
+   "how_value_is_captured": "Repeat purchases of low-cost foam plugs through retail or online",
+   "assumptions": [
+    "Foam plugs made for workers can be comfortable overnight"
+   ],
+   "predictions": [
+    "The repeat purchase rate is higher for sleep buyers than for music buyers over the same period"
+   ],
+   "status": "open"
+  }
+ },
+ "assessments": [
+  {
+   "theory_id": "T1",
+   "evidence_id": "bockstael-2015-looks",
+   "direction": "supports",
+   "quote": "mainly depended on comfort and looks",
+   "class": "verified_observation"
+  },
+  {
+   "theory_id": "T1",
+   "evidence_id": "long-2024-nonusers",
+   "direction": "contradicts",
+   "quote": "HP nonusers most frequently cited never considering HP",
+   "class": "verified_observation"
+  },
+  {
+   "theory_id": "T2",
+   "evidence_id": "crutzen-2021-celebrate-safe",
+   "direction": "supports",
+   "quote": "use of ear plugs at music events",
+   "class": "verified_observation"
+  },
+  {
+   "theory_id": "T2",
+   "evidence_id": "sonova-2019-swiss-free-plugs",
+   "direction": "contradicts",
+   "quote": "obliged to hand out free ear protection",
+   "class": "company_claim"
+  },
+  {
+   "theory_id": "T3",
+   "evidence_id": "eu-guidelines-sleep-not-ppe",
+   "direction": "neutral",
+   "quote": "earplugs for sleeping and earplugs for flying",
+   "class": "verified_observation"
+  },
+  {
+   "theory_id": "T3",
+   "evidence_id": "nhs-hyperacusis",
+   "direction": "contradicts",
+   "quote": "do not wear earplugs or muffs all the time",
+   "class": "verified_observation"
+  }
+ ],
+ "tests": {
+  "X1": {
+   "name": "Door offer against discreet design at small venues",
+   "theories": [
+    "T1",
+    "T2"
+   ],
+   "method": "At matched events, offer either plain plugs at the door, discreet plugs at the door, or plain plugs online beforehand. Observers count who is wearing protection.",
+   "sample": "About 12 events with observers at each",
+   "measure": "Share of attendees observed wearing protection",
+   "prediction_by_theory": {
+    "T1": "Discreet plugs at the door beat plain plugs at the door",
+    "T2": "Both door arms beat online, with no gap between discreet and plain"
+   },
+   "decision_rule": "Pursue venue supply if door arms beat online by at least 5 points and the design gap is under 2 points",
+   "cost_eur": 15000,
+   "weeks": 10
+  }
+ },
+ "revisions": [],
+ "final": {
+  "recommendation": "Do not launch a consumer brand yet. Test venue supply first, because it is closest to how Moldex already sells and the evidence for availability is the strongest, though bundled with prompting.",
+  "target_customer": "Venue and event operators first, for people who attend loud events",
+  "value_proposition": "Protection available at the moment of need, supplied by a trusted workplace maker",
+  "favoured_theory": "T2",
+  "next_action": "Run the door offer test at small venues before any product redesign",
+  "uncertainty": "No study separates availability from prompting, economics are unknown, and venue willingness to pay is untested",
+  "would_change_if": [
+   "Discreet plugs clearly beat plain plugs at the door",
+   "Venues refuse to stock or pay for plugs"
+  ],
+  "evidence_ids": [
+   "crutzen-2021-celebrate-safe",
+   "long-2024-nonusers",
+   "sonova-2019-swiss-free-plugs"
+  ]
+ }
+}

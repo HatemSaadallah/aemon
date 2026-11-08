@@ -1,0 +1,223 @@
+{
+ "open arm": {
+  "episodes": 12,
+  "changed_verdicts": []
+ },
+ "first controller": {
+  "episodes": 12,
+  "changed_verdicts": [
+   {
+    "case": "hellberg-new-evidence-comfort",
+    "check": "revision",
+    "old": true,
+    "new": null,
+    "detail": "held no theory the new evidence bears on"
+   }
+  ]
+ },
+ "corrected controller": {
+  "episodes": 15,
+  "changed_verdicts": [
+   {
+    "case": "hellberg-new-evidence-irrelevant",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "changed nothing on irrelevant evidence"
+   }
+  ]
+ },
+ "Claude control": {
+  "episodes": 12,
+  "changed_verdicts": [
+   {
+    "case": "moldex-base",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "moldex-new-evidence-looks",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "moldex-new-evidence-looks",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "recorded ['kept'] and gave a reason"
+   },
+   {
+    "case": "moldex-new-evidence-comfort",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "cotral-new-evidence-comfort",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "recorded ['kept'] and gave a reason"
+   },
+   {
+    "case": "hellberg-new-evidence-looks",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "hellberg-new-evidence-comfort",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "hellberg-new-evidence-favours-looks",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   }
+  ]
+ },
+ "Claude smoke": {
+  "episodes": 1,
+  "changed_verdicts": [
+   {
+    "case": "moldex-new-evidence-looks",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   }
+  ]
+ },
+ "Claude, corrected controller": {
+  "episodes": 15,
+  "changed_verdicts": [
+   {
+    "case": "moldex-new-evidence-comfort",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "moldex-new-evidence-irrelevant",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "changed nothing on irrelevant evidence"
+   },
+   {
+    "case": "cotral-new-evidence-looks",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "cotral-new-evidence-comfort",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "cotral-new-evidence-favours-looks",
+    "check": "revision",
+    "old": true,
+    "new": null,
+    "detail": "held no theory the new evidence bears on"
+   },
+   {
+    "case": "cotral-new-evidence-irrelevant",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "cotral-new-evidence-irrelevant",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "changed nothing on irrelevant evidence"
+   },
+   {
+    "case": "hellberg-base",
+    "check": "no_invented_numbers",
+    "old": false,
+    "new": true,
+    "detail": "every number has a source"
+   },
+   {
+    "case": "hellberg-new-evidence-irrelevant",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "changed nothing on irrelevant evidence"
+   }
+  ]
+ },
+ "Aya Expanse": {
+  "episodes": 3,
+  "changed_verdicts": [
+   {
+    "case": "moldex-new-evidence-looks",
+    "check": "revision",
+    "old": true,
+    "new": null,
+    "detail": "held no theory the new evidence bears on"
+   },
+   {
+    "case": "cotral-new-evidence-irrelevant",
+    "check": "revision",
+    "old": true,
+    "new": false,
+    "detail": "changed ['T2'] on evidence that bears on no theory"
+   }
+  ]
+ },
+ "Aya Expanse, stricter prompt": {
+  "episodes": 9,
+  "changed_verdicts": [
+   {
+    "case": "moldex-new-evidence-looks",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "recorded ['revised'] and gave a reason"
+   },
+   {
+    "case": "cotral-new-evidence-irrelevant",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "changed nothing on irrelevant evidence"
+   },
+   {
+    "case": "cotral-new-evidence-irrelevant",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "changed nothing on irrelevant evidence"
+   },
+   {
+    "case": "cotral-new-evidence-irrelevant",
+    "check": "revision",
+    "old": false,
+    "new": true,
+    "detail": "changed nothing on irrelevant evidence"
+   }
+  ]
+ }
+}

@@ -1,0 +1,71 @@
+{
+  "selection_eligible": false,
+  "kind": "partial_cluster_diagnosis",
+  "job": 740313,
+  "arms": {
+    "second": {
+      "gguf_sha256": "be8a6b004dee357e6feab9a1404fc7f5c9dbbe3c3eeb79cbb4e97fb7cea0c1bd",
+      "tensor_payload_sha256": "fa6ccf55b299528ea02003152af3f916ef669acf97d1a32ca0b1873a626e43ef",
+      "status": "factor_pair_matches_expected_cast",
+      "checks": {
+        "native_coverage": true,
+        "gguf_coverage": true,
+        "alpha_metadata_matches_expected_f32": true,
+        "runtime_scale_matches": true,
+        "adapter_type": true,
+        "all_shapes_match": true,
+        "all_factors_match_expected_cast": true,
+        "all_factors_finite": true
+      },
+      "factors": 504,
+      "cast_exact_factors": 504,
+      "native_tensor_dtype": [
+        "torch.float32"
+      ],
+      "max_relative_l2_factor_cast_error": 0.001729490466796276,
+      "fixed_vector_probe_count": 252,
+      "max_relative_l2_factorized_update_error": 0.003617939476417961,
+      "header_native_tensor_hashes_match_audit": true,
+      "header_adapter_config_hash_matches_audit": true,
+      "lora_module_count": 252,
+      "native_scales": [
+        2.0
+      ],
+      "merged": false,
+      "rows_sha256": "b3a81817358e0f1755c0f98b256e27955ae3bc69bf60d05a96746fb709a773a8",
+      "margin_replay_status": "not_recorded_before_failure"
+    },
+    "third": {
+      "gguf_sha256": "3399908f0af5bdc0a6cc6f2d5b9790591438a3b542b78b16f4919d28b1ee228a",
+      "tensor_payload_sha256": "0825232e737fdd5532b110ff07b8c2977bfb54d64dcaa82e9d783b0a6e3889e3",
+      "status": "factor_pair_matches_expected_cast",
+      "checks": {
+        "native_coverage": true,
+        "gguf_coverage": true,
+        "alpha_metadata_matches_expected_f32": true,
+        "runtime_scale_matches": true,
+        "adapter_type": true,
+        "all_shapes_match": true,
+        "all_factors_match_expected_cast": true,
+        "all_factors_finite": true
+      },
+      "factors": 504,
+      "cast_exact_factors": 504,
+      "native_tensor_dtype": [
+        "torch.float32"
+      ],
+      "max_relative_l2_factor_cast_error": 0.001719237339010161,
+      "fixed_vector_probe_count": 252,
+      "max_relative_l2_factorized_update_error": 0.003852906603948344,
+      "header_native_tensor_hashes_match_audit": true,
+      "header_adapter_config_hash_matches_audit": true,
+      "lora_module_count": 252,
+      "native_scales": [
+        2.0
+      ],
+      "merged": false,
+      "rows_sha256": "2ba92e5f6ff5fa3cc1761302d4e24ae42805c1e76866866463a9aba6cf70e597",
+      "margin_replay_status": "not_recorded_before_failure"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+ "summary": {
+  "verified": 6
+ },
+ "results": [
+  {
+   "id": "mdx-spark-blister",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-spark-display",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-plugstation",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-retail-listing",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-sleep-review-1",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-sleep-review-2",
+   "status": "verified",
+   "detail": "exact"
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{
+  "reviewed_commit": "a4d1e27a77ad4c48a15b4d15579ec5838664871a",
+  "source_sha256": {
+    "vram_probe.py": "1708ed2572a55c582acef1db72f1db018cf0b97db27ca587d8d68983cb5f319f",
+    "grpo_gpu_smoke.py": "d038ef8cd89102d9bd90c781b08b5b157571d23f74b34549019dbb85b1d2a3d3",
+    "redteam/independent_check.py": "46623cb59c5ac0c207be29a8ea1d7f2bd0d774bcf3c1ce3488581a1817dd366d",
+    "redteam/lookahead_family.py": "0e976588e7e26cbe3142e7c9f13646be8af5cd0aeb8baf8f9fe9c1241ea6fd88"
+  }
+}

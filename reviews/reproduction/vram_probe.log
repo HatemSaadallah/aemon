@@ -1,0 +1,15 @@
+Failed to load /home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Failed to load /home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /home/USER/Desktop/lexsi-ai-hackathon/.venv/lib/python3.12/site-packages/torchao/_C_cutlass_90a.abi3.so
+/home/USER/Desktop/lexsi-ai-hackathon-claude/scientific_decision_lab/tooling/vram_probe.py:75: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  return {'batch': batch, 'length': length, 'loss': round(float(loss), 3), 'seconds': round(time.perf_counter() - start, 2),
+loaded 2409 MB
+{'batch': 1, 'length': 256, 'loss': 12.476, 'seconds': 0.64, 'peak_allocated_MB': 3283, 'peak_reserved_MB': 3912}
+{'batch': 1, 'length': 512, 'loss': 12.479, 'seconds': 0.67, 'peak_allocated_MB': 4215, 'peak_reserved_MB': 5448}
+{'batch': 2, 'length': 512, 'loss': 12.48, 'seconds': 1.24, 'peak_allocated_MB': 5831, 'peak_reserved_MB': 6598}
+{'batch': 1, 'length': 1024, 'loss': 12.477, 'seconds': 1.22, 'peak_allocated_MB': 5831, 'peak_reserved_MB': 6598}
+{'batch': 2, 'length': 1024, 'OOM': True}
+{'batch': 4, 'length': 512, 'OOM': True}
+{'batch': 4, 'length': 1024, 'OOM': True}
+{'batch': 2, 'length': 2048, 'OOM': True}
+{'prompt_tokens': 512, 'new_tokens': 48, 'seconds': 2.68, 'tokens_per_second_including_prompt_pass': 17.9, 'peak_allocated_MB': 2711, 'logits_finite': True}

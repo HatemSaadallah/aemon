@@ -1,0 +1,66 @@
+{
+ "trained": false,
+ "note": "Scripted negative controls, with no model. A pass shows what the guards cannot see.",
+ "results": {
+  "always_keep": {
+   "undermines": {
+    "cases": 6,
+    "revision_passed": 6,
+    "finished": 6,
+    "guards_cleared": 2
+   },
+   "supports": {
+    "cases": 3,
+    "revision_passed": 3,
+    "finished": 3,
+    "guards_cleared": 1
+   },
+   "irrelevant": {
+    "cases": 3,
+    "revision_passed": 3,
+    "finished": 3,
+    "guards_cleared": 1
+   }
+  },
+  "always_revise": {
+   "undermines": {
+    "cases": 6,
+    "revision_passed": 6,
+    "finished": 6,
+    "guards_cleared": 2
+   },
+   "supports": {
+    "cases": 3,
+    "revision_passed": 3,
+    "finished": 3,
+    "guards_cleared": 1
+   },
+   "irrelevant": {
+    "cases": 3,
+    "revision_passed": 0,
+    "finished": 3,
+    "guards_cleared": 0
+   }
+  },
+  "always_reject": {
+   "undermines": {
+    "cases": 6,
+    "revision_passed": 6,
+    "finished": 6,
+    "guards_cleared": 1
+   },
+   "supports": {
+    "cases": 3,
+    "revision_passed": 0,
+    "finished": 3,
+    "guards_cleared": 0
+   },
+   "irrelevant": {
+    "cases": 3,
+    "revision_passed": 0,
+    "finished": 3,
+    "guards_cleared": 0
+   }
+  }
+ }
+}

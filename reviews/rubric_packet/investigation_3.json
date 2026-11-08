@@ -1,0 +1,105 @@
+{
+ "company": "Moldex-Metric",
+ "frame": {
+  "objective": "Determine if Moldex-Metric should target consumers directly, and if so, which consumer segments, value proposition, and key investigations before investment.",
+  "constraints": [
+   "No company-specific data is available.",
+   "Test budget: 20,000 EUR, 12 weeks.",
+   "No financial data for Moldex-Metric."
+  ],
+  "alternatives": [
+   "Do not enter the consumer market (no direct sales).",
+   "Target existing workplace clients for direct sales.",
+   "Target specific consumer segments (e.g., DIYers, hobbyists) with a value proposition emphasizing convenience or customization.",
+   "Target niche markets (e.g., audiophiles, outdoor enthusiasts) with a value proposition emphasizing performance or style."
+  ]
+ },
+ "searches": [
+  "why people do not wear earplugs at music events",
+  "trial of earplugs at music events",
+  "earplugs comfort appearance young adults",
+  "earplugs for sleeping noise",
+  "Hearing protection behaviors among Gen Z, barriers to adoption, and effectiveness of direct-to-consumer hearing protecti"
+ ],
+ "theories": {
+  "T1": {
+   "claim": "Moldex-Metric should target Gen Z directly with a value proposition emphasizing convenience and social acceptance, as they are less likely to use hearing protection due to discomfort and social stigma.",
+   "who_benefits": "Gen Z consumers",
+   "why_behaviour_changes": "Gen Z may adopt hearing protection if it is designed to be comfortable and stylish, reducing the stigma associated with wearing earplugs.",
+   "how_value_is_captured": "Increased sales of hearing protection products, premium pricing for stylish and comfortable designs.",
+   "assumptions": [
+    "Gen Z is willing to adopt hearing protection if it is designed to be comfortable and stylish.",
+    "The stigma associated with wearing earplugs is a significant barrier to adoption."
+   ],
+   "predictions": [
+    "Gen Z will be more likely to adopt hearing protection if it is designed to be comfortable and stylish.",
+    "Moldex-Metric will capture premium value by targeting Gen Z with a value proposition emphasizing convenience and social acceptance."
+   ],
+   "status": "open"
+  },
+  "T2": {
+   "claim": "Moldex-Metric should target Gen Z with a value proposition emphasizing aesthetics and social acceptance, as musicians and young adults prioritize appearance and style in hearing protection.",
+   "who_benefits": "Gen Z consumers",
+   "why_behaviour_changes": "Gen Z will prefer hearing protection that aligns with their fashion sense and social status, rather than functional features.",
+   "how_value_is_captured": "Increased sales of stylish hearing protection products, premium pricing for trendy designs.",
+   "assumptions": [
+    "Gen Z values aesthetics and style in hearing protection.",
+    "Musicians and young adults are influential in shaping fashion trends."
+   ],
+   "predictions": [
+    "Gen Z will prioritize stylish hearing protection over functional features.",
+    "Moldex-Metric will capture premium value by targeting Gen Z with a value proposition emphasizing aesthetics."
+   ],
+   "status": "open"
+  },
+  "T3": {
+   "claim": "Moldex-Metric should target workplace clients with a value proposition emphasizing safety and cost-effectiveness, as they are likely to invest in hearing protection for their employees.",
+   "who_benefits": "Workplace clients (Moldex-Metric's current customers)",
+   "why_behaviour_changes": "Workplaces will adopt hearing protection if it is cost-effective and ensures employee safety.",
+   "how_value_is_captured": "Increased sales of hearing protection products to workplaces, long-term contracts.",
+   "assumptions": [
+    "Workplaces prioritize employee safety and cost-effectiveness.",
+    "Moldex-Metric can offer competitive pricing and reliable products."
+   ],
+   "predictions": [
+    "Workplaces will adopt hearing protection if it is cost-effective and ensures employee safety.",
+    "Moldex-Metric will capture value through long-term contracts with workplaces."
+   ],
+   "status": "open"
+  },
+  "T4": {
+   "claim": "Moldex-Metric should target Gen Z with a value proposition emphasizing convenience and ease of use, as they may be less likely to adopt hearing protection due to discomfort or complexity.",
+   "who_benefits": "Gen Z consumers",
+   "why_behaviour_changes": "Gen Z will adopt hearing protection if it is easy to use and convenient, reducing the perceived effort.",
+   "how_value_is_captured": "Increased sales of hearing protection products, premium pricing for user-friendly designs.",
+   "assumptions": [
+    "Gen Z prioritizes convenience and ease of use.",
+    "Complexity is a significant barrier to adopting hearing protection."
+   ],
+   "predictions": [
+    "Gen Z will adopt hearing protection if it is easy to use and convenient.",
+    "Moldex-Metric will capture premium value by targeting Gen Z with a value proposition emphasizing convenience."
+   ],
+   "status": "open"
+  },
+  "T5": {
+   "claim": "Moldex-Metric should target workplace clients with a value proposition emphasizing durability and reliability, as they are likely to invest in hearing protection for their employees.",
+   "who_benefits": "Workplace clients (Moldex-Metric's current customers)",
+   "why_behaviour_changes": "Workplaces will adopt hearing protection if it is durable and reliable, ensuring long-term use.",
+   "how_value_is_captured": "Increased sales of hearing protection products to workplaces, long-term contracts.",
+   "assumptions": [
+    "Workplaces prioritize durability and reliability.",
+    "Moldex-Metric can offer high-quality, durable products."
+   ],
+   "predictions": [
+    "Workplaces will adopt hearing protection if it is durable and reliable.",
+    "Moldex-Metric will capture value through long-term contracts with workplaces."
+   ],
+   "status": "open"
+  }
+ },
+ "assessments": [],
+ "tests": {},
+ "revisions": [],
+ "final": null
+}

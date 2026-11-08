@@ -1,0 +1,103 @@
+{
+ "company": "Moldex-Metric",
+ "frame": {
+  "objective": "Determine if Moldex-Metric should target consumers directly, and if so, which consumer segments, value proposition, and key investigations before investment.",
+  "constraints": [
+   "No company-specific data is available.",
+   "Test budget: 20,000 EUR, 12 weeks.",
+   "No financial data for Moldex-Metric."
+  ],
+  "alternatives": [
+   "Do not enter the consumer market (no direct sales).",
+   "Target existing workplace clients for direct sales.",
+   "Target specific consumer segments (e.g., DIYers, hobbyists) with a value proposition emphasizing convenience or customization.",
+   "Target niche markets (e.g., audiophiles, outdoor enthusiasts) with a value proposition emphasizing performance or style."
+  ]
+ },
+ "searches": [
+  "Hearing protection market trends, consumer behavior, and competitor strategies"
+ ],
+ "theories": {
+  "T1": {
+   "claim": "Moldex-Metric should target specific consumer segments with a value proposition emphasizing convenience or customization.",
+   "who_benefits": "DIYers, hobbyists, and outdoor enthusiasts who prioritize personalized hearing protection.",
+   "why_behaviour_changes": "Consumers are willing to pay a premium for tailored solutions that fit their specific needs.",
+   "how_value_is_captured": "Premium pricing for custom designs and personalized packaging.",
+   "assumptions": [
+    "Consumers are willing to pay more for hearing protection that fits their specific needs.",
+    "There is a growing demand for personalized hearing protection products."
+   ],
+   "predictions": [
+    "Increased sales among DIYers and hobbyists.",
+    "Higher customer satisfaction due to tailored solutions."
+   ],
+   "status": "revised"
+  },
+  "T2": {
+   "claim": "Moldex-Metric should target workplace clients with a value proposition emphasizing compliance and safety standards.",
+   "who_benefits": "Workplaces that require hearing protection to meet regulatory standards.",
+   "why_behaviour_changes": "Workplaces are willing to invest in hearing protection to ensure compliance with safety regulations.",
+   "how_value_is_captured": "Premium pricing for hearing protection solutions that meet specific standards.",
+   "assumptions": [
+    "Workplaces prioritize compliance with safety regulations.",
+    "There is a growing demand for hearing protection solutions in the workplace."
+   ],
+   "predictions": [
+    "Increased sales among workplace clients.",
+    "Higher customer satisfaction due to reliable solutions."
+   ],
+   "status": "open"
+  },
+  "T3": {
+   "claim": "Moldex-Metric should target consumers who prioritize personalized hearing protection solutions.",
+   "who_benefits": "DIYers, hobbyists, and outdoor enthusiasts who value customization.",
+   "why_behaviour_changes": "Consumers are willing to pay a premium for hearing protection tailored to their specific needs.",
+   "how_value_is_captured": "Premium pricing for custom designs and personalized packaging.",
+   "assumptions": [
+    "Consumers are willing to pay more for hearing protection that fits their specific needs.",
+    "There is a growing demand for personalized hearing protection products."
+   ],
+   "predictions": [
+    "Increased sales among DIYers and hobbyists.",
+    "Higher customer satisfaction due to tailored solutions."
+   ],
+   "status": "open"
+  },
+  "T4": {
+   "claim": "Moldex-Metric should target workplace clients with a value proposition emphasizing convenience and ease of use.",
+   "who_benefits": "Workplaces looking for hearing protection solutions that are easy to implement and manage.",
+   "why_behaviour_changes": "Workplaces are willing to invest in hearing protection solutions that simplify their safety protocols.",
+   "how_value_is_captured": "Premium pricing for hearing protection solutions that reduce implementation and management costs.",
+   "assumptions": [
+    "Workplaces prioritize ease of use in safety solutions.",
+    "There is a growing demand for hearing protection solutions that are easy to manage."
+   ],
+   "predictions": [
+    "Increased sales among workplace clients.",
+    "Higher customer satisfaction due to streamlined solutions."
+   ],
+   "status": "open"
+  }
+ },
+ "assessments": [
+  {
+   "theory_id": "T1",
+   "evidence_id": "apple-en352",
+   "direction": "supports",
+   "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+   "class": "company_claim"
+  }
+ ],
+ "tests": {},
+ "revisions": [
+  {
+   "theory_id": "T1",
+   "status": "revised",
+   "reason": "New evidence suggests that DIYers, hobbyists, and outdoor enthusiasts are not the primary target market for hearing protection.",
+   "evidence_ids": [
+    "apple-en352"
+   ]
+  }
+ ],
+ "final": null
+}

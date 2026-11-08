@@ -1,0 +1,104 @@
+{
+ "claude": {
+  "base": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    0.698,
+    0.604,
+    0.812
+   ]
+  },
+  "irrelevant": {
+   "pairs": 11,
+   "mean_and_95_interval": [
+    0.606,
+    0.202,
+    1.022
+   ]
+  },
+  "supports": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    0.657,
+    0.435,
+    0.815
+   ]
+  },
+  "undermines": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    0.602,
+    0.389,
+    0.833
+   ]
+  }
+ },
+ "codex": {
+  "base": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    0.99,
+    0.812,
+    1.167
+   ]
+  },
+  "irrelevant": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    1.148,
+    0.648,
+    1.593
+   ]
+  },
+  "supports": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    1.065,
+    0.935,
+    1.222
+   ]
+  },
+  "undermines": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    0.917,
+    0.778,
+    1.194
+   ]
+  }
+ },
+ "mean": {
+  "base": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    0.844,
+    0.708,
+    0.979
+   ]
+  },
+  "irrelevant": {
+   "pairs": 11,
+   "mean_and_95_interval": [
+    0.869,
+    0.394,
+    1.333
+   ]
+  },
+  "supports": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    0.861,
+    0.681,
+    1.023
+   ]
+  },
+  "undermines": {
+   "pairs": 12,
+   "mean_and_95_interval": [
+    0.759,
+    0.583,
+    1.014
+   ]
+  }
+ }
+}

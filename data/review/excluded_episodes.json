@@ -1,0 +1,9 @@
+{
+ "8d84332468b9b74532a160fdef7dc2162cd2aaa3f8262167be1d92de2d6ab62c": {
+  "case": "masimo-base",
+  "report": "cap3_new0.json",
+  "date": "2026-11-05",
+  "reviewer": "Claude, after outside review",
+  "reason": "weak evidence-to-theory links (a clearance and a price read as purchase motives), a straw-man rival theory, a challenge with no shared mechanism, and a test that measures persuasion rather than distinguishing motivations"
+ }
+}

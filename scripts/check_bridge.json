@@ -1,0 +1,12 @@
+{
+  "simulated": true,
+  "custom_predicate": {
+    "low_regret": "success",
+    "high_regret": "failure"
+  },
+  "events": 7,
+  "coverage": "full",
+  "final_answer": null,
+  "predicate_on_final_answer": "failure",
+  "predicate_on_finish_call": "success"
+}

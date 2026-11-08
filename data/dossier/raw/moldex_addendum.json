@@ -1,0 +1,66 @@
+{
+ "accessed": "2026-11-01",
+ "note": "Added after outside feedback showed the original research missed Moldex small-pack products.",
+ "records": [
+  {
+   "id": "mdx-spark-blister",
+   "claim": "Moldex Europe lists a 5-pair blister pack of Spark Plugs with a storage container.",
+   "type": "company_claim",
+   "url": "https://www.moldex-europe.com/en/details/spark-plugs/",
+   "source_title": "Moldex Spark Plugs Earplugs - Moldex Europe",
+   "source_date": "unknown",
+   "excerpt": "5 pairs of earplugs and a storage container in blister packaging",
+   "access_limitation": "Packaging only. Who buys it is not stated."
+  },
+  {
+   "id": "mdx-spark-display",
+   "claim": "Moldex Europe lists a display of 20 five-pair blisters.",
+   "type": "company_claim",
+   "url": "https://www.moldex-europe.com/en/details/spark-plugs/",
+   "source_title": "Moldex Spark Plugs Earplugs - Moldex Europe",
+   "source_date": "unknown",
+   "excerpt": "5 pairs of earplugs and a storage pack in blister packaging, 20 blisters in a display",
+   "access_limitation": "Packaging only. Where displays are sold is not stated."
+  },
+  {
+   "id": "mdx-plugstation",
+   "claim": "Moldex Europe lists earplug dispensers holding 250 pairs.",
+   "type": "company_claim",
+   "url": "https://www.moldex-europe.com/en/details/spark-plugs/",
+   "source_title": "Moldex Spark Plugs Earplugs - Moldex Europe",
+   "source_date": "unknown",
+   "excerpt": "250 pairs of earplugs in a dispenser",
+   "access_limitation": "Marketed for workplaces on the pages we read."
+  },
+  {
+   "id": "mdx-retail-listing",
+   "claim": "A UK and Irish reseller lists a Moldex 5-pair pack as a retail pack.",
+   "type": "verified_observation",
+   "url": "https://alive-sr.co.uk/products/moldex-7812-spark-plugs-earplugs-retail-pack",
+   "source_title": "Moldex 7812 Spark Plugs Earplugs Retail Pack - Alive",
+   "source_date": "unknown",
+   "excerpt": "MOLDEX 7812 Spark Plugs Earplugs Retail Pack 5 Pairs",
+   "access_limitation": "One reseller listing. Sales volumes and buyers are unknown."
+  },
+  {
+   "id": "mdx-sleep-review-1",
+   "claim": "An affiliate review of sleep earplugs names Moldex Pura-Fit its best for noise reduction.",
+   "type": "company_claim",
+   "url": "https://www.yourbestdigs.com/reviews/the-best-ear-plugs-for-sleeping/",
+   "source_title": "The Best Ear Plugs for Sleeping - Your Best Digs",
+   "source_date": "unknown",
+   "excerpt": "Moldex – Purafit foam ear plugs have the highest noise-reduction rating possible",
+   "access_limitation": "Affiliate site with Amazon links. Shows third-party use, not a Moldex consumer strategy."
+  },
+  {
+   "id": "mdx-sleep-review-2",
+   "claim": "A safety reseller guide recommends a Moldex plug for sleepers.",
+   "type": "company_claim",
+   "url": "https://wcsafety.com/blogs/guides/best-disposable-earplugs-for-sleeping",
+   "source_title": "Best Disposable Earplugs for Sleeping - WC Safety",
+   "source_date": "unknown",
+   "excerpt": "Editorial verdict: For most sleepers the Moldex Softies win — exceptionally soft foam at NRR 33, cordless, in a refill jar.",
+   "access_limitation": "A reseller guide. Shows third-party recommendation, not a Moldex consumer strategy."
+  }
+ ]
+}

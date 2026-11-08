@@ -1,0 +1,16 @@
+{
+ "what": "sha256 of the converted adapters each development evaluation ran, against the GGUF each gate v2 replay recorded (job 745459, 2026-11-07)",
+ "final": {
+  "gated (reports/conversion/final_gate_v2.json gguf_sha256)": "41794b5756b9e0f87c58dd14e451756d15c897d595886dee9921181298fdb9d1",
+  "runs/eval/final_gate_adapter.gguf": "41794b5756b9e0f87c58dd14e451756d15c897d595886dee9921181298fdb9d1",
+  "runs/eval/dev_final_adapter.gguf (evaluated, job 745247)": "41794b5756b9e0f87c58dd14e451756d15c897d595886dee9921181298fdb9d1",
+  "runs/eval/invalid_quota_20261107/dev_final_adapter.gguf (excluded run, converted separately)": "41794b5756b9e0f87c58dd14e451756d15c897d595886dee9921181298fdb9d1",
+  "runs/final_pilot/adapter/adapter_model.safetensors (PEFT source)": "740c4a9b2f415c7b83162cb463d9eaec56a34feff090d9bf882680914eb3a112"
+ },
+ "second": {
+  "gated (reports/conversion/second_gate_v2.json gguf_sha256)": "be8a6b004dee357e6feab9a1404fc7f5c9dbbe3c3eeb79cbb4e97fb7cea0c1bd",
+  "runs/eval/second_adapter.gguf": "be8a6b004dee357e6feab9a1404fc7f5c9dbbe3c3eeb79cbb4e97fb7cea0c1bd",
+  "runs/eval/dev_second_newstate_adapter.gguf (evaluated, job 745248)": "be8a6b004dee357e6feab9a1404fc7f5c9dbbe3c3eeb79cbb4e97fb7cea0c1bd"
+ },
+ "reading": "Each evaluated GGUF is byte-identical to the GGUF its gate v2 replay checked; three separate conversions of the final adapter produced the same bytes. From commit 0377eae the evaluation job also writes <name>_adapter.gguf.sha256 itself."
+}

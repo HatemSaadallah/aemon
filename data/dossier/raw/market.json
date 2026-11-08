@@ -1,0 +1,991 @@
+{
+ "accessed": "2026-11-01",
+ "records": [
+  {
+   "id": "ramakers-2016-rct",
+   "topic": "Recreational: earplug efficacy",
+   "claim": "Randomized single-blind trial at an outdoor Amsterdam festival, 51 adult volunteers on a 4.5-hour visit: temporary threshold shift occurred in 8% of ears with earplugs and 42% of unprotected ears. This shows earplugs protect when worn. It does not test why people choose to wear them; people already intending to wear earplugs were excluded.",
+   "type": "verified_observation",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/27054284/",
+   "source_title": "Effectiveness of Earplugs in Preventing Recreational Noise-Induced Hearing Loss: A Randomized Clinical Trial",
+   "source_date": "2016-06-01",
+   "excerpt": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "Efficacy only. Plugs were assigned, so it is silent on willingness, looks, comfort or access."
+    },
+    {
+     "theory": "T3",
+     "direction": "context",
+     "note": "Same limit: it says nothing about distribution."
+    }
+   ],
+   "study_design": "Randomized single-blind clinical trial; n=51; one festival",
+   "access_limitation": "PubMed abstract read; full text not read"
+  },
+  {
+   "id": "crutzen-2021-celebrate-safe",
+   "topic": "Recreational: distribution and prompts",
+   "claim": "Pre-registered cluster-randomised trial at 15 Dutch music events with 3,836 observations of whether visitors wore plugs: the intervention bundle (pre-event message, signs showing where to buy, sales at busy spots, an 'ear check' on arrival) gave 23% wearing against 14% in controls. Plugs were sold, not free. The bundle cannot separate availability from prompting or social cues.",
+   "type": "verified_observation",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/33026876/",
+   "source_title": "Promoting ear plugs at music events: evaluation of the Celebrate Safe approach",
+   "source_date": "2021-05 (Epub 2020-10-07)",
+   "excerpt": "A multilevel model, taking into account nesting of visitors within events, revealed that use of ear plugs at music events in the experimental condition was …",
+   "bears_on": [
+    {
+     "theory": "T3",
+     "direction": "supports",
+     "note": "Best causal evidence in this file, and it uses observed wearing rather than self-report. It supports a point-of-event bundle, not availability alone."
+    },
+    {
+     "theory": "T1",
+     "direction": "contradicts",
+     "note": "Indirect: use rose with no product redesign, so better looks are not necessary for some gain. It does not show that looks are unimportant."
+    }
+   ],
+   "study_design": "Pre-registered cluster-randomised controlled trial; k=15 events; N=3836 observations",
+   "access_limitation": "PubMed abstract read; full text not read"
+  },
+  {
+   "id": "beach-2016-provision",
+   "topic": "Recreational: distribution",
+   "claim": "51 regular music-venue patrons were allocated to low- or high-information groups and all received one-size-fits-all filtered earplugs. Self-reported use at 4 and 16 weeks was equal, and the authors conclude access mattered rather than information. Both arms received plugs, so the abstract shows no no-earplug control and the effect of provision itself is not isolated.",
+   "type": "verified_observation",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
+   "source_title": "Providing earplugs to young adults at risk encourages protective behaviour in music venues",
+   "source_date": "2016-06 (Epub 2015-02-06)",
+   "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+   "bears_on": [
+    {
+     "theory": "T3",
+     "direction": "supports",
+     "note": "Direct but weak: small sample, self-report, no no-provision arm."
+    },
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "The plugs were filtered music earplugs, so this concerns access to decent plugs and does not test appearance."
+    }
+   ],
+   "study_design": "Two-arm allocation study with 4- and 16-week follow-up; n=51; self-report",
+   "access_limitation": "PubMed abstract read; full text not read"
+  },
+  {
+   "id": "loughran-2021-availability",
+   "topic": "Recreational: distribution and prompts",
+   "claim": "UK-based qualitative interviews with 20 adults, 8 of whom had used earplugs: both users and never-users pointed to missing prompts and poor availability of earplugs.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8701360/",
+   "source_title": "Identifying Targets for Interventions to Increase Earplug Use in Noisy Recreational Settings: A Qualitative Interview Study",
+   "source_date": "2021-12-07",
+   "excerpt": "and our findings have revealed two clear targets for both ever- and never-performers that could be addressed in future interventions: (1) A lack of clear …",
+   "bears_on": [
+    {
+     "theory": "T3",
+     "direction": "supports",
+     "note": "Direct but small and qualitative. It speaks to what people say, not to behaviour."
+    }
+   ],
+   "study_design": "Qualitative semi-structured telephone interviews; n=20",
+   "access_limitation": "none"
+  },
+  {
+   "id": "loughran-2021-comfort",
+   "topic": "Recreational: comfort",
+   "claim": "Same 20-person interview study: never-users expected earplugs to be uncomfortable, while people who had used them found them comfortable.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8701360/",
+   "source_title": "Identifying Targets for Interventions to Increase Earplug Use in Noisy Recreational Settings: A Qualitative Interview Study",
+   "source_date": "2021-12-07",
+   "excerpt": "never-performers had the opinion that earplugs would lack comfort; however, comparatively ever-performers found earplugs to be comfortable",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "contradicts",
+     "note": "Partly: discomfort is expected by non-users more than reported by users. That points to perception and trial, not necessarily a product flaw. Users are also self-selected, and the sample is small."
+    }
+   ],
+   "study_design": "Qualitative semi-structured telephone interviews; n=20",
+   "access_limitation": "none"
+  },
+  {
+   "id": "bogoch-2005-appearance",
+   "topic": "Recreational: appearance",
+   "claim": "Questionnaire of 204 attendees (75% response) at four rock concerts at a Toronto venue, mean age 20.6: not being concerned about how earplugs look was associated with saying they would use protection if handed out free. The outcome is stated willingness, and the survey is cross-sectional.",
+   "type": "verified_observation",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/15682701/",
+   "source_title": "Perceptions about hearing protection and noise-induced hearing loss of attendees of rock concerts",
+   "source_date": "2005-01 to 2005-02",
+   "excerpt": "Previous use of hearing protection, a higher score on a scale of readiness for behavioural change (Prochaska scale) and lack of concern about the appearance …",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "supports",
+     "note": "The most direct published link between appearance and willingness that I found, but it is correlational, hypothetical and from 2005."
+    },
+    {
+     "theory": "T3",
+     "direction": "contradicts",
+     "note": "Mildly: if appearance concern limits willingness even when plugs are free, availability alone would not reach everyone."
+    }
+   ],
+   "study_design": "Cross-sectional questionnaire; n=204; four concerts",
+   "access_limitation": "PubMed abstract read; PMC listing exists but full text not read"
+  },
+  {
+   "id": "long-2024-nonusers",
+   "topic": "Recreational: reasons for non-use",
+   "claim": "Cross-sectional online survey of 2,352 adults from online music communities (mean age 29): the most cited reasons among non-users were never having considered protection and music quality. Respondents are self-selected music-community members, and the phrase 'apathy about it affecting music quality' is ambiguous as written.",
+   "type": "verified_observation",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37811692/",
+   "source_title": "New Paradigm of Music Listening: Hearing Protection Perceptions and Treatment Decision-Making Among Music Venue Attendees",
+   "source_date": "2024-03 (Epub 2023-10-09)",
+   "excerpt": "HP nonusers most frequently cited never considering HP (14.45%) and apathy about it affecting music quality (12.71%).",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "contradicts",
+     "note": "Indirect: appearance is not a top reason in the abstract. The appearance percentage, if measured, was not visible to me."
+    },
+    {
+     "theory": "T2",
+     "direction": "contradicts",
+     "note": "Indirect: discomfort is not a top reason in the abstract."
+    },
+    {
+     "theory": "T3",
+     "direction": "supports",
+     "note": "Indirect: 'never considering' fits a salience or prompt problem better than a product problem."
+    }
+   ],
+   "study_design": "Cross-sectional online survey; n=2352",
+   "access_limitation": "Abstract only. Publisher full text returned HTTP 403, so the full reason list could not be read"
+  },
+  {
+   "id": "gilles-2014-reasons",
+   "topic": "Recreational: reasons for non-use",
+   "claim": "Interviews with 41 young adults at a youth-club event plus an online questionnaire completed by 749 young adults: the main reasons for low use were forgetting, finding protection uncomfortable, and never having thought about it.",
+   "type": "verified_observation",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25209038/",
+   "source_title": "A little bit less would be great: adolescents' opinion towards music levels",
+   "source_date": "2014-09 to 2014-10",
+   "excerpt": "The main reasons given for the low use of HP were that adolescents forget to use them, consider them as uncomfortable and that they never …",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "supports",
+     "note": "Discomfort is named as a main reason, alongside two non-comfort reasons, so it is not shown to be the main obstacle."
+    },
+    {
+     "theory": "T3",
+     "direction": "supports",
+     "note": "Forgetting and not thinking of it are about the moment of need."
+    },
+    {
+     "theory": "T1",
+     "direction": "contradicts",
+     "note": "Indirect: appearance is not listed among the main reasons in the abstract. Absence from an abstract is weak evidence."
+    }
+   ],
+   "study_design": "Field interviews (n=41) and online questionnaire (n=749); self-selected",
+   "access_limitation": "PubMed abstract read; full text not read"
+  },
+  {
+   "id": "bockstael-2015-looks",
+   "topic": "Recreational: appearance and comfort",
+   "claim": "Repeated-session listening study: 59 young adults (18-30) not professionally involved in music wore five commercially available protectors for 30 minutes each at club-music levels. Their appreciation depended mainly on comfort and looks. This measures liking in a test room, not whether anyone goes on to wear them.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4900482/",
+   "source_title": "Musician earplugs: Appreciation and protection",
+   "source_date": "2015-07 to 2015-08",
+   "excerpt": "In this test group, the reported appreciation mainly depended on comfort and looks, while differences in sound quality were less noticeable.",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "supports",
+     "note": "Supports looks affecting preference among earplugs. It does not show looks change whether people wear any at all."
+    },
+    {
+     "theory": "T2",
+     "direction": "supports",
+     "note": "Same caveat, and comfort and looks were not separated as causes of real-world use."
+    }
+   ],
+   "study_design": "Repeated-session lab listening study; n=59; 5 earplug types",
+   "access_limitation": "none"
+  },
+  {
+   "id": "rnid-2026-embarrassed",
+   "topic": "Recreational: appearance and use rates",
+   "claim": "RNID, a UK hearing charity, reported in August 2026 on a survey of Gen Z adults (20-29): 7% always used earplugs at loud events in the past year and one quarter would feel 'embarrassed' to be seen wearing them. This is a non-peer-reviewed campaign release; the page does not give the sample size or method.",
+   "type": "company_claim",
+   "url": "https://rnid.org.uk/2026/08/dont-lose-the-music-music-events-leave-gen-z-with-hearing-damage/",
+   "source_title": "Don't lose the music: Music events leave Gen Z with hearing damage",
+   "source_date": "2026-08-25",
+   "excerpt": "Just 7% of Gen Z adults say they have always used earplugs at loud music events in the last 12 months, while only one in …",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "supports",
+     "note": "Stigma is real for a sizeable minority, but three quarters did not report it, and stated embarrassment is not observed behaviour."
+    }
+   ],
+   "study_design": "Charity-commissioned survey; sample size and method not stated on page",
+   "access_limitation": "Non-peer-reviewed. Methods not available"
+  },
+  {
+   "id": "rnid-2026-reasons",
+   "topic": "Recreational: reasons for non-use",
+   "claim": "Same RNID 2026 survey: 37% believe earplugs reduce sound quality, more than a third think they are uncomfortable, and 28% forget them. Compared with the 25% who report embarrassment in the same release, appearance ranks below sound quality, comfort and forgetting. RNID's statement that the first two beliefs are false is the charity's own view.",
+   "type": "company_claim",
+   "url": "https://rnid.org.uk/2026/08/dont-lose-the-music-music-events-leave-gen-z-with-hearing-damage/",
+   "source_title": "Don't lose the music: Music events leave Gen Z with hearing damage",
+   "source_date": "2026-08-25",
+   "excerpt": "Although earplugs have become more popular in recent years, our research shows there is still a long way to go: 37% believe they reduce sound …",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "supports",
+     "note": "Over a third cite comfort, though this is a belief and sound quality is cited at least as often."
+    },
+    {
+     "theory": "T3",
+     "direction": "supports",
+     "note": "Forgetting at 28% is a timing or carrying problem."
+    },
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "The closest thing here to a head-to-head ranking: embarrassment (25%) trails these reasons. Same survey, so comparable, but percentages are unweighted statements."
+    }
+   ],
+   "study_design": "Charity-commissioned survey; sample size and method not stated on page",
+   "access_limitation": "Non-peer-reviewed. Methods not available"
+  },
+  {
+   "id": "psych-review-2025-comfort",
+   "topic": "Recreational: comfort",
+   "claim": "Pre-registered systematic review of psychological correlates of hearing protection in adolescents and young adults (82 studies, 24 usable for associations): across the five studies measuring it, about three quarters did not agree that earplugs are uncomfortable.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12175190/",
+   "source_title": "Psychological correlates of hearing protective behaviors in adolescents and young adults: a systematic review",
+   "source_date": "2025-06-17",
+   "excerpt": "Furthermore, about a three quarters of participants did not agree with the statement ‘Earplugs are uncomfortable’, measured in five studies.",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "contradicts",
+     "note": "Direct on prevalence: most young people do not hold the belief. A quarter still do, and the review reports comfort-type barriers as a target, so comfort may matter for a subgroup."
+    }
+   ],
+   "study_design": "Systematic review, PRISMA, pre-registered; 82 studies; pooled agreement from 5 studies",
+   "access_limitation": "none"
+  },
+  {
+   "id": "sonova-2019-swiss-free-plugs",
+   "topic": "Recreational: distribution",
+   "claim": "Sonova, a hearing-aid company, reports through its foundation's survey that although Swiss promoters must hand out free ear protection above 93 dB(A), only 11% of Swiss respondents always wear protection and 57% never do. There is no before-and-after or comparison group, and Sonova's suggestion that the rule explains low Swiss tinnitus rates is speculation.",
+   "type": "company_claim",
+   "url": "https://www.sonova.com/dulcet-tones-or-party-till-your-ears-ring/",
+   "source_title": "Dulcet tones – or party till your ears ring?",
+   "source_date": "2019-07-23",
+   "excerpt": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 …",
+   "bears_on": [
+    {
+     "theory": "T3",
+     "direction": "contradicts",
+     "note": "Indirect: mandated free supply coexists with most people not wearing protection consistently. It is a company survey with no counterfactual, so wearing could have been lower without the rule."
+    }
+   ],
+   "study_design": "Company-foundation cross-national survey; no comparison over time",
+   "access_limitation": "Company-published. Survey methods not on page"
+  },
+  {
+   "id": "who-2022-standard",
+   "topic": "Public health: safe listening",
+   "claim": "WHO's March 2022 global standard for safe listening venues lists making personal hearing protection available, with instructions, among its recommended features. This is a normative recommendation and not evidence that doing so changes behaviour.",
+   "type": "verified_observation",
+   "url": "https://www.who.int/news/item/02-03-2022-who-releases-new-standard-to-tackle-rising-threat-of-hearing-loss",
+   "source_title": "WHO releases new standard to tackle rising threat of hearing loss",
+   "source_date": "2022-03-02",
+   "excerpt": "(4) making personal hearing protection available to audiences including instructions on use",
+   "bears_on": [
+    {
+     "theory": "T3",
+     "direction": "context",
+     "note": "Shows policy direction and a possible venue channel. It is not outcome evidence."
+    }
+   ],
+   "study_design": "n/a (standard announcement)",
+   "access_limitation": "Standard's full PDF not read; news release used"
+  },
+  {
+   "id": "occ-review-2023-barriers",
+   "topic": "Occupational: barriers",
+   "claim": "Systematic literature review of hearing protection use among industrial workers (2006-2021 literature): workers' reluctance was linked to discomfort from heat and humidity and to communication difficulties.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9965930/",
+   "source_title": "A Systematic Literature Review of the Factors Influencing Hearing Protection Device Usage among Industrial Workers",
+   "source_date": "2023-02-08",
+   "excerpt": "Specifically, past researchers found that reluctance to use HPD was due to discomfort experienced by workers attributed to heat, humidity, and communication difficulties.",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "supports",
+     "note": "Supports comfort for all-shift, mandated wear. Transfer is doubtful: heat and long wear differ from a few voluntary hours at a concert, though communication may transfer."
+    },
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "This passage does not mention looks. Workplace use is driven by rules, so silence here says little about consumers."
+    }
+   ],
+   "study_design": "Systematic literature review (PRISMA)",
+   "access_limitation": "none"
+  },
+  {
+   "id": "tikka-2017-fit",
+   "topic": "Fit and real-world protection",
+   "claim": "Cochrane review of workplace interventions: in two RCTs (140 participants, moderate-quality evidence), instructions for insertion improved earplug attenuation by 8.59 dB compared with no instruction.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6353150/",
+   "source_title": "Interventions to prevent occupational noise-induced hearing loss",
+   "source_date": "2017-07-07",
+   "excerpt": "Two RCTs showed that, with instructions for insertion, the attenuation of noise by earplugs was 8.59 dB better (95% CI 6.92 dB to 10.25 dB) …",
+   "bears_on": [
+    {
+     "theory": "T3",
+     "direction": "context",
+     "note": "Occupational, but it suggests that handing plugs out without fit guidance may under-deliver protection."
+    },
+    {
+     "theory": "T2",
+     "direction": "context",
+     "note": "Fit is a separate failure mode from comfort; a comfortable plug can still protect poorly."
+    }
+   ],
+   "study_design": "Cochrane systematic review; this finding from 2 RCTs",
+   "access_limitation": "Abstract read on PMC; full review not read"
+  },
+  {
+   "id": "couth-2022-musicians",
+   "topic": "Other customers: musicians",
+   "claim": "Mixed-methods study of 80 early-career musicians (18-26): 42.5% used protection at least weekly and 22.5% never, with barriers including effects on listening and performing and low concern about noise. Note that this is a recruited sample and music use is self-reported.",
+   "type": "verified_observation",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/34406107/",
+   "source_title": "Identifying barriers and facilitators of hearing protection use in early-career musicians: a basis for designing interventions to promote uptake and sustained use",
+   "source_date": "2022-06 (Epub 2021-08-18)",
+   "excerpt": "42.5% percent of participants reported using HPDs at least once a week, 35% less than once a week, and 22.5% reported never using HPDs for …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "supports",
+     "note": "Shows an engaged group with an unmet need, and already higher use than general attendees. Being a small group, it says nothing on market size."
+    },
+    {
+     "theory": "T2",
+     "direction": "context",
+     "note": "For this group the barrier is performance and sound, not comfort as such."
+    }
+   ],
+   "study_design": "Mixed methods; questionnaires and interviews; n=80",
+   "access_limitation": "PubMed abstract read; full text not read"
+  },
+  {
+   "id": "basner-2026-sleep",
+   "topic": "Other customers: sleep",
+   "claim": "Seven-night polysomnography lab study of 25 healthy adults (mean age 28.5): earplugs mitigated nearly all effects of intermittent environmental noise on sleep but began to fail at 65 dBA, while adding pink noise worsened sleep structure. It is a short lab study with young healthy adults using foam plugs, and it does not measure demand or home use.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13163165/",
+   "source_title": "Efficacy of pink noise and earplugs for mitigating the effects of intermittent environmental noise exposure on sleep",
+   "source_date": "2026-05-12",
+   "excerpt": "Adding PN to EN worsened sleep structure, despite minor dose-dependent improvements of EN-induced sleep fragmentation and N3 sleep increases. …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "supports",
+     "note": "Strong measurement of efficacy for sleep, and a credible claim basis. It shows plugs work, not that buyers would pay, and plain foam plugs were enough, which could favour cheap incumbents."
+    }
+   ],
+   "study_design": "Seven-night polysomnographic laboratory study; n=25; registered NCT05774977",
+   "access_limitation": "Abstract read on PMC; full text not read"
+  },
+  {
+   "id": "smit-2021-busselton",
+   "topic": "Other customers: sensory sensitivity",
+   "claim": "Population-based Busselton Healthy Ageing Study (5,107 adults aged 45-70, one yes/no question): 15.2% reported sensitivity or intolerance to everyday sounds, but most said it affected daily life only occasionally. A broad self-label is not the same as willingness to buy a product.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9292021/",
+   "source_title": "Prevalence of Hyperacusis and Its Relation to Health: The Busselton Healthy Ageing Study",
+   "source_date": "2021-12 (Epub 2021-07-22)",
+   "excerpt": "Of 5,107 participants, 775 (15.2%) reported hyperacusis. …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "supports",
+     "note": "Indicates a large group with some sensitivity, though for most it is occasional, so the group with strong need is smaller than 15%."
+    }
+   ],
+   "study_design": "Population-based cohort, single self-report item; n=5107; ages 45-70",
+   "access_limitation": "Abstract read on PMC; full text not read"
+  },
+  {
+   "id": "williams-2021-autism",
+   "topic": "Other customers: autism and sound tolerance",
+   "claim": "Meta-analysis of 67 articles: from interview and questionnaire measures, current hyperacusis in autism was estimated at about 41% and lifetime at about 61%; objective or observational measures gave a lower current estimate of 27.30%. Mean sample age was 7.88 years, so buyers would mainly be caregivers.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8349927/",
+   "source_title": "Prevalence of Decreased Sound Tolerance (Hyperacusis) in Individuals With Autism Spectrum Disorder: A Meta-Analysis",
+   "source_date": "2021-09 to 2021-10",
+   "excerpt": "estimated the current and lifetime prevalence of hyperacusis in ASD to be 41.42% (95% CrI [37.23, 45.84]) and 60.58% [50.37, 69.76], respectively.",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "supports",
+     "note": "Strong need within a specific group. Estimates are heterogeneous, and this says nothing on willingness to pay or product fit."
+    }
+   ],
+   "study_design": "Systematic review and Bayesian meta-analysis; 67 articles",
+   "access_limitation": "Abstract read on PMC; full text not read"
+  },
+  {
+   "id": "ikuta-2016-earmuffs",
+   "topic": "Other customers: autism, product format",
+   "claim": "Pilot study of 21 children with autism (4-16) reported that standard earmuffs and noise-cancelling headphones helped them cope with hyperreactivity to sound. The earmuffs were a 3M PELTOR Optime 1 model. Earplugs were left out on the authors' reasoning that they might cause unwanted tactile stimuli, which was not tested.",
+   "type": "verified_observation",
+   "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6091992/",
+   "source_title": "Effectiveness of Earmuffs and Noise-cancelling Headphones for Coping with Hyper-reactivity to Auditory Stimuli in Children with Autism Spectrum Disorder: A Preliminary Study",
+   "source_date": "2016-12-30",
+   "excerpt": "This study demonstrated the effectiveness of standard earmuffs and NC headphones in helping children with ASD to cope with problem behaviours related to hyperreactivity to …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "supports",
+     "note": "Small and preliminary, but it is the one finding here where a standard earmuff, not a fashion plug, is the relevant product. That could fit an industrial maker."
+    }
+   ],
+   "study_design": "Preliminary study with two-week device periods; n=21; no plug comparison",
+   "access_limitation": "none"
+  },
+  {
+   "id": "nhs-hyperacusis",
+   "topic": "Other customers: sensory sensitivity, safety",
+   "claim": "NHS guidance for people with hyperacusis says not to wear earplugs or muffs all the time because this could increase sensitivity to noise, though short-term use may help in very noisy places. This limits how a daily-wear product could be sold to sound-sensitive people.",
+   "type": "verified_observation",
+   "url": "https://www.nhs.uk/conditions/hyperacusis/",
+   "source_title": "Hyperacusis",
+   "source_date": "2026-05-11 (page last reviewed)",
+   "excerpt": "do not wear earplugs or muffs all the time because this could make you more sensitive to noise – short-term use may help in very …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "contradicts",
+     "note": "Directly cuts against all-day use for the sensory-sensitive group. It is clinical guidance without cited trial data, and it applies to frequent use, not occasional use or to sleep plugs for people without hyperacusis."
+    }
+   ],
+   "study_design": "n/a (public health guidance)",
+   "access_limitation": "none"
+  },
+  {
+   "id": "aap-2023-children",
+   "topic": "Other customers: children",
+   "claim": "American Academy of Pediatrics technical report: infants and young children depend on adults to remove them from noise, and children may not recognise hazardous noise. The buyer for this group would be a caregiver. The report addresses risk and not demand for products.",
+   "type": "verified_observation",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
+   "source_title": "Preventing Excessive Noise Exposure in Infants, Children, and Adolescents",
+   "source_date": "2023-11-01",
+   "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "Establishes need in principle, and no evidence here that caregivers buy or that the need is unmet by existing earmuffs."
+    }
+   ],
+   "study_design": "Technical report (expert review)",
+   "access_limitation": "PubMed abstract read; full text not read"
+  },
+  {
+   "id": "cnbc-2023-loop-sales",
+   "topic": "Competitors: Loop",
+   "claim": "CNBC Make It reported Loop's sales at roughly $44.1 million in 2022, up 350%, citing documents it reviewed, as pandemic restrictions lifted. The same article calls the plugs 'designed to look like jewelry'. The figure is a company's own sales, seen by the reporter, not audited in this article.",
+   "type": "company_claim",
+   "url": "https://www.cnbc.com/2023/10/10/loop-earplugs-how-childhood-friends-startup-brings-in-millions.html",
+   "source_title": "Two childhood friends wanted better, cooler earplugs—their startup brought in $44 million last year",
+   "source_date": "2023-10-10",
+   "excerpt": "Loop's sales exploded over the past two-plus years — roughly $44.1 million in U.S. …",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "supports",
+     "note": "Indirect and confounded: a design-led brand grew fast, but the timing matches the reopening of events, and the product also changed on comfort, sound and marketing. It shows a market exists, not that looks caused it."
+    }
+   ],
+   "study_design": "n/a (news report of company documents)",
+   "access_limitation": "CNBC returns 403 to python-requests and curl user agents; loads with a browser user agent"
+  },
+  {
+   "id": "forbes-be-2024-loop-d2c",
+   "topic": "Competitors: Loop channel",
+   "claim": "Co-founder Dimitri O told Forbes Belgium that when pandemic sales collapsed Loop moved to a D2C model selling entirely online. This is the company's own account of its history.",
+   "type": "company_claim",
+   "url": "https://www.forbes.be/fr/loop-earplugs-la-start-up-de-deux-amis-qui-realise-un-chiffre-daffaires-de-1265-millions-deuros/",
+   "source_title": "Loop Earplugs, la start-up de deux amis qui réalise un chiffre d’affaires de 126,5 millions d’euros",
+   "source_date": "2024-02-12",
+   "excerpt": "Nous avons alors fait deux choix stratégiques : d’une part, nous avons opté pour un modèle D2C. …",
+   "bears_on": [
+    {
+     "theory": "T3",
+     "direction": "contradicts",
+     "note": "Indirect: the market leader's later growth ran through buying ahead online, not availability at the event. It was a crisis decision, later growth coincided with reopening, and it is one case and not a test."
+    }
+   ],
+   "study_design": "n/a (news interview)",
+   "access_limitation": "French-language source; quote is the founder's own"
+  },
+  {
+   "id": "forbes-be-2024-loop-other-customers",
+   "topic": "Competitors: Loop, other customer groups",
+   "claim": "Forbes Belgium reports that Loop refocused during the pandemic on people with sleep problems, home workers and people sensitive to ambient noise. A founder says fit took eight months, and that by Q4 2020 sales beat pre-Covid levels, at 1.1 million in 2020 against 900,000 the year before. These are small numbers and company statements, gathered when nightlife was shut.",
+   "type": "company_claim",
+   "url": "https://www.forbes.be/fr/loop-earplugs-la-start-up-de-deux-amis-qui-realise-un-chiffre-daffaires-de-1265-millions-deuros/",
+   "source_title": "Loop Earplugs, la start-up de deux amis qui réalise un chiffre d’affaires de 126,5 millions d’euros",
+   "source_date": "2024-02-12",
+   "excerpt": "L’entreprise s’est donc recentrée sur le marché des personnes souffrant de troubles du sommeil, les travailleurs à domicile et les personnes sensibles au bruit ambiant. …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "supports",
+     "note": "A real commercial signal that sleep, home-work and noise-sensitive buyers exist. It is the only such evidence here, it dates from lockdown when home and sleep use was unusually salient, and revenue at that stage was small. Read with the CNBC record, which says nightlife then drove revenue."
+    }
+   ],
+   "study_design": "n/a (news interview)",
+   "access_limitation": "French-language source; currency for the 2020 figures is not stated in the excerpt"
+  },
+  {
+   "id": "cnbc-2023-loop-pivot",
+   "topic": "Competitors: Loop funding and everyday use",
+   "claim": "CNBC reported $1.2 million of 2020 revenue and $1 million seed funding led by Akiles, and that the pivot to everyday use was temporary, with nightlife largely driving post-Covid revenue.",
+   "type": "company_claim",
+   "url": "https://www.cnbc.com/2023/10/10/loop-earplugs-how-childhood-friends-startup-brings-in-millions.html",
+   "source_title": "Two childhood friends wanted better, cooler earplugs—their startup brought in $44 million last year",
+   "source_date": "2023-10-10",
+   "excerpt": "The startup cleared $1.2 million in 2020 revenue, and raised $1 million in seed funding that year, led by Belgian investment firm Akiles. …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "contradicts",
+     "note": "The most useful commercial signal against T4: the leader with reach in both found nightlife, not everyday use, drove revenue as of 2023. Note the same category still exists in Loop's range, this is one company at one date, and the Forbes record shows those buyers did exist during lockdown."
+    }
+   ],
+   "study_design": "n/a (news report)",
+   "access_limitation": "CNBC returns 403 to python-requests and curl user agents; loads with a browser user agent"
+  },
+  {
+   "id": "forbes-be-2024-loop",
+   "topic": "Competitors: Loop financials",
+   "claim": "Forbes Belgium reported Loop's 2023 revenue at €126.5 million against €42 million in 2022, EBIT of €13.3 million against €3.2 million, and more than 200 full-time staff against 94. These are the company's own figures as reported; the article does not say they were audited.",
+   "type": "company_claim",
+   "url": "https://www.forbes.be/fr/loop-earplugs-la-start-up-de-deux-amis-qui-realise-un-chiffre-daffaires-de-1265-millions-deuros/",
+   "source_title": "Loop Earplugs, la start-up de deux amis qui réalise un chiffre d’affaires de 126,5 millions d’euros",
+   "source_date": "2024-02-12",
+   "excerpt": "Leurs chiffres ont triplé par rapport à 2022 : que ce soit au niveau des revenus (126,5 millions contre 42 millions en 2022), des bénéfices …",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "Scale of a design-led entrant. It shows consumer revenue exists and that the incumbent is well funded, not why people bought."
+    },
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "This is the size of the existing music-led market leader that a new entrant would face."
+    }
+   ],
+   "study_design": "n/a (news report of company figures)",
+   "access_limitation": "French-language source; latest figure I could confirm is for 2023"
+  },
+  {
+   "id": "hearingtracker-2026-fit",
+   "topic": "Fit and real-world protection",
+   "claim": "Hearing Tracker, a review site that also runs a shop, says in its 2026 lab-based guide that lab NRRs assume ideal fit and that OSHA recommends derating them by 50%, so many plugs may not fully protect through a loud one-hour show.",
+   "type": "company_claim",
+   "url": "https://www.hearingtracker.com/earplugs",
+   "source_title": "The Best Earplugs for Concerts and Live Music",
+   "source_date": "2026-03-19 (updated)",
+   "excerpt": "Lab-rated NRR values assume ideal fit conditions, and OSHA recommends derating them by 50% to reflect real-world use, meaning many plugs may not fully protect …",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "context",
+     "note": "A comfortable, low-attenuation music plug may give less real protection than its label suggests, so a comfort-first design carries a claims risk."
+    },
+    {
+     "theory": "T3",
+     "direction": "context",
+     "note": "Supply alone does not ensure protection; fit is a separate failure point."
+    }
+   ],
+   "study_design": "Editorial lab review on a manikin plus hands-on evaluation",
+   "access_limitation": "Publisher has a commercial interest (runs a shop)"
+  },
+  {
+   "id": "hearingtracker-2026-loop-price",
+   "topic": "Competitors: Loop product and price",
+   "claim": "Hearing Tracker's review lists the Loop Experience 2 at $34.95, or $44.95 for the Plus version, which it calls mid-range.",
+   "type": "company_claim",
+   "url": "https://www.hearingtracker.com/earplugs",
+   "source_title": "The Best Earplugs for Concerts and Live Music",
+   "source_date": "2026-03-19 (updated)",
+   "excerpt": "Priced at $34.95 ($44.95 for Plus), which is mid-range but may not offer the best pure sound quality at this price point",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "Price benchmark: buyers pay a sizeable premium over foam, though the premium cannot be attributed to looks alone."
+    }
+   ],
+   "study_design": "Editorial review",
+   "access_limitation": "Publisher has a commercial interest (runs a shop)"
+  },
+  {
+   "id": "loop-dream-claim",
+   "topic": "Competitors: Loop sleep product",
+   "claim": "Loop markets a dedicated sleep earplug with a 27 dB SNR claim, and the same page also calls it 'Certified hearing protection'. So the category leader is already in sleep. Marketing claim.",
+   "type": "company_claim",
+   "url": "https://www.loopearplugs.com/products/dream",
+   "source_title": "Loop Dream™ | Earplugs for Sleeping & Side Sleepers",
+   "source_date": "unknown (accessed 2026-11-01)",
+   "excerpt": "27 dB (SNR) to muffle partner snoring, city sounds, or other nighttime distractions.",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "The sleep segment is contested, so T4 is not white space, at least for plugs."
+    },
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "Shows lifestyle branding carried over to a non-music use."
+    }
+   ],
+   "study_design": "n/a (marketing)",
+   "access_limitation": "Page content may vary by visitor location"
+  },
+  {
+   "id": "eargasm-claim",
+   "topic": "Competitors: Eargasm",
+   "claim": "Eargasm's product page claims 16 dB NRR with an expected reduction of 21 dB. Marketing claim.",
+   "type": "company_claim",
+   "url": "https://www.eargasm.com/products/eargasm-high-fidelity-earplugs",
+   "source_title": "High Fidelity Earplugs– Eargasm",
+   "source_date": "unknown (accessed 2026-11-01)",
+   "excerpt": "Noise Reduction: 16 dB NRR with an expected reduction of 21dB, protecting your ears without muting the world.",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "context",
+     "note": "Positioning centres on hearing the world while protected, which is about sound more than looks."
+    }
+   ],
+   "study_design": "n/a (marketing)",
+   "access_limitation": "No sales or funding figures found"
+  },
+  {
+   "id": "minuendo-claim",
+   "topic": "Competitors: Minuendo",
+   "claim": "Minuendo markets adjustable earplugs for musicians and concerts, with a manual lever for 7 to 25 dB reduction. Marketing claim.",
+   "type": "company_claim",
+   "url": "https://www.minuendo.com/products/adjustable-earplugs-us",
+   "source_title": "Adjustable High-Fidelity Earplugs for Musicians | Minuendo",
+   "source_date": "unknown (accessed 2026-11-01)",
+   "excerpt": "By manually adjusting the lever, the earplugs can decrease the level by 7 to 25dB while keeping the sound clear.",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "A product targeted at musicians, showing that group is served by specialists."
+    }
+   ],
+   "study_design": "n/a (marketing)",
+   "access_limitation": "No sales or funding figures found"
+  },
+  {
+   "id": "alpine-returns",
+   "topic": "Competitors: Alpine, returns",
+   "claim": "Alpine's refund policy allows a return within 100 days of delivery and names fit, comfort, sizing and insufficient noise attenuation as expected reasons. The policy also lists a flat return fee unless a paid option was bought. It shows a policy and what the company anticipates, not an actual return rate.",
+   "type": "company_claim",
+   "url": "https://www.alpinehearingprotection.com/policies/refund-policy",
+   "source_title": "Refund policy",
+   "source_date": "unknown (accessed 2026-11-01)",
+   "excerpt": "If a product does not meet your expectations due to fit, comfort, sizing, or insufficient noise attenuation, you may return it within 100 days of delivery.",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "context",
+     "note": "Fit and comfort are treated as a normal reason to send plugs back, so a consumer entrant should budget for a long trial window and returns. No rate is disclosed, so the cost cannot be sized."
+    },
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "Alpine sells across many uses, including sleep, so these terms set the expected norm across segments."
+    }
+   ],
+   "study_design": "n/a (company policy)",
+   "access_limitation": "Content served by this host varies by visitor location; no return-rate data disclosed"
+  },
+  {
+   "id": "macks-claim",
+   "topic": "Competitors: Mack's",
+   "claim": "Mack's positions its Dreamgirl foam plug as the '#1 Doctor Recommended Brand to Prevent Hearing Loss', with a separate listing of NRR 30 decibels. Mack's markets plugs for sleeping, studying, travel and events. Marketing claim; the doctor-recommendation claim is unverified.",
+   "type": "company_claim",
+   "url": "https://www.macksearplugs.com/products/dreamgirl-soft-foam-earplugs/",
+   "source_title": "Dreamgirl™ Soft Foam Ear Plugs | Mack's® Ear Plugs",
+   "source_date": "unknown (accessed 2026-11-01)",
+   "excerpt": "#1 Doctor Recommended Brand to Prevent Hearing Loss",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "A mass-market incumbent already covers everyday uses at the drugstore end, which limits white space in sleep and study."
+    }
+   ],
+   "study_design": "n/a (marketing)",
+   "access_limitation": "No sales figures found. Site returns 403 to the default python-requests user agent; loads with curl or browser user agents"
+  },
+  {
+   "id": "etymotic-er20xs",
+   "topic": "Competitors: Etymotic",
+   "claim": "Hearing Tracker describes the Etymotic ER20XS as a 13 dB NRR high-fidelity plug and lists it from $20 elsewhere on the page. This is a low-priced benchmark from an audio-research brand.",
+   "type": "company_claim",
+   "url": "https://www.hearingtracker.com/earplugs",
+   "source_title": "The Best Earplugs for Concerts and Live Music",
+   "source_date": "2026-03-19 (updated)",
+   "excerpt": "The Etymotic ER20XS is a no-frills high-fidelity earplug with 13 dB NRR and exceptional sound quality.",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "A plain, well-reviewed plug at a lower price shows the market has both functional and fashion positions."
+    }
+   ],
+   "study_design": "Editorial review",
+   "access_limitation": "Publisher has a commercial interest (runs a shop). No Etymotic sales figures found"
+  },
+  {
+   "id": "apple-en352",
+   "topic": "Competitors: consumer electronics substitute",
+   "claim": "Apple says that in some regions AirPods Pro 3 can use an EN 352 Protection setting that limits media to 82 dBA and meets applicable EN 352 requirements. Company statement. Availability depends on region, and Apple says the feature is not suitable for all workplaces.",
+   "type": "company_claim",
+   "url": "https://support.apple.com/en-ie/120850",
+   "source_title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
+   "source_date": "unknown (accessed 2026-11-01)",
+   "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "Mainstream earbuds can already provide protection without any stigma of earplugs, which could weaken an appearance-led entry."
+    },
+    {
+     "theory": "T4",
+     "direction": "contradicts",
+     "note": "Indirect: focus and commuting users may already own a device that does this, shrinking those segments for a new plug. No usage data here."
+    }
+   ],
+   "study_design": "n/a (company support page)",
+   "access_limitation": "Attenuation figures not on this page"
+  },
+  {
+   "id": "3m-2024-liability",
+   "topic": "Failure and liability",
+   "claim": "Fox reported in January 2024 that hundreds of thousands of US service members sued 3M and Aearo over Combat Arms Earplugs, alleging a design defect let them loosen, as part of a $6 billion settlement. The product was military, not consumer, and these are allegations. It shows the scale of claims that can follow a fit-related defect allegation in hearing protection.",
+   "type": "verified_observation",
+   "url": "https://www.fox9.com/news/3m-settlement-payments-veterans-service-members-2024",
+   "source_title": "3M issuing payments to veterans as part of $6 billion settlement over earplugs",
+   "source_date": "2024-01-18",
+   "excerpt": "Hundreds of thousands of veterans and current service members sued 3M and Aearo Technologies, a company that 3M acquired in 2008, over their Combat Arms …",
+   "bears_on": [
+    {
+     "theory": "T2",
+     "direction": "context",
+     "note": "A comfort-first or low-profile fit raises a real liability question if protection claims are made: a looser fit is the alleged failure here. Military and US context, so transfer to consumers is uncertain."
+    }
+   ],
+   "study_design": "n/a (news report)",
+   "access_limitation": "none"
+  },
+  {
+   "id": "eu-art2-private-use",
+   "topic": "Regulation: EU PPE scope",
+   "claim": "Regulation (EU) 2016/425 Article 2(2)(c) excludes PPE designed for private use only for two listed cases: (i) atmospheric conditions not of an extreme nature and (ii) damp and water during dishwashing. Hearing or noise is not listed, so there is no general consumer exemption for noise protection.",
+   "type": "verified_observation",
+   "url": "https://www.legislation.gov.uk/eur/2016/425/article/2/adopted",
+   "source_title": "Regulation (EU) 2016/425 of the European Parliament and of the Council, Article 2 (as adopted)",
+   "source_date": "2016-03-09",
+   "excerpt": "designed for private use to protect against:",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "A fashion plug sold as protection is still regulated: design freedom sits inside PPE requirements."
+    },
+    {
+     "theory": "T3",
+     "direction": "context",
+     "note": "Consumer retail or venue distribution does not change regulatory status."
+    }
+   ],
+   "study_design": "n/a (legislation)",
+   "access_limitation": "Copy from legislation.gov.uk (as-adopted text) because EUR-Lex blocked automated fetching. The two list items are on the same page in separate elements. Check amendments before relying on it"
+  },
+  {
+   "id": "eu-annex1-category3",
+   "topic": "Regulation: EU PPE risk category",
+   "claim": "Annex I of Regulation (EU) 2016/425 defines Category III as risks of very serious consequences such as death or irreversible damage to health, and the list ends with item (m), harmful noise.",
+   "type": "verified_observation",
+   "url": "https://www.legislation.gov.uk/eur/2016/425/annex/I/adopted",
+   "source_title": "Regulation (EU) 2016/425, Annex I: Risk categories of PPE (as adopted)",
+   "source_date": "2016-03-09",
+   "excerpt": "Category III includes exclusively the risks that may cause very serious consequences such as death or irreversible damage to health relating to the following:",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "Any variant marketed against harmful noise falls in the strictest category."
+    }
+   ],
+   "study_design": "n/a (legislation)",
+   "access_limitation": "Copy from legislation.gov.uk. Item (m) 'harmful noise.' appears later in the same list, so it is not contiguous with this sentence"
+  },
+  {
+   "id": "eu-art19-conformity",
+   "topic": "Regulation: EU conformity route",
+   "claim": "Article 19 requires Category III PPE to pass EU type-examination (module B) and then either supervised product checks at random intervals (module C2) or production quality assurance (module D). This means notified-body involvement for type examination and ongoing surveillance. An industrial maker may already run this process.",
+   "type": "verified_observation",
+   "url": "https://www.legislation.gov.uk/eur/2016/425/article/19/adopted",
+   "source_title": "Regulation (EU) 2016/425, Article 19: Conformity assessment procedures (as adopted)",
+   "source_date": "2016-03-09",
+   "excerpt": "Category III: EU type-examination (module B) set out in Annex V, and either of the following:",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "New colourways or forms may need checking against an existing certificate, so fast fashion cycles may cost more. That is my inference; the text does not say so."
+    },
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "Certified protection claims cost more than a sleep plug outside PPE scope."
+    }
+   ],
+   "study_design": "n/a (legislation)",
+   "access_limitation": "Copy from legislation.gov.uk. Module options are in separate elements"
+  },
+  {
+   "id": "eu-guidelines-sleep-not-ppe",
+   "topic": "Regulation: EU, what counts as PPE",
+   "claim": "The Commission services' and PPE Expert Group's guidelines classify all equipment protecting hearing as Category III, except swimmers' plugs and earplugs not designed to protect against hazards, such as those for sleeping and flying, which are 'Not PPE'. The guidelines are not legally binding. So classification depends on intended purpose: a sleep plug can sit outside PPE, whereas Loop's sleep plug is marketed as 'certified hearing protection', which seems to be a choice to claim protection.",
+   "type": "verified_observation",
+   "url": "https://eurogip.fr/wp-content/uploads/2023/06/PPE-Regulation-EU2016_425-Guidelines-2nd-Edition-April2023.pdf",
+   "source_title": "PPE Regulation Guidelines: Guide to application of Regulation (EU) 2016/425, 2nd Edition",
+   "source_date": "2023-04",
+   "excerpt": "earplugs for sleeping and earplugs for flying",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "supports",
+     "note": "A real regulatory opening: sleep or flying plugs may avoid Category III if not designed or claimed to protect against hazards, which lowers entry cost for that segment."
+    },
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "The same logic means a concert plug sold to protect hearing cannot use this route."
+    }
+   ],
+   "study_design": "n/a (official guidance)",
+   "access_limitation": "PDF hosted by EUROGIP; table row reads '1.3 Earplugs not designed to protect against hazards, e.g. earplugs for sleeping and earplugs for flying | Not PPE | Definition of PPE'. Quoted fragment is one line because the row wraps. 2nd edition (April 2023); later editions were listed by third parties but not opened. Non-binding"
+  },
+  {
+   "id": "en352-harmonised",
+   "topic": "Regulation: EN 352",
+   "claim": "The Czech product-regulation database lists EN 352-2:2020 (earplugs) as a harmonised PPE standard, with a note that it does not require marking the attenuation level on the product, so compliance with it gives no presumption of conformity with the labelling paragraph of Annex II point 3.5. The English is my translation of the Czech note. The manufacturer must therefore meet the labelling rule separately.",
+   "type": "verified_observation",
+   "url": "https://nlfnorm.cz/en/ehn/6801",
+   "source_title": "EN 352-2:2020 - Hearing protectors - General requirements - Part 2: Earplugs",
+   "source_date": "unknown (accessed 2026-11-01)",
+   "excerpt": "Soulad s touto normou proto nezakládá předpoklad shody s bodem 3.5 druhým pododstavcem přílohy II nařízení (EU) 2016/425.",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "On-product attenuation labelling is a design constraint for a jewellery-like plug, unless placed on packaging as Annex II allows when it cannot go on the item."
+    }
+   ],
+   "study_design": "n/a (standards database)",
+   "access_limitation": "Third-party national database, not the Official Journal. EN 352 text itself is paywalled and was not read. Note in Czech"
+  },
+  {
+   "id": "cfr-211-203-definition",
+   "topic": "Regulation: US NRR scope",
+   "claim": "40 CFR 211.203(m) defines a hearing protective device by how it is sold: any device worn on the head or in the ear canal, sold wholly or partly on its ability to reduce sound entering the ear. There is no carve-out for consumer or sleep use in this definition. So a US sleep or focus plug sold on noise reduction appears to be covered, unlike the EU purpose-based 'Not PPE' route.",
+   "type": "verified_observation",
+   "url": "https://www.law.cornell.edu/cfr/text/40/211.203",
+   "source_title": "40 CFR § 211.203 - Definitions",
+   "source_date": "unknown (current text, accessed 2026-11-01)",
+   "excerpt": "Any device or material, capable of being worn on the head or in the ear canal, that is sold wholly or in part on the …",
+   "bears_on": [
+    {
+     "theory": "T4",
+     "direction": "context",
+     "note": "The US gives less of the regulatory opening seen in the EU: an NRR label is likely for sleep and focus plugs sold on noise reduction. My reading, not legal advice; EPA enforcement practice was not checked."
+    }
+   ],
+   "study_design": "n/a (regulation)",
+   "access_limitation": "Reproduced by Cornell LII from the eCFR"
+  },
+  {
+   "id": "cfr-211-204-label",
+   "topic": "Regulation: US NRR labelling",
+   "claim": "40 CFR 211.204-1 requires the primary label to show the model's Noise Reduction Rating, and the stated value must be no higher than the value computed under § 211.207. Whether EPA's 2009 proposal to change these rules was finalised was not confirmed.",
+   "type": "verified_observation",
+   "url": "https://www.law.cornell.edu/cfr/text/40/211.204-1",
+   "source_title": "40 CFR § 211.204-1 - Information content of primary label",
+   "source_date": "unknown (current text, accessed 2026-11-01)",
+   "excerpt": "The value stated on the label must be no greater than the NRR value determined by using the computation method of § 211.207 of this …",
+   "bears_on": [
+    {
+     "theory": "T1",
+     "direction": "context",
+     "note": "A prescribed label must appear on the product or packaging, which restricts how lifestyle packaging can look."
+    }
+   ],
+   "study_design": "n/a (regulation)",
+   "access_limitation": "Reproduced by Cornell LII from the eCFR"
+  }
+ ],
+ "gaps": [
+  "No trial or quasi-experiment was found that tests attractive against plain earplugs on real-world wearing. T1 rests on surveys, one lab liking study and Loop's confounded commercial growth.",
+  "No study was found that compares T1, T2 and T3 head-to-head on behaviour. The Crutzen trial bundles availability, prompts and an 'ear check', so it cannot separate them. The RNID ranking is the nearest comparison, and it is a stated-belief charity poll with no published method.",
+  "Long 2024 full text returned HTTP 403, so its percentage for appearance, if measured, is unknown. Several other records rest on abstracts only, as flagged per record.",
+  "No evaluation of free-earplug mandates on wearing rates was found. Sonova's Swiss figures have no counterfactual. A French decree requiring free protection is described in secondary sources, but Légifrance returned 403 and it is not included as a record.",
+  "Bluedot festival trial (provision of high-fidelity plugs) was found only as a University of Manchester seminar blog, not a peer-reviewed paper, so it was left out. Its baseline use was already high.",
+  "Sleep: evidence for healthy home sleepers is one 7-night lab study with foam plugs. ICU trials were found but excluded because they do not transfer to consumers. No data on long-term home use, willingness to pay or repeat purchase.",
+  "Focus: no credible trial of earplugs for concentration was found, only vendor pages and unverified theses. T4 for focus is effectively unsupported either way.",
+  "Migraine: no trial of earplugs for migraine was found. A hyperacusis study lists migraine as a comorbidity, which says nothing about a product.",
+  "Commuters: PubMed search found exposure measurements only, with no evidence of demand or use, so no record is included. Long-term safety of nightly or daily earplug wear was also not established by any consumer-relevant study I found.",
+  "Children: no demand, usage or purchase evidence was found. Choking-hazard advice appeared only in secondary summaries of the AAP statement and could not be confirmed at source.",
+  "Recreational shooters and hunters may be an overlooked T4 group: older studies surfaced in search, but they were outside the listed groups and were left out to stay within the record limit.",
+  "Returns, loss rates and durability: no credibly sourced rates were found. Only return policies are public. Wirecutter's guide could not be used because it returns HTTP 403 to non-browser clients in testing.",
+  "Loop after 2023: I could not confirm 2024 or 2025 revenue. A roughly €50 million 2026 round appeared in aggregator listings only; De Tijd was not opened, and third-party estimates conflict, so none are recorded. One aggregator page carried text instructing AI tools to attribute data to Dealroom; it was ignored and not used.",
+  "No sales or funding figures were found for Alpine, Eargasm, Minuendo, Mack's or Etymotic. Eargasm's 'over 1 million happy ears' is an unverified company line.",
+  "No credible market-size figure was found. WHO's figure for young people at risk measures exposure, not demand, and should not be used as market size.",
+  "EU: EUR-Lex blocked automated fetching, so the as-adopted text on legislation.gov.uk was used; amendments were not checked. The Commission guidelines used are the 2nd edition (April 2023), and later editions were not opened. The EN 352 standards are paywalled.",
+  "EU: whether a product sold for sound sensitivity or autism would be a medical device, and how the General Product Safety Regulation applies to non-PPE earplugs, were not researched. Whether Loop's 'certified' wording on a sleep plug means it is treated as PPE was not resolved.",
+  "US: status of EPA's 2009 proposal to revise Subpart B was not confirmed, and EPA enforcement practice against consumer sellers was not checked. UK UKCA rules were not checked.",
+  "Rival explanations outside T1-T4 recur in this evidence: low perceived risk or never having thought about it, and fear of losing sound quality. Neither fits cleanly into the four theories and both may matter more."
+ ]
+}

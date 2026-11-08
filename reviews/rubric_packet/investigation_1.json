@@ -1,0 +1,60 @@
+{
+ "company": "Cotral Lab",
+ "frame": {
+  "objective": "Determine if Cotral Lab should expand its sales to consumers, identify potential consumer segments, propose a value proposition, and outline key investigations before investment.",
+  "constraints": [
+   "No financial data available for Cotral Lab",
+   "Test budget of 20,000 EUR and 12-week limit are analyst assumptions"
+  ],
+  "alternatives": [
+   "Focus on existing employer customers",
+   "Expand to new consumer segments (e.g., hobbyists, musicians, outdoor enthusiasts)",
+   "Develop a value proposition for consumers"
+  ]
+ },
+ "searches": [
+  "Hearing protection market trends, consumer behavior, competitor analysis, hearing protection use cases"
+ ],
+ "theories": {
+  "T1": {
+   "claim": "Consumers are willing to purchase hearing protection if it is perceived as stylish, convenient, and effective, and if it is integrated with popular devices.",
+   "who_benefits": "Cotral Lab, hearing protection manufacturers, and employers",
+   "why_behaviour_changes": "Consumers may be more likely to purchase hearing protection if it is seen as a stylish accessory, easy to use, and effective in reducing noise.",
+   "how_value_is_captured": "Sales revenue, customer satisfaction, and brand reputation",
+   "assumptions": [
+    "Consumers value aesthetics and convenience",
+    "Hearing protection is effective in reducing noise"
+   ],
+   "predictions": [
+    "If Cotral Lab can position its products as stylish and convenient, it may see increased sales to consumers."
+   ],
+   "status": "revised"
+  }
+ },
+ "assessments": [],
+ "tests": {},
+ "revisions": [
+  {
+   "theory_id": "T1",
+   "status": "revised",
+   "reason": "New evidence suggests that while hearing protection with stylish designs may be effective, it may not be suitable for all workplaces.",
+   "evidence_ids": [
+    "apple-en352"
+   ]
+  }
+ ],
+ "final": {
+  "recommendation": "Proceed with the proposed test to evaluate the effectiveness of Cotral Lab's value proposition for consumers.",
+  "target_customer": "Consumers interested in hearing protection",
+  "value_proposition": "Stylish, convenient, and effective hearing protection",
+  "favoured_theory": "T1",
+  "next_action": "Implement the test and monitor results",
+  "uncertainty": "The success of the test depends on consumer adoption of the value proposition",
+  "would_change_if": [
+   "If initial results show low consumer interest, re-evaluate the value proposition"
+  ],
+  "evidence_ids": [
+   "apple-en352"
+  ]
+ }
+}

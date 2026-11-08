@@ -1,0 +1,1155 @@
+{
+ "accessed": "2026-11-01",
+ "companies": [
+  {
+   "name": "Moldex-Metric (Moldex-Metric, Inc.; Moldex/Metric AG & Co. KG)",
+   "fit_notes": "RECOMMENDED. Strongest fit found. Hearing and respiratory protection is its stated expertise (mdx-core), though it also lists eye protection and hearing's share of sales is unknown. It makes the products itself with a stated high level of vertical integration (mdx-vert, mdx-foam). Size is mid-sized, not a giant, although current global headcount is not public: 350+ in Europe (mdx-eu) and 450 in Los Angeles in 2020 (mdx-private). Every channel I could find is distributors and industrial supply (mdx-channel), and no sleep, music, travel or other consumer line appeared on either the US or European site, so the consumer question looks open. That is absence of evidence, not proof. The most useful angle: foam and moulding know-how came from a bra-cup business (mdx-origin), which suggests a firm that has moved materials know-how between markets before. That reading is my inference. Evidence opened: full US catalogue PDF, hearing technical briefs index, patent information page, hearing FAQ, German legal notice. Contradictions: the US homepage gives two different patent counts (mdx-patents), and 'family-owned' could not be confirmed.",
+   "consumer_presence": "none",
+   "unknown": [
+    "Revenue, profit and hearing protection's share of sales. No public accounts were opened for either entity.",
+    "Current ownership. Founder-led and privately held in 2020, but the Metric Products link is sourced only to a 2005 article, and 'family-owned' is not confirmed.",
+    "How the US entity and the European entity relate. The legal notice names Moldex/Metric AG (Zurich) and Moldex Inc. (Nevada) as partners, and European managing directors with a different surname from the US founder. Control is not clear.",
+    "Whether the German KG's accounts are on the Unternehmensregister. Not checked.",
+    "Whether individuals buy meaningful volume. Search snippets showed bulk packs on Galaxus, eBay and marketplaces, but the Galaxus page returned HTTP 403 and was not opened. No consumer-format pack was confirmed.",
+    "Customer lists, unit volumes and distributor terms: not public."
+   ],
+   "records": [
+    {
+     "id": "mdx-core",
+     "claim": "Moldex says its expertise is hearing and respiratory protection for workers.",
+     "type": "company_claim",
+     "url": "https://www.moldex.com/our-company/",
+     "source_title": "Our Company | Moldex",
+     "source_date": "unknown (page footer 2026)",
+     "excerpt": "Moldex’s expertise is hearing and respiratory protection to keep workers safer. …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mdx-private",
+     "claim": "In 2020 the Los Angeles Business Journal called Moldex-Metric privately held, with 450 local workers.",
+     "type": "verified_observation",
+     "url": "https://labusinessjournal.com/manufacturing/ppe-maker-moldex-metric-plans-factory-tennessee/",
+     "source_title": "PPE Maker Moldex-Metric Plans Factory in Tennessee - Los Angeles Business Journal",
+     "source_date": "2020-10-18",
+     "excerpt": "The privately held manufacturing company employs 450 workers locally but said their positions are not at risk.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mdx-founder",
+     "claim": "Mark Magidson was reported as founder and chief executive in 2020.",
+     "type": "verified_observation",
+     "url": "https://labusinessjournal.com/manufacturing/ppe-maker-moldex-metric-plans-factory-tennessee/",
+     "source_title": "PPE Maker Moldex-Metric Plans Factory in Tennessee - Los Angeles Business Journal",
+     "source_date": "2020-10-18",
+     "excerpt": "Moldex-Metric founder and Chief Executive Mark Magidson said the company conducted “an exhaustive search for a suitable site” and that Tennessee provided “unique advantages” for …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mdx-origin",
+     "claim": "A 2005 article traces Moldex to Metric, a maker of moulded bra cups, which applied its moulding and foam technology to worker safety in 1980.",
+     "type": "verified_observation",
+     "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
+     "source_title": "Moldex: Practicing Safe Hearing - Woodworker's Journal",
+     "source_date": "2005-11-22",
+     "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+     "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
+    },
+    {
+     "id": "mdx-eu",
+     "claim": "Moldex Europe says it has more than 350 employees in eight European locations.",
+     "type": "company_claim",
+     "url": "https://www.moldex-europe.com/en/about-us/",
+     "source_title": "About us - Moldex Europe",
+     "source_date": "unknown (footer 03/25)",
+     "excerpt": "More than 350 employees in eight locations in Europe develop, produce and sell our occupational safety products in accordance with European standards.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mdx-vert",
+     "claim": "Moldex Europe says it makes most products and components itself.",
+     "type": "company_claim",
+     "url": "https://www.moldex-europe.com/en/about-us/",
+     "source_title": "About us - Moldex Europe",
+     "source_date": "unknown (footer 03/25)",
+     "excerpt": "We manufacture the vast majority of our products and components ourselves at production sites in Europe. …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mdx-foam",
+     "claim": "Moldex says it develops its production machinery in-house as well as its products.",
+     "type": "company_claim",
+     "url": "https://www.moldex-europe.com/en/about-us/company-history",
+     "source_title": "Moldex – Company History - Moldex Europe",
+     "source_date": "unknown (footer 03/25)",
+     "excerpt": "We also develop Moldex-specific production technology: Everything, from the design of the machines to their construction and programming is done in-house.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mdx-channel",
+     "claim": "Moldex's US 'Where to Buy' page directs buyers to distributors.",
+     "type": "company_claim",
+     "url": "https://www.moldex.com/where-to-buy/",
+     "source_title": "Where To Buy | Moldex",
+     "source_date": "unknown (page footer 2026)",
+     "excerpt": "Check out these distributors’ pages where you can buy Moldex products.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mdx-patents",
+     "claim": "The US homepage gives two patent counts: 'over 70 patents' here and '200+ patents and trademarks' elsewhere on the page.",
+     "type": "company_claim",
+     "url": "https://www.moldex.com/",
+     "source_title": "Innovative Respiratory Masks & Hearing Protection Equipment | Moldex",
+     "source_date": "unknown (page footer 2026)",
+     "excerpt": "With over 70 patents, Moldex is dedicated to developing innovative solutions that address the diverse hearing and respiratory needs of various industries.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mdx-legal",
+     "claim": "The European legal notice names Moldex/Metric AG in Zurich as a personally liable partner of the German KG, registered at HRA Stuttgart 351 771.",
+     "type": "company_claim",
+     "url": "https://www.moldex-europe.com/en/legal-notice/",
+     "source_title": "Legal Notice - Moldex Europe",
+     "source_date": "unknown",
+     "excerpt": "Moldex/Metric AG, Zürich, CH",
+     "access_limitation": "This is the company's own notice. The commercial register entry itself was not opened."
+    }
+   ]
+  },
+  {
+   "name": "Cotral Lab",
+   "fit_notes": "RECOMMENDED. Most focused hearing-protection specialist found, with the sharpest strategic question, although it now also sells prescription safety eyewear and, through Comu Systems, tactical communications (ctl-deal). It makes custom-moulded protectors itself (ctl-3d) with in-house filters (ctl-filter) and has a Bluetooth product (ctl-it1). Its model looks built for companies, not individuals: technicians take impressions on site (ctl-onsite) and sales go mainly direct to employers (ctl-channel). A consumer move would have to replace that fitting model, and I found no consumer product on the French or English sites. It is also newly owned by a PPE distributor (ctl-deal), so a consumer move would also be an ownership-level question. Both readings are my inference. Evidence opened: company sites (FR and EN), technical blog, legal notice, regional agency profile, dated French business press. Contradictions: size varies by source and date (ctl-size25, ctl-size26), and the English site still shows the founder as Chairman and CEO while the French site names two general managers (ctl-lead). A search summary attributed a music, aviation, swimming and sleep range to Cotral; on opening the directory page, that row belongs to Quies, so it was discarded.",
+   "consumer_presence": "none",
+   "unknown": [
+    "Filed accounts. Revenue is reported as both EUR 50m and EUR 60m and was not checked against a registry filing (RCS Caen 402 960 637).",
+    "Current headcount: 350 and 380 are both reported.",
+    "Price paid for Cotral Lab: not disclosed in anything opened.",
+    "Why Cotral needed 'structural support'. The phrase is on record but no detail was found.",
+    "Whether Cotral has any individual-buyer route, such as through audiologists. None found, but not disproved.",
+    "Groupe RG's plans for Cotral beyond the announcement, and customer, pricing and renewal data: not public."
+   ],
+   "records": [
+    {
+     "id": "ctl-size25",
+     "claim": "At the July 2025 acquisition, Cotral Lab was reported at 350 staff and EUR 60m revenue, and to remain autonomous.",
+     "type": "verified_observation",
+     "url": "https://www.lejournaldesentreprises.com/breve/le-groupe-lyonnais-rg-reprend-le-normand-cotral-lab-2122997",
+     "source_title": "Le groupe lyonnais RG reprend le normand Cotral Lab - Le Journal des Entreprises",
+     "source_date": "2025-07-02",
+     "excerpt": "(350 collaborateurs — 60 M€ de CA), n°1 mondial de la fabrication de protections auditives sur mesure, ainsi que sa filiale COMU Systems, basée à …",
+     "access_limitation": "Part of the site is subscriber-only. Figures likely came from the companies."
+    },
+    {
+     "id": "ctl-size26",
+     "claim": "A 2026 report gives 380 staff and EUR 50m revenue, and confirms Groupe RG ownership since 2025.",
+     "type": "verified_observation",
+     "url": "https://www.lejournaldesentreprises.com/article/cotral-lab-50-meu-de-chiffre-daffaires-et-380-salaries-recompensee-pour-son-innovation-dans-le-2147196",
+     "source_title": "Cotral Lab, 50 M€ de chiffre d’affaires et 380 salariés, récompensée pour son innovation dans le Calvados - Le Journal des Entreprises",
+     "source_date": "2026-08-20",
+     "excerpt": "Employant 380 salariés pour 50 millions d’euros de chiffre d’affaires, la société normande appartient depuis 2025 au groupe lyonnais RG.",
+     "access_limitation": "Part of the article is subscriber-only."
+    },
+    {
+     "id": "ctl-deal",
+     "claim": "Groupe RG, backed by Ardian Expansion and Latour Capital, announced the purchase of Cotral Lab and Comu Systems.",
+     "type": "company_claim",
+     "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
+     "source_title": "Groupe RG acquires Cotral Lab and Comu Systems, strengthening its expertise and reaffirming its independence as a multi-brand distributor (MAJUNKE.com)",
+     "source_date": "2025 (exact date not shown)",
+     "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — …",
+     "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
+    },
+    {
+     "id": "ctl-channel",
+     "claim": "After the deal, products were to keep selling mainly direct to end-user companies through Cotral's own sales team.",
+     "type": "company_claim",
+     "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
+     "source_title": "Groupe RG acquires Cotral Lab and Comu Systems, strengthening its expertise and reaffirming its independence as a multi-brand distributor (MAJUNKE.com)",
+     "source_date": "2025 (exact date not shown)",
+     "excerpt": "Its sales team will retain its independence and current structure, and its products will continue to be distributed primarily through direct channels to end-user companies.",
+     "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
+    },
+    {
+     "id": "ctl-support",
+     "claim": "The buyer's stated reason includes that Cotral's know-how needed structural support.",
+     "type": "company_claim",
+     "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
+     "source_title": "Groupe RG acquires Cotral Lab and Comu Systems, strengthening its expertise and reaffirming its independence as a multi-brand distributor (MAJUNKE.com)",
+     "source_date": "2025 (exact date not shown)",
+     "excerpt": "This acquisition aims to preserve a unique know-how that required structural support to ensure its continued development.",
+     "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
+    },
+    {
+     "id": "ctl-lead",
+     "claim": "The French site names Olivier Suchail and Michael Visinali as general managers, while the English About page still shows founder Laurent Capellari as Chairman and CEO.",
+     "type": "company_claim",
+     "url": "https://www.cotral.fr/cotral-lab/qui-sommes-nous.html",
+     "source_title": "Qui sommes-nous ? - Cotral Lab",
+     "source_date": "unknown",
+     "excerpt": "Olivier Suchail & Michael Visinali - Directeurs Généraux",
+     "access_limitation": "none"
+    },
+    {
+     "id": "ctl-3d",
+     "claim": "Cotral says it moved from hand-made silicone to 3D printing in 2010.",
+     "type": "company_claim",
+     "url": "https://www.cotral.com/blog/hearing-protection/how-are-your-cotral-lab-moulded-ear-plugs-made.html",
+     "source_title": "How are your Cotral Lab moulded ear plugs made? - Cotral Lab blog",
+     "source_date": "unknown",
+     "excerpt": "Since 2010 Cotral Lab has moved to 3D printing for better precision and to improve the effectiveness of our protective devices.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "ctl-onsite",
+     "claim": "Impressions are taken on site by a technician and sent to the French manufacturing lab.",
+     "type": "company_claim",
+     "url": "https://www.cotral.com/hearing-protection/moulded-earplugs.html",
+     "source_title": "Custom moulded ear plugs - Cotral Lab",
+     "source_date": "unknown",
+     "excerpt": "The ear impressions of your employees are taken directly on-site.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "ctl-filter",
+     "claim": "A regional agency profile says Cotral's acoustic filters are now developed in-house.",
+     "type": "company_claim",
+     "url": "https://www.choosenormandy.com/suisse-normande-area-cotral-lab/",
+     "source_title": "In the Suisse-Normande area, Cotral Lab, world leader in custom-moulded hearing protection devices - Choose Normandy",
+     "source_date": "2024-04-02 (last updated)",
+     "excerpt": "Like mini-tympanums, these filters, now developed in-house, can eliminate or lessen noise on specific frequencies.",
+     "access_limitation": "Regional promotion agency profile based on company interviews, so treated as a company claim."
+    },
+    {
+     "id": "ctl-it1",
+     "claim": "Cotral sells a Bluetooth custom earplug, the IT1, marketed for employees.",
+     "type": "company_claim",
+     "url": "https://www.cotral.com/products/it1.html",
+     "source_title": "Bluetooth hearing protection IT1 | Connected moulded earplugs - Cotral Lab",
+     "source_date": "unknown",
+     "excerpt": "With wireless technology built into this hearing protection, employees can stay perfectly connected while remaining protected from noise hazards.",
+     "access_limitation": "none"
+    }
+   ]
+  },
+  {
+   "name": "Hellberg Safety (Hultafors Group, owned by Investment AB Latour)",
+   "fit_notes": "RECOMMENDED, with one caveat. Small hearing and face protection specialist inside a larger group, and the only finalist whose parent publishes regular financial reports (hlb-owner, hlb-sales). It already has consumer footholds that make the question concrete: a children's earmuff (hlb-junior) sold by general retailers (hlb-bauhaus, hlb-kjell) and a retailer locator (hlb-retail). But that is one product and not a consumer strategy, and the group states its focus as professionals (hlb-pro) while Hellberg's stated ambition is head protection (hlb-head). So a real tension exists between the Junior foothold and the professional strategy. It has the electronics capability a lifestyle product might use (hlb-tech). Evidence opened: Latour press release and year-end report, Junior product page with attenuation data, catalogue page, retailer listings. Declaration of Conformity link seen but not opened. Caveat: the only Hellberg-specific financials are 2017, because it has since been reported inside Hultafors Group, and head protection now appears to matter as much as hearing.",
+   "consumer_presence": "small",
+   "unknown": [
+    "Hellberg's current revenue and headcount. The SEK 66m and about 20 staff figures are for 2017, and nothing later was found.",
+    "Whether production is still in-house at Stenkullen. The 2018 statement could not be confirmed as current.",
+    "Share of sales through consumer retail, and Junior's volumes: not public.",
+    "Hearing versus head protection share of Hellberg's sales.",
+    "Latour's full 2025 annual report was not opened, only the year-end report.",
+    "Which attenuation figure is right for Junior: Hellberg says up to 25 dB(A), while a search snippet for Kjell said 24 dB. The Kjell figure was not confirmed."
+   ],
+   "records": [
+    {
+     "id": "hlb-owner",
+     "claim": "Investment AB Latour bought Hellberg in 2018 through Hultafors Group. Hellberg then reported own R&D, production and assembly, SEK 66m 2017 net sales and about 20 employees.",
+     "type": "company_claim",
+     "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
+     "source_title": "Latour acquires Hellberg Safety AB | Airtools Latour",
+     "source_date": "2018-07-06",
+     "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations …",
+     "access_limitation": "Figures are eight or more years old."
+    },
+    {
+     "id": "hlb-junior",
+     "claim": "Hellberg makes a hearing protector for children, marketed for concerts, sport and lawn mowing.",
+     "type": "company_claim",
+     "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
+     "source_title": "Junior Blue Headband - Hellberg Safety",
+     "source_date": "unknown",
+     "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlb-bauhaus",
+     "claim": "Bauhaus's Swedish web store lists Hellberg Junior.",
+     "type": "verified_observation",
+     "url": "https://www.bauhaus.se/horselskydd-hellberg-junior-bla",
+     "source_title": "HÖRSELSKYDD HELLBERG JUNIOR BLÅ | BAUHAUS",
+     "source_date": "unknown (accessed 2026-11-01)",
+     "excerpt": "Hellberg junior är utformat för barn och perfekt att använda vid skol- och hobbyaktiviteter, konserter, gräsklippning eller sportevenemang.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlb-kjell",
+     "claim": "Kjell & Company's Swedish web store lists Hellberg Junior under Hem & fritid (home and leisure).",
+     "type": "verified_observation",
+     "url": "https://www.kjell.com/se/produkter/hem-fritid/kropp-halsa/horselskydd/hellberg-junior-horselskydd-for-barn-rosa-p35990",
+     "source_title": "Hellberg Junior Hörselskydd för barn Rosa | Kjell & Company",
+     "source_date": "unknown (accessed 2026-11-01)",
+     "excerpt": "Hellberg Junior Hörselskydd för barn Rosa",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlb-retail",
+     "claim": "Hellberg says its products sell in stores and online shops worldwide, with a retailer locator.",
+     "type": "company_claim",
+     "url": "https://www.hellbergsafety.com/retailers",
+     "source_title": "Retailers - Hellberg Safety",
+     "source_date": "unknown",
+     "excerpt": "Hellberg Safety products are available in many stores and online shops around the world. …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlb-tech",
+     "claim": "Hellberg dates electronic models with FM radio to the early 2010s and Bluetooth to 2014.",
+     "type": "company_claim",
+     "url": "https://www.hellbergsafety.com/campaign/legacy",
+     "source_title": "Legacy - Hellberg Safety",
+     "source_date": "unknown",
+     "excerpt": "In the early 10’s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg´s first Bluetooth hearing …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlb-head",
+     "claim": "Hultafors Group describes Hellberg as aiming for the top three head protection brands in Europe.",
+     "type": "company_claim",
+     "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
+     "source_title": "Hellberg Safety - Hultafors Group",
+     "source_date": "unknown",
+     "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with “Peace of Mind” through comfortable and safe products, positioning itself …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlb-pro",
+     "claim": "Hultafors Group states its commitment to professionals and names Latour as its long-term owner.",
+     "type": "company_claim",
+     "url": "https://www.hultaforsgroup.com/about-us/this-is-hultafors-group",
+     "source_title": "This is Hultafors Group",
+     "source_date": "unknown",
+     "excerpt": "Backed by our long-term owner, Investment AB Latour, we remain committed to empowering professionals and driving sustainable progress—because when they work smarter and safer, we …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlb-sales",
+     "claim": "Hultafors Group's 2025 net sales were SEK 6,719m (2024: SEK 6,788m). Hellberg is not reported separately.",
+     "type": "verified_observation",
+     "url": "https://mb.cision.com/Main/487/4308126/3936034.pdf",
+     "source_title": "Investment AB Latour Year-end Report 2025",
+     "source_date": "2026-02",
+     "excerpt": "Hultafors Group 1,793 1,893 6,719 6,788",
+     "access_limitation": "Table row in a PDF; matches only with layout-preserving text extraction. Columns are Q4 2025, Q4 2024, full-year 2025, full-year 2024."
+    }
+   ]
+  },
+  {
+   "name": "JSP Limited",
+   "fit_notes": "RESERVE. Best financial transparency of any private firm here: full group accounts are public and show GBP 98.3m sales and 498 staff (jsp-kpi, jsp-staff), with apparent Johnstone family control (jsp-psc). No consumer line was found. But hearing is not its core: the accounts describe workplace safety, PPE, height safety and road safety (jsp-activity), and its claimed leadership is in head protection (jsp-head). Swap it in if audited numbers matter more than hearing focus. Evidence opened: Companies House overview, filing history, PSC register and the 48-page FY2025 group accounts (pages 1 to 9), plus company site.",
+   "consumer_presence": "none",
+   "unknown": [
+    "Hearing protection's share of sales. Pages 1 to 9 of the accounts do not break it out; later notes were not read.",
+    "Whether JSP makes its earplugs itself, and where. The earplug product page rendered empty.",
+    "Retail reach. Search snippets showed Screwfix listings, but the page returned nothing to fetch, so it is unconfirmed.",
+    "Customer data and channel split: not public."
+   ],
+   "records": [
+    {
+     "id": "jsp-reg",
+     "claim": "JSP Limited is an active private limited company, incorporated 11 February 1964.",
+     "type": "verified_observation",
+     "url": "https://find-and-update.company-information.service.gov.uk/company/00791380",
+     "source_title": "JSP LIMITED overview - Companies House",
+     "source_date": "unknown (register; accessed 2026-11-01)",
+     "excerpt": "Incorporated on 11 February 1964",
+     "access_limitation": "none"
+    },
+    {
+     "id": "jsp-psc",
+     "claim": "Companies House lists four persons with significant control: Mark Robert Johnstone, Sarah Helen Baker, Clive Johnstone and Joanna Mary Johnstone. A family link between them is my inference from surnames and shared directorships.",
+     "type": "verified_observation",
+     "url": "https://find-and-update.company-information.service.gov.uk/company/00791380/persons-with-significant-control",
+     "source_title": "JSP LIMITED persons with significant control - Companies House",
+     "source_date": "2024-10-23 (notification date)",
+     "excerpt": "Mr Mark Robert Johnstone",
+     "access_limitation": "none"
+    },
+    {
+     "id": "jsp-kpi",
+     "claim": "Audited FY2025 group sales were GBP 98.3m, profit before tax GBP 11.1m (accounts page 6).",
+     "type": "verified_observation",
+     "url": "https://find-and-update.company-information.service.gov.uk/company/00791380/filing-history/MzQ5NTY1ODY2NWFkaXF6a2N4/document?format=pdf&download=0",
+     "source_title": "JSP Limited Annual Report and Consolidated Financial Statements, year ended 31 March 2025",
+     "source_date": "2025-12-16 (signed)",
+     "excerpt": "In the year ended 31 March 2025, JSP Profit Before Tax increased by 28% (2024 - 159%) to £11.1m (2024 - £8.7m) and EBITDA increased by 14% (2024 - increased 90%) to £18.3m (2024 - £16.0m) with sales increasing by 7% (2024 - 6%) to £98.3m (2024 - £91.8m).",
+     "access_limitation": "Scanned image PDF with no text layer, so an automated text match will fail. Excerpt transcribed by reading the page image; page number given in the claim. Check by eye."
+    },
+    {
+     "id": "jsp-staff",
+     "claim": "JSP employed 498 people at 31 March 2025 (accounts page 6).",
+     "type": "verified_observation",
+     "url": "https://find-and-update.company-information.service.gov.uk/company/00791380/filing-history/MzQ5NTY1ODY2NWFkaXF6a2N4/document?format=pdf&download=0",
+     "source_title": "JSP Limited Annual Report and Consolidated Financial Statements, year ended 31 March 2025",
+     "source_date": "2025-12-16 (signed)",
+     "excerpt": "At 31 March 2025, JSP employed 498 (2024 - 481) personnel with a net increase of 17 people during the year.",
+     "access_limitation": "Scanned image PDF with no text layer, so an automated text match will fail. Excerpt transcribed by reading the page image; page number given in the claim. Check by eye."
+    },
+    {
+     "id": "jsp-activity",
+     "claim": "The accounts describe the principal activity as workplace safety products, not hearing protection specifically (accounts page 4).",
+     "type": "verified_observation",
+     "url": "https://find-and-update.company-information.service.gov.uk/company/00791380/filing-history/MzQ5NTY1ODY2NWFkaXF6a2N4/document?format=pdf&download=0",
+     "source_title": "JSP Limited Annual Report and Consolidated Financial Statements, year ended 31 March 2025",
+     "source_date": "2025-12-16 (signed)",
+     "excerpt": "The principal activity of the Group is the manufacture of products that improve workplace health and safety worldwide, including personal protective equipment (PPE), height safety and road safety.",
+     "access_limitation": "Scanned image PDF with no text layer, so an automated text match will fail. Excerpt transcribed by reading the page image; page number given in the claim. Check by eye."
+    },
+    {
+     "id": "jsp-head",
+     "claim": "JSP's stated market leadership is in industrial head protection (accounts page 4).",
+     "type": "company_claim",
+     "url": "https://find-and-update.company-information.service.gov.uk/company/00791380/filing-history/MzQ5NTY1ODY2NWFkaXF6a2N4/document?format=pdf&download=0",
+     "source_title": "JSP Limited Annual Report and Consolidated Financial Statements, year ended 31 March 2025",
+     "source_date": "2025-12-16 (signed)",
+     "excerpt": "This has enabled us to further grow our strong position as European Market Leader in Industrial Head Protection (Frost and Sullivan Market Report 2014).",
+     "access_limitation": "Scanned image PDF with no text layer, so an automated text match will fail. Excerpt transcribed by reading the page image; page number given in the claim. Check by eye. The underlying market report is from 2014 and was not opened."
+    },
+    {
+     "id": "jsp-mfg",
+     "claim": "JSP says it has UK R&D, three UK production facilities and other manufacturing sites.",
+     "type": "company_claim",
+     "url": "https://www.jspsafety.com/content/about",
+     "source_title": "About - JSP",
+     "source_date": "unknown",
+     "excerpt": "With UK-based Research and Development, three UK production facilities, and further manufacturing locations across the globe, JSP are committed to improving occupational safety and wellbeing …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "jsp-sonis",
+     "claim": "JSP says its own R&D team designed the Sonis ear defender range.",
+     "type": "company_claim",
+     "url": "https://www.jspsafety.com/content/sonis",
+     "source_title": "JSP | Sonis Premium Ear Defenders",
+     "source_date": "unknown",
+     "excerpt": "The Sonis® range of ear defenders has been designed by the JSP R&D team.",
+     "access_limitation": "none"
+    }
+   ]
+  },
+  {
+   "name": "uvex group (UVEX WINTER HOLDING GmbH & Co. KG)",
+   "fit_notes": "REJECT. The starting assumption was wrong in two ways. It is no longer family-controlled: Warburg Pincus took a majority (uvx-warburg). And its earplug plant SwedSafe already sells consumer-style products for sleep, music, travel and festivals (uvx-moments), says it serves the consumer market (uvx-consumer), and offers own brand and private label (uvx-pl). With a consumer sports arm as well (uvx-sports), the question looks partly answered. It remains useful as a competitor reference, because an industrial earplug maker has already made this move. Hearing is one category in a broad group, and its share is not public (uvx-safety). Evidence opened: group and SwedSafe sites, press releases, trade press.",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Hearing protection revenue, and SwedSafe's consumer versus industrial split.",
+    "When SwedSafe's consumer push began and how well it sells.",
+    "When uvex acquired SwedSafe: no announcement found.",
+    "Closing date of the Warburg Pincus deal: the announcement says subject to approvals; the 100-year release says only that the stake was announced.",
+    "Deal value: a Bloomberg Law headline says about EUR 800m, but the article body was not readable and the official release gives no price."
+   ],
+   "records": [
+    {
+     "id": "uvx-warburg",
+     "claim": "In July 2025 Warburg Pincus agreed to take a majority, with the Winter and Grau families keeping a significant minority.",
+     "type": "verified_observation",
+     "url": "https://nsga.org/news/the-uvex-group-acquired-by-private-equity-firm/",
+     "source_title": "The Uvex Group Acquired By Private Equity Firm - NSGA",
+     "source_date": "2025-07-01",
+     "excerpt": "The Winter and Grau ownership families will retain a significant minority stake and will be actively involved in the future growth of the business.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "uvx-rev",
+     "claim": "Group revenue was EUR 683m in 2024/25.",
+     "type": "company_claim",
+     "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
+     "source_title": "100 years of uvex - uvex group newsroom",
+     "source_date": "2026-07-08",
+     "excerpt": "Currently, the company – with 100 years of tradition behind it – generated revenues of €683 million in the 2024/25 financial year.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "uvx-safety",
+     "claim": "uvex says occupational safety accounted for over 80 per cent of turnover.",
+     "type": "company_claim",
+     "url": "https://www.uvex-safety.com/en/media/press-releases/100-years-of-the-uvex-group/",
+     "source_title": "100 years of the uvex group - uvex safety",
+     "source_date": "2026",
+     "excerpt": "The group’s most important pillar, accounting for over 80 per cent of turnover, is occupational safety.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "uvx-sports",
+     "claim": "uvex already has a consumer sports and leisure business, but hearing protection is not named in it.",
+     "type": "company_claim",
+     "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
+     "source_title": "100 years of uvex - uvex group newsroom",
+     "source_date": "2026-07-08",
+     "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "uvx-plant",
+     "claim": "uvex calls SwedSafe in Tyringe, Sweden its hearing protection plant, with its own R&D.",
+     "type": "company_claim",
+     "url": "https://www.uvex-safety.com/en/uvex-safety-group/company/manufacturing-competence/",
+     "source_title": "Manufacturing competence - uvex safety",
+     "source_date": "unknown",
+     "excerpt": "SwedSafe in Tyringe, Sweden, is our ultra-modern manufacturing plant for hearing protection with its own research and development department all under the same roof.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "uvx-consumer",
+     "claim": "SwedSafe says it makes earplugs for both industrial and consumer markets.",
+     "type": "company_claim",
+     "url": "https://swedsafe.se/en/",
+     "source_title": "Start - SwedSafe",
+     "source_date": "unknown (2026 site)",
+     "excerpt": "Our strength lies in our extensive knowledge, expertise, and experience in producing sustainable, high-quality earplugs for both the industrial and consumer markets.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "uvx-moments",
+     "claim": "SwedSafe markets earplugs for festivals, motorcycling, focus and sleep.",
+     "type": "company_claim",
+     "url": "https://swedsafe.se/en/moment/",
+     "source_title": "Moments - SwedSafe",
+     "source_date": "unknown (2026 site)",
+     "excerpt": "Our earplugs are perfect for everything from festivals and motorcycle rides to staying focused at work and getting a better night’s sleep.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "uvx-pl",
+     "claim": "SwedSafe offers own-brand and private-label solutions and lists a Key Account Manager for Consumer.",
+     "type": "company_claim",
+     "url": "https://swedsafe.se/partner/",
+     "source_title": "Partner - SwedSafe",
+     "source_date": "unknown (2026 site)",
+     "excerpt": "Vi erbjuder flexibla lösningar för både Own Brand och Private Label, anpassade efter olika krav, behov och marknader.",
+     "access_limitation": "none"
+    }
+   ]
+  },
+  {
+   "name": "Sordin AB",
+   "fit_notes": "REJECT as main case, useful as comparator. Real Swedish manufacturer (sdn-sites, sdn-lease), with SEK 312m turnover in one subsidiary alone (sdn-turnover). But it already sells directly online and leads with hunters and shooters (sdn-shop, sdn-x2), and many listed resellers are hunting and shooting shops, so a consumer route exists. Whether it should go beyond hunting and shooting is an open but narrower question. A contradiction with the likely assumption: it is no longer an MSA business, having been sold in 2019 (sdn-2019), and Coeli bought a majority in 2023 (sdn-coeli).",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Split between hunting, shooting, industrial and military sales.",
+    "Group-level accounts for Sordin AB. The SEK 312m is the Värnamo subsidiary, as shown by an aggregator, not the filed report.",
+    "How much of the group's sales go through its own web shop."
+   ],
+   "records": [
+    {
+     "id": "sdn-2019",
+     "claim": "Wikmanshyttan Safety bought MSA Sordin from MSA Safety and took the Sordin name, with 90 employees at two Swedish sites.",
+     "type": "company_claim",
+     "url": "https://srstactical.com/blog/post/msa-sordin.html",
+     "source_title": "MSA Sordin Brand Sold to Wikmanshyttan Safety - SRS Tactical",
+     "source_date": "2019-02-12",
+     "excerpt": "The new company group, which has adopted the name Sordin AB, has 90 employees in Värnamo and Vikmanshyttan, Sweden.",
+     "access_limitation": "Reseller blog reposting the company press release. Original not opened."
+    },
+    {
+     "id": "sdn-coeli",
+     "claim": "A majority of Sordin AB was sold to Dcbl Intressenter AB, majority-owned by Coeli. A Sordin release dates this to fall 2023, with former owner DeVenture remaining a significant shareholder.",
+     "type": "verified_observation",
+     "url": "https://www.lindahl.se/en/latest-news/cases-and-transactions/lindahl-advises-deventure-ab-on-the-sale-of-a-majority-of-shares-in-sordin-ab/",
+     "source_title": "Lindahl advises DeVenture AB on the sale of a majority of shares in Sordin AB",
+     "source_date": "unknown (2023 per Sordin release)",
+     "excerpt": "Lindahl has acted as an advisor to DeVenture AB in connection with the sale of a majority of shares in Sordin AB to Dcbl Intressenter …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "sdn-sites",
+     "claim": "Sordin names Värnamo and Vikmanshyttan as its manufacturing sites.",
+     "type": "company_claim",
+     "url": "https://sordin.com/blogs/news/gustav-falconer-new-ceo-of-sordin",
+     "source_title": "Gustav Falconer new CEO of Sordin",
+     "source_date": "2024-04-09",
+     "excerpt": "Former CEO Therése Wilson who previously also held the COO position will continue as Chief Operating Officer (COO) and heads up the manufacturing sites Sordin …",
+     "access_limitation": "Site rate-limits repeat requests (HTTP 429). Allow about 60 seconds between fetches."
+    },
+    {
+     "id": "sdn-turnover",
+     "claim": "Sordin Värnamo AB shows 2025 turnover of 312,354 thousand SEK on a Swedish company data site.",
+     "type": "verified_observation",
+     "url": "https://www.allabolag.se/5565537593/sordin-varnamo-ab",
+     "source_title": "Sordin Värnamo AB - Allabolag",
+     "source_date": "2025-12 (accounts period)",
+     "excerpt": "312 354",
+     "access_limitation": "Aggregator of filed accounts. Original filing not opened. This is one subsidiary, not the group."
+    },
+    {
+     "id": "sdn-lease",
+     "claim": "A property company reported a ten-year lease with Sordin on an industrial building in Värnamo.",
+     "type": "verified_observation",
+     "url": "https://www.placera.se/telegram/nivika-tecknar-hyresavtal-i-varnamo-2024-09-18",
+     "source_title": "Nivika tecknar hyresavtal i Värnamo - Placera",
+     "source_date": "2024-09-18",
+     "excerpt": "Fastighetsbolaget Nivika har tecknat ett tioårigt hyresavtal med Sordin med tillhörande lokalanpassning av en industribyggnad på Bredasten industriområde i Värnamo.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "sdn-x2",
+     "claim": "Sordin's 2025 launch is aimed at hunters and shooting enthusiasts.",
+     "type": "company_claim",
+     "url": "https://sordin.com/blogs/news/tagged/press-release",
+     "source_title": "Trade Shows & Press - Sordin",
+     "source_date": "2025-10-30",
+     "excerpt": "Sordin introduces the X2 series — next-generation hearing protection engineered for hunters and shooting enthusiasts who demand superior reliability, situational awareness and comfort",
+     "access_limitation": "Site rate-limits repeat requests (HTTP 429). Allow about 60 seconds between fetches."
+    },
+    {
+     "id": "sdn-shop",
+     "claim": "Sordin's own site is a web shop organised by activity: hunting, shooting and tactical.",
+     "type": "company_claim",
+     "url": "https://sordin.com/",
+     "source_title": "Sordin - Embrace noise",
+     "source_date": "unknown (2026 site)",
+     "excerpt": "Different environments, different demands. …",
+     "access_limitation": "Site rate-limits repeat requests (HTTP 429). Allow about 60 seconds between fetches."
+    },
+    {
+     "id": "sdn-retail",
+     "claim": "Sordin lists authorised distributors and partners, many tagged shooting and hunting.",
+     "type": "company_claim",
+     "url": "https://sordin.com/pages/where-to-buy",
+     "source_title": "Where to buy - Sordin",
+     "source_date": "unknown",
+     "excerpt": "Sordin products are available through a global network of authorized distributors and partners.",
+     "access_limitation": "Site rate-limits repeat requests (HTTP 429). Allow about 60 seconds between fetches."
+    }
+   ]
+  },
+  {
+   "name": "Protective Industrial Products (PIP), owner of Howard Leight",
+   "fit_notes": "REJECT. The reported Honeywell deal is confirmed: USD 1.325bn, completed May 2025 (pip-deal). But PIP is a broad, private-equity-owned PPE group (pip-odyssey, pip-scope), so hearing is one line among many. Its Howard Leight brand was already promoted to hardware retailers (pip-impact), so it is neither a pure hearing-protection business nor free of consumer exposure. PIP's own site could not be read.",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Hearing revenue and which plants make Howard Leight products. pipglobal.com returned HTTP 403 or a certificate error.",
+    "PIP group revenue and accounts: privately held, none found.",
+    "How far the Honeywell name has been removed from Howard Leight products.",
+    "Scale of consumer sales. The evidence shows retail promotion, not volumes, so 'significant' is a judgement."
+   ],
+   "records": [
+    {
+     "id": "pip-deal",
+     "claim": "Honeywell completed the sale of its PPE business to PIP for USD 1.325bn.",
+     "type": "verified_observation",
+     "url": "https://www.placera.se/pressmeddelanden/honeywell-international-honeywell-completes-sale-of-personal-protective-equipment-business-to-protective-industrial-products-20250522",
+     "source_title": "Honeywell completes sale of Personal Protective Equipment business to Protective Industrial Products - Placera (PR Newswire)",
+     "source_date": "2025-05-22",
+     "excerpt": "Honeywell (NASDAQ: HON) today announced it has completed the sale of its Personal Protective Equipment (PPE) business to Protective Industrial Products, Inc. \u2026",
+     "access_limitation": "none"
+    },
+    {
+     "id": "pip-howard",
+     "claim": "Howard Leight is among the acquired brands.",
+     "type": "verified_observation",
+     "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
+     "source_title": "Oz-based PIP completes Honeywell PPE acquisition - Safety Solutions",
+     "source_date": "unknown (2025)",
+     "excerpt": "Brands in the acquisition include Bisley Workwear, Fendall, Fibre-Metal, Howard Leight, Morning Pride, North, Oliver, Puma Safety and Salisbury.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "pip-odyssey",
+     "claim": "PIP is a portfolio company of Odyssey Investment Partners.",
+     "type": "verified_observation",
+     "url": "https://sgbonline.com/protective-industrial-products-acquires-honeywells-ppe-business/",
+     "source_title": "Protective Industrial Products Acquires Honeywell’s PPE Business | SGB Media Online",
+     "source_date": "unknown (2024)",
+     "excerpt": "PIP is a portfolio company of Odyssey Investment Partners, LLC.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "pip-sites",
+     "claim": "The acquired business was described as having more than 25 distribution and manufacturing locations.",
+     "type": "company_claim",
+     "url": "https://sgbonline.com/protective-industrial-products-acquires-honeywells-ppe-business/",
+     "source_title": "Protective Industrial Products Acquires Honeywell’s PPE Business | SGB Media Online",
+     "source_date": "unknown (2024)",
+     "excerpt": "The PPE Business includes a strong global footprint with more than 25 distribution and manufacturing locations around the world.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "pip-scope",
+     "claim": "The combined offer spans many PPE categories, of which hearing is one.",
+     "type": "verified_observation",
+     "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
+     "source_title": "Oz-based PIP completes Honeywell PPE acquisition - Safety Solutions",
+     "source_date": "unknown (2025)",
+     "excerpt": "The combination broadens and strengthens PIP’s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "pip-impact",
+     "claim": "Howard Leight Impact Sport electronic earmuffs were featured in a hardware retail trade title, in firearm-related terms.",
+     "type": "verified_observation",
+     "url": "https://hardwareretailing.com/sport-earmuffs/",
+     "source_title": "Sport Earmuffs | Hardware Retailing",
+     "source_date": "2017-03-09",
+     "excerpt": "Sport Earmuffs from Howard Leight by Honeywell protect hearing by automatically shutting off amplification and blocking continuous noise.",
+     "access_limitation": "Dates from Honeywell ownership. Tractor Supply and Creedmoor pages could not be read."
+    }
+   ]
+  },
+  {
+   "name": "3M Company",
+   "fit_notes": "REJECT. A giant, with USD 24.9bn sales (mmm-sales) where hearing sits inside Personal Safety (mmm-seg, mmm-ps). It already sells hearing protection to DIY users through home centres and mass retail (mmm-wt), so there is no open question. Its earplug history also carries a USD 6.0bn settlement (mmm-cae), which is a useful product liability reference for any entrant, though not evidence about a target company. Strong public evidence, but the wrong subject.",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Hearing protection revenue: not reported separately in the passages read.",
+    "Current WorkTunes retail sales. The 2017 source is the only retail statement opened, and Home Depot returned HTTP 403.",
+    "SEC EDGAR returned HTTP 403 to my fetch, so the annual report PDF on 3M's investor site was used instead."
+   ],
+   "records": [
+    {
+     "id": "mmm-sales",
+     "claim": "3M's net sales were about USD 24.9bn in 2025 (figures shown in USD billions for 2025, 2024 and 2023).",
+     "type": "verified_observation",
+     "url": "https://investors.3m.com/financials/sec-filings/content/0000066740-26-000155/a20253mannualreport-final.pdf",
+     "source_title": "3M 2025 Annual Report",
+     "source_date": "2026",
+     "excerpt": "$24.9 $24.6 $24.6",
+     "access_limitation": "Figures from a table row labelled Net sales, so the excerpt alone carries no label."
+    },
+    {
+     "id": "mmm-seg",
+     "claim": "Hearing sits within the Safety and Industrial segment.",
+     "type": "verified_observation",
+     "url": "https://investors.3m.com/financials/sec-filings/content/0000066740-26-000155/a20253mannualreport-final.pdf",
+     "source_title": "3M 2025 Annual Report",
+     "source_date": "2026",
+     "excerpt": "Respiratory, hearing, eye and fall",
+     "access_limitation": "Table cell in a PDF; the phrase continues as 'protection solutions' on the next line."
+    },
+    {
+     "id": "mmm-ps",
+     "claim": "Personal Safety sales were USD 3,544m in 2025. This covers more than hearing.",
+     "type": "verified_observation",
+     "url": "https://investors.3m.com/financials/sec-filings/content/0000066740-26-000155/a20253mannualreport-final.pdf",
+     "source_title": "3M 2025 Annual Report",
+     "source_date": "2026",
+     "excerpt": "Personal Safety 3,544 3,371 3,382",
+     "access_limitation": "Table row in a PDF; layout-dependent matching."
+    },
+    {
+     "id": "mmm-cae",
+     "claim": "3M agreed to pay USD 6.0bn over 2023 to 2029 to settle Combat Arms Earplug claims.",
+     "type": "verified_observation",
+     "url": "https://investors.3m.com/financials/sec-filings/content/0000066740-26-000155/a20253mannualreport-final.pdf",
+     "source_title": "3M 2025 Annual Report",
+     "source_date": "2026",
+     "excerpt": "Pursuant to the CAE Settlement, 3M will contribute a total amount of $6.0 billion between 2023 and 2029.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "mmm-wt",
+     "claim": "3M's WorkTunes Connect was sold online and at home centres, hardware and mass retailers.",
+     "type": "verified_observation",
+     "url": "https://hardwoodfloorsmag.com/2017/09/18/3m-introduces-worktunes-connect-wireless-hearing-protector-bluetooth-wireless-technology/",
+     "source_title": "3M Introduces WorkTunes Connect Wireless Hearing Protector - Hardwood Floors Magazine",
+     "source_date": "2017-09-18",
+     "excerpt": "The new 3M™ WorkTunes™ Connect Wireless Hearing Protector with Bluetooth® wireless technology is available online and at home centers, hardware and mass retailers nationwide.",
+     "access_limitation": "none"
+    }
+   ]
+  },
+  {
+   "name": "Elacin International B.V.",
+   "fit_notes": "REJECT. Custom hearing protection specialist, but already serving private customers (ela-private) through more than 3,000 hearing care stores (ela-stores), with sleep products (ela-sleep). So the consumer question is largely answered. Ownership runs to Lyreco, a workplace supplies distributor (ela-lyreco, ela-2020). It does show how a custom-fit maker can reach individuals, so it is a useful comparison for Cotral.",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Elacin's own revenue and headcount. The EUR 125m and 360 figures in the Lyreco announcement cover Intersafe and Elacin together.",
+    "Consumer versus industrial sales split.",
+    "Whether the Dutch competition approval and deal date match the '2020' on Elacin's milestones page. Not confirmed."
+   ],
+   "records": [
+    {
+     "id": "ela-lyreco",
+     "claim": "In December 2018 Lyreco agreed to buy Intersafe and Elacin, subject to Dutch competition approval.",
+     "type": "verified_observation",
+     "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
+     "source_title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
+     "source_date": "2018-12",
+     "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "ela-2020",
+     "claim": "Elacin dates joining Lyreco to 2020.",
+     "type": "company_claim",
+     "url": "https://www.elacin.com/we-are-elacin/elacin-milestones/",
+     "source_title": "Elacin Milestones",
+     "source_date": "unknown",
+     "excerpt": "In 2020, we joined forces with Lyreco.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "ela-stores",
+     "claim": "Elacin says it is available in over 3,000 hearing care stores.",
+     "type": "company_claim",
+     "url": "https://www.elacin.com/we-are-elacin/",
+     "source_title": "We are Elacin",
+     "source_date": "unknown",
+     "excerpt": "You can now find us in over 3,000 hearing care stores, making high-quality hearing protection more accessible than ever.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "ela-private",
+     "claim": "Elacin says it serves both company PPE needs and private customers.",
+     "type": "company_claim",
+     "url": "https://www.elacin.com/we-are-elacin/",
+     "source_title": "We are Elacin",
+     "source_date": "unknown",
+     "excerpt": "We cater to both professional PPE needs for companies and personal requirements for private customers.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "ela-sleep",
+     "claim": "Elacin sells a sleep and relaxation earplug.",
+     "type": "company_claim",
+     "url": "https://www.elacin.com/assortment/",
+     "source_title": "Assortment - Elacin",
+     "source_date": "unknown",
+     "excerpt": "Comfortable for sleep and relaxation, blocks as much environmental noise as possible without filters, ensuring uninterrupted rest or focus.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "ela-mfg",
+     "claim": "Elacin says it uses 3D printing for fit.",
+     "type": "company_claim",
+     "url": "https://www.elacin.com/we-are-elacin/",
+     "source_title": "We are Elacin",
+     "source_date": "unknown",
+     "excerpt": "We are committed to delivering the best service, using cutting-edge 3D printing and digital innovation to create the perfect fit for your needs.",
+     "access_limitation": "none"
+    }
+   ]
+  },
+  {
+   "name": "ISOtunes (Haven Technologies)",
+   "fit_notes": "REJECT. Its Sport line calls itself a consumer safety brand (iso-brand), and it sells direct from its own web shop (iso-d2c), so it is better used as a competitor. It also markets to industry (iso-ind). Founded only in 2016 (iso-founded), and I found no statement that it manufactures anything itself.",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Whether ISOtunes manufactures its own products or uses contract makers.",
+    "Revenue and headcount: private, none found.",
+    "Retail footprint. The store locator loads by script and could not be read, and Best Buy timed out."
+   ],
+   "records": [
+    {
+     "id": "iso-founded",
+     "claim": "Haven Technologies was founded in 2016 by people with Aearo, 3M and Honeywell experience.",
+     "type": "company_claim",
+     "url": "https://isotunes.com/pages/about-us",
+     "source_title": "About ISOtunes",
+     "source_date": "unknown",
+     "excerpt": "was founded in 2016 by leaders in consumer safety with 20+ years of experience between Aearo Technologies, 3M, and Honeywell.",
+     "access_limitation": "Site can rate-limit repeat requests (HTTP 429)."
+    },
+    {
+     "id": "iso-hq",
+     "claim": "Haven Technologies is headquartered in Carmel, Indiana.",
+     "type": "company_claim",
+     "url": "https://isotunes.com/pages/about-us",
+     "source_title": "About ISOtunes",
+     "source_date": "unknown",
+     "excerpt": "The Haven Technologies headquarters is located in Carmel, Indiana, USA, with additional warehouses in Canada, the United Kingdom and Germany",
+     "access_limitation": "Site can rate-limit repeat requests (HTTP 429)."
+    },
+    {
+     "id": "iso-family",
+     "claim": "ISOtunes describes itself as small and family-owned.",
+     "type": "company_claim",
+     "url": "https://isotunes.com/blogs/educational-resources/isotunes-faq-how-to-use-fit-and-maintain-your-hearing-protection-earbuds",
+     "source_title": "ISOtunes FAQ",
+     "source_date": "unknown",
+     "excerpt": "At ISOtunes, we may be a global company, but we’re also a small, family-owned business based in America’s heartland.",
+     "access_limitation": "Site can rate-limit repeat requests (HTTP 429)."
+    },
+    {
+     "id": "iso-brand",
+     "claim": "ISOtunes Sport describes itself as a consumer safety brand.",
+     "type": "company_claim",
+     "url": "https://thinkingafield.org/2021/04/isotunes-launches-advance-hearing-solutions-for-sport-shooters.html",
+     "source_title": "ISOtunes Launches ADVANCE: Hearing Solutions for Sport Shooters - Thinking Afield",
+     "source_date": "2021-04",
+     "excerpt": "ISOtunes Sport is a family-built consumer safety brand, specializing in hearing protection with enhanced audio and communication technology.",
+     "access_limitation": "Press release reposted by a third-party site. Opened successfully on 2026-11-01, but the site later reset every connection, so an automated re-fetch may fail. Excerpt confirmed against the copy saved at first fetch."
+    },
+    {
+     "id": "iso-d2c",
+     "claim": "ISOtunes sells directly to US consumers through its own site.",
+     "type": "company_claim",
+     "url": "https://isotunes.com/pages/about-us",
+     "source_title": "About ISOtunes",
+     "source_date": "unknown",
+     "excerpt": "Free shipping for all US orders over $99.",
+     "access_limitation": "Site can rate-limit repeat requests (HTTP 429)."
+    },
+    {
+     "id": "iso-ind",
+     "claim": "ISOtunes also markets to industry.",
+     "type": "company_claim",
+     "url": "https://isotunes.com/pages/industrial-hearing-protection",
+     "source_title": "Industry - ISOtunes",
+     "source_date": "unknown",
+     "excerpt": "Electronic hearing protection: purpose-built for industry",
+     "access_limitation": "Site can rate-limit repeat requests (HTTP 429)."
+    }
+   ]
+  },
+  {
+   "name": "Radians, Inc.",
+   "fit_notes": "REJECT. Makes foam earplugs itself in Memphis (rad-foam, rad-cap), but already targets sporting goods and hardware and DIY buyers (rad-sport, rad-diy) and uses retail packaging (rad-pack). Hearing is also one line in a broad PPE range (rad-about), so it does not meet the core-business test. Found while looking for mid-sized firms; family ownership was not confirmed.",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Ownership: no source confirmed family ownership.",
+    "Revenue, headcount and hearing's share of sales.",
+    "Whether the 2014 capacity figure still applies."
+   ],
+   "records": [
+    {
+     "id": "rad-foam",
+     "claim": "Radians began making foam earplugs at its Memphis headquarters.",
+     "type": "verified_observation",
+     "url": "https://www.ishn.com/articles/98150-radians-opens-made-in-usa-foam-earplug-manufacturing-facility-at-memphis-headquarters",
+     "source_title": "Radians opens Made in USA foam earplug manufacturing facility at Memphis headquarters | ISHN",
+     "source_date": "2014-03-13",
+     "excerpt": "Radians is now manufacturing their Made in the USA foam earplug series at their corporate headquarters in Memphis, TN.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "rad-cap",
+     "claim": "The plant's stated capacity was about 100 million pairs a year.",
+     "type": "company_claim",
+     "url": "https://www.ishn.com/articles/98150-radians-opens-made-in-usa-foam-earplug-manufacturing-facility-at-memphis-headquarters",
+     "source_title": "Radians opens Made in USA foam earplug manufacturing facility at Memphis headquarters | ISHN",
+     "source_date": "2014-03-13",
+     "excerpt": "Radians new manufacturing facility in Memphis has the capacity to produce 453,000 pairs of foam ear plugs a day or about 100,000,000 pairs in a …",
+     "access_limitation": "Company-supplied figure reported by trade press; 12 years old."
+    },
+    {
+     "id": "rad-pack",
+     "claim": "Its earplugs came in industrial and retail packaging.",
+     "type": "company_claim",
+     "url": "https://www.ishn.com/articles/98150-radians-opens-made-in-usa-foam-earplug-manufacturing-facility-at-memphis-headquarters",
+     "source_title": "Radians opens Made in USA foam earplug manufacturing facility at Memphis headquarters | ISHN",
+     "source_date": "2014-03-13",
+     "excerpt": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "rad-about",
+     "claim": "Radians describes itself as a PPE manufacturer for industrial, construction and safety markets.",
+     "type": "company_claim",
+     "url": "https://www.radians.com/about",
+     "source_title": "About - Radians",
+     "source_date": "unknown",
+     "excerpt": "In over 25 years, Radians has become a major leader in the safety industry by manufacturing high-performance Personal Protective Equipment (PPE) for the industrial, construction, …",
+     "access_limitation": "none"
+    },
+    {
+     "id": "rad-sport",
+     "claim": "Radians lists sporting goods customers.",
+     "type": "company_claim",
+     "url": "https://www.radians.com/about",
+     "source_title": "About - Radians",
+     "source_date": "unknown",
+     "excerpt": "Adult & youth outdoor enthusiasts, hunters, range shooters, fishermen.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "rad-diy",
+     "claim": "Radians lists hardware and DIY customers.",
+     "type": "company_claim",
+     "url": "https://www.radians.com/about",
+     "source_title": "About - Radians",
+     "source_date": "unknown",
+     "excerpt": "Carpenters, painters, crafters, gardeners, hobby enthusiasts, DIY weekend warriors.",
+     "access_limitation": "none"
+    }
+   ]
+  },
+  {
+   "name": "Silenta Group Oy",
+   "fit_notes": "WATCH. A true hearing-protection manufacturer (sil-core, sil-plant), small, with a licensed Moomin children's range (sil-moomin). The case is appealing, but public evidence is too thin to support a project: its own site returned no content, and ownership rests on one directory (sil-owner). A directory says it serves leisure as well as industry and lists children's protection as a main family (sil-owner), so the question may be less open than it looks.",
+   "consumer_presence": "small",
+   "unknown": [
+    "Current ownership. Savox is sourced to a single directory; no registry or company confirmation.",
+    "Revenue and headcount. One search snippet said 11 employees, but it was not opened and may be stale.",
+    "Whether the Moomin range is still sold, and where.",
+    "Whether earplugs are made at all: the sources describe earmuffs."
+   ],
+   "records": [
+    {
+     "id": "sil-core",
+     "claim": "Silenta specialises in making hearing protectors.",
+     "type": "company_claim",
+     "url": "https://kskauppakamari.fi/en-gb/article/etusivu/hearing-protection-from-central-finland/641/",
+     "source_title": "Hearing protection from Central Finland - Keski-Suomen kauppakamari",
+     "source_date": "unknown",
+     "excerpt": "Silenta Group Oy specializes in the manufacture of hearing protectors and other hearing protection and communication solutions vital for occupational safety.",
+     "access_limitation": "Chamber of commerce member profile, treated as a company claim."
+    },
+    {
+     "id": "sil-plant",
+     "claim": "Its plant has been in Jyväskylä since 1996.",
+     "type": "company_claim",
+     "url": "https://kskauppakamari.fi/en-gb/article/etusivu/hearing-protection-from-central-finland/641/",
+     "source_title": "Hearing protection from Central Finland - Keski-Suomen kauppakamari",
+     "source_date": "unknown",
+     "excerpt": "Silenta's production plant has been located in Jyväskylä since 1996.",
+     "access_limitation": "Chamber of commerce member profile, treated as a company claim."
+    },
+    {
+     "id": "sil-moomin",
+     "claim": "Silenta released Moomin-licensed earmuffs, four models for children and two for adults.",
+     "type": "verified_observation",
+     "url": "https://rightsandbrands.com/news/silentas-new-delightful-hearing-protectors-were-designed-by-children/",
+     "source_title": "Silenta’s new delightful hearing protectors were designed by children - Rights & Brands",
+     "source_date": "2020-05-14",
+     "excerpt": "A total of six different models models of Moomin earmuffs were created – four for children and two for adult Moomin fans.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "sil-owner",
+     "claim": "A deal directory lists Silenta as acquired by Savox Communications in 2018 and describes its product families.",
+     "type": "verified_observation",
+     "url": "https://mergr.com/company/silenta-group",
+     "source_title": "Silenta Group: Company Profile & Ownership | Mergr",
+     "source_date": "2018-12-17 (deal date listed)",
+     "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+     "access_limitation": "Commercial directory with a login wall for fuller data. Not a registry."
+    }
+   ]
+  },
+  {
+   "name": "Hörluchs Hearing GmbH & Co. KG",
+   "fit_notes": "REJECT. Attractive profile, an owner-managed family business with over 220 staff (hlu-family), but hearing aids and earmoulds are core (hlu-mfg), not occupational protection, and it already serves leisure and musicians and gamers (hlu-leisure, hlu-inears), and its hearing protection menu covers sleep and travel (hlu-nav). Sold largely through acousticians (hlu-customers). Found during the search for family-owned firms.",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Revenue and hearing protection's share of it.",
+    "Whether it sells directly to individuals or only through acousticians."
+   ],
+   "records": [
+    {
+     "id": "hlu-family",
+     "claim": "Hörluchs calls itself an independent, owner-managed family business with over 220 employees.",
+     "type": "company_claim",
+     "url": "https://hoerluchs.com/en/about-hoerluchs/",
+     "source_title": "About Hörluchs",
+     "source_date": "unknown",
+     "excerpt": "In three divisions, the independent and owner-managed family business from Hersbruck with over 220 employees successfully focuses on passion, innovation and sustainability.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlu-customers",
+     "claim": "Its customers include acousticians, trades, industry accounts and safety professionals.",
+     "type": "company_claim",
+     "url": "https://hoerluchs.com/en/about-hoerluchs/",
+     "source_title": "About Hörluchs",
+     "source_date": "unknown",
+     "excerpt": "customers include acousticians, craftsmen, key accounts from industry and professionals in the fields of occupational safety, sports and music.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlu-mfg",
+     "claim": "It makes earmoulds and develops hearing aids.",
+     "type": "company_claim",
+     "url": "https://hoerluchs.com/en/about-hoerluchs/",
+     "source_title": "About Hörluchs",
+     "source_date": "unknown",
+     "excerpt": "manufactures earmolds from a range of materials and develops premium hearing aids for challenging listening situations and for people who expect the very highest quality.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlu-leisure",
+     "claim": "It makes custom hearing protection for trades, industry and leisure.",
+     "type": "company_claim",
+     "url": "https://hoerluchs.com/en/about-hoerluchs/",
+     "source_title": "About Hörluchs",
+     "source_date": "unknown",
+     "excerpt": "manufactures custom hearing protection for the trades, industry and leisure.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlu-nav",
+     "claim": "The hearing protection section of its German site lists Schlafen (sleep), Im Wasser (in water) and Reisen & Mobilität (travel).",
+     "type": "company_claim",
+     "url": "https://hoerluchs.com/",
+     "source_title": "Hörluchs: Hören. Schützen. Genießen!",
+     "source_date": "unknown",
+     "excerpt": "Reisen & Mobilität",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hlu-inears",
+     "claim": "It sells in-ear headphones to musicians and gamers.",
+     "type": "company_claim",
+     "url": "https://hoerluchs.com/en/about-hoerluchs/",
+     "source_title": "About Hörluchs",
+     "source_date": "unknown",
+     "excerpt": "offers unique in-ear headphones for musicians and gamers.",
+     "access_limitation": "none"
+    }
+   ]
+  },
+  {
+   "name": "Haspro sp. z o.o.",
+   "fit_notes": "REJECT. Calls itself a Polish hearing protector producer (hsp-producer), but it is already a consumer brand: sold through major pharmacy chains and drugstores (hsp-pharmacy, hsp-drug), with web-shop categories for sleep, music, travel, children and motorsport (hsp-cats). No open question. In-house production was not verified.",
+   "consumer_presence": "significant",
+   "unknown": [
+    "Whether Haspro runs its own factory: 'producent' is its own word, with no plant described.",
+    "Ownership, revenue and headcount. Polish KRS records were not opened."
+   ],
+   "records": [
+    {
+     "id": "hsp-producer",
+     "claim": "Haspro describes itself as Poland's fastest-growing hearing protector producer.",
+     "type": "company_claim",
+     "url": "https://hasproearplugs.com/wspolpraca-b2b/",
+     "source_title": "Współpraca B2B - Haspro",
+     "source_date": "unknown",
+     "excerpt": "Haspro to najszybciej rozwijający się producent ochronników słuchu w Polsce i jedna z najbardziej rozpoznawalnych marek w tej kategorii.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hsp-pharmacy",
+     "claim": "Its products are sold in major Polish pharmacy chains.",
+     "type": "company_claim",
+     "url": "https://hasproearplugs.com/wspolpraca-b2b/",
+     "source_title": "Współpraca B2B - Haspro",
+     "source_date": "unknown",
+     "excerpt": "Produkty Haspro dostępne są w największych sieciach aptek w Polsce: DOZ, DrMax, Super-Pharm, Gemini i wielu innych.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hsp-drug",
+     "claim": "It also works with drugstores, safety shops and wholesalers.",
+     "type": "company_claim",
+     "url": "https://hasproearplugs.com/wspolpraca-b2b/",
+     "source_title": "Współpraca B2B - Haspro",
+     "source_date": "unknown",
+     "excerpt": "Współpracujemy także z drogeriami, sklepami BHP oraz specjalistycznymi hurtowniami.",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hsp-cats",
+     "claim": "Its web shop has use-based categories including sleep (Sen i odpoczynek), music, travel, children and motorsport.",
+     "type": "company_claim",
+     "url": "https://hasproearplugs.com/",
+     "source_title": "Home - Producent ochronników słuchu - Haspro",
+     "source_date": "unknown",
+     "excerpt": "Sen i odpoczynek",
+     "access_limitation": "none"
+    },
+    {
+     "id": "hsp-custom",
+     "claim": "It also makes custom earplugs from ear impressions.",
+     "type": "company_claim",
+     "url": "https://hasproearplugs.com/",
+     "source_title": "Home - Producent ochronników słuchu - Haspro",
+     "source_date": "unknown",
+     "excerpt": "Indywidualne ochronniki słuchu, zatyczki do uszu HASPRO wykonane są na podstawie wycisku (odlewu) ucha.",
+     "access_limitation": "none"
+    }
+   ]
+  }
+ ]
+}

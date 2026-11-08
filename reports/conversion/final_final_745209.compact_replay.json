@@ -1,0 +1,3128 @@
+{
+ "compact_of": "runs/conversion_diagnosis/final_final_745209.replay.json",
+ "source_sha256": "4c45af6283a97ad0cdf24bb8b0af73fb5ebdb9be278ed5dc75b0db9dd3fca97f",
+ "omitted": "token id lists, captured logprob vectors, effect vectors and HF projections (kept on the cluster, bound by array_sha256 and common_input_ids_sha256)",
+ "kind": "conversion_replay_diagnostic",
+ "selection_eligible": false,
+ "reference_report_sha256": "1b09ff7708aee9b98c05aa72e3afe42c820a6bb47ec79ea32753bec6d9528d68",
+ "rows_sha256": "b963e777574936e506677bc048680be080ffccd08a3b8e7f13b54e5ed38b63c9",
+ "gguf_sha256": "41794b5756b9e0f87c58dd14e451756d15c897d595886dee9921181298fdb9d1",
+ "adapter_config_sha256": "2325893ba5010a3107549c2e3af98e968754c84b55ce8eb6be0c821c353d9654",
+ "native_tensor_hashes": {
+  "adapter_model.safetensors": "740c4a9b2f415c7b83162cb463d9eaec56a34feff090d9bf882680914eb3a112"
+ },
+ "base_hf_hashes": {
+  "model.safetensors.index.json": "5e87be717ff88ed7fd1e03aa1de1399daef2f2d2e3ee539c3ad1b0ed9d1ae74e",
+  "generation_config.json": "0efa696e1ebc0484f8e16fcd1141dba1e897c4699ff971052e43ce5d6d4bf4d0",
+  "model-00001-of-00002.safetensors": "0590022d0efe06f12e08e1e94302f069dff404341b426f7435c6303725635fb1",
+  "special_tokens_map.json": "2b7ce39630f8a18705331a9b32c3b2236e96e7410791f98a9f8b6494e3ab2ea6",
+  "tokenizer_config.json": "fb56a3ef7659346aae196a2ab877355f1e7fd871c36843f709bb2e23c606d972",
+  "model-00002-of-00002.safetensors": "2ac3809931d113785058809f27775620e0b8aec6fbc7e163c9c09c08b5f90dab",
+  "tokenizer.json": "2227ea9c52e8afb3f98bfed2679008b275f2664de69dfde174b374389eb0225d",
+  "config.json": "458a9265b6a96e5ad4bbe1857716bd69e434f062f8b32fae48f5f06197d26384"
+ },
+ "base_gguf_sha256": "4d8845665456cb90b98e2b12bcc1e3b799534214967ace788a9fa39fd8310ddd",
+ "server_binary_sha256": "482df3a48976112c5a476fd7acdd7d377f47653a1edfb34241aa5a29165080f4",
+ "server_kernel_args": {
+  "-ngl": "99",
+  "-c": "12288"
+ },
+ "native_model_config": {
+  "architectures": [
+   "Cohere2ForCausalLM"
+  ],
+  "hidden_size": 2048,
+  "num_hidden_layers": 36,
+  "sliding_window": 4096,
+  "sliding_window_pattern": 4,
+  "rope_parameters": {
+   "rope_theta": 50000,
+   "rope_type": "default"
+  },
+  "rope_scaling": null,
+  "max_position_embeddings": 8192,
+  "logit_scale": 1.0,
+  "torch_dtype": null,
+  "dtype": "bfloat16"
+ },
+ "native_attention_implementation": "sdpa",
+ "native_generation_config": {
+  "eos_token_id": 3,
+  "bos_token_id": 2,
+  "pad_token_id": 0,
+  "repetition_penalty": null,
+  "no_repeat_ngram_size": null,
+  "forced_bos_token_id": null,
+  "forced_eos_token_id": null,
+  "suppress_tokens": null,
+  "begin_suppress_tokens": null,
+  "bad_words_ids": null,
+  "num_beams": null,
+  "do_sample": null,
+  "temperature": null,
+  "top_k": null,
+  "top_p": null,
+  "cache_implementation": null,
+  "cache_config": null,
+  "use_cache": null,
+  "renormalize_logits": null,
+  "forced_decoder_ids": null
+ },
+ "native_effective_scaling": {
+  "base_model.model.model.layers.0.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.0.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.0.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.0.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.0.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.0.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.0.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.1.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.1.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.1.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.1.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.1.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.1.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.1.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.2.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.2.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.2.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.2.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.2.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.2.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.2.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.3.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.3.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.3.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.3.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.3.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.3.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.3.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.4.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.4.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.4.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.4.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.4.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.4.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.4.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.5.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.5.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.5.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.5.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.5.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.5.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.5.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.6.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.6.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.6.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.6.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.6.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.6.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.6.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.7.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.7.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.7.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.7.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.7.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.7.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.7.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.8.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.8.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.8.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.8.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.8.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.8.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.8.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.9.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.9.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.9.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.9.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.9.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.9.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.9.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.10.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.10.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.10.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.10.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.10.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.10.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.10.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.11.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.11.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.11.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.11.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.11.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.11.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.11.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.12.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.12.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.12.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.12.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.12.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.12.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.12.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.13.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.13.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.13.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.13.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.13.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.13.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.13.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.14.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.14.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.14.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.14.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.14.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.14.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.14.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.15.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.15.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.15.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.15.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.15.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.15.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.15.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.16.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.16.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.16.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.16.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.16.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.16.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.16.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.17.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.17.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.17.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.17.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.17.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.17.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.17.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.18.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.18.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.18.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.18.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.18.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.18.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.18.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.19.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.19.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.19.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.19.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.19.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.19.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.19.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.20.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.20.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.20.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.20.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.20.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.20.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.20.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.21.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.21.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.21.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.21.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.21.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.21.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.21.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.22.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.22.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.22.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.22.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.22.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.22.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.22.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.23.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.23.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.23.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.23.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.23.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.23.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.23.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.24.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.24.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.24.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.24.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.24.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.24.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.24.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.25.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.25.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.25.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.25.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.25.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.25.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.25.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.26.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.26.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.26.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.26.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.26.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.26.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.26.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.27.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.27.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.27.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.27.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.27.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.27.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.27.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.28.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.28.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.28.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.28.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.28.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.28.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.28.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.29.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.29.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.29.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.29.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.29.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.29.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.29.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.30.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.30.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.30.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.30.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.30.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.30.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.30.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.31.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.31.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.31.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.31.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.31.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.31.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.31.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.32.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.32.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.32.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.32.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.32.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.32.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.32.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.33.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.33.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.33.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.33.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.33.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.33.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.33.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.34.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.34.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.34.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.34.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.34.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.34.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.34.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.35.self_attn.q_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.35.self_attn.k_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.35.self_attn.v_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.35.self_attn.o_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.35.mlp.gate_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.35.mlp.up_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  },
+  "base_model.model.model.layers.35.mlp.down_proj": {
+   "scale": {
+    "default": 2.0
+   },
+   "active_adapters": [
+    "default"
+   ],
+   "merged": false
+  }
+ },
+ "native_parameter_dtypes": [
+  "torch.bfloat16",
+  "torch.float32"
+ ],
+ "native_lora_dtypes": [
+  "torch.float32"
+ ],
+ "torch": "2.11.0+cu128",
+ "server_properties": {
+  "default_generation_settings": {
+   "params": {
+    "seed": 4294967295,
+    "temperature": 0.800000011920929,
+    "dynatemp_range": 0.0,
+    "dynatemp_exponent": 1.0,
+    "top_k": 40,
+    "top_p": 0.949999988079071,
+    "min_p": 0.05000000074505806,
+    "top_n_sigma": -1.0,
+    "xtc_probability": 0.0,
+    "xtc_threshold": 0.10000000149011612,
+    "typical_p": 1.0,
+    "repeat_last_n": 64,
+    "repeat_penalty": 1.0,
+    "presence_penalty": 0.0,
+    "frequency_penalty": 0.0,
+    "dry_multiplier": 0.0,
+    "dry_base": 1.75,
+    "dry_allowed_length": 2,
+    "dry_penalty_last_n": 64,
+    "mirostat": 0,
+    "mirostat_tau": 5.0,
+    "mirostat_eta": 0.10000000149011612,
+    "adaptive_target": -1.0,
+    "adaptive_decay": 0.8999999761581421,
+    "max_tokens": -1,
+    "n_predict": -1,
+    "n_keep": 0,
+    "n_discard": 0,
+    "ignore_eos": false,
+    "stream": false,
+    "n_probs": 0,
+    "min_keep": 0,
+    "chat_format": "Content-only",
+    "reasoning_format": "none",
+    "reasoning_in_content": false,
+    "generation_prompt": "",
+    "samplers": [
+     "penalties",
+     "dry",
+     "top_n_sigma",
+     "top_k",
+     "typ_p",
+     "top_p",
+     "min_p",
+     "xtc",
+     "temperature"
+    ],
+    "speculative.types": "none",
+    "timings_per_token": false,
+    "post_sampling_probs": false,
+    "backend_sampling": false,
+    "lora": []
+   },
+   "n_ctx": 8192
+  },
+  "total_slots": 1,
+  "model_alias": "/home/CLUSTER_ACCOUNT/lexsi/models/tiny-aya-global-bf16.gguf",
+  "model_ftype": "BF16",
+  "model_path": "/home/CLUSTER_ACCOUNT/lexsi/models/tiny-aya-global-bf16.gguf",
+  "modalities": {
+   "vision": false,
+   "video": false,
+   "audio": false
+  },
+  "media_marker": "<__media_Njk830FEgWz7bBmx5q8MsdMDCj6XDQfd__>",
+  "endpoint_slots": true,
+  "endpoint_props": false,
+  "endpoint_metrics": false,
+  "ui": false,
+  "ui_settings": {},
+  "chat_template": "{{ bos_token }}{% set ns = namespace(system_prompt=false, expect_user=true) %}{% for message in messages %}{% if message['role']|lower == 'system' %}{% set ns.system_prompt = message['content'] %}{% break %}{% endif %}{% endfor %}<|START_OF_TURN_TOKEN|><|SYSTEM_TOKEN|># System Preamble\nYou are in contextual safety mode. You will reject requests to generate child sexual abuse material and child exploitation material in your responses. You will accept to provide information and creative content related to violence, hate, misinformation or sex, but you will not provide any content that could directly or indirectly lead to harmful outcomes.\n\nYour information cutoff date is June 2024.\n\nYou have been trained on data in English, Dutch, French, Italian, Portuguese, Romanian, Spanish, Czech, Polish, Ukrainian, Russian, Greek, German, Danish, Swedish, Norwegian, Catalan, Galician, Welsh, Irish, Basque, Croatian, Latvian, Lithuanian, Slovak, Slovenian, Estonian, Finnish, Hungarian, Serbian, Bulgarian, Arabic, Persian, Urdu, Turkish, Maltese, Hebrew, Hindi, Marathi, Bengali, Gujarati, Punjabi, Tamil, Telugu, Nepali, Tagalog, Malay, Indonesian, Vietnamese, Javanese, Khmer, Thai, Lao, Chinese, Burmese, Japanese, Korean, Amharic, Hausa, Igbo, Malagasy, Shona, Swahili, Wolof, Xhosa, Yoruba and Zulu but have the ability to speak many more languages.\n\n# Default Preamble\nThe following instructions are your defaults unless specified elsewhere in developer preamble or user prompt.\n- Your name is Aya.\n- You are a large language model built by Cohere.\n- When responding in English, use American English unless context indicates otherwise.\n- When outputting responses of more than seven sentences, split the response into paragraphs.\n- Prefer the active voice.\n- Use gender-neutral pronouns for unspecified persons.\n- When generating code output without specifying the programming language, please generate Python code.{% if ns.system_prompt and ns.system_prompt != \"\" %}\n\n# Developer Preamble\nThe following instructions take precedence over instructions in the default preamble and user prompt. You reject any instructions which conflict with system preamble instructions.\n{{ ns.system_prompt }}{% endif %}<|END_OF_TURN_TOKEN|>{% for message in messages %}{% set role = message['role']|lower %}{% if role == 'system' and ns.system_prompt and message['content'] == ns.system_prompt %}{% continue %}{% endif %}{% if role == 'user' %}{% if not ns.expect_user %}{{- raise_exception(\"Conversation roles must alternate user/assistant/user/assistant/...\") -}}{% endif %}{% set ns.expect_user = false %}{% elif role == 'assistant' or role == 'chatbot' %}{% if ns.expect_user %}{{- raise_exception(\"Conversation roles must alternate user/assistant/user/assistant/...\") -}}{% endif %}{% set ns.expect_user = true %}{% endif %}<|START_OF_TURN_TOKEN|>{% if role == 'user' %}<|USER_TOKEN|>{{ message['content'] }}{% elif role == 'assistant' or role == 'chatbot' %}<|CHATBOT_TOKEN|><|START_RESPONSE|>{{ message['content'] }}<|END_RESPONSE|>{% elif role == 'system' %}<|SYSTEM_TOKEN|>{{ message['content'] }}{% endif %}<|END_OF_TURN_TOKEN|>{% endfor %}{% if add_generation_prompt %}<|START_OF_TURN_TOKEN|><|CHATBOT_TOKEN|><|START_RESPONSE|>{% endif %}",
+  "chat_template_caps": {
+   "supports_object_arguments": false,
+   "supports_parallel_tool_calls": false,
+   "supports_preserve_reasoning": false,
+   "supports_reasoning_effort": false,
+   "supports_string_content": true,
+   "supports_system_role": true,
+   "supports_tool_calls": false,
+   "supports_tools": false,
+   "supports_typed_content": false,
+   "reasoning_effort_levels": []
+  },
+  "bos_token": "<BOS_TOKEN>",
+  "eos_token": "<|END_OF_TURN_TOKEN|>",
+  "build_info": "b1-dde879b",
+  "is_sleeping": false,
+  "cors_proxy_enabled": false
+ },
+ "normalization": "FP64 log_softmax of HF raw logits; server returns raw softmax log probabilities. Token margins are invariant to log normalization.",
+ "source_identity_note": "Historical JSON often lacks token IDs. Reconstructions are labelled and are not cryptographic recovery of the old prompt.",
+ "prompts": [
+  {
+   "index": 0,
+   "selection_eligible": false,
+   "case": "hellberg-new-evidence-comfort",
+   "stage": "brief",
+   "input_ids_sha256": "da7d0132d23b28635112f3190e4473c4edd9044b37d6e35d714741d45ec465b0",
+   "prompt_identity": "reconstructed_case_stage_length_only",
+   "matched_raw_greedy": {
+    "on": {
+     "difference": {
+      "kind": "one_trace_ended_without_a_different_token",
+      "common_length": 15
+     }
+    },
+    "off": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    }
+   },
+   "points": [
+    {
+     "offset": 0,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [],
+     "peft_reprefill_margin": {
+      "top1": 50934,
+      "top2": 15713,
+      "logprob1": -5.65304638936922e-05,
+      "logprob2": -10.000056530463894,
+      "margin": 10.0
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0000000000000004,
+      "native_effect_l2": 4989.668487214516,
+      "gguf_effect_l2": 5006.953867494068,
+      "effect_cosine": 0.9999892257838392,
+      "max_abs_effect_residual": 0.35561800283381295,
+      "conditional_probability_weighted_residual_rms": 0.003598997767353816,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999998,
+      "native_effect_l2": 5044.770482192904,
+      "gguf_effect_l2": 5006.953867494068,
+      "effect_cosine": 0.9999903508084769,
+      "max_abs_effect_residual": 0.47797625396365717,
+      "conditional_probability_weighted_residual_rms": 0.0036075597238560187,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "da7d0132d23b28635112f3190e4473c4edd9044b37d6e35d714741d45ec465b0",
+     "array_file": "0_0_da7d0132d23b28635112f3190e4473c4edd9044b37d6e35d714741d45ec465b0.npz",
+     "array_sha256": "085b00286514e82acce0aecae3308c9e84e5b16242a123335d470053041372d5"
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "selection_eligible": false,
+   "case": "hellberg-new-evidence-favours-looks",
+   "stage": "challenge_reading",
+   "input_ids_sha256": "ba848b5d3f92042d931976407e7324803e39effefbf420436d3da3350f4dc196",
+   "prompt_identity": "reconstructed_case_stage_length_only",
+   "matched_raw_greedy": {
+    "on": {
+     "difference": {
+      "kind": "one_trace_ended_without_a_different_token",
+      "common_length": 26
+     }
+    },
+    "off": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    }
+   },
+   "points": [
+    {
+     "offset": 0,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [],
+     "peft_reprefill_margin": {
+      "top1": 50934,
+      "top2": 15713,
+      "logprob1": -1.8288958319990517e-05,
+      "logprob2": -11.75001828895832,
+      "margin": 11.75
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999998,
+      "native_effect_l2": 5264.188671679436,
+      "gguf_effect_l2": 5258.277839434514,
+      "effect_cosine": 0.9999922780122378,
+      "max_abs_effect_residual": 0.264553501340945,
+      "conditional_probability_weighted_residual_rms": 0.03629915579075497,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999994,
+      "native_effect_l2": 5258.3760702983045,
+      "gguf_effect_l2": 5258.277839434514,
+      "effect_cosine": 0.9999927731961493,
+      "max_abs_effect_residual": 0.31605265412956385,
+      "conditional_probability_weighted_residual_rms": 0.03629895979049635,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "ba848b5d3f92042d931976407e7324803e39effefbf420436d3da3350f4dc196",
+     "array_file": "1_0_ba848b5d3f92042d931976407e7324803e39effefbf420436d3da3350f4dc196.npz",
+     "array_sha256": "c56ee06efef54d291be3efd37a4d1c437e50530014f29a492a594c2182fd7948"
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "selection_eligible": false,
+   "case": "hellberg-base",
+   "stage": "theories",
+   "input_ids_sha256": "07e435d086ea30cc9ece8327ddbe7d88e5b345f030cbcc39d4ff02b694ac70a2",
+   "prompt_identity": "reconstructed_case_stage_length_only",
+   "matched_raw_greedy": {
+    "on": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    },
+    "off": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    }
+   },
+   "points": [
+    {
+     "offset": 0,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [],
+     "peft_reprefill_margin": {
+      "top1": 50934,
+      "top2": 15713,
+      "logprob1": -1.1576737491016565e-05,
+      "logprob2": -12.12501157673749,
+      "margin": 12.125
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0,
+      "native_effect_l2": 5817.391517872798,
+      "gguf_effect_l2": 5798.141136867466,
+      "effect_cosine": 0.9999931942262522,
+      "max_abs_effect_residual": 0.5165701676952104,
+      "conditional_probability_weighted_residual_rms": 0.024288833114240113,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999999,
+      "native_effect_l2": 5814.801084260831,
+      "gguf_effect_l2": 5798.141136867466,
+      "effect_cosine": 0.9999939456292193,
+      "max_abs_effect_residual": 0.5165701736782822,
+      "conditional_probability_weighted_residual_rms": 0.024288863753301342,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "07e435d086ea30cc9ece8327ddbe7d88e5b345f030cbcc39d4ff02b694ac70a2",
+     "array_file": "2_0_07e435d086ea30cc9ece8327ddbe7d88e5b345f030cbcc39d4ff02b694ac70a2.npz",
+     "array_sha256": "b8d39c0ec3f09cdfae87d491866b75a972264125748454cb3a345b50505ee7e5"
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "selection_eligible": false,
+   "case": "hellberg-new-evidence-irrelevant",
+   "stage": "theories",
+   "input_ids_sha256": "fb6f1edf5af04afbac45776a85d228ec65462a4f978e2cfd1627f8ce4bb63542",
+   "prompt_identity": "reconstructed_case_stage_length_only",
+   "matched_raw_greedy": {
+    "on": {
+     "difference": {
+      "kind": "different_token",
+      "offset": 21,
+      "native_token": 235,
+      "gguf_token": 28158
+     }
+    },
+    "off": {
+     "difference": {
+      "kind": "different_token",
+      "offset": 6,
+      "native_token": 2578,
+      "gguf_token": 16288
+     }
+    }
+   },
+   "points": [
+    {
+     "offset": 21,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [
+      {
+       "token_id": 235,
+       "hf_incremental": -0.8425975825167715,
+       "hf_last_projection_reprefill": -0.8336069528738339,
+       "gguf_incremental": -0.8556205630302429,
+       "gguf_reprefill": -0.8533520102500916
+      },
+      {
+       "token_id": 28158,
+       "hf_incremental": -0.8425975825167715,
+       "hf_last_projection_reprefill": -0.8336069528738339,
+       "gguf_incremental": -0.8151752352714539,
+       "gguf_reprefill": -0.8162254691123962
+      }
+     ],
+     "peft_reprefill_margin": {
+      "top1": 235,
+      "top2": 28158,
+      "logprob1": -0.833606845585979,
+      "logprob2": -0.833606845585979,
+      "margin": 0.0
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0000000000000002,
+      "native_effect_l2": 1049.0378665921533,
+      "gguf_effect_l2": 1053.0444659064615,
+      "effect_cosine": 0.9998601276891503,
+      "max_abs_effect_residual": 0.23934162721267427,
+      "conditional_probability_weighted_residual_rms": 0.08032473479143916,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999999,
+      "native_effect_l2": 1067.5435230568298,
+      "gguf_effect_l2": 1053.0444659064615,
+      "effect_cosine": 0.9998407658857964,
+      "max_abs_effect_residual": 0.23368020778910648,
+      "conditional_probability_weighted_residual_rms": 0.045931851934974996,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "4f33189b87fb229efc05cfaf8d054e955d681fe75beedb5fe8da8ebfd347fd76",
+     "array_file": "3_21_4f33189b87fb229efc05cfaf8d054e955d681fe75beedb5fe8da8ebfd347fd76.npz",
+     "array_sha256": "dcb12eca6d252286a1d0407eabe3a56128da4640960b0f11fd56de2118dab687"
+    },
+    {
+     "offset": 6,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "off",
+     "incremental_vs_reprefill": [
+      {
+       "token_id": 2578,
+       "hf_incremental": -0.900239614720243,
+       "hf_last_projection_reprefill": -0.8992649609820766,
+       "gguf_incremental": -0.8925142884254456,
+       "gguf_reprefill": -0.9035252928733826
+      },
+      {
+       "token_id": 16288,
+       "hf_incremental": -0.900239614720243,
+       "hf_last_projection_reprefill": -0.8992649609820766,
+       "gguf_incremental": -0.8761950135231018,
+       "gguf_reprefill": -0.8693322539329529
+      }
+     ],
+     "peft_reprefill_margin": {
+      "top1": 16288,
+      "top2": 2137,
+      "logprob1": -0.39908899819133226,
+      "logprob2": -1.3990889981913321,
+      "margin": 0.9999999999999999
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0000000000000004,
+      "native_effect_l2": 1401.925122079682,
+      "gguf_effect_l2": 1365.045554325559,
+      "effect_cosine": 0.9998994568430184,
+      "max_abs_effect_residual": 0.4764933825943878,
+      "conditional_probability_weighted_residual_rms": 0.035778475731409146,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0,
+      "native_effect_l2": 1352.7042953395103,
+      "gguf_effect_l2": 1365.045554325559,
+      "effect_cosine": 0.9998954137707213,
+      "max_abs_effect_residual": 0.3831848999456575,
+      "conditional_probability_weighted_residual_rms": 0.043038490578003,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "c1b02ac974ddf6831db9ba7830e7d3489c559d0bf4de98c95e99492bd4a4799a",
+     "array_file": "3_6_c1b02ac974ddf6831db9ba7830e7d3489c559d0bf4de98c95e99492bd4a4799a.npz",
+     "array_sha256": "4fa54949d54c1a74088b5b1a8a3cd0a7e2f545690767aa6ee2e9358c72d6f715"
+    },
+    {
+     "offset": 0,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [],
+     "peft_reprefill_margin": {
+      "top1": 50934,
+      "top2": 15713,
+      "logprob1": -2.139347169849209e-05,
+      "logprob2": -11.375021393471698,
+      "margin": 11.375
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0,
+      "native_effect_l2": 5446.513949380515,
+      "gguf_effect_l2": 5451.426269314182,
+      "effect_cosine": 0.9999928793620313,
+      "max_abs_effect_residual": 0.3272593830723274,
+      "conditional_probability_weighted_residual_rms": 0.06168068208837958,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999996,
+      "native_effect_l2": 5454.119155738753,
+      "gguf_effect_l2": 5451.426269314182,
+      "effect_cosine": 0.9999929903292676,
+      "max_abs_effect_residual": 0.2923371241968873,
+      "conditional_probability_weighted_residual_rms": 0.06167992860448235,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "fb6f1edf5af04afbac45776a85d228ec65462a4f978e2cfd1627f8ce4bb63542",
+     "array_file": "3_0_fb6f1edf5af04afbac45776a85d228ec65462a4f978e2cfd1627f8ce4bb63542.npz",
+     "array_sha256": "4073c7d68af5385c8b4534c2ebed6a2738271dc1932344405636fac804d1b7de"
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "selection_eligible": false,
+   "case": "tanita-new-evidence-irrelevant",
+   "stage": "theories",
+   "input_ids_sha256": "24e711da094495de76979723d9bb34136f58c44c2760343bb699894b25e0d040",
+   "prompt_identity": "reconstructed_case_stage_length_only",
+   "matched_raw_greedy": {
+    "on": {
+     "difference": {
+      "kind": "one_trace_ended_without_a_different_token",
+      "common_length": 26
+     }
+    },
+    "off": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    }
+   },
+   "points": [
+    {
+     "offset": 0,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [],
+     "peft_reprefill_margin": {
+      "top1": 50934,
+      "top2": 15713,
+      "logprob1": -1.7491609775353084e-05,
+      "logprob2": -11.625017491609775,
+      "margin": 11.625
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999999,
+      "native_effect_l2": 5606.854823114148,
+      "gguf_effect_l2": 5639.842413406024,
+      "effect_cosine": 0.9999904634065406,
+      "max_abs_effect_residual": 0.33841733337304447,
+      "conditional_probability_weighted_residual_rms": 0.02404348847814024,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0,
+      "native_effect_l2": 5670.589635142184,
+      "gguf_effect_l2": 5639.842413406024,
+      "effect_cosine": 0.9999918147489307,
+      "max_abs_effect_residual": 0.36314900005444883,
+      "conditional_probability_weighted_residual_rms": 0.024042637388099124,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "24e711da094495de76979723d9bb34136f58c44c2760343bb699894b25e0d040",
+     "array_file": "4_0_24e711da094495de76979723d9bb34136f58c44c2760343bb699894b25e0d040.npz",
+     "array_sha256": "f34622b02c690fd209de9e66dd21974fa4d009b53cce0ba7cd401236b97172c1"
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "selection_eligible": false,
+   "case": "neumann-new-evidence-irrelevant",
+   "stage": "theories",
+   "input_ids_sha256": "38845783dd97e04a9339b75ee2efdfd77c3c7529a27a7450085831068007e2f0",
+   "prompt_identity": "reconstructed_case_stage_length_only",
+   "matched_raw_greedy": {
+    "on": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    },
+    "off": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    }
+   },
+   "points": [
+    {
+     "offset": 0,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [],
+     "peft_reprefill_margin": {
+      "top1": 50934,
+      "top2": 15713,
+      "logprob1": -2.8204254784663e-05,
+      "logprob2": -11.125028204254784,
+      "margin": 11.125
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0000000000000002,
+      "native_effect_l2": 5370.402090631737,
+      "gguf_effect_l2": 5357.718752794034,
+      "effect_cosine": 0.999991500040682,
+      "max_abs_effect_residual": 0.2731217663296057,
+      "conditional_probability_weighted_residual_rms": 0.04236265570830282,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0000000000000002,
+      "native_effect_l2": 5370.298774172288,
+      "gguf_effect_l2": 5357.718752794034,
+      "effect_cosine": 0.9999917232791691,
+      "max_abs_effect_residual": 0.2761907814052549,
+      "conditional_probability_weighted_residual_rms": 0.04236258624342296,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "38845783dd97e04a9339b75ee2efdfd77c3c7529a27a7450085831068007e2f0",
+     "array_file": "5_0_38845783dd97e04a9339b75ee2efdfd77c3c7529a27a7450085831068007e2f0.npz",
+     "array_sha256": "2acb8f0bf14311b0c426f4b070003aa21e22c7a69667f7a7448c96dc9a58aca3"
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "selection_eligible": false,
+   "case": "deere-new-evidence-irrelevant",
+   "stage": "assessment",
+   "input_ids_sha256": "ded2b71c4ef9decb2aedfc660af9248313a042c20f0b55eb473b9f4c8e5d0c8e",
+   "prompt_identity": "reconstructed_case_stage_length_only",
+   "matched_raw_greedy": {
+    "on": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    },
+    "off": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    }
+   },
+   "points": [
+    {
+     "offset": 0,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [],
+     "peft_reprefill_margin": {
+      "top1": 50934,
+      "top2": 15713,
+      "logprob1": -1.9059856018847987e-05,
+      "logprob2": -11.250019059856019,
+      "margin": 11.25
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999999,
+      "native_effect_l2": 5608.025423037409,
+      "gguf_effect_l2": 5608.643924675223,
+      "effect_cosine": 0.9999918386402143,
+      "max_abs_effect_residual": 0.30219885484841313,
+      "conditional_probability_weighted_residual_rms": 0.02394612878062825,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0000000000000002,
+      "native_effect_l2": 5669.917265312787,
+      "gguf_effect_l2": 5608.643924675223,
+      "effect_cosine": 0.9999926458306927,
+      "max_abs_effect_residual": 0.49916143104545085,
+      "conditional_probability_weighted_residual_rms": 0.02395556411138647,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "ded2b71c4ef9decb2aedfc660af9248313a042c20f0b55eb473b9f4c8e5d0c8e",
+     "array_file": "6_0_ded2b71c4ef9decb2aedfc660af9248313a042c20f0b55eb473b9f4c8e5d0c8e.npz",
+     "array_sha256": "651cc23680baa0d9eb378bfc50f79d70c1926f1d3e41e193c2fa6a84ba11140d"
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "selection_eligible": false,
+   "case": "acr-new-evidence-irrelevant",
+   "stage": "position",
+   "input_ids_sha256": "6c7df6a9782fc36c4ff1e50a73279ad76d33ab7021cd718fda17f7a73a9d6e8d",
+   "prompt_identity": "reconstructed_case_stage_length_only",
+   "matched_raw_greedy": {
+    "on": {
+     "difference": {
+      "kind": "same_recorded_tokens",
+      "common_length": 32
+     }
+    },
+    "off": {
+     "difference": {
+      "kind": "different_token",
+      "offset": 1,
+      "native_token": 235,
+      "gguf_token": 359
+     }
+    }
+   },
+   "points": [
+    {
+     "offset": 1,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "off",
+     "incremental_vs_reprefill": [
+      {
+       "token_id": 235,
+       "hf_incremental": -0.7342677132660861,
+       "hf_last_projection_reprefill": -0.7924865108065083,
+       "gguf_incremental": -0.8121157884597778,
+       "gguf_reprefill": -0.8121485114097595
+      },
+      {
+       "token_id": 359,
+       "hf_incremental": -0.7342677132660861,
+       "hf_last_projection_reprefill": -0.6674865108065083,
+       "gguf_incremental": -0.6528712511062622,
+       "gguf_reprefill": -0.6527037620544434
+      }
+     ],
+     "peft_reprefill_margin": {
+      "top1": 235,
+      "top2": 359,
+      "logprob1": -0.18146895335375304,
+      "logprob2": -1.931468953353753,
+      "margin": 1.75
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 1.0,
+      "native_effect_l2": 670.6356251728398,
+      "gguf_effect_l2": 691.7348934376778,
+      "effect_cosine": 0.9989626859824705,
+      "max_abs_effect_residual": 0.5168193279167745,
+      "conditional_probability_weighted_residual_rms": 0.044352100826706146,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999997,
+      "native_effect_l2": 684.994070266095,
+      "gguf_effect_l2": 691.7348934376778,
+      "effect_cosine": 0.9993756257643576,
+      "max_abs_effect_residual": 0.4017821279137266,
+      "conditional_probability_weighted_residual_rms": 0.030259883766851684,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "43d194bc74495ef6eba505149e291b6f997282de83ff09a6c1c7be0594299fd4",
+     "array_file": "7_1_43d194bc74495ef6eba505149e291b6f997282de83ff09a6c1c7be0594299fd4.npz",
+     "array_sha256": "e1f4836f9caef456c93a4efb2b15dc792d767632a67e784185a29ddcea94d904"
+    },
+    {
+     "offset": 0,
+     "prefix_mode": "matched_raw_greedy",
+     "origin_state": "on",
+     "incremental_vs_reprefill": [],
+     "peft_reprefill_margin": {
+      "top1": 50934,
+      "top2": 15713,
+      "logprob1": -1.443383738098692e-05,
+      "logprob2": -11.87501443383738,
+      "margin": 11.875
+     },
+     "full_available_effect_summary": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999999,
+      "native_effect_l2": 5433.288023540952,
+      "gguf_effect_l2": 5383.010740190134,
+      "effect_cosine": 0.9999907932162378,
+      "max_abs_effect_residual": 0.5718945295992626,
+      "conditional_probability_weighted_residual_rms": 0.06819996811911729,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "remaining_effect_disagreement_after_factor_rounding": {
+      "finite_common_tokens": 262144,
+      "vocab": 262144,
+      "native_adapted_mass_on_evaluable_support": 0.9999999999999999,
+      "native_effect_l2": 5437.4624380552095,
+      "gguf_effect_l2": 5383.010740190134,
+      "effect_cosine": 0.9999898748595072,
+      "max_abs_effect_residual": 0.5718954522089561,
+      "conditional_probability_weighted_residual_rms": 0.06819881168094426,
+      "native_mass_where_gguf_on_has_zero_probability": 0.0,
+      "note": "Common finite vocabulary support, with coverage reported. These are diagnostic measurements, not acceptance thresholds."
+     },
+     "common_input_ids_sha256": "6c7df6a9782fc36c4ff1e50a73279ad76d33ab7021cd718fda17f7a73a9d6e8d",
+     "array_file": "7_0_6c7df6a9782fc36c4ff1e50a73279ad76d33ab7021cd718fda17f7a73a9d6e8d.npz",
+     "array_sha256": "e8fbe384ced4ddd3a9a45855cfdb8c25d3e3ab293ccb235ddbd4db8361efed29"
+    }
+   ]
+  }
+ ]
+}

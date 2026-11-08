@@ -1,0 +1,494 @@
+{
+ "summary": {
+  "verified": 92,
+  "not_found": 4,
+  "fetch_failed": 1
+ },
+ "results": [
+  {
+   "id": "mdx-core",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-private",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-founder",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-origin",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-eu",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-vert",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-foam",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-channel",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-patents",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mdx-legal",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-size25",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-size26",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-deal",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-channel",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-support",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-lead",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-3d",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-onsite",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-filter",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ctl-it1",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-owner",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-junior",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-bauhaus",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-kjell",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-retail",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-tech",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-head",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-pro",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlb-sales",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "jsp-reg",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "jsp-psc",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "jsp-kpi",
+   "status": "not_found",
+   "detail": "page has 48 characters"
+  },
+  {
+   "id": "jsp-staff",
+   "status": "not_found",
+   "detail": "page has 48 characters"
+  },
+  {
+   "id": "jsp-activity",
+   "status": "not_found",
+   "detail": "page has 48 characters"
+  },
+  {
+   "id": "jsp-head",
+   "status": "not_found",
+   "detail": "page has 48 characters"
+  },
+  {
+   "id": "jsp-mfg",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "jsp-sonis",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "uvx-warburg",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "uvx-rev",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "uvx-safety",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "uvx-sports",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "uvx-plant",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "uvx-consumer",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "uvx-moments",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "uvx-pl",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sdn-2019",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sdn-coeli",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sdn-sites",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sdn-turnover",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sdn-lease",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sdn-x2",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sdn-shop",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sdn-retail",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "pip-deal",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "pip-howard",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "pip-odyssey",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "pip-sites",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "pip-scope",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "pip-impact",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mmm-sales",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mmm-seg",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mmm-ps",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mmm-cae",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mmm-wt",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ela-lyreco",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ela-2020",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ela-stores",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ela-private",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ela-sleep",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ela-mfg",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "iso-founded",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "iso-hq",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "iso-family",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "iso-brand",
+   "status": "fetch_failed",
+   "detail": "<urlopen error [Errno 104] Connection reset by peer>"
+  },
+  {
+   "id": "iso-d2c",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "iso-ind",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "rad-foam",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "rad-cap",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "rad-pack",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "rad-about",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "rad-sport",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "rad-diy",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sil-core",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sil-plant",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sil-moomin",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sil-owner",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlu-family",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlu-customers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlu-mfg",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlu-leisure",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlu-nav",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hlu-inears",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hsp-producer",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hsp-pharmacy",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hsp-drug",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hsp-cats",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hsp-custom",
+   "status": "verified",
+   "detail": "exact"
+  }
+ ]
+}

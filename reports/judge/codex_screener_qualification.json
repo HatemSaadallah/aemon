@@ -1,0 +1,31 @@
+{
+  "judge": "codex",
+  "instrument_sha256": "1647ce9c35c88f2f6787a42401736be790b3313805851673bc97b21685e9ed9c",
+  "status": "qualified_on_synthetic_controls",
+  "statistics": {
+    "positive": {
+      "correct": 20,
+      "n": 20,
+      "clusters": 20,
+      "rate": 1.0,
+      "wilson_95": [
+        0.8388698745050667,
+        1.0
+      ]
+    },
+    "negative": {
+      "correct": 20,
+      "n": 20,
+      "clusters": 20,
+      "rate": 1.0,
+      "wilson_95": [
+        0.8388698745050667,
+        1.0
+      ]
+    }
+  },
+  "errors": [],
+  "missed_required_flags": [],
+  "evaluation_only": true,
+  "note": "Frozen config_v1 statistical rule and keys, with separately declared API/CLI transport settings. No claim of natural-episode accuracy or training suitability."
+}

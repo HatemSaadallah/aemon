@@ -1,0 +1,79 @@
+{
+ "ref": {
+  "sha": "dde879bc4f954b809892fd0d660515f42536394a",
+  "type": "commit",
+  "url": "https://api.github.com/repos/ggml-org/llama.cpp/git/commits/dde879bc4f954b809892fd0d660515f42536394a"
+ },
+ "files": [
+  {
+   "path": "convert_lora_to_gguf.py",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/convert_lora_to_gguf.py",
+   "sha256": "ddb143ac34022b0646e51d9c35e9cfa3ec3d0a36091975ebc88f553dd18ca350"
+  },
+  {
+   "path": "convert_hf_to_gguf.py",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/convert_hf_to_gguf.py",
+   "sha256": "39fd91af35d1fb60be9a12b9e7bf63e50ac297100d7f72431b37e4f9053ad91b"
+  },
+  {
+   "path": "src/llama-adapter.cpp",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/src/llama-adapter.cpp",
+   "sha256": "1b8c87dabcdfdb1f8f663ac8802e943c581e984259a0154506c068902d544498"
+  },
+  {
+   "path": "src/llama-graph.cpp",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/src/llama-graph.cpp",
+   "sha256": "d72fa58939970f16372d36e1a401986a7b44ad1569973080467191933f9b5c74"
+  },
+  {
+   "path": "src/models/cohere2.cpp",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/src/models/cohere2.cpp",
+   "sha256": "b5c4fdf1c3050f2ddbb9881aed09ddcfc41c61e0ed14476c444cb36cc2fa6732"
+  },
+  {
+   "path": "gguf-py/gguf/constants.py",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/gguf-py/gguf/constants.py",
+   "sha256": "3b1b12b7899a042333efe7bc8e4aa7ea5383ebfd94f76053e1e2f10e90fdbfc9"
+  },
+  {
+   "path": "conversion/llama.py",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/conversion/llama.py",
+   "sha256": "33d3068838f923bdb3f3aea8113ad43bdbe932a25e4554f35fb80ee278c1dde2"
+  },
+  {
+   "path": "common/sampling.h",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/common/sampling.h",
+   "sha256": "63faa4ccb76fd466d3b5d86b14bc84a890bafa1f972fc46f66230eeb3384ce29"
+  },
+  {
+   "path": "src/llama-adapter.h",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/src/llama-adapter.h",
+   "sha256": "b63d8654358d6141fac1f45b1b56247d7c8360e609a55323d30e7dcb6a6ffc00"
+  },
+  {
+   "path": "tools/server/server-context.cpp",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/tools/server/server-context.cpp",
+   "sha256": "5fae51fa9164f0e5c3e185a4d8834bc805d58ae6de1a4269929cdcbe840c9551"
+  },
+  {
+   "path": "conversion/command_r.py",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/conversion/command_r.py",
+   "sha256": "cb71ea9bf998cf069334ac1c726792cd4bc4e781ae9bcdd197d6b03662829829"
+  },
+  {
+   "path": "common/common.h",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/common/common.h",
+   "sha256": "d43b2f128d8162e2fdc374f1f55d22c37b54b3f65001459237c57f5ba8cddb1f"
+  },
+  {
+   "path": "gguf-py/gguf/quants.py",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/gguf-py/gguf/quants.py",
+   "sha256": "f896726209ba8c91afd083dd87031c2d39dc4ef6a78e8a6c12763eeb8ed6ff84"
+  },
+  {
+   "path": "src/llama-vocab.cpp",
+   "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/dde879bc4f954b809892fd0d660515f42536394a/src/llama-vocab.cpp",
+   "sha256": "ac6fd43eca27c67a213a98e27b87e8ca1f26d8d82a63e79543a06ca64ef10a95"
+  }
+ ]
+}

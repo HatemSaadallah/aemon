@@ -1,0 +1,37 @@
+[project]
+name = "strategy-agent"
+version = "0.1.0"
+description = "A theory-driven strategic investigation agent, distilled into Tiny Aya with AgentTune and evaluated with AuditKIT"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.14"]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.17", "pyright>=1.1.414"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 160
+target-version = "py312"
+src = ["src", "app"]
+include = ["src/**/*.py", "app/server.py", "app/store.py", "app/users.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ANN"]
+ignore = ["E501", "ANN401"]
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.pyright]
+include = ["src", "app/server.py", "app/store.py", "app/users.py"]
+typeCheckingMode = "standard"
+pythonVersion = "3.12"
+venvPath = "."
+venv = ".venv"
+extraPaths = ["src", "app"]

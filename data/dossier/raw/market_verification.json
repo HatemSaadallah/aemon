@@ -1,0 +1,233 @@
+{
+ "summary": {
+  "verified": 44,
+  "not_found": 1
+ },
+ "results": [
+  {
+   "id": "ramakers-2016-rct",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "crutzen-2021-celebrate-safe",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "beach-2016-provision",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "loughran-2021-availability",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "loughran-2021-comfort",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bogoch-2005-appearance",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "long-2024-nonusers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "gilles-2014-reasons",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bockstael-2015-looks",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "rnid-2026-embarrassed",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "rnid-2026-reasons",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "psych-review-2025-comfort",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sonova-2019-swiss-free-plugs",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "who-2022-standard",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "occ-review-2023-barriers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tikka-2017-fit",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "couth-2022-musicians",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "basner-2026-sleep",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "smit-2021-busselton",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "williams-2021-autism",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ikuta-2016-earmuffs",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nhs-hyperacusis",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "aap-2023-children",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "cnbc-2023-loop-sales",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "forbes-be-2024-loop-d2c",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "forbes-be-2024-loop-other-customers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "cnbc-2023-loop-pivot",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "forbes-be-2024-loop",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hearingtracker-2026-fit",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hearingtracker-2026-loop-price",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "loop-dream-claim",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eargasm-claim",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "minuendo-claim",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alpine-returns",
+   "status": "not_found",
+   "detail": "page has 32643 characters"
+  },
+  {
+   "id": "macks-claim",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "etymotic-er20xs",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "apple-en352",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "3m-2024-liability",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eu-art2-private-use",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eu-annex1-category3",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eu-art19-conformity",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eu-guidelines-sleep-not-ppe",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "en352-harmonised",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "cfr-211-203-definition",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "cfr-211-204-label",
+   "status": "verified",
+   "detail": "exact"
+  }
+ ]
+}

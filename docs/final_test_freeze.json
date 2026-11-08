@@ -1,0 +1,34 @@
+{
+ "digest": "dce26d4f11232f74a2d4e4b744a7ebc0c52a9c3cc04bb71f8994ea7f499ee77e",
+ "companies": [
+  "Aquaporin A/S",
+  "Electrolux Professional Group",
+  "RATIONAL AG",
+  "Simonelli Group"
+ ],
+ "scopes": [
+  "aqp",
+  "epro",
+  "rational",
+  "simo"
+ ],
+ "cases": [
+  "aqp-base",
+  "aqp-new-evidence-favours-maintenance",
+  "aqp-new-evidence-irrelevant",
+  "aqp-new-evidence-undermines-maintenance",
+  "epro-base",
+  "epro-new-evidence-favours-durability",
+  "epro-new-evidence-irrelevant",
+  "epro-new-evidence-undermines-durability",
+  "rational-base",
+  "rational-new-evidence-favours-installation",
+  "rational-new-evidence-irrelevant",
+  "rational-new-evidence-undermines-installation",
+  "simo-base",
+  "simo-new-evidence-favours-learning",
+  "simo-new-evidence-irrelevant",
+  "simo-new-evidence-undermines-learning"
+ ],
+ "records": 76
+}

@@ -1,0 +1,25 @@
+{
+ "artifact": "second_adapter.gguf",
+ "sha256": "be8a6b004dee357e6feab9a1404fc7f5c9dbbe3c3eeb79cbb4e97fb7cea0c1bd",
+ "bytes": 60491936,
+ "tensor_count": 504,
+ "alpha_metadata": 32.0,
+ "observed_factor_rank": 16,
+ "expected_request_scale1_coefficient": 2,
+ "checks": {
+  "exact_name_coverage": true,
+  "all_shapes_match_reference": true,
+  "all_bf16": true,
+  "all_finite": true,
+  "all_contain_nonzero_values": true
+ },
+ "architecture_reference": {
+  "file": "scripts/gguf_header.json",
+  "sha256": "db5040ff7d776892eb57ef89cf7d2ab97e13aeeec73357697bc1ebae0cd90a94",
+  "source": "https://huggingface.co/CohereLabs/tiny-aya-global-GGUF/resolve/a602ea7eeec3a4ad6f77a1b8cf6a53512824922b/tiny-aya-global-q4_k_m.gguf"
+ },
+ "native_reference": "not_available",
+ "cluster_artifact_identity": "not_matched",
+ "selection_eligible": false,
+ "conclusion": "No missing names, shape/type/rank or finite-payload defect found in this local file. Native factor equality, actual cluster build/scales and divergence margins remain unverified."
+}
