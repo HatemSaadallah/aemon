@@ -69,8 +69,14 @@ class Case:
 
 
 class Investigation:
-    def __init__(self, case: Case, complete_workflow: bool = False, staged: bool = False, quote_marks: bool = False) -> None:
+    def __init__(
+        self, case: Case, complete_workflow: bool = False, staged: bool = False, quote_marks: bool = False, reread_limit: int | None = None
+    ) -> None:
         self.case = case
+        # Opt-in: refuse reading one source more than this many times (its full text is already in the state). Recorded in
+        # each episode's settings, so episodes made without it replay unchanged (DECISIONS, 2026-11-08).
+        self.reread_limit = reread_limit
+        self.read_counts: dict[str, int] = {}
         self.complete_workflow = complete_workflow  # refuse finish until every stage has happened
         self.staged = staged  # the stage controller decides which tools are open
         # Quotation marks around an exact quote are formatting, not words. Half the teacher's refused quotes were exact words
@@ -198,6 +204,13 @@ class Investigation:
         record = self._record(identifier) if type(identifier) is str else None  # rereading is free
         if record is None or identifier not in self.surfaced:
             raise Rejected('fabricated', 'that id did not come from a search')
+        if self.reread_limit is not None and self.read_counts.get(identifier, 0) >= self.reread_limit:
+            raise Rejected(
+                'repeat',
+                'you already have this source: its full text is in sources_read, and reading it again returns the same text. '
+                'Use what you have: assess it, or take the next step of the stage.',
+            )
+        self.read_counts[identifier] = self.read_counts.get(identifier, 0) + 1
         self.read.add(identifier)
         return {
             'id': record.id,
@@ -332,11 +345,11 @@ class Investigation:
         self.tests[identifier] = {
             'name': _text(arguments['name'], 'name', 120),
             'theories': list(names),
-            'method': _text(arguments['method'], 'method'),
+            'method': _text(arguments['method'], 'method', 900),
             'sample': _text(arguments['sample'], 'sample'),
             'measure': _text(arguments['measure'], 'measure'),
             'prediction_by_theory': {k: _text(v, 'prediction') for k, v in predictions.items()},
-            'decision_rule': _text(arguments['decision_rule'], 'decision_rule'),
+            'decision_rule': _text(arguments['decision_rule'], 'decision_rule', 900),
             'cost_eur': cost,
             'weeks': weeks,
         }

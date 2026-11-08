@@ -1,6 +1,6 @@
 // Small stroke icons for the agent's tools, drawn inline so they follow the text colour in both themes.
 
-export type IconName = 'doc' | 'target' | 'search' | 'zap' | 'book' | 'bulb' | 'scale' | 'flask' | 'ban' | 'flag' | 'refresh' | 'check' | 'cross' | 'dot' | 'spark';
+export type IconName = 'doc' | 'target' | 'search' | 'zap' | 'book' | 'bulb' | 'scale' | 'flask' | 'ban' | 'flag' | 'refresh' | 'check' | 'cross' | 'dot' | 'spark' | 'pin' | 'trash' | 'folder' | 'more' | 'plus';
 
 const PATHS: Record<IconName, string[]> = {
   doc: ['M6 3h8l4 4v14H6z', 'M14 3v4h4', 'M9 12h6', 'M9 16h6'],
@@ -18,6 +18,11 @@ const PATHS: Record<IconName, string[]> = {
   cross: ['M6 6l12 12', 'M18 6L6 18'],
   dot: ['M12 9a3 3 0 1 0 0 6a3 3 0 1 0 0-6'],
   spark: ['M12 3v4', 'M12 17v4', 'M3 12h4', 'M17 12h4', 'M6 6l2.5 2.5', 'M15.5 15.5L18 18', 'M18 6l-2.5 2.5', 'M8.5 15.5L6 18'],
+  pin: ['M9 4h6l-1 6l3 3H7l3-3z', 'M12 13v8'],
+  trash: ['M4 7h16', 'M9 7V4h6v3', 'M6 7l1 13h10l1-13', 'M10 11v6', 'M14 11v6'],
+  folder: ['M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'],
+  more: ['M6 12h.01', 'M12 12h.01', 'M18 12h.01'],
+  plus: ['M12 5v14', 'M5 12h14'],
 };
 
 export function Icon({ name, size = 16 }: { name: IconName; size?: number }) {

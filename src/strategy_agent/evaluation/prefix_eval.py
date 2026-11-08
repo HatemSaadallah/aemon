@@ -37,7 +37,7 @@ if TYPE_CHECKING:
 
 def entry_point(record: Json, case: Case, stage: str) -> int | None:
     """Index of the first recorded turn taken in that stage, or None if the episode never reached it."""
-    run = Investigation(case, record['settings'].get('complete_workflow', False), True, record['settings'].get('quote_marks', False))
+    run = Investigation(case, record['settings'].get('complete_workflow', False), True, record['settings'].get('quote_marks', False), record['settings'].get('reread_limit'))
     for index, turn in enumerate(record['model_turns']):
         if current_stage(run).name == stage:
             return index

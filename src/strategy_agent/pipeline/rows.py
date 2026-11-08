@@ -41,7 +41,7 @@ def transcript(record: Json, case: Case, system: str, compact: bool = False) -> 
     """The conversation as the model saw it, with each assistant turn marked trainable or not."""
     settings = record.get('settings', {})
     staged = settings.get('staged', False)
-    run = Investigation(case, settings.get('complete_workflow', False), staged, settings.get('quote_marks', False))
+    run = Investigation(case, settings.get('complete_workflow', False), staged, settings.get('quote_marks', False), settings.get('reread_limit'))
     messages = [{'role': 'system', 'content': system}, {'role': 'user', 'content': START}]
     turns = []
     for index, turn in enumerate(record['model_turns']):

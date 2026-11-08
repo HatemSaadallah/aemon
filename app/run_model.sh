@@ -6,7 +6,7 @@ B=$HOME/.cache/lexsi/llama-b12032
 M=$HOME/.cache/huggingface/hub/models--CohereLabs--tiny-aya-global-GGUF/snapshots/a602ea7eeec3a4ad6f77a1b8cf6a53512824922b/tiny-aya-global-q4_k_m.gguf
 A=$HOME/.cache/lexsi/adapters
 EXTRA=()
-for name in first_adapter.gguf second_adapter.gguf; do
+for name in final_adapter.gguf first_adapter.gguf second_adapter.gguf; do
   [ -f "$A/$name" ] && EXTRA+=(--lora "$A/$name") && echo "with adapter $name"
 done
 [ ${#EXTRA[@]} -gt 0 ] && EXTRA+=(--lora-init-without-apply)

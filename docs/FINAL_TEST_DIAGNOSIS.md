@@ -81,6 +81,13 @@ reported as computed. This is a measurement limitation of the mechanical check; 
 experiments were otherwise sound.
 Experiment design remains among the weakest dimensions for the trained agent under both blind judges (about 1.0 of 3).
 
+### Decision rules cut off at 240 characters
+
+The tool schema caps short text fields at 240 characters, and constrained generation stops there mid-sentence. 132 of
+the 158 test designs in the training data have a decision rule at that cap, so the student learned from decision rules
+that mostly end mid-sentence; 23 of its 37 accepted test proposals on the final test have one too. This plausibly
+contributes to its weak experiment-design and recommendation scores, alongside the gaps above.
+
 ## Unfinished runs (20)
 
 - **Turn limit (9):** rereading. In 8 of the 9, `read_source` is called 19 to 30 times for 4 to 10 distinct sources,

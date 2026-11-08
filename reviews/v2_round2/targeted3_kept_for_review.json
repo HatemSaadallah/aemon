@@ -1,0 +1,330 @@
+{
+ "counts": {
+  "answers": 54,
+  "valid": 53,
+  "failures": 1,
+  "kept": 5,
+  "by_call": "5 propose_test",
+  "rejections": [
+   [
+    "why_next does not say which theories the test separates",
+    23
+   ],
+   [
+    "the call does not act on what the justification names",
+    6
+   ],
+   [
+    "in the test stage only proposing a discriminating test or justifying declining one advances the investigation",
+    6
+   ],
+   [
+    "gate: learned stops at its length limit (700 characters), cut mid-text",
+    4
+   ],
+   [
+    "gate: a recovery from a refused finish must finish, citing real evidence",
+    1
+   ],
+   [
+    "refused by the tools: prediction_by_theory needs one prediction for each theory in the test",
+    1
+   ],
+   [
+    "gate: the predictions barely differ",
+    1
+   ],
+   [
+    "repeats an earlier call",
+    1
+   ],
+   [
+    "gate: sample stops at its length limit (500 characters), cut mid-text",
+    1
+   ],
+   [
+    "gate: method stops at its length limit (900 characters), cut mid-text",
+    1
+   ],
+   [
+    "the justification names nothing from the state",
+    1
+   ],
+   [
+    "refused by the tools: you already ran that search. Read its results, or search for something different",
+    1
+   ],
+   [
+    "gate: the cost per participant is not credible for the stated sample",
+    1
+   ]
+  ]
+ },
+ "examples": [
+  {
+   "n": 1,
+   "case": "andis-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Andis develop a further differentiated proposition for people who cut hair at home, beyond its existing at-home range, or concentrate on professional barbers and groomers? What evidence would justify either choice?",
+   "student_turn": 42,
+   "theories": {
+    "T1": "Home users will adopt a differentiated at-home proposition if they perceive it as a premium, professional-quality experience that builds confidence and reduces salon visits.",
+    "T2": "Home users will adopt a differentiated at-home proposition if they perceive it as a convenient, time-saving solution that reduces the need for salon visits."
+   },
+   "sources_read": {
+    "andis-1997-home-kits": "unknown (International Directory of Company Histories, Volume 85)",
+    "andis-athome-prices": "unknown (accessed 2026-11-03)",
+    "andis-attest-20-dollars": "2022-05-12",
+    "andis-diyers": "unknown (press-release boilerplate, 2023 or 2024)",
+    "andis-home-line": "unknown (accessed 2026-11-03)",
+    "andis-trusted-home-users": "2025-02-28",
+    "andis-wahl-10-percent": "2021-11-08",
+    "andis-wahl-6-million": "2021-03-15"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Premium vs. Convenience Kit Choice Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice experiment with refundable deposit to simulate real purchase commitment",
+     "sample": "300 U.S. adults who have cut hair at home in the past 6 months, recruited via an online panel (estimated cost €4,500 for panel access and incentives)",
+     "measure": "1) Choice: participants select which kit they would buy (Premium or Convenience). 2) Deposit: participants pay a refundable €5 deposit to secure a pre‑order for a limited run of the chosen kit. 3) Willingness to Pay (WTP): participants state maximum price they would pay for the chosen kit. 4) Follow‑up survey after 4 weeks to confirm intent to keep the deposit.",
+     "prediction_by_theory": {
+      "T1": "Premium kit will be chosen by >55% of participants; average WTP for Premium will be at least 20% higher than for Convenience; deposit conversion to final purchase will be >70%.",
+      "T2": "Convenience kit will be chosen by >55% of participants; average WTP for Convenience will be at least 15% higher than for Premium; deposit conversion will be >70%."
+     },
+     "decision_rule": "If the proportion choosing Premium >55% AND average WTP Premium > WTP Convenience + 10%, recommend developing a further differentiated premium at‑home proposition. If the proportion choosing Convenience >55% AND average WTP Convenience > WTP Premium + 10%, recommend a convenience‑focused differentiated proposition. Otherwise, maintain current mix and focus on professional segment. The test budget of €20,000 covers panel recruitment, deposit processing, kit mock‑ups, incentives, and analysis. The 12‑week timeline allows recruitment (2 weeks), experiment (4 weeks), follow‑up (4 weeks), and reporting (2 weeks).",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "We have identified Andis’ existing at‑home line and evidence of a surge in home haircutting (6 million new users, 42% market growth). However, no direct evidence shows whether home users value professional quality or convenience enough to pay a premium. Two open theories explain adoption: T1 (premium professional experience) and T2 (convenient time‑saving). A test that measures real purchase commitment to differentiated propositions can distinguish these mechanisms.",
+    "uncertain": "Which driver – perceived professional quality or perceived convenience – is more compelling for home users, and whether they will pay a premium for either.",
+    "why_next": "A low‑cost experiment offering two differentiated kits (premium‑branded vs. convenience‑branded) and measuring actual purchase decisions (deposit or pre‑order) will reveal which proposition drives higher willingness to pay and purchase intent, directly testing the core assumptions of T1 and T2."
+   },
+   "decision_at_generation": "refused by the tools: decision_rule: expected text of at most 600 characters",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "rule leads straight to developing or launching"
+   ],
+   "teacher_reply_raw": "{\"learned\":\"We have identified Andis\\u2019 existing at\\u2011home line and evidence of a surge in home haircutting (6 million new users, 42% market growth). However, no direct evidence shows whether home users value professional quality or convenience enough to pay a premium. Two open theories explain adoption: T1 (premium professional experience) and T2 (convenient time\\u2011saving). A test that measures real purchase commitment to differentiated propositions can distinguish these mechanisms.\",\"uncertain\":\"Which driver \\u2013 perceived professional quality or perceived convenience \\u2013 is more compelling for home users, and whether they will pay a premium for either.\",\"why_next\":\"A low\\u2011cost experiment offering two differentiated kits (premium\\u2011branded vs. convenience\\u2011branded) and measuring actual purchase decisions (deposit or pre\\u2011order) will reveal which proposition drives higher willingness to pay and purchase intent, directly testing the core assumptions of T1 and T2.\",\"call\":{\"name\":\"propose_test\",\"arguments\":{\"name\":\"Premium vs. Convenience Kit Choice Test\",\"theories\":[\"T1\",\"T2\"],\"method\":\"Online choice experiment with refundable deposit to simulate real purchase commitment\",\"sample\":\"300 U.S. adults who have cut hair at home in the past 6 months, recruited via an online panel (estimated cost €4,500 for panel access and incentives)\",\"measure\":\"1) Choice: participants select which kit they would buy (Premium or Convenience). 2) Deposit: participants pay a refundable €5 deposit to secure a pre\\u2011order for a limited run of the chosen kit. 3) Willingness to Pay (WTP): participants state maximum price they would pay for the chosen kit. 4) Follow\\u2011up survey after 4 weeks to confirm intent to keep the deposit.\",\"prediction_by_theory\":{\"T1\":\"Premium kit will be chosen by >55% of participants; average WTP for Premium will be at least 20% higher than for Convenience; deposit conversion to final purchase will be >70%.\",\"T2\":\"Convenience kit will be chosen by >55% of participants; average WTP for Convenience will be at least 15% higher than for Premium; deposit conversion will be >70%.\"},\"decision_rule\":\"If the proportion choosing Premium >55% AND average WTP Premium > WTP Convenience + 10%, recommend developing a further differentiated premium at\\u2011home proposition. If the proportion choosing Convenience >55% AND average WTP Convenience > WTP Premium + 10%, recommend a convenience\\u2011focused differentiated proposition. Otherwise, maintain current mix and focus on professional segment. The test budget of €20,000 covers panel recruitment, deposit processing, kit mock\\u2011ups, incentives, and analysis. The 12\\u2011week timeline allows recruitment (2 weeks), experiment (4 weeks), follow\\u2011up (4 weeks), and reporting (2 weeks).\",\"cost_eur\":20000,\"weeks\":12}}}",
+   "keep": null
+  },
+  {
+   "n": 2,
+   "case": "cree-base",
+   "case_date": "2012",
+   "origin": "test step",
+   "question": "It is late 2012. Should Cree, Inc. develop a differentiated consumer proposition for a specific use case, building on its high-brightness LED chips and LED lighting technology? What evidence would justify that investment?",
+   "student_turn": 38,
+   "theories": {
+    "T1": "Consumers will adopt LED bulbs if they are priced low enough to be competitive with incandescent bulbs, because price is the primary barrier to switching.",
+    "T2": "Consumers will adopt LED bulbs if they perceive them as a premium product offering superior color quality and design, because they value aesthetic and functional differentiation."
+   },
+   "sources_read": {
+    "cree-abc-cheaper": "2012-03-09",
+    "cree-bdn-embracing": "2012-03-10",
+    "cree-fool-commercial": "2010-08-18",
+    "cree-ledp-reason": "2013-03-06",
+    "cree-mpr-online": "2012-04-17",
+    "cree-pr-ecosmart": "2010-08-17",
+    "cree-wiki-first": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Price vs Premium Positioning Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online controlled experiment with refundable deposit pre‑order",
+     "sample": "400 participants recruited via a panel, balanced between two test groups (200 each)",
+     "measure": "Conversion rate to refundable deposit (acceptance to purchase) and final purchase rate after deposit is applied to a limited batch",
+     "prediction_by_theory": {
+      "T1": "Higher deposit conversion in the low‑price group (price comparable to incandescent, e.g., $30) than in the premium—price group (e.g., $60).",
+      "T2": "Higher deposit conversion in the premium—positioning group (high‑price $60 with color quality and design messaging) than in the low‑price group."
+     },
+     "decision_rule": "If deposit conversion in the low‑price group is at least 10 percentage points higher than in the premium group, proceed to develop a low‑price consumer proposition. If the premium group conversion is at least 10 percentage points higher, develop a premium consumer proposition. If the difference is less than 10 points, conduct further qualitative research to explore other drivers.",
+     "cost_eur": 18000,
+     "weeks": 10
+    }
+   },
+   "justification": {
+    "learned": "We have two competing theories about why consumers would adopt LED bulbs: T1 argues price is the primary barrier and low pricing drives adoption; T2 argues premium positioning based on superior color quality and design drives adoption. Existing evidence shows consumers are embracing LEDs and that Cree has introduced low‑priced bulbs under $50, but no direct evidence isolates price vs premium as the driver. The sources do not provide conclusive data on consumer preferences for color quality versus price. The test budget is €20,000 and the timeline is 12 weeks.",
+    "uncertain": "It is unclear which driver—price or premium attributes—is more influential for consumer adoption of Cree’s LED bulbs. The evidence supports both theories indirectly but does not isolate the mechanism.",
+    "why_next": "A controlled test that varies price and premium messaging while measuring real purchase commitment can distinguish the theories. T1 predicts higher purchase intent/actual purchase when price is low, while T2 predicts higher purchase when premium attributes are highlighted, even at higher price. The test can be designed within the budget and timeline, using a small sample and a refundable deposit to capture real commitment."
+   },
+   "decision_at_generation": "kept",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message",
+    "rule leads straight to developing or launching"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"We have two competing theories about why consumers would adopt LED bulbs: T1 argues price is the primary barrier and low pricing drives adoption; T2 argues premium positioning based on superior color quality and design drives adoption. Existing evidence shows consumers are embracing LEDs and that Cree has introduced low\\u2011priced bulbs under $50, but no direct evidence isolates price vs premium as the driver. The sources do not provide conclusive data on consumer preferences for color quality versus price. The test budget is \\u20ac20,000 and the timeline is 12 weeks.\", \"uncertain\": \"It is unclear which driver\\u2014price or premium attributes\\u2014is more influential for consumer adoption of Cree\\u2019s LED bulbs. The evidence supports both theories indirectly but does not isolate the mechanism.\", \"why_next\": \"A controlled test that varies price and premium messaging while measuring real purchase commitment can distinguish the theories. T1 predicts higher purchase intent/actual purchase when price is low, while T2 predicts higher purchase when premium attributes are highlighted, even at higher price. The test can be designed within the budget and timeline, using a small sample and a refundable deposit to capture real commitment.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Price vs Premium Positioning Test\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Online controlled experiment with refundable deposit pre\\u2011order\", \"sample\": \"400 participants recruited via a panel, balanced between two test groups (200 each)\", \"measure\": \"Conversion rate to refundable deposit (acceptance to purchase) and final purchase rate after deposit is applied to a limited batch\", \"prediction_by_theory\": {\"T1\": \"Higher deposit conversion in the low\\u2011price group (price comparable to incandescent, e.g., $30) than in the premium\\u2014price group (e.g., $60).\", \"T2\": \"Higher deposit conversion in the premium\\u2014positioning group (high\\u2011price $60 with color quality and design messaging) than in the low\\u2011price group.\"}, \"decision_rule\": \"If deposit conversion in the low\\u2011price group is at least 10 percentage points higher than in the premium group, proceed to develop a low\\u2011price consumer proposition. If the premium group conversion is at least 10 percentage points higher, develop a premium consumer proposition. If the difference is less than 10 points, conduct further qualitative research to explore other drivers.\", \"cost_eur\": 18000, \"weeks\": 10}}}",
+   "keep": null
+  },
+  {
+   "n": 3,
+   "case": "cotral-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Cotral Lab develop a differentiated consumer proposition for a specific use case, beyond its existing hearing-protection offering? What evidence would justify that investment?",
+   "student_turn": 30,
+   "theories": {
+    "T1": "Professional musicians will adopt custom-moulded hearing protection if it is marketed as a performanceenhancing tool that preserves sound quality while blocking noise, because they value accurate sound and are willing to pay a premium for a product that does not compromise their craft.",
+    "T2": "Sleep aid users will adopt custom-moulded hearing protection if it is marketed as a medical-grade solution that reduces sleep disruption caused by background noise, because they seek a product that addresses a specific health concern and are willing to pay for a solution that improves sleep quality."
+   },
+   "sources_read": {
+    "bockstael-2015-looks": "2015-07 to 2015-08",
+    "ctl-3d": "unknown",
+    "ctl-channel": "2025 (exact date not shown)",
+    "ctl-deal": "2025 (exact date not shown)",
+    "ctl-filter": "2024-04-02 (last updated)",
+    "ctl-it1": "unknown",
+    "ctl-onsite": "unknown",
+    "minuendo-claim": "unknown (accessed 2026-11-01)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Segment‑Framed Pre‑Order Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online recruitment of two target segments (musicians and sleep‑aid users). Randomly assign each participant to receive either a musician‑framed offer (performance‑enhancing, sound‑preserving) or a sleep‑framed offer (medical‑grade, sleep‑disruption reduction). Offer a refundable €50 deposit for a custom‑moulded earplug priced at €150, with delivery promised within 8 weeks. Measure deposit acceptance rate by segment and framing.",
+     "sample": "Recruit 200 musicians (via music schools, forums, local orchestras) and 200 sleep‑aid users (via insomnia support groups, sleep‑clinic newsletters). Randomly split each group into two equal halves (100 each) for musician‑framed vs. sleep‑framed offers. Total participants = 400.",
+     "measure": "Primary outcome: proportion of participants who pay the €50 deposit within 7 days of offer. Secondary: self‑reported willingness to pay €150 for the product. Compare deposit rates: T1 predicts higher deposit rate among musicians receiving musician‑framed offer than among musicians receiving sleep‑framed offer. T2 predicts higher deposit rate among sleep‑aid users receiving sleep‑framed offer than among those receiving musician‑framed offer.",
+     "prediction_by_theory": {
+      "T1": "Musicians offered musician‑framed earplugs will have deposit rate ≥ 30%, significantly higher than musicians offered sleep‑framed earplugs (expected ≈ 10%).",
+      "T2": "Sleep‑aid users offered sleep‑framed earplugs will have deposit rate ≥ 30%, significantly higher than sleep‑aid users offered musician‑framed earplugs (expected ≈ 10%)."
+     },
+     "decision_rule": "If deposit rate for musician‑framed musicians ≥ 30% AND deposit rate for sleep‑framed sleep‑aid users ≥ 30%, proceed to develop differentiated propositions for both segments. If only one condition meets the threshold, develop that segment‑specific proposition and test the other later. If neither meets 30%, decline investment in differentiated consumer proposition and focus on existing B2B channel.",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "Cotral Lab currently sells custom-moulded hearing protection primarily through B2B channels. Public sources show it offers Bluetooth-enabled models and frequency-specific filters, but no evidence directly links these to consumer demand for musicians or sleep aid users. A 2015 study of musicians highlighted that comfort and looks drive appreciation more than sound quality, suggesting that a performance‑enhancing claim may need to emphasize non‑auditory benefits. No independent data exist on willingness to pay for a differentiated consumer proposition.",
+    "uncertain": "Two theories compete: T1 argues musicians will pay a premium for sound‑preserving protection marketed as performance‑enhancing; T2 argues sleep‑aid users will pay for a medical‑grade solution that reduces sleep disruption. Both lack direct evidence of purchase intent. The test must determine which framing generates real commitment from the target segment.",
+    "why_next": "A low‑cost, 12‑week pilot can test real purchase intent by offering a refundable deposit for a limited run of custom‑moulded earplugs with segment‑specific marketing. This will distinguish the theories because T1 predicts higher deposit uptake when the product is framed for musicians, while T2 predicts the opposite for sleep‑aid framing. The result will guide whether to invest in a differentiated consumer proposition or stick with existing B2B focus."
+   },
+   "decision_at_generation": "kept",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Cotral Lab currently sells custom-moulded hearing protection primarily through B2B channels. Public sources show it offers Bluetooth-enabled models and frequency-specific filters, but no evidence directly links these to consumer demand for musicians or sleep aid users. A 2015 study of musicians highlighted that comfort and looks drive appreciation more than sound quality, suggesting that a performance\\u2011enhancing claim may need to emphasize non\\u2011auditory benefits. No independent data exist on willingness to pay for a differentiated consumer proposition.\", \"uncertain\": \"Two theories compete: T1 argues musicians will pay a premium for sound\\u2011preserving protection marketed as performance\\u2011enhancing; T2 argues sleep\\u2011aid users will pay for a medical\\u2011grade solution that reduces sleep disruption. Both lack direct evidence of purchase intent. The test must determine which framing generates real commitment from the target segment.\", \"why_next\": \"A low\\u2011cost, 12\\u2011week pilot can test real purchase intent by offering a refundable deposit for a limited run of custom\\u2011moulded earplugs with segment\\u2011specific marketing. This will distinguish the theories because T1 predicts higher deposit uptake when the product is framed for musicians, while T2 predicts the opposite for sleep\\u2011aid framing. The result will guide whether to invest in a differentiated consumer proposition or stick with existing B2B focus.\",\"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Segment\\u2011Framed Pre\\u2011Order Test\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Online recruitment of two target segments (musicians and sleep\\u2011aid users). Randomly assign each participant to receive either a musician\\u2011framed offer (performance\\u2011enhancing, sound\\u2011preserving) or a sleep\\u2011framed offer (medical\\u2011grade, sleep\\u2011disruption reduction). Offer a refundable \\u20ac50 deposit for a custom\\u2011moulded earplug priced at \\u20ac150, with delivery promised within 8 weeks. Measure deposit acceptance rate by segment and framing.\", \"sample\": \"Recruit 200 musicians (via music schools, forums, local orchestras) and 200 sleep\\u2011aid users (via insomnia support groups, sleep\\u2011clinic newsletters). Randomly split each group into two equal halves (100 each) for musician\\u2011framed vs. sleep\\u2011framed offers. Total participants = 400.\", \"measure\": \"Primary outcome: proportion of participants who pay the \\u20ac50 deposit within 7 days of offer. Secondary: self\\u2011reported willingness to pay \\u20ac150 for the product. Compare deposit rates: T1 predicts higher deposit rate among musicians receiving musician\\u2011framed offer than among musicians receiving sleep\\u2011framed offer. T2 predicts higher deposit rate among sleep\\u2011aid users receiving sleep\\u2011framed offer than among those receiving musician\\u2011framed offer.\", \"prediction_by_theory\": {\"T1\": \"Musicians offered musician\\u2011framed earplugs will have deposit rate \\u2265 30%, significantly higher than musicians offered sleep\\u2011framed earplugs (expected \\u2248 10%).\", \"T2\": \"Sleep\\u2011aid users offered sleep\\u2011framed earplugs will have deposit rate \\u2265 30%, significantly higher than sleep\\u2011aid users offered musician\\u2011framed earplugs (expected \\u2248 10%).\"}, \"decision_rule\": \"If deposit rate for musician\\u2011framed musicians \\u2265 30% AND deposit rate for sleep\\u2011framed sleep\\u2011aid users \\u2265 30%, proceed to develop differentiated propositions for both segments. If only one condition meets the threshold, develop that segment\\u2011specific proposition and test the other later. If neither meets 30%, decline investment in differentiated consumer proposition and focus on existing B2B channel.\", \"cost_eur\": 20000, \"weeks\": 12}}}",
+   "keep": null
+  },
+  {
+   "n": 4,
+   "case": "embrace-new-evidence-irrelevant",
+   "case_date": "2016",
+   "origin": "test step",
+   "question": "It is March 2016. Should Embrace Innovations develop a differentiated consumer proposition for a specific use case, building on its infant-warming technology? What evidence would justify that investment?",
+   "student_turn": 28,
+   "theories": {
+    "T1": "Parents of premature and low-birth-weight infants in low-resource settings will adopt a home infant warmer if it is priced below $100 and marketed as a life-saving medical device that reduces the risk of SIDS.",
+    "T2": "Parents of premature and low-birth-weight infants will adopt a home infant warmer if it is marketed as a fashion accessory and sold through trendy consumer channels, because they view infant care as a status symbol and are willing to pay a premium for design and brand."
+   },
+   "sources_read": {
+    "embrace-cnbc-price": "2016-02-22",
+    "embrace-ee-origin": "unknown (accessed 2026-11-02)",
+    "embrace-gsb-investors": "2012",
+    "embrace-her-sids": "2015-05-16",
+    "embrace-smg-launch": "unknown (object made 2017; accessed 2026-11-02)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Dual‑Version Purchase Intent Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase offer",
+     "sample": "500 parents of infants aged 0‑2 years, recruited from parenting forums and social media in the US and India (250 each). Stratify by household income and prior experience with premature/low‑birth‑weight infants.",
+     "measure": "Purchase intent: respondents choose between three options – (a) $80‑90 warmer marketed as \"medical device reducing SIDS risk\", (b) $120‑30 warmer marketed as \"fashion infant accessory for stylish families\", (c) neither. Also collect stated primary reason (safety vs style).",
+     "prediction_by_theory": {
+      "T1": "At least 30% of respondents will select option (a) and cite safety/SIDS reduction as reason.",
+      "T2": "At least 20% of respondents will select option (b) and cite style/status as reason."
+     },
+     "decision_rule": "If → Option (a) selection ≥ 30% AND Option (b) selection ≤ 20% → proceed with T1‑aligned consumer proposition (low‑price medical). If → Option (b) selection ≥ 20% AND Option (a) selection ≤ 30% → proceed with T2‑aligned consumer proposition (premium fashion). If neither threshold met → decline consumer expansion and focus on B2B.",
+     "cost_eur": 15000,
+     "weeks": 10
+    }
+   },
+   "justification": {
+    "learned": "From public sources up to March 2016, Embrace Innovations is known for a low‑cost infant warmer used in B2B settings (e.g., hospitals in India). There is no direct evidence of consumer sales of the warmer to individual parents, nor of demand for a differentiated consumer proposition. Pricing data exists for a different product (swaddles). The company’s origin and clinical validation support a medical‑need positioning, while no evidence shows a fashion‑or status‑driven demand.",
+    "uncertain": "Two competing explanations for why parents might buy a home infant warmer: (1) as a life‑saving medical device priced affordably (T1), or (2) as a premium fashion/status accessory (T2). The evidence does not confirm either mechanism, nor the willingness to pay at different price points.",
+    "why_next": "A low‑cost test can reveal which mechanism drives purchase intent by offering two versions of the same product at different price points and with different messaging. This directly distinguishes T1 (expects higher intent for low‑price medical framing) from T2 (expects higher intent for higher‑price fashion framing). The test fits the €20k budget and 12‑week timeline, and provides actionable data to decide whether to pursue a consumer proposition, and if so, which positioning."
+   },
+   "decision_at_generation": "kept",
+   "flags": [
+    "stated preference only",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"From public sources up to March 2016, Embrace Innovations is known for a low\\u2011cost infant warmer used in B2B settings (e.g., hospitals in India). There is no direct evidence of consumer sales of the warmer to individual parents, nor of demand for a differentiated consumer proposition. Pricing data exists for a different product (swaddles). The company\\u2019s origin and clinical validation support a medical\\u2011need positioning, while no evidence shows a fashion\\u2011or status\\u2011driven demand.\", \"uncertain\": \"Two competing explanations for why parents might buy a home infant warmer: (1) as a life\\u2011saving medical device priced affordably (T1), or (2) as a premium fashion/status accessory (T2). The evidence does not confirm either mechanism, nor the willingness to pay at different price points.\", \"why_next\": \"A low\\u2011cost test can reveal which mechanism drives purchase intent by offering two versions of the same product at different price points and with different messaging. This directly distinguishes T1 (expects higher intent for low\\u2011price medical framing) from T2 (expects higher intent for higher\\u2011price fashion framing). The test fits the \\u20ac20k budget and 12\\u2011week timeline, and provides actionable data to decide whether to pursue a consumer proposition, and if so, which positioning.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Dual\\u2011Version Purchase Intent Test\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Online survey with simulated purchase offer\", \"sample\": \"500 parents of infants aged 0\\u20112 years, recruited from parenting forums and social media in the US and India (250 each). Stratify by household income and prior experience with premature/low\\u2011birth\\u2011weight infants.\", \"measure\": \"Purchase intent: respondents choose between three options \\u2013 (a) $80\\u201190 warmer marketed as \\\"medical device reducing SIDS risk\\\", (b) $120\\u201130 warmer marketed as \\\"fashion infant accessory for stylish families\\\", (c) neither. Also collect stated primary reason (safety vs style).\", \"prediction_by_theory\": {\"T1\": \"At least 30% of respondents will select option (a) and cite safety/SIDS reduction as reason.\", \"T2\": \"At least 20% of respondents will select option (b) and cite style/status as reason.\"}, \"decision_rule\": \"If \\u2192 Option (a) selection \\u2265 30% AND Option (b) selection \\u2264 20% \\u2192 proceed with T1\\u2011aligned consumer proposition (low\\u2011price medical). If \\u2192 Option (b) selection \\u2265 20% AND Option (a) selection \\u2264 30% \\u2192 proceed with T2\\u2011aligned consumer proposition (premium fashion). If neither threshold met \\u2192 decline consumer expansion and focus on B2B.\", \"cost_eur\": 15000, \"weeks\": 10}}}",
+   "keep": null
+  },
+  {
+   "n": 5,
+   "case": "blackdecker-base",
+   "case_date": "1977",
+   "origin": "test step",
+   "question": "It is 1977. Should Black & Decker develop a differentiated consumer proposition for a specific use case, building on its cordless motor and battery technology? What evidence would justify that investment?",
+   "student_turn": 25,
+   "theories": {
+    "T1": "Consumers will adopt a differentiated cordless tool proposition if they perceive it as a convenient, single‑use solution that eliminates battery‑management hassle, because convenience drives purchase decisions.",
+    "T2": "Consumers will adopt a differentiated cordless tool proposition if they perceive it as a premium, high‑performance product that signals expertise and status, because status and prestige drive purchase decisions."
+   },
+   "sources_read": {
+    "blackdecker-faq-predates": "unknown (accessed 2026-11-03)",
+    "blackdecker-spinoff-motor": "1981 (originally published)",
+    "blackdecker-uspto-apollo": "2019-10-15",
+    "blackdecker-uspto-forget": "2019-10-15",
+    "blackdecker-uspto-lessons": "2019-10-15"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Convenience vs Prestige Cordless Tool Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Controlled field test with two product mock-ups and a pre-order deposit.",
+     "sample": "200 individual consumers recruited from DIY and home improvement stores in three US regions (East, Midwest, West). Recruit via in-store flyers and brief screening survey to ensure they own at least one cordless tool.",
+     "measure": "Purchase intent measured by willingness to place a €50 deposit for a pre-order of the tool (non-refundable, convertible to final purchase). Secondary measures: self-reported importance of convenience vs status, and willingness to pay premium price.",
+     "prediction_by_theory": {
+      "T1": "Deposit rate for the convenience-framed tool (\"always charged, ready to use\") will be at least 15 percentage points higher than for the prestige-framed tool (\"high-performance, status symbol\").",
+      "T2": "Deposit rate for the prestige-framed tool will be at least 15 percentage points higher than for the convenience-framed tool."
+     },
+     "decision_rule": "If the convenience version achieves a deposit rate >= 30% and significantly higher than the prestige version (p < 0.05), proceed to develop a differentiated convenience proposition for a specific use case (e.g., home DIY). If the prestige version achieves a deposit rate >= 30% and significantly higher than the convenience version, explore a premium positioning strategy. If neither reaches 30% or the difference is not significant, recommend no expansion of a differentiated consumer proposition and focus on existing B2B and consumer lines.",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "From public sources we learned Black & Decker had cordless tools since 1961 and identified a consumer pain point: users often forget to recharge batteries, reducing convenience (B&D market research, 1977). This supports Theory T1 that convenience drives adoption. No evidence was found for status/prestige motivation (T2). The company already sells to individual buyers (consumer brand) but the extent of consumer market penetration in 1977 is unclear. The battery technology exists and is reliable enough for a differentiated use case. The alternatives include a differentiated proposition, broader market expansion, no expansion, changing distribution, or targeting professionals.",
+    "uncertain": "The key uncertainty is whether consumers will pay a premium for convenience versus prestige. T1 is supported by evidence of a pain point that a differentiated \"one-use\" solution could solve. T2 lacks supporting evidence and no data shows status-driven purchase intent for tools. Without testing, we cannot determine which motivation dominates or if either would generate sufficient demand to justify the investment.",
+    "why_next": "A low-cost, short-duration test can directly compare purchase intent for a convenience-framed versus a prestige-framed cordless tool, using real monetary commitment (pre-order deposit) to capture consequential behavior. This will distinguish the two theories because T1 predicts higher intent for the convenience version, while T2 predicts higher intent for the prestige version. The test fits the €20,000 budget and 12-week timeline, and the result will inform whether to proceed with a differentiated consumer proposition, a broader expansion, or no expansion."
+   },
+   "decision_at_generation": "kept",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message",
+    "rule leads straight to developing or launching"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"From public sources we learned Black & Decker had cordless tools since 1961 and identified a consumer pain point: users often forget to recharge batteries, reducing convenience (B&D market research, 1977). This supports Theory T1 that convenience drives adoption. No evidence was found for status/prestige motivation (T2). The company already sells to individual buyers (consumer brand) but the extent of consumer market penetration in 1977 is unclear. The battery technology exists and is reliable enough for a differentiated use case. The alternatives include a differentiated proposition, broader market expansion, no expansion, changing distribution, or targeting professionals.\", \"uncertain\": \"The key uncertainty is whether consumers will pay a premium for convenience versus prestige. T1 is supported by evidence of a pain point that a differentiated \\\"one-use\\\" solution could solve. T2 lacks supporting evidence and no data shows status-driven purchase intent for tools. Without testing, we cannot determine which motivation dominates or if either would generate sufficient demand to justify the investment.\", \"why_next\": \"A low-cost, short-duration test can directly compare purchase intent for a convenience-framed versus a prestige-framed cordless tool, using real monetary commitment (pre-order deposit) to capture consequential behavior. This will distinguish the two theories because T1 predicts higher intent for the convenience version, while T2 predicts higher intent for the prestige version. The test fits the €20,000 budget and 12-week timeline, and the result will inform whether to proceed with a differentiated consumer proposition, a broader expansion, or no expansion.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Convenience vs Prestige Cordless Tool Test\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Controlled field test with two product mock-ups and a pre-order deposit.\", \"sample\": \"200 individual consumers recruited from DIY and home improvement stores in three US regions (East, Midwest, West). Recruit via in-store flyers and brief screening survey to ensure they own at least one cordless tool.\", \"measure\": \"Purchase intent measured by willingness to place a €50 deposit for a pre-order of the tool (non-refundable, convertible to final purchase). Secondary measures: self-reported importance of convenience vs status, and willingness to pay premium price.\", \"prediction_by_theory\": {\"T1\": \"Deposit rate for the convenience-framed tool (\\\"always charged, ready to use\\\") will be at least 15 percentage points higher than for the prestige-framed tool (\\\"high-performance, status symbol\\\").\", \"T2\": \"Deposit rate for the prestige-framed tool will be at least 15 percentage points higher than for the convenience-framed tool.\"}, \"decision_rule\": \"If the convenience version achieves a deposit rate >= 30% and significantly higher than the prestige version (p < 0.05), proceed to develop a differentiated convenience proposition for a specific use case (e.g., home DIY). If the prestige version achieves a deposit rate >= 30% and significantly higher than the convenience version, explore a premium positioning strategy. If neither reaches 30% or the difference is not significant, recommend no expansion of a differentiated consumer proposition and focus on existing B2B and consumer lines.\", \"cost_eur\": 20000, \"weeks\": 12}}}",
+   "keep": null
+  }
+ ]
+}

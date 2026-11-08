@@ -107,7 +107,7 @@ def test_workspaces_are_the_configured_companies_with_their_own_prompts(setup):
 
 def test_a_workspace_refuses_another_companys_case(setup, monkeypatch):
     monkeypatch.setattr(server, '_model_ready', lambda: True)
-    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['first_adapter.gguf', 'second_adapter.gguf'])
+    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['final_adapter.gguf', 'first_adapter.gguf', 'second_adapter.gguf'])
     client = signed_in()
     assert client.post('/api/try', json={'workspace': 'hellberg', 'case': 'jotun-base'}).status_code == 403
     assert client.post('/api/try', json={'workspace': 'moldex', 'case': 'moldex-base'}).status_code == 404
@@ -120,7 +120,7 @@ def stand_in(url, messages, seed, max_tokens, schema=None, temperature=0, lora=N
 
 def test_history_is_kept_per_user_and_company_and_survives_a_restart(setup, monkeypatch):
     monkeypatch.setattr(server, '_model_ready', lambda: True)
-    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['first_adapter.gguf', 'second_adapter.gguf'])
+    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['final_adapter.gguf', 'first_adapter.gguf', 'second_adapter.gguf'])
     monkeypatch.setattr(server, 'chat', stand_in)
     client = signed_in()
     started = client.post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base', 'question': 'Should Jotun sell paint to homeowners?'})
@@ -143,6 +143,19 @@ def test_history_is_kept_per_user_and_company_and_survives_a_restart(setup, monk
     assert store.history('ada', 'jotun')[0]['id'] == identifier
 
 
+    # Pins, projects and deletion: per user, refused for another user's run, and a deleted project releases its runs.
+    project = client.post('/api/workspaces/jotun/projects', json={'name': 'Homeowners'}).json()
+    assert client.patch(f'/api/workspaces/jotun/history/{identifier}', json={'pinned': True, 'project': project['id']}).status_code == 200
+    listing = client.get('/api/workspaces/jotun/history').json()
+    assert listing['entries'][0]['pinned'] and listing['entries'][0]['project'] == project['id'] and [p['name'] for p in listing['projects']] == ['Homeowners']
+    assert other.patch(f'/api/workspaces/jotun/history/{identifier}', json={'pinned': False}).status_code == 404
+    assert other.delete(f'/api/workspaces/jotun/history/{identifier}').status_code == 404
+    assert client.delete(f"/api/workspaces/jotun/projects/{project['id']}").status_code == 200
+    assert client.get('/api/workspaces/jotun/history').json()['entries'][0]['project'] is None
+    assert client.delete(f'/api/workspaces/jotun/history/{identifier}').status_code == 200
+    assert client.get('/api/workspaces/jotun/history').json()['entries'] == [] and client.get(f'/api/workspaces/jotun/history/{identifier}').status_code == 404
+
+
 
 def test_an_account_sees_only_the_companies_it_is_a_member_of(setup):
     users.add('carol', PASSWORD, 'neumann')
@@ -154,3 +167,61 @@ def test_an_account_sees_only_the_companies_it_is_a_member_of(setup):
     assert client.post('/api/try', json={'workspace': 'hellberg', 'case': hellberg['base_case']}).status_code == 404
     store.join('carol', 'hellberg')
     assert [w['id'] for w in client.get('/api/workspaces').json()['workspaces']] == ['neumann', 'hellberg']
+
+
+def stand_in_chat(url, messages, seed, max_tokens, schema=None, temperature=0, lora=None):
+    if schema and 'answer' in schema.get('properties', {}):
+        stand_in_chat.seen = messages  # the follow-up prompt, checked below
+        return {'text': json.dumps({'answer': 'The test would show which explanation holds.', 'sources': ['not-a-source'], 'answered_from_record': True})}
+    stand_in_chat.briefs = [*getattr(stand_in_chat, 'briefs', []), messages]
+    return {'text': '{"name": "read_brief", "arguments": {}}'}
+
+
+def test_memory_followups_mind_map_and_report(setup, monkeypatch):
+    monkeypatch.setattr(server, '_model_ready', lambda: True)
+    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['final_adapter.gguf'])
+    monkeypatch.setattr(server, 'chat', stand_in_chat)
+    client, other = signed_in(), signed_in('bob')
+    # memory: global, company and project notes, private to each account; a full memory refuses instead of failing silently
+    project = client.post('/api/workspaces/jotun/projects', json={'name': 'Homeowners'}).json()
+    assert client.post('/api/memory', json={'text': 'I decide on budgets under 50k.'}).status_code == 201
+    assert client.post('/api/memory', json={'text': 'We sell through distributors.', 'workspace': 'jotun'}).status_code == 201
+    assert client.post('/api/memory', json={'text': 'Only Norway for now.', 'workspace': 'jotun', 'project': project['id']}).status_code == 201
+    assert client.post('/api/memory', json={'text': 'x' * 10, 'project': project['id']}).status_code == 422  # a project note names its company
+    seen = client.get(f"/api/memory?workspace=jotun&project={project['id']}").json()
+    assert [len(seen[k]) for k in ('global', 'company', 'project')] == [1, 1, 1] and seen['enabled']
+    assert other.get('/api/memory?workspace=jotun').json()['global'] == []
+    assert other.delete(f"/api/memory/{seen['global'][0]['id']}").status_code == 404
+    # a run in the project gets all three notes in its brief, and records them
+    started = client.post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base', 'question': 'Should Jotun sell to homeowners?', 'project': project['id']})
+    assert started.status_code == 201
+    identifier = started.json()['id']
+    for _ in range(100):
+        if client.get(f'/api/try/{identifier}').json()['status'] != 'running':
+            break
+        time.sleep(.05)
+    detail = client.get(f'/api/workspaces/jotun/history/{identifier}').json()
+    assert len(detail['memory_used']) == 3 and detail['metrics']['steps']['total'] >= 1
+    assert any('Only Norway for now.' in m['content'] for call in stand_in_chat.briefs for m in call)
+    # a follow-up is answered from the record; a cited id that is not in the record is dropped
+    asked = client.post(f'/api/workspaces/jotun/history/{identifier}/followups', json={'question': 'What would the test show?'})
+    assert asked.status_code == 201
+    for _ in range(100):
+        items = client.get(f'/api/workspaces/jotun/history/{identifier}/followups').json()['followups']
+        if items[0]['status'] != 'answering':
+            break
+        time.sleep(.05)
+    assert items[0]['answer'].startswith('The test would show') and items[0]['sources'] == []
+    assert 'distributors' in stand_in_chat.seen[1]['content']
+    assert other.post(f'/api/workspaces/jotun/history/{identifier}/followups', json={'question': 'Hi there'}).status_code == 404
+    # the mind map groups it under its project; the report is built from the same record
+    tree = client.get('/api/workspaces/jotun/mindmap').json()
+    assert [c['label'] for c in tree['children']] == ['Homeowners'] and tree['children'][0]['children'][0]['id'] == identifier
+    monkeypatch.setattr(server.pdf_report, 'pdf', lambda page: b'%PDF-' + page.encode()[:20])
+    pdf = client.get(f'/api/workspaces/jotun/history/{identifier}/report.pdf')
+    assert pdf.status_code == 200 and pdf.headers['content-type'] == 'application/pdf' and pdf.content.startswith(b'%PDF-')
+    # deleting the investigation deletes its follow-ups; deleting the project deletes its notes
+    assert client.delete(f'/api/workspaces/jotun/history/{identifier}').status_code == 200
+    assert store.followups('ada', 'jotun', identifier) == []
+    assert client.delete(f"/api/workspaces/jotun/projects/{project['id']}").status_code == 200
+    assert client.get(f"/api/memory?workspace=jotun").json()['project'] == []

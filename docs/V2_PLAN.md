@@ -121,3 +121,26 @@ intervention. No further collection round. Quality and diversity of the accepted
 they are checked for mechanisms that genuinely differ (not merely reversed wording), for saying what each outcome would
 justify, for spread across companies and kinds of experiment, and for justified declines where they occur, with no
 quota. The dry-run rate on development outputs is not a yield forecast; the teacher's actual results decide.
+
+## Fourth revision, 2026-11-08: one documented fix-and-regenerate round (Hatem)
+
+The 17 examples accepted in the first round were reviewed by Hatem's criteria with three advisory reviews (two Claude
+agents and Gemini; `reviews/v2_examples/`): none rated sound. They tested messages rather than purchase mechanisms,
+measured only stated preference, jumped from a survey gap to building, used online methods in pre-internet cases, used
+facts from after the decision date, and had decision rules cut off by the 240-character schema limit. Hatem chose one
+documented round of correction and regeneration, recorded here before it runs:
+
+- **Field limits:** the test-design fields get room (decision rule and method 900 characters, predictions 600, sample
+  and measure 500; the teacher's reasoning fields 700/500/700), so constrained generation no longer cuts them. This
+  changes the harness: version 1 must be re-run under the same limits for any comparison with version 2.
+- **Teacher instructions** (`targeted.EXPERIMENT_ASK`) now ask for what the first instructions omitted: separate why
+  customers buy (vary product attributes, trade-offs or price with comparable presentation, or measure a real
+  commitment) rather than which message persuades; predictions that follow from each theory; a complete, proportionate
+  decision rule (usually the next bounded step); declining when information is not worth its cost; and staying inside
+  the case's time (methods available then, no facts from later sources).
+- **Three new structural gates** (`targeted.gate_case_bounds`): the decision rule is complete; no online method in a
+  case set before 1995; no reliance on a source dated after the case. Whether a test varies real attributes or
+  measures a commitment is left to review, so the checker cannot be gamed into accepting it.
+- **One pass:** each of the same 54 states is asked once. No state is asked again whatever the result.
+- **Review before training:** the accepted answers are exported as before, reviewed by Hatem (with advisory reviews if
+  he wants them), and only the examples he keeps are trained on.

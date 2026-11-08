@@ -26,6 +26,25 @@ distilled into a small local student), with *efficient trajectories* (fewer redu
 **The question we test:** can agentic fine-tuning teach that procedure to a small model, beyond what a stage controller
 and the best prompt already achieve?
 
+**The framework behind the procedure.** Camuffo, Gambardella and Pignataro (2024, *Theory-driven strategic
+management decisions*, Strategy Science 9(4): 382–396) formalise a theory as a restriction on beliefs. In their
+Luxottica example, two uncertain attributes (can the firm design fashion eyewear, Y or N; will demand be high or low, H
+or L) define four states, and the decision maker cares about P(H). A theory, "fashion design causes demand", is a
+Bayesian network with one arrow plus an inequality on its conditional probabilities, θHY > θHN. Beliefs about the
+unknown parameters form a distribution μ; the theory allows only parameters in a set Θ, the null hypothesis
+(θHY = θHN) only Θ̃, and with prior ω on the theory its value is V = ω·VΘ + (1 − ω)·VΘ̃. With θHN = 0.5, θY = 0.8 and
+θHY uniform, the theory restricts θHY to (0.5, 1), raising the expected probability of high demand from 0.5 to 0.75:
+a theory raises belief by ruling parameter values out. An experiment updates μ, and the prior on the theory itself
+changes only when the evidence moves μ past a threshold, so a small surprise adjusts parameters and a large one shakes
+the theory. A rival theory has its own value Q, and with costly experiments committing is right once V is far enough
+above or below Q; in between it pays to experiment.
+
+**How the agent carries this out.** The agent follows these steps in words, with tools and evidence; neither it nor
+the harness computes a Bayesian update, because that would need an invented network and invented numbers, and assumed
+ratios could create the very revision we want to measure. Instead, when it states its position and again after a
+what-if result, the agent rates each theory on a five-point scale (very unlikely, unlikely, uncertain, likely, very
+likely). The scale is a signal within one run, not a calibrated probability.
+
 **The setup.**
 - **An investigation environment** with twelve tools (`read_brief`, `frame_problem`, `search_evidence`, `read_source`,
   `add_theory`, `assess_evidence`, `challenge_theory`, `propose_test`, `decline_test`, `state_position`,
@@ -150,6 +169,32 @@ trained arm. The two adapters were not distinguishable (+0.20, interval −0.09 
 - The largest gains are in distinct theories, framing, causal mechanism and revising on new evidence; the weakest
   dimensions for the trained agent remain the recommendation, revision, experiment design and judging evidence.
 
+![Blind quality score on the final test, base model and fine-tuned, per judge](figures/quality-light.png)
+
+![Fine-tuned minus base by kind of new evidence, with 95% intervals](figures/difference-light.png)
+
+![Score per rubric dimension, base and fine-tuned](figures/dimensions-light.png)
+
+**How each run ended** (48 runs per arm; a run is refused a call when it breaks a rule, and stops after repeated
+refusals, at the context limit or at the turn limit):
+
+| | Base, staged prompt | Fine-tuned |
+|---|---|---|
+| Finished with an accepted recommendation | 4 | 28 |
+| Stopped after repeated refused calls | 19 | 11 |
+| Stopped at the context limit | 25 | 0 |
+| Stopped at the turn limit (45) | 0 | 9 |
+| Mean calls per run | 20.2 | 35.4 |
+| Refused calls, all runs | 279 | 242 |
+
+**Do beliefs move the right way when a what-if arrives?** In the 36 runs per arm whose case delivers a simulated
+what-if result, the base model reached it in 11 and the fine-tuned model in 28. A direction check compares the
+affected theory's five-point belief before and after: undermining evidence should not raise it, supporting evidence
+should not lower it. Of the fine-tuned runs where both beliefs were stated, 6 of 6 moved in the allowed direction (3
+undermining, 3 supporting), and in 2 a belief was missing before or after; none moved the wrong way. The base model
+stated no before-and-after pair. This is a direction check only, not a quality score: a weak result may rationally
+change nothing, and the blind judges score revision as part of the rubric.
+
 ### Cost: the fine-tuned agent against a closed model (`reports/cost/roi.json`)
 
 Measured on the final test, one investigation by the fine-tuned agent reads about 121,700 prompt tokens and writes about
@@ -191,7 +236,7 @@ training data never showed:
   results; the student handles irrelevant evidence correctly and revises the wrong theory on Aquaporin's pair.
 - **Simulated-only finishes.** Eight runs try to finish citing only the simulated result, are refused, and repeat until
   the error limit.
-- **Rereading.** Nine runs reach the turn limit rereading the same few sources.
+- **Rereading.** Nine runs reach the turn limit; in eight of them the agent rereads the same few sources.
 
 ### What else we tested
 Specialist adapters per stage (proposed; the data per stage was too thin), a Socratic coach (proposed, not built), more teacher data
@@ -222,7 +267,8 @@ would be measured exactly as here: the same frozen judges and rule, on new held-
 
 ## 9. Team
 
-Team Two-eyed Ravens: Hatem Saadallah. *(Teammates to be tagged on the Hugging Face article.)*
+Team Two-eyed Ravens: Hatem Saadallah and Nour Jennane, Master's students in artificial intelligence and AI
+researchers.
 
 Built with AgentTune and AuditKIT (Lexsi Labs), Tiny Aya and Command A+ (Cohere), PEFT, TRL and llama.cpp, on the
 Bocconi University HPC cluster. Claude (Anthropic) and Codex (OpenAI) served as blind judges and as coding assistants.

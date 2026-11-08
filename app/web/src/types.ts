@@ -73,6 +73,12 @@ export interface RunRecord {
   stopping_point?: StoppingPoint;
   coverage?: { shock?: { direction: Direction } | null };
   sources?: Record<string, Source>;
+  assessments?: Assessment[];
+  tests?: Record<string, Record<string, unknown>>;
+  test_declined?: { reason?: string } | null;
+  revisions?: { theory_id: string; status: string; reason?: string }[];
+  frame?: { objective?: string; alternatives?: string[]; constraints?: string[] };
+  memory_used?: string[];
 }
 
 export interface Workflow {
@@ -116,6 +122,14 @@ export interface HistoryEntry {
   error: string | null;
   cached_at: number | null;
   status: 'running' | 'finished' | 'failed' | 'interrupted' | string;
+  pinned?: boolean;
+  project?: string | null;
+}
+
+export interface Project {
+  id: string;
+  name: string;
+  created: number;
 }
 
 export interface TryRun {
@@ -191,3 +205,24 @@ export interface TrainingLive {
   held_out?: HeldPoint[];
   notes?: string[];
 }
+
+// The numbers behind one investigation (app/insights.py): counted from its record, never estimated
+export interface BeliefRow { id: string; claim: string; before: string | null; after: string | null; before_step: number | null; after_step: number | null; favoured: boolean }
+export interface EvidenceRow { id: string; supports: number; contradicts: number; neutral: number; independent_supports: number; independent_contradicts: number }
+export interface TestNumbers { declined: boolean; reason?: string; name?: string; cost?: number; budget?: number; weeks?: number; max_weeks?: number; people?: number; predictions?: Record<string, string>; rule?: string; method?: string; measure?: string; sample?: string }
+export interface Metrics {
+  finished: boolean;
+  beliefs: BeliefRow[];
+  scale: string[];
+  evidence: EvidenceRow[];
+  sources: { class: string; label: string; count: number }[];
+  test: TestNumbers | null;
+  steps: { total: number; corrected: number; searches: number; reads: number; by_group: { label: string; count: number }[] };
+  checks: { passed: number; evaluated: number };
+}
+export interface Assessment { theory_id: string; evidence_id: string; direction: 'supports' | 'contradicts' | 'neutral'; quote?: string; does_not_show?: string; class?: string }
+export interface FollowUpItem { id: string; question: string; answer: string | null; sources: string[]; status: 'answering' | 'answered' | 'not_in_record' | 'failed' | string; created: number }
+export interface RunDetail { record: RunRecord; metrics: Metrics; suggestions: string[]; followups: FollowUpItem[]; memory_used: string[] }
+export interface MemoryNote { id: string; text: string; project: string | null; workspace: string | null; created: number }
+export interface MemoryState { enabled: boolean; global: MemoryNote[]; company: MemoryNote[]; project: MemoryNote[]; limit: number }
+export interface MindNode { id: string; kind: 'company' | 'project' | 'investigation' | 'explanation' | 'evidence'; label: string; detail?: string; status?: string; belief?: string | null; favoured?: boolean; direction?: string; supports?: number; contradicts?: number; pinned?: boolean; started?: number | null; children: MindNode[] }

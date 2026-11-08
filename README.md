@@ -53,9 +53,15 @@ flowchart TD
 
 Every call goes through a guarded tool. A stage controller offers only the tools of the current stage, and a call
 that breaks a rule (a misquoted source, a repeated search, a recommendation resting on simulated evidence) is refused
-with the reason, so the agent can correct itself. Each investigation is drawn as a workflow in the included Strategy Lab:
+with the reason, so the agent can correct itself.
 
-<img alt="An investigation in the Strategy Lab: each step on a canvas, with the theories, the evidence for and against, and the agent's beliefs" src="docs/figures/app-investigation.png" width="860">
+The included Strategy Lab runs the agent locally for people who are not analysts: the recommendation comes first, with
+how sure it is, then charts counted from the investigation (how likely each explanation was judged, the sources for and
+against each, the mix of independent sources and company claims, the test's cost against its budget), every source with
+its quote, and a full step-by-step trace. Follow-up questions are answered from the investigation's own sources, notes
+can be remembered per company or project, every report downloads as a PDF, and a mind map shows all investigations.
+
+<img alt="A finished investigation in the Strategy Lab: the recommendation, its confidence, the next step and key numbers" src="docs/figures/app-investigation.png" width="860">
 
 ## How it was trained and evaluated
 
@@ -112,8 +118,6 @@ Intervals resample whole cases. The two judges rank the investigations alike (Sp
 The largest gains are in distinct theories, problem framing and causal mechanism; recommendation, revision, evidence
 judgement and experiment design improve but remain the weakest.
 
-<img alt="The final test in the Strategy Lab: both models on every case, with how each run ended" src="docs/figures/app-results.png" width="860">
-
 **Scope.** Four companies support only a limited claim about generalisation, and three attempts per case are not
 independent replications. The judges are LLMs, and nothing here measures business outcomes. The fine-tuned agent's
 weakest dimensions remain the recommendation, revision, experiment design and evidence judgement; 20 of its 48 runs
@@ -151,7 +155,7 @@ Serve the base model with the adapter (GGUF, llama.cpp), then run an investigati
 ```bash
 llama-server -m tiny-aya-global-bf16.gguf --lora tiny-aya-global-strategy-lora-bf16.gguf --port 8091 --jinja
 python -m strategy_agent.agent.runner --prompt compact --cases hellberg-base --output run.json
-./app/run.sh   # the Strategy Lab, at http://127.0.0.1:8000
+./app/run.sh   # the Strategy Lab, at http://127.0.0.1:8000 (PDF reports need Chrome or Chromium)
 ```
 
 ## Reproduce

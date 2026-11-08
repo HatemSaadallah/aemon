@@ -31,6 +31,12 @@ CREATE TABLE IF NOT EXISTS history (id TEXT PRIMARY KEY, user TEXT NOT NULL, wor
 CREATE INDEX IF NOT EXISTS history_owner ON history (user, workspace, started);
 CREATE TABLE IF NOT EXISTS run_cache (key TEXT PRIMARY KEY, record TEXT NOT NULL, created REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS migrations (name TEXT PRIMARY KEY, done REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS projects (id TEXT PRIMARY KEY, user TEXT NOT NULL, workspace TEXT NOT NULL, name TEXT NOT NULL, created REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS followups (id TEXT PRIMARY KEY, user TEXT NOT NULL, workspace TEXT NOT NULL, history_id TEXT NOT NULL,
+    question TEXT NOT NULL, answer TEXT, sources TEXT, status TEXT NOT NULL, created REAL NOT NULL);
+CREATE INDEX IF NOT EXISTS followups_run ON followups (history_id, created);
+CREATE TABLE IF NOT EXISTS memories (id TEXT PRIMARY KEY, user TEXT NOT NULL, workspace TEXT, project TEXT, text TEXT NOT NULL, created REAL NOT NULL);
+CREATE TABLE IF NOT EXISTS settings (user TEXT NOT NULL, key TEXT NOT NULL, value TEXT NOT NULL, PRIMARY KEY (user, key));
 """
 _ready, _lock = set(), threading.RLock()  # re-entrant: the first open of a database runs inside a write
 
@@ -97,6 +103,13 @@ def _done(db: sqlite3.Connection, name: str) -> bool:
 
 def _migrate(db: sqlite3.Connection) -> None:
     """Import the plain files once. Rows that already exist are kept, and the files are left where they are."""
+    if not _done(db, 'history_pins_projects'):  # pinning and projects, added to existing history without touching it
+        columns = {row[1] for row in db.execute('PRAGMA table_info(history)')}
+        if 'pinned' not in columns:
+            db.execute('ALTER TABLE history ADD COLUMN pinned INTEGER NOT NULL DEFAULT 0')
+        if 'project' not in columns:
+            db.execute('ALTER TABLE history ADD COLUMN project TEXT')
+        db.execute('INSERT INTO migrations VALUES (?, ?)', ('history_pins_projects', time.time()))
     if not _done(db, 'users_json'):
         path = legacy_users()
         for name, entry in (json.loads(path.read_text()) if path.exists() else {}).items():
@@ -210,6 +223,7 @@ _COLUMNS = {
     'summary': 'summary',
     'record': 'record',
     'cached_at': 'cached_at',
+    'project': 'project',
 }
 _JSON = ('summary', 'record')
 
@@ -242,6 +256,8 @@ def _entry(row: sqlite3.Row) -> dict[str, Any]:
         'started': row['started'],
         'ended': row['ended'],
         'cached_at': row['cached_at'],
+        'pinned': bool(row['pinned']) if 'pinned' in row.keys() else False,
+        'project': row['project'] if 'project' in row.keys() else None,
     }
     for key in _JSON:
         out[key] = json.loads(row[key]) if row[key] else None
@@ -260,3 +276,130 @@ def cached(key: str) -> tuple[Any, Any] | None:
 
 def save_run(key: str, run_record: Json) -> None:
     _write('INSERT OR REPLACE INTO run_cache VALUES (?, ?, ?)', (key, json.dumps(run_record), time.time()))
+
+
+# History management: delete, pin, and group into projects. Every change is scoped to the owner and the workspace.
+def delete_history(name: str, workspace: str, identifier: str) -> bool:
+    """The investigation and its follow-up questions."""
+    with _lock:
+        db = connect()
+        try:
+            gone = db.execute('DELETE FROM history WHERE id = ? AND user = ? AND workspace = ?', (identifier, name, workspace)).rowcount
+            if gone:
+                db.execute('DELETE FROM followups WHERE history_id = ? AND user = ?', (identifier, name))
+            db.commit()
+            return gone > 0
+        finally:
+            db.close()
+
+
+def update_history(name: str, workspace: str, identifier: str, **fields: object) -> bool:
+    """fields: pinned (bool) and/or project (a project id of this owner and workspace, or None)."""
+    sets, args = [], []
+    if 'pinned' in fields:
+        sets.append('pinned = ?')
+        args.append(1 if fields['pinned'] else 0)
+    if 'project' in fields:
+        sets.append('project = ?')
+        args.append(fields['project'])
+    if not sets:
+        return False
+    return _write(f'UPDATE history SET {", ".join(sets)} WHERE id = ? AND user = ? AND workspace = ?', (*args, identifier, name, workspace)) > 0
+
+
+def projects(name: str, workspace: str) -> list[dict[str, Any]]:
+    rows = _read('SELECT id, name, created FROM projects WHERE user = ? AND workspace = ? ORDER BY created', (name, workspace))
+    return [{'id': r['id'], 'name': r['name'], 'created': r['created']} for r in rows]
+
+
+def create_project(name: str, workspace: str, title: str) -> dict[str, Any]:
+    import uuid
+
+    project = {'id': uuid.uuid4().hex[:12], 'name': title, 'created': time.time()}
+    _write('INSERT INTO projects VALUES (?, ?, ?, ?, ?)', (project['id'], name, workspace, title, project['created']))
+    return project
+
+
+def rename_project(name: str, workspace: str, project: str, title: str) -> bool:
+    return _write('UPDATE projects SET name = ? WHERE id = ? AND user = ? AND workspace = ?', (title, project, name, workspace)) > 0
+
+
+def delete_project(name: str, workspace: str, project: str) -> bool:
+    """The project and its memories go; its investigations stay, back in the main history."""
+    with _lock:
+        db = connect()
+        try:
+            gone = db.execute('DELETE FROM projects WHERE id = ? AND user = ? AND workspace = ?', (project, name, workspace)).rowcount
+            if gone:
+                db.execute('UPDATE history SET project = NULL WHERE project = ? AND user = ? AND workspace = ?', (project, name, workspace))
+                db.execute('DELETE FROM memories WHERE project = ? AND user = ?', (project, name))
+            db.commit()
+            return gone > 0
+        finally:
+            db.close()
+
+
+# Follow-up questions on a finished investigation, answered from its record
+def add_followup(name: str, workspace: str, history_id: str, question: str) -> dict[str, Any]:
+    import uuid
+
+    item = {'id': uuid.uuid4().hex[:16], 'question': question, 'answer': None, 'sources': [], 'status': 'answering', 'created': time.time()}
+    _write('INSERT INTO followups VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', (item['id'], name, workspace, history_id, question, None, '[]', 'answering', item['created']))
+    return item
+
+
+def finish_followup(identifier: str, answer: str, sources: list[str], status: str) -> None:
+    _write('UPDATE followups SET answer = ?, sources = ?, status = ? WHERE id = ?', (answer, json.dumps(sources), status, identifier))
+
+
+def followups(name: str, workspace: str, history_id: str) -> list[dict[str, Any]]:
+    rows = _read('SELECT * FROM followups WHERE user = ? AND workspace = ? AND history_id = ? ORDER BY created', (name, workspace, history_id))
+    return [{'id': r['id'], 'question': r['question'], 'answer': r['answer'], 'sources': json.loads(r['sources'] or '[]'), 'status': r['status'], 'created': r['created']} for r in rows]
+
+
+# Memory, as in ChatGPT: notes the person asks the assistant to keep. Global notes (no project) apply everywhere; a
+# project's notes apply to investigations in that project. They are context from the person, never evidence.
+def memories(name: str, project: str | None = None, include_global: bool = True, workspace: str | None = None, company_only: bool = False) -> list[dict[str, Any]]:
+    """Global notes (no company, no project), a company's notes, and a project's notes, as asked."""
+    clauses, args = [], [name]
+    if include_global and not company_only:
+        clauses.append('(workspace IS NULL AND project IS NULL)')
+    if workspace:
+        clauses.append('(workspace = ? AND project IS NULL)')
+        args.append(workspace)
+    if project and not company_only:
+        clauses.append('project = ?')
+        args.append(project)
+    if not clauses:
+        return []
+    rows = _read(f'SELECT * FROM memories WHERE user = ? AND ({" OR ".join(clauses)}) ORDER BY created', args)
+    return [{'id': r['id'], 'text': r['text'], 'project': r['project'], 'workspace': r['workspace'], 'created': r['created']} for r in rows]
+
+
+def memory_count(name: str) -> int:
+    return _read('SELECT COUNT(*) AS n FROM memories WHERE user = ?', (name,))[0]['n']
+
+
+def add_memory(name: str, text: str, project: str | None = None, workspace: str | None = None) -> dict[str, Any]:
+    import uuid
+
+    item = {'id': uuid.uuid4().hex[:12], 'text': text, 'project': project, 'workspace': workspace, 'created': time.time()}
+    _write('INSERT INTO memories VALUES (?, ?, ?, ?, ?, ?)', (item['id'], name, workspace, project, text, item['created']))
+    return item
+
+
+def update_memory(name: str, identifier: str, text: str) -> bool:
+    return _write('UPDATE memories SET text = ? WHERE id = ? AND user = ?', (text, identifier, name)) > 0
+
+
+def delete_memory(name: str, identifier: str) -> bool:
+    return _write('DELETE FROM memories WHERE id = ? AND user = ?', (identifier, name)) > 0
+
+
+def setting(name: str, key: str, default: str) -> str:
+    rows = _read('SELECT value FROM settings WHERE user = ? AND key = ?', (name, key))
+    return rows[0]['value'] if rows else default
+
+
+def set_setting(name: str, key: str, value: str) -> None:
+    _write('INSERT OR REPLACE INTO settings VALUES (?, ?, ?)', (name, key, value))

@@ -48,7 +48,7 @@ def _digest(text: str) -> str:
 
 def _replay(record: Json, case: Case, upto: int) -> tuple[Investigation, list[dict[str, str]]]:
     """The investigation after the first upto recorded turns, and the compact context the student saw next."""
-    run = Investigation(case, record['settings'].get('complete_workflow', False), True, record['settings'].get('quote_marks', False))
+    run = Investigation(case, record['settings'].get('complete_workflow', False), True, record['settings'].get('quote_marks', False), record['settings'].get('reread_limit'))
     shown = {}
     for turn in record['model_turns'][:upto]:
         call, problem = parse_call(turn['text'], True)
@@ -124,9 +124,9 @@ def _schema(run: Investigation) -> Json:
         'additionalProperties': False,
         'required': ['learned', 'uncertain', 'why_next', 'call'],
         'properties': {
-            'learned': {'type': 'string', 'maxLength': 400},
-            'uncertain': {'type': 'string', 'maxLength': 300},
-            'why_next': {'type': 'string', 'maxLength': 300},
+            'learned': {'type': 'string', 'maxLength': 700},
+            'uncertain': {'type': 'string', 'maxLength': 500},
+            'why_next': {'type': 'string', 'maxLength': 700},
             'call': schema_for(run),
         },
     }
@@ -175,7 +175,9 @@ def judge(state: Json, reply_text: str) -> tuple[Json | None, str]:
     return {'call': call, 'stage': stage, 'justification': {k: answer[k] for k in ('learned', 'uncertain', 'why_next')}}, 'kept'
 
 
-def ask(state_items: list[Json], url: str, weights: str, manifest: str | Path, seed: int = 11, workers: int = 1, generation: Json | None = None) -> list[Json]:
+def ask(
+    state_items: list[Json], url: str, weights: str, manifest: str | Path, seed: int = 11, workers: int = 1, generation: Json | None = None, ask_text: str = ASK
+) -> list[Json]:
     """One teacher turn per state, several at once if the server has slots. Every reply is hashed into the manifest
     before it is judged, under a lock, so the record holds every reply, kept or not."""
     import concurrent.futures
@@ -187,7 +189,7 @@ def ask(state_items: list[Json], url: str, weights: str, manifest: str | Path, s
     def one(numbered: tuple[int, Json]) -> Json:
         number, state = numbered
         run, _ = _replay(state['record'], cases[state['case']], len(state['record']['model_turns']))
-        messages = [{'role': 'system', 'content': PROMPTS['teacher'] + '\n\n' + ASK}, state['context'][1]]
+        messages = [{'role': 'system', 'content': PROMPTS['teacher'] + '\n\n' + ask_text}, state['context'][1]]
         try:
             reply = chat(url, messages, seed + number, 2400, _schema(run), 0)  # room for the thinking block and the answer
         except Exception as error:  # noqa: BLE001  recorded, so a failed request is visible and not silently dropped

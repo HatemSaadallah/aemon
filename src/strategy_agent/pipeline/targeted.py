@@ -24,10 +24,90 @@ from collections.abc import Sequence  # noqa: F811
 from pathlib import Path
 from typing import Any
 
+from strategy_agent.agent.runner import _BY_NAME as BY_NAME
 from strategy_agent.common.types import Json
 from strategy_agent.env.cases import load_cases
 from strategy_agent.env.checks import CHECKS, _similar, normalise
 from strategy_agent.pipeline import corrections as c
+
+JUSTIFICATION_LIMITS = {'learned': 700, 'uncertain': 500, 'why_next': 700}  # as in corrections._schema
+
+# Instructions for the experiment states. The recovery prompt (corrections.ASK) tells the teacher not to move on before
+# the evidence is in place, which at these states made it read more sources instead of designing the test.
+EXPERIMENT_ASK = (
+    'You are shown the state of an investigation another analyst was running, at the point where they designed the '
+    'test. Make that decision well.\n'
+    'Either propose one test, or decline it. A good test separates WHY customers would buy, not which message '
+    'persuades them: vary real product attributes, trade-offs or price while keeping the presentation comparable, or '
+    'measure a real commitment (a pre-order, a deposit, a paid trial, sell-through in a store or by mail order, use of a '
+    'prototype) rather than only stated preference. If only a survey is feasible, say what it can and cannot show. '
+    'Give a prediction for each open theory that follows from that theory, a measure, a sample, a cost and duration '
+    'within the stated budget and time, and a decision rule, written out in full, that says what each result would '
+    'lead the company to do. Be proportionate: one result from a small test usually justifies the next bounded step '
+    '(a pilot, a prototype run, a partner trial), not building a product line, unless the state shows the costs, '
+    'margins and uncertainty that would justify more.\n'
+    'Decline the test if more information would not justify its cost, saying why from the state (it cannot change the '
+    'decision, the evidence already settles it, acting now is worth more, or it does not fit the stated limits).\n'
+    'Stay inside the case: if it is set in the past, use only methods available at that date and only facts from '
+    'sources dated on or before it; do not use anything the analyst could not have known then.\n'
+    'First say briefly what has been learned, which uncertainty separates the theories, and why this test (or '
+    'declining) is the right next step, naming the theories and the sources it rests on.'
+)
+MONTHS = 'January|February|March|April|May|June|July|August|September|October|November|December'
+# "It is 1977", "It is late 2012", "It is March 2016", "It is mid-May 2025", "It is spring 2021": every dated case (16 were
+# missed by the first pattern, which knew only early, mid- and late; DECISIONS, 2026-11-08)
+YEAR = re.compile(rf'\bIt is (?:the )?(?:early |mid-|late |end of |spring |summer |autumn |fall |winter )?(?:(?:{MONTHS}) )?(\d{{4}})')
+ONLINE = re.compile(r'\b(online|internet|web|e-?mail|social media|landing page|app\b|smartphone|mturk|prolific)', re.I)
+ENDS = ('.', ')', '!', '"', '\u201d')
+
+
+OLD_LIMIT = 240  # the text limit the first version 2 batches were generated under (DECISIONS, 2026-11-08)
+
+
+def _limits(schema: Json, value: Any, path: str = '') -> list[tuple[str, int, int]]:
+    """Every string in value with its schema maxLength, as (path, length, limit)."""
+    if isinstance(value, str):
+        return [(path, len(value), schema['maxLength'])] if 'maxLength' in schema else []
+    if isinstance(value, list):
+        return [x for i, v in enumerate(value) for x in _limits(schema.get('items', {}), v, f'{path}[{i}]')]
+    if isinstance(value, dict):
+        props, extra = schema.get('properties', {}), schema.get('additionalProperties')
+        return [x for k, v in value.items() for x in _limits(props.get(k, extra if isinstance(extra, dict) else {}), v, f'{path}.{k}' if path else k)]
+    return []
+
+
+def cut_off(call: Json, justification: Json | None) -> str:
+    """A field the constrained generation stopped at its length limit is cut mid-text; it is never complete."""
+    tool = BY_NAME.get(call.get('name', ''))
+    if tool is None:
+        return ''
+    found = _limits(tool['properties']['arguments'], call.get('arguments') or {})
+    found += _limits({'properties': {k: {'maxLength': n} for k, n in JUSTIFICATION_LIMITS.items()}}, justification or {})
+    for path, length, limit in found:
+        if limit >= 100 and (length >= limit - 2 or length == OLD_LIMIT):
+            return f'{path} stops at its length limit ({length} characters), cut mid-text'
+    return ''
+
+
+def gate_case_bounds(run: Any, args: Json, justification: Json | None) -> str:
+    """Structural checks that a test design stays complete and inside its case's time."""
+    rule = str(args.get('decision_rule', '')).rstrip()
+    if not rule.endswith(ENDS) or len(rule) >= 895 or re.search(r'[<>=\u2264\u2265(]\s*\d*\.$', rule):
+        return 'the decision rule is not written out in full'
+    found = YEAR.search(f'{run.case.question} {run.case.brief}')
+    if not found:
+        return ''
+    year = int(found.group(1))
+    text = ' '.join(str(args.get(k, '')) for k in ('name', 'method', 'sample', 'measure'))
+    if year < 1995 and ONLINE.search(text):
+        return f'an online method in a case set in {year}'
+    said = json.dumps(justification or {}) + json.dumps(args)
+    for source in run.read:
+        date = str(getattr(run._source(source), 'date', '') or '')
+        if date[:4].isdigit() and int(date[:4]) > year and re.search(rf'\b{re.escape(source)}\b', said):
+            return f'relies on {source}, dated {date[:4]}, after the case is set ({year})'
+    return ''
+
 
 NUMBER = re.compile(r'\d+(?:[.,]\d+)?')
 UP = re.compile(r'\b(higher|more|increase\w*|rise\w*|greater|above|exceed\w*|grow\w*|larger)\b', re.I)
@@ -171,8 +251,9 @@ def gate(state: Json, reply_text: str) -> tuple[Json | None, str]:
     before, _ = c._replay(state['record'], case, len(state['record']['model_turns']))
     call = kept['call']
     args = call.get('arguments') or {}
-    if state['skill'] == 'experiment':
-        problem = (
+    if state['skill'].startswith('experiment'):
+        problem = cut_off(call, kept.get('justification')) or gate_case_bounds(before, args, kept.get('justification')) if call['name'] == 'propose_test' else ''
+        problem = problem or (
             gate_test(before, args, kept.get('justification'))
             if call['name'] == 'propose_test'
             else gate_decline(before, args)
@@ -204,9 +285,14 @@ def states(reports: Sequence[str | Path]) -> list[Json]:
             case = cases[record['case']]
             student = c._digest(json.dumps([[t['text'], t['tool_result']] for t in record['model_turns']], sort_keys=True))
             picks = []
-            test_turn = next((i for i, x in enumerate(record['calls']) if x.get('stage') == 'test'), None)
+            # the point where the student itself designed (or declined) the test, so the evidence it had is in place
+            test_turn = next((i for i, x in enumerate(record['calls']) if x['name'] in ('propose_test', 'decline_test')), None)
             if test_turn is not None:
                 picks.append(('experiment', test_turn))
+            # where it reread one source a third time in the test stage instead of designing the test (DECISIONS, 2026-11-08)
+            loop = next((i for i in c.loop_starts(record) if record['calls'][i]['name'] == 'read_source' and record['calls'][i].get('stage') == 'test'), None)
+            if loop is not None and loop != test_turn:
+                picks.append(('experiment-reread', loop))
             refused = next(
                 (i for i, x in enumerate(record['calls']) if x['name'] == 'finish' and not x['accepted'] and x.get('category') == 'synthetic_as_evidence'),
                 None,
@@ -232,13 +318,35 @@ def states(reports: Sequence[str | Path]) -> list[Json]:
 
 
 def ask(items: list[Json], url: str, weights: str, manifest: str, workers: int, generation: Json | None = None) -> list[Json]:
-    asked = c.ask(items, url, weights, manifest, seed=29, workers=workers, generation=generation)
+    experiment = [x for x in items if x['skill'].startswith('experiment')]
+    recovery = [x for x in items if not x['skill'].startswith('experiment')]
+    asked_by_id: dict[int, Json] = {}
+    for group, text in ((experiment, EXPERIMENT_ASK), (recovery, c.ASK)):
+        if group:
+            for state, answer in zip(group, c.ask(group, url, weights, manifest, seed=29, workers=workers, generation=generation, ask_text=text), strict=True):
+                asked_by_id[id(state)] = answer
+    asked = [asked_by_id[id(x)] for x in items]
     for item, state in zip(asked, items, strict=True):
         item['skill'] = state['skill']
         if isinstance(item.get('kept'), dict):  # kept is the correction object or None, never False
             kept, reason = gate({**item['state'], 'skill': state['skill'], 'record': item['record']}, item['reply'])
             item['kept'], item['decision'] = kept, reason
     return asked
+
+
+def regate(asked: list[Json]) -> list[Json]:
+    """The same saved replies judged again by the current code, with no new sampling: used once, after the environment's
+    text limit for a test's method and rule was raised to match the schema the teacher was given (DECISIONS, 2026-11-08).
+    Every reply is re-judged, including those the old limit refused, and the decision made at generation is kept."""
+    out = []
+    for item in asked:
+        item = dict(item)
+        if 'reply' in item and 'record' in item:
+            item.setdefault('decision_at_generation', item.get('decision'))
+            kept, reason = gate({**item['state'], 'skill': item['skill'], 'record': item['record']}, item['reply'])
+            item['kept'], item['decision'] = kept, reason
+        out.append(item)
+    return out
 
 
 def rows(asked: list[Json], manifest: str) -> list[Json]:
@@ -273,11 +381,20 @@ def main() -> None:
     r.add_argument('--asked', required=True)
     r.add_argument('--manifest', required=True)
     r.add_argument('--output', required=True)
+    g = sub.add_parser('regate')
+    g.add_argument('--asked', required=True)
+    g.add_argument('--output', required=True)
     args = p.parse_args()
-    if args.command == 'states':
+    if args.command == 'regate':
+        out = regate(json.loads(Path(args.asked).read_text()))
+        Path(args.output).write_text(json.dumps(out))
+        changed = [x for x in out if 'decision_at_generation' in x and x['decision_at_generation'] != x['decision']]
+        print(json.dumps({'answers': len(out), 'kept': sum(isinstance(x.get('kept'), dict) for x in out), 'changed': len(changed),
+                          'now_kept': sum(isinstance(x.get('kept'), dict) for x in changed)}))
+    elif args.command == 'states':
         out = states(args.reports)
         Path(args.output).write_text(json.dumps(out))
-        print(json.dumps({'states': len(out), 'by_skill': {k: sum(x['skill'] == k for x in out) for k in ('experiment', 'recovery')}}))
+        print(json.dumps({'states': len(out), 'by_skill': {k: sum(x['skill'] == k for x in out) for k in ('experiment', 'experiment-reread', 'recovery')}}))
     elif args.command == 'ask':
         generation = json.loads(args.server_settings) if args.server_settings else None
         out = ask(json.loads(Path(args.states).read_text()), args.url, args.weights_sha256, args.manifest, args.workers, generation)

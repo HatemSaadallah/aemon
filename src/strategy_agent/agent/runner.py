@@ -52,6 +52,9 @@ if TYPE_CHECKING:
 _TEXT = {'type': 'string', 'maxLength': 240}
 _LONG = {'type': 'string', 'maxLength': 420}
 _LIST = {'type': 'array', 'items': _TEXT, 'maxItems': 6}
+# Test designs need room: at 240 characters constrained generation cut most decision rules mid-sentence (DECISIONS, 2026-11-08)
+_RULE = {'type': 'string', 'maxLength': 900}
+_DESIGN = {'type': 'string', 'maxLength': 500}
 _IDS = {'type': 'array', 'items': {'type': 'string', 'maxLength': 40}, 'minItems': 1, 'maxItems': 8}
 
 
@@ -94,11 +97,11 @@ TOOL_SCHEMA = {
             {
                 'name': _TEXT,
                 'theories': {'type': 'array', 'items': {'type': 'string', 'maxLength': 4}, 'maxItems': 5},
-                'method': _LONG,
-                'sample': _TEXT,
-                'measure': _TEXT,
-                'prediction_by_theory': {'type': 'object', 'additionalProperties': _TEXT},
-                'decision_rule': _TEXT,
+                'method': _RULE,
+                'sample': _DESIGN,
+                'measure': _DESIGN,
+                'prediction_by_theory': {'type': 'object', 'additionalProperties': {'type': 'string', 'maxLength': 600}},
+                'decision_rule': _RULE,
                 'cost_eur': {'type': 'number'},
                 'weeks': {'type': 'number'},
             },
@@ -316,12 +319,13 @@ def play(
     prefix: Sequence[Json] = (),
     stop_when: Callable[[Investigation], bool] | None = None,
     quote_marks: bool = True,
+    reread_limit: int | None = None,
 ) -> tuple[Investigation, Json]:
     """respond(messages, seed, max_tokens, schema, temperature) returns a reply. Everything else is fixed by the arm.
     route, if given, maps the current stage to the adapters the server applies, and is passed to respond as lora.
     prefix replays recorded turns first, each of which must return its recorded result, and marks their calls, so the model
     takes over mid-investigation from exactly the state a live run would show. stop_when(run) ends the run early."""
-    run = Investigation(case, complete_workflow, staged, quote_marks)
+    run = Investigation(case, complete_workflow, staged, quote_marks, reread_limit)
     seed = sum(map(ord, case.id)) + 1000 * attempt
     messages = [{'role': 'system', 'content': system}, {'role': 'user', 'content': 'A new investigation is ready. Call read_brief.'}]
     turns, errors, stop = [], 0, 'turn limit'  # errors counts in a row, so one mistake does not end a run
@@ -429,7 +433,8 @@ def record_of(run: Investigation, info: Json | None = None) -> Json:
         'simulated_case': run.case.simulated,
         'checks': run_checks(run),
         'rejections': rejected_categories(run),
-        'settings': {'complete_workflow': run.complete_workflow, 'staged': run.staged, 'quote_marks': run.quote_marks},
+        'settings': {'complete_workflow': run.complete_workflow, 'staged': run.staged, 'quote_marks': run.quote_marks}
+        | ({'reread_limit': run.reread_limit} if run.reread_limit is not None else {}),
         'coverage': coverage(run),
         'position': run.position,
         'test_declined': run.test_declined,
@@ -566,6 +571,7 @@ def main() -> None:
     parser.add_argument('--split', choices=('development', 'heldout'), default='development', help='heldout only for the final test')
     parser.add_argument('--max-turns', type=int, default=45)
     parser.add_argument('--max-errors', type=int, default=4, help='errors in a row before stopping')
+    parser.add_argument('--reread-limit', type=int, help='refuse reading one source more than this many times (off by default, as evaluated)')
     parser.add_argument('--max-tokens', type=int, default=520)
     parser.add_argument('--context', type=int, default=12288, help='the server context size, recorded with the run')
     parser.add_argument('--output', required=True)
@@ -654,6 +660,7 @@ def main() -> None:
                 reasoned=args.prompt in REASONED,
                 compact=args.prompt in COMPACT,
                 route=lora_route(args.lora_route, loaded_adapters(args.url)) if args.lora_route else None,
+                reread_limit=args.reread_limit,
             )
             record = dict(record_of(run, info), attempt=attempt)
             with lock:

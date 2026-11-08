@@ -32,6 +32,9 @@ sys.path.insert(0, str(ROOT / 'src'))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 
+import followup  # noqa: E402
+import insights  # noqa: E402
+import report as pdf_report  # noqa: E402
 import store  # noqa: E402
 import users  # noqa: E402
 from strategy_agent.agent.runner import COMPACT, PROMPTS, TOOL_SCHEMA, play, record_of  # noqa: E402
@@ -42,39 +45,7 @@ from strategy_agent.env.checks import guards_cleared  # noqa: E402
 from strategy_agent.env.tools import Case, Investigation  # noqa: E402
 from strategy_agent.pipeline.provenance import case_digest  # noqa: E402
 
-RUNS = ROOT / 'reports' / 'strategy'
 MODEL_URL = 'http://127.0.0.1:8091'
-# Paired pilots: the same cases, controller, prompt and settings, and the only difference is the adapter.
-# A pilot is shown once both of its reports exist. Add the next one here.
-PILOTS = (
-    {
-        'id': 'final',
-        'label': 'Final test',
-        'files': {'untrained': '../judge/final/final_test_base_base.json', 'trained': '../judge/final/final_test_trained_adapter.json'},
-        'arms': {'untrained': 'Base model (staged prompt)', 'trained': 'Fine-tuned'},
-        'note': 'Run once on four companies never used for training or selection: 16 cases, three attempts each (one attempt per case is shown). The base model uses the staged prompt chosen on development data, the fine-tuned model the compact one. Blind judges: 1.48 against 0.65 (mean of two judges).',
-    },
-    {
-        'id': 'pilot1',
-        'label': 'First pilot',
-        'files': {'untrained': 'pilot1/first_base.json', 'trained': 'pilot1/first_adapter.json'},
-        'arms': {'untrained': 'Untrained', 'trained': 'First adapter'},
-        'note': 'Full-history prompt in both arms; the only difference is the adapter. The adapter learned from 45 teacher investigations, and the checkpoint with the lowest Hellberg loss was kept.',
-    },
-    {
-        'id': 'pilot2',
-        'label': 'Second pilot',
-        'files': {'untrained': 'pilot2/second_base.json', 'trained': 'pilot2/second_adapter.json'},
-        'arms': {'untrained': 'Untrained', 'trained': 'Second adapter'},
-        'note': 'Compact prompt in both arms, so the only difference is the adapter; it learned from the same 45 teacher investigations as the first, built compact so no rows were dropped.',
-    },
-)
-ARMS = ('untrained', 'trained')
-BANNER = (
-    'The final test ran once on four companies never used for training or selection. The two pilots are earlier development runs on Moldex and '
-    'Hellberg, where Hellberg chose the checkpoint, so it is not unseen. '
-    'Checks are guards against mechanical mistakes, not measures of strategy quality.'
-)
 
 app = FastAPI(title='Strategy Lab', docs_url=None, redoc_url=None, openapi_url=None)
 app.mount('/static', StaticFiles(directory=Path(__file__).parent / 'static'), name='static')
@@ -83,7 +54,7 @@ DIST = Path(__file__).parent / 'web' / 'dist'
 PAGE = DIST / 'index.html' if (DIST / 'index.html').is_file() else None
 if PAGE is not None:
     app.mount('/assets', StaticFiles(directory=DIST / 'assets'), name='assets')
-_cache, _cases, _tries, _lock = {}, {}, {}, threading.Lock()
+_cases, _tries, _lock = {}, {}, threading.Lock()
 
 # Sign-in. Sessions and chat history live in the SQLite store (app/store.py), so both survive a restart.
 COOKIE = 'lexsi_session'
@@ -164,23 +135,6 @@ def cases() -> Json:
     return _cases
 
 
-def report(relative: str) -> Json | None:
-    """Reads a report once per version on disk."""
-    path = RUNS / relative
-    if not path.exists():
-        return None
-    stamp = path.stat().st_mtime_ns
-    if _cache.get(relative, (None,))[0] != stamp:
-        _cache[relative] = (stamp, json.loads(path.read_text()))
-    return _cache[relative][1]
-
-
-def pilot_reports(pilot: Json) -> dict[str, Json] | None:
-    reports = {arm: report(pilot['files'][arm]) for arm in ARMS}
-    present = {arm: data for arm, data in reports.items() if data is not None}
-    return present if len(present) == len(reports) else None
-
-
 def source_of(case: Case, identifier: str) -> Json | None:
     record = case.shock if case.shock is not None and case.shock.id == identifier else case.dossier.records.get(identifier)
     if record is None:
@@ -205,133 +159,9 @@ def detail(record: Json, case: Case) -> dict[str, Any]:
     return out
 
 
-def outcome(record: Json) -> Json:
-    point = record['stopping_point']
-    return {
-        'stop_reason': record['stop_reason'],
-        'finished': record['final'] is not None,
-        'furthest': point['furthest_stage'],
-        'stage_at_stop': point['stage_at_stop'],
-        'calls': point['calls'],
-        'refused': point['refused'],
-        'guards_cleared': guards_cleared(record['checks']),
-    }
-
-
-def totals(data: Json) -> Json:
-    records = data['records']
-    return {
-        'cases': len(records),
-        'finished': sum(r['final'] is not None for r in records),
-        'refused': sum(r['stopping_point']['refused'] for r in records),
-        'mean_calls': round(sum(r['stopping_point']['calls'] for r in records) / max(len(records), 1), 1),
-        'stop_reasons': data['summary']['stop_reasons'],
-    }
-
-
 @app.get('/')
 def index() -> FileResponse:
     return FileResponse(PAGE or Path(__file__).parent / 'static' / 'index.html')
-
-
-@app.get('/api/pilots')
-def pilots() -> Json:
-    shown = []
-    for pilot in PILOTS:
-        reports = pilot_reports(pilot)
-        if reports is None:
-            continue
-        by_case = {arm: {r['case']: (i, r) for i, r in enumerate(reports[arm]['records'])} for arm in ARMS}
-        rows = [
-            {
-                'case': case,
-                'company': reports['untrained']['records'][by_case['untrained'][case][0]]['company'],
-                **{arm: {'index': by_case[arm][case][0], **outcome(by_case[arm][case][1])} for arm in ARMS},
-            }
-            for case in by_case['untrained']
-            if case in by_case['trained']
-        ]
-        shown.append(
-            {
-                'id': pilot['id'],
-                'label': pilot['label'],
-                'note': pilot['note'],
-                'arms': pilot['arms'],
-                'totals': {arm: totals(reports[arm]) for arm in ARMS},
-                'cases': rows,
-            }
-        )
-    return {'banner': BANNER, 'pilots': shown}
-
-
-def belief_move(shock: Json) -> list[Any]:
-    """Did the affected theory's own five-point belief move in the direction the what-if was written to push?
-    Undermining evidence should not raise it, supporting evidence should not lower it, irrelevant evidence should leave
-    it unchanged. A direction check only: a weak packet may rationally change nothing, so this is not a quality score."""
-    from strategy_agent.env.tools import BELIEFS
-
-    before, after = shock.get('beliefs_before'), shock.get('beliefs_after')
-    rows = []
-    for theory in shock.get('affected_theories') or []:
-        b, a = (before or {}).get(theory), (after or {}).get(theory)
-        if b is None or a is None:
-            verdict = 'no belief after' if b is not None else 'no belief before'
-        else:
-            step = BELIEFS.index(a) - BELIEFS.index(b)
-            verdict = {'undermines': step <= 0, 'supports': step >= 0, 'irrelevant': step == 0}.get(shock['direction'])
-            verdict = 'consistent' if verdict else 'inconsistent'
-        rows.append({'theory': theory, 'before': b, 'after': a, 'verdict': verdict})
-    return rows
-
-
-@app.get('/api/beliefs')
-def beliefs() -> Json:
-    """For every what-if case in the pilots: whether the run reached it, and how its own beliefs moved."""
-    out = []
-    for pilot in PILOTS:
-        reports = pilot_reports(pilot)
-        if reports is None:
-            continue
-        for arm in ARMS:
-            rows = []
-            for index, record in enumerate(reports[arm]['records']):
-                shock = record['coverage'].get('shock')
-                if not shock:
-                    continue
-                rows.append(
-                    {
-                        'case': record['case'],
-                        'index': index,
-                        'direction': shock['direction'],
-                        'delivered': shock['delivered'],
-                        'read': shock['read'],
-                        'revisions': [[r['theory_id'], r['status']] for r in record['revisions']],
-                        'moves': belief_move(shock),
-                    }
-                )
-            out.append({'pilot': pilot['id'], 'pilot_label': pilot['label'], 'arm': arm, 'arm_label': pilot['arms'][arm], 'cases': rows})
-    return {'scale': ['very unlikely', 'unlikely', 'uncertain', 'likely', 'very likely'], 'arms': out}
-
-
-@app.get('/api/pilots/{pilot_id}/{arm}/{index}')
-def pilot_episode(pilot_id: str, arm: str, index: int) -> dict[str, dict[str, Any]]:
-    pilot = next((p for p in PILOTS if p['id'] == pilot_id), None)
-    reports = pilot_reports(pilot) if pilot and arm in ARMS else None
-    if reports is None:
-        raise HTTPException(404, 'no such pilot')
-    records = reports[arm]['records']
-    if not 0 <= index < len(records):
-        raise HTTPException(404, 'no such episode')
-    return {'record': detail(records[index], cases()[records[index]['case']])}
-
-
-LIVE = ROOT / 'reports' / 'live' / 'training.json'
-
-
-@app.get('/api/training/live')
-def training_live() -> Any | dict[str, None]:
-    """A mirror of the cluster training log, kept current by scripts/training_feed.py."""
-    return json.loads(LIVE.read_text()) if LIVE.exists() else {'state': None}
 
 
 def _model_ready() -> Any | Literal[False]:
@@ -345,14 +175,20 @@ def _model_ready() -> Any | Literal[False]:
 # Each choice runs under the prompt its adapter was trained with. All share one server and one base model; a request
 # switches every loaded adapter off except the chosen one, so the base weights and runtime are identical across choices.
 MODELS = (
-    {'id': 'untrained', 'label': 'Untrained Tiny Aya', 'adapter': None, 'prompt': 'compact'},
+    {'id': 'final', 'label': 'Fine-tuned Tiny Aya (final adapter; 4-bit base on this laptop, the reported results used full precision)', 'adapter': 'final_adapter.gguf', 'prompt': 'compact'},
+    {'id': 'untrained', 'label': 'Untrained Tiny Aya', 'adapter': None, 'prompt': 'staged'},
     {'id': 'second', 'label': 'Trained Tiny Aya, second adapter', 'adapter': 'second_adapter.gguf', 'prompt': 'compact'},
     {'id': 'first', 'label': 'Trained Tiny Aya, first adapter (full history)', 'adapter': 'first_adapter.gguf', 'prompt': 'staged'},
 )
 
 
 # The one model the page runs. Set from the latest paired evaluation; the others stay available to the backend.
-LIVE_MODEL = os.environ.get('LIVE_MODEL', 'second')
+LIVE_MODEL = os.environ.get('LIVE_MODEL', 'final')
+# Try it refuses a third read of one source (its text is already in the state), which stops the rereading loop the
+# evaluated harness allowed. A harness change, not a model one: set REREAD_LIMIT=0 to run as evaluated.
+REREAD_LIMIT = int(os.environ.get('REREAD_LIMIT', '2')) or None
+# Try it's turn budget; the evaluated runs used 45. Set MAX_TURNS=45 to run as evaluated.
+MAX_TURNS = int(os.environ.get('MAX_TURNS', '60'))
 
 
 def _loaded_adapters() -> list[str]:
@@ -575,8 +411,10 @@ class Attempt(BaseModel):
     case: str = Field(max_length=80)
     question: str | None = Field(default=None, max_length=400)
     shown: str | None = Field(default=None, max_length=400)  # the words the person clicked, kept in their history
-    model: str | None = Field(default=None, pattern='^(untrained|trained|first|second)$')  # None runs LIVE_MODEL
+    model: str | None = Field(default=None, pattern='^(untrained|trained|first|second|final)$')  # None runs LIVE_MODEL
     fresh: bool = False  # run live even if a saved result exists
+    live_research: bool = False  # search the web (snapshotted) instead of the fixed dossier; never part of an evaluation
+    project: str | None = Field(default=None, max_length=40)  # start it inside a project: that project's memory applies
 
 
 def _run_attempt(identifier: str, case: Case, model: Json, loaded: list[str]) -> None:
@@ -588,13 +426,15 @@ def _run_attempt(identifier: str, case: Case, model: Json, loaded: list[str]) ->
 
     def on_turn(run: Investigation) -> None:
         entry['record'] = detail(record_of(run, {'stop_reason': None}), case)
+        if entry.get('stop'):
+            raise Stopped
 
     try:
         run, info = play(
             case,
             respond,
             PROMPTS[model['prompt']],
-            45,
+            MAX_TURNS,
             4,
             520,
             True,
@@ -602,10 +442,15 @@ def _run_attempt(identifier: str, case: Case, model: Json, loaded: list[str]) ->
             staged=True,
             on_turn=on_turn,
             compact=model['prompt'] in COMPACT,
+            reread_limit=REREAD_LIMIT,
             route=(lambda stage: lora) if lora else None,
         )
-        entry['record'] = detail(record_of(run, info), case)
+        entry['record'] = {**detail(record_of(run, info), case), 'memory_used': entry.get('memory_used') or []}
         entry['status'] = 'finished'
+    except Stopped:
+        entry['status'], entry['error'] = 'stopped', 'stopped by you'
+        if entry['record']:
+            entry['record'] = {**entry['record'], 'stop_reason': 'stopped by you', 'memory_used': entry.get('memory_used') or []}
     except Exception as error:  # noqa: BLE001  shown to the person watching, not swallowed
         entry['status'], entry['error'] = 'failed', f'{type(error).__name__}: {error}'
     record = entry['record']
@@ -645,7 +490,13 @@ def try_status() -> Json:
     return {
         'model_ready': _model_ready(),
         'adapter_loaded': bool(loaded),
-        'model': {'id': live['id'], 'label': live['label'], 'available': live['adapter'] is None or live['adapter'] in loaded},
+        'model': {
+            'id': live['id'],
+            'label': live['label']
+            + ('. A third read of one source is refused here, unlike the evaluated setup' if REREAD_LIMIT else '')
+            + (f'. Up to {MAX_TURNS} steps here (the evaluated runs had 45)' if MAX_TURNS != 45 else ''),
+            'available': live['adapter'] is None or live['adapter'] in loaded,
+        },
         'busy': any(t['status'] == 'running' for t in _tries.values()),
     }
 
@@ -685,8 +536,8 @@ def workspace_history(workspace: str, request: Request) -> Json:
         status = e.get('status')
         if status == 'running' and e['id'] not in _tries:
             status = 'interrupted'
-        out.append({k: e.get(k) for k in ('id', 'question', 'case', 'started', 'ended', 'summary', 'error', 'cached_at')} | {'status': status})
-    return {'workspace': workspace, 'entries': out}
+        out.append({k: e.get(k) for k in ('id', 'question', 'case', 'started', 'ended', 'summary', 'error', 'cached_at', 'pinned', 'project')} | {'status': status})
+    return {'workspace': workspace, 'entries': out, 'projects': store.projects(request.state.user, workspace)}
 
 
 @app.get('/api/workspaces/{workspace}/history/{identifier}')
@@ -695,7 +546,264 @@ def workspace_run(workspace: str, identifier: str, request: Request) -> dict[str
     entry = next((e for e in _history(request.state.user, workspace) if e['id'] == identifier), None)
     if entry is None or not entry.get('record'):
         raise HTTPException(404, 'no such investigation')
-    return {'record': entry['record']}
+    record = entry['record']
+    return {
+        'record': record,
+        'metrics': _metrics(record),
+        'suggestions': insights.suggestions(record) if record.get('final') or record.get('theories') else [],
+        'followups': store.followups(request.state.user, workspace, identifier),
+        'memory_used': record.get('memory_used') or [],
+    }
+
+
+def _metrics(record: Json) -> Json:
+    case = cases().get(record.get('case') or '')
+    return insights.metrics(record, case.test_budget if case else None, case.max_test_weeks if case else None)
+
+
+def _entry_or_404(workspace: str, identifier: str, user: str) -> Json:
+    _workspace_or_404(workspace, user)
+    entry = next((e for e in _history(user, workspace) if e['id'] == identifier), None)
+    if entry is None or not entry.get('record'):
+        raise HTTPException(404, 'no such investigation')
+    return entry
+
+
+class FollowUp(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    question: str = Field(min_length=2, max_length=500)
+
+
+def _notes(user: str, project: str | None, workspace: str | None = None) -> list[str]:
+    if store.setting(user, 'memory', 'on') != 'on':
+        return []
+    return [m['text'] for m in store.memories(user, project, workspace=workspace)]
+
+
+def _answer_followup(item_id: str, record: Json, question: str, notes: list[str], earlier: list[Json]) -> None:
+    try:
+        text, cited, status = followup.answer(chat, MODEL_URL, record, question, notes, earlier, len(_loaded_adapters()))
+    except Exception as error:  # noqa: BLE001  shown to the person instead of a silent failure
+        text, cited, status = f'The model could not answer just now ({type(error).__name__}). Try again in a moment.', [], 'failed'
+    store.finish_followup(item_id, text, cited, status)
+
+
+@app.post('/api/workspaces/{workspace}/history/{identifier}/followups', status_code=201)
+def ask_followup(workspace: str, identifier: str, body: FollowUp, request: Request) -> Json:
+    """A question about a finished investigation, answered from its record by the local model."""
+    user = request.state.user
+    entry = _entry_or_404(workspace, identifier, user)
+    if not _model_ready():
+        raise HTTPException(503, 'the model server is not running')
+    earlier = store.followups(user, workspace, identifier)
+    if any(f['status'] == 'answering' for f in earlier):
+        raise HTTPException(409, 'still answering the last question')
+    item = store.add_followup(user, workspace, identifier, body.question.strip())
+    threading.Thread(target=_answer_followup, args=(item['id'], entry['record'], item['question'], _notes(user, entry.get('project'), workspace), earlier), daemon=True).start()
+    return item
+
+
+@app.get('/api/workspaces/{workspace}/history/{identifier}/followups')
+def list_followups(workspace: str, identifier: str, request: Request) -> Json:
+    _entry_or_404(workspace, identifier, request.state.user)
+    return {'followups': store.followups(request.state.user, workspace, identifier)}
+
+
+@app.get('/api/workspaces/{workspace}/history/{identifier}/report.pdf')
+def investigation_report(workspace: str, identifier: str, request: Request) -> Response:
+    """A PDF report of one investigation: summary first, then explanations, evidence, test, follow-ups and sources."""
+    user = request.state.user
+    entry = _entry_or_404(workspace, identifier, user)
+    company = next((w['company'] for w in workspaces() if w['id'] == workspace), workspace)
+    page = pdf_report.build(entry['record'], _metrics(entry['record']), company, entry.get('question') or entry['record'].get('question', ''),
+                        store.followups(user, workspace, identifier), entry.get('ended'))
+    try:
+        data = pdf_report.pdf(page)
+    except Exception as error:  # noqa: BLE001
+        raise HTTPException(503, f'the report could not be printed: {error}') from error
+    name = re.sub(r'[^A-Za-z0-9]+', '-', (entry.get('question') or 'investigation'))[:60].strip('-') or 'investigation'
+    return Response(data, media_type='application/pdf', headers={'Content-Disposition': f'attachment; filename="{name}.pdf"'})
+
+
+@app.get('/api/workspaces/{workspace}/mindmap')
+def mind_map(workspace: str, request: Request) -> Json:
+    """Every investigation in this workspace as a tree: company, projects, investigations, explanations, evidence."""
+    user = request.state.user
+    _workspace_or_404(workspace, user)
+    company = next((w['company'] for w in workspaces() if w['id'] == workspace), workspace)
+    groups = {p['id']: {'id': f"p-{p['id']}", 'kind': 'project', 'label': p['name'], 'children': []} for p in store.projects(user, workspace)}
+    loose = {'id': 'p-none', 'kind': 'project', 'label': 'Not in a project', 'children': []}
+    for e in reversed(_history(user, workspace)):
+        record = e.get('record') or {}
+        final = record.get('final') or {}
+        m = _metrics(record) if record else None
+        node = {
+            'id': e['id'], 'kind': 'investigation', 'label': e.get('question') or record.get('question') or 'Investigation',
+            'status': 'finished' if final else (e.get('status') or 'stopped'), 'pinned': bool(e.get('pinned')),
+            'detail': final.get('recommendation') or '', 'started': e.get('started'), 'children': [],
+        }
+        for b in (m or {}).get('beliefs', []):
+            ev = next((r for r in m['evidence'] if r['id'] == b['id']), {})
+            theory = {'id': f"{e['id']}-{b['id']}", 'kind': 'explanation', 'label': b['claim'], 'belief': b['after'] or b['before'],
+                      'favoured': b['favoured'], 'supports': ev.get('supports', 0), 'contradicts': ev.get('contradicts', 0), 'children': []}
+            for a in (record.get('assessments') or []):
+                if a.get('theory_id') == b['id'] and a.get('direction') in ('supports', 'contradicts') and len(theory['children']) < 3:
+                    source = (record.get('sources') or {}).get(a.get('evidence_id')) or {}
+                    theory['children'].append({'id': f"{e['id']}-{b['id']}-{len(theory['children'])}", 'kind': 'evidence', 'label': a.get('quote', ''),
+                                               'direction': a['direction'], 'detail': source.get('title') or a.get('evidence_id'), 'children': []})
+            node['children'].append(theory)
+        (groups.get(e.get('project')) or loose)['children'].append(node)
+    children = [g for g in groups.values()] + ([loose] if loose['children'] else [])
+    return {'id': 'root', 'kind': 'company', 'label': company, 'children': children}
+
+
+class MemoryNote(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    text: str = Field(min_length=2, max_length=400)
+    project: str | None = Field(default=None, max_length=40)
+    workspace: str | None = Field(default=None, max_length=40)
+
+
+class MemoryEdit(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    text: str = Field(min_length=2, max_length=400)
+
+
+class MemorySwitch(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    enabled: bool
+
+
+def _own_project(user: str, workspace: str | None, project: str | None) -> None:
+    if project is None:
+        return
+    if workspace is None:
+        raise HTTPException(422, 'a project memory needs its workspace')
+    _workspace_or_404(workspace, user)
+    if project not in {p['id'] for p in store.projects(user, workspace)}:
+        raise HTTPException(404, 'no such project')
+
+
+@app.get('/api/memory')
+def memory(request: Request, workspace: str | None = None, project: str | None = None) -> Json:
+    """Global notes, and a project's notes when one is named. Memory can be switched off; notes are then kept but unused."""
+    user = request.state.user
+    _own_project(user, workspace, project)
+    if workspace:
+        _workspace_or_404(workspace, user)
+    return {
+        'enabled': store.setting(user, 'memory', 'on') == 'on',
+        'global': store.memories(user),
+        'company': store.memories(user, workspace=workspace, include_global=False, company_only=True) if workspace else [],
+        'project': store.memories(user, project, include_global=False) if project else [],
+        'limit': MEMORY_LIMIT,
+    }
+
+
+MEMORY_LIMIT = 40  # notes per account, so memory never fails silently when full
+
+
+@app.post('/api/memory', status_code=201)
+def remember(body: MemoryNote, request: Request) -> Json:
+    _own_project(request.state.user, body.workspace, body.project)
+    if body.workspace:
+        _workspace_or_404(body.workspace, request.state.user)
+    if store.memory_count(request.state.user) >= MEMORY_LIMIT:
+        raise HTTPException(409, f'memory is full ({MEMORY_LIMIT} notes): remove one to add another')
+    return store.add_memory(request.state.user, body.text.strip(), body.project, body.workspace)
+
+
+@app.patch('/api/memory/settings')
+def memory_switch(body: MemorySwitch, request: Request) -> Json:
+    store.set_setting(request.state.user, 'memory', 'on' if body.enabled else 'off')
+    return {'enabled': body.enabled}
+
+
+@app.patch('/api/memory/{identifier}')
+def edit_memory(identifier: str, body: MemoryEdit, request: Request) -> Json:
+    if not store.update_memory(request.state.user, identifier, body.text.strip()):
+        raise HTTPException(404, 'no such memory')
+    return {'id': identifier, 'text': body.text.strip()}
+
+
+@app.delete('/api/memory/{identifier}')
+def forget(identifier: str, request: Request) -> Json:
+    if not store.delete_memory(request.state.user, identifier):
+        raise HTTPException(404, 'no such memory')
+    return {'deleted': identifier}
+
+
+class HistoryChange(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    pinned: bool | None = None
+    project: str | None = Field(default=None, max_length=40)
+    clear_project: bool = False  # move it out of its project, back to the main history
+
+
+class ProjectName(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    name: str = Field(min_length=1, max_length=80)
+
+
+@app.delete('/api/workspaces/{workspace}/history/{identifier}')
+def delete_history_entry(workspace: str, identifier: str, request: Request) -> Json:
+    """Removes one investigation from this person's history. A running one is left alone until it ends."""
+    _workspace_or_404(workspace, request.state.user)
+    entry = _tries.get(identifier)
+    if entry is not None and entry['status'] == 'running':
+        raise HTTPException(409, 'that investigation is still running')
+    if not store.delete_history(request.state.user, workspace, identifier):
+        raise HTTPException(404, 'no such investigation')
+    with _lock:
+        _tries.pop(identifier, None)
+    return {'deleted': identifier}
+
+
+@app.patch('/api/workspaces/{workspace}/history/{identifier}')
+def change_history_entry(workspace: str, identifier: str, body: HistoryChange, request: Request) -> Json:
+    _workspace_or_404(workspace, request.state.user)
+    user = request.state.user
+    fields: dict[str, object] = {}
+    if body.pinned is not None:
+        fields['pinned'] = body.pinned
+    if body.clear_project:
+        fields['project'] = None
+    elif body.project is not None:
+        if body.project not in {p['id'] for p in store.projects(user, workspace)}:
+            raise HTTPException(404, 'no such project')
+        fields['project'] = body.project
+    if not fields or not store.update_history(user, workspace, identifier, **fields):
+        raise HTTPException(404, 'no such investigation')
+    return {'id': identifier, **fields}
+
+
+@app.get('/api/workspaces/{workspace}/projects')
+def list_projects(workspace: str, request: Request) -> Json:
+    _workspace_or_404(workspace, request.state.user)
+    return {'projects': store.projects(request.state.user, workspace)}
+
+
+@app.post('/api/workspaces/{workspace}/projects', status_code=201)
+def new_project(workspace: str, body: ProjectName, request: Request) -> Json:
+    _workspace_or_404(workspace, request.state.user)
+    return store.create_project(request.state.user, workspace, body.name.strip())
+
+
+@app.patch('/api/workspaces/{workspace}/projects/{project}')
+def rename_project(workspace: str, project: str, body: ProjectName, request: Request) -> Json:
+    _workspace_or_404(workspace, request.state.user)
+    if not store.rename_project(request.state.user, workspace, project, body.name.strip()):
+        raise HTTPException(404, 'no such project')
+    return {'id': project, 'name': body.name.strip()}
+
+
+@app.delete('/api/workspaces/{workspace}/projects/{project}')
+def remove_project(workspace: str, project: str, request: Request) -> Json:
+    """Deletes the project; its investigations stay, back in the main history."""
+    _workspace_or_404(workspace, request.state.user)
+    if not store.delete_project(request.state.user, workspace, project):
+        raise HTTPException(404, 'no such project')
+    return {'deleted': project}
 
 
 @app.post('/api/try', status_code=201)
@@ -710,12 +818,18 @@ def start_try(body: Attempt, request: Request) -> Json:
     if body.question and body.question.strip():
         case = dataclasses.replace(case, question=body.question.strip())
     user, shown = request.state.user, (body.shown or '').strip() or case.question
+    if body.project is not None and body.project not in {p['id'] for p in store.projects(user, body.workspace)}:
+        raise HTTPException(404, 'no such project')
+    notes = _notes(user, body.project, body.workspace)
+    if notes:  # memory, as context in the brief; it changes the case, so a saved run without it is never reused
+        case = dataclasses.replace(case, brief=case.brief + '\n\nNotes from the person asking (their context, not evidence; never quote them): ' + ' '.join(f'({i + 1}) {n}' for i, n in enumerate(notes)))
     bound = _cache_key(case, model)
     key, identity = bound if bound else (None, None)
-    saved = store.cached(key) if key and not body.fresh else None
+    saved = store.cached(key) if key and not body.fresh and not body.live_research else None
     if saved:  # a saved result, shown at once and labelled as saved, with the date it was made
         identifier = uuid.uuid4().hex
         record, created = saved
+        record = {**record, 'memory_used': notes}
         with _lock:
             _tries[identifier] = {
                 'status': 'finished',
@@ -741,6 +855,7 @@ def start_try(body: Attempt, request: Request) -> Json:
             summary=_summary(record),
             record=record,
             cached_at=created,
+            project=body.project,
         )
         return {'id': identifier, 'cached_at': created}
     if not _model_ready():
@@ -751,20 +866,40 @@ def start_try(body: Attempt, request: Request) -> Json:
         if any(t['status'] == 'running' for t in _tries.values()):
             raise HTTPException(409, 'an investigation is already running')
         identifier = uuid.uuid4().hex
+        if body.live_research:  # the fixed dossier is swapped for live web search, every page saved as a snapshot
+            from strategy_agent.env.live import LiveDossier
+
+            case = dataclasses.replace(case, dossier=LiveDossier(case.company, store.folder() / 'live_snapshots' / identifier))
         _tries[identifier] = {
             'status': 'running',
             'record': None,
             'error': None,
+            'live_research': body.live_research,
             'model': model['id'],
-            'model_label': model['label'],
+            'model_label': model['label'] + (' · live web research (snapshotted; not part of the evaluated setup)' if body.live_research else ''),
             'user': user,
             'workspace': body.workspace,
-            'cache_key': key,
+            'cache_key': None if body.live_research else key,
             'identity': identity,
+            'memory_used': notes,
         }
-    _record_history(user, body.workspace, identifier, question=shown, case=body.case, model=model['id'], started=time.time(), status='running')
+    _record_history(user, body.workspace, identifier, question=shown + (' (live web)' if body.live_research else ''), case=body.case, model=model['id'], started=time.time(), status='running', project=body.project)
     threading.Thread(target=_run_attempt, args=(identifier, case, model, loaded), daemon=True).start()
     return {'id': identifier}
+
+
+class Stopped(Exception):
+    """Raised between turns when the person stops an investigation."""
+
+
+@app.post('/api/try/{identifier}/stop')
+def stop_try(identifier: str, request: Request) -> Json:
+    entry = _tries.get(identifier)
+    if entry is None or entry['user'] != request.state.user:
+        raise HTTPException(404, 'no such attempt')
+    if entry['status'] == 'running':
+        entry['stop'] = True
+    return {'id': identifier, 'stopping': entry['status'] == 'running'}
 
 
 @app.get('/api/try/{identifier}')
@@ -772,7 +907,7 @@ def try_result(identifier: str, request: Request) -> Json:
     entry = _tries.get(identifier)
     if entry is None or entry['user'] != request.state.user:
         raise HTTPException(404, 'no such attempt')
-    return {k: v for k, v in entry.items() if k not in ('user', 'cache_key')}
+    return {k: v for k, v in entry.items() if k not in ('user', 'cache_key', 'stop')}
 
 
 _sync_companies()  # at import, before any request: the companies table and the demo memberships

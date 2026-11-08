@@ -76,4 +76,4 @@ DISTINCT = 0.6
 # review of #17 found: judges score these. evidence_classes must not fail a sound "demand is unknown".
 DIAGNOSTIC = ('causal_form', 'testable_predictions', 'evidence_kinds', 'evidence_classes')
 
-CLASSES = ('verified_observation', 'company_claim', 'analyst_assumption', 'proposed_hypothesis', 'synthetic')
+CLASSES = ('verified_observation', 'company_claim', 'analyst_assumption', 'proposed_hypothesis', 'synthetic', 'web_page')  # web_page: live research only

@@ -1,269 +1,273 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { api, errorText, postJSON } from '../api.ts';
-import { Chip } from '../Chip.tsx';
+import { useNavigate, useParams } from 'react-router-dom';
+import { api, errorText, postJSON, sendJSON } from '../api.ts';
+import { HistoryPanel } from '../components/HistoryPanel.tsx';
 import { Icon } from '../components/Icon.tsx';
-import { Pairs } from '../components/Run.tsx';
-import { JourneyMap, TheoryBoard } from '../components/Trace.tsx';
-import { StepDetail, WorkflowCanvas } from '../components/Workflow.tsx';
-import { shortCompany, stopName, text, when } from '../labels.ts';
-import type { HistoryEntry, RunRecord, TryRun, TryStatus, Workspace } from '../types.ts';
+import { Progress } from '../components/Progress.tsx';
+import { ResultView } from '../components/ResultView.tsx';
+import { day, shortCompany, text } from '../labels.ts';
+import type { HistoryEntry, MemoryState, Project, RunDetail, RunRecord, TryRun, TryStatus, Workspace } from '../types.ts';
 
-// Try it as a workflow editor: the company and its saved investigations on the left, the selected investigation drawn
-// as a workflow in the middle, and the selected step, the theories and the outcome on the right. Each workspace runs
-// only on its own company's dossier, and its history is kept on the server per user.
+// Investigate: the company's investigations on the left (pinned, projects, recent), one reading column on the right.
+// Before a run it asks for the decision; while it runs it shows progress; afterwards the result, answer first, with
+// follow-ups. Each company runs only on its own sources, and its history is kept on the server per person.
 
 type Ask = { question: string; caseId: string; asCase: boolean };
-interface Opened { id: string; question: string; record: RunRecord | null; status: string; error: string | null; cachedAt: number | null; identity: Record<string, unknown> | null; ask?: Ask }
-
-
-const configLine = (id: Record<string, unknown>): string => {
-  const adapter = Array.isArray(id.adapter) ? `${String(id.adapter[0])} (${String(id.adapter[1]).slice(0, 12)})` : 'no adapter';
-  const base = typeof id.base === 'string' ? id.base.split('/').pop() : 'unknown base';
-  return `${String(base)}, ${adapter}, ${String(id.prompt)} prompt, llama.cpp ${String(id.build)}, context ${String(id.context)}, code ${String(id.code)}`;
-};
+interface Opened { id: string; question: string; record: RunRecord | null; status: string; error: string | null; started: number; ask?: Ask; stopping?: boolean }
 
 function statusOf(e: HistoryEntry): { kind: 'good' | 'bad' | 'warn'; label: string } {
-  if (e.status === 'running') return { kind: 'warn', label: 'Running' };
+  if (e.status === 'running') return { kind: 'warn', label: 'Running…' };
   if (e.status === 'interrupted') return { kind: 'bad', label: 'Interrupted' };
-  if (e.status === 'failed') return { kind: 'bad', label: 'Failed' };
-  return e.summary?.finished ? { kind: 'good', label: 'Finished' } : { kind: 'bad', label: stopName(e.summary?.stop_reason) };
+  if (e.status === 'failed') return { kind: 'bad', label: 'Could not finish' };
+  if (e.status === 'stopped') return { kind: 'bad', label: 'Stopped by you' };
+  return e.summary?.finished ? { kind: 'good', label: 'Finished' } : { kind: 'bad', label: 'Stopped early' };
 }
 
-function Outcome({ record }: { record: RunRecord }) {
-  if (record.final) {
-    const f = record.final;
-    const rows: [string, unknown][] = ([['Recommendation', f.recommendation], ['Favoured theory', f.favoured_theory], ['Customer', f.target_customer], ['Next action', f.next_action], ['Uncertainty', f.uncertainty]] as [string, unknown][]).filter(([, v]) => v);
-    return (
-      <section className="panel-section outcome-panel good">
-        <h3><Icon name="spark" size={16} /> Recommendation</h3>
-        <Pairs rows={rows} />
-        {Array.isArray(f.would_change_if) && f.would_change_if.length ? <><p className="small muted">Would change if</p><ul>{f.would_change_if.map((x, i) => <li key={i}>{text(x)}</li>)}</ul></> : null}
-      </section>
-    );
-  }
-  if (!record.stop_reason) return null;
-  return (
-    <section className="panel-section outcome-panel bad">
-      <h3><Icon name="cross" size={16} /> {stopName(record.stop_reason)}</h3>
-      <p className="small">It stopped before a recommendation. The canvas shows where.</p>
-      {record.position ? <p className="small">Position so far: favours {text(record.position.favoured_theory)}. {text(record.position.recommendation)}</p> : null}
-    </section>
-  );
-}
-
-export function TryPage({ workspace: w, onError }: { workspace: Workspace; onError: (error: unknown) => void }) {
+export function TryPage({ workspace: w, onError, onMemory }: { workspace: Workspace; onError: (error: unknown) => void; onMemory: (project: string | null, name?: string) => void }) {
+  const navigate = useNavigate();
+  const { id: routeId } = useParams();
   const [data, setData] = useState<TryStatus | null>(null);
-  const ws = w.id;
-  const [history, setHistory] = useState<Record<string, HistoryEntry[]>>({});
+  const [entries, setEntries] = useState<HistoryEntry[]>([]);
+  const [projects, setProjects] = useState<Project[]>([]);
   const [opened, setOpened] = useState<Opened | null>(null);
-  const [step, setStep] = useState<number | null>(null);
+  const [detail, setDetail] = useState<RunDetail | null>(null);
+  const [projectView, setProjectView] = useState<string | null>(null);
+  const [target, setTarget] = useState<string>('');  // the project a new investigation is saved in
+  const [memoryCount, setMemoryCount] = useState(0);
+  const [memoryOn, setMemoryOn] = useState(true);
   const [input, setInput] = useState('');
   const [starting, setStarting] = useState(false);
+  const [live, setLive] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const watching = useRef<string | null>(null);
 
   useEffect(() => { document.body.classList.add('app-full'); return () => document.body.classList.remove('app-full'); }, []);
-
-  const refresh = useCallback(async () => {
-    const d = await api<TryStatus>('/api/try');
-    setData(d);
-    return d;
-  }, []);
+  const refresh = useCallback(async () => { const d = await api<TryStatus>('/api/try'); setData(d); return d; }, []);
   useEffect(() => { refresh().catch(onError); }, [refresh, onError]);
 
-  const loadHistory = useCallback(async (id: string) => {
-    const { entries } = await api<{ entries: HistoryEntry[] }>(`/api/workspaces/${id}/history`);
-    setHistory((all) => ({ ...all, [id]: [...entries].sort((a, b) => (b.started ?? 0) - (a.started ?? 0)) }));
-  }, []);
-  useEffect(() => { if (ws) loadHistory(ws).catch(onError); }, [ws, loadHistory, onError]);
+  const loadHistory = useCallback(async () => {
+    const d = await api<{ entries: HistoryEntry[]; projects?: Project[] }>(`/api/workspaces/${w.id}/history`);
+    setEntries([...d.entries].sort((a, b) => (b.started ?? 0) - (a.started ?? 0)));
+    setProjects(d.projects ?? []);
+    setLoaded(true);
+  }, [w.id]);
+  useEffect(() => { loadHistory().catch(onError); }, [loadHistory, onError]);
 
-  // The opened run, while it runs: poll it until it ends, then refresh the history and the server status.
+  const scope = projectView ?? (target || null);
+  const loadMemory = useCallback(async () => {
+    const q = new URLSearchParams({ workspace: w.id, ...(scope ? { project: scope } : {}) });
+    const m = await api<MemoryState>(`/api/memory?${q.toString()}`);
+    setMemoryOn(m.enabled);
+    setMemoryCount(m.global.length + m.company.length + m.project.length);
+  }, [w.id, scope]);
+  useEffect(() => {
+    loadMemory().catch(() => {});
+    const again = (): void => { loadMemory().catch(() => {}); };
+    window.addEventListener('memory-changed', again);
+    window.addEventListener('memory-counted', again);
+    return () => { window.removeEventListener('memory-changed', again); window.removeEventListener('memory-counted', again); };
+  }, [loadMemory]);
+
+  const loadDetail = useCallback(async (id: string) => {
+    const d = await api<RunDetail>(`/api/workspaces/${w.id}/history/${id}`);
+    setDetail(d);
+  }, [w.id]);
+
+  // Open the investigation named in the address (from the history, the mind map or a link).
+  useEffect(() => {
+    if (!routeId) { setOpened(null); setDetail(null); return; }
+    if (opened?.id === routeId) return;
+    const e = entries.find((x) => x.id === routeId);
+    if (!e) { if (loaded) navigate('/investigate', { replace: true }); return; }
+    setProjectView(null);
+    setDetail(null);
+    setOpened({ id: e.id, question: e.question, record: null, status: e.status, error: e.error, started: (e.started ?? Date.now() / 1000) * 1000 });
+    if (e.status !== 'running') loadDetail(e.id).catch(() => setOpened((o) => (o && o.id === e.id ? { ...o, status: 'unavailable' } : o)));
+  }, [routeId, entries, opened?.id, loadDetail, loaded, navigate]);
+
+  // While it runs: poll, then load the full result.
   const runningId = opened && opened.status === 'running' ? opened.id : null;
   useEffect(() => {
-    if (!runningId || !ws) return undefined;
+    if (!runningId) return undefined;
     watching.current = runningId;
-    const id = runningId, wsId = ws;
+    const id = runningId;
     let timer: number | undefined;
-    const tick = async () => {
+    const tick = async (): Promise<void> => {
       try {
         const d = await api<TryRun>(`/api/try/${id}`);
         if (watching.current !== id) return;
-        setOpened((o) => (o && o.id === id ? { ...o, record: d.record ?? o.record, status: d.status, error: d.error, cachedAt: d.cached_at ?? null, identity: d.identity ?? null } : o));
+        setOpened((o) => (o && o.id === id ? { ...o, record: d.record ?? o.record, status: d.status, error: d.error } : o));
         if (d.status === 'running') timer = window.setTimeout(() => { void tick(); }, 2000);
-        else { await loadHistory(wsId); await refresh(); }
+        else {
+          await loadHistory(); await refresh();
+          if (d.record) await loadDetail(id).catch(() => {});
+          if (d.status === 'finished' && !document.hasFocus()) document.title = '✓ Done · Strategy Lab';
+        }
       } catch (error: unknown) {
-        // A run from before a server restart is no longer held in memory: show what the history recorded.
-        await loadHistory(wsId).catch(() => {});
+        await loadHistory().catch(() => {});
         setOpened((o) => (o && o.id === id ? { ...o, status: 'interrupted', error: errorText(error) } : o));
       }
     };
     void tick();
     return () => { watching.current = null; if (timer) window.clearTimeout(timer); };
-  }, [runningId, ws, loadHistory, refresh]);
+  }, [runningId, loadHistory, refresh, loadDetail]);
 
-  // While another investigation holds the model server, check again every five seconds.
   const elsewhere = Boolean(data?.busy) && !runningId;
   useEffect(() => {
     if (!elsewhere) return undefined;
     const timer = window.setTimeout(() => { refresh().catch(onError); }, 5000);
     return () => window.clearTimeout(timer);
   }, [elsewhere, refresh, onError, data]);
-
-  const openEntry = async (e: HistoryEntry): Promise<void> => {
-    if (!ws) return;
-    setStep(null);
-    const base: Opened = { id: e.id, question: e.question, record: null, status: e.status, error: e.error, cachedAt: e.cached_at, identity: null };
-    setOpened(base);
-    if (e.status === 'running') return;  // the watcher above fetches it
-    try {
-      const { record } = await api<{ record: RunRecord }>(`/api/workspaces/${ws}/history/${e.id}`);
-      setOpened((o) => (o && o.id === e.id ? { ...o, record, identity: (record as RunRecord & { generated_by?: Record<string, unknown> }).generated_by ?? null } : o));
-    } catch (error: unknown) { onError(error); }
-  };
+  useEffect(() => { const reset = (): void => { document.title = 'Strategy Lab'; }; window.addEventListener('focus', reset); return () => window.removeEventListener('focus', reset); }, []);
 
   const start = async (ask: Ask, fresh = false): Promise<void> => {
     const question = text(ask.question).trim();
     if (!question || starting) return;
     setStarting(true);
-    setStep(null);
     try {
-      const body: { workspace: string; case: string; shown?: string; question?: string; fresh?: boolean } = { workspace: w.id, case: ask.caseId };
+      const project = projectView ?? (target || null);
+      const body: Record<string, unknown> = { workspace: w.id, case: ask.caseId };
       if (ask.asCase) body.shown = question; else body.question = question;
       if (fresh) body.fresh = true;
-      const { id, cached_at: cachedAt } = await postJSON<{ id: string; cached_at?: number }>('/api/try', body);
-      setOpened({ id, question, record: null, status: 'running', error: null, cachedAt: cachedAt ?? null, identity: null, ask });
+      if (live) body.live_research = true;
+      if (project) body.project = project;
+      const { id } = await postJSON<{ id: string }>('/api/try', body);
+      setDetail(null);
+      setProjectView(null);
+      setOpened({ id, question, record: null, status: 'running', error: null, started: Date.now(), ask });
       setInput('');
-      await loadHistory(w.id);
+      await loadHistory();
+      navigate(`/investigate/${id}`);
     } catch (error: unknown) {
-      onError(new Error(`I could not start: ${errorText(error)}`));
+      onError(new Error(`Could not start the investigation: ${errorText(error)}`));
     } finally { setStarting(false); }
   };
 
-  if (!data) return <div className="card"><p className="muted">Loading…</p></div>;
+  const change = async (fn: () => Promise<unknown>): Promise<void> => { try { await fn(); await loadHistory(); } catch (e: unknown) { onError(e); } };
+  const current = opened ? entries.find((e) => e.id === opened.id) : undefined;
+
+  if (!data) return <div className="page-pad"><p className="muted">Loading…</p></div>;
   const ready = data.model_ready && data.model.available;
-  const problem = !data.model_ready ? 'The model server is not running: start ./app/run_model.sh.' : !data.model.available ? `${data.model.label} is not loaded on the model server yet.` : null;
   const blocked = !ready || Boolean(runningId) || elsewhere || starting;
-  const entries = history[w.id] ?? [];
-  const record = opened?.record ?? null;
+  const viewProject = projects.find((p) => p.id === projectView);
+  const projectEntries = viewProject ? entries.filter((e) => e.project === viewProject.id) : [];
+  const rerun = (e: HistoryEntry): void => { void start({ question: e.question.replace(/ \(live web\)$/, ''), caseId: e.case, asCase: e.case !== w.base_case }, true); };
+
+  const composer = (
+    <div className="composer">
+      <textarea rows={3} maxLength={400} aria-label="Your question" placeholder={`e.g. Should ${shortCompany(w.company)} sell to a new kind of customer?`} value={input} disabled={blocked}
+        onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); void start({ question: input, caseId: w.base_case, asCase: false }); } }} />
+      <div className="composer-row">
+        <button type="button" className="chip-button" onClick={() => onMemory(scope, viewProject?.name ?? projects.find((p) => p.id === target)?.name)}>
+          <Icon name="bulb" size={13} /> {memoryOn ? (memoryCount ? `Using ${memoryCount} memory note${memoryCount === 1 ? '' : 's'}` : 'Memory: none yet') : 'Memory off'}
+        </button>
+        {!viewProject && projects.length ? (
+          <label className="chip-button select-chip"><Icon name="folder" size={13} />
+            <select aria-label="Save in project" value={target} onChange={(e) => setTarget(e.target.value)}>
+              <option value="">No project</option>
+              {projects.map((p) => <option key={p.id} value={p.id}>{p.name}</option>)}
+            </select>
+          </label>
+        ) : null}
+        <details className="options"><summary className="chip-button">Options</summary>
+          <label className="check"><input type="checkbox" checked={live} disabled={blocked} onChange={(e) => setLive(e.target.checked)} /> Search the live web (experimental; pages are saved and labelled unchecked)</label>
+        </details>
+        <span className="grow" />
+        <button type="button" className="button primary big" disabled={blocked || !input.trim()} onClick={() => { void start({ question: input, caseId: w.base_case, asCase: false }); }}>Start investigation</button>
+      </div>
+      {!ready ? <p className="notice warn">The assistant is not running yet. Start it with <code>./app/run_model.sh</code>, then reload.</p> : null}
+      {elsewhere ? <p className="notice" role="status">Another investigation is running. You can start yours as soon as it finishes.</p> : null}
+    </div>
+  );
+
+  let main;
+  if (opened) {
+    if (opened.status === 'running') {
+      main = <Progress question={opened.question} record={opened.record} started={opened.started} stopping={Boolean(opened.stopping)}
+        onStop={() => { setOpened((o) => (o ? { ...o, stopping: true } : o)); postJSON(`/api/try/${opened.id}/stop`, {}).catch(onError); }} />;
+    } else if (detail && detail.record) {
+      main = <ResultView key={opened.id} workspace={w.id} company={w.company} id={opened.id} question={opened.question} started={current?.started ?? null}
+        pinned={Boolean(current?.pinned)} project={current?.project ?? null} projects={projects} detail={detail} onError={onError}
+        onPin={() => { void change(() => sendJSON(`/api/workspaces/${w.id}/history/${opened.id}`, 'PATCH', { pinned: !current?.pinned })); }}
+        onMove={(p) => { void change(() => sendJSON(`/api/workspaces/${w.id}/history/${opened.id}`, 'PATCH', p ? { project: p } : { clear_project: true })); }}
+        onDelete={() => { void change(async () => { await sendJSON(`/api/workspaces/${w.id}/history/${opened.id}`, 'DELETE'); navigate('/investigate'); }); }}
+        onRerun={!detail.record.final && current ? () => rerun(current) : null} />;
+    } else if (['unavailable', 'interrupted', 'failed'].includes(opened.status)) {
+      main = (
+        <div className="empty"><h1>{text(opened.question)}</h1>
+          <p>{opened.status === 'failed' ? 'This investigation could not finish.' : 'This investigation was interrupted before it saved a result.'}</p>
+          {current ? <button type="button" className="button primary" onClick={() => rerun(current)}>Run it again</button> : null}
+        </div>
+      );
+    } else main = <p className="muted">Loading…</p>;
+  } else if (viewProject) {
+    main = (
+      <div className="project-page">
+        <p className="eyebrow"><Icon name="folder" size={13} /> Project</p>
+        <h1>{viewProject.name}</h1>
+        <p className="lead">Investigations started here use this project's memory as well as your company's.</p>
+        <button type="button" className="chip-button" onClick={() => onMemory(viewProject.id, viewProject.name)}><Icon name="bulb" size={13} /> Project memory</button>
+        <h2>New investigation in this project</h2>
+        {composer}
+        <h2>In this project</h2>
+        {projectEntries.length ? (
+          <ul className="cards">{projectEntries.map((e) => { const s = statusOf(e); return (
+            <li key={e.id}><button type="button" className="inv-card" onClick={() => navigate(`/investigate/${e.id}`)}>
+              <span className={`status-chip ${s.kind}`}>{s.label}</span><b>{text(e.question)}</b>
+              {e.summary?.recommendation ? <span className="muted small">{text(e.summary.recommendation).slice(0, 180)}</span> : null}
+              <span className="muted small">{day(e.started)}</span></button></li>); })}</ul>
+        ) : <p className="muted">No investigations here yet. Start one above, or move one in from its menu.</p>}
+      </div>
+    );
+  } else {
+    main = (
+      <div className="home">
+        <p className="eyebrow">{text(w.company)}</p>
+        <h1>What decision are you facing?</h1>
+        <p className="lead">The assistant reads public sources about {shortCompany(w.company)}, lists possible reasons customers would buy, weighs the evidence for and against each, and recommends what to do, with a small test when one is worth running. It takes a few minutes.</p>
+        {composer}
+        {!entries.length ? (
+          <ol className="welcome">
+            <li><b>Ask a decision question</b>, or pick an example below.</li>
+            <li><b>Watch it work.</b> It gathers sources and weighs the evidence.</li>
+            <li><b>Get a recommendation</b>, how sure it is, and a test you could run. Ask follow-ups, or download a PDF.</li>
+          </ol>
+        ) : null}
+        <h2>Try one of these</h2>
+        <div className="templates">
+          {w.examples.map((q, i) => (
+            <button key={i} type="button" className="template" disabled={blocked} onClick={() => { void start({ question: q, caseId: w.base_case, asCase: i === 0 }); }}>
+              <Icon name="target" size={16} /><span>{text(q)}</span>
+            </button>
+          ))}
+        </div>
+        {w.scenarios.length ? <>
+          <h2>What if new evidence appeared?</h2>
+          <p className="muted small">These add a simulated result halfway through, to see how the assistant updates its view. Simulated results are never treated as real evidence.</p>
+          <div className="templates">
+            {w.scenarios.map((s) => (
+              <button key={s.case} type="button" className="template" disabled={blocked} onClick={() => { void start({ question: s.label, caseId: s.case, asCase: true }); }}>
+                <Icon name="refresh" size={16} /><span>{text(s.label)}</span><span className="sim-chip">Simulated</span>
+              </button>
+            ))}
+          </div>
+        </> : null}
+      </div>
+    );
+  }
 
   return (
     <div className="studio">
-      <aside className="studio-side" aria-label="Company and history">
-        <div className="company-card">
-          <span className="start-mark" aria-hidden="true">{shortCompany(w.company).charAt(0)}</span>
-          <div><p className="company-name">{text(w.company)}</p><p className="small muted">Workspace · its own dossier and history</p></div>
-        </div>
-        <button type="button" className="new-run" aria-pressed={!opened} onClick={() => { setOpened(null); setStep(null); }}><Icon name="spark" size={14} /> New investigation</button>
-        <p className="side-label">History</p>
-        <ol className="history" aria-label={`Investigations of ${shortCompany(w.company)}`}>
-          {entries.length ? entries.map((e) => {
-            const s = statusOf(e);
-            return (
-              <li key={e.id}>
-                <button type="button" className="history-item" aria-pressed={opened?.id === e.id} onClick={() => { void openEntry(e); }}>
-                  <span className={`history-dot ${s.kind}`} aria-hidden="true" />
-                  <span className="history-text">
-                    <span className="history-q">{e.question}</span>
-                    <span className="history-meta">{s.label}{e.summary ? ` · ${e.summary.calls} steps` : ''}{e.started ? ` · ${when(e.started)}` : ''}{e.cached_at ? ' · saved' : ''}</span>
-                  </span>
-                </button>
-              </li>
-            );
-          }) : <li className="small muted history-empty">No investigations yet in this workspace.</li>}
-        </ol>
+      <aside className="studio-side" aria-label="Your investigations">
+        <button type="button" className="new-run" onClick={() => { setProjectView(null); navigate('/investigate'); }}><Icon name="plus" size={15} /> New investigation</button>
+        <HistoryPanel workspace={w.id} company={shortCompany(w.company)} entries={entries} projects={projects}
+          openedId={opened?.id ?? null} onOpen={(e) => navigate(`/investigate/${e.id}`)} onChanged={loadHistory} onError={onError}
+          onDeleted={(id) => { if (opened?.id === id) navigate('/investigate'); }}
+          onOpenProject={(id) => { setProjectView(id); navigate('/investigate'); }}
+          status={statusOf}
+          meta={(e) => (e.started ? ` · ${day(e.started)}` : '')} />
       </aside>
-
-      <section className="studio-main" aria-label="Investigation">
-        {opened ? (
-          <WorkflowCanvas record={record} question={opened.question} selected={step} onSelect={setStep}
-            header={
-              <div className="canvas-bar">
-                <div className="canvas-title">
-                  <span className="canvas-company">{shortCompany(w.company)}</span>
-                  {record ? <Chip kind={record.stop_reason ? (record.final ? 'good' : 'bad') : 'warn'}>{record.stop_reason ? stopName(record.stop_reason) : 'Running'}</Chip> : <Chip kind="warn">Starting</Chip>}
-                  {record ? <span className="small muted">{(record.calls || []).length} steps, {(record.calls || []).filter((c) => !c.accepted).length} refused</span> : null}
-                  {opened.cachedAt ? <Chip kind="warn">Saved result · {when(opened.cachedAt)}</Chip> : null}
-                </div>
-                {record ? <JourneyMap record={record} onPick={(stage) => { const i = (record.calls || []).findIndex((c) => c.stage === stage); if (i >= 0) setStep(i + 1); }} /> : null}
-                {opened.cachedAt ? (
-                  <p className="small muted">A saved investigation for this configuration: the same case and evidence, model, adapter file, model server build and code. A live run can differ, because a retry after a refused step samples at temperature 0.4.{opened.identity ? ` Recorded configuration: ${configLine(opened.identity)}.` : ''}{' '}
-                    {opened.ask ? <button type="button" className="link" disabled={blocked} onClick={() => { if (opened.ask) void start(opened.ask, true); }}>Run it again live</button> : null}
-                  </p>
-                ) : null}
-                {opened.error ? <p className="small bad-text">{text(opened.error)}</p> : null}
-              </div>
-            } />
-        ) : (
-          <div className="wf-canvas">
-            <div className="start">
-              <div className="start-head">
-                <span className="start-mark" aria-hidden="true">{shortCompany(w.company).charAt(0)}</span>
-                <div><h2>{text(w.company)}</h2><p className="lead">{text(w.description)}</p></div>
-              </div>
-              <p className="small muted">The agent frames the problem, builds rival theories, weighs quoted evidence from this company’s own dossier, challenges its favourite, designs a test or says why one is not worth it, and recommends. Each run takes one to three minutes and starts from scratch.</p>
-              <div className="composer">
-                <textarea rows={3} maxLength={400} aria-label="Your question" placeholder={`What should ${shortCompany(w.company)} find out?`} value={input} disabled={blocked}
-                  onChange={(e) => setInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); void start({ question: input, caseId: w.base_case, asCase: false }); } }} />
-                <div className="composer-row">
-                  <span className="small muted">{text(data.model.label)}. A development model: it often stops before finishing.</span>
-                  <button type="button" className="primary" disabled={blocked || !input.trim()} onClick={() => { void start({ question: input, caseId: w.base_case, asCase: false }); }}><Icon name="zap" size={14} /> Run</button>
-                </div>
-              </div>
-              {problem ? <p className="small warn-text">{problem}</p> : null}
-              {elsewhere ? <p className="small warn-text" role="status">Another investigation is running on the model server. This page will be ready when it ends.</p> : null}
-              <p className="side-label">Start from a question</p>
-              <div className="templates">
-                {w.examples.map((q, i) => (
-                  <button key={i} type="button" className="template" disabled={blocked} onClick={() => { void start({ question: q, caseId: w.base_case, asCase: i === 0 }); }}>
-                    <span className="wf-icon f-problem"><Icon name="target" size={16} /></span><span>{text(q)}</span>
-                  </button>
-                ))}
-              </div>
-              {w.scenarios.length ? <>
-                <p className="side-label">Or a what-if, with simulated new evidence</p>
-                <div className="templates">
-                  {w.scenarios.map((s) => (
-                    <button key={s.case} type="button" className="template" disabled={blocked} onClick={() => { void start({ question: s.label, caseId: s.case, asCase: true }); }}>
-                      <span className="wf-icon f-revision"><Icon name="refresh" size={16} /></span><span>{text(s.label)}</span>
-                    </button>
-                  ))}
-                </div>
-              </> : null}
-            </div>
-          </div>
-        )}
-      </section>
-
-      <aside className="studio-panel" aria-label="Details">
-        {record && step ? (
-          <section className="panel-section">
-            <div className="row spread"><p className="side-label">Selected step</p><button type="button" className="quiet-button" onClick={() => setStep(null)}>Close</button></div>
-            <StepDetail record={record} n={step} />
-          </section>
-        ) : null}
-        {record ? <Outcome record={record} /> : null}
-        {record ? (
-          <section className="panel-section">
-            <p className="side-label">Theories</p>
-            <TheoryBoard record={record} onPick={setStep} />
-            {!Object.keys(record.theories || {}).length ? <p className="small muted">No theory yet.</p> : null}
-          </section>
-        ) : (
-          <section className="panel-section">
-            <p className="side-label">How to read the canvas</p>
-            <ul className="legend-list small">
-              <li><span className="wf-icon f-problem"><Icon name="target" size={12} /></span>Framing the problem</li>
-              <li><span className="wf-icon f-evidence"><Icon name="search" size={12} /></span>Searching and reading evidence</li>
-              <li><span className="wf-icon f-theory"><Icon name="bulb" size={12} /></span>Rival theories</li>
-              <li><span className="wf-icon f-assess"><Icon name="scale" size={12} /></span>Weighing evidence, one branch per theory</li>
-              <li><span className="wf-icon f-challenge"><Icon name="zap" size={12} /></span>Challenging the favourite</li>
-              <li><span className="wf-icon f-experiment"><Icon name="flask" size={12} /></span>Designing a test</li>
-              <li><span className="wf-icon f-conclusion"><Icon name="flag" size={12} /></span>Position and recommendation</li>
-              <li><span className="wf-icon refused-icon"><Icon name="cross" size={12} /></span>Refused by the harness; it changed nothing</li>
-            </ul>
-            <p className="small muted">Click a step to see exactly what the model sent and what the harness returned. Identical calls in a row are drawn once with a count.</p>
-          </section>
-        )}
-      </aside>
+      <section className="studio-main" aria-label="Investigation"><div className="reading">{main}</div></section>
     </div>
   );
 }

@@ -702,3 +702,79 @@ Version 2 narrowed to experiment design (Hatem, 2026-11-08): 81 of the 82 collec
 only 1 is a refused simulated-only finish, which rarely occurs on training companies. `docs/V2_PLAN.md`, third revision.
 Job 746091 then downloaded the model but its server never started: it was submitted without `NAME`, which the script
 needs for its log files under `set -u` (earlier teacher jobs set it). Resubmitted with NAME=capv2; settings unchanged.
+First version 2 teacher batch (746123, 28 states): 28 valid answers, **0 accepted**. Two errors of mine, not of the
+teacher: the states were the student's first call in the test stage, where it was still reading sources (24 of 28),
+and the teacher was given the loop-recovery instructions ("do not move to a later step before the evidence is in
+place"), so it chose `read_source` in 26 of 28. Fixed (238781f): states are taken where the student itself proposed or
+declined its test (53 states on 36 companies, plus the one recovery state), and the teacher gets experiment-design
+instructions (`targeted.EXPERIMENT_ASK`). The rejected answers stay in the manifest. Job 746123 was cancelled before its
+second batch, which had the same flaw; the teacher was relaunched as job 746236.
+Version 2 examples under review (Hatem, 2026-11-08): the 17 accepted are exported with their exact states, source
+dates, raw teacher replies and acceptance reasons (`reviews/v2_examples/`). Two independent Claude agents and Gemini
+(through Hatem's Antigravity CLI, read-only) assess them against Hatem's criteria; their assessments are **advisory
+only**, and every keep or drop decision is Hatem's (Claude and Gemini select no training data). Training is paused
+until that review. The 37 rejections each have exactly one reason; an earlier summary of mine miscounted them as 38.
+
+## 2026-11-08: tool fields cut at 240 characters (found by the version 2 reviews)
+
+The tool schema caps short text fields at 240 characters (`_TEXT` in `agent/runner.py`), and generation constrained by
+that schema stops the text at the cap mid-sentence. In version 1's training data, 132 of the 158 `propose_test` targets
+have a `decision_rule` at the cap (and 108 a `method`), so the model was trained on decision rules that are mostly cut
+off; on the final test 23 of the trained arm's 37 accepted test proposals have a rule at the cap. This is a data-quality
+limitation of version 1 and a plausible contributor to its weak experiment-design and recommendation scores; it does not
+change any frozen number. The version 2 gates passed truncated rules, and 15 of the 17 accepted version 2 examples have
+one. A future version needs longer limits for these fields (or a rule that must be complete) before any data is made.
+Hatem chose one documented fix-and-regenerate round for version 2: longer limits for the test-design and reasoning
+fields, teacher instructions that ask for mechanism-separating tests, proportionate and complete rules and staying inside
+the case's time, three structural gates (complete rule, no pre-1995 online method, no source dated after the case), each
+of the same 54 states asked once, and Hatem's review before any training. Details in `docs/V2_PLAN.md`, fourth revision.
+
+## 2026-11-08: the rereading loop, fixed two ways (Hatem chose both)
+
+A manual Try it run stalled at the test step rereading the same sources until the turn limit, the failure seen in 9 of
+48 final-test runs; in 36 of 122 version 1 runs on training cases the model also reread a source a third time in the
+test stage. The test stage offers the reading tools besides propose_test, and a reread is never refused.
+- **Model:** the 35 distinct states where version 1 first reread a source a third time in the test stage (training
+  companies, 27 of them) are added to the version 2 round as experiment-design states (origin "reread"): the teacher
+  answers each once under the same instructions, the same gates apply, and Hatem reviews them with the rest.
+- **Environment:** an opt-in reread limit (`Investigation(reread_limit=)`, runner `--reread-limit`) refuses a third
+  read of one source, saying its text is already in the state. It is recorded in each episode's settings, so every
+  earlier episode replays unchanged. Try it uses it by default (REREAD_LIMIT=2) and says so on the page. It is a
+  harness change: version 1's reported results stay as evaluated, and any dev comparison runs both versions under the
+  same setting, reported separately from model changes.
+- Fixed with it: the tool refused a method or decision rule over 600 characters while the schema now allows 900, so
+  in the running round answers between 601 and 900 characters are refused by the tools. The tool now accepts 900
+  (old runs never exceeded 240, so replay is unaffected), and the round's answers are re-checked offline with the fix:
+  the same single answers, no new sampling.
+Try it's turn budget is raised from 45 to 60 (MAX_TURNS, labelled on the page; Hatem's suggestion). Of the 9
+final-test runs that hit 45 turns, 8 were rereading, which the reread limit now stops, so the extra turns go to real
+steps after a correction. A harness change like the reread limit: version 1's results stay at 45; for the version 2
+development comparison the setting is fixed before it runs, and both versions run under it.
+Try it gains a **live web research** toggle (Hatem, 2026-11-08), experimental and never part of an evaluation: a
+`LiveDossier` (`env/live.py`) replaces the fixed dossier with DuckDuckGo search (the `ddgs` package), every result page
+is fetched once and saved as a snapshot (URL, retrieval time, sha256 of the text, the excerpt shown), and quotes are
+checked against that excerpt. Pages on the company's own site are company claims; other pages get a new class,
+`web_page`, which says no analyst checked them. Live runs are never cached and are marked in the history and the label.
+Checked end to end on the laptop: four live searches, six live pages read, sixteen snapshots saved.
+
+## 2026-11-08: the offline re-check of the round's answers
+
+`targeted regate` judges saved teacher replies again with the current code and samples nothing: every reply is
+re-judged, including those the old 600-character tool limit refused, and each answer keeps its `decision_at_generation`
+next to the new decision. Training rows are still made only from answers kept after the re-check and Hatem's review.
+Tried first on the earlier batch (54 answers, 17 kept then): 1 is kept now. Of the 16 no longer kept, 15 fail the new
+complete-rule gate (rules stopped at exactly 240 characters by the old schema) and one proposes an online method in a
+case set in 1983; four answers rejected then are rejected now for the incomplete rule instead (20 decisions changed).
+The one still kept showed a hole: its rule was cut at 240 characters right after "p<0.", which ends in a full stop.
+Constrained generation stops a field exactly at its schema limit, so a new gate (`cut_off`) refuses any prose field of a
+test, or any of the teacher's reasoning fields, that is at its limit, or at exactly 240 characters (the limit the first
+batches were made under; an answer written to 240 by chance is lost, which is accepted). With it, none of that batch
+is kept: 18 cut rules, 2 cut samples, 1 cut measure. The gates only confirm what the reviews found; that batch is not
+used. The new round's answers are exported in full for Hatem's review by `scripts/v2_review_export.py` (the flags in
+it are keyword aids, select nothing, and Hatem's choice is recorded in its `keep` field).
+Third batch (54 states, the round's experiment states): 53 valid replies, 1 request timeout; 5 kept at generation, 18
+refused only by the old 600-character tool limit. After the offline re-check, 5 are kept: 4 of the 5 (one has its
+"learned" field cut at 700 characters) and 1 the old limit had refused. The case-date pattern of the in-period gates
+knew only "It is [early/mid-/late] YEAR" and missed 16 dated cases ("It is March 2016", "It is March 1991", "It is
+spring 2021"); it now reads them, and the re-check was run with it (the kept set did not change). The five are in
+`reviews/v2_round2/targeted3_kept_for_review.md` for Hatem's decision.

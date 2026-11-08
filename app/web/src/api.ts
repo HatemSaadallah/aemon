@@ -17,3 +17,6 @@ export const postJSON = <T>(path: string, body: unknown): Promise<T> =>
   api<T>(path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
 
 export const errorText = (error: unknown): string => (error instanceof Error ? error.message : String(error));
+
+export const sendJSON = <T>(path: string, method: 'PATCH' | 'DELETE', body?: unknown): Promise<T> =>
+  api<T>(path, { method, headers: { 'Content-Type': 'application/json' }, body: body === undefined ? undefined : JSON.stringify(body) });
