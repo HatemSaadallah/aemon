@@ -40,10 +40,12 @@ def client(tmp_path, monkeypatch):
     return client
 
 
-def test_the_page_says_this_is_a_development_pilot(client):
-    assert 'not a final test' in client.get('/').text
-    banner = client.get('/api/pilots').json()['banner']
-    assert 'not a final test' in banner and 'not measures of strategy quality' in banner
+def test_the_results_say_which_runs_are_the_final_test_and_which_are_development(client):
+    data = client.get('/api/pilots').json()
+    banner = data['banner']
+    assert 'final test ran once' in banner and 'development runs' in banner and 'not measures of strategy quality' in banner
+    final = next(p for p in data['pilots'] if p['id'] == 'final')
+    assert 'never used for training or selection' in final['note'] and 'staged prompt' in final['note']
 
 
 def test_a_pilot_is_shown_only_when_both_arms_have_reports(client):
