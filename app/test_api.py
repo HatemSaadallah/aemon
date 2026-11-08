@@ -44,7 +44,7 @@ def test_the_results_say_which_runs_are_the_final_test_and_which_are_development
     data = client.get('/api/pilots').json()
     banner = data['banner']
     assert 'final test ran once' in banner and 'development runs' in banner and 'not measures of strategy quality' in banner
-    final = next(p for p in data['pilots'] if p['id'] == 'final')
+    final = next(p for p in server.PILOTS if p['id'] == 'final')  # listed only where its report files are present
     assert 'never used for training or selection' in final['note'] and 'staged prompt' in final['note']
 
 
