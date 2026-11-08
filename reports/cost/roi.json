@@ -1,0 +1,48 @@
+{
+ "inputs": {
+  "prompt_tokens_per_investigation": 121685,
+  "generated_tokens_per_investigation": 2875,
+  "seconds_per_investigation": 66.3,
+  "investigations_per_gpu_hour": 54.3,
+  "finished_share": 0.583,
+  "gpu": "A100 40GB on-demand, Oct 2026 aggregator: median $1.76/h, low $0.89/h; Google Cloud $3.67/h (Jun 2026)",
+  "api_prices_per_million": {
+   "Claude Opus 5.5": {
+    "input": 4,
+    "output": 20
+   },
+   "Claude Sonnet 5.5": {
+    "input": 2,
+    "output": 10
+   },
+   "Claude Haiku 5.5": {
+    "input": 0.1,
+    "output": 0.5
+   }
+  },
+  "measured_claude_opus_control": {
+   "investigations": 15,
+   "usd": 3.725,
+   "note": "earlier harness, original earplug cases, effort medium, with its own thinking tokens and caching"
+  }
+ },
+ "per_investigation_usd": {
+  "self_hosted_low ($0.89/h)": 0.0164,
+  "self_hosted_median ($1.76/h)": 0.0324,
+  "self_hosted_hyperscaler ($3.67/h)": 0.0676,
+  "Claude Opus 5.5 (same tokens, list price, no caching)": 0.5442,
+  "Claude Sonnet 5.5 (same tokens, list price, no caching)": 0.2721,
+  "Claude Haiku 5.5 (same tokens, list price, no caching)": 0.0136,
+  "Claude Opus 5.5 measured control": 0.2483
+ },
+ "per_10000_investigations_usd": {
+  "self_hosted_low ($0.89/h)": 164,
+  "self_hosted_median ($1.76/h)": 324,
+  "self_hosted_hyperscaler ($3.67/h)": 676,
+  "Claude Opus 5.5": 5442,
+  "Claude Sonnet 5.5": 2721,
+  "Claude Haiku 5.5": 136,
+  "Claude Opus 5.5 measured control": 2483
+ },
+ "gpu_hours_per_10000": 184.2
+}

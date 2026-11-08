@@ -150,6 +150,33 @@ trained arm. The two adapters were not distinguishable (+0.20, interval −0.09 
 - The largest gains are in distinct theories, framing, causal mechanism and revising on new evidence; the weakest
   dimensions for the trained agent remain the recommendation, revision, experiment design and judging evidence.
 
+### Cost: the fine-tuned agent against a closed model (`reports/cost/roi.json`)
+
+Measured on the final test, one investigation by the fine-tuned agent reads about 121,700 prompt tokens and writes about
+2,900 over 35 tool calls, in **66 seconds on one A100 slice**, one investigation at a time: about 54 an hour.
+
+| | per investigation | per 10,000 investigations |
+|---|---|---|
+| **Fine-tuned Tiny Aya, self-hosted** (A100 40 GB, Oct 2026 median $1.76/h; range $0.89-$3.67) | **$0.032** ($0.016-$0.068) | **$324** (184 GPU hours; $164-$676) |
+| Claude Opus 5.5, measured on our earlier control run (15 investigations, $3.73) | $0.25 | $2,483 |
+| Claude Opus 5.5, the same token volume at list price, no caching ($4 / $20 per million) | $0.54 | $5,442 |
+| Claude Sonnet 5.5, the same token volume ($2 / $10) | $0.27 | $2,721 |
+| Claude Haiku 5.5, the same token volume ($0.10 / $0.50) | $0.014 | $136 |
+
+- Self-hosting costs about **8 times less than the measured Opus run** and 8 to 17 times less than Sonnet or Opus at
+  the same token volume. Per finished investigation (28 of 48) it is about $0.056.
+- **Haiku 5.5 at list price is cheaper than renting a GPU for this agent**, and we did not measure its quality on this
+  task; the case for self-hosting against it rests on running offline and keeping the case data local, not on price.
+- The closed models are not quality-matched: Claude finished all 15 control investigations on the earlier harness,
+  against the fine-tuned agent's 28 of 48 here.
+- The teacher shows the other side of distillation: Command A+ took about 2 hours 10 minutes per batch of four on the
+  same kind of slice (about 1.8 investigations an hour), so the student runs roughly **30 times faster** per GPU.
+- Not measured: running several investigations at once on one GPU, which llama.cpp supports and would lower the
+  self-hosted cost further.
+
+Prices: Anthropic list prices as of October 2026; GPU prices from aggregator snapshots (amcompute.com, October 2026;
+gpu-cost.pages.dev, June 2026), which change often.
+
 ### What still fails, and why (`docs/FINAL_TEST_DIAGNOSIS.md`)
 Only 1 of 48 trained runs passes every mechanical check (all-checks success was also rare in the teacher's training
 data, 1 of 223, on other cases), and 20 of 48 stop before a recommendation. Several failures trace to behaviour the

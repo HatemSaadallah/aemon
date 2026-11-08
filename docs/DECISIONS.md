@@ -651,3 +651,13 @@ rare in both. The improvement plan is reordered (justified propose-or-decline, b
 to the affected theory, recovery from simulated-only citations and from rereading), to be confirmed on development
 cases before any new examples are selected; a future claim needs fresh evaluation cases, since these four companies
 now informed the diagnosis. The frozen scores stand.
+
+## 2026-11-08: public repository and release policy
+
+At Hatem's request the code is public at https://github.com/HatemSaadallah/lexsi-strategy-agent (Apache 2.0), made by
+`scripts/build_public_repo.py` from this repository: no history, no copies of the source papers (`papers/`,
+`sources/`), every dossier excerpt cut to its first sentence of at most 25 words wherever it appears (Hatem's policy;
+the agent's own exact-sentence quotes stay), and the cluster account, login host and home folder replaced by
+placeholders. Its tests pass (206, plus the held-out digest test skipped, since the digest covers the full excerpts).
+This repository stays private. The Hugging Face release (`scripts/build_release.py`, same redaction) waits for the team
+organisation and Hatem's go.
