@@ -72,7 +72,7 @@ export function ResultsPage({ onError }: { onError: OnError }) {
             </select>
           ) : null}
         </div>
-        <p className="lead">The same {pilot.totals.untrained.cases} cases, controller, prompt and settings for both models. The only difference is the trained adapter. {pilot.note}</p>
+        <p className="lead">The same {pilot.totals.untrained.cases} runs, cases, controller and settings for both models. {pilot.note}</p>
         <p className="banner">{data.banner}</p>
         <TotalsTable t={pilot.totals} arms={pilot.arms} />
       </div>

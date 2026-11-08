@@ -1,13 +1,82 @@
 # Strategy-investigation agent: Tiny Aya Global fine-tuned on teacher investigations
 
-An agent that investigates whether a manufacturer should take its technology into a new market. It frames the
-decision and its alternatives, states rival causal theories, assesses quoted evidence from a dossier of public
-sources, looks for evidence against its favoured theory, proposes a test with a decision rule or declines one, revises
-when new evidence arrives, and makes a recommendation.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/quality-dark.png">
+  <img alt="Blind quality score on the final test: base model 0.65, fine-tuned 1.48 (mean of two judges)" src="docs/figures/quality-light.png" width="720">
+</picture>
 
-The model is [Tiny Aya Global](https://huggingface.co/CohereLabs/tiny-aya-global) with a LoRA adapter, trained with
-[AgentTune](https://github.com/Lexsi-Labs/AgentTune) on investigations by Command A+ and evaluated with
-[AuditKIT](https://github.com/Lexsi-Labs/AuditKIT), executable checks and two blind LLM judges.
+## The problem
+
+A manufacturer asks whether to take its technology into a new market: should a maker of professional laundry machines
+build something for households, should a water-membrane company sell to consumers? Language models answer such
+questions with consulting prose: a list of factors, a confident market size with no source, and evidence gathered only
+for the answer they started with.
+
+Good strategy work looks different. It frames the decision and its real alternatives (including doing nothing),
+states rival theories of *who* would change their behaviour and *why*, derives predictions that tell those theories
+apart, weighs quoted evidence for and against each, looks hardest for evidence against its favourite, proposes a test
+with a decision rule when information is worth its cost, and revises when new evidence arrives.
+
+This project teaches that procedure to a small open model. The agent works inside an environment that enforces it:
+every quote must match a source, every theory must give a distinct causal explanation, and a simulated what-if result
+may change a belief but can never support a recommendation about real demand.
+
+| | |
+|---|---|
+| Evidence dossier | 1,334 public records (935 independent observations, 399 company claims) |
+| Cases | 153 company questions on 68 companies, some with a what-if result that arrives mid-investigation |
+| Student | Tiny Aya Global (CohereLabs), with a 121 MB LoRA adapter |
+| Teacher | Command A+, run through the same environment |
+| Training data | 3,891 rows from 158 accepted investigations on 57 companies, plus 51 correction rows |
+| Final test | 4 companies never used for training or selection, 16 cases, 3 attempts, 96 runs |
+
+## How the agent works
+
+```mermaid
+flowchart TD
+    Q([Company question]) --> B[Read the brief]
+    B --> F[Frame the decision<br/>objective, constraints, alternatives]
+    F --> E[Search and read sources]
+    E --> T[State at least two rival theories<br/>who benefits, why behaviour changes, how value is captured]
+    T --> A[Assess quoted evidence<br/>for, against or neutral, per theory]
+    A --> C[Challenge the favourite<br/>search for evidence against it]
+    C --> X{Is a test worth its cost?}
+    X -- yes --> P[Propose a test<br/>predictions per theory, decision rule, cost]
+    X -- no --> D[Decline, with the reason]
+    P --> S[State a position and beliefs]
+    D --> S
+    S --> W{{What-if result arrives}}
+    W --> R[Revise the theories it bears on]
+    R --> Z([Recommendation, uncertainty,<br/>what would change it])
+    S -.-> Z
+```
+
+Every call goes through a guarded tool. A stage controller offers only the tools of the current stage, and a call
+that breaks a rule (a misquoted source, a repeated search, a recommendation resting on simulated evidence) is refused
+with the reason, so the agent can correct itself. Each investigation is drawn as a workflow in the included Strategy Lab:
+
+<img alt="An investigation in the Strategy Lab: each step on a canvas, with the theories, the evidence for and against, and the agent's beliefs" src="docs/figures/app-investigation.png" width="860">
+
+## How it was trained and evaluated
+
+```mermaid
+flowchart LR
+    subgraph Data
+        D1[Dossier and cases] --> D2[Teacher investigations<br/>Command A+]
+        D2 --> D3[Replay through the environment<br/>keep exact, accepted ones]
+        D3 --> D4[Training rows<br/>context, then one target call]
+    end
+    subgraph Training
+        D4 --> T1[AgentTune distillation<br/>LoRA on Tiny Aya Global]
+        T1 --> T2[Conversion check<br/>GGUF matches PEFT]
+    end
+    subgraph Evaluation
+        T2 --> E1[Development: 6 companies<br/>choose prompt and adapter]
+        E1 --> E2[Frozen final test: 4 new companies<br/>run once]
+        E2 --> E3[AuditKIT replay and diagnostics]
+        E2 --> E4[Two blind LLM judges<br/>9-dimension rubric]
+    end
+```
 
 ## Results
 
@@ -26,12 +95,24 @@ recommendation), averaged per investigation.
 
 Intervals resample whole cases. The two judges rank the investigations alike (Spearman 0.94).
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/difference-dark.png">
+  <img alt="Fine-tuned minus base by kind of new evidence, all above zero with 95% intervals" src="docs/figures/difference-light.png" width="720">
+</picture>
+
 **By company** (mean of judges): Aquaporin +1.10, Simonelli +0.98, RATIONAL +0.66, Electrolux Professional +0.60.
 
 **By new evidence** (mean of judges): none +0.84, irrelevant +0.87, supporting +0.86, undermining +0.76.
 
-**Largest gains by dimension** (judge 2): distinct theories 0.98 to 2.56, problem framing 1.00 to 2.90, causal
-mechanism 1.15 to 2.63, revision 0.03 to 0.81.
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/dimensions-dark.png">
+  <img alt="Score per rubric dimension, base and fine-tuned" src="docs/figures/dimensions-light.png" width="720">
+</picture>
+
+The largest gains are in distinct theories, problem framing and causal mechanism; recommendation, revision, evidence
+judgement and experiment design improve but remain the weakest.
+
+<img alt="The final test in the Strategy Lab: both models on every case, with how each run ended" src="docs/figures/app-results.png" width="860">
 
 **Scope.** Four companies support only a limited claim about generalisation, and three attempts per case are not
 independent replications. The judges are LLMs, and nothing here measures business outcomes. The fine-tuned agent's
@@ -42,7 +123,7 @@ end before a recommendation. Details: [docs/FINAL_TEST_DIAGNOSIS.md](docs/FINAL_
 about $0.03 at a median A100 rental price, against $0.25 measured for Claude Opus 5.5 on the same task
 ([reports/cost/roi.json](reports/cost/roi.json)).
 
-## How it works
+## Components
 
 - **Environment** (`src/strategy_agent/env/`): twelve guarded tools over a dossier of 1,334 public records. Quotes must
   match a source exactly, theories must give distinct causal explanations, and a simulated what-if result may change

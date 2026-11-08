@@ -48,23 +48,31 @@ MODEL_URL = 'http://127.0.0.1:8091'
 # A pilot is shown once both of its reports exist. Add the next one here.
 PILOTS = (
     {
+        'id': 'final',
+        'label': 'Final test',
+        'files': {'untrained': '../judge/final/final_test_base_base.json', 'trained': '../judge/final/final_test_trained_adapter.json'},
+        'arms': {'untrained': 'Base model (staged prompt)', 'trained': 'Fine-tuned'},
+        'note': 'Run once on four companies never used for training or selection: 16 cases, three attempts each (one attempt per case is shown). The base model uses the staged prompt chosen on development data, the fine-tuned model the compact one. Blind judges: 1.48 against 0.65 (mean of two judges).',
+    },
+    {
         'id': 'pilot1',
         'label': 'First pilot',
         'files': {'untrained': 'pilot1/first_base.json', 'trained': 'pilot1/first_adapter.json'},
         'arms': {'untrained': 'Untrained', 'trained': 'First adapter'},
-        'note': 'Full-history prompt. The adapter learned from 45 teacher investigations, and the checkpoint with the lowest Hellberg loss was kept.',
+        'note': 'Full-history prompt in both arms; the only difference is the adapter. The adapter learned from 45 teacher investigations, and the checkpoint with the lowest Hellberg loss was kept.',
     },
     {
         'id': 'pilot2',
         'label': 'Second pilot',
         'files': {'untrained': 'pilot2/second_base.json', 'trained': 'pilot2/second_adapter.json'},
         'arms': {'untrained': 'Untrained', 'trained': 'Second adapter'},
-        'note': 'Compact prompt in both arms; the adapter learned from the same 45 teacher investigations as the first, built compact so no rows were dropped.',
+        'note': 'Compact prompt in both arms, so the only difference is the adapter; it learned from the same 45 teacher investigations as the first, built compact so no rows were dropped.',
     },
 )
 ARMS = ('untrained', 'trained')
 BANNER = (
-    'Development pilots on two companies, Moldex and Hellberg. They are not a final test, and Hellberg chose the checkpoint, so it is not unseen. '
+    'The final test ran once on four companies never used for training or selection. The two pilots are earlier development runs on Moldex and '
+    'Hellberg, where Hellberg chose the checkpoint, so it is not unseen. '
     'Checks are guards against mechanical mistakes, not measures of strategy quality.'
 )
 
@@ -152,6 +160,7 @@ def me(request: Request) -> dict[str, Any]:
 def cases() -> Json:
     if not _cases:
         _cases.update({case.id: case for case in load_cases()})
+        _cases.update({case.id: case for case in load_cases(split='heldout')})  # the final test's runs open here too
     return _cases
 
 

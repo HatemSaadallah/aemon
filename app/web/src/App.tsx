@@ -56,7 +56,7 @@ export function App() {
         <div className="brand">
           <h1>Strategy Lab</h1>
           {spaces && spaces.length ? <WorkspaceSwitcher spaces={spaces} current={ws} onChoose={(id) => { setWs(id); storeWorkspace(id); }} /> : null}
-          <span className="tag">Development pilots, not a final test</span>
+          <span className="tag">Research prototype</span>
         </div>
         <nav className="tabs" aria-label="Sections">
           {SECTIONS.map(([path, label]) => <NavLink key={path} to={`/${path}`}>{label}</NavLink>)}
