@@ -15,7 +15,7 @@ what training could reach. Several of the failures trace to behaviour the traini
 
 | check | fails | main reason |
 |---|---|---|
-| experiment | 23 (82%) | 17: proposed a test where the case says more information is not worth its cost; 6: the theories' predictions barely differ |
+| experiment | 23 (82%) | 17: proposed a test where the case says more information is not worth its cost; 6: "the theories' predictions barely differ", but in 5 of these 6 the predictions were contrasting ones that the check treated as identical (see below) |
 | evidence_classes | 13 (46%) | a theory's support rests only on company claims |
 | evidence_kinds | 11 (39%) | fewer than 70% of assessments label the kind of evidence as the dossier annotates it |
 | no_invented_numbers | 6 (21%) | the recommendation uses numbers found in no source read |
@@ -70,6 +70,16 @@ The teacher's rates are on the training cases and the student's on the four held
 a matched comparison. They show which weaknesses were already common in the training data (evidence kinds, invented
 numbers), not that the student is better or worse than the teacher on them. The higher `evidence_classes` rate may
 reflect the held-out dossiers' mix of company claims; not checked.
+
+### A flaw in the experiment check itself (found 2026-11-08, while building version 2)
+
+The check calls two predictions near-identical when their word overlap is high, so it misreads opposite comparisons
+("homeowners will pay more than small businesses" against "small businesses will pay more than homeowners") as the
+same prediction. Recounted with a test for opposite comparisons, 5 of the 6 final-test runs flagged "barely differ"
+predict opposite outcomes, as do 1 of 2 and 3 of 4 flagged in the two development arms. The frozen results are
+reported as computed. This is a measurement limitation of the mechanical check; it does not establish that those
+experiments were otherwise sound.
+Experiment design remains among the weakest dimensions for the trained agent under both blind judges (about 1.0 of 3).
 
 ## Unfinished runs (20)
 

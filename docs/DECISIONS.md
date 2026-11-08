@@ -661,3 +661,44 @@ the agent's own exact-sentence quotes stay), and the cluster account, login host
 placeholders. Its tests pass (206, plus the held-out digest test skipped, since the digest covers the full excerpts).
 This repository stays private. The Hugging Face release (`scripts/build_release.py`, same redaction) waits for the team
 organisation and Hatem's go.
+
+## 2026-11-08: version 2 registered (`docs/V2_PLAN.md`)
+
+A short continuation of the final adapter on 100-200 targeted single-decision examples (experiment design, belief
+revision, evidence judgment, recovery), mixed with existing teacher rows at about 30% of supervised tokens, every target
+passing a skill check fixed in code before generation. Development confirmed experiment design (4 of 7 finished runs),
+evidence judgment (5 of 7 mislabel kinds) and recovery (3 of 8 unfinished reread); revision on directional evidence
+could not be confirmed on development (3 such cases). Version 1 and its final-test result are untouched; a version 2
+generalisation claim needs fresh held-out companies.
+Revised the same day after an independent critique (a stand-in reviewer, since Codex was unavailable): reduced to
+experiment design and refused-finish recovery, budget variants dropped (they cannot replay: `read_brief` returns the
+budget), stricter gates on the new item only, a gentler mix (15-20% targeted, learning rate 2e-5 to 3e-5, about 100-150
+steps), and a selection rule fixed in advance: 3 attempts x 15 validation cases for both versions, version 2 preferred
+only at a mean-of-judges gain of at least +0.10 with a 95% lower bound above 0 and no more than 2 fewer finished of 45.
+Timeboxed to three days; development result only. See `docs/V2_PLAN.md`.
+
+## 2026-11-08: the experiment check misreads opposite predictions
+
+Inspecting the version 2 gate on development outputs (Hatem's request) showed that the environment's experiment check
+treats opposite comparisons as near-identical predictions, because it compares word overlap. Recounted, 5 of the 6
+final-test runs it flagged "predictions barely differ" predict opposite outcomes (development: 1 of 2 and 3 of 4).
+The frozen final-test numbers are unchanged and reported as computed; the diagnosis and article now say five of six
+predictions-overlap failures involved contrasting predictions the checker treated as identical, which does not
+establish that those experiments were otherwise sound. The version 2 gate recognises opposite comparisons (`targeted.mirrored`) and
+two-branch decision rules; on development outputs it now keeps 12 of 17 proposals, and the rejections inspected were
+identical predictions or rules without a number or second branch. Launch settings: the teacher's recorded reasoning
+budget of 512 tokens and prompt version teacher-v2, 4 slots, as in collection.
+The comparison test in the version 2 gate (`targeted.mirrored`) is a heuristic for structural screening only: it
+recognises swapped terms without reading direction, so "A is lower than B" against "B is higher than A" (the same
+outcome) can pass as different. Accepted examples are therefore inspected in a sample for substantive
+discrimination; the aim is better teacher actions, not a higher acceptance rate. Version 2 is evaluated with the same
+checks as version 1, and checker changes are reported separately from changes in model behaviour.
+Version 2 teacher job 746017 died at start (exit 13, SIGPIPE): `nvidia-smi | head -1` under `set -o pipefail`, where
+`head` can close the pipe before nvidia-smi has written everything; earlier jobs escaped the race. Found with a traced
+debug job (746087 passed, 746088 reproduced it); fixed by reading the first line with awk (9924355). The teacher was
+resubmitted as job 746091 with the recorded collection settings (reasoning budget 512, teacher-v2, 4 slots); the queued
+batch was untouched.
+Version 2 narrowed to experiment design (Hatem, 2026-11-08): 81 of the 82 collected states are at the test step and
+only 1 is a refused simulated-only finish, which rarely occurs on training companies. `docs/V2_PLAN.md`, third revision.
+Job 746091 then downloaded the model but its server never started: it was submitted without `NAME`, which the script
+needs for its log files under `set -u` (earlier teacher jobs set it). Resubmitted with NAME=capv2; settings unchanged.

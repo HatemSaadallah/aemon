@@ -50,7 +50,7 @@ if [ -n "${REBUILD:-}" ]; then
   # The first build ran on a node with no GPU, so CUDA code was not compiled for the GPU it runs on. That mismatch makes the
   # mixture-of-experts kernel fail on decode batches of about 5 to 7 (llama.cpp issue 30524), which is why parallel slots
   # crashed. Build the same source for this GPU, in its own folder, while the download runs, so a running job is untouched.
-  CC=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | head -1 | tr -d .)
+  CC=$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | awk 'NR==1 {gsub(/\./, ""); print}')  # awk reads all input: head could end the pipe early and kill the job with SIGPIPE under pipefail
   BUILD=$L/llama.cpp/build-sm$CC
   if [ ! -x $BUILD/bin/llama-server ]; then
     ( export PATH=$L/tools/cmake/bin:$PATH PYTHONPATH=$L/tools/cmake; cd $L/llama.cpp && flock $L/llama.cpp/.build.lock bash -c \
@@ -64,6 +64,25 @@ export PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 CODE_RE
 # starts, so a broken setup stops after the smoke stage instead of after hours.
 stage() {  # batch, cases, first attempt, temperature, then optionally server url, parallel episodes, output prefix, label note
   local URL=${5:-http://127.0.0.1:$PORT} W=${6:-$SLOTS} P=${7:-$NAME}
+  if [[ $1 == targeted* ]]; then  # version 2 examples (docs/V2_PLAN.md): $2 is a states file. Low acceptance is allowed;
+    # a crash or an unreadable output is not, so the command's status is kept and the output is checked and counted.
+    local RC=0
+    $L/env/bin/python -W ignore -m strategy_agent.pipeline.targeted ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
+      --manifest $OUT/provenance.jsonl --output $OUT/${P}_$1.json > $OUT/${P}_$1.log 2>&1 || RC=$?
+    echo "stage $P $1 ended $(date +%T), exit $RC"
+    $L/env/bin/python - "$OUT/${P}_$1.json" <<'PYT' || { echo "stage $P $1: output missing or unreadable"; return 1; }
+import collections, json, sys
+d = json.load(open(sys.argv[1]))
+failed = [x for x in d if str(x.get('decision', '')).startswith('request failed')]
+valid = [x for x in d if 'reply' in x]
+kept = [x for x in d if isinstance(x.get('kept'), dict)]
+reasons = collections.Counter(x['decision'] for x in valid if not isinstance(x.get('kept'), dict))
+print(json.dumps({'attempted': len(d), 'valid_responses': len(valid), 'accepted': len(kept), 'request_failures': len(failed),
+                  'by_skill': {s: sum(x.get('skill') == s for x in kept) for s in ('experiment', 'recovery')},
+                  'rejections': reasons.most_common(12)}))
+PYT
+    return $RC
+  fi
   if [[ $1 == correct* ]]; then  # a correction batch: $2 is a states file, one teacher turn per state (strategy/correct.py)
     $L/env/bin/python -W ignore -m strategy_agent.pipeline.corrections ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
       --manifest $OUT/provenance.jsonl --output $OUT/${P}_$1.json > $OUT/${P}_$1.log 2>&1 || true

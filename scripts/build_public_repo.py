@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_release import Redactor, load_records, short  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[1]
-DROP = ('papers/', 'sources/')  # the source papers and their extracted text are the publishers', not ours
+DROP = ('papers/', 'sources/', 'docs/PUBLIC_README.md')  # the source papers and their extracted text are the publishers', not ours
 # Personal and internal identifiers, replaced by placeholders in the public copy (named in the README)
 SCRUB = {'CLUSTER_ACCOUNT': 'CLUSTER_ACCOUNT', 'CLUSTER_HOST': 'CLUSTER_HOST', '/home/USER': '/home/USER'}
 TEXT = {'.sha256', '.jinja', '.py', '.md', '.json', '.jsonl', '.txt', '.ts', '.tsx', '.js', '.css', '.html', '.sh', '.sbatch', '.toml', '.cfg', '.yml', '.yaml', '.csv', '.log'}
@@ -49,6 +49,8 @@ def main() -> None:
             dst.write_text(new, errors='surrogateescape')
         else:
             shutil.copy2(src, dst)
+    # The public README is its own document: results and how to run them, without the internal working notes
+    (out / 'README.md').write_text((REPO / 'docs/PUBLIC_README.md').read_text())
     evidence = out / 'data/dossier/evidence.json'
     data = json.loads((REPO / 'data/dossier/evidence.json').read_text())
     records = data['records'] if isinstance(data, dict) else data

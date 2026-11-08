@@ -179,7 +179,9 @@ gpu-cost.pages.dev, June 2026), which change often.
 
 ### What still fails, and why (`docs/FINAL_TEST_DIAGNOSIS.md`)
 Only 1 of 48 trained runs passes every mechanical check (all-checks success was also rare in the teacher's training
-data, 1 of 223, on other cases), and 20 of 48 stop before a recommendation. Several failures trace to behaviour the
+data, 1 of 223, on other cases), and 20 of 48 stop before a recommendation. One check is itself flawed: five of six predictions-overlap
+failures involved contrasting predictions that the checker incorrectly treated as identical. This does not establish
+that the experiments were otherwise sound. The frozen numbers are reported as computed. Several failures trace to behaviour the
 training data never showed:
 - **Never declining a test.** No training example declines one. The labels need care: for Aquaporin, declining
   follows from its insolvency and bankruptcy, recorded in the dossier, yet **no run of either arm found those records**

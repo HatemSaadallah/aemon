@@ -135,8 +135,10 @@ class Factory:
         held_out: Sequence[Json] = (),
         stages: Sequence[str | None] = (),
         sources: Sequence[str] = (),
+        init_adapter: str | None = None,
     ) -> None:
         self.model_path, self.limit, self.resume, self.callbacks, self.held_out, self.stages = model_path, limit, resume, callbacks, held_out, stages
+        self.init_adapter = init_adapter
         self.sources, self.supervised = sources, {}
         self.refused, self.refused_validation = {}, {}
 
@@ -169,6 +171,12 @@ class Factory:
             sets.setdefault(company_of(row['case']), []).append(made)
         self.trained_rows, self.validation_rows = len(rows), len(held)
         base = AutoModelForCausalLM.from_pretrained(self.model_path, dtype=torch.bfloat16, device_map={'': 0})
+        lora: LoraConfig | None = LoraConfig(r=16, lora_alpha=32, lora_dropout=0.05, target_modules=TARGETS, task_type='CAUSAL_LM')
+        if self.init_adapter:  # a continuation: train the existing adapter further instead of a fresh one
+            from peft import PeftModel
+
+            base = PeftModel.from_pretrained(base, self.init_adapter, is_trainable=True)  # type: ignore[assignment]
+            lora = None
         from datasets import Dataset
 
         config = SFTConfig(remove_unused_columns=False, dataset_kwargs={'skip_prepare_dataset': True}, **kwargs)
@@ -178,7 +186,7 @@ class Factory:
             train_dataset=Dataset.from_list(rows),
             eval_dataset=Dataset.from_list(held) if held else None,
             processing_class=tokenizer,
-            peft_config=LoraConfig(r=16, lora_alpha=32, lora_dropout=0.05, target_modules=TARGETS, task_type='CAUSAL_LM'),
+            peft_config=lora,
             data_collator=self.collate,
             callbacks=self.callbacks,
         )
@@ -242,6 +250,7 @@ def main() -> None:
     parser.add_argument('--validation-rows-per-company', type=int, default=40, help='evenly spaced, 0 for all')
     parser.add_argument('--extra-rows', help='rows of another source, such as recovery corrections from strategy.correct')
     parser.add_argument('--extra-token-share', type=float, default=0.2, help='at most this share of supervised target tokens comes from the extra rows')
+    parser.add_argument('--init-adapter', help='continue training this LoRA adapter instead of starting a fresh one')
     parser.add_argument('--stages', nargs='*', default=[], help='a specialist: train and validate only on rows from these stages, such as test')
     args = parser.parse_args()
     signal.signal(signal.SIGUSR1, lambda *_: STOP.update(requested=True))
@@ -275,7 +284,14 @@ def main() -> None:
         args.max_steps = max(1, int(-(-len(rows) * args.epochs // (args.batch * args.accumulate))))
     demos = [{'prompt': json.dumps(r['messages'][: r['target_index']]), 'response': r['messages'][r['target_index']]['content']} for r in rows]
     factory = Factory(
-        args.model, args.max_length, resume, [Deadline(args.minutes)], held, [r.get('stage') for r in rows], [r.get('source', 'teacher') for r in rows]
+        args.model,
+        args.max_length,
+        resume,
+        [Deadline(args.minutes)],
+        held,
+        [r.get('stage') for r in rows],
+        [r.get('source', 'teacher') for r in rows],
+        init_adapter=args.init_adapter,
     )
     evaluation: dict[str, Any] = (
         dict(eval_strategy='steps', eval_steps=args.save_steps, load_best_model_at_end=True, metric_for_best_model='eval_loss', greater_is_better=False)
