@@ -31,5 +31,5 @@ bear on a theory, and there is no recovery from rereading or from citing simulat
 found the insolvency recorded in its dossier. Four companies support only a limited claim about generalisation; the
 improvement plan targets these gaps, to be measured on fresh companies.
 
-Code: https://github.com/HatemSaadallah/lexsi-strategy-agent. Models, data and traces: Hugging Face collection
+Code: https://github.com/HatemSaadallah/aemon. Models, data and traces: Hugging Face collection
 (link to follow).
