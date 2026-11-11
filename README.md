@@ -386,9 +386,13 @@ was selected on test set 2, but that set had been run before.
   alone (1.43 against 1.48), so on this set the switching adds nothing over version 3.
 - The status check costs about 0.15 (combined minus dig −0.15 [−0.35, 0.06]) and six finished runs.
 - The two judges rank the runs alike (Spearman 0.90 over 360 runs).
-- The same arms were also run on the final test (secondary, and labelled, since Aquaporin informed the status
-  check). Their blind judging was still in progress when this was written; the result will be added here and in
-  `docs/DECISIONS.md`.
+- **On the final test the picture reverses** (secondary and labelled, since Aquaporin informed the status check; 48
+  runs per arm, 231 packets, Claude Code judge only so far, the second judge pending): version 1 1.18, dig then reason
+  1.13, version 3 1.06, combined 1.03, base 0.54. No trained arm is distinguishable from version 1 there (combined
+  −0.15 [−0.32, 0.01], dig −0.06 [−0.23, 0.12], version 3 −0.12 [−0.27, 0.02]), and most of each gap is Aquaporin.
+- **Reading across both sets:** version 1 is the evaluated model and nothing built after it is shown to beat it on
+  both. Dig then reason is the most consistent of the later systems (clearly higher on test set 2, level on the final
+  test); the status check fixes what it was built for and costs finished runs.
 
 ### A recovery controller does not fix the remaining failures (`docs/RECOVERY_REPORT.md`)
 We tested five controller-side recovery aids, on development cases only and with a pre-registered selection rule:

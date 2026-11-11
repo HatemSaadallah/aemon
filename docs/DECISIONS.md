@@ -1488,3 +1488,13 @@ Hatem: "keep them as they are and publish them". The public build (`scripts/rele
 cuts dossier excerpts to one short quote; the public dossier is byte-identical to the private one, so public runs read
 what the evaluated runs read and the frozen digests apply. Personal and internal identifiers are still replaced, and the
 third-party papers stay out. The Hugging Face dataset published on 2026-11-08 still has the cut excerpts.
+
+## 2026-11-11 (23:45): the combined system on the final test, Claude Code judge (secondary, labelled; gpt-6-sol pending)
+
+231 packets from 240 runs, all valid. Claude Code judge, 48 runs per arm: base 0.54, v1 1.18, dig 1.13, v3 1.06,
+combined 1.03. Paired, 95% case-cluster bootstrap: combined minus v1 -0.15 [-0.32, 0.01] (aqp -0.48, rational -0.23,
+epro -0.06, simo +0.18); dig minus v1 -0.06 [-0.23, 0.12]; combined minus v3 -0.03 [-0.18, 0.14]; combined minus dig
+-0.09 [-0.30, 0.12]; v3 minus v1 -0.12 [-0.27, 0.02]; v1 minus base +0.64 [0.49, 0.78] (the API judge gave +0.64 on
+the frozen campaign). gpt-6-sol stands at 68 of 231 on the Codex usage limit and retries hourly; the two-judge numbers
+replace these when it ends. Reading: no later system is distinguishable from version 1 on the final test, and on test
+set 2 version 3 and dig are higher; nothing built after version 1 is shown better on both sets.
