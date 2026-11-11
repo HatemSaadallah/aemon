@@ -981,7 +981,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -1207,7 +1207,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -1434,7 +1434,7 @@
      "theory_id": "T1",
      "evidence_id": "beach-2016-provision",
      "direction": "contradicts",
-     "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+     "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
      "class": "verified_observation",
      "evidence_kind": "company_assertion",
      "does_not_show": "The evidence does not show whether this behaviour change translates into long-term hearing protection or if it is sustainable over time."
@@ -1656,7 +1656,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -1790,7 +1790,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -1800,7 +1800,7 @@
       "theory_id": "T1",
       "evidence_id": "beach-2016-provision",
       "direction": "contradicts",
-      "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The evidence does not show whether this behaviour change translates into long-term hearing protection or if it is sustainable over time."
      },
@@ -1963,7 +1963,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -2037,12 +2037,12 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"contradicts\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The evidence does not show whether this behaviour change translates into long-term hearing protection or if it is sustainable over time.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"contradicts\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The evidence does not show whether this behaviour change translates into long-term hearing protection or if it is sustainable over time.\"\n  }\n}",
      "prompt_tokens": 4746,
      "completion_tokens": 140,
      "seconds": 2.300984781999432,
@@ -2505,7 +2505,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -2610,7 +2610,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -2919,7 +2919,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -2984,7 +2984,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -3281,7 +3281,7 @@
      "theory_id": "T1",
      "evidence_id": "beach-2016-provision",
      "direction": "contradicts",
-     "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+     "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
      "class": "verified_observation",
      "evidence_kind": "company_assertion",
      "does_not_show": "The evidence does not show whether this behaviour change translates into long-term hearing protection or if it is sustainable over time."
@@ -3290,7 +3290,7 @@
      "theory_id": "T2",
      "evidence_id": "ramakers-2016-rct",
      "direction": "supports",
-     "quote": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …",
+     "quote": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with 22 of 52 ears (42%) in the unprotected group (P < .001).",
      "class": "verified_observation",
      "evidence_kind": "independent_study",
      "does_not_show": "The evidence does not show whether the effectiveness of earplugs translates into long-term hearing protection or if it is sustainable over time."
@@ -3299,7 +3299,7 @@
      "theory_id": "T3",
      "evidence_id": "ramakers-2016-rct",
      "direction": "supports",
-     "quote": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …",
+     "quote": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with 22 of 52 ears (42%) in the unprotected group (P < .001).",
      "class": "verified_observation",
      "evidence_kind": "independent_study",
      "does_not_show": "The evidence does not show whether the effectiveness of earplugs translates into long-term hearing protection or if it is sustainable over time."
@@ -3542,7 +3542,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -3601,7 +3601,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/27054284/",
       "date": "2016-06-01",
       "geography": "unknown",
-      "excerpt": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …",
+      "excerpt": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with 22 of 52 ears (42%) in the unprotected group (P < .001).",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -3704,7 +3704,7 @@
       "theory_id": "T1",
       "evidence_id": "beach-2016-provision",
       "direction": "contradicts",
-      "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The evidence does not show whether this behaviour change translates into long-term hearing protection or if it is sustainable over time."
      },
@@ -3720,7 +3720,7 @@
       "theory_id": "T2",
       "evidence_id": "ramakers-2016-rct",
       "direction": "supports",
-      "quote": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …",
+      "quote": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with 22 of 52 ears (42%) in the unprotected group (P < .001).",
       "evidence_kind": "independent_study",
       "does_not_show": "The evidence does not show whether the effectiveness of earplugs translates into long-term hearing protection or if it is sustainable over time."
      },
@@ -3736,7 +3736,7 @@
       "theory_id": "T3",
       "evidence_id": "ramakers-2016-rct",
       "direction": "supports",
-      "quote": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …",
+      "quote": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with 22 of 52 ears (42%) in the unprotected group (P < .001).",
       "evidence_kind": "independent_study",
       "does_not_show": "The evidence does not show whether the effectiveness of earplugs translates into long-term hearing protection or if it is sustainable over time."
      },
@@ -3955,7 +3955,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -3989,7 +3989,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/27054284/",
       "date": "2016-06-01",
       "geography": "unknown",
-      "excerpt": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …",
+      "excerpt": "A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with 22 of 52 ears (42%) in the unprotected group (P < .001).",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -4043,7 +4043,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"contradicts\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The evidence does not show whether this behaviour change translates into long-term hearing protection or if it is sustainable over time.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"contradicts\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The evidence does not show whether this behaviour change translates into long-term hearing protection or if it is sustainable over time.\"\n  }\n}",
      "prompt_tokens": 4894,
      "completion_tokens": 140,
      "seconds": 2.319702757995401,
@@ -4053,7 +4053,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"ramakers-2016-rct\",\n    \"direction\": \"supports\",\n    \"quote\": \"A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …\",\n    \"evidence_kind\": \"independent_study\",\n    \"does_not_show\": \"The evidence does not show whether the effectiveness of earplugs translates into long-term hearing protection or if it is sustainable over time.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"ramakers-2016-rct\",\n    \"direction\": \"supports\",\n    \"quote\": \"A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with 22 of 52 ears (42%) in the unprotected group (P < .001).\",\n    \"evidence_kind\": \"independent_study\",\n    \"does_not_show\": \"The evidence does not show whether the effectiveness of earplugs translates into long-term hearing protection or if it is sustainable over time.\"\n  }\n}",
      "prompt_tokens": 5083,
      "completion_tokens": 157,
      "seconds": 2.634416490996955,
@@ -4063,7 +4063,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"ramakers-2016-rct\",\n    \"direction\": \"supports\",\n    \"quote\": \"A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with …\",\n    \"evidence_kind\": \"independent_study\",\n    \"does_not_show\": \"The evidence does not show whether the effectiveness of earplugs translates into long-term hearing protection or if it is sustainable over time.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"ramakers-2016-rct\",\n    \"direction\": \"supports\",\n    \"quote\": \"A TTS over frequencies at 3 and 4 kHz after exposure was seen in 4 of 50 ears (8%) in the earplug group compared with 22 of 52 ears (42%) in the unprotected group (P < .001).\",\n    \"evidence_kind\": \"independent_study\",\n    \"does_not_show\": \"The evidence does not show whether the effectiveness of earplugs translates into long-term hearing protection or if it is sustainable over time.\"\n  }\n}",
      "prompt_tokens": 5289,
      "completion_tokens": 157,
      "seconds": 2.5889610550002544,
@@ -4285,7 +4285,7 @@
      "theory_id": "T2",
      "evidence_id": "beach-2016-provision",
      "direction": "supports",
-     "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+     "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
      "class": "verified_observation",
      "evidence_kind": "market_fact",
      "does_not_show": "The evidence does not show whether the earplugs are effective in preventing hearing damage or whether they are perceived as a necessary or desirable product by young adults."
@@ -4535,7 +4535,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -4607,7 +4607,7 @@
       "theory_id": "T2",
       "evidence_id": "beach-2016-provision",
       "direction": "supports",
-      "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "evidence_kind": "market_fact",
       "does_not_show": "The evidence does not show whether the earplugs are effective in preventing hearing damage or whether they are perceived as a necessary or desirable product by young adults."
      },
@@ -4721,7 +4721,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -4753,7 +4753,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"supports\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. …\",\n    \"evidence_kind\": \"market_fact\",\n    \"does_not_show\": \"The evidence does not show whether the earplugs are effective in preventing hearing damage or whether they are perceived as a necessary or desirable product by young adults.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"supports\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.\",\n    \"evidence_kind\": \"market_fact\",\n    \"does_not_show\": \"The evidence does not show whether the earplugs are effective in preventing hearing damage or whether they are perceived as a necessary or desirable product by young adults.\"\n  }\n}",
      "prompt_tokens": 3854,
      "completion_tokens": 147,
      "seconds": 2.4153555860029883,
@@ -5113,7 +5113,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -5270,7 +5270,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -5642,7 +5642,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -5799,7 +5799,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -6173,7 +6173,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -6214,7 +6214,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -6412,7 +6412,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -6437,7 +6437,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -6880,7 +6880,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -7008,7 +7008,7 @@
       "url": "https://www.fox9.com/news/3m-settlement-payments-veterans-service-members-2024",
       "date": "2024-01-18",
       "geography": "unknown",
-      "excerpt": "Hundreds of thousands of veterans and current service members sued 3M and Aearo Technologies, a company that 3M acquired in 2008, over their Combat Arms \u2026",
+      "excerpt": "Hundreds of thousands of veterans and current service members sued 3M and Aearo Technologies, a company that 3M acquired in 2008, over their Combat Arms Earplug products. The service members alleged that a defective design allowed the products \u2014 which were intended to protect ears from close range firearms and other loud noises \u2014 to loosen slightly and allow hearing damage.",
       "access_limitation": "none"
      }
     },
@@ -7161,7 +7161,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -7239,7 +7239,7 @@
       "url": "https://www.fox9.com/news/3m-settlement-payments-veterans-service-members-2024",
       "date": "2024-01-18",
       "geography": "unknown",
-      "excerpt": "Hundreds of thousands of veterans and current service members sued 3M and Aearo Technologies, a company that 3M acquired in 2008, over their Combat Arms \u2026",
+      "excerpt": "Hundreds of thousands of veterans and current service members sued 3M and Aearo Technologies, a company that 3M acquired in 2008, over their Combat Arms Earplug products. The service members alleged that a defective design allowed the products \u2014 which were intended to protect ears from close range firearms and other loud noises \u2014 to loosen slightly and allow hearing damage.",
       "access_limitation": "none"
      }
     },
@@ -7467,7 +7467,7 @@
      "theory_id": "T1",
      "evidence_id": "sonova-2019-swiss-free-plugs",
      "direction": "supports",
-     "quote": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 …",
+     "quote": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 dB(A). Even so, only 11% of Swiss survey respondents always wear ear protection when visiting places with loud music, 32% sometimes, and 57% never.",
      "class": "company_claim",
      "evidence_kind": "company_assertion",
      "does_not_show": "The theory does not address the potential for increased demand for hearing protection products targeting music events."
@@ -7698,7 +7698,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -7920,7 +7920,7 @@
       "url": "https://www.sonova.com/dulcet-tones-or-party-till-your-ears-ring/",
       "date": "2019-07-23",
       "geography": "Switzerland",
-      "excerpt": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 …",
+      "excerpt": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 dB(A). Even so, only 11% of Swiss survey respondents always wear ear protection when visiting places with loud music, 32% sometimes, and 57% never.",
       "access_limitation": "Company-published. Survey methods not on page"
      }
     },
@@ -7930,7 +7930,7 @@
       "theory_id": "T1",
       "evidence_id": "sonova-2019-swiss-free-plugs",
       "direction": "supports",
-      "quote": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 …",
+      "quote": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 dB(A). Even so, only 11% of Swiss survey respondents always wear ear protection when visiting places with loud music, 32% sometimes, and 57% never.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The theory does not address the potential for increased demand for hearing protection products targeting music events."
      },
@@ -8126,7 +8126,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -8252,12 +8252,12 @@
       "url": "https://www.sonova.com/dulcet-tones-or-party-till-your-ears-ring/",
       "date": "2019-07-23",
       "geography": "Switzerland",
-      "excerpt": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 …",
+      "excerpt": "This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 dB(A). Even so, only 11% of Swiss survey respondents always wear ear protection when visiting places with loud music, 32% sometimes, and 57% never.",
       "access_limitation": "Company-published. Survey methods not on page"
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"sonova-2019-swiss-free-plugs\",\n    \"direction\": \"supports\",\n    \"quote\": \"This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not address the potential for increased demand for hearing protection products targeting music events.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"sonova-2019-swiss-free-plugs\",\n    \"direction\": \"supports\",\n    \"quote\": \"This may be because event promoters in Switzerland are obliged to hand out free ear protection if the average hourly noise level rises above 93 dB(A). Even so, only 11% of Swiss survey respondents always wear ear protection when visiting places with loud music, 32% sometimes, and 57% never.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not address the potential for increased demand for hearing protection products targeting music events.\"\n  }\n}",
      "prompt_tokens": 5736,
      "completion_tokens": 162,
      "seconds": 2.631036357000994,
@@ -8494,7 +8494,7 @@
      "theory_id": "T1",
      "evidence_id": "beach-2016-provision",
      "direction": "supports",
-     "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+     "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
      "class": "verified_observation",
      "evidence_kind": "company_assertion",
      "does_not_show": "The theory does not address the potential for increased demand for hearing protection products targeting music events."
@@ -8503,7 +8503,7 @@
      "theory_id": "T2",
      "evidence_id": "beach-2016-provision",
      "direction": "supports",
-     "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+     "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
      "class": "verified_observation",
      "evidence_kind": "company_assertion",
      "does_not_show": "The theory does not address the potential for increased demand for hearing protection products targeting music events."
@@ -8738,7 +8738,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -8832,7 +8832,7 @@
       "theory_id": "T1",
       "evidence_id": "beach-2016-provision",
       "direction": "supports",
-      "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The theory does not address the potential for increased demand for hearing protection products targeting music events."
      },
@@ -8870,7 +8870,7 @@
       "theory_id": "T2",
       "evidence_id": "beach-2016-provision",
       "direction": "supports",
-      "quote": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "quote": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The theory does not address the potential for increased demand for hearing protection products targeting music events."
      },
@@ -8982,7 +8982,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -9043,7 +9043,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"supports\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not address the potential for increased demand for hearing protection products targeting music events.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"supports\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not address the potential for increased demand for hearing protection products targeting music events.\"\n  }\n}",
      "prompt_tokens": 4091,
      "completion_tokens": 134,
      "seconds": 2.2412866520026,
@@ -9062,7 +9062,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"supports\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not address the potential for increased demand for hearing protection products targeting music events.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"beach-2016-provision\",\n    \"direction\": \"supports\",\n    \"quote\": \"This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not address the potential for increased demand for hearing protection products targeting music events.\"\n  }\n}",
      "prompt_tokens": 4589,
      "completion_tokens": 134,
      "seconds": 2.4633947200054536,
@@ -9262,7 +9262,7 @@
      "theory_id": "T4",
      "evidence_id": "aap-2023-children",
      "direction": "supports",
-     "quote": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+     "quote": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
      "class": "verified_observation",
      "evidence_kind": "independent_study",
      "does_not_show": "The theory does not address the potential for increased demand for hearing protection products targeting sleeping and flying."
@@ -9484,7 +9484,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -9591,7 +9591,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -9672,7 +9672,7 @@
       "theory_id": "T4",
       "evidence_id": "aap-2023-children",
       "direction": "supports",
-      "quote": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "quote": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "evidence_kind": "independent_study",
       "does_not_show": "The theory does not address the potential for increased demand for hearing protection products targeting sleeping and flying."
      },
@@ -9864,7 +9864,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/25662567/",
       "date": "2016-06 (Epub 2015-02-06)",
       "geography": "unknown",
-      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. …",
+      "excerpt": "This suggests that the information was unnecessary to motivate behavioural change. Rather, the simple act of providing access to earplugs appears to have effectively encouraged young at-risk adults to increase their earplug use.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -9929,7 +9929,7 @@
       "url": "https://pubmed.ncbi.nlm.nih.gov/37864408/",
       "date": "2023-11-01",
       "geography": "unknown",
-      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …",
+      "excerpt": "Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.",
       "access_limitation": "PubMed abstract read; full text not read"
      }
     },
@@ -9977,7 +9977,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T4\",\n    \"evidence_id\": \"aap-2023-children\",\n    \"direction\": \"supports\",\n    \"quote\": \"Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, …\",\n    \"evidence_kind\": \"independent_study\",\n    \"does_not_show\": \"The theory does not address the potential for increased demand for hearing protection products targeting sleeping and flying.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T4\",\n    \"evidence_id\": \"aap-2023-children\",\n    \"direction\": \"supports\",\n    \"quote\": \"Infants and young children cannot remove themselves from noisy situations and must rely on adults to do so, children may not recognize hazardous noise exposures, and teenagers generally do not understand the consequences of high exposure to music from personal listening devices or attending concerts and dances.\",\n    \"evidence_kind\": \"independent_study\",\n    \"does_not_show\": \"The theory does not address the potential for increased demand for hearing protection products targeting sleeping and flying.\"\n  }\n}",
      "prompt_tokens": 5134,
      "completion_tokens": 147,
      "seconds": 2.3449006950031617,

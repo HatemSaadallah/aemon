@@ -76,13 +76,13 @@ Answers: 107 (107 valid replies, 0 request failures); kept by the gates: 27 (10 
 
 **Sources read (dossier date):** koppert-agro-ban (2017-04-06), koppert-lo-canada (2007-03-14), koppert-martha-visit (2018-01 (from URL)), koppert-wsu-shipped (2017-07 (as printed))
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "koppert-lo-canada", "direction": "supports", "quote": "Koppert Canada Limited is a subsidiary of Koppert BV, providing a full complement of biological controls and natural pollination products to both the professional grower …", "evidence_kind": "independent_study", "does_not_show": "The source does not provide data on home gardener purchase intent, willingness to pay, or actual adoption rates."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "koppert-lo-canada", "direction": "supports", "quote": "Koppert Canada Limited is a subsidiary of Koppert BV, providing a full complement of biological controls and natural pollination products to both the professional grower and the home gardening enthusiast.", "evidence_kind": "independent_study", "does_not_show": "The source does not provide data on home gardener purchase intent, willingness to pay, or actual adoption rates."}
 
 **Why it was wrong:** labelled koppert-lo-canada as independent_study; the annotation (v1) says market_fact
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "koppert-wsu-shipped", "direction": "supports", "quote": "Adult beetles, which congregate in the fall, are collected from their native habitat, placed under prolonged hibernation, and shipped to farmers and home gardeners alike …", "evidence_kind": "independent_study", "does_not_show": "It does not show home gardeners' purchase intent or willingness to pay a premium; it only describes the distribution mechanism."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "koppert-wsu-shipped", "direction": "supports", "quote": "Adult beetles, which congregate in the fall, are collected from their native habitat, placed under prolonged hibernation, and shipped to farmers and home gardeners alike in the spring.", "evidence_kind": "independent_study", "does_not_show": "It does not show home gardeners' purchase intent or willingness to pay a premium; it only describes the distribution mechanism."}
 
 **Teacher, learned:** We have read four sources about Koppert and biological controls for home gardeners. The sources show Koppert already serves home gardeners (Koppert Canada), provides ready-to-use lady beetles (WSU), offers bespoke consultation for high-profile gardeners (Martha Stewart), and faces regulatory bans on chemical pesticides for amateurs (AgroPages). These give us evidence on current offerings, distribution, perceived value, and regulatory context.
 
@@ -719,13 +719,13 @@ Answers: 107 (107 valid replies, 0 request failures); kept by the gates: 27 (10 
 
 **Sources read (dossier date):** sigvaris-about (unknown (accessed 2026-11-03)), sigvaris-medical-grade-worth (unknown (accessed 2026-11-03)), sigvaris-mordor-cep (2025-09-12), sigvaris-mordor-channels (2025-09-12), sigvaris-mordor-cost (2025-09-12), sigvaris-review-travel (2026-09-13), sigvaris-travel-claim (unknown (accessed 2026-11-03))
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "sigvaris-review-travel", "direction": "supports", "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …", "evidence_kind": "company_assertion", "does_not_show": "The review does not quantify demand, willingness to pay, or the size of the travel market; it only describes personal experience."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "sigvaris-review-travel", "direction": "supports", "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. Every sock I tried was always scratchy and uncomfortable.", "evidence_kind": "company_assertion", "does_not_show": "The review does not quantify demand, willingness to pay, or the size of the travel market; it only describes personal experience."}
 
 **Why it was wrong:** labelled sigvaris-review-travel as company_assertion; the annotation (v1) says customer_observation
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "sigvaris-review-travel", "direction": "supports", "quote": "\"I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …\"", "evidence_kind": "customer_observation", "does_not_show": "The quote does not confirm that the reviewer perceives compression as a health benefit beyond DVT prevention, nor does it show willingness to pay a premium price for improved comfort or medical‑grade features."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "sigvaris-review-travel", "direction": "supports", "quote": "\"I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. Every sock I tried was always scratchy and uncomfortable.\"", "evidence_kind": "customer_observation", "does_not_show": "The quote does not confirm that the reviewer perceives compression as a health benefit beyond DVT prevention, nor does it show willingness to pay a premium price for improved comfort or medical‑grade features."}
 
 **Teacher, learned:** We have read seven sources about SIGVARIS and the compression market. The most relevant for T1 is a customer review describing personal use of compression socks for travel, which illustrates non‑medical adoption driven by health concerns (DVT prevention).
 

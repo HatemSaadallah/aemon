@@ -211,8 +211,8 @@ The job scripts in `jobs/` run each stage on a Slurm cluster with A100 GPUs; set
 5. Judging: `python -m aemon.evaluation.judging.packets`, `src/aemon/evaluation/judging/judge_v1/run_campaign.py`,
    `python -m aemon.evaluation.judging.report`. All reports are in `reports/judge/`.
 
-The dossier in this repository keeps each record's source, URL and date with a short quote (its first sentence, at
-most 25 words), so runs read shorter excerpts than the originals.
+The dossier in this repository is the one the evaluated runs read: each record keeps its source, URL and date with
+the excerpt the agent quotes from.
 
 ## Licence
 

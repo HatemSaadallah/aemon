@@ -1363,7 +1363,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -1676,7 +1676,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -2127,7 +2127,7 @@
      "theory_id": "T2",
      "evidence_id": "sil-owner",
      "direction": "supports",
-     "quote": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+     "quote": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.",
      "class": "verified_observation",
      "evidence_kind": "company_assertion",
      "does_not_show": "The source does not show the company's existing customer base or product offerings."
@@ -2256,7 +2256,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -2302,7 +2302,7 @@
       "url": "https://mergr.com/company/silenta-group",
       "date": "2018-12-17 (deal date listed)",
       "geography": "unknown",
-      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.",
       "access_limitation": "Commercial directory with a login wall for fuller data. Not a registry."
      }
     },
@@ -2412,7 +2412,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -2461,7 +2461,7 @@
       "theory_id": "T2",
       "evidence_id": "sil-owner",
       "direction": "supports",
-      "quote": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+      "quote": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The source does not show the company's existing customer base or product offerings."
      },
@@ -2733,7 +2733,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -2777,7 +2777,7 @@
       "url": "https://mergr.com/company/silenta-group",
       "date": "2018-12-17 (deal date listed)",
       "geography": "unknown",
-      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.",
       "access_limitation": "Commercial directory with a login wall for fuller data. Not a registry."
      }
     },
@@ -2868,7 +2868,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -2894,7 +2894,7 @@
      }
     },
     {
-     "text": "{\n  \"analysis\": \"The theory 'T2' has been added, and its relationship with the sources read is being assessed. I will use the assess_evidence tool to analyze the sources and extract key insights. The sources read are a company claim, a verified observation, and a company claim. The company claim provides context about Moldex's identity, while the observations highlight its market reach and ownership structure. The\",\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"sil-owner\",\n    \"direction\": \"supports\",\n    \"quote\": \"Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not show the company's existing customer base or product offerings.\"\n  }\n}",
+     "text": "{\n  \"analysis\": \"The theory 'T2' has been added, and its relationship with the sources read is being assessed. I will use the assess_evidence tool to analyze the sources and extract key insights. The sources read are a company claim, a verified observation, and a company claim. The company claim provides context about Moldex's identity, while the observations highlight its market reach and ownership structure. The\",\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"sil-owner\",\n    \"direction\": \"supports\",\n    \"quote\": \"Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not show the company's existing customer base or product offerings.\"\n  }\n}",
      "thinking": null,
      "prompt_tokens": 5530,
      "completion_tokens": 206,
@@ -3326,7 +3326,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -3372,7 +3372,7 @@
       "url": "https://mergr.com/company/silenta-group",
       "date": "2018-12-17 (deal date listed)",
       "geography": "unknown",
-      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.",
       "access_limitation": "Commercial directory with a login wall for fuller data. Not a registry."
      }
     },
@@ -3482,7 +3482,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -3691,7 +3691,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -3735,7 +3735,7 @@
       "url": "https://mergr.com/company/silenta-group",
       "date": "2018-12-17 (deal date listed)",
       "geography": "unknown",
-      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.",
       "access_limitation": "Commercial directory with a login wall for fuller data. Not a registry."
      }
     },
@@ -3826,7 +3826,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -4286,7 +4286,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -4332,7 +4332,7 @@
       "url": "https://mergr.com/company/silenta-group",
       "date": "2018-12-17 (deal date listed)",
       "geography": "unknown",
-      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.",
       "access_limitation": "Commercial directory with a login wall for fuller data. Not a registry."
      }
     },
@@ -4390,7 +4390,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -4728,7 +4728,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -4772,7 +4772,7 @@
       "url": "https://mergr.com/company/silenta-group",
       "date": "2018-12-17 (deal date listed)",
       "geography": "unknown",
-      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. …",
+      "excerpt": "Silenta Group manufactures and develops hearing protection for the needs of industry, defense forces and leisure. The most important product families are passive hearing protection, communication hearing protection and children's hearing protection.",
       "access_limitation": "Commercial directory with a login wall for fuller data. Not a registry."
      }
     },
@@ -4826,7 +4826,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -5357,7 +5357,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -5716,7 +5716,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -6173,7 +6173,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -6546,7 +6546,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -7124,7 +7124,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -7457,7 +7457,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -7907,7 +7907,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -8045,7 +8045,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -8288,7 +8288,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -8379,7 +8379,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -8790,7 +8790,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -9199,7 +9199,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -9726,7 +9726,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -9744,7 +9744,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -9762,7 +9762,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -9959,7 +9959,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -9976,7 +9976,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -9993,7 +9993,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -10319,7 +10319,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10337,7 +10337,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -10355,7 +10355,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -10457,7 +10457,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10475,7 +10475,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10493,7 +10493,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10511,7 +10511,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10529,7 +10529,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10547,7 +10547,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10565,7 +10565,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10583,7 +10583,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10601,7 +10601,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10619,7 +10619,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10637,7 +10637,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     }
@@ -10710,7 +10710,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10727,7 +10727,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -10744,7 +10744,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -10801,7 +10801,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10818,7 +10818,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10835,7 +10835,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10852,7 +10852,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10869,7 +10869,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10886,7 +10886,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10903,7 +10903,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10920,7 +10920,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10937,7 +10937,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10954,7 +10954,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -10971,7 +10971,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     }
@@ -11232,7 +11232,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -11250,7 +11250,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -11268,7 +11268,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -11465,7 +11465,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -11482,7 +11482,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -11499,7 +11499,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -11825,7 +11825,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -11843,7 +11843,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -11861,7 +11861,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -11963,7 +11963,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -11981,7 +11981,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -11999,7 +11999,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12017,7 +12017,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12035,7 +12035,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12053,7 +12053,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12071,7 +12071,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12089,7 +12089,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12107,7 +12107,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12125,7 +12125,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12143,7 +12143,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     }
@@ -12216,7 +12216,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12233,7 +12233,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -12250,7 +12250,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -12307,7 +12307,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12324,7 +12324,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12341,7 +12341,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12358,7 +12358,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12375,7 +12375,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12392,7 +12392,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12409,7 +12409,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12426,7 +12426,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12443,7 +12443,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12460,7 +12460,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12477,7 +12477,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     }
@@ -12738,7 +12738,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12756,7 +12756,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -12774,7 +12774,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -12971,7 +12971,7 @@
       "url": "https://www.hultaforsgroup.com/our-brands/hellberg-safety",
       "date": "unknown",
       "geography": "Europe",
-      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself \u2026",
+      "excerpt": "With a commitment to innovative design and advanced technology, Hellberg aims to provide users with \u201cPeace of Mind\u201d through comfortable and safe products, positioning itself to become one of the top three head protection brands in Europe.",
       "access_limitation": "none"
      }
     },
@@ -12988,7 +12988,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -13005,7 +13005,7 @@
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
       "geography": "Sweden (headquarters); claimed presence in 50 markets",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },

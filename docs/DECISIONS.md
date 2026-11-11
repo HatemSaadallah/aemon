@@ -1481,3 +1481,10 @@ no judgment missing. Mean of judges: base 0.56, v1 1.07, combined 1.28, dig 1.43
   stand. The final-test packets (secondary, labelled) are still being judged.
 - A full disk at 23:04 (a local container build) stopped both judges; 3 gpt-6-sol and 4 Claude Code attempts written
   empty were archived as `*_archived_disk_full` and rerun. No completed judgment was affected.
+
+## 2026-11-11 (23:40): the public repository carries the dossier as it is
+
+Hatem: "keep them as they are and publish them". The public build (`scripts/release/build_public_repo.py`) no longer
+cuts dossier excerpts to one short quote; the public dossier is byte-identical to the private one, so public runs read
+what the evaluated runs read and the frozen digests apply. Personal and internal identifiers are still replaced, and the
+third-party papers stay out. The Hugging Face dataset published on 2026-11-08 still has the cut excerpts.

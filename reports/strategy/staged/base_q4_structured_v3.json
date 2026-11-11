@@ -866,7 +866,7 @@
      "theory_id": "T2",
      "evidence_id": "mdx-origin",
      "direction": "supports",
-     "quote": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+     "quote": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
      "class": "verified_observation",
      "evidence_kind": "company_assertion",
      "does_not_show": "The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection."
@@ -875,7 +875,7 @@
      "theory_id": "T3",
      "evidence_id": "uvx-sports",
      "direction": "supports",
-     "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+     "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
      "class": "company_claim",
      "evidence_kind": "company_assertion",
      "does_not_show": "The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection."
@@ -992,7 +992,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -1022,7 +1022,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -1052,7 +1052,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -1172,7 +1172,7 @@
       "theory_id": "T2",
       "evidence_id": "mdx-origin",
       "direction": "supports",
-      "quote": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "quote": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection."
      },
@@ -1189,7 +1189,7 @@
       "theory_id": "T3",
       "evidence_id": "uvx-sports",
       "direction": "supports",
-      "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection."
      },
@@ -1376,7 +1376,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -1401,7 +1401,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -1426,7 +1426,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -1486,7 +1486,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"mdx-origin\",\n    \"direction\": \"supports\",\n    \"quote\": \"Before long, Metric was creating molded cups for bras and bathing suits. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"mdx-origin\",\n    \"direction\": \"supports\",\n    \"quote\": \"Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection.\"\n  }\n}",
      "prompt_tokens": 4544,
      "completion_tokens": 145,
      "seconds": 2.4473560490005184,
@@ -1496,7 +1496,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"uvx-sports\",\n    \"direction\": \"supports\",\n    \"quote\": \"In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"uvx-sports\",\n    \"direction\": \"supports\",\n    \"quote\": \"In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection.\"\n  }\n}",
      "prompt_tokens": 4780,
      "completion_tokens": 148,
      "seconds": 2.5281550029976643,
@@ -1802,7 +1802,7 @@
      "theory_id": "T2",
      "evidence_id": "mdx-origin",
      "direction": "supports",
-     "quote": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+     "quote": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
      "class": "verified_observation",
      "evidence_kind": "company_assertion",
      "does_not_show": "The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection."
@@ -1811,7 +1811,7 @@
      "theory_id": "T3",
      "evidence_id": "uvx-sports",
      "direction": "supports",
-     "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+     "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
      "class": "company_claim",
      "evidence_kind": "company_assertion",
      "does_not_show": "The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection."
@@ -2183,7 +2183,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -2213,7 +2213,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -2243,7 +2243,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -2363,7 +2363,7 @@
       "theory_id": "T2",
       "evidence_id": "mdx-origin",
       "direction": "supports",
-      "quote": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "quote": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection."
      },
@@ -2380,7 +2380,7 @@
       "theory_id": "T3",
       "evidence_id": "uvx-sports",
       "direction": "supports",
-      "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection."
      },
@@ -3014,7 +3014,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -3039,7 +3039,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -3064,7 +3064,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -3124,7 +3124,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"mdx-origin\",\n    \"direction\": \"supports\",\n    \"quote\": \"Before long, Metric was creating molded cups for bras and bathing suits. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"mdx-origin\",\n    \"direction\": \"supports\",\n    \"quote\": \"Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection.\"\n  }\n}",
      "prompt_tokens": 4656,
      "completion_tokens": 145,
      "seconds": 2.466122935002204,
@@ -3134,7 +3134,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"uvx-sports\",\n    \"direction\": \"supports\",\n    \"quote\": \"In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"uvx-sports\",\n    \"direction\": \"supports\",\n    \"quote\": \"In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The source does not provide information on Moldex-Metric's consumer reach or product offerings beyond hearing and respiratory protection.\"\n  }\n}",
      "prompt_tokens": 4892,
      "completion_tokens": 148,
      "seconds": 2.442328875004023,
@@ -3703,7 +3703,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -3745,7 +3745,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -3775,7 +3775,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -3986,7 +3986,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -4020,7 +4020,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -4045,7 +4045,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -4380,7 +4380,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -4422,7 +4422,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -4452,7 +4452,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -4663,7 +4663,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -4697,7 +4697,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -4722,7 +4722,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -5008,7 +5008,7 @@
      "theory_id": "T2",
      "evidence_id": "mdx-origin",
      "direction": "supports",
-     "quote": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+     "quote": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
      "class": "verified_observation",
      "evidence_kind": "company_assertion",
      "does_not_show": "Current consumer reach or specific industry needs"
@@ -5017,7 +5017,7 @@
      "theory_id": "T3",
      "evidence_id": "uvx-sports",
      "direction": "supports",
-     "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+     "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
      "class": "company_claim",
      "evidence_kind": "company_assertion",
      "does_not_show": "Current consumer reach or specific industry needs"
@@ -5134,7 +5134,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -5164,7 +5164,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -5194,7 +5194,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -5314,7 +5314,7 @@
       "theory_id": "T2",
       "evidence_id": "mdx-origin",
       "direction": "supports",
-      "quote": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "quote": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "evidence_kind": "company_assertion",
       "does_not_show": "Current consumer reach or specific industry needs"
      },
@@ -5331,7 +5331,7 @@
       "theory_id": "T3",
       "evidence_id": "uvx-sports",
       "direction": "supports",
-      "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "quote": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "evidence_kind": "company_assertion",
       "does_not_show": "Current consumer reach or specific industry needs"
      },
@@ -5432,7 +5432,7 @@
       "theory_id": "T1",
       "evidence_id": "mdx-core",
       "direction": "supports",
-      "quote": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "quote": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "evidence_kind": "company_assertion",
       "does_not_show": "Current consumer reach or specific industry needs"
      },
@@ -5522,7 +5522,7 @@
       "url": "https://www.moldex.com/our-company/",
       "date": "unknown (page footer 2026)",
       "geography": "unknown",
-      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. \u2026",
+      "excerpt": "Moldex\u2019s expertise is hearing and respiratory protection to keep workers safer. This laser like focus results in an offering of innovative world class products.",
       "access_limitation": "none"
      }
     },
@@ -5547,7 +5547,7 @@
       "url": "https://www.woodworkersjournal.com/moldex-practicing-safe-hearing/",
       "date": "2005-11-22",
       "geography": "unknown",
-      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. …",
+      "excerpt": "Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.",
       "access_limitation": "Source is 21 years old. Current relationship to Metric Products is unverified."
      }
     },
@@ -5572,7 +5572,7 @@
       "url": "https://www.uvex-group.com/en/newsroom/presse/100-jahre-uvex/",
       "date": "2026-07-08",
       "geography": "unknown",
-      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …",
+      "excerpt": "In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.",
       "access_limitation": "none"
      }
     },
@@ -5632,7 +5632,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"mdx-origin\",\n    \"direction\": \"supports\",\n    \"quote\": \"Before long, Metric was creating molded cups for bras and bathing suits. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"Current consumer reach or specific industry needs\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T2\",\n    \"evidence_id\": \"mdx-origin\",\n    \"direction\": \"supports\",\n    \"quote\": \"Before long, Metric was creating molded cups for bras and bathing suits. Moldex, the safety division, was created in 1980, allowing the company to apply the molding and foam technology that they had developed to the field of worker safety.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"Current consumer reach or specific industry needs\"\n  }\n}",
      "prompt_tokens": 4659,
      "completion_tokens": 130,
      "seconds": 2.183487502996286,
@@ -5642,7 +5642,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"uvx-sports\",\n    \"direction\": \"supports\",\n    \"quote\": \"In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"Current consumer reach or specific industry needs\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"uvx-sports\",\n    \"direction\": \"supports\",\n    \"quote\": \"In the consumer sector, uvex has made a name for itself with sports and leisure products ranging from helmets for winter sports, cycling and equestrian sports, as well as riding gloves, to ski goggles, sports glasses and leisure sunglasses.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"Current consumer reach or specific industry needs\"\n  }\n}",
      "prompt_tokens": 4880,
      "completion_tokens": 133,
      "seconds": 2.281707173999166,
@@ -8418,7 +8418,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -9143,7 +9143,7 @@
       "url": "https://majunke.com/groupe-rg-acquires-cotral-lab-and-comu-systems-strengthening-its-expertise-and-reaffirming-its-independence-as-a-multi-brand-distributor",
       "date": "2025 (exact date not shown)",
       "geography": "unknown",
-      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 \u2026",
+      "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG \u2014 leader in the distribution of Personal Protective Equipment (PPE) for over 35 years \u2014 announces the acquisition of Cotral Lab, the world\u2019s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "access_limitation": "Trade site reprint of the Groupe RG press release. Original release not opened."
      }
     },
@@ -10398,7 +10398,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -10646,7 +10646,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -11016,7 +11016,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -11251,7 +11251,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -11621,7 +11621,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -11856,7 +11856,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -12226,7 +12226,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -12461,7 +12461,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -12950,7 +12950,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -13165,7 +13165,7 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6353150/",
       "date": "2017-07-07",
       "geography": "unknown",
-      "excerpt": "Two RCTs showed that, with instructions for insertion, the attenuation of noise by earplugs was 8.59 dB better (95% CI 6.92 dB to 10.25 dB) \u2026",
+      "excerpt": "Two RCTs showed that, with instructions for insertion, the attenuation of noise by earplugs was 8.59 dB better (95% CI 6.92 dB to 10.25 dB) compared to no instruction (2 RCTs, 140 participants, moderate\u2010quality evidence).",
       "access_limitation": "Abstract read on PMC; full review not read"
      }
     },
@@ -13531,7 +13531,7 @@
       "url": "https://www.safetysolutions.net.au/content/personal-protection-equipment/news/oz-based-pip-completes-honeywell-ppe-acquisition-424122068",
       "date": "unknown (2025)",
       "geography": "unknown",
-      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, \u2026",
+      "excerpt": "The combination broadens and strengthens PIP\u2019s head-to-toe protection offering, to cover worker safety, electrical safety, eye protection, fall protection, head protection, hearing protection, respiratory, footwear, first aid and first responder equipment.",
       "access_limitation": "none"
      }
     },
@@ -13666,7 +13666,7 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6353150/",
       "date": "2017-07-07",
       "geography": "unknown",
-      "excerpt": "Two RCTs showed that, with instructions for insertion, the attenuation of noise by earplugs was 8.59 dB better (95% CI 6.92 dB to 10.25 dB) \u2026",
+      "excerpt": "Two RCTs showed that, with instructions for insertion, the attenuation of noise by earplugs was 8.59 dB better (95% CI 6.92 dB to 10.25 dB) compared to no instruction (2 RCTs, 140 participants, moderate\u2010quality evidence).",
       "access_limitation": "Abstract read on PMC; full review not read"
      }
     },

@@ -324,7 +324,7 @@
      "theory_id": "T1",
      "evidence_id": "koppert-wsu-shipped",
      "direction": "supports",
-     "quote": "Adult beetles, which congregate in the fall, are collected from their native habitat, placed under prolonged hibernation, and shipped to farmers and home gardeners alike …",
+     "quote": "Adult beetles, which congregate in the fall, are collected from their native habitat, placed under prolonged hibernation, and shipped to farmers and home gardeners alike in the spring.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show home gardeners' purchase intent or willingness to pay a premium; it only describes the distribution mechanism."
     }
@@ -336,14 +336,14 @@
    },
    "decision_at_generation": "kept",
    "flags": [],
-   "teacher_reply_raw": "{\"learned\": \"We have read four sources about Koppert and biological controls for home gardeners. The sources show Koppert already serves home gardeners (Koppert Canada), provides ready-to-use lady beetles (WSU), offers bespoke consultation for high-profile gardeners (Martha Stewart), and faces regulatory bans on chemical pesticides for amateurs (AgroPages). These give us evidence on current offerings, distribution, perceived value, and regulatory context.\", \"uncertain\": \"We lack direct data on home gardener demand, willingness to pay, or competitive landscape. The sources are anecdotal or regulatory, not market research.\",\"why_next\":\"We need to weigh a source that directly touches on home gardener adoption motives to test our theories. The Martha Stewart visit describes a premium, personalized service, which can be used to assess the status-driven theory (T2). We will assess T1 with the WSU source on lady beetles, which highlights convenience of receiving ready-to-use biological controls. We will also add a third theory about regulatory pressure creating demand for biological alternatives, distinct from convenience or status motives.\",\"call\": {\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"koppert-wsu-shipped\", \"direction\": \"supports\", \"quote\": \"Adult beetles, which congregate in the fall, are collected from their native habitat, placed under prolonged hibernation, and shipped to farmers and home gardeners alike …\", \"evidence_kind\": \"independent_study\", \"does_not_show\": \"It does not show home gardeners' purchase intent or willingness to pay a premium; it only describes the distribution mechanism.\"}}}",
+   "teacher_reply_raw": "{\"learned\": \"We have read four sources about Koppert and biological controls for home gardeners. The sources show Koppert already serves home gardeners (Koppert Canada), provides ready-to-use lady beetles (WSU), offers bespoke consultation for high-profile gardeners (Martha Stewart), and faces regulatory bans on chemical pesticides for amateurs (AgroPages). These give us evidence on current offerings, distribution, perceived value, and regulatory context.\", \"uncertain\": \"We lack direct data on home gardener demand, willingness to pay, or competitive landscape. The sources are anecdotal or regulatory, not market research.\",\"why_next\":\"We need to weigh a source that directly touches on home gardener adoption motives to test our theories. The Martha Stewart visit describes a premium, personalized service, which can be used to assess the status-driven theory (T2). We will assess T1 with the WSU source on lady beetles, which highlights convenience of receiving ready-to-use biological controls. We will also add a third theory about regulatory pressure creating demand for biological alternatives, distinct from convenience or status motives.\",\"call\": {\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"koppert-wsu-shipped\", \"direction\": \"supports\", \"quote\": \"Adult beetles, which congregate in the fall, are collected from their native habitat, placed under prolonged hibernation, and shipped to farmers and home gardeners alike in the spring.\", \"evidence_kind\": \"independent_study\", \"does_not_show\": \"It does not show home gardeners' purchase intent or willingness to pay a premium; it only describes the distribution mechanism.\"}}}",
    "student_action": {
     "name": "assess_evidence",
     "arguments": {
      "theory_id": "T1",
      "evidence_id": "koppert-lo-canada",
      "direction": "supports",
-     "quote": "Koppert Canada Limited is a subsidiary of Koppert BV, providing a full complement of biological controls and natural pollination products to both the professional grower …",
+     "quote": "Koppert Canada Limited is a subsidiary of Koppert BV, providing a full complement of biological controls and natural pollination products to both the professional grower and the home gardening enthusiast.",
      "evidence_kind": "independent_study",
      "does_not_show": "The source does not provide data on home gardener purchase intent, willingness to pay, or actual adoption rates."
     },
@@ -2000,7 +2000,7 @@
      "theory_id": "T1",
      "evidence_id": "sigvaris-review-travel",
      "direction": "supports",
-     "quote": "\"I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …\"",
+     "quote": "\"I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. Every sock I tried was always scratchy and uncomfortable.\"",
      "evidence_kind": "customer_observation",
      "does_not_show": "The quote does not confirm that the reviewer perceives compression as a health benefit beyond DVT prevention, nor does it show willingness to pay a premium price for improved comfort or medical‑grade features."
     }
@@ -2012,14 +2012,14 @@
    },
    "decision_at_generation": "kept",
    "flags": [],
-   "teacher_reply_raw": "{\"learned\":\"We have read seven sources about SIGVARIS and the compression market. The most relevant for T1 is a customer review describing personal use of compression socks for travel, which illustrates non‑medical adoption driven by health concerns (DVT prevention).\",\"uncertain\":\"We still lack direct evidence of willingness to pay premiums for travel‑focused compression socks, and we have not assessed T2 or a potential fashion‑driven theory.\",\"why_next\":\"Assess the customer review (sigvaris-review-travel) against T1 to see if it supports the health‑conscious adoption claim, then add a third theory (T3) on fashion‑driven demand to explore an alternative driver of non‑medical purchase.\",\"call\":{\"name\":\"assess_evidence\",\"arguments\":{\"theory_id\":\"T1\",\"evidence_id\":\"sigvaris-review-travel\",\"direction\":\"supports\",\"quote\":\"\\\"I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …\\\"\",\"evidence_kind\":\"customer_observation\",\"does_not_show\":\"The quote does not confirm that the reviewer perceives compression as a health benefit beyond DVT prevention, nor does it show willingness to pay a premium price for improved comfort or medical‑grade features.\"}}}",
+   "teacher_reply_raw": "{\"learned\":\"We have read seven sources about SIGVARIS and the compression market. The most relevant for T1 is a customer review describing personal use of compression socks for travel, which illustrates non‑medical adoption driven by health concerns (DVT prevention).\",\"uncertain\":\"We still lack direct evidence of willingness to pay premiums for travel‑focused compression socks, and we have not assessed T2 or a potential fashion‑driven theory.\",\"why_next\":\"Assess the customer review (sigvaris-review-travel) against T1 to see if it supports the health‑conscious adoption claim, then add a third theory (T3) on fashion‑driven demand to explore an alternative driver of non‑medical purchase.\",\"call\":{\"name\":\"assess_evidence\",\"arguments\":{\"theory_id\":\"T1\",\"evidence_id\":\"sigvaris-review-travel\",\"direction\":\"supports\",\"quote\":\"\\\"I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. Every sock I tried was always scratchy and uncomfortable.\\\"\",\"evidence_kind\":\"customer_observation\",\"does_not_show\":\"The quote does not confirm that the reviewer perceives compression as a health benefit beyond DVT prevention, nor does it show willingness to pay a premium price for improved comfort or medical‑grade features.\"}}}",
    "student_action": {
     "name": "assess_evidence",
     "arguments": {
      "theory_id": "T1",
      "evidence_id": "sigvaris-review-travel",
      "direction": "supports",
-     "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …",
+     "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. Every sock I tried was always scratchy and uncomfortable.",
      "evidence_kind": "company_assertion",
      "does_not_show": "The review does not quantify demand, willingness to pay, or the size of the travel market; it only describes personal experience."
     },

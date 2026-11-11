@@ -715,7 +715,7 @@
      "theory_id": "T1",
      "evidence_id": "hlb-junior",
      "direction": "supports",
-     "quote": "Hellberg Junior is a hearing protection specially designed for children. …",
+     "quote": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
      "class": "company_claim",
      "evidence_kind": "company_assertion",
      "does_not_show": "The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market."
@@ -808,7 +808,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -840,7 +840,7 @@
       "theory_id": "T1",
       "evidence_id": "hlb-junior",
       "direction": "supports",
-      "quote": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "quote": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market."
      },
@@ -1007,7 +1007,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -1021,7 +1021,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"hlb-junior\",\n    \"direction\": \"supports\",\n    \"quote\": \"Hellberg Junior is a hearing protection specially designed for children. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"hlb-junior\",\n    \"direction\": \"supports\",\n    \"quote\": \"Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market.\"\n  }\n}",
      "prompt_tokens": 2379,
      "completion_tokens": 134,
      "seconds": 2.05247456899815,
@@ -1235,7 +1235,7 @@
      "theory_id": "T1",
      "evidence_id": "hlb-junior",
      "direction": "supports",
-     "quote": "Hellberg Junior is a hearing protection specially designed for children. …",
+     "quote": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
      "class": "company_claim",
      "evidence_kind": "company_assertion",
      "does_not_show": "The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market."
@@ -1359,7 +1359,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -1391,7 +1391,7 @@
       "theory_id": "T1",
       "evidence_id": "hlb-junior",
       "direction": "supports",
-      "quote": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "quote": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market."
      },
@@ -1460,7 +1460,7 @@
       "url": "https://www.hellbergsafety.com/campaign/legacy",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "In the early 10\u2019s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg\u00b4s first Bluetooth hearing \u2026",
+      "excerpt": "In the early 10\u2019s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg\u00b4s first Bluetooth hearing protectors are introduced.",
       "access_limitation": "none"
      }
     },
@@ -1842,7 +1842,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -1856,7 +1856,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"hlb-junior\",\n    \"direction\": \"supports\",\n    \"quote\": \"Hellberg Junior is a hearing protection specially designed for children. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"hlb-junior\",\n    \"direction\": \"supports\",\n    \"quote\": \"Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market.\"\n  }\n}",
      "prompt_tokens": 2379,
      "completion_tokens": 134,
      "seconds": 2.125144049001392,
@@ -1895,7 +1895,7 @@
       "url": "https://www.hellbergsafety.com/campaign/legacy",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "In the early 10\u2019s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg\u00b4s first Bluetooth hearing \u2026",
+      "excerpt": "In the early 10\u2019s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg\u00b4s first Bluetooth hearing protectors are introduced.",
       "access_limitation": "none"
      }
     },
@@ -2208,7 +2208,7 @@
      "theory_id": "T1",
      "evidence_id": "hlb-junior",
      "direction": "supports",
-     "quote": "Hellberg Junior is a hearing protection specially designed for children. …",
+     "quote": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
      "class": "company_claim",
      "evidence_kind": "company_assertion",
      "does_not_show": "The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market."
@@ -2313,7 +2313,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -2345,7 +2345,7 @@
       "theory_id": "T1",
       "evidence_id": "hlb-junior",
       "direction": "supports",
-      "quote": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "quote": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market."
      },
@@ -2414,7 +2414,7 @@
       "url": "https://www.hellbergsafety.com/campaign/legacy",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "In the early 10\u2019s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg\u00b4s first Bluetooth hearing \u2026",
+      "excerpt": "In the early 10\u2019s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg\u00b4s first Bluetooth hearing protectors are introduced.",
       "access_limitation": "none"
      }
     },
@@ -2636,7 +2636,7 @@
       "url": "https://www.hellbergsafety.com/products/hearing-protection/passive/11001-114",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. …",
+      "excerpt": "Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.",
       "access_limitation": "none"
      }
     },
@@ -2650,7 +2650,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"hlb-junior\",\n    \"direction\": \"supports\",\n    \"quote\": \"Hellberg Junior is a hearing protection specially designed for children. …\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market.\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"hlb-junior\",\n    \"direction\": \"supports\",\n    \"quote\": \"Hellberg Junior is a hearing protection specially designed for children. It is perfect for school- and hobby activities, concerts, lawn mowing or sporting events.\",\n    \"evidence_kind\": \"company_assertion\",\n    \"does_not_show\": \"The theory does not show whether the Junior Blue Headband is a unique and high-quality product that meets the needs of its target market.\"\n  }\n}",
      "prompt_tokens": 2379,
      "completion_tokens": 134,
      "seconds": 2.1507697549968725,
@@ -2689,7 +2689,7 @@
       "url": "https://www.hellbergsafety.com/campaign/legacy",
       "date": "unknown",
       "geography": "unknown",
-      "excerpt": "In the early 10\u2019s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg\u00b4s first Bluetooth hearing \u2026",
+      "excerpt": "In the early 10\u2019s, electronic models are added to the Secure range, including FM-radio and active listening models, and by 2014 Hellberg\u00b4s first Bluetooth hearing protectors are introduced.",
       "access_limitation": "none"
      }
     },

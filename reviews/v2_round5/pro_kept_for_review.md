@@ -229,13 +229,13 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** aspen-bpl-toasty (2007-03-26), aspen-ft-consumers (2022 (written after the decision date)), aspen-rc-ipo (2013-05-17 (written after the decision date))
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "aspen-bpl-toasty", "direction": "supports", "quote": "Toasty Feet are insulated with Aerogel, which was developed by Aspen Aerogels for NASA, and is claimed to have the highest thermal insulation value of …", "evidence_kind": "independent_study", "does_not_show": "It does not show that homeowners will purchase the product or that they perceive it as a premium product."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "aspen-bpl-toasty", "direction": "supports", "quote": "Toasty Feet are insulated with Aerogel, which was developed by Aspen Aerogels for NASA, and is claimed to have the highest thermal insulation value of any solid material available.", "evidence_kind": "independent_study", "does_not_show": "It does not show that homeowners will purchase the product or that they perceive it as a premium product."}
 
 **Why it was wrong:** labelled aspen-bpl-toasty as independent_study; the annotation (v1) says market_fact
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "aspen-bpl-toasty", "direction": "supports", "quote": "Toasty Feet are insulated with Aerogel, which was developed by Aspen Aerogels for NASA, and is claimed to have the highest thermal insulation value of …", "evidence_kind": "market_fact", "does_not_show": "Shows aerogel's presence in a consumer product and a NASA/high-performance quality signal; it cannot show that homeowners would buy or pay a premium for Aspen's blanket insulation, or any purchasing behaviour."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "aspen-bpl-toasty", "direction": "supports", "quote": "Toasty Feet are insulated with Aerogel, which was developed by Aspen Aerogels for NASA, and is claimed to have the highest thermal insulation value of any solid material available.", "evidence_kind": "market_fact", "does_not_show": "Shows aerogel's presence in a consumer product and a NASA/high-performance quality signal; it cannot show that homeowners would buy or pay a premium for Aspen's blanket insulation, or any purchasing behaviour."}
 
 **Teacher, learned:** Read aspen-bpl-toasty (2007), aspen-ft-consumers (2022), aspen-rc-ipo (2013). Only aspen-bpl-toasty predates the decision date. It shows aerogel had already reached a consumer product (Toasty Feet insoles) and carried a "developed by Aspen Aerogels for NASA" / "highest thermal insulation" framing — the closest pre-2009 evidence for T1's premium-performance quality-signal assumption. The 2022 review and 2013 IPO withdrawal are post-decision and can be context, not 2009 knowledge.
 
@@ -262,7 +262,7 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "arri-ymc-use-not-own", "direction": "supports", "quote": "For most filmmakers, ARRI has always been a brand they use rather than a brand they own. …", "evidence_kind": "market_fact", "does_not_show": "This shows the current ownership structure, not that creators would switch to buying or pay a premium; it offers no willingness-to-pay or purchase-intent evidence."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "arri-ymc-use-not-own", "direction": "supports", "quote": "For most filmmakers, ARRI has always been a brand they use rather than a brand they own. ALEXA cameras sit at the top of the professional cinema market, commonly purchased by rental houses, studios, and production companies rather than individual creators.", "evidence_kind": "market_fact", "does_not_show": "This shows the current ownership structure, not that creators would switch to buying or pay a premium; it offers no willingness-to-pay or purchase-intent evidence."}
 
 **Teacher, learned:** Sources show ARRI is premium and cinema-centric: a new $55,000 Alexa 35 Xtreme (arri-alexa-price), 150 job cuts and two site closures amid production decline (arri-cined-challenges), and ARRI's own statement that its core focus stays "high-end cinema and live entertainment" (arri-core-focus). ARRI also calls the Honor Robot Phone a milestone in its "expansion into Content Creation" (arri-honor-milestone). The key market-structure fact (arri-ymc-use-not-own) is that filmmakers use ARRI rather than own it, with ALEXAs bought by rental houses/studios rather than individual creators.
 
@@ -283,13 +283,13 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** resmed-10k-clinics (2014-08 (fiscal year ended 2014-06-30)), resmed-pr-biancamed (2011-07-06), resmed-pr-splus (2014-10-07)
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "resmed-10k-clinics", "direction": "supports", "quote": "We market our products primarily to home healthcare dealers and to sleep clinics that diagnose OSA and other sleep disorders, as well as to non-sleep …", "evidence_kind": "company_assertion", "does_not_show": "It does not show consumer demand, willingness to pay, or actual purchase behavior of individuals with sleep apnea."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "resmed-10k-clinics", "direction": "supports", "quote": "We market our products primarily to home healthcare dealers and to sleep clinics that diagnose OSA and other sleep disorders, as well as to non-sleep specialist physician practices that diagnose and treat sleep disorders.", "evidence_kind": "company_assertion", "does_not_show": "It does not show consumer demand, willingness to pay, or actual purchase behavior of individuals with sleep apnea."}
 
 **Why it was wrong:** labelled resmed-10k-clinics as company_assertion; the annotation (v1) says market_fact
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "resmed-pr-splus", "direction": "neutral", "quote": "The S+ will be available for the suggested retail price of $149.99 at Bed Bath & Beyond® stores beginning in mid-October and online at mysplus.com …", "evidence_kind": "company_assertion", "does_not_show": "It does not show that any consumer adopted the S+, was willing to pay $149.99, or expressed purchase intent; a launch announcement is the company's plan and pricing, not demand."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "resmed-pr-splus", "direction": "neutral", "quote": "The S+ will be available for the suggested retail price of $149.99 at Bed Bath & Beyond® stores beginning in mid-October and online at mysplus.com .", "evidence_kind": "company_assertion", "does_not_show": "It does not show that any consumer adopted the S+, was willing to pay $149.99, or expressed purchase intent; a launch announcement is the company's plan and pricing, not demand."}
 
 **Teacher, learned:** ResMed's 10-K says it markets "primarily to home healthcare dealers and to sleep clinics" (resmed-10k-clinics), a B2B route, not individuals. BiancaMed PR (resmed-pr-biancamed) shows a non-contact sensor marketed for "home and hospital"—a capability claim. The S+ PR (resmed-pr-splus) is the only consumer-facing source: $149.99 at Bed Bath & Beyond and online. All three are company claims; none is customer or independent demand evidence. resmed-pr-splus is right to weigh against T1 because T1 is about consumer adoption and willingness to pay, and this is the only source bearing on consumer price and route.
 
@@ -343,7 +343,7 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "qdi-pm-mucositis2002", "direction": "neutral", "quote": "There were no significant differences between sides in OMI or pain. …", "evidence_kind": "independent_study", "does_not_show": "It cannot establish that consumers would view a home skin device as a medical necessity or buy one; the study is clinical efficacy for oral mucositis in pediatric transplant patients, not skin conditions or purchasing."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "qdi-pm-mucositis2002", "direction": "neutral", "quote": "There were no significant differences between sides in OMI or pain. Conclusion: Although more studies are needed, LED therapy appears useful in the prevention of OM in pediatric BMT patients.", "evidence_kind": "independent_study", "does_not_show": "It cannot establish that consumers would view a home skin device as a medical necessity or buy one; the study is clinical efficacy for oral mucositis in pediatric transplant patients, not skin conditions or purchasing."}
 
 **Teacher, learned:** Read: FTC 1999 crackdown (qdi-ftc-cureall); Dec 2002 peer-reviewed LED mucositis study showing no significant OMI/pain difference (qdi-pm-mucositis2002); Sept 2003 FDA 510(k) for WARP 10 (qdi-fda-k032229, post-decision); two 2022 NASA Spinoff notes on leaving medical LEDs and the home/stationary split (qdi-sp22-exit, qdi-sp22-homesplit). None shows early-2003 consumer demand for a home photodynamic device. T1 and T2 rest on medical reputation and assumed motivation; no customer purchase evidence.
 
@@ -391,7 +391,7 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** sigvaris-about (unknown (accessed 2026-11-03)), sigvaris-medical-grade-worth (unknown (accessed 2026-11-03)), sigvaris-mordor-cep (2025-09-12), sigvaris-mordor-channels (2025-09-12), sigvaris-mordor-cost (2025-09-12), sigvaris-review-travel (2026-09-13), sigvaris-travel-claim (unknown (accessed 2026-11-03))
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "sigvaris-review-travel", "direction": "supports", "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …", "evidence_kind": "company_assertion", "does_not_show": "The review does not quantify demand, willingness to pay, or the size of the travel market; it only describes personal experience."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "sigvaris-review-travel", "direction": "supports", "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. Every sock I tried was always scratchy and uncomfortable.", "evidence_kind": "company_assertion", "does_not_show": "The review does not quantify demand, willingness to pay, or the size of the travel market; it only describes personal experience."}
 
 **Why it was wrong:** labelled sigvaris-review-travel as company_assertion; the annotation (v1) says customer_observation
 
@@ -418,13 +418,13 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** cree-bdn-embracing (2012-03-10), cree-ledp-reason (2013-03-06), cree-pr-ecosmart (2010-08-17), cree-wiki-first (unknown (accessed 2026-11-03))
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "cree-bdn-embracing", "direction": "supports", "quote": "According to retailers, consumers are embracing LEDs, which were the focus of the prize, and CFLs, or compact fluorescent lights, faster than many in the …", "evidence_kind": "independent_study", "does_not_show": "The source does not specify whether price was the primary driver or other factors such as environmental concerns or retailer incentives."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "cree-bdn-embracing", "direction": "supports", "quote": "According to retailers, consumers are embracing LEDs, which were the focus of the prize, and CFLs, or compact fluorescent lights, faster than many in the industry expected.", "evidence_kind": "independent_study", "does_not_show": "The source does not specify whether price was the primary driver or other factors such as environmental concerns or retailer incentives."}
 
 **Why it was wrong:** labelled cree-bdn-embracing as independent_study; the annotation (v1) says market_fact
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "cree-bdn-embracing", "direction": "neutral", "quote": "According to retailers, consumers are embracing LEDs, which were the focus of the prize, and CFLs, or compact fluorescent lights, faster than many in the …", "evidence_kind": "market_fact", "does_not_show": "It cannot show that price is the primary barrier to switching or that lower prices cause adoption; it only reports retailers' view that adoption is faster than expected, with no price, colour or design data."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "cree-bdn-embracing", "direction": "neutral", "quote": "According to retailers, consumers are embracing LEDs, which were the focus of the prize, and CFLs, or compact fluorescent lights, faster than many in the industry expected.", "evidence_kind": "market_fact", "does_not_show": "It cannot show that price is the primary barrier to switching or that lower prices cause adoption; it only reports retailers' view that adoption is faster than expected, with no price, colour or design data."}
 
 **Teacher, learned:** I read four sources. cree-pr-ecosmart (2010) and cree-ledp-reason (2013) are Cree's own claims about retail price/positioning ('retails for less than $50'; needing 'a reason to switch'), and cree-wiki-first confirms only that 2013 household bulbs later got Energy Star — two of these post-date the late-2012 decision. cree-bdn-embracing (2012) is the only independent, pre-decision observation of consumer behaviour: retailers report consumers are 'embracing LEDs... faster than many in the industry expected.' T1 (price is the primary barrier) and T2 (premium colour/design drives adoption) remain unassessed.
 
@@ -532,7 +532,7 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "hilti-consumers-price-sensitive", "direction": "contradicts", "quote": "Unlike professionals, however – who are generally more willing to pay a premium for better performing and longer lasting power tools – most consumers are …", "evidence_kind": "market_fact", "does_not_show": "It cannot show what Hilti homeowners specifically would do, whether Hilti's brand changes this pattern, or actual purchase behavior; it is an industry-level characterization of consumers generally."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "hilti-consumers-price-sensitive", "direction": "contradicts", "quote": "Unlike professionals, however – who are generally more willing to pay a premium for better performing and longer lasting power tools – most consumers are very price sensitive when it comes to these products, often opting for less costly imports over expensive professional-grade models.", "evidence_kind": "market_fact", "does_not_show": "It cannot show what Hilti homeowners specifically would do, whether Hilti's brand changes this pattern, or actual purchase behavior; it is an industry-level characterization of consumers generally."}
 
 **Teacher, learned:** Read so far: Hilti is B2B with a direct sales model (hilti-b2b-reach, hilti-direct-model). The DIY market is about half the professional market (hilti-consumer-market-size) and homeowners are 70% of power tool purchasers (hilti-homeowners-share), but price is the top driver and most purchases are in-store (hilti-price-driver). Consumers are very price sensitive, opting for cheaper imports over professional-grade models (hilti-consumers-price-sensitive). T1 and T2 differ only on price sensitivity, so hilti-consumers-price-sensitive is the right source to weigh now because it discriminates willingness to pay a premium.
 
@@ -553,13 +553,13 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** sma-irt-cuts (2014-03-27), sma-p16-installed (2016-01-18), sma-pvi-30mw (2013-09-03), sma-rem-household (2013-06-26), sma-wiki-sunnyboy (unknown (accessed 2026-11-03))
 
-**Student's action:** `assess_evidence` {"theory_id": "T2", "evidence_id": "sma-pvi-30mw", "direction": "supports", "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months …", "evidence_kind": "independent_study", "does_not_show": "It does not show that consumers are willing to pay a premium for backup power, nor that they view SMA inverters as a safety-critical backup solution."}
+**Student's action:** `assess_evidence` {"theory_id": "T2", "evidence_id": "sma-pvi-30mw", "direction": "supports", "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months ago.", "evidence_kind": "independent_study", "does_not_show": "It does not show that consumers are willing to pay a premium for backup power, nor that they view SMA inverters as a safety-critical backup solution."}
 
 **Why it was wrong:** labelled sma-pvi-30mw as independent_study; the annotation (v1) says market_fact
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T2", "evidence_id": "sma-pvi-30mw", "direction": "neutral", "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months …", "evidence_kind": "market_fact", "does_not_show": "It does not show that homeowners want backup power during outages or would pay a premium for SMA inverters; the uptake reflects subsidy-driven self-consumption, not outage risk, and it post-dates April 2013."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T2", "evidence_id": "sma-pvi-30mw", "direction": "neutral", "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months ago.", "evidence_kind": "market_fact", "does_not_show": "It does not show that homeowners want backup power during outages or would pay a premium for SMA inverters; the uptake reflects subsidy-driven self-consumption, not outage risk, and it post-dates April 2013."}
 
 **Teacher, learned:** SMA sells Sunny Boy inverters for home systems (sma-wiki-sunnyboy), but its European sales were falling and it was cutting costs (sma-irt-cuts). German residential storage was growing with subsidy support (sma-pvi-30mw), and SMA's Sunny Boy Smart Energy could store about three hours of evening power for a household (sma-rem-household). T1 (premium smart-home theory) so far rests only on a company assertion about stored energy; nothing read shows consumer willingness to pay. For T2 (backup-power demand), the closest non-company market evidence is the residential storage uptake figure, so that is the source to weigh now.
 
@@ -586,7 +586,7 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "arri-ymc-use-not-own", "direction": "neutral", "quote": "For most filmmakers, ARRI has always been a brand they use rather than a brand they own. …", "evidence_kind": "market_fact", "does_not_show": "This describes who currently buys ARRI (rental houses, studios), not why individual creators would buy it; it cannot show status signaling drives adoption or willingness to pay."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "arri-ymc-use-not-own", "direction": "neutral", "quote": "For most filmmakers, ARRI has always been a brand they use rather than a brand they own. ALEXA cameras sit at the top of the professional cinema market, commonly purchased by rental houses, studios, and production companies rather than individual creators.", "evidence_kind": "market_fact", "does_not_show": "This describes who currently buys ARRI (rental houses, studios), not why individual creators would buy it; it cannot show status signaling drives adoption or willingness to pay."}
 
 **Teacher, learned:** Sources S1–S5 show ARRI is bought by institutions, not individuals. S1: Alexa 35 Xtreme ~$55,000. S2: ARRI cut 150 jobs; cameras remain "the gold standard for high-end theatrical production." S3: "Our core focus will continue to be the high-end cinema and live entertainment markets." S4: HONOR Robot Phone is "an important milestone in ARRI's expansion into Content Creation." S5: ARRI is "a brand they use rather than a brand they own... commonly purchased by rental houses, studios, and production companies rather than individual creators." Theories: T1 (status symbol) and T2 (necessary tool at competitive pricing). No individual-creator demand or willingness-to-pay data found.
 
@@ -607,13 +607,13 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** intel-court-oem (1991-03 (district court opinion)), intel-csm-nocare (1991-02-12), intel-ib-buyer (unknown (accessed 2026-11-03))
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "intel-court-oem", "direction": "neutral", "quote": "The appropriate group by which to measure consumer perception of the combination 386 is one composed of Original Equipment Manufacturers (OEMs) who purchase microprocessors for …", "evidence_kind": "independent_study", "does_not_show": "It does not address home networking demand, consumer willingness to pay a premium, or Intel’s ability to differentiate for that use case."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "intel-court-oem", "direction": "neutral", "quote": "The appropriate group by which to measure consumer perception of the combination 386 is one composed of Original Equipment Manufacturers (OEMs) who purchase microprocessors for inclusion as component parts in their manufactured products.", "evidence_kind": "independent_study", "does_not_show": "It does not address home networking demand, consumer willingness to pay a premium, or Intel’s ability to differentiate for that use case."}
 
 **Why it was wrong:** labelled intel-court-oem as independent_study; the annotation (v1) says regulation
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "intel-ib-buyer", "direction": "contradicts", "quote": "The consumer is the end-user of the ingredient, but is not part of the buying decision for the component, as this is up to the …", "evidence_kind": "market_fact", "does_not_show": "It cannot show whether households want home networking in 1991, whether OEMs would pick Intel for a networking chip, or whether consumers would pay more for the finished product; it only describes the general component-buying structure."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "intel-ib-buyer", "direction": "contradicts", "quote": "The consumer is the end-user of the ingredient, but is not part of the buying decision for the component, as this is up to the producer of the end product.", "evidence_kind": "market_fact", "does_not_show": "It cannot show whether households want home networking in 1991, whether OEMs would pick Intel for a networking chip, or whether consumers would pay more for the finished product; it only describes the general component-buying structure."}
 
 **Teacher, learned:** Read intel-court-oem, intel-csm-nocare, intel-ib-buyer. intel-court-oem shows Intel's own litigation treats OEMs, not consumers, as the relevant buyers for 386 perception: 'one composed of Original Equipment Manufacturers (OEMs) who purchase microprocessors for inclusion as component parts.' intel-csm-nocare quotes an OEM product manager: 'I don't think anyone's going to care.' intel-ib-buyer states the ingredient-branding structure: consumers are end-users but not part of the component buying decision. This bears on T1's value-capture premise, which assumes consumers choose and pay a premium for Intel networking chips.
 
@@ -634,13 +634,13 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** cree-bdn-embracing (2012-03-10), cree-ledp-reason (2013-03-06), cree-pr-ecosmart (2010-08-17), cree-wiki-first (unknown (accessed 2026-11-03))
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "cree-bdn-embracing", "direction": "supports", "quote": "According to retailers, consumers are embracing LEDs, which were the focus of the prize, and CFLs, or compact fluorescent lights, faster than many in the …", "evidence_kind": "independent_study", "does_not_show": "The source does not specify whether price was the primary driver or other factors such as environmental concerns or retailer incentives."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "cree-bdn-embracing", "direction": "supports", "quote": "According to retailers, consumers are embracing LEDs, which were the focus of the prize, and CFLs, or compact fluorescent lights, faster than many in the industry expected.", "evidence_kind": "independent_study", "does_not_show": "The source does not specify whether price was the primary driver or other factors such as environmental concerns or retailer incentives."}
 
 **Why it was wrong:** labelled cree-bdn-embracing as independent_study; the annotation (v1) says market_fact
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "cree-bdn-embracing", "direction": "neutral", "quote": "According to retailers, consumers are embracing LEDs, which were the focus of the prize, and CFLs, or compact fluorescent lights, faster than many in the …", "evidence_kind": "market_fact", "does_not_show": "This shows adoption was occurring, but it says nothing about why; it does not establish that price is the primary barrier, so it leaves T1's causal claim unresolved."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "cree-bdn-embracing", "direction": "neutral", "quote": "According to retailers, consumers are embracing LEDs, which were the focus of the prize, and CFLs, or compact fluorescent lights, faster than many in the industry expected.", "evidence_kind": "market_fact", "does_not_show": "This shows adoption was occurring, but it says nothing about why; it does not establish that price is the primary barrier, so it leaves T1's causal claim unresolved."}
 
 **Teacher, learned:** So far the dossier shows Cree had some pre-2012 consumer reach (cree-pr-ecosmart: a Home Depot EcoSmart downlight "retails for less than $50"), and one independent, pre-decision market observation (cree-bdn-embracing) that retailers said consumers were adopting LEDs and CFLs faster than expected. The post-2012 sources (cree-ledp-reason, cree-wiki-first) describe 2013 events and cannot inform a late-2012 decision. Two rival mechanisms are open: T1 (price is the primary barrier to switching) and T2 (premium color/design drives adoption).
 
@@ -661,13 +661,13 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** hra-bmj-3m (2014-11-24), hra-emp-lng (2014-11-21), hra-pbr-ireland (about 2011-02 (dated from the article URL)), hra-pbr-pioneer (about 2011-02 (dated from the article URL))
 
-**Student's action:** `assess_evidence` {"theory_id": "T2", "evidence_id": "hra-emp-lng", "direction": "supports", "quote": "Levonorgestrel-containing emergency contraceptives are already available without prescription in most EU countries and are registered for use up to 72 hours after unprotected intercourse or …", "evidence_kind": "independent_study", "does_not_show": "The source does not address consumer branding, medical necessity framing, or willingness to pay for a consumer-branded version."}
+**Student's action:** `assess_evidence` {"theory_id": "T2", "evidence_id": "hra-emp-lng", "direction": "supports", "quote": "Levonorgestrel-containing emergency contraceptives are already available without prescription in most EU countries and are registered for use up to 72 hours after unprotected intercourse or contraceptive failure.", "evidence_kind": "independent_study", "does_not_show": "The source does not address consumer branding, medical necessity framing, or willingness to pay for a consumer-branded version."}
 
 **Why it was wrong:** labelled hra-emp-lng as independent_study; the annotation (v1) says regulation
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T2", "evidence_id": "hra-emp-lng", "direction": "neutral", "quote": "Levonorgestrel-containing emergency contraceptives are already available without prescription in most EU countries and are registered for use up to 72 hours after unprotected intercourse or …", "evidence_kind": "regulation", "does_not_show": "It establishes OTC availability and the 72-hour window for a rival EC, but not whether women perceive EC as a medical necessity, nor purchase intent or willingness to pay for a consumer-branded ellaOne."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T2", "evidence_id": "hra-emp-lng", "direction": "neutral", "quote": "Levonorgestrel-containing emergency contraceptives are already available without prescription in most EU countries and are registered for use up to 72 hours after unprotected intercourse or contraceptive failure.", "evidence_kind": "regulation", "does_not_show": "It establishes OTC availability and the 72-hour window for a rival EC, but not whether women perceive EC as a medical necessity, nor purchase intent or willingness to pay for a consumer-branded ellaOne."}
 
 **Teacher, learned:** Read four sources. hra-bmj-3m (company assertion) says ellaOne has been used by 3m women in 70 countries; it was assessed only as weak support for T1 and does not show discretion/privacy demand. hra-emp-lng (EMA) shows levonorgestrel EC is already OTC in most EU countries; hra-pbr-ireland shows NorLevo dispensed in Irish pharmacies; hra-pbr-pioneer is only a CEO "pioneer" claim. T2 (medical-necessity mechanism) remains unassessed.
 
@@ -688,13 +688,13 @@ Answers: 244 (237 valid replies, 7 request failures); kept by the gates: 117 (38
 
 **Sources read (dossier date):** orasure-fda04-approval (2004-03-26), orasure-k023487-db (2003-03-20 (decision date)), orasure-nbc12-retail (2012-07-03)
 
-**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "orasure-fda04-approval", "direction": "supports", "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. …", "evidence_kind": "independent_study", "does_not_show": "The FDA approval does not demonstrate consumer demand or willingness to pay for an at-home test; it only confirms regulatory clearance for a clinic‑use product."}
+**Student's action:** `assess_evidence` {"theory_id": "T1", "evidence_id": "orasure-fda04-approval", "direction": "supports", "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. -- was approved November 7, 2002 for detection of antibody to HIV-1 in blood.", "evidence_kind": "independent_study", "does_not_show": "The FDA approval does not demonstrate consumer demand or willingness to pay for an at-home test; it only confirms regulatory clearance for a clinic‑use product."}
 
 **Why it was wrong:** labelled orasure-fda04-approval as independent_study; the annotation (v1) says regulation
 
 **Automated quality notes:** none
 
-**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "orasure-fda04-approval", "direction": "neutral", "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. …", "evidence_kind": "regulation", "does_not_show": "This shows regulatory clearance for a blood-based rapid test; it cannot show consumers will buy an oral-fluid home test for privacy or any demand."}
+**Teacher's call:** `assess_evidence` {"theory_id": "T1", "evidence_id": "orasure-fda04-approval", "direction": "neutral", "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. -- was approved November 7, 2002 for detection of antibody to HIV-1 in blood.", "evidence_kind": "regulation", "does_not_show": "This shows regulatory clearance for a blood-based rapid test; it cannot show consumers will buy an oral-fluid home test for privacy or any demand."}
 
 **Teacher, learned:** Sources so far: orasure-fda04-approval (FDA approval of OraQuick rapid HIV-1/2 blood test, 2002), orasure-k023487-db (a 510(k) for a wart-removal device), and orasure-nbc12-retail (a 2012 company claim about at-home retail availability, after the 2005 decision date). Two theories are open: T1 (privacy-driven adoption) and T2 (convenience/cost-driven adoption). No source yet shows individual-buyer demand or willingness to pay. The FDA source is the right one to weigh: it is the only source on the regulatory feasibility of the rapid HIV test that T1 and T2 presuppose; the 510(k) is unrelated and the 2012 item is post-decision and a company claim.
 

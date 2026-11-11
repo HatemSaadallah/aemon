@@ -227,7 +227,7 @@
      "theory_id": "T1",
      "evidence_id": "apple-en352",
      "direction": "supports",
-     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
      "class": "company_claim"
     }
    ],
@@ -326,7 +326,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -357,7 +357,7 @@
       "theory_id": "T1",
       "evidence_id": "apple-en352",
       "direction": "supports",
-      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …"
+      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces."
      },
      "accepted": true,
      "result": {
@@ -415,7 +415,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -696,7 +696,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -710,7 +710,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.\"\n  }\n}",
      "prompt_tokens": 2197,
      "completion_tokens": 111,
      "seconds": 1.6908910510028363,
@@ -748,7 +748,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -1000,7 +1000,7 @@
      "theory_id": "T1",
      "evidence_id": "apple-en352",
      "direction": "supports",
-     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
      "class": "company_claim"
     },
     {
@@ -1130,7 +1130,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -1161,7 +1161,7 @@
       "theory_id": "T1",
       "evidence_id": "apple-en352",
       "direction": "supports",
-      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …"
+      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces."
      },
      "accepted": true,
      "result": {
@@ -1308,7 +1308,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -1339,7 +1339,7 @@
       "theory_id": "T3",
       "evidence_id": "iso-founded",
       "direction": "supports",
-      "quote": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …"
+      "quote": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany."
      },
      "accepted": false,
      "category": "misquote",
@@ -1390,7 +1390,7 @@
       "theory_id": "T3",
       "evidence_id": "iso-founded",
       "direction": "supports",
-      "quote": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …"
+      "quote": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany."
      },
      "accepted": false,
      "category": "misquote",
@@ -1499,7 +1499,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -1513,7 +1513,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.\"\n  }\n}",
      "prompt_tokens": 2197,
      "completion_tokens": 111,
      "seconds": 1.7112866600000416,
@@ -1603,7 +1603,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -1617,7 +1617,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"iso-founded\",\n    \"direction\": \"supports\",\n    \"quote\": \"On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"iso-founded\",\n    \"direction\": \"supports\",\n    \"quote\": \"On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.\"\n  }\n}",
      "prompt_tokens": 3894,
      "completion_tokens": 99,
      "seconds": 1.8273955340046086,
@@ -1644,7 +1644,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"iso-founded\",\n    \"direction\": \"supports\",\n    \"quote\": \"On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T3\",\n    \"evidence_id\": \"iso-founded\",\n    \"direction\": \"supports\",\n    \"quote\": \"On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.\"\n  }\n}",
      "prompt_tokens": 4374,
      "completion_tokens": 99,
      "seconds": 1.780353666996234,
@@ -1769,7 +1769,7 @@
      "theory_id": "T1",
      "evidence_id": "apple-en352",
      "direction": "supports",
-     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
      "class": "company_claim"
     }
    ],
@@ -1871,7 +1871,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -1902,7 +1902,7 @@
       "theory_id": "T1",
       "evidence_id": "apple-en352",
       "direction": "supports",
-      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …"
+      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces."
      },
      "accepted": true,
      "result": {
@@ -2019,7 +2019,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -2033,7 +2033,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.\"\n  }\n}",
      "prompt_tokens": 2197,
      "completion_tokens": 111,
      "seconds": 1.8027173450027476,
@@ -2197,7 +2197,7 @@
      "theory_id": "T1",
      "evidence_id": "apple-en352",
      "direction": "supports",
-     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
      "class": "company_claim"
     }
    ],
@@ -2329,7 +2329,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -2362,7 +2362,7 @@
       "theory_id": "T1",
       "evidence_id": "apple-en352",
       "direction": "supports",
-      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …"
+      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces."
      },
      "accepted": true,
      "result": {
@@ -2422,7 +2422,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -2682,7 +2682,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -2696,7 +2696,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.\"\n  }\n}",
      "prompt_tokens": 2357,
      "completion_tokens": 111,
      "seconds": 1.8037167160000536,
@@ -2734,7 +2734,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -2989,7 +2989,7 @@
      "theory_id": "T1",
      "evidence_id": "apple-en352",
      "direction": "supports",
-     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
      "class": "company_claim"
     }
    ],
@@ -3088,7 +3088,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -3121,7 +3121,7 @@
       "theory_id": "T1",
       "evidence_id": "apple-en352",
       "direction": "supports",
-      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …"
+      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces."
      },
      "accepted": true,
      "result": {
@@ -3179,7 +3179,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -3413,7 +3413,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -3427,7 +3427,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.\"\n  }\n}",
      "prompt_tokens": 2355,
      "completion_tokens": 111,
      "seconds": 1.7742370529958862,
@@ -3465,7 +3465,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -3668,7 +3668,7 @@
      "theory_id": "T1",
      "evidence_id": "apple-en352",
      "direction": "supports",
-     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+     "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
      "class": "company_claim"
     },
     {
@@ -3804,7 +3804,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -3837,7 +3837,7 @@
       "theory_id": "T1",
       "evidence_id": "apple-en352",
       "direction": "supports",
-      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …"
+      "quote": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces."
      },
      "accepted": true,
      "result": {
@@ -3895,7 +3895,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -4136,7 +4136,7 @@
       "title": "Use Hearing Protection with your AirPods Pro 2 or AirPods Pro 3",
       "url": "https://support.apple.com/en-ie/120850",
       "date": "unknown (accessed 2026-11-01)",
-      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …",
+      "excerpt": "In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.",
       "access_limitation": "Attenuation figures not on this page"
      }
     },
@@ -4150,7 +4150,7 @@
      }
     },
     {
-     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA …\"\n  }\n}",
+     "text": "{\n  \"name\": \"assess_evidence\",\n  \"arguments\": {\n    \"theory_id\": \"T1\",\n    \"evidence_id\": \"apple-en352\",\n    \"direction\": \"supports\",\n    \"quote\": \"In some countries or regions, you may have the option to use EN 352 Protection, which limits the maximum level of media to 82 dBA and meets the applicable EN 352 standard requirements for hearing protection. The Hearing Protection feature is not suitable for use in all workplaces.\"\n  }\n}",
      "prompt_tokens": 2355,
      "completion_tokens": 111,
      "seconds": 1.8235291190067073,
@@ -4188,7 +4188,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -4564,7 +4564,7 @@
       "title": "Latour acquires Hellberg Safety AB | Airtools Latour",
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -4617,7 +4617,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -4851,7 +4851,7 @@
       "title": "Latour acquires Hellberg Safety AB | Airtools Latour",
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -4884,7 +4884,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -5218,7 +5218,7 @@
       "title": "Latour acquires Hellberg Safety AB | Airtools Latour",
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -5271,7 +5271,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -5497,7 +5497,7 @@
       "title": "Latour acquires Hellberg Safety AB | Airtools Latour",
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -5530,7 +5530,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -5928,7 +5928,7 @@
       "title": "Latour acquires Hellberg Safety AB | Airtools Latour",
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -5996,7 +5996,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },
@@ -6316,7 +6316,7 @@
       "title": "Latour acquires Hellberg Safety AB | Airtools Latour",
       "url": "https://airtools-latour.prod-mid-euw3.investis.com/en/press/latour-acquires-hellberg-safety-ab-1597303",
       "date": "2018-07-06",
-      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations \u2026",
+      "excerpt": "Founded in Sweden in 1962 the company has grown to now have presence in 50 markets with its own R&D, production, assembly and warehouse operations at the headquarters in Stenkullen. Net sales amounted to SEK 66 m in 2017 with a profitability well in line with Latour\u2019s financial targets. The company has around 20 employees.",
       "access_limitation": "Figures are eight or more years old."
      }
     },
@@ -6359,7 +6359,7 @@
       "title": "Lyreco Group announces an agreement to acquire Intersafe and Elacin - BSIF",
       "url": "https://bsif.co.uk/lyreco-group-announces-an-agreement-to-acquire-intersafe-and-elacin/",
       "date": "2018-12",
-      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the …",
+      "excerpt": "On December 19th 2018, Lyreco reached an agreement with Broadview Holding to acquire Intersafe and Elacin, 2 major players in the PPE market in the Netherlands, Belgium, France and Germany.",
       "access_limitation": "none"
      }
     },

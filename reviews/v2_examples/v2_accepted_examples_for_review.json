@@ -39,7 +39,7 @@
      "id": "andis-1997-home-kits",
      "class": "verified_observation",
      "title": "Andis Company, Inc. | International Directory of Company Histories, Volume 85 (Encyclopedia.com)",
-     "excerpt": "Because many of its products were useful to consumers as well as to professional barbers and stylists, Andis Company began to develop personal grooming products …"
+     "excerpt": "Because many of its products were useful to consumers as well as to professional barbers and stylists, Andis Company began to develop personal grooming products for both men and women to use at home."
     },
     {
      "id": "andis-athome-prices",
@@ -51,7 +51,7 @@
      "id": "andis-attest-20-dollars",
      "class": "verified_observation",
      "title": "Nearly half of men are cutting their hair at home | KERO 23ABC (Scripps)",
-     "excerpt": "\"I could get some clippers for about $20 from Amazon, which is already about $10 than one haircut,\" King said. \u2026"
+     "excerpt": "\"I could get some clippers for about $20 from Amazon, which is already about $10 than one haircut,\" King said. \"That lasted me for five haircuts during lockdown at various times. And my wife did a pretty good job with some minor instructional videos.\""
     },
     {
      "id": "andis-diyers",
@@ -63,25 +63,25 @@
      "id": "andis-home-line",
      "class": "company_claim",
      "title": "Innovative hair tools crafted to amplify creativity | Andis",
-     "excerpt": "Pro-Level Tools. …"
+     "excerpt": "Pro-Level Tools. At Home Confidence. Everyone deserves a clean, confidence inspiring cut. The Andis home grooming line brings 100 years of innovation in professional barbering and grooming to your home that empower you to confidently sharpen your families look."
     },
     {
      "id": "andis-trusted-home-users",
      "class": "company_claim",
      "title": "Press Releases | About | Andis",
-     "excerpt": "Known for its industry-leading clippers, trimmers, and styling accessories, Andis is trusted by professionals and home users worldwide. …"
+     "excerpt": "Known for its industry-leading clippers, trimmers, and styling accessories, Andis is trusted by professionals and home users worldwide. As the preferred brand for textured hair, Andis is dedicated to quality, durability, and innovation"
     },
     {
      "id": "andis-wahl-10-percent",
      "class": "verified_observation",
      "title": "Increase in home haircutting expected to continue | Chain Drug Review",
-     "excerpt": "With the easing of restrictions, Wahl has seen a large percentage of men go back to barbershops and salons, but not all and not as …"
+     "excerpt": "With the easing of restrictions, Wahl has seen a large percentage of men go back to barbershops and salons, but not all and not as often as they did before the outbreak. “We think when the dust settles, about 10% more of the USA will switch to mostly cutting hair at home than before the pandemic,” Yde says."
     },
     {
      "id": "andis-wahl-6-million",
      "class": "verified_observation",
      "title": "Surge in clipper market 'nothing short of amazing' | Chain Drug Review",
-     "excerpt": "It is up 42% in the last quarter. …"
+     "excerpt": "It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -142,7 +142,7 @@
      "theory_id": "T2",
      "evidence_id": "andis-wahl-6-million",
      "direction": "supports",
-     "quote": "It is up 42% in the last quarter. …",
+     "quote": "It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that users value convenience or are willing to pay a premium for time-saving features."
     },
@@ -150,7 +150,7 @@
      "theory_id": "T2",
      "evidence_id": "andis-trusted-home-users",
      "direction": "neutral",
-     "quote": "Known for its industry-leading clippers, trimmers, and styling accessories, Andis is trusted by professionals and home users worldwide. …",
+     "quote": "Known for its industry-leading clippers, trimmers, and styling accessories, Andis is trusted by professionals and home users worldwide. As the preferred brand for textured hair, Andis is dedicated to quality, durability, and innovation",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not address convenience, time-saving, or willingness to pay a premium for convenience."
     },
@@ -182,7 +182,7 @@
      "theory_id": "T1",
      "evidence_id": "andis-wahl-6-million",
      "direction": "neutral",
-     "quote": "It is up 42% in the last quarter. …",
+     "quote": "It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not address professional quality, premium pricing, or willingness to pay a premium for professional experience."
     }
@@ -218,7 +218,7 @@
       "theory_id": "T2",
       "evidence_id": "andis-wahl-6-million",
       "direction": "supports",
-      "quote": "\"It is up 42% in the last quarter. …\"",
+      "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not show that users value convenience or are willing to pay a premium for time-saving features."
      }
@@ -229,7 +229,7 @@
       "theory_id": "T2",
       "evidence_id": "andis-wahl-6-million",
       "direction": "supports",
-      "quote": "\"It is up 42% in the last quarter. …\"",
+      "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not show that users value convenience or are willing to pay a premium for time-saving features."
      }
@@ -291,7 +291,7 @@
       "theory_id": "T1",
       "evidence_id": "andis-wahl-6-million",
       "direction": "neutral",
-      "quote": "\"It is up 42% in the last quarter. …\"",
+      "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not address professional quality, premium pricing, or willingness to pay a premium for professional experience."
      }
@@ -302,7 +302,7 @@
       "theory_id": "T1",
       "evidence_id": "andis-wahl-6-million",
       "direction": "neutral",
-      "quote": "\"It is up 42% in the last quarter. …\"",
+      "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not address professional quality, premium pricing, or willingness to pay a premium for professional experience."
      }
@@ -314,7 +314,7 @@
      "theory_id": "T1",
      "evidence_id": "andis-wahl-6-million",
      "direction": "neutral",
-     "quote": "\"It is up 42% in the last quarter. …\"",
+     "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not address professional quality, premium pricing, or willingness to pay a premium for professional experience."
     }
@@ -372,19 +372,19 @@
      "id": "orasure-cln12-history",
      "class": "verified_observation",
      "title": "HIV Home Testing · Clinical Laboratory News (AACC/ADLM)",
-     "excerpt": "FDA rejected requests for OTC HIV tests as early as 1989. …"
+     "excerpt": "FDA rejected requests for OTC HIV tests as early as 1989. In 1996, the agency approved two home-use blood specimen collection kits, but these required the user to mail a self-collected specimen for lab testing and wait for results over the phone or in the mail."
     },
     {
      "id": "orasure-fda04-approval",
      "class": "verified_observation",
      "title": "FDA Approves First Oral Fluid Based Rapid HIV Test Kit (FDA news release, reprinted) · NATAP",
-     "excerpt": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. …"
+     "excerpt": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. -- was approved November 7, 2002 for detection of antibody to HIV-1 in blood."
     },
     {
      "id": "orasure-hd05-mailin",
      "class": "company_claim",
      "title": "FDA to Consider Rapid, At-Home HIV Test (HealthDay, reprinted) · NATAP",
-     "excerpt": "Currently, people can take HIV tests at home, but they must send a blood sample to a laboratory and wait three to seven days for …"
+     "excerpt": "Currently, people can take HIV tests at home, but they must send a blood sample to a laboratory and wait three to seven days for results, Spair said."
     },
     {
      "id": "orasure-k023487-db",
@@ -396,13 +396,13 @@
      "id": "orasure-k023487-label",
      "class": "company_claim",
      "title": "510(k) Summary, Histofreezer Wart Removal System (K023487) · US FDA",
-     "excerpt": "Histofreezer@ labeling has also been developed to provide adequate information for the consumer to make a self diagnosis and to ensure that they contact their …"
+     "excerpt": "Histofreezer@ labeling has also been developed to provide adequate information for the consumer to make a self diagnosis and to ensure that they contact their doctor if in any doubt, if stinging or aching persists after treatment, or if the wart does not improve after four treatments."
     },
     {
      "id": "orasure-nbc12-retail",
      "class": "company_claim",
      "title": "FDA approves first rapid, at-home HIV test · NBC News",
-     "excerpt": "OraSure expects the at-home HIV test to be available starting in October at more than 30,000 retail outlets across the U.S. …"
+     "excerpt": "OraSure expects the at-home HIV test to be available starting in October at more than 30,000 retail outlets across the U.S. and online, according to a company press release."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -447,7 +447,7 @@
      "theory_id": "T1",
      "evidence_id": "orasure-nbc12-retail",
      "direction": "supports",
-     "quote": "OraSure expects the at-home HIV test to be available starting in October at more than 30,000 retail outlets across the U.S. …",
+     "quote": "OraSure expects the at-home HIV test to be available starting in October at more than 30,000 retail outlets across the U.S. and online, according to a company press release.",
      "evidence_kind": "company_assertion",
      "does_not_show": "The press release does not provide consumer willingness to pay, nor does it address privacy concerns or self-monitoring motivations."
     },
@@ -455,7 +455,7 @@
      "theory_id": "T2",
      "evidence_id": "orasure-k023487-label",
      "direction": "supports",
-     "quote": "Histofreezer@ labeling has also been developed to provide adequate information for the consumer to make a self diagnosis and to ensure that they contact their …",
+     "quote": "Histofreezer@ labeling has also been developed to provide adequate information for the consumer to make a self diagnosis and to ensure that they contact their doctor if in any doubt, if stinging or aching persists after treatment, or if the wart does not improve after four treatments.",
      "evidence_kind": "company_assertion",
      "does_not_show": "The label does not address consumer motivations for early detection or willingness to pay a premium for accuracy."
     },
@@ -463,7 +463,7 @@
      "theory_id": "T2",
      "evidence_id": "orasure-fda04-approval",
      "direction": "neutral",
-     "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. …",
+     "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. -- was approved November 7, 2002 for detection of antibody to HIV-1 in blood.",
      "evidence_kind": "company_assertion",
      "does_not_show": "The FDA approval statement does not address consumer motivations for early detection or willingness to pay a premium for accuracy."
     }
@@ -549,7 +549,7 @@
       "theory_id": "T2",
       "evidence_id": "orasure-fda04-approval",
       "direction": "neutral",
-      "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. …",
+      "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. -- was approved November 7, 2002 for detection of antibody to HIV-1 in blood.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The FDA approval statement does not address consumer motivations for early detection or willingness to pay a premium for accuracy."
      }
@@ -561,7 +561,7 @@
      "theory_id": "T2",
      "evidence_id": "orasure-fda04-approval",
      "direction": "neutral",
-     "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. …",
+     "quote": "The original version of this rapid test -- the OraQuick Rapid HIV-1/2 Antibody Test, manufactured by OraSure Technologies, Inc., Bethlehem , Pa. -- was approved November 7, 2002 for detection of antibody to HIV-1 in blood.",
      "evidence_kind": "company_assertion",
      "does_not_show": "The FDA approval statement does not address consumer motivations for early detection or willingness to pay a premium for accuracy."
     }
@@ -625,7 +625,7 @@
      "id": "flir-eb-i3price",
      "class": "verified_observation",
      "title": "VIDEO - Flir offers new i3 thermal imaging camera | Electrical Business",
-     "excerpt": "Flir Systems announced the release of its new i3 thermal imaging camera, which will retail for US$1,195–making it the most affordable high-quality infrared camera, says …"
+     "excerpt": "Flir Systems announced the release of its new i3 thermal imaging camera, which will retail for US$1,195–making it the most affordable high-quality infrared camera, says the company."
     },
     {
      "id": "flir-imv-lepton",
@@ -905,7 +905,7 @@
      "id": "hra-an-europe",
      "class": "verified_observation",
      "title": "Question écrite n° 39300 et réponse, Assemblée nationale, 11e législature (pilule du lendemain)",
-     "excerpt": "Le lévonorgestrel a obtenu une AMM dans la majorité des pays européens fin mars 2000 par une procédure de reconnaissance mutuelle sous les noms de …"
+     "excerpt": "Le lévonorgestrel a obtenu une AMM dans la majorité des pays européens fin mars 2000 par une procédure de reconnaissance mutuelle sous les noms de marque de Norlévo, Vikela et Duofem et il est en vente libre en Norvège."
     },
     {
      "id": "hra-bmj-3m",
@@ -923,7 +923,7 @@
      "id": "hra-emp-lng",
      "class": "verified_observation",
      "title": "EMA recommends availability of ellaOne emergency contraceptive without prescription | European Medicines Agency press release EMA/710568/2014",
-     "excerpt": "Levonorgestrel-containing emergency contraceptives are already available without prescription in most EU countries and are registered for use up to 72 hours after unprotected intercourse or …"
+     "excerpt": "Levonorgestrel-containing emergency contraceptives are already available without prescription in most EU countries and are registered for use up to 72 hours after unprotected intercourse or contraceptive failure."
     },
     {
      "id": "hra-emp-safe",
@@ -941,7 +941,7 @@
      "id": "hra-pbr-pioneer",
      "class": "company_claim",
      "title": "IMB grants non-prescription status to HRA Pharma emergency contraceptive pill | Pharmaceutical Business Review",
-     "excerpt": "HRA Pharma CEO Erin Gainer said for over a decade the firm has been a pioneer in the field of emergency contraception, and the approval …"
+     "excerpt": "HRA Pharma CEO Erin Gainer said for over a decade the firm has been a pioneer in the field of emergency contraception, and the approval of NorLevo for non-prescription use in Ireland is a testament to their proactive leadership."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -1008,7 +1008,7 @@
      "theory_id": "T2",
      "evidence_id": "hra-emp-lng",
      "direction": "supports",
-     "quote": "Levonorgestrel-containing emergency contraceptives are already available without prescription in most EU countries and are registered for use up to 72 hours after unprotected intercourse or …",
+     "quote": "Levonorgestrel-containing emergency contraceptives are already available without prescription in most EU countries and are registered for use up to 72 hours after unprotected intercourse or contraceptive failure.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not show that women trust the product's efficacy and safety for over-the-counter use, nor that they would purchase it without a prescription."
     },
@@ -1205,7 +1205,7 @@
      "id": "ctl-deal",
      "class": "company_claim",
      "title": "Groupe RG acquires Cotral Lab and Comu Systems, strengthening its expertise and reaffirming its independence as a multi-brand distributor (MAJUNKE.com)",
-     "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — …"
+     "excerpt": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — announces the acquisition of Cotral Lab, the world’s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications."
     },
     {
      "id": "ctl-filter",
@@ -1304,7 +1304,7 @@
      "theory_id": "T2",
      "evidence_id": "ctl-deal",
      "direction": "neutral",
-     "quote": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — …",
+     "quote": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — announces the acquisition of Cotral Lab, the world’s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
      "evidence_kind": "company_assertion",
      "does_not_show": "The acquisition statement does not address sleep aid user demand or medical-grade marketing, so it neither supports nor contradicts T2."
     },
@@ -1312,7 +1312,7 @@
      "theory_id": "T1",
      "evidence_id": "ctl-deal",
      "direction": "neutral",
-     "quote": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — …",
+     "quote": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — announces the acquisition of Cotral Lab, the world’s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
      "evidence_kind": "company_assertion",
      "does_not_show": "The acquisition statement does not address musicians' demand for performanceenhancing hearing protection, so it neither supports nor contradicts T1."
     }
@@ -1392,7 +1392,7 @@
       "theory_id": "T2",
       "evidence_id": "ctl-deal",
       "direction": "neutral",
-      "quote": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — …",
+      "quote": "Actively supported by Ardian Expansion and Latour Capital, Groupe RG — leader in the distribution of Personal Protective Equipment (PPE) for over 35 years — announces the acquisition of Cotral Lab, the world’s No.1 manufacturer of custom-molded hearing protection and a recognized player in prescription safety eyewear, as well as Comu Systems, a specialist in tactical and critical communications.",
       "evidence_kind": "company_assertion",
       "does_not_show": "The acquisition statement does not address sleep aid user demand or medical-grade marketing, so it neither supports nor contradicts T2."
      }
@@ -1480,13 +1480,13 @@
      "id": "oxo-ch15-research",
      "class": "verified_observation",
      "title": "Getting a Grip on User-Inspired Design | Cooper Hewitt, Smithsonian Design Museum",
-     "excerpt": "Working with the New York-based design firm Smart Design, Farber and his team spoke with consumers, chefs, and members of a New York arthritis group …"
+     "excerpt": "Working with the New York-based design firm Smart Design, Farber and his team spoke with consumers, chefs, and members of a New York arthritis group to learn how they could redesign the way people work in the kitchen."
     },
     {
      "id": "oxo-ee-frame",
      "class": "company_claim",
      "title": "4.1 Design Thinking & Creative Problem-Solving · Entrepreneurship Essentials",
-     "excerpt": "The problem was not that people lacked vegetable peelers. …"
+     "excerpt": "The problem was not that people lacked vegetable peelers. It was that familiar kitchen tools could be uncomfortable or difficult to use, particularly for someone with limited grip strength."
     },
     {
      "id": "oxo-ee-origin",
@@ -1498,19 +1498,19 @@
      "id": "oxo-modip-brief",
      "class": "verified_observation",
      "title": "OXO kitchen utensils, Smart Design, 1990 | Museum of Design in Plastics",
-     "excerpt": "With a brief to produce an affordable product line that could be used by everyone (not solely for those with arthritis), the designers decided to …"
+     "excerpt": "With a brief to produce an affordable product line that could be used by everyone (not solely for those with arthritis), the designers decided to develop one handle that could be used with each of the different tools."
     },
     {
      "id": "oxo-modip-santoprene",
      "class": "verified_observation",
      "title": "OXO kitchen utensils, Smart Design, 1990 | Museum of Design in Plastics",
-     "excerpt": "It was originally developed as an alternative material for injection moulded tyres (for which it was unsuccessful) and had begun to be used in seals …"
+     "excerpt": "It was originally developed as an alternative material for injection moulded tyres (for which it was unsuccessful) and had begun to be used in seals and gaskets within the automotive, household appliance and construction industries. The manufacturer, keen to explore other applications for this polymer, offered their support to the project."
     },
     {
      "id": "oxo-smart-aha",
      "class": "company_claim",
      "title": "OXO Good Grips Kitchen Tools Innovation | Smart Design",
-     "excerpt": "In 1989, businessman Sam Farber had an “aha” moment. …"
+     "excerpt": "In 1989, businessman Sam Farber had an “aha” moment. After watching his wife Betsey struggle with a common vegetable peeler, Sam set out to make ordinary kitchen tools easier for everyone to use—adding delight in the process."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -1553,7 +1553,7 @@
      "theory_id": "T1",
      "evidence_id": "oxo-ee-frame",
      "direction": "supports",
-     "quote": "The problem was not that people lacked vegetable peelers. …",
+     "quote": "The problem was not that people lacked vegetable peelers. It was that familiar kitchen tools could be uncomfortable or difficult to use, particularly for someone with limited grip strength.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not show that consumers with arthritis or limited grip strength are willing to pay a premium for a specialized tool, nor that they currently lack such tools."
     },
@@ -1561,7 +1561,7 @@
      "theory_id": "T2",
      "evidence_id": "oxo-smart-aha",
      "direction": "supports",
-     "quote": "In 1989, businessman Sam Farber had an “aha” moment. …",
+     "quote": "In 1989, businessman Sam Farber had an “aha” moment. After watching his wife Betsey struggle with a common vegetable peeler, Sam set out to make ordinary kitchen tools easier for everyone to use—adding delight in the process.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not show that consumers are motivated by fashion or status, nor that they are willing to pay a premium for a stylish tool."
     },
@@ -1569,7 +1569,7 @@
      "theory_id": "T2",
      "evidence_id": "oxo-ee-frame",
      "direction": "neutral",
-     "quote": "The problem was not that people lacked vegetable peelers. …",
+     "quote": "The problem was not that people lacked vegetable peelers. It was that familiar kitchen tools could be uncomfortable or difficult to use, particularly for someone with limited grip strength.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not address whether consumers are motivated by fashion or status, nor does it provide evidence of a fashion-driven segment willing to pay a premium for a stylish tool."
     }
@@ -1654,7 +1654,7 @@
       "theory_id": "T2",
       "evidence_id": "oxo-ee-frame",
       "direction": "neutral",
-      "quote": "The problem was not that people lacked vegetable peelers. …",
+      "quote": "The problem was not that people lacked vegetable peelers. It was that familiar kitchen tools could be uncomfortable or difficult to use, particularly for someone with limited grip strength.",
       "evidence_kind": "company_assertion",
       "does_not_show": "It does not address whether consumers are motivated by fashion or status, nor does it provide evidence of a fashion-driven segment willing to pay a premium for a stylish tool."
      }
@@ -1666,7 +1666,7 @@
      "theory_id": "T2",
      "evidence_id": "oxo-ee-frame",
      "direction": "neutral",
-     "quote": "The problem was not that people lacked vegetable peelers. …",
+     "quote": "The problem was not that people lacked vegetable peelers. It was that familiar kitchen tools could be uncomfortable or difficult to use, particularly for someone with limited grip strength.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not address whether consumers are motivated by fashion or status, nor does it provide evidence of a fashion-driven segment willing to pay a premium for a stylish tool."
     }
@@ -1731,19 +1731,19 @@
      "id": "embrace-ee-origin",
      "class": "company_claim",
      "title": "4.2 Solution Design & Prototyping · Entrepreneurship Essentials",
-     "excerpt": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators …"
+     "excerpt": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators could be difficult to obtain or use."
     },
     {
      "id": "embrace-gsb-investors",
      "class": "verified_observation",
      "title": "Embrace: Deciding on a Hybrid Structure | Stanford Graduate School of Business",
-     "excerpt": "However, Embrace realized that as a company with private investors, who would be seeking a financial return on their invested capital, it could be more …"
+     "excerpt": "However, Embrace realized that as a company with private investors, who would be seeking a financial return on their invested capital, it could be more difficult for Embrace to justify targeting markets and customer segments that were considered small or otherwise unattractive by commercial standards."
     },
     {
      "id": "embrace-her-sids",
      "class": "verified_observation",
      "title": "The €160 swaddling wrap inspired by NASA spacesuits | HerFamily",
-     "excerpt": "Embrace Innovations claim their product may even reduce the risk of SIDS (Sudden Infant Death Syndrome), which has been linked with babies being too warm …"
+     "excerpt": "Embrace Innovations claim their product may even reduce the risk of SIDS (Sudden Infant Death Syndrome), which has been linked with babies being too warm or too cold."
     },
     {
      "id": "embrace-smg-launch",
@@ -1792,7 +1792,7 @@
      "theory_id": "T1",
      "evidence_id": "embrace-ee-origin",
      "direction": "supports",
-     "quote": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators …",
+     "quote": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators could be difficult to obtain or use.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not show actual purchase behavior or market demand, nor does it address price or consumer marketing."
     },
@@ -1800,7 +1800,7 @@
      "theory_id": "T2",
      "evidence_id": "embrace-her-sids",
      "direction": "supports",
-     "quote": "Embrace Innovations claim their product may even reduce the risk of SIDS (Sudden Infant Death Syndrome), which has been linked with babies being too warm …",
+     "quote": "Embrace Innovations claim their product may even reduce the risk of SIDS (Sudden Infant Death Syndrome), which has been linked with babies being too warm or too cold.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not show actual purchase behavior or market demand, nor does it address price or consumer marketing."
     },
@@ -1808,7 +1808,7 @@
      "theory_id": "T2",
      "evidence_id": "embrace-ee-origin",
      "direction": "neutral",
-     "quote": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators …",
+     "quote": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators could be difficult to obtain or use.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not address consumer marketing, price, or fashion positioning, nor does it indicate whether parents view the product as a status symbol."
     },
@@ -1884,7 +1884,7 @@
       "theory_id": "T2",
       "evidence_id": "embrace-ee-origin",
       "direction": "neutral",
-      "quote": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators …",
+      "quote": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators could be difficult to obtain or use.",
       "evidence_kind": "company_assertion",
       "does_not_show": "It does not address consumer marketing, price, or fashion positioning, nor does it indicate whether parents view the product as a status symbol."
      }
@@ -1895,7 +1895,7 @@
       "theory_id": "T1",
       "evidence_id": "embrace-ee-origin",
       "direction": "neutral",
-      "quote": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators …",
+      "quote": "The Embrace infant warmer began as a Stanford student design challenge focused on the needs of premature and low-birth-weight infants in settings where conventional incubators could be difficult to obtain or use.",
       "evidence_kind": "company_assertion",
       "does_not_show": "It does not address consumer marketing, price, or whether parents view the product as a status symbol."
      }
@@ -1906,7 +1906,7 @@
       "theory_id": "T2",
       "evidence_id": "embrace-her-sids",
       "direction": "neutral",
-      "quote": "Embrace Innovations claim their product may even reduce the risk of SIDS (Sudden Infant Death Syndrome), which has been linked with babies being too warm …",
+      "quote": "Embrace Innovations claim their product may even reduce the risk of SIDS (Sudden Infant Death Syndrome), which has been linked with babies being too warm or too cold.",
       "evidence_kind": "company_assertion",
       "does_not_show": "It does not address consumer marketing, price, or whether parents view the product as a status symbol."
      }
@@ -1984,13 +1984,13 @@
      "id": "sigvaris-about",
      "class": "company_claim",
      "title": "About SIGVARIS GROUP | Sigvaris.com",
-     "excerpt": "With headquarters in Switzerland, we operate our own production plants in Switzerland, France, Poland, the US and Brazil. …"
+     "excerpt": "With headquarters in Switzerland, we operate our own production plants in Switzerland, France, Poland, the US and Brazil. We are close to our customers, having subsidiaries in Germany, Austria, England, Italy, Canada, Australia, and Mexico as well as distributors in more than 70 countries on all continents."
     },
     {
      "id": "sigvaris-medical-grade-worth",
      "class": "company_claim",
      "title": "SIGVARIS GROUP: high quality compression solutions | Sigvaris.com",
-     "excerpt": "Your doctor prescribed medical-grade compression stockings, and they're expensive, but you found more affordable ones online. …"
+     "excerpt": "Your doctor prescribed medical-grade compression stockings, and they're expensive, but you found more affordable ones online. They're all the same, right? Not at all."
     },
     {
      "id": "sigvaris-mordor-cep",
@@ -2008,25 +2008,25 @@
      "id": "sigvaris-mordor-cost",
      "class": "verified_observation",
      "title": "Compression Socks Market | Mordor Intelligence",
-     "excerpt": "Medical-grade socks cost three to five times more than basic hosiery, limiting access in uninsured populations. …"
+     "excerpt": "Medical-grade socks cost three to five times more than basic hosiery, limiting access in uninsured populations. Outside the United States, most payers do not reimburse compression garments, forcing users to self-fund treatments. Lower-cost retail versions often lack validated pressure profiles, risking suboptimal outcomes and eroding clinician confidence."
     },
     {
      "id": "sigvaris-review-travel",
      "class": "company_claim",
      "title": "SIGVARIS GROUP: high quality compression solutions | Sigvaris.com",
-     "excerpt": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …"
+     "excerpt": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. Every sock I tried was always scratchy and uncomfortable."
     },
     {
      "id": "sigvaris-running-meta",
      "class": "verified_observation",
      "title": "Do compression garments enhance running performance? An updated systematic review and meta-analysis | J Sport Health Sci (PMC)",
-     "excerpt": "Runners wearing compression garments during running showed no significant improvement in race time (SMD = –0.07, 95%CI: –0.22 to 0.09; p = 0.40) or time …"
+     "excerpt": "Runners wearing compression garments during running showed no significant improvement in race time (SMD = –0.07, 95%CI: –0.22 to 0.09; p = 0.40) or time to exhaustion (SMD = 0.04, 95%CI: –0.20 to 0.29; p = 0.72)."
     },
     {
      "id": "sigvaris-travel-claim",
      "class": "company_claim",
      "title": "Travel | Sigvaris.com",
-     "excerpt": "Compression wear can help prevent leg symptoms, like tired, heavy, and swollen legs, and traveler’s thrombosis. …"
+     "excerpt": "Compression wear can help prevent leg symptoms, like tired, heavy, and swollen legs, and traveler’s thrombosis. Risk of developing deep vein thrombosis (DVT) increases when travel extends four hours or more and requires you to remain seated."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -2069,7 +2069,7 @@
      "theory_id": "T1",
      "evidence_id": "sigvaris-review-travel",
      "direction": "supports",
-     "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …",
+     "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. Every sock I tried was always scratchy and uncomfortable.",
      "evidence_kind": "company_assertion",
      "does_not_show": "The review does not quantify demand, willingness to pay, or the size of the travel market; it only describes personal experience."
     },
@@ -2243,7 +2243,7 @@
      "id": "andis-1997-home-kits",
      "class": "verified_observation",
      "title": "Andis Company, Inc. | International Directory of Company Histories, Volume 85 (Encyclopedia.com)",
-     "excerpt": "Because many of its products were useful to consumers as well as to professional barbers and stylists, Andis Company began to develop personal grooming products …"
+     "excerpt": "Because many of its products were useful to consumers as well as to professional barbers and stylists, Andis Company began to develop personal grooming products for both men and women to use at home."
     },
     {
      "id": "andis-athome-prices",
@@ -2255,7 +2255,7 @@
      "id": "andis-attest-20-dollars",
      "class": "verified_observation",
      "title": "Nearly half of men are cutting their hair at home | KERO 23ABC (Scripps)",
-     "excerpt": "\"I could get some clippers for about $20 from Amazon, which is already about $10 than one haircut,\" King said. \u2026"
+     "excerpt": "\"I could get some clippers for about $20 from Amazon, which is already about $10 than one haircut,\" King said. \"That lasted me for five haircuts during lockdown at various times. And my wife did a pretty good job with some minor instructional videos.\""
     },
     {
      "id": "andis-diyers",
@@ -2267,25 +2267,25 @@
      "id": "andis-home-line",
      "class": "company_claim",
      "title": "Innovative hair tools crafted to amplify creativity | Andis",
-     "excerpt": "Pro-Level Tools. …"
+     "excerpt": "Pro-Level Tools. At Home Confidence. Everyone deserves a clean, confidence inspiring cut. The Andis home grooming line brings 100 years of innovation in professional barbering and grooming to your home that empower you to confidently sharpen your families look."
     },
     {
      "id": "andis-trusted-home-users",
      "class": "company_claim",
      "title": "Press Releases | About | Andis",
-     "excerpt": "Known for its industry-leading clippers, trimmers, and styling accessories, Andis is trusted by professionals and home users worldwide. …"
+     "excerpt": "Known for its industry-leading clippers, trimmers, and styling accessories, Andis is trusted by professionals and home users worldwide. As the preferred brand for textured hair, Andis is dedicated to quality, durability, and innovation"
     },
     {
      "id": "andis-wahl-10-percent",
      "class": "verified_observation",
      "title": "Increase in home haircutting expected to continue | Chain Drug Review",
-     "excerpt": "With the easing of restrictions, Wahl has seen a large percentage of men go back to barbershops and salons, but not all and not as …"
+     "excerpt": "With the easing of restrictions, Wahl has seen a large percentage of men go back to barbershops and salons, but not all and not as often as they did before the outbreak. “We think when the dust settles, about 10% more of the USA will switch to mostly cutting hair at home than before the pandemic,” Yde says."
     },
     {
      "id": "andis-wahl-6-million",
      "class": "verified_observation",
      "title": "Surge in clipper market 'nothing short of amazing' | Chain Drug Review",
-     "excerpt": "It is up 42% in the last quarter. …"
+     "excerpt": "It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -2346,7 +2346,7 @@
      "theory_id": "T2",
      "evidence_id": "andis-wahl-6-million",
      "direction": "supports",
-     "quote": "It is up 42% in the last quarter. …",
+     "quote": "It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that users value convenience or are willing to pay a premium for time-saving features."
     },
@@ -2354,7 +2354,7 @@
      "theory_id": "T2",
      "evidence_id": "andis-trusted-home-users",
      "direction": "neutral",
-     "quote": "Known for its industry-leading clippers, trimmers, and styling accessories, Andis is trusted by professionals and home users worldwide. …",
+     "quote": "Known for its industry-leading clippers, trimmers, and styling accessories, Andis is trusted by professionals and home users worldwide. As the preferred brand for textured hair, Andis is dedicated to quality, durability, and innovation",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not address convenience, time-saving, or willingness to pay a premium for convenience."
     },
@@ -2378,7 +2378,7 @@
      "theory_id": "T1",
      "evidence_id": "andis-wahl-6-million",
      "direction": "supports",
-     "quote": "It is up 42% in the last quarter. …",
+     "quote": "It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that users value professional quality or would switch to a premium kit, nor that they would reduce salon visits."
     }
@@ -2444,7 +2444,7 @@
       "theory_id": "T2",
       "evidence_id": "andis-wahl-6-million",
       "direction": "supports",
-      "quote": "\"It is up 42% in the last quarter. …\"",
+      "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not show that users value convenience or are willing to pay a premium for time-saving features."
      }
@@ -2472,7 +2472,7 @@
       "theory_id": "T2",
       "evidence_id": "andis-wahl-6-million",
       "direction": "supports",
-      "quote": "\"It is up 42% in the last quarter. …\"",
+      "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not show that users value convenience or are willing to pay a premium for time-saving features."
      }
@@ -2483,7 +2483,7 @@
       "theory_id": "T2",
       "evidence_id": "andis-wahl-6-million",
       "direction": "supports",
-      "quote": "\"It is up 42% in the last quarter. …\"",
+      "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not show that users value convenience or are willing to pay a premium for time-saving features."
      }
@@ -2495,7 +2495,7 @@
      "theory_id": "T2",
      "evidence_id": "andis-wahl-6-million",
      "direction": "supports",
-     "quote": "\"It is up 42% in the last quarter. …\"",
+     "quote": "\"It is up 42% in the last quarter. This is after over 6 million people joined home haircutting with clippers after the lockdowns.\"",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that users value convenience or are willing to pay a premium for time-saving features."
     }
@@ -2561,37 +2561,37 @@
      "id": "technogym-athletech-b2b",
      "class": "verified_observation",
      "title": "Technogym Tops €900M In Revenue | Athletech News",
-     "excerpt": "The Italian fitness equipment and tech brand continues to lean on B2B sales as its primary revenue driver, although its DTC segment is also seeing …"
+     "excerpt": "The Italian fitness equipment and tech brand continues to lean on B2B sales as its primary revenue driver, although its DTC segment is also seeing strong growth."
     },
     {
      "id": "technogym-channels",
      "class": "company_claim",
      "title": "Technogym FY2024 results press release (eMarket Storage)",
-     "excerpt": "The Retail channel benefited from the expansion of new boutiques, including the latest opening in London in October. …"
+     "excerpt": "The Retail channel benefited from the expansion of new boutiques, including the latest opening in London in October. The Wholesale channel maintained the strong growth momentum from the previous year. The Inside Sales channel, comprising E-commerce and Telesales, posted a solid +6.1% increase"
     },
     {
      "id": "technogym-consumer-headwind",
      "class": "company_claim",
      "title": "Technogym FY2024 results press release (eMarket Storage)",
-     "excerpt": "Additionally, the Consumer segment delivered strong performance despite an unfavorable global trend affecting various industries. …"
+     "excerpt": "Additionally, the Consumer segment delivered strong performance despite an unfavorable global trend affecting various industries. This segment saw accelerated growth in the second half of the year, following an +8% increase in the first half compared to the same period in 2023."
     },
     {
      "id": "technogym-cw-price-subs",
      "class": "verified_observation",
      "title": "Technogym Ride smart bike first look review | Cycling Weekly",
-     "excerpt": "simplicity of use is brilliant, but you might find yourself with hefty monthly subscription bills to get the most out of the bike. …"
+     "excerpt": "simplicity of use is brilliant, but you might find yourself with hefty monthly subscription bills to get the most out of the bike. It's a well constructed option for home workouts but ideally could do with a couple of design tweaks - then it would be a great option for many, assuming it dropped the price by at least a quarter to bring it in line with other equally well performing smart bikes currently on the market."
     },
     {
      "id": "technogym-ggr-search-down",
      "class": "verified_observation",
      "title": "Home Gym Equipment Trends 2024 | Garage Gym Reviews",
-     "excerpt": "Despite the fitness industry experiencing an overall upward trend the past few years, 22 out of 40 pieces of equipment are in a downtrend going …"
+     "excerpt": "Despite the fitness industry experiencing an overall upward trend the past few years, 22 out of 40 pieces of equipment are in a downtrend going into 2024."
     },
     {
      "id": "technogym-home-design",
      "class": "company_claim",
      "title": "Home Gym equipment & Commercial Gym machines | Technogym International",
-     "excerpt": "Craft your ideal home gym with Italian elegance and expert guidance. …"
+     "excerpt": "Craft your ideal home gym with Italian elegance and expert guidance. Our interior designers and Olympic-level equipment ensure a space tailored to your goals."
     },
     {
      "id": "technogym-peloton-2021-gyms",
@@ -2642,7 +2642,7 @@
      "theory_id": "T1",
      "evidence_id": "technogym-home-design",
      "direction": "supports",
-     "quote": "Craft your ideal home gym with Italian elegance and expert guidance. …",
+     "quote": "Craft your ideal home gym with Italian elegance and expert guidance. Our interior designers and Olympic-level equipment ensure a space tailored to your goals.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not demonstrate that home users value design and brand as a primary purchase driver, nor that they are willing to pay a premium for lifestyle positioning."
     },
@@ -2818,25 +2818,25 @@
      "id": "arri-core-focus",
      "class": "company_claim",
      "title": "ARRI Issues Statement on Its Future as Lighting and Camera Uncertainty Continues | RedShark News",
-     "excerpt": "The ARRI Camera Systems business unit will continue to deliver the features and reliability that our customers demand. …"
+     "excerpt": "The ARRI Camera Systems business unit will continue to deliver the features and reliability that our customers demand. Our core focus will continue to be the high-end cinema and live entertainment markets."
     },
     {
      "id": "arri-honor-milestone",
      "class": "company_claim",
      "title": "ARRI Image Science makes its mobile debut in the HONOR Robot Phone | ARRI press release (PDF)",
-     "excerpt": "“The HONOR Robot Phone is an important milestone in ARRI’s expansion into Content Creation,” says David Bermbach, Chief Product Officer of ARRI. …"
+     "excerpt": "“The HONOR Robot Phone is an important milestone in ARRI’s expansion into Content Creation,” says David Bermbach, Chief Product Officer of ARRI. “Together with HONOR, we are translating ARRI’s perspective on image quality, color, and visual storytelling into a new category. This gives more creators access to greater creative control and a stronger connection between capture and postproduction.”"
     },
     {
      "id": "arri-ymc-backlash",
      "class": "verified_observation",
      "title": "ARRI Wants to Become a Consumer Brand | Y.M.Cinema Magazine",
-     "excerpt": "In March, we published ARRI Faces Backlash Over Its Partnership With HONOR’s Robot Phone , examining the concern among some filmmakers that ARRI was moving …"
+     "excerpt": "In March, we published ARRI Faces Backlash Over Its Partnership With HONOR’s Robot Phone , examining the concern among some filmmakers that ARRI was moving its highly exclusive cinema brand into consumer electronics."
     },
     {
      "id": "arri-ymc-use-not-own",
      "class": "verified_observation",
      "title": "ARRI Wants to Become a Consumer Brand | Y.M.Cinema Magazine",
-     "excerpt": "For most filmmakers, ARRI has always been a brand they use rather than a brand they own. …"
+     "excerpt": "For most filmmakers, ARRI has always been a brand they use rather than a brand they own. ALEXA cameras sit at the top of the professional cinema market, commonly purchased by rental houses, studios, and production companies rather than individual creators."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -3055,7 +3055,7 @@
      "id": "nalgene-kelly-division",
      "class": "verified_observation",
      "title": "Consider: Nalgene - by Kevin Kelly",
-     "excerpt": "Over time the name Nalge morphed to Nalgene and the Laboratory division has continued to produce a wide variety of products for lab use, but …"
+     "excerpt": "Over time the name Nalge morphed to Nalgene and the Laboratory division has continued to produce a wide variety of products for lab use, but the Outdoor Products (consumer) division is responsible for the proliferation of the classic 32 oz wide mouth bottle."
     },
     {
      "id": "nalgene-kelly-patagonia",
@@ -3073,7 +3073,7 @@
      "id": "nalgene-midd-sold",
      "class": "verified_observation",
      "title": "Quench your thirst: Nalgenes satiate off-roaders, city slickers alike | The Middlebury Campus",
-     "excerpt": "In less than two months, the College Store and Forth 'N Goal combined have accounted for 1,056 Nalgenes sold, the majority of which were bought …"
+     "excerpt": "In less than two months, the College Store and Forth 'N Goal combined have accounted for 1,056 Nalgenes sold, the majority of which were bought by Middlebury students."
     },
     {
      "id": "nalgene-outside-incursions",
@@ -3085,19 +3085,19 @@
      "id": "nalgene-outside-mid70s",
      "class": "verified_observation",
      "title": "Nalgene Bottle | Outside Online",
-     "excerpt": "In the mid-1970s, scientists at Nalgene, a Rochester, New York, maker of plastic laboratory equipment, including petri dishes and hard polyethylene containers, began sneaking bottles …"
+     "excerpt": "In the mid-1970s, scientists at Nalgene, a Rochester, New York, maker of plastic laboratory equipment, including petri dishes and hard polyethylene containers, began sneaking bottles out of headquarters for camping trips."
     },
     {
      "id": "nalgene-wiki-cans",
      "class": "verified_observation",
      "title": "Nalgene - Wikipedia",
-     "excerpt": "In the 1970s, conservationists began discouraging the disposal of cans and glass bottles by burning and burial in wilderness and recreation areas, and some places …"
+     "excerpt": "In the 1970s, conservationists began discouraging the disposal of cans and glass bottles by burning and burial in wilderness and recreation areas, and some places began forbidding such materials by regulation."
     },
     {
      "id": "nalgene-wiki-lore",
      "class": "verified_observation",
      "title": "Nalgene - Wikipedia",
-     "excerpt": "Company lore has it that Nalge Company president Marsh Hyman, based in Rochester, New York , discovered that his son's Boy Scout troop was using …"
+     "excerpt": "Company lore has it that Nalge Company president Marsh Hyman, based in Rochester, New York , discovered that his son's Boy Scout troop was using Nalgene laboratory containers when camping."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -3322,19 +3322,19 @@
      "id": "diatek-jpl-market",
      "class": "verified_observation",
      "title": "Slice of History: Infrared Ear Thermometer · NASA JPL",
-     "excerpt": "In 1991, Diatek Corporation of San Diego put a new infrared thermometer - Model 7000 - on the market. …"
+     "excerpt": "In 1991, Diatek Corporation of San Diego put a new infrared thermometer - Model 7000 - on the market. Early electronic thermometers had been used by some hospitals and doctors' offices for several years before that time, but this Diatek model was a pioneering effort to modify space-based infrared sensors for a medical infrared thermometer."
     },
     {
      "id": "diatek-jpl-tap",
      "class": "verified_observation",
      "title": "Slice of History: Infrared Ear Thermometer · NASA JPL",
-     "excerpt": "Diatek was part of the JPL Technology Affiliates Program, or TAP, in the late 1980s and received help from JPL personnel in adapting infrared sensor …"
+     "excerpt": "Diatek was part of the JPL Technology Affiliates Program, or TAP, in the late 1980s and received help from JPL personnel in adapting infrared sensor technology to this new product."
     },
     {
      "id": "diatek-patent-rival",
      "class": "verified_observation",
      "title": "US4797840A - Infrared electronic thermometer and method for measuring temperature - Google Patents",
-     "excerpt": "A further object of the invention is to provide a noncontacting electronic thermometer for medical use which is compact, inexpensive and convenient and easy to …"
+     "excerpt": "A further object of the invention is to provide a noncontacting electronic thermometer for medical use which is compact, inexpensive and convenient and easy to use."
     },
     {
      "id": "diatek-pm-zones",
@@ -3346,7 +3346,7 @@
      "id": "diatek-spinoff-device",
      "class": "company_claim",
      "title": "Infrared Thermometer · NASA Spinoff",
-     "excerpt": "Diatek Corporation, San Diego, CA and the Jet Propulsion Lab developed the Diatek Model 7000 aural thermometer which weighs only eight ounces, and measures temperature …"
+     "excerpt": "Diatek Corporation, San Diego, CA and the Jet Propulsion Lab developed the Diatek Model 7000 aural thermometer which weighs only eight ounces, and measures temperature in less than two seconds using infrared astronomy technology to measure the amount of infrared energy emitted by the eardrum (the same way temperature of stars and planets is measured)."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -3593,7 +3593,7 @@
      "id": "flir-eb-i3price",
      "class": "verified_observation",
      "title": "VIDEO - Flir offers new i3 thermal imaging camera | Electrical Business",
-     "excerpt": "Flir Systems announced the release of its new i3 thermal imaging camera, which will retail for US$1,195–making it the most affordable high-quality infrared camera, says …"
+     "excerpt": "Flir Systems announced the release of its new i3 thermal imaging camera, which will retail for US$1,195–making it the most affordable high-quality infrared camera, says the company."
     },
     {
      "id": "flir-imv-lepton",
@@ -3623,7 +3623,7 @@
      "id": "flir-spk-service",
      "class": "verified_observation",
      "title": "Thermal imaging a hot market | The Spokesman-Review",
-     "excerpt": "Prices for those home inspections begin at $150, and much of the two hours is spent with Energy Doctors’ technicians recommending to clients cost-effective ways …"
+     "excerpt": "Prices for those home inspections begin at $150, and much of the two hours is spent with Energy Doctors’ technicians recommending to clients cost-effective ways to reduce their energy expenses, he said."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -3682,7 +3682,7 @@
      "theory_id": "T2",
      "evidence_id": "flir-spk-service",
      "direction": "supports",
-     "quote": "Prices for those home inspections begin at $150, and much of the two hours is spent with Energy Doctors’ technicians recommending to clients cost-effective ways …",
+     "quote": "Prices for those home inspections begin at $150, and much of the two hours is spent with Energy Doctors’ technicians recommending to clients cost-effective ways to reduce their energy expenses, he said.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that consumers would purchase a thermal camera for hunting or outdoor recreation; it only indicates that home inspectors use thermal imaging for energy efficiency."
     },
@@ -3785,7 +3785,7 @@
       "theory_id": "T2",
       "evidence_id": "flir-spk-service",
       "direction": "neutral",
-      "quote": "Prices for those home inspections begin at $150, and much of the two hours is spent with Energy Doctors’ technicians recommending to clients cost-effective ways …",
+      "quote": "Prices for those home inspections begin at $150, and much of the two hours is spent with Energy Doctors’ technicians recommending to clients cost-effective ways to reduce their energy expenses, he said.",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not show that consumers would purchase a thermal camera for hunting or outdoor recreation; it only indicates that home inspectors use thermal imaging for energy efficiency."
      }
@@ -3882,7 +3882,7 @@
      "id": "recaro-bt-price",
      "class": "verified_observation",
      "title": "Recaro Gaming Exo FX: Overpriced gaming chair or justified price? | Basic Tutorials",
-     "excerpt": "For a proud 899.00 euros, the price also settles in the premium range; thus also surpasses the prices of the top dogs Backforce , Noblechairs …"
+     "excerpt": "For a proud 899.00 euros, the price also settles in the premium range; thus also surpasses the prices of the top dogs Backforce , Noblechairs and SecretLab."
     },
     {
      "id": "recaro-dc-jury",
@@ -3900,13 +3900,13 @@
      "id": "recaro-fmt-secretlab",
      "class": "verified_observation",
      "title": "Temasek unit buys stake in chair maker for gamers | Free Malaysia Today (Bloomberg)",
-     "excerpt": "It has sold more than 200,000 chairs – with the most expensive retailing for S$999 – and has been picked for international gaming tournaments like …"
+     "excerpt": "It has sold more than 200,000 chairs – with the most expensive retailing for S$999 – and has been picked for international gaming tournaments like Riot Games Inc’s League of Legends."
     },
     {
      "id": "recaro-pr-group",
      "class": "company_claim",
      "title": "Market launch for the new Gaming Seat from Recaro | Recaro Group press release",
-     "excerpt": "The Group’s consolidated sales amounted to more than 600 million euros in 2018. …"
+     "excerpt": "The Group’s consolidated sales amounted to more than 600 million euros in 2018. Currently the Group employs more than 2,700 employees at its locations around the world."
     },
     {
      "id": "recaro-wiki-artsana",
@@ -3957,7 +3957,7 @@
      "theory_id": "T1",
      "evidence_id": "recaro-bt-price",
      "direction": "supports",
-     "quote": "For a proud 899.00 euros, the price also settles in the premium range; thus also surpasses the prices of the top dogs Backforce , Noblechairs …",
+     "quote": "For a proud 899.00 euros, the price also settles in the premium range; thus also surpasses the prices of the top dogs Backforce , Noblechairs and SecretLab.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that gamers are willing to pay this price or that they associate Recaro with high‑performance gaming."
     },
@@ -3989,7 +3989,7 @@
      "theory_id": "T1",
      "evidence_id": "recaro-pr-group",
      "direction": "neutral",
-     "quote": "The Group’s consolidated sales amounted to more than 600 million euros in 2018. …",
+     "quote": "The Group’s consolidated sales amounted to more than 600 million euros in 2018. Currently the Group employs more than 2,700 employees at its locations around the world.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not address consumer demand for gaming chairs or whether gamers are willing to pay a premium for Recaro."
     },
@@ -3997,7 +3997,7 @@
      "theory_id": "T2",
      "evidence_id": "recaro-pr-group",
      "direction": "neutral",
-     "quote": "The Group’s consolidated sales amounted to more than 600 million euros in 2018. …",
+     "quote": "The Group’s consolidated sales amounted to more than 600 million euros in 2018. Currently the Group employs more than 2,700 employees at its locations around the world.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not address consumer demand for gaming chairs or whether gamers are willing to pay a premium for status or personal taste."
     },
@@ -4093,7 +4093,7 @@
       "theory_id": "T2",
       "evidence_id": "recaro-pr-group",
       "direction": "neutral",
-      "quote": "The Group’s consolidated sales amounted to more than 600 million euros in 2018. …",
+      "quote": "The Group’s consolidated sales amounted to more than 600 million euros in 2018. Currently the Group employs more than 2,700 employees at its locations around the world.",
       "evidence_kind": "company_assertion",
       "does_not_show": "It does not address consumer demand for gaming chairs or whether gamers are willing to pay a premium for status or personal taste."
      }
@@ -4104,7 +4104,7 @@
       "theory_id": "T1",
       "evidence_id": "recaro-bt-price",
       "direction": "supports",
-      "quote": "For a proud 899.00 euros, the price also settles in the premium range; thus also surpasses the prices of the top dogs Backforce , Noblechairs …",
+      "quote": "For a proud 899.00 euros, the price also settles in the premium range; thus also surpasses the prices of the top dogs Backforce , Noblechairs and SecretLab.",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not show that gamers are willing to pay this price or that they associate Recaro with high‑performance gaming."
      }
@@ -4116,7 +4116,7 @@
      "theory_id": "T1",
      "evidence_id": "recaro-bt-price",
      "direction": "supports",
-     "quote": "For a proud 899.00 euros, the price also settles in the premium range; thus also surpasses the prices of the top dogs Backforce , Noblechairs …",
+     "quote": "For a proud 899.00 euros, the price also settles in the premium range; thus also surpasses the prices of the top dogs Backforce , Noblechairs and SecretLab.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that gamers are willing to pay this price or that they associate Recaro with high‑performance gaming."
     }
@@ -4204,7 +4204,7 @@
      "id": "mag-nbc-mass",
      "class": "verified_observation",
      "title": "Maglite maker shines light on U.S. manufacturing | NBC News (AP)",
-     "excerpt": "In 1979, the company introduced its first flashlight — the tough, durable Maglite, which became a favorite of police and firefighters, followed by the “Mini …"
+     "excerpt": "In 1979, the company introduced its first flashlight — the tough, durable Maglite, which became a favorite of police and firefighters, followed by the “Mini Maglite” in 1984, which sent sales soaring in the mass market."
     },
     {
      "id": "mag-npr-price",
@@ -4216,7 +4216,7 @@
      "id": "mag-pat2-cheaper",
      "class": "verified_observation",
      "title": "US4388673A Variable light beam flashlight and recharging unit (Mag Instrument), Google Patents",
-     "excerpt": "The broad object of the present invention is to provide a flashlight wherein the intensity and cross-sectional area of the light beam may be selectively …"
+     "excerpt": "The broad object of the present invention is to provide a flashlight wherein the intensity and cross-sectional area of the light beam may be selectively varied in an improved manner, and wherein the flashlight structure is simpler and less expensive to manufacture."
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -4448,25 +4448,25 @@
      "id": "sma-p16-installed",
      "class": "verified_observation",
      "title": "SMA launches Tesla-compatible home storage inverter to capitalize on high demand potential | pv magazine",
-     "excerpt": "A spokesperson at EuPD Research told pv magazine back in November that between 15,000 and 16,000 solar+storage systems will be installed in Germany in 2015 …"
+     "excerpt": "A spokesperson at EuPD Research told pv magazine back in November that between 15,000 and 16,000 solar+storage systems will be installed in Germany in 2015 , up from around 9,000 in 2014, and around 5,000 in 2013."
     },
     {
      "id": "sma-pvi-30mw",
      "class": "verified_observation",
      "title": "Storage subsidy will energize German battery uptake | pv magazine",
-     "excerpt": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months …"
+     "excerpt": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months ago."
     },
     {
      "id": "sma-rem-household",
      "class": "company_claim",
      "title": "SMA Solar honored at Intersolar Europe 2013 | Renewable Energy Magazine",
-     "excerpt": "The energy stored by the Sunny Boy Smart Energy is sufficient to supply a four-person household with about three hours of electric current in the …"
+     "excerpt": "The energy stored by the Sunny Boy Smart Energy is sufficient to supply a four-person household with about three hours of electric current in the evening."
     },
     {
      "id": "sma-wiki-sunnyboy",
      "class": "verified_observation",
      "title": "SMA Solar Technology - Wikipedia",
-     "excerpt": "SMA sells photovoltaic solar inverters as product families using the Sunny Boy name for home systems, Sunny Tripower and Sunny Highpower for medium-sized plants through …"
+     "excerpt": "SMA sells photovoltaic solar inverters as product families using the Sunny Boy name for home systems, Sunny Tripower and Sunny Highpower for medium-sized plants through the multi-megawatt range and Sunny Central"
     }
    ],
    "sources_note": "Each excerpt in sources_read is everything the dossier holds for that source: reading it again returns the same text.",
@@ -4511,7 +4511,7 @@
      "theory_id": "T1",
      "evidence_id": "sma-rem-household",
      "direction": "supports",
-     "quote": "The energy stored by the Sunny Boy Smart Energy is sufficient to supply a four-person household with about three hours of electric current in the …",
+     "quote": "The energy stored by the Sunny Boy Smart Energy is sufficient to supply a four-person household with about three hours of electric current in the evening.",
      "evidence_kind": "company_assertion",
      "does_not_show": "It does not show that consumers are willing to pay a premium price for this feature, nor that they perceive the product as a premium smart home energy management system."
     },
@@ -4519,7 +4519,7 @@
      "theory_id": "T2",
      "evidence_id": "sma-pvi-30mw",
      "direction": "supports",
-     "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months …",
+     "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months ago.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that consumers are willing to pay a premium for backup power, nor that they view SMA inverters as a safety-critical backup solution."
     },
@@ -4527,7 +4527,7 @@
      "theory_id": "T2",
      "evidence_id": "sma-p16-installed",
      "direction": "supports",
-     "quote": "A spokesperson at EuPD Research told pv magazine back in November that between 15,000 and 16,000 solar+storage systems will be installed in Germany in 2015 …",
+     "quote": "A spokesperson at EuPD Research told pv magazine back in November that between 15,000 and 16,000 solar+storage systems will be installed in Germany in 2015 , up from around 9,000 in 2014, and around 5,000 in 2013.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that consumers are willing to pay a premium for backup power, nor that they view SMA inverters as a safety-critical backup solution."
     }
@@ -4613,7 +4613,7 @@
       "theory_id": "T2",
       "evidence_id": "sma-pvi-30mw",
       "direction": "supports",
-      "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months …",
+      "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months ago.",
       "evidence_kind": "independent_study",
       "does_not_show": "It does not show that consumers are willing to pay a premium for backup power, nor that they view SMA inverters as a safety-critical backup solution."
      }
@@ -4625,7 +4625,7 @@
      "theory_id": "T2",
      "evidence_id": "sma-pvi-30mw",
      "direction": "supports",
-     "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months …",
+     "quote": "The consultancy says residential systems will dominate the German energy storage market with 30 MW already supported by the subsidy since its launch four months ago.",
      "evidence_kind": "independent_study",
      "does_not_show": "It does not show that consumers are willing to pay a premium for backup power, nor that they view SMA inverters as a safety-critical backup solution."
     }

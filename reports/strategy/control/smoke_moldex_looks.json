@@ -859,7 +859,7 @@
      "theory_id": "T3",
      "evidence_id": "rad-pack",
      "direction": "supports",
-     "quote": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the …",
+     "quote": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the various demands of end-users.",
      "class": "company_claim",
      "evidence_kind": "company_assertion",
      "does_not_show": "Whether buyers treat plugs as interchangeable or how price-sensitive they are; it only shows a competitor also offers retail packaging (as of 2014), consistent with a contested retail channel. It is a company claim, not evidence of demand."
@@ -1056,7 +1056,7 @@
       "url": "https://www.ishn.com/articles/98150-radians-opens-made-in-usa-foam-earplug-manufacturing-facility-at-memphis-headquarters",
       "date": "2014-03-13",
       "geography": "unknown",
-      "excerpt": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the …",
+      "excerpt": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the various demands of end-users.",
       "access_limitation": "none"
      }
     },
@@ -1120,7 +1120,7 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13163165/",
       "date": "2026-05-12",
       "geography": "unknown",
-      "excerpt": "Adding PN to EN worsened sleep structure, despite minor dose-dependent improvements of EN-induced sleep fragmentation and N3 sleep increases. …",
+      "excerpt": "Adding PN to EN worsened sleep structure, despite minor dose-dependent improvements of EN-induced sleep fragmentation and N3 sleep increases. Earplugs mitigated nearly all EN effects on sleep but started failing at the highest EN level (65 dBA).",
       "access_limitation": "Abstract read on PMC; full text not read"
      }
     },
@@ -1256,7 +1256,7 @@
       "theory_id": "T3",
       "evidence_id": "rad-pack",
       "direction": "supports",
-      "quote": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the …",
+      "quote": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the various demands of end-users.",
       "evidence_kind": "company_assertion",
       "does_not_show": "Whether buyers treat plugs as interchangeable or how price-sensitive they are; it only shows a competitor also offers retail packaging (as of 2014), consistent with a contested retail channel. It is a company claim, not evidence of demand."
      },
@@ -1631,7 +1631,7 @@
       "url": "https://www.ishn.com/articles/98150-radians-opens-made-in-usa-foam-earplug-manufacturing-facility-at-memphis-headquarters",
       "date": "2014-03-13",
       "geography": "unknown",
-      "excerpt": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the …",
+      "excerpt": "Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the various demands of end-users.",
       "access_limitation": "none"
      }
     },
@@ -1695,7 +1695,7 @@
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13163165/",
       "date": "2026-05-12",
       "geography": "unknown",
-      "excerpt": "Adding PN to EN worsened sleep structure, despite minor dose-dependent improvements of EN-induced sleep fragmentation and N3 sleep increases. …",
+      "excerpt": "Adding PN to EN worsened sleep structure, despite minor dose-dependent improvements of EN-induced sleep fragmentation and N3 sleep increases. Earplugs mitigated nearly all EN effects on sleep but started failing at the highest EN level (65 dBA).",
       "access_limitation": "Abstract read on PMC; full text not read"
      }
     },
@@ -1775,7 +1775,7 @@
      }
     },
     {
-     "text": "{\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T3\", \"evidence_id\": \"rad-pack\", \"direction\": \"supports\", \"quote\": \"Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the …\", \"evidence_kind\": \"company_assertion\", \"does_not_show\": \"Whether buyers treat plugs as interchangeable or how price-sensitive they are; it only shows a competitor also offers retail packaging (as of 2014), consistent with a contested retail channel. It is a company claim, not evidence of demand.\"}}",
+     "text": "{\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T3\", \"evidence_id\": \"rad-pack\", \"direction\": \"supports\", \"quote\": \"Radians disposable Made in USA Foam Earplugs are sold through authorized distributors and come in a variety of -industrial and retail packaging to meet the various demands of end-users.\", \"evidence_kind\": \"company_assertion\", \"does_not_show\": \"Whether buyers treat plugs as interchangeable or how price-sensitive they are; it only shows a competitor also offers retail packaging (as of 2014), consistent with a contested retail channel. It is a company claim, not evidence of demand.\"}}",
      "prompt_tokens": 4,
      "completion_tokens": 219,
      "seconds": 2.765267902999767,
