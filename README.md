@@ -18,6 +18,7 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 
 | | |
 |---|---|
+| **Live demo** | **[saadallah-r-hatem--aemon-serve.us-east.modal.run](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/)** (sign in with the test account from our submission; it runs on CPU and sleeps when idle, so the first page takes a moment and a new investigation takes several minutes) |
 | Model | [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent) |
 | Dataset | [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) |
 | Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) |
@@ -25,10 +26,16 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 | Recorded investigations | [docs/replays/](docs/replays/README.md), readable here with no GPU |
 | Every decision, dated | [docs/DECISIONS.md](docs/DECISIONS.md) |
 
+| **+0.83** | **+0.52** | **28 of 48** | **$0.03** | **30×** |
+|:---:|:---:|:---:|:---:|:---:|
+| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | investigations finished with an accepted recommendation, against 4 of 48 for the base model | per investigation, self-hosted on one A100 slice: about 8 times less than the closed model we measured | faster than its teacher per GPU |
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/quality-dark.png">
   <img alt="Blind quality score on the final test: base model 0.65, fine-tuned 1.48 (mean of two judges)" src="docs/figures/quality-light.png" width="720">
 </picture>
+
+![The reasoning map of one investigation: question, rival hypotheses, the evidence weighed for each, the challenge, the proposed test and the recommendation](docs/figures/ui/redesign/after/map.png)
 
 **In brief**
 - **What it is.** A 3.35B-parameter open model that investigates a strategy question step by step inside an
@@ -75,19 +82,10 @@ distilled into a small local student), with *efficient trajectories* (fewer redu
 **The question we test:** can agentic fine-tuning teach that procedure to a small model, beyond what a stage controller
 and the best prompt already achieve?
 
-**The framework behind the procedure.** Camuffo, Gambardella and Pignataro (2024, *Theory-driven strategic
-management decisions*, Strategy Science 9(4): 382–396) formalise a theory as a restriction on beliefs. In their
-Luxottica example, two uncertain attributes (can the firm design fashion eyewear, Y or N; will demand be high or low, H
-or L) define four states, and the decision maker cares about P(H). A theory, "fashion design causes demand", is a
-Bayesian network with one arrow plus an inequality on its conditional probabilities, θHY > θHN. Beliefs about the
-unknown parameters form a distribution μ; the theory allows only parameters in a set Θ, the null hypothesis
-(θHY = θHN) only Θ̃, and with prior ω on the theory its value is V = ω·VΘ + (1 − ω)·VΘ̃. With θHN = 0.5, θY = 0.8 and
-θHY uniform, the theory restricts θHY to (0.5, 1), whose mean is 0.75, so the expected probability of high demand
-rises from 0.5 to VΘ = 0.5 + 0.8 · (0.75 − 0.5) = 0.7:
-a theory raises belief by ruling parameter values out. An experiment updates μ, and the prior on the theory itself
-changes only when the evidence moves μ past a threshold, so a small surprise adjusts parameters and a large one shakes
-the theory. A rival theory has its own value Q, and with costly experiments committing is right once V is far enough
-above or below Q; in between it pays to experiment.
+**The framework behind the procedure.** Camuffo, Gambardella and Pignataro (2024) formalise a theory as a restriction
+on beliefs: stating that one thing causes another rules out parameter values, which raises or lowers the expected
+value of acting, and an experiment is worth running only while the theory's value is close to its rival's. The paper
+([docs/PAPER.pdf](docs/PAPER.pdf), section 2) works through their example.
 
 **How the agent carries this out.** The agent follows these steps in words, with tools and evidence; neither it nor
 the harness computes a Bayesian update, because that would need an invented network and invented numbers, and assumed
@@ -394,38 +392,20 @@ was selected on test set 2, but that set had been run before.
   both. Dig then reason is the most consistent of the later systems (clearly higher on test set 2, level on the final
   test); the status check fixes what it was built for and costs finished runs.
 
-### A recovery controller does not fix the remaining failures (`docs/RECOVERY_REPORT.md`)
-We tested five controller-side recovery aids, on development cases only and with a pre-registered selection rule:
-- masking rereads;
-- progress notes;
-- step-budget awareness;
-- citation repair;
-- all four together.
-
-| | Recovery of stuck runs (28 checkpoints) | Full runs: finished (of 45) | Full runs: every check passed | Blind quality |
-|---|---|---|---|---|
-| As evaluated | 6 | 24 | 3 | 1.047 |
-| Step-budget awareness (selected) | 15 | 25 | 3 | 1.053 (+0.006 [−0.017, 0.031]) |
-
-The budget aid rescues stuck runs: 9 better, 0 worse. But most of those extra finishes fail a check, because they rush
-a templated test and carry its numbers into the claims. End to end it changes 8 of 45 runs and leaves quality
-unchanged. Most failed runs stop earlier, after four refusals in a row, where no late-stage aid acts. It is in the
-app as an opt-in, labelled option. More finishes are not better investigations; the remaining failures need
-training, not a controller.
+### A recovery controller does not fix the remaining failures
+We tested five controller-side recovery aids on development cases under a pre-registered rule (masking rereads,
+progress notes, step-budget awareness, citation repair, and all four). The best, step-budget awareness, rescued 15 of
+28 stuck runs against 6, but end to end it changed 8 of 45 runs and left blind quality unchanged (+0.006
+[−0.017, 0.031]): the extra finishes rush a templated test. More finishes are not better investigations; the
+remaining failures need training, not a controller. Full report: [docs/RECOVERY_REPORT.md](docs/RECOVERY_REPORT.md).
 
 ### Limits of our own checks
-- **The mechanical experiment check is too lenient.** It accepts a test whose predictions differ and whose rule has a
-  threshold. On development, 8 of the 9 tests it accepts fail stricter design screens:
-  - 4 vary only the message;
-  - 3 go straight to building a product line;
-  - 1 is priced in euros in a 1993 case.
+- **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter
+  design screens. The frozen numbers use the original check; later comparisons also report a stricter one.
+- **Evidence-kind labels are about 80% reliable**, by a blind relabelling of 60 training records.
 
-  The frozen numbers above use the original check. Later comparisons also report the stricter `experiment_v2`, which
-  is development only.
-- **Evidence-kind labels are about 80% reliable.** A blind relabelling of 60 training records agreed with the
-  dossier's label on 45, and 5 more were defensible either way. It also found 3 likely errors, and 44 records with a
-  kind the tool cannot express. The frozen labels are unchanged. A guide and a proposed overlay are in
-  `docs/EVIDENCE_KIND_GUIDE.md`.
+Details: [docs/RELIABILITY_REPORT.md](docs/RELIABILITY_REPORT.md) and
+[docs/EVIDENCE_KIND_GUIDE.md](docs/EVIDENCE_KIND_GUIDE.md).
 
 ### What else we tested
 Specialist adapters per stage (proposed; the data per stage was too thin), a Socratic coach (proposed, not built), more teacher data
@@ -505,11 +485,11 @@ on a university HPC cluster. Claude (Anthropic) and Codex (OpenAI) served as bli
 
 ## The app
 
-`./app/run.sh` starts the interface at http://127.0.0.1:8000: pick a company, ask a question, and watch the
+Try it at the [live demo](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/), or run it yourself: `./app/run.sh` starts the interface at http://127.0.0.1:8000: pick a company, ask a question, and watch the
 investigation step by step, then read the report, the reasoning map and the sources. It runs the two-adapter system
 described in section 7 by default.
 
-![An investigation in the app](docs/figures/app-investigation.png)
+![A finished report: the recommendation, the confidence the checks support, and what the evidence did and did not show](docs/figures/ui/redesign/after/report.png)
 
 ## Repository layout
 
