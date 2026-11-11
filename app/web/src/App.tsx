@@ -76,8 +76,16 @@ export function App() {
       } catch { /* signed out or offline: try again next time */ }
     };
     void poll();
-    const timer = window.setInterval(() => { void poll(); }, 4000);
-    return () => { alive = false; window.clearInterval(timer); };
+    // With nothing running, a hidden tab or one nobody has touched for two minutes stops asking, so a hosted copy that
+    // sleeps when idle is not kept awake by a forgotten tab. A running investigation is always followed.
+    let touched = Date.now();
+    const touch = (): void => { const away = Date.now() - touched > 120000; touched = Date.now(); if (away) void poll(); };
+    const events = ['pointerdown', 'pointermove', 'keydown', 'visibilitychange'] as const;
+    events.forEach((e) => document.addEventListener(e, touch, { passive: true }));
+    const timer = window.setInterval(() => {
+      if (before.current.length || (!document.hidden && Date.now() - touched <= 120000)) void poll();
+    }, 4000);
+    return () => { alive = false; window.clearInterval(timer); events.forEach((e) => document.removeEventListener(e, touch)); };
   }, []);
   const timer = useRef<number | null>(null);
   const enterWorkspace = useCallback((id: string) => { setWs(id); storeWorkspace(id); }, []);
