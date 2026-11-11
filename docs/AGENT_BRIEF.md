@@ -21,11 +21,11 @@ Scope (Hatem): one final training run and one credible evaluation, not more pilo
 ## Rules that apply to everyone
 
 - Training data is only provenance-verified, replay-valid demonstrations from the permitted teacher, Command A+
-  (`src/aemon/pipeline/provenance.py` `TEACHER_WEIGHTS`, the manifest, `src/aemon/pipeline/rows.py`). **Claude (Anthropic) outputs
+  (`src/aemon/rows/provenance.py` `TEACHER_WEIGHTS`, the manifest, `src/aemon/rows/build_rows.py`). **Claude (Anthropic) outputs
   are never training data**, under Anthropic's commercial terms. Never generate, label or relabel training rows outside
   this pipeline, and never hide where any data came from.
 - The four final-test companies (`data/dossier/cases_heldout.json`, frozen in `docs/final_test_freeze.json`) are
-  never opened for development, prompts or examples. The six validation companies are in `src/aemon/pipeline/splits.py`.
+  never opened for development, prompts or examples. The six validation companies are in `src/aemon/data/splits.py`.
 - Do not start, stop or change cluster jobs, and do not edit files under `strategy/` or `tooling/` without asking Claude.
 - Numbers come from files in the repository, with the file named. Anything not yet measured is written as "TBD", never
   estimated. No claim of better strategy: today's defensible claim is in `docs/DECISIONS.md` ("how results are worded").
@@ -39,11 +39,11 @@ Scope (Hatem): one final training run and one credible evaluation, not more pilo
 - 64 development companies (58 training, 6 validation) plus 4 frozen final-test companies; 9 cases where no test is
   warranted.
 - Two development pilots and their reports: `reports/strategy/pilot1/`, `pilot2/`, measured with
-  `src/aemon/evaluation/progress.py`. Neither shows a trained model investigating better.
+  `src/aemon/evaluation/diagnostics/progress.py`. Neither shows a trained model investigating better.
 
 ## agy's tasks
 
-1. `docs/DATASET_CARD.md`: what a row is (`src/aemon/pipeline/rows.py`), the teacher (Command A+ Q4_K_M, Apache 2.0, revision and
+1. `docs/DATASET_CARD.md`: what a row is (`src/aemon/rows/build_rows.py`), the teacher (Command A+ Q4_K_M, Apache 2.0, revision and
    sha256 in `jobs/command_a_plus.sbatch`), provenance and replay, the company splits, the evidence sources and their
    licences (each batch README under the dossier history and `data/dossier/evidence.json`), recovery corrections
    (`docs/RECOVERY_PILOT.md`, protocol `correction-v1`), known limits (hindsight sources, company claims, non-English

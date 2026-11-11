@@ -17,8 +17,8 @@ Start the server with `./app/run_model.sh`, which also loads a trained adapter i
 |---|---|
 | `strategy/` | Investigation runs of every arm and diagnostic, with their reports and episode logs |
 | `strategy/pilot1/` | The first paired pilot: base and first adapter, the same 10 cases and settings |
-| `strategy/row_coverage_first.json` | Row retention by stage and company, full history against compact, from `src/strategy_agent/pipeline/row_coverage.py` |
-| `checkpoint_gate.json` | The loss-masking gate from `src/strategy_agent/training/masking_gate.py` |
-| `live/` | The live training feed for the Strategy Lab, kept current by `scripts/training_feed.py`. Not committed |
+| `strategy/row_coverage_first.json` | Row retention by stage and company, full history against compact, from `src/aemon/rows/row_coverage.py` |
+| `checkpoint_gate.json` | The loss-masking gate from `src/aemon/training/masking_gate.py` |
+| `live/` | The live training feed for the Strategy Lab, kept current by `scripts/oneoff/training_feed.py`. Not committed |
 
 The launch-decision runs that used to live here were removed with that code on November 3, 2026. They are in git history.

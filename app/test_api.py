@@ -96,3 +96,17 @@ def test_the_numbers_and_suggestions_work_for_a_case_with_no_what_if(client):
 
     record = dict(client.record, coverage={'shock': None})  # a base case records its what-if as None
     assert insights.suggestions(record) and insights.metrics(record)['beliefs'] == []
+
+
+def test_evidence_flags_show_for_a_run_made_with_stuck_help(client, monkeypatch):
+    # The app runs with stuck_help on by default; it is a runner setting saved with the run, not an environment one,
+    # so the rebuild that feeds the evidence checks must not pass it to the environment.
+    case = load_cases('moldex-new-evidence-looks')[0]
+    run = Investigation(case, staged=True)
+    run.call('read_brief', {})
+    run.stuck_help = True
+    record = {**record_of(run, {'stop_reason': 'finished'}), 'final': {'favoured_theory': 'T1'}}
+    assert record['settings']['stuck_help'] is True
+    monkeypatch.setattr(server.verify, 'findings', lambda rebuilt, final: [{'kind': 'late', 'text': 'cites a later source'}])
+    flags = server.detail(record, case)['answer_flags']
+    assert {'check': 'evidence_late', 'label': server.EVIDENCE_FLAGS['late'], 'detail': 'cites a later source'} in flags

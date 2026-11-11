@@ -1,7 +1,5 @@
 # Aemon design research (agent-compiled, with sources; the spec the app follows)
 
-I've finished the research and read the front-end code; no repository files were edited. Below is the design spec.
-
 # Aemon: UX research and design spec
 
 ## 1. What the research says (key findings)

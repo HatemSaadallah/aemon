@@ -69,7 +69,7 @@ stage() {  # batch, cases, first attempt, temperature, then optionally server ur
     # a crash or an unreadable output is not, so the command's status is kept and the output is checked and counted.
     local RC=0
     local MODULE=targeted; [[ $1 == corrective* ]] && MODULE=corrective
-    $L/env/bin/python -W ignore -m aemon.rows.$MODULE ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
+    $L/env/bin/python -W ignore -m aemon.teacher.$MODULE ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
       --samples ${SAMPLES:-1} --temperature ${TEMPERATURE:-0} --manifest $OUT/provenance.jsonl --output $OUT/${P}_$1.json > $OUT/${P}_$1.log 2>&1 || RC=$?
     echo "stage $P $1 ended $(date +%T), exit $RC"
     $L/env/bin/python - "$OUT/${P}_$1.json" <<'PYT' || { echo "stage $P $1: output missing or unreadable"; return 1; }

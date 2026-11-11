@@ -6,3 +6,5 @@
 *.blg
 *.lof
 *.lot
+*.fls
+*.fdb_latexmk

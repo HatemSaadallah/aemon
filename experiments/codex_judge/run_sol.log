@@ -48,3 +48,6 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 {"t": "23:13:40", "set": "system_final", "round": 1, "start": true}
 {"t": "23:27:09", "set": "system_final", "round": 1, "returncode": 0, "valid": 68, "infra_failures": 163, "causes": {"usage_limit": 163}}
 {"t": "23:27:09", "set": "system_final", "waiting_minutes": 60}
+{"t": "00:27:09", "set": "system_final", "round": 2, "start": true}
+{"t": "00:31:14", "set": "system_final", "round": 2, "returncode": 0, "valid": 68, "infra_failures": 163, "causes": {"usage_limit": 163}}
+{"t": "00:31:14", "set": "system_final", "waiting_minutes": 60}

@@ -36,9 +36,11 @@ export function HomePage({ workspace: w, running, onError }: { workspace: Worksp
   const list = [...(entries ?? [])].sort((a, b) => (b.started ?? 0) - (a.started ?? 0));
   const count = (k: string) => list.filter((e) => outcomeOf(e).kind === k).length;
   const company = shortCompany(w.company);
+  // The pill names the model the server will run (the start of its label, before the bracketed and trailing notes).
+  const modelName = status?.model?.label ? text(status.model.label).split(/ \(|\. /)[0] : '';
   const model = (
     <span className={`model-pill ${status?.model_ready ? 'ok' : 'off'}`} title={status?.model ? text(status.model.label) : undefined}>
-      <span className="dot" aria-hidden="true" />{status ? (status.model_ready ? 'Agent ready · Strategy Agent V1 (frozen)' : 'Model server offline: investigations cannot start') : 'Checking the agent…'}
+      <span className="dot" aria-hidden="true" />{status ? (status.model_ready ? `Agent ready${modelName ? ` · ${modelName}` : ''}` : 'Model server offline: investigations cannot start') : 'Checking the agent…'}
     </span>
   );
   return (

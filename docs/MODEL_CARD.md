@@ -148,8 +148,8 @@ The training data comes from the teacher, Command A+, and carries its weaknesses
 - **Evidence kinds:** they match the dossier's annotation in 38% of the teacher's weighings, and in 58% and 46% of the
   model's. Encyclopedia, news and company-history text is often labelled `independent_study`. The annotation itself is
   about 80% reliable on a blind relabelling.
-- **Hindsight in historical training cases:** 47% of teacher recommendations in historical cases cite a source
-  published after the case date. In a content sample, about half of those quotes reveal later outcomes. The frozen tests
+- **Hindsight in historical training cases:** in 74 of the teacher's 109 historical cases (68%; 47% of all 158
+  investigations) the recommendation cites a source published after the case date. In a content sample, about half of those quotes reveal later outcomes. The frozen tests
   are present-day cases, so their scores are unaffected.
 - **Lenient experiment check:** most tests that the check accepts fail stricter design screens on development.
 
@@ -199,3 +199,12 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
   the reported numbers apply to the evaluated settings (45 turns, 4 refusals in a row).
 - **Exact reproduction from the public data.** The public dossier cuts every excerpt to one sentence of at most 25 words,
   so runs on the published data read shorter excerpts than the originals and can differ.
+
+## Exploratory: the version 3 adapter (`exploratory/v3_adapter.gguf`)
+
+A second adapter, continued from this one on rows from a second teacher (DeepSeek V4-Pro; 3,611 rows from 144
+replay-exact investigations). It did **not** pass its development adoption rule and is not the evaluated model. It is
+published so the two-adapter system described in the write-up ("dig then reason": this card's adapter gathers the
+evidence, version 3 reasons) can be run by others. File: GGUF for llama.cpp, sha256 `ea919380…e1443`, the conversion
+the exploratory runs used. Blind scores, mean of two judges (Claude Code and Codex `gpt-6-sol`), base / version 1 /
+version 3: test set 2 0.56 / 1.06 / 1.48; final test 0.62 / 1.46 / 1.33. Same licence as the base model, CC-BY-NC-4.0.

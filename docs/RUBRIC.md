@@ -1,6 +1,6 @@
 # Strategy quality rubric
 
-An instrument for blind LLM judges, since no human reviewers are planned. The executable checks in `src/aemon/env/checks.py` only catch mechanical failures: a deliberately nonsense investigation has passed every one of them. LLM scores add a view of the reasoning, but they do not show a recommendation is commercially sound. Describe results as improved performance under automated evaluation.
+An instrument for blind LLM judges, since no human reviewers are planned. The executable checks in `src/aemon/environment/checks.py` only catch mechanical failures: a deliberately nonsense investigation has passed every one of them. LLM scores add a view of the reasoning, but they do not show a recommendation is commercially sound. Describe results as improved performance under automated evaluation.
 
 ## How to score
 

@@ -177,7 +177,7 @@ def detail(record: Json, case: Case) -> dict[str, Any]:
     out['finish_guard'] = 'budget' in ((record.get('settings') or {}).get('recovery') or [])
     if record.get('final'):  # the evidence checks of docs/VERIFY_EVAL_PLAN.md, shown to the reader; the run is not changed
         try:
-            run = rebuild({**record, 'settings': {k: v for k, v in (record.get('settings') or {}).items() if k != 'recovery'}}, {case.id: case})
+            run = rebuild({**record, 'settings': {k: v for k, v in (record.get('settings') or {}).items() if k not in ('recovery', 'stuck_help')}}, {case.id: case})
             out['answer_flags'] += [{'check': f'evidence_{f["kind"]}', 'label': EVIDENCE_FLAGS[f['kind']], 'detail': f['text']}
                                     for f in verify.findings(run, record['final'])]
         except Exception:  # noqa: BLE001  a record the tools cannot replay keeps its other flags
@@ -218,10 +218,13 @@ def _model_ready() -> Any | Literal[False]:
 # 'system' is two adapters in one run (DECISIONS 2026-11-11): 'adapter' (version 1) writes the stages in DIG_STAGES,
 # 'reasoner' (version 3) every later one, with the company status check on.
 DIG_STAGES = ('brief', 'frame', 'status', 'status_reading', 'evidence')
+# The company status check is off by default (DECISIONS 2026-11-12): on both test sets dig then reason scored higher
+# without it (1.43 against 1.28, and 1.13 against 1.03). STATUS_CHECK=1 turns it on.
+STATUS_CHECK = os.environ.get('STATUS_CHECK') == '1'
 MODELS = (
-    {'id': 'system', 'label': 'aemon: version 1 gathers the evidence, version 3 reasons, with a company status check (4-bit base on this laptop)',
-     'adapter': 'final_adapter.gguf', 'reasoner': 'v3_adapter.gguf', 'status_check': True, 'prompt': 'compact'},
-    {'id': 'final', 'label': 'Fine-tuned Tiny Aya (final adapter; 4-bit base on this laptop, the reported results used full precision)', 'adapter': 'final_adapter.gguf', 'prompt': 'compact'},
+    {'id': 'system', 'label': 'aemon: version 1 gathers the evidence, version 3 reasons' + (', with a company status check' if STATUS_CHECK else '') + ' (4-bit base)',
+     'adapter': 'final_adapter.gguf', 'reasoner': 'v3_adapter.gguf', 'status_check': STATUS_CHECK, 'prompt': 'compact'},
+    {'id': 'final', 'label': 'Fine-tuned Tiny Aya (final adapter; 4-bit base, the reported results used full precision)', 'adapter': 'final_adapter.gguf', 'prompt': 'compact'},
     {'id': 'untrained', 'label': 'Untrained Tiny Aya', 'adapter': None, 'prompt': 'staged'},
     {'id': 'second', 'label': 'Trained Tiny Aya, second adapter', 'adapter': 'second_adapter.gguf', 'prompt': 'compact'},
     {'id': 'first', 'label': 'Trained Tiny Aya, first adapter (full history)', 'adapter': 'first_adapter.gguf', 'prompt': 'staged'},

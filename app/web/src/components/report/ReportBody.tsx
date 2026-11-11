@@ -281,7 +281,7 @@ export function ReportBody({ record, metrics, names, number, stopped, children }
               {test && !test.declined ? <div><dt>Test</dt><dd>Proposed, not run</dd></div> : null}
               <div><dt>Warnings</dt><dd>{flags.length ? `${flags.length}, shown where they apply` : 'None from the automated checks'}</dd></div>
             </dl>
-            <p className="muted small">Strategy Agent V1, a 3B research model. Quotes are verified against their sources; the agent's readings and conclusions are not. Click any numbered source to inspect it here.</p>
+            <p className="muted small">Aemon, a 3B research model. Quotes are verified against their sources; the agent's readings and conclusions are not. Click any numbered source to inspect it here.</p>
           </div>
         )}
       </aside>

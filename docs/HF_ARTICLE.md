@@ -6,8 +6,8 @@
 
 Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · November 2026
 
-> **Result in one line.** On four companies it never saw, under the same investigation setup, the fine-tuned Tiny Aya
-> agent scored **1.48** against the best-prompted base model's **0.65** on a 0–3 blind LLM rubric (mean of two judges;
+> **Result in one line.** On four companies it never saw, in the same environment with the same tools, stage
+> controller and budgets (each arm with the prompt format it does best with), the fine-tuned Tiny Aya agent scored **1.48** against the best-prompted base model's **0.65** on a 0–3 blind LLM rubric (mean of two judges;
 > difference **+0.83, 95% interval 0.69 to 0.97**), and was higher at every company. A second frozen test on twelve
 > more companies gave **+0.52 [0.33, 0.70]**. Sixteen companies support only a limited claim about generalisation,
 > and nothing here is about business outcomes.
@@ -15,7 +15,7 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 | | |
 |---|---|
 | Code and full repository | [github.com/HatemSaadallah/aemon](https://github.com/HatemSaadallah/aemon) |
-| **Live demo** | **[saadallah-r-hatem--aemon-serve.us-east.modal.run](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/)** (sign in with the test account from our submission; it runs on CPU and sleeps when idle, so the first page takes a moment and a new investigation takes several minutes) |
+| **Live demo** | **[saadallah-r-hatem--aemon-serve.us-east.modal.run](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/)** (sign in with the test account from our submission; it runs on CPU and sleeps when idle, so the first page takes a moment; finished investigations open at once, a new one takes about 15 minutes, and it runs one at a time for everyone) |
 | Model | [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent) |
 | Dataset | [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) |
 | Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) |
@@ -40,10 +40,15 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
   evaluation run.
 - **What was measured.** Two frozen, run-once tests on 16 unseen companies, scored blind by two LLM judges that first
   had to rank sound investigations above flawed ones.
-- **The best system so far uses two adapters.** "Dig then reason" lets version 1 gather the evidence and a second
-  adapter, trained with a second teacher, do the reasoning. It is clearly better than version 1 on the second test
-  (1.43 against 1.07, +0.36 [0.22, 0.51]) and on development, and level with it on the first test. It was built after
-  the frozen results, so we report it as a later system, not as the headline.
+- **It learns the procedure, not yet the judgement.** The largest gains are in framing the decision and stating
+  distinct causal theories. But on the first test every one of the 28 finished recommendations scored 1 of 3 from
+  both judges: the agent now reaches a conclusion by a sound route far more often, and the conclusion itself is still
+  weak.
+- **A later two-adapter system is the most consistent thing we built afterwards.** "Dig then reason" lets version 1
+  gather the evidence and a second adapter, trained with a second teacher, do the reasoning. It is clearly above
+  version 1 on the second test (1.43 against 1.07, +0.36 [0.22, 0.51]) and on development, and level with it on the
+  first test; the second adapter alone scores 1.48 on the second test. All of this came after the frozen results, so
+  version 1 is the result we stand behind.
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured.
 - **What does not work yet.** About 4 in 10 runs stop before a recommendation, and almost none pass every mechanical
@@ -68,8 +73,9 @@ evidence against the favoured theory; design a test with a decision rule when in
 revise when new evidence arrives.
 
 **Track 3 problem statements addressed:** mainly *agentic distillation* (a stronger teacher's agent trajectories
-distilled into a small local student), with *efficient trajectories* (fewer redundant, looping and failed calls) and
-*workflow and decision agents* (a multi-step investigation with rules and a full audit trail).
+distilled into a small local student), with *workflow and decision agents* (a multi-step investigation with rules and
+a full audit trail). It does not make trajectories shorter: the fine-tuned agent makes more calls per run than the
+base model (35 against 20), because it gets much further before it stops.
 
 **The question we test:** can agentic fine-tuning teach that procedure to a small model, beyond what a stage controller
 and the best prompt already achieve?
@@ -103,7 +109,8 @@ likely). The scale is a signal within one run, not a calibrated probability.
 
 **AgentTune** (`src/aemon/training/train.py`, `training/masking_gate.py`)
 - `agenttune.agentic.distill_trainer.create_distill_trainer` builds the distillation trainer (TRL SFT with PEFT LoRA)
-  from our rows; `agenttune.agentic.events` (`Event`, `EventLog`) records each investigation as an event log.
+  from our rows; `agenttune.agentic.events` (`Event`, `EventLog`) is the format each evaluated run is converted to
+  for AuditKIT.
 - Loss is computed only on the target tool call; the context is masked. A masking gate checks this on real rows before
   any training run.
 
@@ -112,7 +119,7 @@ likely). The scale is a signal within one run, not a calibrated probability.
   AuditKIT; a `CustomPredicate` replays the full event log through our environment and requires every tool result to
   reproduce.
 - Diagnostic scorers on every run: `tool_call_validity`, `redundant_tool_calls`, `agent_loop_detection`,
-  `tool_permission`. Every development and final report carries an `auditkit` block (0 replay mismatches throughout).
+  `tool_permission`. Every development and final report carries an `auditkit` block; all 22 run reports in `reports/judge/` show 0 replay mismatches.
 
 **CuratorKIT** (`src/aemon/rows/curate.py`)
 - Decides which training rows to keep and never rewrites one: exact deduplication on (state, target call) and its
@@ -120,8 +127,9 @@ likely). The scale is a signal within one run, not a calibrated probability.
   all 344 dropped rows are exact duplicates. It was added after the evaluated adapters were trained, for the next
   training run, so the results below do not depend on it.
 
-The three connect: the AgentTune event logs that produce training rows are the same logs AuditKIT replays, and
-CuratorKIT filters the rows built from them.
+The three connect: AgentTune trains on rows built from teacher runs that replay exactly in our environment; every
+evaluated run is converted to AgentTune's event-log format and replayed by AuditKIT against the same environment; and
+CuratorKIT filters the rows.
 
 ## 3. Models and licences
 
@@ -141,10 +149,11 @@ CuratorKIT filters the rows built from them.
   studies and trade press; 399 company claims, kept apart so a theory cannot rest only on what a company says about
   itself). With the second test's companies and the later training cases it now holds 1,958 (1,246 and 712). Records
   written after a decision date are flagged.
-- **Cases**: 137 development cases on 64 companies, plus 16 held-out cases on 4 companies. Each case is a company and a
+- **Cases**: when version 1 was trained, 137 development cases on 64 companies, plus 16 held-out cases on 4 companies
+  (207 development cases on 99 companies now, after the cases written for version 3). Each case is a company and a
   question with search and test budgets, and some deliver a what-if result after the agent states a position
   (irrelevant, supporting or undermining). Every case declares in advance whether a test is worth its cost.
-- **Splits by company**: 58 training companies, 6 validation companies (Hellberg, Neumann, Jotun, Tanita, Deere, ACR)
+- **Splits by company**: for version 1, 58 training companies, 6 validation companies (Hellberg, Neumann, Jotun, Tanita, Deere, ACR)
   for the development choices, and 4 final-test companies (Aquaporin, Electrolux Professional, RATIONAL, Simonelli),
   frozen by digest (`docs/final_test_freeze.json`, dce26d4f…) before any model ran on them.
 - **Training data**: 174 accepted teacher investigations, giving 4,302 rows; training used the 3,891 rows from 158
@@ -322,7 +331,8 @@ under the same judges, rubric and rule.
 
 ### Version 3: a second teacher (exploratory; version 1 stays the evaluated model)
 After both tests we trained a third adapter by continuing version 1 on everything from both teachers: version 1's rows
-plus 3,611 rows from 154 replay-exact DeepSeek V4-Pro investigations on 69 companies. On its development screen it
+plus 3,611 rows from 144 replay-exact DeepSeek V4-Pro investigations on 69 companies (10 more, on the validation
+companies, give 262 validation rows). On its development screen it
 did not pass the adoption rule fixed in advance (blind quality 0.83 against version 1's 1.05), so it was not adopted.
 We then ran it on both test sets anyway, labelled exploratory, with base, version 1 and version 3 rejudged together
 blind by two judges qualified for this purpose (Claude Code and Codex on `gpt-6-sol`).
@@ -388,9 +398,10 @@ was selected on test set 2, but that set had been run before.
   runs per arm, 231 packets, Claude Code judge only so far, the second judge pending): version 1 1.18, dig then reason
   1.13, version 3 1.06, combined 1.03, base 0.54. No trained arm is distinguishable from version 1 there (combined
   −0.15 [−0.32, 0.01], dig −0.06 [−0.23, 0.12], version 3 −0.12 [−0.27, 0.02]), and most of each gap is Aquaporin.
-- **Reading across both sets:** dig then reason is the best system we have: clearly higher than version 1 on test set
-  2 and on development, and level with it on the final test. Version 1 remains the frozen, evaluated model, and no
-  later system beats it on the final test. The status check fixes what it was built for and costs finished runs.
+- **Reading across both sets:** version 1 is the frozen, evaluated model, and no later system beats it on the final
+  test. Dig then reason is the most consistent of the later systems: clearly higher than version 1 on test set 2 and
+  on development, level with it on the final test, and not higher than version 3 alone on test set 2 (1.43 against
+  1.48). The status check fixes what it was built for and costs finished runs.
 
 ### A recovery controller does not fix the remaining failures
 We tested five controller-side recovery aids on development cases under a pre-registered rule (masking rereads,
@@ -456,8 +467,8 @@ would be measured exactly as here: the same frozen judges and rule, on new held-
 - **Auditing version 1's own data.** The same weaknesses are in the teacher data version 1 was trained on:
   - 74% of the teacher's recommendations use a number from no source;
   - 38% of its evidence kinds match the annotation;
-  - 47% of its recommendations in historical cases cite a source published after the case date, and about half of those
-    quotes reveal later outcomes.
+  - in 74 of its 109 historical cases (68%; 47% of all 158 investigations) the recommendation cites a source
+    published after the case date, and about half of those quotes reveal later outcomes.
 
   The frozen tests are present-day cases, so their scores are unaffected.
 - **An evidence-verification layer, without retraining.** Before the final recommendation, the agent was shown what its
@@ -523,13 +534,39 @@ uv pip install --python .venv/bin/python -r requirements.lock.txt \
 ./run_tests.sh
 ```
 
-Serve the base model with the adapter (GGUF, llama.cpp), then run an investigation or open the app:
+The app looks for the model and the adapters in fixed places and by fixed names (`app/run_model.sh`), so fetch them
+like this (Linux; on macOS `brew install llama.cpp` replaces the llama.cpp step):
 
 ```bash
-llama-server -m tiny-aya-global-bf16.gguf --lora tiny-aya-global-strategy-lora-bf16.gguf --port 8091 --jinja
-python -m aemon.agent.run_investigations --prompt compact --cases hellberg-base --output run.json
-./app/run.sh   # the app, at http://127.0.0.1:8000 (PDF reports need Chrome or Chromium)
+# llama.cpp, the release the evaluated runs used
+mkdir -p ~/.cache/lexsi/llama-b12032 ~/.cache/lexsi/adapters
+curl -L https://github.com/ggml-org/llama.cpp/releases/download/b12032/llama-b12032-bin-ubuntu-x64.tar.gz \
+  | tar -xz -C ~/.cache/lexsi/llama-b12032 --strip-components=1   # or the vulkan/cuda build for a GPU
+
+# the 4-bit base model, at the revision the app expects
+.venv/bin/hf download CohereLabs/tiny-aya-global-GGUF tiny-aya-global-q4_k_m.gguf \
+  --revision a602ea7eeec3a4ad6f77a1b8cf6a53512824922b
+
+# the adapters, saved under the names the app loads
+.venv/bin/hf download HatemSaadallah/tiny-aya-global-strategy-agent tiny-aya-global-strategy-lora-bf16.gguf \
+  exploratory/v3_adapter.gguf --local-dir /tmp/aemon-adapters
+cp /tmp/aemon-adapters/tiny-aya-global-strategy-lora-bf16.gguf ~/.cache/lexsi/adapters/final_adapter.gguf   # version 1
+cp /tmp/aemon-adapters/exploratory/v3_adapter.gguf ~/.cache/lexsi/adapters/v3_adapter.gguf                  # version 3
+
+./app/run_model.sh                                        # the model server, port 8091
+.venv/bin/python app/users.py add yourname hellberg       # an account (asks for a password); every page needs sign-in
+./app/run.sh                                              # the app, at http://127.0.0.1:8000 (needs Node once, to build)
 ```
+
+With only version 1's adapter present the app runs version 1 alone. One investigation from the command line, against
+the same server:
+
+```bash
+.venv/bin/python -m aemon.agent.run_investigations --url http://127.0.0.1:8091 --lora-route default=0 \
+  --prompt compact --cases hellberg-base --output run.json   # default=0 is version 1
+```
+
+PDF reports need Chrome or Chromium.
 
 ## Reproduce
 
@@ -541,6 +578,10 @@ The job scripts in `jobs/` run each stage on a Slurm cluster with A100 GPUs; set
    `src/aemon/evaluation/conversion/gate.py`).
 4. Evaluation: `jobs/eval_adapter.sbatch` with `SPLIT=heldout ATTEMPTS=3`, once with the adapter (`PROMPT=compact`) and
    once without (`PROMPT=staged`).
+   The trained arm needs `DIAGNOSTIC=1`: the job still runs the first conversion check, retired on 6 November, which
+   the final adapter fails on one threshold, so without the flag it exits with code 3 and with it the outputs carry a
+   `DIAGNOSTIC_conversion_gate_failed` marker. The adopted check is the second one (step 3), which the adapter passed
+   (`reports/conversion/final_gate_v2.json`). `docs/DECISIONS.md` has both entries.
 5. Judging: `python -m aemon.evaluation.judging.packets`, `src/aemon/evaluation/judging/judge_v1/run_campaign.py`,
    `python -m aemon.evaluation.judging.report`. All reports are in `reports/judge/`.
 

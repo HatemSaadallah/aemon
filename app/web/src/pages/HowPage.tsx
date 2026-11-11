@@ -133,8 +133,8 @@ export function HowPage({ workspace: w }: { workspace?: Workspace | null }) {
           </div>
           <div className="panel pad res">
             <span className="kicker">Second frozen test · 12 companies, 72 runs per arm</span>
-            <p className="res-big">0.48 → 0.89</p>
-            <p className="muted small">One judge so far (Claude); the second judge is pending. Difference +0.41, 95% interval 0.24 to 0.57.</p>
+            <p className="res-big">0.57 → 1.09</p>
+            <p className="muted small">Base model against V1, mean of two blind judges, 144 runs. Difference +0.52, 95% interval 0.33 to 0.70 (Claude +0.41 [0.24, 0.57]; Codex +0.63 [0.43, 0.84]).</p>
             <p className="small">Finished investigations: <b>2 of 72</b> base, <b>32 of 72</b> V1.</p>
           </div>
           <div className="panel pad res warnish">
@@ -156,7 +156,7 @@ export function HowPage({ workspace: w }: { workspace?: Workspace | null }) {
             <li key={k}><a className="panel pad hover link-card" href={href} target="_blank" rel="noreferrer noopener"><span className="kicker">{k}</span><b>{label}</b><Icon name="arrow" size={15} /></a></li>
           ))}
         </ul>
-        <p className="muted small">The research paper is not yet published; it will be linked here when it is.</p>
+        <p className="muted small">The research paper is published with the code: <a href="https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf" target="_blank" rel="noreferrer noopener">docs/PAPER.pdf</a>.</p>
       </section>
     </div>
   );

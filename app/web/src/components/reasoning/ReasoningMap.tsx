@@ -243,7 +243,7 @@ export function ReasoningMap({ record, live = false, onOpenReport }: { record: R
           {live ? <p className="rlive"><span className="pulse" aria-hidden="true" /> Live: new steps appear as the agent records them</p> : null}
         </div>
       )}
-      <p className="rnote muted small">A map of the agent's recorded reasoning (Strategy Agent V1), not a check that it is right. Quotes are verified against their sources; the agent's readings and conclusions are not.</p>
+      <p className="rnote muted small">A map of the agent's recorded reasoning, not a check that it is right. Quotes are verified against their sources; the agent's readings and conclusions are not.</p>
     </div>
   );
 }

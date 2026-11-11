@@ -2,8 +2,8 @@
 
 Each transcript is one run from the frozen final test, step by step: every tool call the agent made, whether the
 environment accepted or refused it and why, what it returned, and the recommendation. Nothing is re-run; the text comes
-from the saved runner reports in reports/judge/final/. Source excerpts are cut to their first sentence (at most 25
-words), as in the public dossier. The blind judges' scores are shown for each run.
+from the saved runner reports in reports/judge/final/. Source excerpts and quotes are shown whole, as in the public
+dossier. The blind judges' scores are shown for each run.
 
     python scripts/release/replay_markdown.py --out docs/replays
 """
@@ -18,9 +18,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / 'src'))
-sys.path.insert(0, str(REPO / 'scripts' / 'release'))
 
-from build_release import short  # noqa: E402
 from aemon.evaluation.judging.report import episode_scores, load  # noqa: E402
 
 FINAL = REPO / 'reports/judge/final'
@@ -57,6 +55,11 @@ def clip(text: object, n: int = 300) -> str:
     return s if len(s) <= n else s[:n].rsplit(' ', 1)[0] + ' …'
 
 
+def whole(text: object) -> str:
+    """An excerpt or quote in full, on one line so that it fits a table cell."""
+    return ' '.join(str(text).split())
+
+
 def describe(result: object) -> str:
     """One or a few lines for what a tool returned."""
     if not isinstance(result, dict):
@@ -69,7 +72,7 @@ def describe(result: object) -> str:
             return 'No results.'
         return 'Found: ' + '; '.join(f'`{h.get("id")}` {clip(h.get("title", ""), 90)}' for h in hits[:6])
     if 'excerpt' in result:
-        return f'*{clip(result.get("title", ""), 120)}* ({result.get("class", "")}): "{short(str(result["excerpt"]))}"'
+        return f'*{clip(result.get("title", ""), 120)}* ({result.get("class", "")}): "{whole(result["excerpt"])}"'
     if 'question' in result:
         return f'**Question:** {clip(result["question"], 400)}'
     return clip(json.dumps(result, ensure_ascii=False), 200)
@@ -81,7 +84,8 @@ def arguments(args: object) -> str:
     parts = []
     for k, v in args.items():
         if k == 'quote':
-            v = short(str(v))
+            parts.append(f'**{k}:** {whole(v)}')
+            continue
         parts.append(f'**{k}:** {clip(v if isinstance(v, str) else json.dumps(v, ensure_ascii=False), 260)}')
     return '<br>'.join(parts)
 
@@ -92,7 +96,7 @@ def render(arm: str, record: dict, why: str, score: dict[str, float]) -> str:
     lines = [f'# {record["company"]}: `{record["case"]}`, attempt {record["attempt"]}', '', f'*{why}.*', '',
              f'- **Model:** {ARM[arm]}', f'- **How it ended:** {record["stop_reason"]} after {len(record["calls"])} tool calls',
              f'- **Blind judge score (0 to 3):** {mean} (mean of judges; {judged})', '',
-             'Recorded during the frozen final test; nothing here is re-run. Excerpts are cut to their first sentence.', '',
+             'Recorded during the frozen final test; nothing here is re-run. Excerpts are shown whole.', '',
              '| # | Stage | Tool call | Environment |', '|---|---|---|---|']
     for i, c in enumerate(record['calls'], 1):
         ok = '' if c.get('accepted') else ' (refused)'

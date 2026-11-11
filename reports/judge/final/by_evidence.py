@@ -1,6 +1,6 @@
 """Final test breakdown by evidence kind, per judge and mean of judges, with the frozen bootstrap. Evaluation only."""
 import json, sys, collections, statistics
-from strategy_agent.evaluation.judge_report import episode_scores, load, bootstrap
+from aemon.evaluation.judging.report import episode_scores, load, bootstrap
 key = [json.loads(l) for l in open(sys.argv[1])]
 judges = dict(a.split('=', 1) for a in sys.argv[2:])
 def kind(c):

@@ -1498,3 +1498,11 @@ epro -0.06, simo +0.18); dig minus v1 -0.06 [-0.23, 0.12]; combined minus v3 -0.
 the frozen campaign). gpt-6-sol stands at 68 of 231 on the Codex usage limit and retries hourly; the two-judge numbers
 replace these when it ends. Reading: no later system is distinguishable from version 1 on the final test, and on test
 set 2 version 3 and dig are higher; nothing built after version 1 is shown better on both sets.
+
+## 2026-11-12: the app default is dig then reason without the status check (Hatem: "yes")
+
+On both test sets dig then reason scored higher without the company status check than with it (test set 2, two
+judges: 1.43 against 1.28; final test, Claude Code judge: 1.13 against 1.03), and it is the best later system overall
+(clearly above version 1 on development and test set 2, level on the final test). The app's default `system` model
+therefore runs version 1 for the brief, frame and evidence stages and version 3 after, with the status check off;
+`STATUS_CHECK=1` turns it on. Applied locally and on the hosted demo. Version 1 remains the evaluated model.
