@@ -12,3 +12,39 @@
 {"t": "21:55:00", "set": "final_v3", "round": 3, "start": true}
 {"t": "21:56:02", "set": "final_v3", "round": 3, "returncode": 0, "valid": 94, "infra_failures": 41, "causes": {"usage_limit": 41}}
 {"t": "21:56:02", "set": "final_v3", "waiting_minutes": 60}
+{"t": "22:21:08", "set": "final_v3", "round": 4, "start": true}
+{"t": "22:26:44", "set": "final_v3", "round": 4, "returncode": 0, "valid": 135, "infra_failures": 0, "causes": {}}
+{"t": "22:26:46", "set": "final_v3", "reported": "v3 vs v1"}
+{"t": "22:26:47", "set": "final_v3", "reported": "v1 vs base"}
+{"t": "22:26:48", "set": "final_v3", "reported": "v3 vs base"}
+{"t": "22:26:48", "set": "system_test2", "round": 1, "start": true}
+Traceback (most recent call last):
+  File "/home/USER/Desktop/lexsi-ai-hackathon/experiments/codex_judge/run.py", line 131, in <module>
+    main()
+  File "/home/USER/Desktop/lexsi-ai-hackathon/experiments/codex_judge/run.py", line 125, in main
+    campaign(name, folder, res)
+  File "/home/USER/Desktop/lexsi-ai-hackathon/experiments/codex_judge/run.py", line 77, in campaign
+    why = infra(d)
+          ^^^^^^^^
+  File "/home/USER/Desktop/lexsi-ai-hackathon/experiments/codex_judge/run.py", line 50, in infra
+    r = json.loads((dest / 'result.json').read_text())
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/USER/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/USER/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/decoder.py", line 338, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/USER/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/json/decoder.py", line 356, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+{"t": "23:07:08", "set": "system_test2", "round": 1, "start": true}
+{"t": "23:13:32", "set": "system_test2", "round": 1, "returncode": 0, "valid": 342, "infra_failures": 0, "causes": {}}
+{"t": "23:13:34", "set": "system_test2", "reported": "combined vs v1"}
+{"t": "23:13:35", "set": "system_test2", "reported": "combined vs v3"}
+{"t": "23:13:37", "set": "system_test2", "reported": "combined vs dig"}
+{"t": "23:13:38", "set": "system_test2", "reported": "dig vs v1"}
+{"t": "23:13:40", "set": "system_test2", "reported": "combined vs base"}
+{"t": "23:13:40", "set": "system_final", "round": 1, "start": true}
+{"t": "23:27:09", "set": "system_final", "round": 1, "returncode": 0, "valid": 68, "infra_failures": 163, "causes": {"usage_limit": 163}}
+{"t": "23:27:09", "set": "system_final", "waiting_minutes": 60}

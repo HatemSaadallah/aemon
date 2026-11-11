@@ -100,6 +100,8 @@ def campaign(name: str, folder: str, res: Path) -> None:
 def report(name: str, folder: str, res: Path, compares: list[tuple[str, str]]) -> None:
     shutil.copy(res / 'predictions.jsonl', REPO / folder / f'{JUDGE}_predictions.jsonl')
     other, path = CLAUDE[name]
+    while not (REPO / path).exists():  # the other judge may still be running on this set
+        time.sleep(120)
     key = REPO / folder / 'key.jsonl'  # copied into the repository only once every judge has finished
     if not key.exists():
         key = Path.home() / f'lexsi-backup/judge_keys/{name}_key.jsonl'

@@ -1,8 +1,8 @@
-# Aemon
+# aemon
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/aemon-wordmark-dark.png">
-  <img alt="Aemon: weigh what is known. test what is not." src="docs/figures/aemon-wordmark.png" width="420">
+  <img alt="aemon: weigh what is known. test what is not." src="docs/figures/aemon-wordmark.png" width="420">
 </picture>
 
 *weigh what is known. test what is not.*

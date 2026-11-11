@@ -76,6 +76,7 @@ OPEN = {'/login', '/api/login'}
 _failures, _auth_lock = collections.defaultdict(collections.deque), threading.Lock()
 
 
+
 def _user_of(request: Request) -> str | None:
     return store.session_user(request.cookies.get(COOKIE))
 
@@ -1234,6 +1235,24 @@ def try_result(identifier: str, request: Request) -> Json:
     return {k: v for k, v in entry.items() if k not in ('user', 'cache_key', 'stop')}
 
 
+def _test_account() -> None:
+    """A hosted copy's shared test account (AEMON_TEST_USER and AEMON_TEST_PASSWORD, set as secrets where it is hosted):
+    created at start in every company, so the people testing can be given one name and password. An empty history is
+    filled once from AEMON_SEED (a JSON list of finished investigations), so there are reports to open before any run."""
+    name, password = os.environ.get('AEMON_TEST_USER', '').strip().lower(), os.environ.get('AEMON_TEST_PASSWORD', '')
+    if not name or not password:
+        return
+    users.add(name, password, WORKSPACES[0])
+    for w in workspaces():
+        store.join(name, w['id'])
+    seed = os.environ.get('AEMON_SEED')
+    if seed and Path(seed).is_file() and not any(store.history(name, w['id']) for w in workspaces()):
+        for e in json.loads(Path(seed).read_text()):
+            if e['workspace'] in WORKSPACES:
+                store.record(name, e['workspace'], e['id'], **{k: v for k, v in e.items() if k not in ('id', 'workspace')})
+
+
 _sync_companies()  # at import, before any request: the companies table and the demo memberships
+_test_account()
 if os.environ.get('LEXSI_NO_RESUME') != '1':  # the tests resume by hand
     threading.Thread(target=_resume, daemon=True).start()

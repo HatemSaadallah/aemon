@@ -1465,3 +1465,19 @@ brief, frame, status, status-reading and evidence stages, version 3 every later 
 - **Judging as planned:** `reports/judge/system_test2` (342 packets from 360 runs) and `reports/judge/system_final`
   (231 from 240): base, v1, v3, combined and dig together, blind, keys outside the repository until both judges end.
   Claude Code judge first, then gpt-6-sol through `experiments/codex_judge/run.py system_test2 system_final`.
+
+## 2026-11-11 (23:15): the combined system on test set 2, both judges: the primary comparison is not met
+
+Five arms judged together blind (342 packets from 360 runs, 72 runs per arm, 24 cases), Claude Code and gpt-6-sol,
+no judgment missing. Mean of judges: base 0.56, v1 1.07, combined 1.28, dig 1.43, v3 1.48 (Claude Code: 0.48, 0.87,
+1.07, 1.16, 1.21; gpt-6-sol: 0.63, 1.26, 1.49, 1.70, 1.74). Spearman between judges 0.90 on 360 runs.
+- **Primary, combined minus v1: +0.22 [-0.00, 0.46]**, 72 pairs. The interval includes zero: not shown better than v1.
+  By company: higher at 7 of 12 (hoshizaki +1.19, frankecoffee +0.94, belimo +0.82), lower at 5 (winterhalter -0.42,
+  ansell -0.24).
+- Combined minus v3: -0.20 [-0.38, -0.01]. Combined minus dig: -0.15 [-0.35, 0.06]. Dig minus v1: +0.36 [0.22, 0.51].
+  Combined minus base: +0.73 [0.52, 0.93].
+- Reading: on test set 2 the route adds nothing over version 3 alone (dig 1.43 against v3 1.48), unlike development,
+  and the status check costs about 0.15, with fewer finished runs (37 of 72 against 43). Version 1's frozen results
+  stand. The final-test packets (secondary, labelled) are still being judged.
+- A full disk at 23:04 (a local container build) stopped both judges; 3 gpt-6-sol and 4 Claude Code attempts written
+  empty were archived as `*_archived_disk_full` and rerun. No completed judgment was affected.

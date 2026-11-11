@@ -7,9 +7,7 @@ until [ -s $D/run.out ] && [ -s $D/run_new.out ]; do sleep 30; done
 echo "generation ended $(date -u +%T)"
 PYTHONPATH=src .venv/bin/python -W ignore scripts/oneoff/v3_rows.py --folder $D --base rows/final.jsonl --out rows/v3 > $D/v3_rows.log 2>&1 || { echo "rows step refused or failed: $(tail -3 $D/v3_rows.log)"; exit 1; }
 cp rows/v3_report.json $D/v3_rows_report.json
-git add $D docs/DECISIONS.md && git commit -q -m "DeepSeek V4-Pro investigations complete; version 3 rows built (report in experiments/hosted_investigations/v3_rows_report.json)
-
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" && git push -q origin claude/strategy-agent && git push -q origin HEAD:main
+git add $D docs/DECISIONS.md && git commit -q -m "DeepSeek V4-Pro investigations complete; version 3 rows built (report in experiments/hosted_investigations/v3_rows_report.json)" && git push -q origin claude/strategy-agent && git push -q origin HEAD:main
 REV=$(git rev-parse --short HEAD)
 SSHO="ssh -o BatchMode=yes -o ControlMaster=no -o ControlPath=$HOME/.ssh/cm-lexsi -o ProxyCommand=false"
 git archive $REV src jobs scripts data/dossier | gzip | $SSHO CLUSTER_ACCOUNT@CLUSTER_HOST "mkdir -p ~/lexsi/code_$REV && tar -xz -C ~/lexsi/code_$REV"

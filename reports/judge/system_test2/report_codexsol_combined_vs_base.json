@@ -1,0 +1,191 @@
+{
+ "runs": 360,
+ "arms": [
+  "base",
+  "combined",
+  "dig",
+  "v1",
+  "v3"
+ ],
+ "judges": {
+  "codexsol": {
+   "by_arm": {
+    "base": {
+     "mean": 0.628,
+     "n": 72
+    },
+    "v1": {
+     "mean": 1.258,
+     "n": 72
+    },
+    "v3": {
+     "mean": 1.742,
+     "n": 72
+    },
+    "combined": {
+     "mean": 1.494,
+     "n": 72
+    },
+    "dig": {
+     "mean": 1.696,
+     "n": 72
+    }
+   },
+   "by_arm_company": {
+    "base": {
+     "ansell": 0.583,
+     "belimo": 0.611,
+     "draeger": 0.854,
+     "frankecoffee": 0.671,
+     "hach": 0.667,
+     "hoshizaki": 0.613,
+     "kingspan": 0.477,
+     "laerdal": 0.708,
+     "mettler": 0.692,
+     "tennant": 0.444,
+     "testo": 0.708,
+     "winterhalter": 0.512
+    },
+    "v1": {
+     "ansell": 1.421,
+     "belimo": 1.035,
+     "draeger": 1.044,
+     "frankecoffee": 0.674,
+     "hach": 1.234,
+     "hoshizaki": 0.535,
+     "kingspan": 1.731,
+     "laerdal": 1.588,
+     "mettler": 1.979,
+     "tennant": 1.759,
+     "testo": 1.032,
+     "winterhalter": 1.062
+    },
+    "v3": {
+     "ansell": 2.056,
+     "belimo": 1.97,
+     "draeger": 2.125,
+     "frankecoffee": 1.382,
+     "hach": 1.78,
+     "hoshizaki": 1.602,
+     "kingspan": 1.889,
+     "laerdal": 1.644,
+     "mettler": 1.954,
+     "tennant": 1.704,
+     "testo": 1.567,
+     "winterhalter": 1.236
+    },
+    "combined": {
+     "ansell": 1.123,
+     "belimo": 2.012,
+     "draeger": 0.965,
+     "frankecoffee": 1.729,
+     "hach": 1.181,
+     "hoshizaki": 1.924,
+     "kingspan": 1.972,
+     "laerdal": 1.558,
+     "mettler": 2.118,
+     "tennant": 1.933,
+     "testo": 0.847,
+     "winterhalter": 0.562
+    },
+    "dig": {
+     "ansell": 1.657,
+     "belimo": 1.296,
+     "draeger": 1.407,
+     "frankecoffee": 1.509,
+     "hach": 1.079,
+     "hoshizaki": 1.778,
+     "kingspan": 1.938,
+     "laerdal": 2.062,
+     "mettler": 2.095,
+     "tennant": 1.843,
+     "testo": 1.738,
+     "winterhalter": 1.947
+    }
+   },
+   "by_arm_dimension": {
+    "base": {
+     "assumptions_predictions": 1.25,
+     "causal_mechanism": 0.986,
+     "distinct_theories": 0.653,
+     "evidence_judgement": 0.375,
+     "experiment_design": 0.222,
+     "problem_framing": 1.014,
+     "recommendation": 0.028,
+     "revision": 0.0,
+     "seeking_challenge": 0.778
+    },
+    "v1": {
+     "assumptions_predictions": 1.792,
+     "causal_mechanism": 1.708,
+     "distinct_theories": 1.347,
+     "evidence_judgement": 0.569,
+     "experiment_design": 0.611,
+     "problem_framing": 2.417,
+     "recommendation": 0.444,
+     "revision": 1.139,
+     "seeking_challenge": 1.278
+    },
+    "v3": {
+     "assumptions_predictions": 2.375,
+     "causal_mechanism": 2.403,
+     "distinct_theories": 2.097,
+     "evidence_judgement": 0.944,
+     "experiment_design": 0.972,
+     "problem_framing": 2.472,
+     "recommendation": 1.0,
+     "revision": 2.028,
+     "seeking_challenge": 1.542
+    },
+    "combined": {
+     "assumptions_predictions": 2.125,
+     "causal_mechanism": 2.111,
+     "distinct_theories": 1.861,
+     "evidence_judgement": 0.653,
+     "experiment_design": 0.708,
+     "problem_framing": 2.569,
+     "recommendation": 0.75,
+     "revision": 1.389,
+     "seeking_challenge": 1.264
+    },
+    "dig": {
+     "assumptions_predictions": 2.5,
+     "causal_mechanism": 2.556,
+     "distinct_theories": 2.056,
+     "evidence_judgement": 0.792,
+     "experiment_design": 0.847,
+     "problem_framing": 2.764,
+     "recommendation": 0.667,
+     "revision": 1.583,
+     "seeking_challenge": 1.444
+    }
+   },
+   "difference": {
+    "arms": "combined minus base",
+    "pairs": 72,
+    "cases": 24,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.865,
+     0.611,
+     1.109
+    ],
+    "by_company": {
+     "ansell": 0.539,
+     "belimo": 1.4,
+     "draeger": 0.111,
+     "frankecoffee": 1.058,
+     "hach": 0.514,
+     "hoshizaki": 1.31,
+     "kingspan": 1.495,
+     "laerdal": 0.85,
+     "mettler": 1.426,
+     "tennant": 1.488,
+     "testo": 0.139,
+     "winterhalter": 0.051
+    }
+   }
+  }
+ },
+ "missing": []
+}

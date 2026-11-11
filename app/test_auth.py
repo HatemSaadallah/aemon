@@ -405,3 +405,13 @@ def test_only_the_reviewer_reviews_and_the_decision_is_written_to_the_batch_file
     assert saved['keep'] is False and saved['review_note'] == 'message-only test' and saved['reviewed_by'] == 'ada'
     assert client.get('/api/review/v2_round9/b_kept_for_review').json()['advisory'] == {'design': '# advice'}
     assert other.patch('/api/review/v2_round9/b_kept_for_review/1', json={'keep': True}).status_code == 404
+
+
+def test_a_hosted_copy_gets_its_shared_test_account_in_every_company(setup, monkeypatch):
+    monkeypatch.setenv('AEMON_TEST_USER', 'judges')
+    monkeypatch.setenv('AEMON_TEST_PASSWORD', 'a long test phrase')
+    server._test_account()
+    client = TestClient(server.app)
+    assert client.get('/api/me').status_code == 401  # sign-in is still required
+    assert client.post('/api/login', json={'name': 'judges', 'password': 'a long test phrase'}).status_code == 200
+    assert set(client.get('/api/me').json()['companies']) == set(server.WORKSPACES)
