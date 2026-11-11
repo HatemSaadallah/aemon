@@ -101,7 +101,7 @@ likely). The scale is a signal within one run, not a calibrated probability.
   about real demand. Refused calls return the reason.
 - **A stage controller** that offers the tools of the current stage: brief, frame, read, theories, assessment,
   challenge, test, position, new evidence, conclusion.
-- **A teacher**, Command A+ (Apache 2.0), run on a university cluster through the same tools. Every teacher
+- **A teacher**, Command A+ (Apache 2.0), run with llama.cpp on an NVIDIA A100 (80 GB) through the same tools. Every teacher
   investigation is replayed against the environment, and only investigations that replay exactly and reach an
   accepted finish become training data.
 - **The student**, Tiny Aya Global, fine-tuned with AgentTune (LoRA) on the teacher's tool calls, then evaluated with
@@ -479,7 +479,7 @@ Team Two-eyed Ravens: Hatem Saadallah and Nour Jennane, Master's students in art
 researchers.
 
 Built with AgentTune, AuditKIT and CuratorKIT (Lexsi Labs), Tiny Aya and Command A+ (Cohere), PEFT, TRL and llama.cpp,
-on a university HPC cluster. Claude (Anthropic) and Codex (OpenAI) served as blind judges and as coding assistants.
+on NVIDIA A100 GPUs (40 GB and 80 GB slices, Slurm). Claude (Anthropic) and Codex (OpenAI) served as blind judges and as coding assistants.
 
 ---
 

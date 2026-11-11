@@ -2,7 +2,17 @@
 
 *weigh what is known. test what is not.*
 
-Team Two-eyed Ravens | Lexsi AI Hackathon Track 3 (Agentic Fine-Tuning) | November 2026
+Team Two-eyed Ravens: Hatem Saadallah and Nour Jennane | Lexsi AI Hackathon Track 3 (Agentic Fine-Tuning) | November 2026
+
+**[Live demo](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/)** ·
+**[Full write-up and code](https://github.com/HatemSaadallah/aemon)** ·
+[Dataset](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) ·
+[Collection](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) ·
+[Paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf)
+
+> On four companies it never saw, this adapter scored **1.48** against the best-prompted base model's **0.65** on a
+> 0–3 blind rubric (mean of two judges; **+0.83, 95% interval 0.69 to 0.97**). A second frozen test on twelve more
+> companies gave **+0.52 [0.33, 0.70]**.
 
 ## 1. Model Details
 
@@ -13,7 +23,7 @@ Team Two-eyed Ravens | Lexsi AI Hackathon Track 3 (Agentic Fine-Tuning) | Novemb
 * **Post-Training Method:** Supervised distillation via Parameter-Efficient Fine-Tuning (PEFT LoRA) through AgentTune
 * **Teacher Model:** Command A+ (`command-a-plus-05-2026-Q4_K_M`, Apache 2.0)
 * **Evaluation Framework:** AuditKIT episode replay and double-blind LLM rubric evaluation
-* **Training job:** Bocconi HPC, Slurm job 744559, code revision 20d3610; adapter sha256 740c4a9b…, converted GGUF sha256 41794b57…
+* **Training job:** an NVIDIA A100 GPU, Slurm job 744559, code revision 20d3610; adapter sha256 740c4a9b…, converted GGUF sha256 41794b57…
 
 ## 2. Intended Use
 
@@ -55,14 +65,14 @@ Training is executed via `src/aemon/training/train.py` using AgentTune's distill
 * **Gradient Accumulation Steps:** 4 (Effective batch size: 4)
 * **Epochs:** 2.0 (1,971 optimizer steps on 3,942 rows: 3,891 teacher rows from 158 investigations on 57 training companies, plus 51 correction rows)
 * **Max Sequence Length:** 8,192 tokens
-* **Loss Masking:** Supervised loss is computed strictly on target reply tokens (`labels_for()` in `src/aemon/pipeline/rows.py`). Context tokens are assigned label `-100`. Rows exceeding 8,192 tokens are refused and logged, never truncated.
+* **Loss Masking:** Supervised loss is computed strictly on target reply tokens (`labels_for()` in `src/aemon/rows/build_rows.py`). Context tokens are assigned label `-100`. Rows exceeding 8,192 tokens are refused and logged, never truncated.
 
 ### Checkpoint Selection
-Validation is conducted per company across six held-out validation companies (`src/aemon/pipeline/splits.py`: Hellberg, Neumann, Jotun, Tanita, Deere, ACR), capped at 40 evenly spaced rows per company. The retained checkpoint is the one with the lowest validation loss; in the final run that was the last checkpoint (step 1,971, validation loss 0.7125, down from 1.045 at the start).
+Validation is conducted per company across six held-out validation companies (`src/aemon/data/splits.py`: Hellberg, Neumann, Jotun, Tanita, Deere, ACR), capped at 40 evenly spaced rows per company. The retained checkpoint is the one with the lowest validation loss; in the final run that was the last checkpoint (step 1,971, validation loss 0.7125, down from 1.045 at the start).
 
 ### Pre-Training and Conversion Gates
 1. **Overfit Gate (`--check 10 --require 8`):** Before launching the full training job, an overfit run on 10 demonstration rows must reproduce at least 8 target replies greedily; otherwise, the job aborts.
-2. **Adapter Conversion Gate v2 (`src/aemon/evaluation/conversion_gate.py`):** the converted GGUF adapter is
+2. **Adapter Conversion Gate v2 (`src/aemon/evaluation/conversion/gate.py`):** the converted GGUF adapter is
    replayed against its PEFT original on the same token inputs. On every replayed point the adapter's effect must have
    cosine at least 0.99 with the PEFT effect over the full vocabulary and a probability-weighted residual at most 0.15,
    and the weight-file audit must find every factor pair equal to its expected BF16 cast. The final adapter passed
@@ -83,7 +93,7 @@ ran once.
    Codex `gpt-6-astra`), each qualified on 20 matched sound/flawed pairs, on nine dimensions scored 0 to 3: problem
    framing, causal mechanism, distinct theories, assumptions and predictions, evidence judgement, seeking challenge,
    experiment design, revision, recommendation. A dimension never reached counts 0. Packets carry no model name.
-2. **Mechanical checks and AuditKIT diagnostics:** finished, the executable checks in `src/aemon/env/checks.py`,
+2. **Mechanical checks and AuditKIT diagnostics:** finished, the executable checks in `src/aemon/environment/checks.py`,
    refused and repeated calls, tool validity, redundant calls and loop detection.
 3. **What-if evidence:** each held-out company has a case with no new evidence, one with irrelevant evidence, and a
    matched pair with a supporting and an undermining simulated result.
