@@ -10,7 +10,8 @@
 #SBATCH --output=%x-%j.out
 # Command A+ (Apache 2.0) as a candidate teacher, through the identical staged harness. NO TRAINING.
 # 135 GB exceeds the 50 GB quota, so the model lives in node memory for this job only and is removed at the end.
-# Set CASES, NAME and REVISION in the environment, and optionally PROMPT, ATTEMPTS and TEMPERATURE.
+# Set CASES, NAME and REVISION in the environment, and optionally PROMPT, ATTEMPTS and TEMPERATURE. STATUS_CHECK=1 adds the
+# company_status step (DECISIONS 2026-11-11, Aquaporin).
 set -euo pipefail
 PORT=$((20000 + SLURM_JOB_ID % 20000))  # each job its own port, so two jobs on one node never share a server
 L=$HOME/lexsi
@@ -60,15 +61,16 @@ if [ -n "${REBUILD:-}" ]; then
   fi
 fi
 export PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 CODE_REVISION=$REVISION CHAT_TIMEOUT=1200
-# Stages share the loaded model. Each writes its own file and must pass strategy_agent.pipeline.stage_check before the next
+# Stages share the loaded model. Each writes its own file and must pass aemon.rows.stage_check before the next
 # starts, so a broken setup stops after the smoke stage instead of after hours.
 stage() {  # batch, cases, first attempt, temperature, then optionally server url, parallel episodes, output prefix, label note
   local URL=${5:-http://127.0.0.1:$PORT} W=${6:-$SLOTS} P=${7:-$NAME}
-  if [[ $1 == targeted* ]]; then  # version 2 examples (docs/V2_PLAN.md): $2 is a states file. Low acceptance is allowed;
+  if [[ $1 == targeted* || $1 == corrective* ]]; then  # version 2 examples (docs/V2_PLAN.md; corrective*: docs/CORRECTIVE_DISTILLATION_PROPOSAL.md): $2 is a states file. Low acceptance is allowed;
     # a crash or an unreadable output is not, so the command's status is kept and the output is checked and counted.
     local RC=0
-    $L/env/bin/python -W ignore -m strategy_agent.pipeline.targeted ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
-      --manifest $OUT/provenance.jsonl --output $OUT/${P}_$1.json > $OUT/${P}_$1.log 2>&1 || RC=$?
+    local MODULE=targeted; [[ $1 == corrective* ]] && MODULE=corrective
+    $L/env/bin/python -W ignore -m aemon.rows.$MODULE ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
+      --samples ${SAMPLES:-1} --temperature ${TEMPERATURE:-0} --manifest $OUT/provenance.jsonl --output $OUT/${P}_$1.json > $OUT/${P}_$1.log 2>&1 || RC=$?
     echo "stage $P $1 ended $(date +%T), exit $RC"
     $L/env/bin/python - "$OUT/${P}_$1.json" <<'PYT' || { echo "stage $P $1: output missing or unreadable"; return 1; }
 import collections, json, sys
@@ -78,24 +80,24 @@ valid = [x for x in d if 'reply' in x]
 kept = [x for x in d if isinstance(x.get('kept'), dict)]
 reasons = collections.Counter(x['decision'] for x in valid if not isinstance(x.get('kept'), dict))
 print(json.dumps({'attempted': len(d), 'valid_responses': len(valid), 'accepted': len(kept), 'request_failures': len(failed),
-                  'by_skill': {s: sum(x.get('skill') == s for x in kept) for s in ('experiment', 'recovery')},
+                  'by_skill': {s: sum(x.get('skill') == s for x in kept) for s in ('experiment', 'experiment-reread', 'weigh', 'recovery')},
                   'rejections': reasons.most_common(12)}))
 PYT
     return $RC
   fi
   if [[ $1 == correct* ]]; then  # a correction batch: $2 is a states file, one teacher turn per state (strategy/correct.py)
-    $L/env/bin/python -W ignore -m strategy_agent.pipeline.corrections ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
+    $L/env/bin/python -W ignore -m aemon.teacher.corrections ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
       --manifest $OUT/provenance.jsonl --output $OUT/${P}_$1.json > $OUT/${P}_$1.log 2>&1 || true
     echo "stage $P $1 ended $(date +%T): $(tail -1 $OUT/${P}_$1.log | cut -c1-200)"
     $L/env/bin/python -c "import json,sys; d=json.load(open('$OUT/${P}_$1.json')); k=sum(bool(x.get('kept')) for x in d); print(k, 'of', len(d), 'kept'); sys.exit(0 if d and k * 4 >= len(d) else 1)" || { echo "stage $P $1 failed its check"; return 1; }
     return 0
   fi
-  $L/env/bin/python -W ignore -m strategy_agent.agent.runner --url $URL --prompt "${PROMPT:-teacher}" --attempts 1 --first-attempt $3 --workers $W --temperature $4 \
-    --cases "$2" --context ${CONTEXT:-16384} --max-tokens "${MAX_TOKENS:-2000}" --max-turns 45 \
+  $L/env/bin/python -W ignore -m aemon.agent.run_investigations --url $URL --prompt "${PROMPT:-teacher}" --attempts 1 --first-attempt $3 --workers $W --temperature $4 \
+    --cases "$2" --context ${CONTEXT:-16384} --max-tokens "${MAX_TOKENS:-2000}" --max-turns 45 ${STATUS_CHECK:+--status-check} \
     --model-label "command-a-plus-05-2026-Q4_K_M a26ba92 code $REVISION${8:+ $8}" --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f --manifest $OUT/provenance.jsonl \
     --output $OUT/${P}_$1.json > $OUT/${P}_$1.log 2>&1 || true
   echo "stage $P $1 ended $(date +%T)"
-  $L/env/bin/python -m strategy_agent.pipeline.stage_check $OUT/${P}_$1.json $OUT/provenance.jsonl || { echo "stage $P $1 failed its check"; return 1; }
+  $L/env/bin/python -m aemon.rows.stage_check $OUT/${P}_$1.json $OUT/provenance.jsonl || { echo "stage $P $1 failed its check"; return 1; }
 }
 take() {  # QUEUE may list several files separated by colons: the first that has a line gives it
   local q line
@@ -173,5 +175,5 @@ if [ -n "${QUEUE:-}" ]; then
     fi
     FIRST_BATCH=0
   done
-  [ -n "$REMOTE_PID" ] && { echo "waiting for the remote worker"; wait $REMOTE_PID; }
+  [ -n "$REMOTE_PID" ] && { echo "waiting for the remote worker"; wait $REMOTE_PID; } || true  # without a remote worker the test is false, which must not be the exit status
 fi

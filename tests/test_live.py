@@ -2,9 +2,9 @@
 
 import json
 
-from strategy_agent.env.cases import load_cases
-from strategy_agent.env.live import LiveDossier
-from strategy_agent.env.tools import Investigation
+from aemon.environment.cases import load_cases
+from aemon.environment.live import LiveDossier
+from aemon.environment.tools import Investigation
 
 PAGES = {
     'https://www.hellbergsafety.com/consumers': '<html><nav>menu</nav><p>Hellberg sells hearing protectors to retail buyers through partners. Comfort is the main reason users keep them on.</p></html>',

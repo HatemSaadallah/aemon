@@ -1,0 +1,135 @@
+{
+  "packet_id": "54ce14349d897c43",
+  "packet_sha256": "161f4702a966cb025bff74569620372ea742502958fb4dae9a84620c39a1792d",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"54ce14349d897c43\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A1\"], \"reason\": \"A1 separates the objective (whether a consumer proposition is justified by demand, willingness to pay and advantage) from the suggested solution. It includes non-obvious alternatives: no expansion, and licensing or partnering with consumer brands. It also flags that reach to individual buyers is unknown. It does not reach 3 because it identifies no false premise. The question says 'beyond its existing professional coffee machines', yet frankecoffee-home-machines and frankecoffee-mythos-spec, retrieved later in A3 and A4, suggest Franke may already sell home machines, and this is never examined. The \u20ac20,000 and 12-week constraint does not appear in the supplied case text, so it is treated as an assumption, not an observation.\"}, \"causal_mechanism\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No theory or mechanism was stated before the run stopped at the turn limit (A6).\"}, \"distinct_theories\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No theories were generated. A1 lists strategic alternatives, not rival explanations, and the run stopped at A6.\"}, \"assumptions_predictions\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No theory-linked assumptions or predictions were made before the stop at A6.\"}, \"evidence_judgement\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\"], \"reason\": \"Searches A2 to A5 retrieved sources, but no source was assessed or interpreted before the stop at A6. For example, the De'Longhi premiumisation report and the Mythos specification were never weighed.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\"], \"reason\": \"There was no favoured theory to challenge. Searches A2 to A5 are near-duplicate exploratory queries, not disconfirming searches. The run stopped at A6.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No test was proposed or declined before the stop at A6.\"}, \"revision\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"An update was scheduled but never delivered (update_delivered false), and the run stopped at A6. Revision is applicable, so it is not_reached.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"A6 states that the investigation stopped before a recommendation because of the turn limit.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A6\"], \"reason\": \"The episode ended at the turn limit with no theories, assessments, test, revision or recommendation.\"}], \"suitable_for_training\": false, \"screen_reason\": \"The episode is incomplete. It stopped at A6 before any theory, evidence assessment or recommendation. Only framing (A1) and repetitive searches (A2 to A5) were reached, and the scheduled update was never delivered. Unreached stages contribute zero to the all-case composite, and incomplete episodes are rejected.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4264
+      },
+      "cache_creation_input_tokens": 4264,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1736,
+      "output_tokens_details": {
+        "thinking_tokens": 568
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.056056,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "986b8c3e5e5a6a9d70b99f0757f88b5e7cc6b7942f0c93bd966d25c196d2b899",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "54ce14349d897c43",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether a consumer proposition is justified by demand, willingness to pay and advantage) from the suggested solution. It includes non-obvious alternatives: no expansion, and licensing or partnering with consumer brands. It also flags that reach to individual buyers is unknown. It does not reach 3 because it identifies no false premise. The question says 'beyond its existing professional coffee machines', yet frankecoffee-home-machines and frankecoffee-mythos-spec, retrieved later in A3 and A4, suggest Franke may already sell home machines, and this is never examined. The \u20ac20,000 and 12-week constraint does not appear in the supplied case text, so it is treated as an assumption, not an observation."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No theory or mechanism was stated before the run stopped at the turn limit (A6)."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No theories were generated. A1 lists strategic alternatives, not rival explanations, and the run stopped at A6."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No theory-linked assumptions or predictions were made before the stop at A6."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "reason": "Searches A2 to A5 retrieved sources, but no source was assessed or interpreted before the stop at A6. For example, the De'Longhi premiumisation report and the Mythos specification were never weighed."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "reason": "There was no favoured theory to challenge. Searches A2 to A5 are near-duplicate exploratory queries, not disconfirming searches. The run stopped at A6."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No test was proposed or declined before the stop at A6."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "An update was scheduled but never delivered (update_delivered false), and the run stopped at A6. Revision is applicable, so it is not_reached."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "A6 states that the investigation stopped before a recommendation because of the turn limit."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "The episode ended at the turn limit with no theories, assessments, test, revision or recommendation."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete. It stopped at A6 before any theory, evidence assessment or recommendation. Only framing (A1) and repetitive searches (A2 to A5) were reached, and the scheduled update was never delivered. Unreached stages contribute zero to the all-case composite, and incomplete episodes are rejected."
+  },
+  "seconds": 16.228
+}

@@ -1443,3 +1443,858 @@
 {"purpose": "judge-v1:claude:claude", "model": "claude-opus-5-5", "usd": 0.267585, "kind": "reservation_upper_bound", "reservation": "6a3844a4-bc81-4d77-ac7b-56118fb3a297"}
 {"time": "2026-11-07T22:08:50+00:00", "purpose": "judge-v1:claude:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7154, "cache_read": 0, "output": 3793, "usd": 0.111646}
 {"purpose": "judge-v1:claude:claude", "model": "claude-opus-5-5", "usd": -0.267585, "kind": "reservation_release", "reservation": "6a3844a4-bc81-4d77-ac7b-56118fb3a297"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.2452, "kind": "reservation_upper_bound", "reservation": "6b2575cb-54d6-43f6-ae70-0d281d25e16b"}
+{"time": "2026-11-09T17:04:39+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5468, "cache_read": 0, "output": 3424, "usd": 0.095836}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.2452, "kind": "reservation_release", "reservation": "6b2575cb-54d6-43f6-ae70-0d281d25e16b"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.269005, "kind": "reservation_upper_bound", "reservation": "5f30a085-82a3-438b-bfe1-3643f8d22a38"}
+{"time": "2026-11-09T17:05:20+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7152, "cache_read": 0, "output": 4428, "usd": 0.124336}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.269005, "kind": "reservation_release", "reservation": "5f30a085-82a3-438b-bfe1-3643f8d22a38"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.28184, "kind": "reservation_upper_bound", "reservation": "500ad590-dea7-4033-9f11-46000980bf76"}
+{"time": "2026-11-09T17:06:02+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7986, "cache_read": 0, "output": 4510, "usd": 0.130146}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.28184, "kind": "reservation_release", "reservation": "500ad590-dea7-4033-9f11-46000980bf76"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.22292499999999998, "kind": "reservation_upper_bound", "reservation": "11f4d03d-a658-44fa-b1a2-6a965928e01d"}
+{"time": "2026-11-09T17:06:20+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3851, "cache_read": 0, "output": 1968, "usd": 0.058631}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.22292499999999998, "kind": "reservation_release", "reservation": "11f4d03d-a658-44fa-b1a2-6a965928e01d"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.277875, "kind": "reservation_upper_bound", "reservation": "696bd170-f3ed-4b1d-911f-5cc273440e75"}
+{"time": "2026-11-09T17:07:05+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7684, "cache_read": 0, "output": 4645, "usd": 0.131336}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.277875, "kind": "reservation_release", "reservation": "696bd170-f3ed-4b1d-911f-5cc273440e75"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.26182, "kind": "reservation_upper_bound", "reservation": "8f9451aa-9e0d-4e65-acfe-08be8684ed49"}
+{"time": "2026-11-09T17:07:34+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6698, "cache_read": 0, "output": 3149, "usd": 0.096486}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.26182, "kind": "reservation_release", "reservation": "8f9451aa-9e0d-4e65-acfe-08be8684ed49"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27784, "kind": "reservation_upper_bound", "reservation": "22d7bc7a-88bc-442a-93f0-d36aa2199cfc"}
+{"time": "2026-11-09T17:08:16+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 8028, "cache_read": 0, "output": 4305, "usd": 0.126256}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27784, "kind": "reservation_release", "reservation": "22d7bc7a-88bc-442a-93f0-d36aa2199cfc"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.269435, "kind": "reservation_upper_bound", "reservation": "08f0f93a-4a28-41c1-9208-66e87d9ff222"}
+{"time": "2026-11-09T17:08:56+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6960, "cache_read": 0, "output": 4187, "usd": 0.118556}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.269435, "kind": "reservation_release", "reservation": "08f0f93a-4a28-41c1-9208-66e87d9ff222"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.267045, "kind": "reservation_upper_bound", "reservation": "ab70db95-b49f-497b-b092-3630e9931911"}
+{"time": "2026-11-09T17:09:31+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6958, "cache_read": 0, "output": 3522, "usd": 0.105246}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.267045, "kind": "reservation_release", "reservation": "ab70db95-b49f-497b-b092-3630e9931911"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.275515, "kind": "reservation_upper_bound", "reservation": "c9e0a10a-36fa-4652-a546-b907d9e72f58"}
+{"time": "2026-11-09T17:10:17+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7313, "cache_read": 0, "output": 4693, "usd": 0.130441}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.275515, "kind": "reservation_release", "reservation": "c9e0a10a-36fa-4652-a546-b907d9e72f58"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27816, "kind": "reservation_upper_bound", "reservation": "67d52fef-4691-4610-a0c8-089cf7411023"}
+{"time": "2026-11-09T17:10:56+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7726, "cache_read": 0, "output": 4002, "usd": 0.118686}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27816, "kind": "reservation_release", "reservation": "67d52fef-4691-4610-a0c8-089cf7411023"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.26655, "kind": "reservation_upper_bound", "reservation": "4e0c94b5-0b28-4341-a256-2d7d730ed3f1"}
+{"time": "2026-11-09T17:11:31+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6662, "cache_read": 0, "output": 3685, "usd": 0.107026}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.26655, "kind": "reservation_release", "reservation": "4e0c94b5-0b28-4341-a256-2d7d730ed3f1"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.268605, "kind": "reservation_upper_bound", "reservation": "5ea36fd1-9949-4ec8-bbfc-365ef44a052e"}
+{"time": "2026-11-09T17:12:04+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7113, "cache_read": 0, "output": 3507, "usd": 0.105721}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.268605, "kind": "reservation_release", "reservation": "5ea36fd1-9949-4ec8-bbfc-365ef44a052e"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.25377, "kind": "reservation_upper_bound", "reservation": "693651f5-1891-4214-afd4-ca81ea2564ac"}
+{"time": "2026-11-09T17:12:32+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6200, "cache_read": 0, "output": 2886, "usd": 0.088736}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.25377, "kind": "reservation_release", "reservation": "693651f5-1891-4214-afd4-ca81ea2564ac"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27831, "kind": "reservation_upper_bound", "reservation": "9908a442-cbc7-4e73-83b7-a3fc22849fa2"}
+{"time": "2026-11-09T17:13:16+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7702, "cache_read": 0, "output": 4486, "usd": 0.128246}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27831, "kind": "reservation_release", "reservation": "9908a442-cbc7-4e73-83b7-a3fc22849fa2"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.250585, "kind": "reservation_upper_bound", "reservation": "3f74f904-ee3a-4f63-9144-dd9662ad71e6"}
+{"time": "2026-11-09T17:13:44+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5673, "cache_read": 0, "output": 3072, "usd": 0.089821}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.250585, "kind": "reservation_release", "reservation": "3f74f904-ee3a-4f63-9144-dd9662ad71e6"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.275015, "kind": "reservation_upper_bound", "reservation": "8a951927-af39-47e9-a54e-8337eb28fe96"}
+{"time": "2026-11-09T17:14:23+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7816, "cache_read": 0, "output": 4030, "usd": 0.119696}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.275015, "kind": "reservation_release", "reservation": "8a951927-af39-47e9-a54e-8337eb28fe96"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27247, "kind": "reservation_upper_bound", "reservation": "2a8ebd51-a3fd-4d38-bdbe-d76a3a35f800"}
+{"time": "2026-11-09T17:15:11+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7319, "cache_read": 0, "output": 5094, "usd": 0.138491}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27247, "kind": "reservation_release", "reservation": "2a8ebd51-a3fd-4d38-bdbe-d76a3a35f800"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.223385, "kind": "reservation_upper_bound", "reservation": "6fd2f9ac-be0a-446e-bedf-4c8cc44e5fc0"}
+{"time": "2026-11-09T17:15:29+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4005, "cache_read": 0, "output": 1999, "usd": 0.060021}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.223385, "kind": "reservation_release", "reservation": "6fd2f9ac-be0a-446e-bedf-4c8cc44e5fc0"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.23311500000000002, "kind": "reservation_upper_bound", "reservation": "fdca6c8f-4646-454f-93da-48e9e57acb8b"}
+{"time": "2026-11-09T17:15:53+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4690, "cache_read": 0, "output": 2606, "usd": 0.075586}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.23311500000000002, "kind": "reservation_release", "reservation": "fdca6c8f-4646-454f-93da-48e9e57acb8b"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.274185, "kind": "reservation_upper_bound", "reservation": "79f9b957-4ac9-4d7c-90f7-74a5a3d2b308"}
+{"time": "2026-11-09T17:16:30+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7443, "cache_read": 0, "output": 4017, "usd": 0.117571}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.274185, "kind": "reservation_release", "reservation": "79f9b957-4ac9-4d7c-90f7-74a5a3d2b308"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.23901, "kind": "reservation_upper_bound", "reservation": "1b20ac87-45b4-451b-ba23-c34c4671919c"}
+{"time": "2026-11-09T17:17:06+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4874, "cache_read": 0, "output": 3725, "usd": 0.098886}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.23901, "kind": "reservation_release", "reservation": "1b20ac87-45b4-451b-ba23-c34c4671919c"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.270615, "kind": "reservation_upper_bound", "reservation": "7a84a11e-150a-4fd2-aa79-7ba825d368a5"}
+{"time": "2026-11-09T17:17:43+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7236, "cache_read": 0, "output": 3952, "usd": 0.115236}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.270615, "kind": "reservation_release", "reservation": "7a84a11e-150a-4fd2-aa79-7ba825d368a5"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.24911, "kind": "reservation_upper_bound", "reservation": "3845575a-5624-48f4-b472-78a549c551e7"}
+{"time": "2026-11-09T17:18:10+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5693, "cache_read": 0, "output": 2841, "usd": 0.085301}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.24911, "kind": "reservation_release", "reservation": "3845575a-5624-48f4-b472-78a549c551e7"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27901, "kind": "reservation_upper_bound", "reservation": "28120d8c-9890-4eb4-9763-d53b769d0f9a"}
+{"time": "2026-11-09T17:18:51+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7824, "cache_read": 0, "output": 4326, "usd": 0.125656}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27901, "kind": "reservation_release", "reservation": "28120d8c-9890-4eb4-9763-d53b769d0f9a"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.270435, "kind": "reservation_upper_bound", "reservation": "d4779d87-61c7-4f13-a984-6d538bbbd7ad"}
+{"time": "2026-11-09T17:19:23+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6901, "cache_read": 0, "output": 3425, "usd": 0.103021}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.270435, "kind": "reservation_release", "reservation": "d4779d87-61c7-4f13-a984-6d538bbbd7ad"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.22764, "kind": "reservation_upper_bound", "reservation": "bc431e63-65f1-4c1c-b9a7-f67b2e379202"}
+{"time": "2026-11-09T17:19:41+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4370, "cache_read": 0, "output": 1933, "usd": 0.060526}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.22764, "kind": "reservation_release", "reservation": "bc431e63-65f1-4c1c-b9a7-f67b2e379202"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.22072, "kind": "reservation_upper_bound", "reservation": "32e8afa4-e62c-46e9-b8e4-0dbf48fc1cd7"}
+{"time": "2026-11-09T17:20:00+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3741, "cache_read": 0, "output": 2092, "usd": 0.060561}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.22072, "kind": "reservation_release", "reservation": "32e8afa4-e62c-46e9-b8e4-0dbf48fc1cd7"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27078, "kind": "reservation_upper_bound", "reservation": "5d186ddc-e09c-45fb-813d-a98dd99f90e5"}
+{"time": "2026-11-09T17:20:43+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7195, "cache_read": 0, "output": 4561, "usd": 0.127211}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27078, "kind": "reservation_release", "reservation": "5d186ddc-e09c-45fb-813d-a98dd99f90e5"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27925500000000003, "kind": "reservation_upper_bound", "reservation": "2c9c10e0-89f8-423a-ac93-be73447054cc"}
+{"time": "2026-11-09T17:21:23+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7813, "cache_read": 0, "output": 4295, "usd": 0.124981}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27925500000000003, "kind": "reservation_release", "reservation": "2c9c10e0-89f8-423a-ac93-be73447054cc"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.274265, "kind": "reservation_upper_bound", "reservation": "df23d7c6-61d3-45df-afbd-d6e752b1c404"}
+{"time": "2026-11-09T17:22:05+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7652, "cache_read": 0, "output": 4379, "usd": 0.125856}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.274265, "kind": "reservation_release", "reservation": "df23d7c6-61d3-45df-afbd-d6e752b1c404"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27559500000000003, "kind": "reservation_upper_bound", "reservation": "d122f5f5-a293-4280-b676-d80c835a26c2"}
+{"time": "2026-11-09T17:22:39+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7871, "cache_read": 0, "output": 3584, "usd": 0.111051}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27559500000000003, "kind": "reservation_release", "reservation": "d122f5f5-a293-4280-b676-d80c835a26c2"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.25401, "kind": "reservation_upper_bound", "reservation": "fe9de0d4-5181-4ca6-98bd-ed47b0a3e96a"}
+{"time": "2026-11-09T17:23:12+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6096, "cache_read": 0, "output": 3586, "usd": 0.102216}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.25401, "kind": "reservation_release", "reservation": "fe9de0d4-5181-4ca6-98bd-ed47b0a3e96a"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27923, "kind": "reservation_upper_bound", "reservation": "ff864e81-2c05-408d-b8f0-aa2c58cd083f"}
+{"time": "2026-11-09T17:23:50+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7809, "cache_read": 0, "output": 3932, "usd": 0.117701}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27923, "kind": "reservation_release", "reservation": "ff864e81-2c05-408d-b8f0-aa2c58cd083f"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27658, "kind": "reservation_upper_bound", "reservation": "309bb224-70cf-4f01-a00d-b53625ae9123"}
+{"time": "2026-11-09T17:24:43+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7603, "cache_read": 0, "output": 5452, "usd": 0.147071}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27658, "kind": "reservation_release", "reservation": "309bb224-70cf-4f01-a00d-b53625ae9123"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27238, "kind": "reservation_upper_bound", "reservation": "ee007bb6-08d1-4c20-92aa-1951ecfca506"}
+{"time": "2026-11-09T17:25:15+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7461, "cache_read": 0, "output": 3358, "usd": 0.104481}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27238, "kind": "reservation_release", "reservation": "ee007bb6-08d1-4c20-92aa-1951ecfca506"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.224095, "kind": "reservation_upper_bound", "reservation": "aaa6ef0a-c96c-4d9e-add1-c28a7c5fa069"}
+{"time": "2026-11-09T17:25:36+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4073, "cache_read": 0, "output": 2372, "usd": 0.067821}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.224095, "kind": "reservation_release", "reservation": "aaa6ef0a-c96c-4d9e-add1-c28a7c5fa069"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.275455, "kind": "reservation_upper_bound", "reservation": "ee2fa786-c1a1-448c-9043-18a81235a127"}
+{"time": "2026-11-09T17:26:19+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7530, "cache_read": 0, "output": 4630, "usd": 0.130266}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.275455, "kind": "reservation_release", "reservation": "ee2fa786-c1a1-448c-9043-18a81235a127"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.22296, "kind": "reservation_upper_bound", "reservation": "5041c4f0-adf5-47b8-a6c5-88d7c0ca767b"}
+{"time": "2026-11-09T17:26:39+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3921, "cache_read": 0, "output": 2067, "usd": 0.060961}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.22296, "kind": "reservation_release", "reservation": "5041c4f0-adf5-47b8-a6c5-88d7c0ca767b"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.23926999999999998, "kind": "reservation_upper_bound", "reservation": "05e50354-7ef4-47b6-9ba2-d2740f187e3f"}
+{"time": "2026-11-09T17:27:11+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4923, "cache_read": 0, "output": 3510, "usd": 0.094831}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.23926999999999998, "kind": "reservation_release", "reservation": "05e50354-7ef4-47b6-9ba2-d2740f187e3f"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.26488, "kind": "reservation_upper_bound", "reservation": "a35f10ca-2f42-462e-9cea-f42bc06f7906"}
+{"time": "2026-11-09T17:27:47+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6858, "cache_read": 0, "output": 3845, "usd": 0.111206}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.26488, "kind": "reservation_release", "reservation": "a35f10ca-2f42-462e-9cea-f42bc06f7906"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.23049, "kind": "reservation_upper_bound", "reservation": "b7bf6803-ea00-4343-92c7-baee43a16846"}
+{"time": "2026-11-09T17:28:13+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4470, "cache_read": 0, "output": 2786, "usd": 0.078086}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.23049, "kind": "reservation_release", "reservation": "b7bf6803-ea00-4343-92c7-baee43a16846"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.27197, "kind": "reservation_upper_bound", "reservation": "86cd24bb-d8d8-499d-bcee-38195a48f87e"}
+{"time": "2026-11-09T17:28:49+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7541, "cache_read": 0, "output": 3722, "usd": 0.112161}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.27197, "kind": "reservation_release", "reservation": "86cd24bb-d8d8-499d-bcee-38195a48f87e"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.22309, "kind": "reservation_upper_bound", "reservation": "b3184d16-d9fb-4bbe-bc89-cc0c6f31f1b9"}
+{"time": "2026-11-09T17:29:05+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3934, "cache_read": 0, "output": 1814, "usd": 0.055966}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.22309, "kind": "reservation_release", "reservation": "b3184d16-d9fb-4bbe-bc89-cc0c6f31f1b9"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.274485, "kind": "reservation_upper_bound", "reservation": "e87b4c23-b552-4de0-83fd-5a65b5289642"}
+{"time": "2026-11-09T17:29:37+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7878, "cache_read": 0, "output": 3534, "usd": 0.110086}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.274485, "kind": "reservation_release", "reservation": "e87b4c23-b552-4de0-83fd-5a65b5289642"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.280725, "kind": "reservation_upper_bound", "reservation": "664124fc-eb20-4cdc-84d6-fc96e6b45226"}
+{"time": "2026-11-09T17:30:15+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7884, "cache_read": 0, "output": 4091, "usd": 0.121256}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.280725, "kind": "reservation_release", "reservation": "664124fc-eb20-4cdc-84d6-fc96e6b45226"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.264535, "kind": "reservation_upper_bound", "reservation": "77c8cd3d-8696-4e1f-8fcd-7430d883ec11"}
+{"time": "2026-11-09T17:30:52+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6748, "cache_read": 0, "output": 3748, "usd": 0.108716}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.264535, "kind": "reservation_release", "reservation": "77c8cd3d-8696-4e1f-8fcd-7430d883ec11"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.265395, "kind": "reservation_upper_bound", "reservation": "cfc9f1d3-22f0-4236-95af-5f03bbf9f119"}
+{"time": "2026-11-09T17:31:28+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7060, "cache_read": 0, "output": 3990, "usd": 0.115116}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.265395, "kind": "reservation_release", "reservation": "cfc9f1d3-22f0-4236-95af-5f03bbf9f119"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.220665, "kind": "reservation_upper_bound", "reservation": "01661172-db05-4534-8f7d-418a884a0c58"}
+{"time": "2026-11-09T17:31:46+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3734, "cache_read": 0, "output": 2023, "usd": 0.059146}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.220665, "kind": "reservation_release", "reservation": "01661172-db05-4534-8f7d-418a884a0c58"}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": 0.22303499999999998, "kind": "reservation_upper_bound", "reservation": "f500e465-be9c-4782-b25a-0af3f1564d7d"}
+{"time": "2026-11-09T17:32:01+00:00", "purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3928, "cache_read": 0, "output": 1662, "usd": 0.052896}
+{"purpose": "judge-v1:claude_stage2:claude", "model": "claude-opus-5-5", "usd": -0.22303499999999998, "kind": "reservation_release", "reservation": "f500e465-be9c-4782-b25a-0af3f1564d7d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.225395, "kind": "reservation_upper_bound", "reservation": "2b5dd9fb-120c-41a1-ac4d-f479ec7a39d8"}
+{"time": "2026-11-09T17:44:13+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4093, "cache_read": 0, "output": 1764, "usd": 0.055761}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.225395, "kind": "reservation_release", "reservation": "2b5dd9fb-120c-41a1-ac4d-f479ec7a39d8"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.228, "kind": "reservation_upper_bound", "reservation": "0346093d-8f6a-4cbe-8533-8f87f38ce1c8"}
+{"time": "2026-11-09T17:44:29+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4264, "cache_read": 0, "output": 1736, "usd": 0.056056}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.228, "kind": "reservation_release", "reservation": "0346093d-8f6a-4cbe-8533-8f87f38ce1c8"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26956, "kind": "reservation_upper_bound", "reservation": "43b75dca-e041-4cf7-80bb-4573cd126fc4"}
+{"time": "2026-11-09T17:45:05+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7145, "cache_read": 0, "output": 3709, "usd": 0.109921}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26956, "kind": "reservation_release", "reservation": "43b75dca-e041-4cf7-80bb-4573cd126fc4"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.21865, "kind": "reservation_upper_bound", "reservation": "46b3968b-9a92-4773-a6c8-93442b893c45"}
+{"time": "2026-11-09T17:45:19+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3495, "cache_read": 0, "output": 1671, "usd": 0.050911}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.21865, "kind": "reservation_release", "reservation": "46b3968b-9a92-4773-a6c8-93442b893c45"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.229135, "kind": "reservation_upper_bound", "reservation": "9215e81c-2ca1-4485-a026-33ec1e6ccdf4"}
+{"time": "2026-11-09T17:45:34+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4414, "cache_read": 0, "output": 1603, "usd": 0.054146}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.229135, "kind": "reservation_release", "reservation": "9215e81c-2ca1-4485-a026-33ec1e6ccdf4"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.269115, "kind": "reservation_upper_bound", "reservation": "20bc37f1-37f5-4503-86a2-0c5503e9dd1d"}
+{"time": "2026-11-09T17:46:09+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7057, "cache_read": 0, "output": 3712, "usd": 0.109541}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.269115, "kind": "reservation_release", "reservation": "20bc37f1-37f5-4503-86a2-0c5503e9dd1d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26793500000000003, "kind": "reservation_upper_bound", "reservation": "0fc6dfaf-7204-4266-aa0a-64d6d5a65262"}
+{"time": "2026-11-09T17:46:46+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6537, "cache_read": 0, "output": 3935, "usd": 0.111401}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26793500000000003, "kind": "reservation_release", "reservation": "0fc6dfaf-7204-4266-aa0a-64d6d5a65262"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24518, "kind": "reservation_upper_bound", "reservation": "4136d44b-a878-4b84-b1c7-fb54dca38669"}
+{"time": "2026-11-09T17:47:14+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5375, "cache_read": 0, "output": 3125, "usd": 0.089391}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24518, "kind": "reservation_release", "reservation": "4136d44b-a878-4b84-b1c7-fb54dca38669"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.21727000000000002, "kind": "reservation_upper_bound", "reservation": "0d92c01c-35ec-4b54-a4af-95f54a25792a"}
+{"time": "2026-11-09T17:47:30+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3435, "cache_read": 0, "output": 1820, "usd": 0.053591}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.21727000000000002, "kind": "reservation_release", "reservation": "0d92c01c-35ec-4b54-a4af-95f54a25792a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24616, "kind": "reservation_upper_bound", "reservation": "1303e3cd-5a71-424e-b6d0-33c05d471582"}
+{"time": "2026-11-09T17:47:59+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5446, "cache_read": 0, "output": 3058, "usd": 0.088406}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24616, "kind": "reservation_release", "reservation": "1303e3cd-5a71-424e-b6d0-33c05d471582"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.234475, "kind": "reservation_upper_bound", "reservation": "da2c33dd-18b3-48c4-a53d-70f7768c158b"}
+{"time": "2026-11-09T17:48:25+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4765, "cache_read": 0, "output": 2820, "usd": 0.080241}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.234475, "kind": "reservation_release", "reservation": "da2c33dd-18b3-48c4-a53d-70f7768c158b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.267915, "kind": "reservation_upper_bound", "reservation": "ca7917ce-79cd-4ff6-9b7a-105e437ff505"}
+{"time": "2026-11-09T17:49:00+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7066, "cache_read": 0, "output": 3662, "usd": 0.108586}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.267915, "kind": "reservation_release", "reservation": "ca7917ce-79cd-4ff6-9b7a-105e437ff505"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27474, "kind": "reservation_upper_bound", "reservation": "83182eef-a2d3-4c8e-9ba2-a08a61f0c5f6"}
+{"time": "2026-11-09T17:49:38+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7491, "cache_read": 0, "output": 4065, "usd": 0.118771}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27474, "kind": "reservation_release", "reservation": "83182eef-a2d3-4c8e-9ba2-a08a61f0c5f6"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22814, "kind": "reservation_upper_bound", "reservation": "4f05fadd-5d07-49ca-ab92-a56c9b55f102"}
+{"time": "2026-11-09T17:49:54+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4346, "cache_read": 0, "output": 1843, "usd": 0.058606}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22814, "kind": "reservation_release", "reservation": "4f05fadd-5d07-49ca-ab92-a56c9b55f102"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.274625, "kind": "reservation_upper_bound", "reservation": "8bac767b-1a5c-4dea-bcc2-8b4909bc2fe8"}
+{"time": "2026-11-09T17:50:29+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7533, "cache_read": 0, "output": 3832, "usd": 0.114321}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.274625, "kind": "reservation_release", "reservation": "8bac767b-1a5c-4dea-bcc2-8b4909bc2fe8"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24854500000000002, "kind": "reservation_upper_bound", "reservation": "57913cbb-ade6-45da-80ff-48a742fbc168"}
+{"time": "2026-11-09T17:51:07+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5597, "cache_read": 0, "output": 4122, "usd": 0.110441}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24854500000000002, "kind": "reservation_release", "reservation": "57913cbb-ade6-45da-80ff-48a742fbc168"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25035, "kind": "reservation_upper_bound", "reservation": "ba90d725-c45f-4e93-aa2a-96bcb38f1a28"}
+{"time": "2026-11-09T17:51:34+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5697, "cache_read": 0, "output": 2737, "usd": 0.083241}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25035, "kind": "reservation_release", "reservation": "ba90d725-c45f-4e93-aa2a-96bcb38f1a28"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.221035, "kind": "reservation_upper_bound", "reservation": "e61f784e-7085-4952-b651-0b5d979ba398"}
+{"time": "2026-11-09T17:51:50+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3775, "cache_read": 0, "output": 1761, "usd": 0.054111}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.221035, "kind": "reservation_release", "reservation": "e61f784e-7085-4952-b651-0b5d979ba398"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.242265, "kind": "reservation_upper_bound", "reservation": "07cff9ac-bd05-471b-a9cf-1c17e359b566"}
+{"time": "2026-11-09T17:52:18+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5349, "cache_read": 0, "output": 3025, "usd": 0.087261}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.242265, "kind": "reservation_release", "reservation": "07cff9ac-bd05-471b-a9cf-1c17e359b566"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22621000000000002, "kind": "reservation_upper_bound", "reservation": "447179ea-ae11-4238-a438-a73df0a5cf47"}
+{"time": "2026-11-09T17:52:39+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3963, "cache_read": 0, "output": 2370, "usd": 0.067231}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22621000000000002, "kind": "reservation_release", "reservation": "447179ea-ae11-4238-a438-a73df0a5cf47"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.233045, "kind": "reservation_upper_bound", "reservation": "21ad3f04-b540-4658-a1fc-bc60e338a28d"}
+{"time": "2026-11-09T17:53:04+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4451, "cache_read": 0, "output": 2629, "usd": 0.074851}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.233045, "kind": "reservation_release", "reservation": "21ad3f04-b540-4658-a1fc-bc60e338a28d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.275825, "kind": "reservation_upper_bound", "reservation": "7c994e89-9f79-4fa3-ba94-a8e821c4e44a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.241955, "kind": "reservation_upper_bound", "reservation": "e7a25850-d451-497a-b208-9327a6931365"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22803, "kind": "reservation_upper_bound", "reservation": "98c8e584-5e05-465a-bdc1-1deb5b9789bc"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24115999999999999, "kind": "reservation_upper_bound", "reservation": "bde79362-af53-42a4-b0fb-81f4cb65aaeb"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24414000000000002, "kind": "reservation_upper_bound", "reservation": "53d2698a-9e00-4ad6-8585-775c95abac77"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22775499999999999, "kind": "reservation_upper_bound", "reservation": "2ad58646-f200-417b-9f9b-ec5691ab505b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22547, "kind": "reservation_upper_bound", "reservation": "c838ad0e-f7c1-4521-93df-ed9a7a4cc622"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.222695, "kind": "reservation_upper_bound", "reservation": "a82ecc06-4e1d-4b18-be30-e24e254d78cb"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23525000000000001, "kind": "reservation_upper_bound", "reservation": "e9a683f8-8501-4cac-b45b-f91aabc9cf5b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24344, "kind": "reservation_upper_bound", "reservation": "fc3827ea-bb3f-43ff-b98a-a63bf7932449"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23827500000000001, "kind": "reservation_upper_bound", "reservation": "2ca9ea81-4d80-4c03-818d-711cb7c711ff"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22859000000000002, "kind": "reservation_upper_bound", "reservation": "c313763f-afc8-4a4a-98e8-645c96aa9e50"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.274955, "kind": "reservation_upper_bound", "reservation": "9e783bbf-28d9-4240-aa2d-aea701a21439"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26175, "kind": "reservation_upper_bound", "reservation": "08c5475b-338f-42c7-b2b5-5db9b59669c2"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26892499999999997, "kind": "reservation_upper_bound", "reservation": "d04c46ad-2499-417f-aa71-fc62c22818f0"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.218645, "kind": "reservation_upper_bound", "reservation": "f904350d-5594-4f30-ac4e-0bebc231f326"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22229, "kind": "reservation_upper_bound", "reservation": "84e5dba4-b1a2-41d0-9c04-0d547c902b7d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23608, "kind": "reservation_upper_bound", "reservation": "1ca7a353-2f46-4a35-af98-6416e731a2e8"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22307500000000002, "kind": "reservation_upper_bound", "reservation": "4bef4d5f-e39b-4e15-aa02-7b4c703d367f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.236535, "kind": "reservation_upper_bound", "reservation": "66594e64-df26-4f21-a3e8-bf52c535138f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.273835, "kind": "reservation_upper_bound", "reservation": "0e0c3cf8-5bb0-4d10-abeb-490618a61b9e"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.21445, "kind": "reservation_upper_bound", "reservation": "d07efb9c-2b96-4de5-bee8-09cb72d62b27"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.256805, "kind": "reservation_upper_bound", "reservation": "2d29e2a0-43eb-4983-b058-24628ab1d208"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22468, "kind": "reservation_upper_bound", "reservation": "bbfda126-bd53-42a4-b8d1-cbfa796107df"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24910500000000002, "kind": "reservation_upper_bound", "reservation": "ee5009f6-3b92-4190-900b-cc573ff5a827"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.222605, "kind": "reservation_upper_bound", "reservation": "db476407-0362-4269-80b1-331effd1dfc8"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25098, "kind": "reservation_upper_bound", "reservation": "7a74ec3e-4240-491d-bb40-80596748a654"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22876000000000002, "kind": "reservation_upper_bound", "reservation": "fb924189-809b-4bb8-8eae-6b45b4777b58"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.260485, "kind": "reservation_upper_bound", "reservation": "7cf2405f-8892-4735-a588-ad2cd8f3f9bd"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27238, "kind": "reservation_upper_bound", "reservation": "760133b2-55da-4cfe-8fc5-6c4937ca2e42"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.224075, "kind": "reservation_upper_bound", "reservation": "acfa452c-79fe-48c6-883a-d6b532c5c977"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24151, "kind": "reservation_upper_bound", "reservation": "5e97fbf1-5b3b-45f1-a78d-0ac38e91b439"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.233965, "kind": "reservation_upper_bound", "reservation": "80087fda-ef8d-4114-9d51-8dcd93d1b51b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.226155, "kind": "reservation_upper_bound", "reservation": "8a7c2986-6dcb-4893-be90-44ccc6021ef4"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23111, "kind": "reservation_upper_bound", "reservation": "f16349c6-0f06-4bfb-9b78-33b18ff7267a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26622, "kind": "reservation_upper_bound", "reservation": "afea8428-4fcb-4a4d-90a8-d3e639f86501"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.254735, "kind": "reservation_upper_bound", "reservation": "9b66e93a-248b-431d-b6ec-28c4da301001"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24437, "kind": "reservation_upper_bound", "reservation": "2876d59b-24a6-4d8f-a7b3-2336cec4ceeb"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25617, "kind": "reservation_upper_bound", "reservation": "60da2915-e0de-47e0-8481-34a13155b41a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.270775, "kind": "reservation_upper_bound", "reservation": "7dc55176-7c00-4878-9bd2-b08f914b31f9"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22855999999999999, "kind": "reservation_upper_bound", "reservation": "35b04723-df7e-4b23-938c-15ccdcc5d96d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.221675, "kind": "reservation_upper_bound", "reservation": "f15287ae-447c-4a3e-9b31-b9c4490ad96b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22845, "kind": "reservation_upper_bound", "reservation": "87aef9fa-cfe1-4ef0-b7e6-0c6e28d66796"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27124000000000004, "kind": "reservation_upper_bound", "reservation": "be091196-cbc4-4091-b8de-7df33fe32ff2"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27881500000000004, "kind": "reservation_upper_bound", "reservation": "0159ba46-0357-4619-b7da-75208fb26f5b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27281500000000003, "kind": "reservation_upper_bound", "reservation": "371c1483-7c97-4167-92f5-3144da803b7f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24739, "kind": "reservation_upper_bound", "reservation": "269d39f2-c690-429b-bd25-43a3eef91451"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23508, "kind": "reservation_upper_bound", "reservation": "eaa1790f-eb03-4a65-a49f-b6246b41c263"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.225415, "kind": "reservation_upper_bound", "reservation": "a29a1083-4365-4c72-900e-e34be58331ad"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24669000000000002, "kind": "reservation_upper_bound", "reservation": "a026f7bc-f51c-46a3-8470-708c12484572"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24988500000000002, "kind": "reservation_upper_bound", "reservation": "deca060d-61d2-4786-bb3c-b95b9b7066dd"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.242675, "kind": "reservation_upper_bound", "reservation": "93794674-9bc0-4500-94c1-a2ed1aa9cfc4"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.227805, "kind": "reservation_upper_bound", "reservation": "e8013d7e-44bb-4aac-baa9-a3b05a2a00fd"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.21581, "kind": "reservation_upper_bound", "reservation": "cab4b76f-8d26-44f0-92d0-0c68ef3dcb5d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25958000000000003, "kind": "reservation_upper_bound", "reservation": "0844aff1-8c96-4e78-8277-60735f64fdaa"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.265865, "kind": "reservation_upper_bound", "reservation": "a8051bca-a5da-43e2-a9c8-6bf536987d35"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.228115, "kind": "reservation_upper_bound", "reservation": "0e45a1ac-54ff-46c9-9ad4-664f58a7ff3f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.218705, "kind": "reservation_upper_bound", "reservation": "d53795a9-01ca-424c-9a84-2049f31e20f7"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24831, "kind": "reservation_upper_bound", "reservation": "ce0f8195-0b58-45db-a246-12ac7f91cd50"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.269065, "kind": "reservation_upper_bound", "reservation": "d34a088b-f766-458d-802b-4eda1a74a979"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.278215, "kind": "reservation_upper_bound", "reservation": "12038c8e-58fa-44ec-b2d5-4c6ba398c25a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.21574, "kind": "reservation_upper_bound", "reservation": "87ba306a-d207-425b-8ca1-af02c235b874"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.252825, "kind": "reservation_upper_bound", "reservation": "17b93cef-195a-4beb-b71d-11b9830f3a74"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.223875, "kind": "reservation_upper_bound", "reservation": "afe624a0-3d8b-4169-a18f-46e7c13d1b25"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.267345, "kind": "reservation_upper_bound", "reservation": "507eca22-dd88-4cdc-8b16-e8cca1ac9cad"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24877, "kind": "reservation_upper_bound", "reservation": "11bc37b2-1def-4d39-bbbd-b12010d196be"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27867, "kind": "reservation_upper_bound", "reservation": "55d6da7c-bdf8-4372-b456-6d8ae52db2fb"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.277415, "kind": "reservation_upper_bound", "reservation": "4317aa6f-651f-4349-88d1-cb3f6608abe0"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25583, "kind": "reservation_upper_bound", "reservation": "5dccb2db-43ba-4bd9-876b-a56fa1d51aba"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24904500000000002, "kind": "reservation_upper_bound", "reservation": "4b517401-8d83-4048-9494-bdf74349c8be"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23513499999999998, "kind": "reservation_upper_bound", "reservation": "69f64680-d68a-4025-a8f7-805b209fa29e"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.254195, "kind": "reservation_upper_bound", "reservation": "c018a0c6-0927-496b-a422-82c5f6c05e4e"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22757, "kind": "reservation_upper_bound", "reservation": "f8778f10-8392-4600-a8ac-1c452fe05336"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25679, "kind": "reservation_upper_bound", "reservation": "d561ebe1-9828-46fd-b284-047d9a9b1ed1"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.252875, "kind": "reservation_upper_bound", "reservation": "dc1198f7-0544-4899-bf13-a28db3d759c5"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.280975, "kind": "reservation_upper_bound", "reservation": "1452258a-4349-49d0-b6d3-69880580279f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22783, "kind": "reservation_upper_bound", "reservation": "af3aca74-9e04-4535-b2ec-9a9960b02193"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.28202, "kind": "reservation_upper_bound", "reservation": "62f068d8-cf47-46ff-aeb5-a498675291d5"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.235215, "kind": "reservation_upper_bound", "reservation": "c00d6043-1c10-499d-8e34-7568a1e8748f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.224525, "kind": "reservation_upper_bound", "reservation": "b7e823d1-3875-4775-adf1-7715282f798a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.265315, "kind": "reservation_upper_bound", "reservation": "efb17bd3-bc22-4575-a547-d2fc74735f6b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.214395, "kind": "reservation_upper_bound", "reservation": "a66edfc3-7b08-4460-852b-fa4100bb1619"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22264, "kind": "reservation_upper_bound", "reservation": "78db9a6a-52ae-49b2-af6d-ffe719f0abe5"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27602, "kind": "reservation_upper_bound", "reservation": "31cf77ac-ca15-4a43-9d7a-892569c770bf"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.28192, "kind": "reservation_upper_bound", "reservation": "ea235fb2-cc97-4699-9167-c51c6edd9416"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.232905, "kind": "reservation_upper_bound", "reservation": "dfc1b2e3-38e3-47a4-9d09-27699340a7eb"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22781, "kind": "reservation_upper_bound", "reservation": "700ea6fb-ddf7-4cb0-8c0a-2284911c0701"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27153499999999997, "kind": "reservation_upper_bound", "reservation": "257eb84d-0630-4424-a342-572ef4d52265"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23427, "kind": "reservation_upper_bound", "reservation": "9c887e56-53b1-4170-9547-621ba6e7c166"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.261485, "kind": "reservation_upper_bound", "reservation": "07f995b1-16dd-46d2-9568-6e197d5159bf"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22458, "kind": "reservation_upper_bound", "reservation": "8b30fa2a-083d-41bf-ace4-907458023002"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.277665, "kind": "reservation_upper_bound", "reservation": "888e503a-75e7-4bd8-a327-8645541a4756"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22816999999999998, "kind": "reservation_upper_bound", "reservation": "ea8d4db9-9b1e-4079-a820-acbc9379d093"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26833, "kind": "reservation_upper_bound", "reservation": "bd8e2c26-f758-4d70-b2da-b3d6d7b8637b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.256995, "kind": "reservation_upper_bound", "reservation": "ecf41d8e-604f-4934-823c-3b0f9340bf84"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25505, "kind": "reservation_upper_bound", "reservation": "69fff082-f7e8-442d-8698-bed152019110"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.275695, "kind": "reservation_upper_bound", "reservation": "aeea16b3-e86c-45d8-8569-3500d779d018"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25929, "kind": "reservation_upper_bound", "reservation": "b608ff02-457c-4ab2-b9b2-6bfd6e83f3b3"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.254085, "kind": "reservation_upper_bound", "reservation": "8836d9db-e192-413d-a137-6607bfea4d8e"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.235435, "kind": "reservation_upper_bound", "reservation": "d15fdf38-2247-4ee0-9191-5abb3b461f93"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.221455, "kind": "reservation_upper_bound", "reservation": "ef69b9fb-f7cf-4784-9bbb-c71fb91b5e8c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.228505, "kind": "reservation_upper_bound", "reservation": "a7be1c42-101d-42a9-943a-7d00919e6d77"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24394500000000002, "kind": "reservation_upper_bound", "reservation": "7fe5d01c-5759-46b4-b43a-073d1ffbc84c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22318500000000002, "kind": "reservation_upper_bound", "reservation": "132e42bc-4939-45f6-974a-488738950ab5"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24221, "kind": "reservation_upper_bound", "reservation": "b5e1b1ef-9cce-4f64-a7de-aad252334ce4"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25995999999999997, "kind": "reservation_upper_bound", "reservation": "0234c107-bb97-4d16-af83-2dfd8b1b3082"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22018500000000002, "kind": "reservation_upper_bound", "reservation": "8fef3a05-d531-418e-bd40-81dd97096544"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.270525, "kind": "reservation_upper_bound", "reservation": "fa8c2f45-f317-4e8b-af0a-9407147c63a5"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.234215, "kind": "reservation_upper_bound", "reservation": "f7d69eea-a131-4716-afc2-c7e274172de9"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.28192, "kind": "reservation_release", "reservation": "ea235fb2-cc97-4699-9167-c51c6edd9416", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.280975, "kind": "reservation_release", "reservation": "1452258a-4349-49d0-b6d3-69880580279f", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27881500000000004, "kind": "reservation_release", "reservation": "0159ba46-0357-4619-b7da-75208fb26f5b", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27867, "kind": "reservation_release", "reservation": "55d6da7c-bdf8-4372-b456-6d8ae52db2fb", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.278215, "kind": "reservation_release", "reservation": "12038c8e-58fa-44ec-b2d5-4c6ba398c25a", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.277665, "kind": "reservation_release", "reservation": "888e503a-75e7-4bd8-a327-8645541a4756", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.277415, "kind": "reservation_release", "reservation": "4317aa6f-651f-4349-88d1-cb3f6608abe0", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27602, "kind": "reservation_release", "reservation": "31cf77ac-ca15-4a43-9d7a-892569c770bf", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.275825, "kind": "reservation_release", "reservation": "7c994e89-9f79-4fa3-ba94-a8e821c4e44a", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.275695, "kind": "reservation_release", "reservation": "aeea16b3-e86c-45d8-8569-3500d779d018", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.274955, "kind": "reservation_release", "reservation": "9e783bbf-28d9-4240-aa2d-aea701a21439", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.273835, "kind": "reservation_release", "reservation": "0e0c3cf8-5bb0-4d10-abeb-490618a61b9e", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27281500000000003, "kind": "reservation_release", "reservation": "371c1483-7c97-4167-92f5-3144da803b7f", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27238, "kind": "reservation_release", "reservation": "760133b2-55da-4cfe-8fc5-6c4937ca2e42", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27153499999999997, "kind": "reservation_release", "reservation": "257eb84d-0630-4424-a342-572ef4d52265", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27124000000000004, "kind": "reservation_release", "reservation": "be091196-cbc4-4091-b8de-7df33fe32ff2", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.270775, "kind": "reservation_release", "reservation": "7dc55176-7c00-4878-9bd2-b08f914b31f9", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.270525, "kind": "reservation_release", "reservation": "fa8c2f45-f317-4e8b-af0a-9407147c63a5", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.269065, "kind": "reservation_release", "reservation": "d34a088b-f766-458d-802b-4eda1a74a979", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26892499999999997, "kind": "reservation_release", "reservation": "d04c46ad-2499-417f-aa71-fc62c22818f0", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26833, "kind": "reservation_release", "reservation": "bd8e2c26-f758-4d70-b2da-b3d6d7b8637b", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.267345, "kind": "reservation_release", "reservation": "507eca22-dd88-4cdc-8b16-e8cca1ac9cad", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26622, "kind": "reservation_release", "reservation": "afea8428-4fcb-4a4d-90a8-d3e639f86501", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.265865, "kind": "reservation_release", "reservation": "a8051bca-a5da-43e2-a9c8-6bf536987d35", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.265315, "kind": "reservation_release", "reservation": "efb17bd3-bc22-4575-a547-d2fc74735f6b", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26175, "kind": "reservation_release", "reservation": "08c5475b-338f-42c7-b2b5-5db9b59669c2", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.261485, "kind": "reservation_release", "reservation": "07f995b1-16dd-46d2-9568-6e197d5159bf", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.260485, "kind": "reservation_release", "reservation": "7cf2405f-8892-4735-a588-ad2cd8f3f9bd", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25995999999999997, "kind": "reservation_release", "reservation": "0234c107-bb97-4d16-af83-2dfd8b1b3082", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25958000000000003, "kind": "reservation_release", "reservation": "0844aff1-8c96-4e78-8277-60735f64fdaa", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25929, "kind": "reservation_release", "reservation": "b608ff02-457c-4ab2-b9b2-6bfd6e83f3b3", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.256995, "kind": "reservation_release", "reservation": "ecf41d8e-604f-4934-823c-3b0f9340bf84", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.256805, "kind": "reservation_release", "reservation": "2d29e2a0-43eb-4983-b058-24628ab1d208", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25679, "kind": "reservation_release", "reservation": "d561ebe1-9828-46fd-b284-047d9a9b1ed1", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25617, "kind": "reservation_release", "reservation": "60da2915-e0de-47e0-8481-34a13155b41a", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25583, "kind": "reservation_release", "reservation": "5dccb2db-43ba-4bd9-876b-a56fa1d51aba", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25505, "kind": "reservation_release", "reservation": "69fff082-f7e8-442d-8698-bed152019110", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.254735, "kind": "reservation_release", "reservation": "9b66e93a-248b-431d-b6ec-28c4da301001", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.254195, "kind": "reservation_release", "reservation": "c018a0c6-0927-496b-a422-82c5f6c05e4e", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.254085, "kind": "reservation_release", "reservation": "8836d9db-e192-413d-a137-6607bfea4d8e", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.252875, "kind": "reservation_release", "reservation": "dc1198f7-0544-4899-bf13-a28db3d759c5", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.252825, "kind": "reservation_release", "reservation": "17b93cef-195a-4beb-b71d-11b9830f3a74", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25098, "kind": "reservation_release", "reservation": "7a74ec3e-4240-491d-bb40-80596748a654", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24988500000000002, "kind": "reservation_release", "reservation": "deca060d-61d2-4786-bb3c-b95b9b7066dd", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24910500000000002, "kind": "reservation_release", "reservation": "ee5009f6-3b92-4190-900b-cc573ff5a827", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24904500000000002, "kind": "reservation_release", "reservation": "4b517401-8d83-4048-9494-bdf74349c8be", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24877, "kind": "reservation_release", "reservation": "11bc37b2-1def-4d39-bbbd-b12010d196be", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24831, "kind": "reservation_release", "reservation": "ce0f8195-0b58-45db-a246-12ac7f91cd50", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24739, "kind": "reservation_release", "reservation": "269d39f2-c690-429b-bd25-43a3eef91451", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24669000000000002, "kind": "reservation_release", "reservation": "a026f7bc-f51c-46a3-8470-708c12484572", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24437, "kind": "reservation_release", "reservation": "2876d59b-24a6-4d8f-a7b3-2336cec4ceeb", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24414000000000002, "kind": "reservation_release", "reservation": "53d2698a-9e00-4ad6-8585-775c95abac77", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24394500000000002, "kind": "reservation_release", "reservation": "7fe5d01c-5759-46b4-b43a-073d1ffbc84c", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24344, "kind": "reservation_release", "reservation": "fc3827ea-bb3f-43ff-b98a-a63bf7932449", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.242675, "kind": "reservation_release", "reservation": "93794674-9bc0-4500-94c1-a2ed1aa9cfc4", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24221, "kind": "reservation_release", "reservation": "b5e1b1ef-9cce-4f64-a7de-aad252334ce4", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.241955, "kind": "reservation_release", "reservation": "e7a25850-d451-497a-b208-9327a6931365", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24151, "kind": "reservation_release", "reservation": "5e97fbf1-5b3b-45f1-a78d-0ac38e91b439", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24115999999999999, "kind": "reservation_release", "reservation": "bde79362-af53-42a4-b0fb-81f4cb65aaeb", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23827500000000001, "kind": "reservation_release", "reservation": "2ca9ea81-4d80-4c03-818d-711cb7c711ff", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.236535, "kind": "reservation_release", "reservation": "66594e64-df26-4f21-a3e8-bf52c535138f", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23608, "kind": "reservation_release", "reservation": "1ca7a353-2f46-4a35-af98-6416e731a2e8", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.235435, "kind": "reservation_release", "reservation": "d15fdf38-2247-4ee0-9191-5abb3b461f93", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23525000000000001, "kind": "reservation_release", "reservation": "e9a683f8-8501-4cac-b45b-f91aabc9cf5b", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.235215, "kind": "reservation_release", "reservation": "c00d6043-1c10-499d-8e34-7568a1e8748f", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23513499999999998, "kind": "reservation_release", "reservation": "69f64680-d68a-4025-a8f7-805b209fa29e", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23508, "kind": "reservation_release", "reservation": "eaa1790f-eb03-4a65-a49f-b6246b41c263", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23427, "kind": "reservation_release", "reservation": "9c887e56-53b1-4170-9547-621ba6e7c166", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.234215, "kind": "reservation_release", "reservation": "f7d69eea-a131-4716-afc2-c7e274172de9", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.233965, "kind": "reservation_release", "reservation": "80087fda-ef8d-4114-9d51-8dcd93d1b51b", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.232905, "kind": "reservation_release", "reservation": "dfc1b2e3-38e3-47a4-9d09-27699340a7eb", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23111, "kind": "reservation_release", "reservation": "f16349c6-0f06-4bfb-9b78-33b18ff7267a", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22876000000000002, "kind": "reservation_release", "reservation": "fb924189-809b-4bb8-8eae-6b45b4777b58", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22859000000000002, "kind": "reservation_release", "reservation": "c313763f-afc8-4a4a-98e8-645c96aa9e50", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22855999999999999, "kind": "reservation_release", "reservation": "35b04723-df7e-4b23-938c-15ccdcc5d96d", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.228505, "kind": "reservation_release", "reservation": "a7be1c42-101d-42a9-943a-7d00919e6d77", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22845, "kind": "reservation_release", "reservation": "87aef9fa-cfe1-4ef0-b7e6-0c6e28d66796", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22816999999999998, "kind": "reservation_release", "reservation": "ea8d4db9-9b1e-4079-a820-acbc9379d093", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.228115, "kind": "reservation_release", "reservation": "0e45a1ac-54ff-46c9-9ad4-664f58a7ff3f", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22803, "kind": "reservation_release", "reservation": "98c8e584-5e05-465a-bdc1-1deb5b9789bc", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22783, "kind": "reservation_release", "reservation": "af3aca74-9e04-4535-b2ec-9a9960b02193", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22781, "kind": "reservation_release", "reservation": "700ea6fb-ddf7-4cb0-8c0a-2284911c0701", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.227805, "kind": "reservation_release", "reservation": "e8013d7e-44bb-4aac-baa9-a3b05a2a00fd", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22775499999999999, "kind": "reservation_release", "reservation": "2ad58646-f200-417b-9f9b-ec5691ab505b", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22757, "kind": "reservation_release", "reservation": "f8778f10-8392-4600-a8ac-1c452fe05336", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.226155, "kind": "reservation_release", "reservation": "8a7c2986-6dcb-4893-be90-44ccc6021ef4", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22547, "kind": "reservation_release", "reservation": "c838ad0e-f7c1-4521-93df-ed9a7a4cc622", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.225415, "kind": "reservation_release", "reservation": "a29a1083-4365-4c72-900e-e34be58331ad", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22468, "kind": "reservation_release", "reservation": "bbfda126-bd53-42a4-b8d1-cbfa796107df", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22458, "kind": "reservation_release", "reservation": "8b30fa2a-083d-41bf-ace4-907458023002", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.224525, "kind": "reservation_release", "reservation": "b7e823d1-3875-4775-adf1-7715282f798a", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.224075, "kind": "reservation_release", "reservation": "acfa452c-79fe-48c6-883a-d6b532c5c977", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.223875, "kind": "reservation_release", "reservation": "afe624a0-3d8b-4169-a18f-46e7c13d1b25", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22318500000000002, "kind": "reservation_release", "reservation": "132e42bc-4939-45f6-974a-488738950ab5", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22307500000000002, "kind": "reservation_release", "reservation": "4bef4d5f-e39b-4e15-aa02-7b4c703d367f", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.222695, "kind": "reservation_release", "reservation": "a82ecc06-4e1d-4b18-be30-e24e254d78cb", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22264, "kind": "reservation_release", "reservation": "78db9a6a-52ae-49b2-af6d-ffe719f0abe5", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.222605, "kind": "reservation_release", "reservation": "db476407-0362-4269-80b1-331effd1dfc8", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22229, "kind": "reservation_release", "reservation": "84e5dba4-b1a2-41d0-9c04-0d547c902b7d", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.221675, "kind": "reservation_release", "reservation": "f15287ae-447c-4a3e-9b31-b9c4490ad96b", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.221455, "kind": "reservation_release", "reservation": "ef69b9fb-f7cf-4784-9bbb-c71fb91b5e8c", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22018500000000002, "kind": "reservation_release", "reservation": "8fef3a05-d531-418e-bd40-81dd97096544", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.218705, "kind": "reservation_release", "reservation": "d53795a9-01ca-424c-9a84-2049f31e20f7", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.218645, "kind": "reservation_release", "reservation": "f904350d-5594-4f30-ac4e-0bebc231f326", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.21581, "kind": "reservation_release", "reservation": "cab4b76f-8d26-44f0-92d0-0c68ef3dcb5d", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.21574, "kind": "reservation_release", "reservation": "87ba306a-d207-425b-8ca1-af02c235b874", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.21445, "kind": "reservation_release", "reservation": "d07efb9c-2b96-4de5-bee8-09cb72d62b27", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.214395, "kind": "reservation_release", "reservation": "a66edfc3-7b08-4460-852b-fa4100bb1619", "note": "APIConnectionError on 2026-11-09 ~19:20: the network dropped, the request did not reach the API, no tokens billed"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.275825, "kind": "reservation_upper_bound", "reservation": "0e281006-533b-46c7-8b1c-39896b60be10"}
+{"time": "2026-11-09T21:43:01+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7540, "cache_read": 0, "output": 4151, "usd": 0.120736}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.275825, "kind": "reservation_release", "reservation": "0e281006-533b-46c7-8b1c-39896b60be10"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.241955, "kind": "reservation_upper_bound", "reservation": "84b627ec-9f0f-45f6-b71a-fc3c0ad40147"}
+{"time": "2026-11-09T21:43:28+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5210, "cache_read": 0, "output": 2967, "usd": 0.085406}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.241955, "kind": "reservation_release", "reservation": "84b627ec-9f0f-45f6-b71a-fc3c0ad40147"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22803, "kind": "reservation_upper_bound", "reservation": "a5132271-27a7-42e8-87ee-88d5cf671a18"}
+{"time": "2026-11-09T21:43:52+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4158, "cache_read": 0, "output": 2557, "usd": 0.071946}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22803, "kind": "reservation_release", "reservation": "a5132271-27a7-42e8-87ee-88d5cf671a18"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24115999999999999, "kind": "reservation_upper_bound", "reservation": "ba08ec2c-9ded-4447-98df-fe535a4f609c"}
+{"time": "2026-11-09T21:44:16+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5148, "cache_read": 0, "output": 2425, "usd": 0.074256}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24115999999999999, "kind": "reservation_release", "reservation": "ba08ec2c-9ded-4447-98df-fe535a4f609c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24414000000000002, "kind": "reservation_upper_bound", "reservation": "fe3cc029-a318-484b-9584-4536620ff9fb"}
+{"time": "2026-11-09T21:44:41+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5268, "cache_read": 0, "output": 2796, "usd": 0.082276}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24414000000000002, "kind": "reservation_release", "reservation": "fe3cc029-a318-484b-9584-4536620ff9fb"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22775499999999999, "kind": "reservation_upper_bound", "reservation": "7316e015-a1f4-483a-840e-b90b39322380"}
+{"time": "2026-11-09T21:45:05+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4167, "cache_read": 0, "output": 2511, "usd": 0.071071}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22775499999999999, "kind": "reservation_release", "reservation": "7316e015-a1f4-483a-840e-b90b39322380"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22547, "kind": "reservation_upper_bound", "reservation": "cde1999a-4817-4993-9512-7a7619b4178f"}
+{"time": "2026-11-09T21:45:26+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3965, "cache_read": 0, "output": 2331, "usd": 0.066461}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22547, "kind": "reservation_release", "reservation": "cde1999a-4817-4993-9512-7a7619b4178f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.222695, "kind": "reservation_upper_bound", "reservation": "f6a258cc-c197-429f-8125-2443320987df"}
+{"time": "2026-11-09T21:45:40+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3795, "cache_read": 0, "output": 1580, "usd": 0.050591}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.222695, "kind": "reservation_release", "reservation": "f6a258cc-c197-429f-8125-2443320987df"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23525000000000001, "kind": "reservation_upper_bound", "reservation": "fd9d0145-6d49-4dfe-8fed-cad9fb7129d5"}
+{"time": "2026-11-09T21:46:06+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4812, "cache_read": 0, "output": 2845, "usd": 0.080976}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23525000000000001, "kind": "reservation_release", "reservation": "fd9d0145-6d49-4dfe-8fed-cad9fb7129d5"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24344, "kind": "reservation_upper_bound", "reservation": "cc1ba9e2-8afd-4e2c-a384-56306c9c8739"}
+{"time": "2026-11-09T21:46:38+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5100, "cache_read": 0, "output": 3328, "usd": 0.092076}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24344, "kind": "reservation_release", "reservation": "cc1ba9e2-8afd-4e2c-a384-56306c9c8739"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23827500000000001, "kind": "reservation_upper_bound", "reservation": "a3c76861-2012-4fdc-81cd-b18966783f3d"}
+{"time": "2026-11-09T21:47:01+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4894, "cache_read": 0, "output": 2562, "usd": 0.075726}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23827500000000001, "kind": "reservation_release", "reservation": "a3c76861-2012-4fdc-81cd-b18966783f3d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22859000000000002, "kind": "reservation_upper_bound", "reservation": "3c73b305-ea3f-443a-b57b-e015baae06b0"}
+{"time": "2026-11-09T21:47:24+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4137, "cache_read": 0, "output": 2505, "usd": 0.070801}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22859000000000002, "kind": "reservation_release", "reservation": "3c73b305-ea3f-443a-b57b-e015baae06b0"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.274955, "kind": "reservation_upper_bound", "reservation": "64de39a4-b675-4740-8869-a8f14eed5c5f"}
+{"time": "2026-11-09T21:48:13+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7837, "cache_read": 0, "output": 5011, "usd": 0.139421}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.274955, "kind": "reservation_release", "reservation": "64de39a4-b675-4740-8869-a8f14eed5c5f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26175, "kind": "reservation_upper_bound", "reservation": "f9db670e-271a-48fa-b80c-fc08da290fa5"}
+{"time": "2026-11-09T21:48:53+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6770, "cache_read": 0, "output": 4172, "usd": 0.117306}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26175, "kind": "reservation_release", "reservation": "f9db670e-271a-48fa-b80c-fc08da290fa5"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26892499999999997, "kind": "reservation_upper_bound", "reservation": "cb8d92e8-5937-454f-80f4-271f82e8ec40"}
+{"time": "2026-11-09T21:49:57+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7065, "cache_read": 0, "output": 3668, "usd": 0.108701}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26892499999999997, "kind": "reservation_release", "reservation": "cb8d92e8-5937-454f-80f4-271f82e8ec40"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.218645, "kind": "reservation_upper_bound", "reservation": "59724fe8-c044-4601-aeb6-6933092fc20c"}
+{"time": "2026-11-09T21:50:16+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3550, "cache_read": 0, "output": 1977, "usd": 0.057306}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.218645, "kind": "reservation_release", "reservation": "59724fe8-c044-4601-aeb6-6933092fc20c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22229, "kind": "reservation_upper_bound", "reservation": "fdf73ebe-563f-42e4-97af-af14867814e6"}
+{"time": "2026-11-09T21:50:32+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3843, "cache_read": 0, "output": 1718, "usd": 0.053591}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22229, "kind": "reservation_release", "reservation": "fdf73ebe-563f-42e4-97af-af14867814e6"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23608, "kind": "reservation_upper_bound", "reservation": "ba608d69-baf6-4a66-8eb9-c7e49ed78cef"}
+{"time": "2026-11-09T21:50:57+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4673, "cache_read": 0, "output": 2768, "usd": 0.078741}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23608, "kind": "reservation_release", "reservation": "ba608d69-baf6-4a66-8eb9-c7e49ed78cef"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22307500000000002, "kind": "reservation_upper_bound", "reservation": "dd69ce5d-7c32-491d-a08b-dab46b93be6b"}
+{"time": "2026-11-09T21:51:16+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3945, "cache_read": 0, "output": 1917, "usd": 0.058081}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22307500000000002, "kind": "reservation_release", "reservation": "dd69ce5d-7c32-491d-a08b-dab46b93be6b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.236535, "kind": "reservation_upper_bound", "reservation": "594665fc-58ae-40ac-b068-3679a2423c84"}
+{"time": "2026-11-09T21:51:41+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4845, "cache_read": 0, "output": 2620, "usd": 0.076641}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.236535, "kind": "reservation_release", "reservation": "594665fc-58ae-40ac-b068-3679a2423c84"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.273835, "kind": "reservation_upper_bound", "reservation": "9c21dc65-4b95-4a08-b964-335665de72e4"}
+{"time": "2026-11-09T21:52:19+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7455, "cache_read": 0, "output": 3901, "usd": 0.115311}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.273835, "kind": "reservation_release", "reservation": "9c21dc65-4b95-4a08-b964-335665de72e4"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.21445, "kind": "reservation_upper_bound", "reservation": "2e621749-4582-4384-bbf6-1fd18eabfc18"}
+{"time": "2026-11-09T21:52:35+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3255, "cache_read": 0, "output": 1803, "usd": 0.052351}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.21445, "kind": "reservation_release", "reservation": "2e621749-4582-4384-bbf6-1fd18eabfc18"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.256805, "kind": "reservation_upper_bound", "reservation": "200153c4-c5fc-4c2c-80e9-92e34e3d1af8"}
+{"time": "2026-11-09T21:56:40+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6180, "cache_read": 0, "output": 3116, "usd": 0.093236}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.256805, "kind": "reservation_release", "reservation": "200153c4-c5fc-4c2c-80e9-92e34e3d1af8"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22468, "kind": "reservation_upper_bound", "reservation": "9c716d9c-f320-4fb6-a6ed-3fde4dcca679"}
+{"time": "2026-11-09T21:56:59+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4040, "cache_read": 0, "output": 1917, "usd": 0.058556}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22468, "kind": "reservation_release", "reservation": "9c716d9c-f320-4fb6-a6ed-3fde4dcca679"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24910500000000002, "kind": "reservation_upper_bound", "reservation": "7b20012c-5f00-4f17-8767-7d7551939139"}
+{"time": "2026-11-09T21:57:26+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5662, "cache_read": 0, "output": 3011, "usd": 0.088546}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24910500000000002, "kind": "reservation_release", "reservation": "7b20012c-5f00-4f17-8767-7d7551939139"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.222605, "kind": "reservation_upper_bound", "reservation": "74ae6c61-1bf4-4963-8f14-214192754b6a"}
+{"time": "2026-11-09T21:57:43+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3931, "cache_read": 0, "output": 1910, "usd": 0.057871}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.222605, "kind": "reservation_release", "reservation": "74ae6c61-1bf4-4963-8f14-214192754b6a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25098, "kind": "reservation_upper_bound", "reservation": "298c6ed6-b305-428a-9415-4a48d506c53d"}
+{"time": "2026-11-09T22:00:01+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5939, "cache_read": 0, "output": 3084, "usd": 0.091391}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25098, "kind": "reservation_release", "reservation": "298c6ed6-b305-428a-9415-4a48d506c53d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22876000000000002, "kind": "reservation_upper_bound", "reservation": "31f55891-717e-4b15-a23d-1385f8282753"}
+{"time": "2026-11-09T22:00:23+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4344, "cache_read": 0, "output": 2374, "usd": 0.069216}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22876000000000002, "kind": "reservation_release", "reservation": "31f55891-717e-4b15-a23d-1385f8282753"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.260485, "kind": "reservation_upper_bound", "reservation": "772565be-4550-4c01-9be9-e97cb32e9644"}
+{"time": "2026-11-09T22:00:58+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6564, "cache_read": 0, "output": 3582, "usd": 0.104476}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.260485, "kind": "reservation_release", "reservation": "772565be-4550-4c01-9be9-e97cb32e9644"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27238, "kind": "reservation_upper_bound", "reservation": "ffa9da07-28d1-4843-8c77-c987b236ce54"}
+{"time": "2026-11-09T22:01:40+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7379, "cache_read": 0, "output": 4302, "usd": 0.122951}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27238, "kind": "reservation_release", "reservation": "ffa9da07-28d1-4843-8c77-c987b236ce54"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.224075, "kind": "reservation_upper_bound", "reservation": "3a9ab26b-8be9-42c9-9ff9-63f080bffeae"}
+{"time": "2026-11-09T22:01:57+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4051, "cache_read": 0, "output": 1859, "usd": 0.057451}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.224075, "kind": "reservation_release", "reservation": "3a9ab26b-8be9-42c9-9ff9-63f080bffeae"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24151, "kind": "reservation_upper_bound", "reservation": "4f115b98-a2d0-49a8-aa38-b35b37200374"}
+{"time": "2026-11-09T22:02:27+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5157, "cache_read": 0, "output": 3260, "usd": 0.091001}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24151, "kind": "reservation_release", "reservation": "4f115b98-a2d0-49a8-aa38-b35b37200374"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.233965, "kind": "reservation_upper_bound", "reservation": "c5f2dec2-ad1f-4394-934d-98b3ca42cf4f"}
+{"time": "2026-11-09T22:02:53+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4537, "cache_read": 0, "output": 2894, "usd": 0.080581}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.233965, "kind": "reservation_release", "reservation": "c5f2dec2-ad1f-4394-934d-98b3ca42cf4f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.226155, "kind": "reservation_upper_bound", "reservation": "ecd7c5a6-747e-43c0-8524-cb4b923852e7"}
+{"time": "2026-11-09T22:03:13+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3958, "cache_read": 0, "output": 2249, "usd": 0.064786}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.226155, "kind": "reservation_release", "reservation": "ecd7c5a6-747e-43c0-8524-cb4b923852e7"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23111, "kind": "reservation_upper_bound", "reservation": "2d024c09-86e2-41f0-9a18-6e65abcd723c"}
+{"time": "2026-11-09T22:03:33+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4436, "cache_read": 0, "output": 2117, "usd": 0.064536}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23111, "kind": "reservation_release", "reservation": "2d024c09-86e2-41f0-9a18-6e65abcd723c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26622, "kind": "reservation_upper_bound", "reservation": "7d17063f-ad93-44c0-bfd2-fa1055a408a2"}
+{"time": "2026-11-09T22:04:21+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6959, "cache_read": 0, "output": 4971, "usd": 0.134231}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26622, "kind": "reservation_release", "reservation": "7d17063f-ad93-44c0-bfd2-fa1055a408a2"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.254735, "kind": "reservation_upper_bound", "reservation": "bd90bc93-117a-4bc2-8170-aa069703ea35"}
+{"time": "2026-11-09T22:04:52+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5875, "cache_read": 0, "output": 3426, "usd": 0.097911}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.254735, "kind": "reservation_release", "reservation": "bd90bc93-117a-4bc2-8170-aa069703ea35"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24437, "kind": "reservation_upper_bound", "reservation": "f3907743-3f59-44cd-9e2f-e47839d348e4"}
+{"time": "2026-11-09T22:05:24+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5250, "cache_read": 0, "output": 3325, "usd": 0.092766}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24437, "kind": "reservation_release", "reservation": "f3907743-3f59-44cd-9e2f-e47839d348e4"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25617, "kind": "reservation_upper_bound", "reservation": "690617b3-33d5-4b25-9d5d-431e2b57ff2b"}
+{"time": "2026-11-09T22:06:04+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6264, "cache_read": 0, "output": 4194, "usd": 0.115216}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25617, "kind": "reservation_release", "reservation": "690617b3-33d5-4b25-9d5d-431e2b57ff2b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.270775, "kind": "reservation_upper_bound", "reservation": "2fc40944-e063-4468-bcaf-1248baeff3db"}
+{"time": "2026-11-09T22:06:41+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7315, "cache_read": 0, "output": 3796, "usd": 0.112511}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.270775, "kind": "reservation_release", "reservation": "2fc40944-e063-4468-bcaf-1248baeff3db"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22855999999999999, "kind": "reservation_upper_bound", "reservation": "d865b43b-613c-48a0-8384-c4457f4935d9"}
+{"time": "2026-11-09T22:10:38+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4126, "cache_read": 0, "output": 2698, "usd": 0.074606}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22855999999999999, "kind": "reservation_release", "reservation": "d865b43b-613c-48a0-8384-c4457f4935d9"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.221675, "kind": "reservation_upper_bound", "reservation": "0ef84ce1-b30c-4118-b49e-d27aecae6c00"}
+{"time": "2026-11-09T22:10:56+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3845, "cache_read": 0, "output": 1973, "usd": 0.058701}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.221675, "kind": "reservation_release", "reservation": "0ef84ce1-b30c-4118-b49e-d27aecae6c00"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22845, "kind": "reservation_upper_bound", "reservation": "249215a1-3542-4127-964d-fabd3caf977c"}
+{"time": "2026-11-09T22:11:13+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4337, "cache_read": 0, "output": 2001, "usd": 0.061721}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22845, "kind": "reservation_release", "reservation": "249215a1-3542-4127-964d-fabd3caf977c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27124000000000004, "kind": "reservation_upper_bound", "reservation": "df95546f-6dd5-483c-8ce8-adabf4a17073"}
+{"time": "2026-11-09T22:11:55+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7250, "cache_read": 0, "output": 4342, "usd": 0.123106}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27124000000000004, "kind": "reservation_release", "reservation": "df95546f-6dd5-483c-8ce8-adabf4a17073"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27881500000000004, "kind": "reservation_upper_bound", "reservation": "517bedb9-455b-47f5-88c4-06aff9e822ba"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27281500000000003, "kind": "reservation_upper_bound", "reservation": "213bff08-0576-4184-973e-736622f2b362"}
+{"time": "2026-11-09T23:10:06+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7382, "cache_read": 0, "output": 3781, "usd": 0.112546}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27281500000000003, "kind": "reservation_release", "reservation": "213bff08-0576-4184-973e-736622f2b362"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24739, "kind": "reservation_upper_bound", "reservation": "55496cfa-937c-4048-8085-5ceb6d61e4ba"}
+{"time": "2026-11-09T23:10:39+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5430, "cache_read": 0, "output": 3592, "usd": 0.099006}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24739, "kind": "reservation_release", "reservation": "55496cfa-937c-4048-8085-5ceb6d61e4ba"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23508, "kind": "reservation_upper_bound", "reservation": "e58b7e7b-c76a-48f5-9788-ae82ff8009f1"}
+{"time": "2026-11-09T23:11:03+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4601, "cache_read": 0, "output": 2647, "usd": 0.075961}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23508, "kind": "reservation_release", "reservation": "e58b7e7b-c76a-48f5-9788-ae82ff8009f1"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.225415, "kind": "reservation_upper_bound", "reservation": "7a2b4bdb-61b2-482d-84bb-d2a2be086b08"}
+{"time": "2026-11-09T23:11:19+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4091, "cache_read": 0, "output": 1677, "usd": 0.054011}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.225415, "kind": "reservation_release", "reservation": "7a2b4bdb-61b2-482d-84bb-d2a2be086b08"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24669000000000002, "kind": "reservation_upper_bound", "reservation": "4423d8a4-1451-4ae7-ad9c-110ed82c1a74"}
+{"time": "2026-11-09T23:11:44+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5462, "cache_read": 0, "output": 2706, "usd": 0.081446}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24669000000000002, "kind": "reservation_release", "reservation": "4423d8a4-1451-4ae7-ad9c-110ed82c1a74"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24988500000000002, "kind": "reservation_upper_bound", "reservation": "14ca84a0-4d12-4cd9-b5a2-f6ba98c8174a"}
+{"time": "2026-11-09T23:12:12+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5720, "cache_read": 0, "output": 3095, "usd": 0.090516}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24988500000000002, "kind": "reservation_release", "reservation": "14ca84a0-4d12-4cd9-b5a2-f6ba98c8174a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.242675, "kind": "reservation_upper_bound", "reservation": "8352744d-8223-44e8-a27c-f8088916776a"}
+{"time": "2026-11-09T23:12:38+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5057, "cache_read": 0, "output": 2945, "usd": 0.084201}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.242675, "kind": "reservation_release", "reservation": "8352744d-8223-44e8-a27c-f8088916776a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.227805, "kind": "reservation_upper_bound", "reservation": "561fcabe-407d-4578-bbc3-3b5c23552687"}
+{"time": "2026-11-09T23:13:02+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4049, "cache_read": 0, "output": 2571, "usd": 0.071681}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.227805, "kind": "reservation_release", "reservation": "561fcabe-407d-4578-bbc3-3b5c23552687"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.21581, "kind": "reservation_upper_bound", "reservation": "1810ed1e-8d04-49f1-9a5c-00b491dea93c"}
+{"time": "2026-11-09T23:13:16+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3296, "cache_read": 0, "output": 1659, "usd": 0.049676}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.21581, "kind": "reservation_release", "reservation": "1810ed1e-8d04-49f1-9a5c-00b491dea93c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25958000000000003, "kind": "reservation_upper_bound", "reservation": "cfeecedb-1eee-4b03-a3fd-8bc224aad8ce"}
+{"time": "2026-11-09T23:13:47+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6423, "cache_read": 0, "output": 3261, "usd": 0.097351}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25958000000000003, "kind": "reservation_release", "reservation": "cfeecedb-1eee-4b03-a3fd-8bc224aad8ce"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.265865, "kind": "reservation_upper_bound", "reservation": "07fcc42e-603f-4145-ae83-5b79f4922d2d"}
+{"time": "2026-11-09T23:14:29+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6912, "cache_read": 0, "output": 4446, "usd": 0.123496}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.265865, "kind": "reservation_release", "reservation": "07fcc42e-603f-4145-ae83-5b79f4922d2d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.228115, "kind": "reservation_upper_bound", "reservation": "f55e6274-a997-40ef-81ff-0381c7e636ab"}
+{"time": "2026-11-09T23:14:47+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4165, "cache_read": 0, "output": 1996, "usd": 0.060761}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.228115, "kind": "reservation_release", "reservation": "f55e6274-a997-40ef-81ff-0381c7e636ab"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.218705, "kind": "reservation_upper_bound", "reservation": "2d221460-90b3-4924-9679-38f7e3c2906c"}
+{"time": "2026-11-09T23:15:03+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3499, "cache_read": 0, "output": 1788, "usd": 0.053271}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.218705, "kind": "reservation_release", "reservation": "2d221460-90b3-4924-9679-38f7e3c2906c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24831, "kind": "reservation_upper_bound", "reservation": "40f26a58-8f33-450a-88c1-84006c924678"}
+{"time": "2026-11-09T23:15:32+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5603, "cache_read": 0, "output": 3274, "usd": 0.093511}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24831, "kind": "reservation_release", "reservation": "40f26a58-8f33-450a-88c1-84006c924678"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.269065, "kind": "reservation_upper_bound", "reservation": "57db8509-e360-4c5e-920a-362728187f18"}
+{"time": "2026-11-09T23:16:11+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7048, "cache_read": 0, "output": 3965, "usd": 0.114556}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.269065, "kind": "reservation_release", "reservation": "57db8509-e360-4c5e-920a-362728187f18"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.278215, "kind": "reservation_upper_bound", "reservation": "f38ef52e-077c-472d-98ad-210fe85c3a6a"}
+{"time": "2026-11-09T23:16:49+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7729, "cache_read": 0, "output": 4074, "usd": 0.120141}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.278215, "kind": "reservation_release", "reservation": "f38ef52e-077c-472d-98ad-210fe85c3a6a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.21574, "kind": "reservation_upper_bound", "reservation": "027ea9be-293e-4f46-a92c-789e4879b859"}
+{"time": "2026-11-09T23:17:13+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3348, "cache_read": 0, "output": 1481, "usd": 0.046376}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.21574, "kind": "reservation_release", "reservation": "027ea9be-293e-4f46-a92c-789e4879b859"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.252825, "kind": "reservation_upper_bound", "reservation": "773d0c57-3d95-475f-ac2e-20f458088425"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.223875, "kind": "reservation_upper_bound", "reservation": "795d51bd-5fe3-45ec-acfb-d516bce8ce5b"}
+{"time": "2026-11-09T23:48:43+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4063, "cache_read": 0, "output": 2009, "usd": 0.060511}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.223875, "kind": "reservation_release", "reservation": "795d51bd-5fe3-45ec-acfb-d516bce8ce5b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.267345, "kind": "reservation_upper_bound", "reservation": "bdf872de-1e7d-49ed-9e57-5ff4a09b7c7c"}
+{"time": "2026-11-09T23:54:50+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6885, "cache_read": 0, "output": 3203, "usd": 0.098501}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.267345, "kind": "reservation_release", "reservation": "bdf872de-1e7d-49ed-9e57-5ff4a09b7c7c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24877, "kind": "reservation_upper_bound", "reservation": "63e07ab2-975a-4e10-b3b1-1f1d6ed70c68"}
+{"time": "2026-11-09T23:55:19+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5445, "cache_read": 0, "output": 3225, "usd": 0.091741}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24877, "kind": "reservation_release", "reservation": "63e07ab2-975a-4e10-b3b1-1f1d6ed70c68"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27867, "kind": "reservation_upper_bound", "reservation": "78afc21b-564c-40e2-96e2-b09b97175774"}
+{"time": "2026-11-09T23:55:55+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7715, "cache_read": 0, "output": 3665, "usd": 0.111891}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27867, "kind": "reservation_release", "reservation": "78afc21b-564c-40e2-96e2-b09b97175774"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.277415, "kind": "reservation_upper_bound", "reservation": "c061a95f-bbde-45d8-a1b7-b7b835091f45"}
+{"time": "2026-11-09T23:56:35+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7713, "cache_read": 0, "output": 4053, "usd": 0.119641}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.277415, "kind": "reservation_release", "reservation": "c061a95f-bbde-45d8-a1b7-b7b835091f45"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25583, "kind": "reservation_upper_bound", "reservation": "adfcb619-4195-4662-868c-d961c7602c59"}
+{"time": "2026-11-09T23:57:11+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6225, "cache_read": 0, "output": 3836, "usd": 0.107861}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25583, "kind": "reservation_release", "reservation": "adfcb619-4195-4662-868c-d961c7602c59"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24904500000000002, "kind": "reservation_upper_bound", "reservation": "2e3c8d17-aafb-42bd-9a54-4c8c7ead346a"}
+{"time": "2026-11-09T23:57:44+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5629, "cache_read": 0, "output": 3367, "usd": 0.095501}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24904500000000002, "kind": "reservation_release", "reservation": "2e3c8d17-aafb-42bd-9a54-4c8c7ead346a"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23513499999999998, "kind": "reservation_upper_bound", "reservation": "2fe98ca1-d0f6-4188-9275-a2eaa1ed3248"}
+{"time": "2026-11-09T23:58:12+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4607, "cache_read": 0, "output": 2970, "usd": 0.082451}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23513499999999998, "kind": "reservation_release", "reservation": "2fe98ca1-d0f6-4188-9275-a2eaa1ed3248"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.254195, "kind": "reservation_upper_bound", "reservation": "d84df9ce-960b-4fcc-86a9-9301bc3352d7"}
+{"time": "2026-11-09T23:58:45+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5994, "cache_read": 0, "output": 3336, "usd": 0.096706}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.254195, "kind": "reservation_release", "reservation": "d84df9ce-960b-4fcc-86a9-9301bc3352d7"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22757, "kind": "reservation_upper_bound", "reservation": "f8113640-b4e1-4f05-889f-dce3a671fcf4"}
+{"time": "2026-11-09T23:59:08+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4129, "cache_read": 0, "output": 2301, "usd": 0.066681}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22757, "kind": "reservation_release", "reservation": "f8113640-b4e1-4f05-889f-dce3a671fcf4"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25679, "kind": "reservation_upper_bound", "reservation": "1444cff1-cc6b-4931-9bdd-c47c17388985"}
+{"time": "2026-11-09T23:59:38+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6310, "cache_read": 0, "output": 3153, "usd": 0.094626}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25679, "kind": "reservation_release", "reservation": "1444cff1-cc6b-4931-9bdd-c47c17388985"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.252875, "kind": "reservation_upper_bound", "reservation": "5fde5ffd-ccfa-4827-84ee-59e9b79ebda9"}
+{"time": "2026-11-10T00:00:10+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5936, "cache_read": 0, "output": 3227, "usd": 0.094236}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.252875, "kind": "reservation_release", "reservation": "5fde5ffd-ccfa-4827-84ee-59e9b79ebda9"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.280975, "kind": "reservation_upper_bound", "reservation": "f8905270-93ce-48b7-80f5-93b3a63776cd"}
+{"time": "2026-11-10T00:00:44+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7908, "cache_read": 0, "output": 3536, "usd": 0.110276}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.280975, "kind": "reservation_release", "reservation": "f8905270-93ce-48b7-80f5-93b3a63776cd"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22783, "kind": "reservation_upper_bound", "reservation": "535a43b7-e75c-4840-9fa0-6f36c02fc8dc"}
+{"time": "2026-11-10T00:01:02+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4212, "cache_read": 0, "output": 1974, "usd": 0.060556}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22783, "kind": "reservation_release", "reservation": "535a43b7-e75c-4840-9fa0-6f36c02fc8dc"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.28202, "kind": "reservation_upper_bound", "reservation": "89b1561d-ba7c-4741-ace9-fea666560347"}
+{"time": "2026-11-10T00:03:27+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7915, "cache_read": 0, "output": 3821, "usd": 0.116011}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.28202, "kind": "reservation_release", "reservation": "89b1561d-ba7c-4741-ace9-fea666560347"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.235215, "kind": "reservation_upper_bound", "reservation": "ec64d5b9-c35e-4af5-a099-5455147f95bc"}
+{"time": "2026-11-10T00:03:54+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4641, "cache_read": 0, "output": 2823, "usd": 0.079681}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.235215, "kind": "reservation_release", "reservation": "ec64d5b9-c35e-4af5-a099-5455147f95bc"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.224525, "kind": "reservation_upper_bound", "reservation": "342e6377-d62f-4214-abc4-2307ee1582b7"}
+{"time": "2026-11-10T00:04:09+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4022, "cache_read": 0, "output": 1660, "usd": 0.053326}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.224525, "kind": "reservation_release", "reservation": "342e6377-d62f-4214-abc4-2307ee1582b7"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.265315, "kind": "reservation_upper_bound", "reservation": "8308ebfe-056c-4cbd-afb2-75d72acb71ba"}
+{"time": "2026-11-10T00:04:34+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6802, "cache_read": 0, "output": 2759, "usd": 0.089206}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.265315, "kind": "reservation_release", "reservation": "8308ebfe-056c-4cbd-afb2-75d72acb71ba"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.214395, "kind": "reservation_upper_bound", "reservation": "ed26a843-7405-473a-bbc1-ff1149dcace8"}
+{"time": "2026-11-10T00:04:50+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3252, "cache_read": 0, "output": 1857, "usd": 0.053416}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.214395, "kind": "reservation_release", "reservation": "ed26a843-7405-473a-bbc1-ff1149dcace8"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22264, "kind": "reservation_upper_bound", "reservation": "10b0822d-f6ba-47ce-8a6e-202f72322e47"}
+{"time": "2026-11-10T00:05:06+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3792, "cache_read": 0, "output": 1857, "usd": 0.056116}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22264, "kind": "reservation_release", "reservation": "10b0822d-f6ba-47ce-8a6e-202f72322e47"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27602, "kind": "reservation_upper_bound", "reservation": "66903d00-9b1b-40d4-b1c7-7a97925f1407"}
+{"time": "2026-11-10T00:05:48+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7544, "cache_read": 0, "output": 4325, "usd": 0.124236}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27602, "kind": "reservation_release", "reservation": "66903d00-9b1b-40d4-b1c7-7a97925f1407"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.28192, "kind": "reservation_upper_bound", "reservation": "e0472439-83df-43db-9a9d-f12b37c909cd"}
+{"time": "2026-11-10T00:06:36+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 8024, "cache_read": 0, "output": 5054, "usd": 0.141216}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.28192, "kind": "reservation_release", "reservation": "e0472439-83df-43db-9a9d-f12b37c909cd"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.232905, "kind": "reservation_upper_bound", "reservation": "8066bcc6-64be-409c-9b4c-d0f0c3c72b62"}
+{"time": "2026-11-10T00:07:06+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4447, "cache_read": 0, "output": 3207, "usd": 0.086391}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.232905, "kind": "reservation_release", "reservation": "8066bcc6-64be-409c-9b4c-d0f0c3c72b62"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22781, "kind": "reservation_upper_bound", "reservation": "d64c23bb-2376-4529-8ec9-76eb3557c005"}
+{"time": "2026-11-10T00:07:29+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4173, "cache_read": 0, "output": 2456, "usd": 0.070001}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22781, "kind": "reservation_release", "reservation": "d64c23bb-2376-4529-8ec9-76eb3557c005"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27153499999999997, "kind": "reservation_upper_bound", "reservation": "20f98c86-8d5d-4d5a-8e18-c16fd13cdc8d"}
+{"time": "2026-11-10T00:08:03+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7171, "cache_read": 0, "output": 3543, "usd": 0.106731}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27153499999999997, "kind": "reservation_release", "reservation": "20f98c86-8d5d-4d5a-8e18-c16fd13cdc8d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23427, "kind": "reservation_upper_bound", "reservation": "831f04ca-8cac-4e5d-aa45-912646e7ee96"}
+{"time": "2026-11-10T00:08:35+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4667, "cache_read": 0, "output": 3140, "usd": 0.086151}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23427, "kind": "reservation_release", "reservation": "831f04ca-8cac-4e5d-aa45-912646e7ee96"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.261485, "kind": "reservation_upper_bound", "reservation": "4da9f89e-5cda-4285-a709-53f7569f50d9"}
+{"time": "2026-11-10T00:09:12+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6587, "cache_read": 0, "output": 3944, "usd": 0.111831}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.261485, "kind": "reservation_release", "reservation": "4da9f89e-5cda-4285-a709-53f7569f50d9"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22458, "kind": "reservation_upper_bound", "reservation": "06a8e664-1342-49f1-a7f6-3c990ec78e6c"}
+{"time": "2026-11-10T00:09:26+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4023, "cache_read": 0, "output": 1662, "usd": 0.053371}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22458, "kind": "reservation_release", "reservation": "06a8e664-1342-49f1-a7f6-3c990ec78e6c"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.277665, "kind": "reservation_upper_bound", "reservation": "2458317a-ee6a-4e22-a878-7cce6f90828e"}
+{"time": "2026-11-10T00:10:16+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7772, "cache_read": 0, "output": 5159, "usd": 0.142056}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.277665, "kind": "reservation_release", "reservation": "2458317a-ee6a-4e22-a878-7cce6f90828e"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22816999999999998, "kind": "reservation_upper_bound", "reservation": "fa5909ec-d6c8-4342-bb0b-34ccbebae851"}
+{"time": "2026-11-10T00:10:36+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4167, "cache_read": 0, "output": 2215, "usd": 0.065151}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22816999999999998, "kind": "reservation_release", "reservation": "fa5909ec-d6c8-4342-bb0b-34ccbebae851"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.26833, "kind": "reservation_upper_bound", "reservation": "b9a61339-f7c8-47d3-89ca-f0181529813b"}
+{"time": "2026-11-10T00:11:21+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7130, "cache_read": 0, "output": 4573, "usd": 0.127126}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.26833, "kind": "reservation_release", "reservation": "b9a61339-f7c8-47d3-89ca-f0181529813b"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.256995, "kind": "reservation_upper_bound", "reservation": "fa5897d0-37f2-4eef-b605-d1d7630fe026"}
+{"time": "2026-11-10T00:11:50+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6006, "cache_read": 0, "output": 3116, "usd": 0.092366}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.256995, "kind": "reservation_release", "reservation": "fa5897d0-37f2-4eef-b605-d1d7630fe026"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25505, "kind": "reservation_upper_bound", "reservation": "9c08677d-2b2f-4bbe-abad-37af5c2bd080"}
+{"time": "2026-11-10T00:12:23+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5832, "cache_read": 0, "output": 3496, "usd": 0.099096}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25505, "kind": "reservation_release", "reservation": "9c08677d-2b2f-4bbe-abad-37af5c2bd080"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.275695, "kind": "reservation_upper_bound", "reservation": "1bd83a0a-4ba8-4253-b9d9-18faf478d0cf"}
+{"time": "2026-11-10T00:12:56+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7630, "cache_read": 0, "output": 3482, "usd": 0.107806}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.275695, "kind": "reservation_release", "reservation": "1bd83a0a-4ba8-4253-b9d9-18faf478d0cf"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25929, "kind": "reservation_upper_bound", "reservation": "d74de8d9-4721-44b5-bfa2-27f11fd1f7c5"}
+{"time": "2026-11-10T00:13:31+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6779, "cache_read": 0, "output": 3744, "usd": 0.108791}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25929, "kind": "reservation_release", "reservation": "d74de8d9-4721-44b5-bfa2-27f11fd1f7c5"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.254085, "kind": "reservation_upper_bound", "reservation": "84fcf5c4-30c3-4947-b104-205c6f1da9ae"}
+{"time": "2026-11-10T00:14:08+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5972, "cache_read": 0, "output": 3650, "usd": 0.102876}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.254085, "kind": "reservation_release", "reservation": "84fcf5c4-30c3-4947-b104-205c6f1da9ae"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.235435, "kind": "reservation_upper_bound", "reservation": "f2a2f414-a8ab-4e88-bd9b-d1e75b02c518"}
+{"time": "2026-11-10T00:14:34+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4808, "cache_read": 0, "output": 2858, "usd": 0.081216}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.235435, "kind": "reservation_release", "reservation": "f2a2f414-a8ab-4e88-bd9b-d1e75b02c518"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.221455, "kind": "reservation_upper_bound", "reservation": "c3638bf3-30dc-4592-9d35-22ea037e2d9f"}
+{"time": "2026-11-10T00:14:50+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3778, "cache_read": 0, "output": 1655, "usd": 0.052006}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.221455, "kind": "reservation_release", "reservation": "c3638bf3-30dc-4592-9d35-22ea037e2d9f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.228505, "kind": "reservation_upper_bound", "reservation": "54a99b59-4b85-4bfb-a17c-dd92c5e7e5ae"}
+{"time": "2026-11-10T00:15:11+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4121, "cache_read": 0, "output": 2465, "usd": 0.069921}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.228505, "kind": "reservation_release", "reservation": "54a99b59-4b85-4bfb-a17c-dd92c5e7e5ae"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24394500000000002, "kind": "reservation_upper_bound", "reservation": "8364cbf9-b6cf-41a3-8ab2-30525f65fbf9"}
+{"time": "2026-11-10T00:15:41+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5167, "cache_read": 0, "output": 3151, "usd": 0.088871}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24394500000000002, "kind": "reservation_release", "reservation": "8364cbf9-b6cf-41a3-8ab2-30525f65fbf9"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22318500000000002, "kind": "reservation_upper_bound", "reservation": "06d4b50d-e674-4a3f-9db6-ec468f763ffc"}
+{"time": "2026-11-10T00:15:58+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3912, "cache_read": 0, "output": 1868, "usd": 0.056936}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22318500000000002, "kind": "reservation_release", "reservation": "06d4b50d-e674-4a3f-9db6-ec468f763ffc"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.24221, "kind": "reservation_upper_bound", "reservation": "9689673b-a042-4a96-b636-67b3f87e3b89"}
+{"time": "2026-11-10T00:16:22+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5345, "cache_read": 0, "output": 2636, "usd": 0.079461}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.24221, "kind": "reservation_release", "reservation": "9689673b-a042-4a96-b636-67b3f87e3b89"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.25995999999999997, "kind": "reservation_upper_bound", "reservation": "84fb0b0a-46f8-44c2-a83d-8da13fa36b8d"}
+{"time": "2026-11-10T00:16:53+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5930, "cache_read": 0, "output": 3362, "usd": 0.096906}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.25995999999999997, "kind": "reservation_release", "reservation": "84fb0b0a-46f8-44c2-a83d-8da13fa36b8d"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22018500000000002, "kind": "reservation_upper_bound", "reservation": "598a70a4-a9c7-43b9-9876-bdecf0ca2976"}
+{"time": "2026-11-10T00:17:10+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3712, "cache_read": 0, "output": 1816, "usd": 0.054896}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22018500000000002, "kind": "reservation_release", "reservation": "598a70a4-a9c7-43b9-9876-bdecf0ca2976"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.270525, "kind": "reservation_upper_bound", "reservation": "4cc99cea-3267-4ee4-93dd-8b9db6093020"}
+{"time": "2026-11-10T00:17:48+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7296, "cache_read": 0, "output": 3943, "usd": 0.115356}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.270525, "kind": "reservation_release", "reservation": "4cc99cea-3267-4ee4-93dd-8b9db6093020"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.234215, "kind": "reservation_upper_bound", "reservation": "4bebe7ac-8ac3-4ef3-b5de-65033be6f323"}
+{"time": "2026-11-10T00:18:13+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4664, "cache_read": 0, "output": 2774, "usd": 0.078816}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.234215, "kind": "reservation_release", "reservation": "4bebe7ac-8ac3-4ef3-b5de-65033be6f323"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.23681000000000002, "kind": "reservation_upper_bound", "reservation": "e86c42b0-fcdb-4cac-a403-651da64a7f4e"}
+{"time": "2026-11-10T00:18:38+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4818, "cache_read": 0, "output": 2496, "usd": 0.074026}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.23681000000000002, "kind": "reservation_release", "reservation": "e86c42b0-fcdb-4cac-a403-651da64a7f4e"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22166, "kind": "reservation_upper_bound", "reservation": "b431dad4-4d61-4abc-9ee4-aaef348c818f"}
+{"time": "2026-11-10T00:18:57+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3779, "cache_read": 0, "output": 2039, "usd": 0.059691}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22166, "kind": "reservation_release", "reservation": "b431dad4-4d61-4abc-9ee4-aaef348c818f"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.22762500000000002, "kind": "reservation_upper_bound", "reservation": "a597a05d-1916-47f4-a455-352e60536b24"}
+{"time": "2026-11-10T00:19:17+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4138, "cache_read": 0, "output": 2278, "usd": 0.066266}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.22762500000000002, "kind": "reservation_release", "reservation": "a597a05d-1916-47f4-a455-352e60536b24"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.27881500000000004, "kind": "reservation_upper_bound", "reservation": "7bde4eee-3fba-4691-8472-30426eb5e808"}
+{"time": "2026-11-10T00:20:19+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7824, "cache_read": 0, "output": 4009, "usd": 0.119316}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.27881500000000004, "kind": "reservation_release", "reservation": "7bde4eee-3fba-4691-8472-30426eb5e808"}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": 0.252825, "kind": "reservation_upper_bound", "reservation": "d3a3b9aa-46b2-4461-ae39-7a389473ca34"}
+{"time": "2026-11-10T00:20:55+00:00", "purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5612, "cache_read": 0, "output": 3817, "usd": 0.104416}
+{"purpose": "judge-v1:claude_test2:claude", "model": "claude-opus-5-5", "usd": -0.252825, "kind": "reservation_release", "reservation": "d3a3b9aa-46b2-4461-ae39-7a389473ca34"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.277875, "kind": "reservation_upper_bound", "reservation": "70821e0f-876b-48f9-982e-80a4aa8762a9"}
+{"time": "2026-11-11T08:47:49+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7684, "cache_read": 0, "output": 4649, "usd": 0.131416}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.277875, "kind": "reservation_release", "reservation": "70821e0f-876b-48f9-982e-80a4aa8762a9"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.23311500000000002, "kind": "reservation_upper_bound", "reservation": "ab784f4e-af7d-4f07-887f-68585231e7b7"}
+{"time": "2026-11-11T08:48:13+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4690, "cache_read": 0, "output": 2539, "usd": 0.074246}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.23311500000000002, "kind": "reservation_release", "reservation": "ab784f4e-af7d-4f07-887f-68585231e7b7"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.25401, "kind": "reservation_upper_bound", "reservation": "5b0948ef-57b0-4291-9294-71616a7c65eb"}
+{"time": "2026-11-11T08:48:48+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6096, "cache_read": 0, "output": 3712, "usd": 0.104736}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.25401, "kind": "reservation_release", "reservation": "5b0948ef-57b0-4291-9294-71616a7c65eb"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.22037, "kind": "reservation_upper_bound", "reservation": "25ab9ba1-425e-4c79-a4e7-f19e4dc4d4e4"}
+{"time": "2026-11-11T08:49:03+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3704, "cache_read": 0, "output": 1664, "usd": 0.051816}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.22037, "kind": "reservation_release", "reservation": "25ab9ba1-425e-4c79-a4e7-f19e4dc4d4e4"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.26093, "kind": "reservation_upper_bound", "reservation": "26526815-af24-45b7-b957-9570a76f824a"}
+{"time": "2026-11-11T08:49:41+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6658, "cache_read": 0, "output": 3870, "usd": 0.110706}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.26093, "kind": "reservation_release", "reservation": "26526815-af24-45b7-b957-9570a76f824a"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.220315, "kind": "reservation_upper_bound", "reservation": "fd16dd51-8b9b-4747-8358-0d8a7ac620fa"}
+{"time": "2026-11-11T08:50:00+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3702, "cache_read": 0, "output": 2102, "usd": 0.060566}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.220315, "kind": "reservation_release", "reservation": "fd16dd51-8b9b-4747-8358-0d8a7ac620fa"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.27247, "kind": "reservation_upper_bound", "reservation": "72f1cee6-4e9c-4ce0-bf8e-2ae91e13bc79"}
+{"time": "2026-11-11T08:50:45+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7319, "cache_read": 0, "output": 4659, "usd": 0.129791}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.27247, "kind": "reservation_release", "reservation": "72f1cee6-4e9c-4ce0-bf8e-2ae91e13bc79"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.27197, "kind": "reservation_upper_bound", "reservation": "860b3d02-9cb3-4aad-b485-3b14f208760d"}
+{"time": "2026-11-11T08:51:23+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7541, "cache_read": 0, "output": 3893, "usd": 0.115581}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.27197, "kind": "reservation_release", "reservation": "860b3d02-9cb3-4aad-b485-3b14f208760d"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.223495, "kind": "reservation_upper_bound", "reservation": "4d424ed7-b1a0-42b7-a705-2db2daceb98b"}
+{"time": "2026-11-11T08:51:41+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3875, "cache_read": 0, "output": 1959, "usd": 0.058571}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.223495, "kind": "reservation_release", "reservation": "4d424ed7-b1a0-42b7-a705-2db2daceb98b"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.24911, "kind": "reservation_upper_bound", "reservation": "e1583ba6-8184-443d-86d1-24d32c71c7d6"}
+{"time": "2026-11-11T08:52:16+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5693, "cache_read": 0, "output": 3073, "usd": 0.089941}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.24911, "kind": "reservation_release", "reservation": "e1583ba6-8184-443d-86d1-24d32c71c7d6"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.25795, "kind": "reservation_upper_bound", "reservation": "4d04dffa-f26d-4cac-8bf5-2059346d4882"}
+{"time": "2026-11-11T08:52:56+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6248, "cache_read": 0, "output": 3624, "usd": 0.103736}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.25795, "kind": "reservation_release", "reservation": "4d04dffa-f26d-4cac-8bf5-2059346d4882"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.26227500000000004, "kind": "reservation_upper_bound", "reservation": "e124bcbc-332f-4e73-a339-02bca6a75ce2"}
+{"time": "2026-11-11T08:53:28+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6400, "cache_read": 0, "output": 3323, "usd": 0.098476}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.26227500000000004, "kind": "reservation_release", "reservation": "e124bcbc-332f-4e73-a339-02bca6a75ce2"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.220975, "kind": "reservation_upper_bound", "reservation": "7ff133be-6a77-4d59-8cf9-1696d86a065d"}
+{"time": "2026-11-11T08:53:43+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3762, "cache_read": 0, "output": 1719, "usd": 0.053206}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.220975, "kind": "reservation_release", "reservation": "7ff133be-6a77-4d59-8cf9-1696d86a065d"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.22353499999999998, "kind": "reservation_upper_bound", "reservation": "a6aaf686-8a7e-4f12-946e-8d59cc86d3f1"}
+{"time": "2026-11-11T08:54:00+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4044, "cache_read": 0, "output": 1836, "usd": 0.056956}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.22353499999999998, "kind": "reservation_release", "reservation": "a6aaf686-8a7e-4f12-946e-8d59cc86d3f1"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.26182, "kind": "reservation_upper_bound", "reservation": "78003591-4583-4c44-90a7-cbbfb852015e"}
+{"time": "2026-11-11T08:54:36+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6698, "cache_read": 0, "output": 3621, "usd": 0.105926}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.26182, "kind": "reservation_release", "reservation": "78003591-4583-4c44-90a7-cbbfb852015e"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.264535, "kind": "reservation_upper_bound", "reservation": "5b47bcc4-fec4-4cdd-bca8-e59c6010a572"}
+{"time": "2026-11-11T08:55:10+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6748, "cache_read": 0, "output": 3503, "usd": 0.103816}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.264535, "kind": "reservation_release", "reservation": "5b47bcc4-fec4-4cdd-bca8-e59c6010a572"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.25822500000000004, "kind": "reservation_upper_bound", "reservation": "b3d726bd-5572-4a5f-b1d2-8b3bf5c55e93"}
+{"time": "2026-11-11T08:55:42+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6379, "cache_read": 0, "output": 3427, "usd": 0.100451}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.25822500000000004, "kind": "reservation_release", "reservation": "b3d726bd-5572-4a5f-b1d2-8b3bf5c55e93"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.270435, "kind": "reservation_upper_bound", "reservation": "50cffca8-b2ff-43c7-878e-d327311b3eb9"}
+{"time": "2026-11-11T08:56:17+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6901, "cache_read": 0, "output": 3613, "usd": 0.106781}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.270435, "kind": "reservation_release", "reservation": "50cffca8-b2ff-43c7-878e-d327311b3eb9"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.267045, "kind": "reservation_upper_bound", "reservation": "f5fe6cc4-79a5-40c9-adc1-640417a430aa"}
+{"time": "2026-11-11T08:57:01+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6958, "cache_read": 0, "output": 3921, "usd": 0.113226}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.267045, "kind": "reservation_release", "reservation": "f5fe6cc4-79a5-40c9-adc1-640417a430aa"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.26265499999999997, "kind": "reservation_upper_bound", "reservation": "cc3d9854-b68f-413a-aac6-19663d43c627"}
+{"time": "2026-11-11T08:57:41+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6717, "cache_read": 0, "output": 4069, "usd": 0.114981}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.26265499999999997, "kind": "reservation_release", "reservation": "cc3d9854-b68f-413a-aac6-19663d43c627"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.262775, "kind": "reservation_upper_bound", "reservation": "2df4799a-89a8-42ca-a597-bcdac682d8b3"}
+{"time": "2026-11-11T08:58:16+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6709, "cache_read": 0, "output": 3742, "usd": 0.108401}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.262775, "kind": "reservation_release", "reservation": "2df4799a-89a8-42ca-a597-bcdac682d8b3"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.265525, "kind": "reservation_upper_bound", "reservation": "1a77a6d3-8a2e-489f-9ba5-c623a1a1793d"}
+{"time": "2026-11-11T08:58:55+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6816, "cache_read": 0, "output": 3933, "usd": 0.112756}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.265525, "kind": "reservation_release", "reservation": "1a77a6d3-8a2e-489f-9ba5-c623a1a1793d"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.223385, "kind": "reservation_upper_bound", "reservation": "7c99bc88-1b4d-41c8-a11e-d6235b506edc"}
+{"time": "2026-11-11T08:59:11+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 4005, "cache_read": 0, "output": 1738, "usd": 0.054801}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.223385, "kind": "reservation_release", "reservation": "7c99bc88-1b4d-41c8-a11e-d6235b506edc"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.274485, "kind": "reservation_upper_bound", "reservation": "6eac0237-e4a0-485c-9767-3915fd9162f8"}
+{"time": "2026-11-11T08:59:42+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7878, "cache_read": 0, "output": 3337, "usd": 0.106146}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.274485, "kind": "reservation_release", "reservation": "6eac0237-e4a0-485c-9767-3915fd9162f8"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.27923, "kind": "reservation_upper_bound", "reservation": "acdf0abb-6112-4dd3-88e4-6408a1b6c3e0"}
+{"time": "2026-11-11T09:00:23+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 7809, "cache_read": 0, "output": 4342, "usd": 0.125901}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.27923, "kind": "reservation_release", "reservation": "acdf0abb-6112-4dd3-88e4-6408a1b6c3e0"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.265335, "kind": "reservation_upper_bound", "reservation": "3da523d7-5a82-49f7-b449-73dc09edee31"}
+{"time": "2026-11-11T09:01:02+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6995, "cache_read": 0, "output": 3926, "usd": 0.113511}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.265335, "kind": "reservation_release", "reservation": "3da523d7-5a82-49f7-b449-73dc09edee31"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.261135, "kind": "reservation_upper_bound", "reservation": "3ed2b249-42e2-4f3c-8f2b-2eeb30b51b25"}
+{"time": "2026-11-11T09:01:36+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 6571, "cache_read": 0, "output": 3446, "usd": 0.101791}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.261135, "kind": "reservation_release", "reservation": "3ed2b249-42e2-4f3c-8f2b-2eeb30b51b25"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.22296, "kind": "reservation_upper_bound", "reservation": "ddbb9fde-aec8-4361-a488-1834ab999891"}
+{"time": "2026-11-11T09:01:53+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 3921, "cache_read": 0, "output": 1892, "usd": 0.057461}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.22296, "kind": "reservation_release", "reservation": "ddbb9fde-aec8-4361-a488-1834ab999891"}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": 0.250585, "kind": "reservation_upper_bound", "reservation": "032b44bb-434a-41f2-9a89-6795ecfdc369"}
+{"time": "2026-11-11T09:02:22+00:00", "purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "input": 4, "cache_write": 5673, "cache_read": 0, "output": 3192, "usd": 0.092221}
+{"purpose": "judge-v1:claude_screen3:claude", "model": "claude-opus-5-5", "usd": -0.250585, "kind": "reservation_release", "reservation": "032b44bb-434a-41f2-9a89-6795ecfdc369"}

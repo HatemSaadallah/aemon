@@ -1,0 +1,175 @@
+{
+  "packet_id": "bfc0ebde6676f4bd",
+  "packet_sha256": "7ab1d299c594cd6348a17d0a86772600f0a0d79a816962b55e37e8e5ef26f32d",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\n  \"packet_id\": \"bfc0ebde6676f4bd\",\n  \"dimensions\": {\n    \"problem_framing\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A1\"],\n      \"reason\": \"A1 separates the objective (whether public evidence justifies a consumer proposition) from the suggested solution. It lists real alternatives: B2B expansion, no expansion, retail partnership and licensing. It flags the need to establish existing consumer reach and willingness to pay. It does not correct a false premise or surface a decisive constraint, such as whether the products are suitable for DIY installation or the reputational constraint after Grenfell. The \u20ac20,000 / 12-week budget has no source; it is treated as a planning assumption, not an observation.\"\n    },\n    \"causal_mechanism\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A9\", \"A10\"],\n      \"reason\": \"T1 (A9) states who changes behaviour (homeowners), why (safety concern and compliance) and how value is captured (premium pricing). The chain is asserted, not traced through the channel. It ignores how a consumer would actually buy and install the product, although the dossier shows marketplace-only availability and professional installation for rafter boards. It does not reach full value capture by this manufacturer.\"\n    },\n    \"distinct_theories\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A9\", \"A10\"],\n      \"reason\": \"T1 (safety motive) and T2 (energy-cost motive) are rival explanations of purchase motivation. Both assume the same customer (homeowners), the same product and the same channel, so they do not imply different products, customers or channels. Neither considers that consumer demand might be weak, as suggested by the 6.3% intent figure.\"\n    },\n    \"assumptions_predictions\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A9\", \"A10\"],\n      \"reason\": \"The predictions are observable: a willingness-to-pay premium of at least 15% or 10%, label-driven purchase intent, and regional sales differences. The thresholds are arbitrary assumptions. Failure of the WTP prediction would weaken the premium-pricing chain, but the regional sales predictions would not clearly embarrass either theory.\"\n    },\n    \"evidence_judgement\": {\n      \"status\": \"scored\",\n      \"score\": 0,\n      \"event_ids\": [\"A11\", \"A12\", \"A14\", \"A15\"],\n      \"reason\": \"Sources are systematically misread and mislabelled. In A11 the Grenfell 'knowingly created a false market' finding is cited as SUPPORT for a safety-branded consumer theory and mischaracterised as 'only' indicating marketing strategy. In A12 and A14, sources on market pressure and segment earnings are labelled independent studies and claimed to support homeowner energy-efficiency demand. A14 reuses an inapplicable 'does not show' note. In A15 a company marketing claim is counted as support. Sources that bear directly on the question were never assessed: est-rafters ('This isn't a DIY job'), cotality-intent (6.3% intent), bq-marketplace (not stocked in stores) and the 2011 date of kingspan-direct-2011.\"\n    },\n    \"seeking_challenge\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A13\"],\n      \"reason\": \"A13 runs one search against T1 but never reports or assesses what it found. Contrary evidence already retrieved in A4 (est-rafters, cotality-intent) and the reputational implication of the Grenfell finding were never confronted. No challenge to T2 was attempted.\"\n    },\n    \"experiment_design\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A16\", \"A19\"],\n      \"reason\": \"The conjoint test compares safety and energy labels, so it partly separates T1 from T2. The decision rule is defective in four ways. First, '15% points (e.g., \u20ac30 vs \u20ac25)' is internally inconsistent: that example is a 20% gap. Second, gaps between 10% and 15% are undefined. Third, a small gap is mapped to 'no expansion', even though a small gap cannot distinguish 'both messages attract strong demand' from 'no demand'. The test has no baseline WTP or absolute-demand measure. Fourth, A19 restates the criteria as absolute premiums, which does not match A16. The \u20ac15,000 cost, 10-week duration and sample of 500 are assumptions.\"\n    },\n    \"revision\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A18\"],\n      \"reason\": \"The scheduled update SYN-D was delivered. A18 correctly identifies it as simulated and as concerning warehouse packing errors, unrelated to consumer purchase drivers, and justifiably retains T1. It does not explicitly trace the implication for the recommendation.\"\n    },\n    \"recommendation\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A17\", \"A19\"],\n      \"reason\": \"The recommendation commits to investing in a safety-led consumer proposition and rates T1 'likely' before any test. That rating rests on the misread Grenfell source. The recommendation also assumes an existing direct-to-consumer website, supported only by a 2011 source that was never assessed. It does name a next action and conditions for reversal, but the investment position is not supported by the evidence. It contradicts its own admission that WTP is unknown, and it ignores the reputational risk of safety branding after a 'false market' finding.\"\n    }\n  },\n  \"red_flags\": [\n    {\n      \"kind\": \"misleading_quote\",\n      \"event_ids\": [\"A11\", \"A17\", \"A19\"],\n      \"reason\": \"The Grenfell report excerpt, which says Kingspan 'knowingly created a false market' for K15, is presented as supporting a premium safety proposition and is characterised as merely indicating marketing strategy. This reverses the source's evident adverse meaning, and the misreading drives the favoured theory and the recommendation.\"\n    },\n    {\n      \"kind\": \"unsupported_inference\",\n      \"event_ids\": [\"A12\", \"A14\"],\n      \"reason\": \"Reports of European market pressure, rigid-board share and segment earnings are claimed to support homeowner energy-efficiency demand and are mislabelled as independent studies. A14 reuses a 'residential market recovery' limit that does not fit its source.\"\n    },\n    {\n      \"kind\": \"unsupported_inference\",\n      \"event_ids\": [\"A15\"],\n      \"reason\": \"A company marketing claim ('a great DIY project') is counted as support for consumer demand, while est-rafters says rigid board between rafters 'isn't a DIY job' and was never assessed.\"\n    },\n    {\n      \"kind\": \"unsupported_inference\",\n      \"event_ids\": [\"A17\", \"A19\"],\n      \"reason\": \"The recommendation relies on 'the existing direct-to-consumer website' using only a 2011 excerpt that was never assessed. It also asserts as fact that the product 'meets or exceeds building code requirements', with no supporting source.\"\n    },\n    {\n      \"kind\": \"non_discriminating_test\",\n      \"event_ids\": [\"A16\"],\n      \"reason\": \"The relative label comparison has no absolute-demand baseline, so the 'gap <10% \u2192 no expansion' branch cannot separate strong demand for both messages from no consumer demand. The thresholds are inconsistent: the \u20ac30 vs \u20ac25 example is a 20% gap, gaps of 10\u201315% are undefined, and A19 restates the criteria differently.\"\n    },\n    {\n      \"kind\": \"other\",\n      \"event_ids\": [\"A4\", \"A13\"],\n      \"reason\": \"Contrary evidence that was retrieved was never assessed: 6.3% homeowner install intent, a professional-only rafter install, and marketplace-only availability not stocked in B&Q stores. The challenge search in A13 reports no findings.\"\n    }\n  ],\n  \"suitable_for_training\": false,\n  \"screen_reason\": \"The episode is complete, but it contains several critical errors. A11 reverses the meaning of the Grenfell 'false market' source and uses it as support for the favoured safety theory, which then drives the recommendation. Other unsupported inferences come from irrelevant financial excerpts and a marketing claim, while contrary evidence was ignored. The decision rule in A16 is internally inconsistent and partly non-discriminating. Any single one of these errors is enough to reject the trajectory.\"\n}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 8024
+      },
+      "cache_creation_input_tokens": 8024,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 5054,
+      "output_tokens_details": {
+        "thinking_tokens": 2208
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.141216,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "fca093c4469334c60c84b3f6defacd60de6c93b3c3e9dec03188ce77dbd389fd",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "bfc0ebde6676f4bd",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether public evidence justifies a consumer proposition) from the suggested solution. It lists real alternatives: B2B expansion, no expansion, retail partnership and licensing. It flags the need to establish existing consumer reach and willingness to pay. It does not correct a false premise or surface a decisive constraint, such as whether the products are suitable for DIY installation or the reputational constraint after Grenfell. The \u20ac20,000 / 12-week budget has no source; it is treated as a planning assumption, not an observation."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 (A9) states who changes behaviour (homeowners), why (safety concern and compliance) and how value is captured (premium pricing). The chain is asserted, not traced through the channel. It ignores how a consumer would actually buy and install the product, although the dossier shows marketplace-only availability and professional installation for rafter boards. It does not reach full value capture by this manufacturer."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 (safety motive) and T2 (energy-cost motive) are rival explanations of purchase motivation. Both assume the same customer (homeowners), the same product and the same channel, so they do not imply different products, customers or channels. Neither considers that consumer demand might be weak, as suggested by the 6.3% intent figure."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The predictions are observable: a willingness-to-pay premium of at least 15% or 10%, label-driven purchase intent, and regional sales differences. The thresholds are arbitrary assumptions. Failure of the WTP prediction would weaken the premium-pricing chain, but the regional sales predictions would not clearly embarrass either theory."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14",
+          "A15"
+        ],
+        "reason": "Sources are systematically misread and mislabelled. In A11 the Grenfell 'knowingly created a false market' finding is cited as SUPPORT for a safety-branded consumer theory and mischaracterised as 'only' indicating marketing strategy. In A12 and A14, sources on market pressure and segment earnings are labelled independent studies and claimed to support homeowner energy-efficiency demand. A14 reuses an inapplicable 'does not show' note. In A15 a company marketing claim is counted as support. Sources that bear directly on the question were never assessed: est-rafters ('This isn't a DIY job'), cotality-intent (6.3% intent), bq-marketplace (not stocked in stores) and the 2011 date of kingspan-direct-2011."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A13"
+        ],
+        "reason": "A13 runs one search against T1 but never reports or assesses what it found. Contrary evidence already retrieved in A4 (est-rafters, cotality-intent) and the reputational implication of the Grenfell finding were never confronted. No challenge to T2 was attempted."
+      },
+      "experiment_design": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A16",
+          "A19"
+        ],
+        "reason": "The conjoint test compares safety and energy labels, so it partly separates T1 from T2. The decision rule is defective in four ways. First, '15% points (e.g., \u20ac30 vs \u20ac25)' is internally inconsistent: that example is a 20% gap. Second, gaps between 10% and 15% are undefined. Third, a small gap is mapped to 'no expansion', even though a small gap cannot distinguish 'both messages attract strong demand' from 'no demand'. The test has no baseline WTP or absolute-demand measure. Fourth, A19 restates the criteria as absolute premiums, which does not match A16. The \u20ac15,000 cost, 10-week duration and sample of 500 are assumptions."
+      },
+      "revision": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A18"
+        ],
+        "reason": "The scheduled update SYN-D was delivered. A18 correctly identifies it as simulated and as concerning warehouse packing errors, unrelated to consumer purchase drivers, and justifiably retains T1. It does not explicitly trace the implication for the recommendation."
+      },
+      "recommendation": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A17",
+          "A19"
+        ],
+        "reason": "The recommendation commits to investing in a safety-led consumer proposition and rates T1 'likely' before any test. That rating rests on the misread Grenfell source. The recommendation also assumes an existing direct-to-consumer website, supported only by a 2011 source that was never assessed. It does name a next action and conditions for reversal, but the investment position is not supported by the evidence. It contradicts its own admission that WTP is unknown, and it ignores the reputational risk of safety branding after a 'false market' finding."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "misleading_quote",
+        "event_ids": [
+          "A11",
+          "A17",
+          "A19"
+        ],
+        "reason": "The Grenfell report excerpt, which says Kingspan 'knowingly created a false market' for K15, is presented as supporting a premium safety proposition and is characterised as merely indicating marketing strategy. This reverses the source's evident adverse meaning, and the misreading drives the favoured theory and the recommendation."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A12",
+          "A14"
+        ],
+        "reason": "Reports of European market pressure, rigid-board share and segment earnings are claimed to support homeowner energy-efficiency demand and are mislabelled as independent studies. A14 reuses a 'residential market recovery' limit that does not fit its source."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A15"
+        ],
+        "reason": "A company marketing claim ('a great DIY project') is counted as support for consumer demand, while est-rafters says rigid board between rafters 'isn't a DIY job' and was never assessed."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A17",
+          "A19"
+        ],
+        "reason": "The recommendation relies on 'the existing direct-to-consumer website' using only a 2011 excerpt that was never assessed. It also asserts as fact that the product 'meets or exceeds building code requirements', with no supporting source."
+      },
+      {
+        "kind": "non_discriminating_test",
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "The relative label comparison has no absolute-demand baseline, so the 'gap <10% \u2192 no expansion' branch cannot separate strong demand for both messages from no consumer demand. The thresholds are inconsistent: the \u20ac30 vs \u20ac25 example is a 20% gap, gaps of 10\u201315% are undefined, and A19 restates the criteria differently."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A4",
+          "A13"
+        ],
+        "reason": "Contrary evidence that was retrieved was never assessed: 6.3% homeowner install intent, a professional-only rafter install, and marketplace-only availability not stocked in B&Q stores. The challenge search in A13 reports no findings."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is complete, but it contains several critical errors. A11 reverses the meaning of the Grenfell 'false market' source and uses it as support for the favoured safety theory, which then drives the recommendation. Other unsupported inferences come from irrelevant financial excerpts and a marketing claim, while contrary evidence was ignored. The decision rule in A16 is internally inconsistent and partly non-discriminating. Any single one of these errors is enough to reject the trajectory."
+  },
+  "seconds": 47.819
+}

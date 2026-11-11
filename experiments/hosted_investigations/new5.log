@@ -1,0 +1,165 @@
+{"case": "lmericsson-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 27, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_classes", "evidence_kinds"]}
+{"case": "lincolnelectric-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 29, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_kinds"]}
+{"case": "shimadzu-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 23, "passed": 7, "failed": ["finished", "testable_predictions"]}
+{"case": "sartorius-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 28, "passed": 15, "failed": ["testable_predictions", "evidence_classes"]}
+{"case": "bbraun-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 27, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_classes", "evidence_kinds"]}
+{"case": "boschrexroth-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 32, "passed": 8, "failed": ["finished"]}
+{"case": "vermeer-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 31, "passed": 14, "failed": ["testable_predictions", "evidence_kinds"]}
+{"case": "hubbell-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 26, "passed": 14, "failed": ["evidence_kinds", "existing_offering", "no_invented_numbers"]}
+{"case": "calgoncarbon-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 28, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_kinds"]}
+{
+ "summary": {
+  "episodes": 9,
+  "finished": 3,
+  "end_to_end_success": 2,
+  "stop_reasons": {
+   "repeated errors": 6,
+   "finished": 3
+  },
+  "furthest_stage": {
+   "challenge_theory": 6,
+   "finish": 3
+  },
+  "checks": {
+   "finished": {
+    "passed": 3,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   },
+   "framing": {
+    "passed": 9,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   },
+   "theories": {
+    "passed": 9,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   },
+   "causal_form": {
+    "passed": 9,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   },
+   "testable_predictions": {
+    "passed": 2,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   },
+   "evidence_use": {
+    "passed": 9,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   },
+   "evidence_classes": {
+    "passed": 1,
+    "reached": 4,
+    "applied": 9,
+    "of_all": 9
+   },
+   "evidence_kinds": {
+    "passed": 3,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   },
+   "evidence_limits": {
+    "passed": 9,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   },
+   "disconfirmation": {
+    "passed": 3,
+    "reached": 3,
+    "applied": 9,
+    "of_all": 9
+   },
+   "experiment": {
+    "passed": 3,
+    "reached": 3,
+    "applied": 9,
+    "of_all": 9
+   },
+   "revision": {
+    "passed": 3,
+    "reached": 3,
+    "applied": 9,
+    "of_all": 9
+   },
+   "existing_offering": {
+    "passed": 2,
+    "reached": 3,
+    "applied": 9,
+    "of_all": 9
+   },
+   "no_invented_numbers": {
+    "passed": 2,
+    "reached": 3,
+    "applied": 9,
+    "of_all": 9
+   },
+   "simulated_not_used": {
+    "passed": 3,
+    "reached": 3,
+    "applied": 9,
+    "of_all": 9
+   },
+   "recommendation": {
+    "passed": 3,
+    "reached": 3,
+    "applied": 9,
+    "of_all": 9
+   },
+   "tool_use": {
+    "passed": 9,
+    "reached": 9,
+    "applied": 9,
+    "of_all": 9
+   }
+  },
+  "rejections": {
+   "order": 1
+  },
+  "shock_coverage": {
+   "cases": 9,
+   "delivered": 3,
+   "read": 3,
+   "held_affected_theory": 0,
+   "addressed_an_affected_theory": 0,
+   "bore_on_favoured": 0,
+   "cited_in_revision": 3,
+   "favoured_changed": 0
+  },
+  "supporting_evidence_attempted": 4,
+  "rejected_finishes": 0,
+  "harness_actions": 0,
+  "refused_calls": 1,
+  "recovered_after_refusal": 0,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 3572938,
+   "completion_tokens": 411664,
+   "seconds": 3309.184,
+   "usd": 0
+  },
+  "mean_calls": 21.77777777777778
+ },
+ "auditkit": {
+  "cases": 9,
+  "replay_mismatches": 0,
+  "guards_cleared": 2,
+  "guards_not_cleared": 7,
+  "other": 0,
+  "known_tool_names": 1.0,
+  "redundant_tool_calls": 0.0,
+  "no_looping": 1.0
+ }
+}
+{"spent_usd_estimate": 1.2396}

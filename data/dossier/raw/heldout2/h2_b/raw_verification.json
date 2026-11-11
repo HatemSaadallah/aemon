@@ -1,0 +1,304 @@
+{
+ "summary": {
+  "verified": 55,
+  "fetch_failed": 1,
+  "not_found": 3
+ },
+ "results": [
+  {
+   "id": "winterhalter-only-warewashing",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-uk-customers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-distributors",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-household-origin",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-uc-configurable",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-uc-s-footprint",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-pay-per-wash",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-hmn-profile",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-uc-glass-door",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-fer-obituary",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-recs-ownership",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-eu-volumes",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-eu-formats",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-eu-premium-restraint",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-eu-ecodesign",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-brakes-listing",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-which-quickwash",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-cycle-times",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "winterhalter-hoover-cycles",
+   "status": "fetch_failed",
+   "detail": "HTTP Error 429: Too Many Requests"
+  },
+  {
+   "id": "winterhalter-bonn-study",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-about",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-group-profile",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-home-machines",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-mythos-spec",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-a300-noncommercial",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-showroom",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-mytico",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-delonghi-premiumisation",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-delonghi-prosumer",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-linea-micra",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-nca-home-prep",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-nca-equipment",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-breville-lelit",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-mahlkonig-home",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-mahlkonig-retired",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-jura-markets",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-jura-oem",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-ert-leader",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-ert-growth",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "frankecoffee-philips-price",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-profile",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-ice-uses",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-direct-sales",
+   "status": "not_found",
+   "detail": "page has 933872 characters"
+  },
+  {
+   "id": "hoshizaki-small-ice-makers",
+   "status": "not_found",
+   "detail": "page has 933872 characters"
+  },
+  {
+   "id": "hoshizaki-share-claim",
+   "status": "not_found",
+   "detail": "page has 933872 characters"
+  },
+  {
+   "id": "hoshizaki-fy2025-outlook",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-america-leader",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-gmi-residential",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-gmi-share",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-gmi-countertop",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-imarc-foodservice",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-imarc-countertop",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-opal-crowdfunding",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-opal-ge",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-opal-price",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-scotsman-category",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-scotsman-home",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-japan-fridge-icemakers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hoshizaki-alliance-portfolio",
+   "status": "verified",
+   "detail": "exact"
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+{
+  "packet_id": "8ee5f681ed80d3e0",
+  "packet_sha256": "381964ca6bd78050a4d0eb217a919767371feb0bef17270f4168f40d54b6ef42",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\n  \"packet_id\": \"8ee5f681ed80d3e0\",\n  \"dimensions\": {\n    \"problem_framing\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A1\"],\n      \"reason\": \"A1 lists obvious options (no expansion, limited, full differentiation). The objective misstates the case: it calls the existing products 'for individual buyers' when the question says they are for construction professionals. A1 also adds the constraint 'No expansion of existing product lines or customer groups', which contradicts the question and would rule out the options being studied. It labels budget and time limits as analyst assumptions, which is correct. It does not separate the objective from the suggested solution, and it finds no specific use case or overlooked constraint.\"\n    },\n    \"causal_mechanism\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A5\", \"A7\", \"A9\", \"A11\"],\n      \"reason\": \"The best theory is T2 (A7). It names a benefit: grants for energy upgrades may drive homeowner demand. It does not explain which homeowners change behaviour, through what purchase path, or why they would buy from Kingspan rather than through installers. Value capture is generic in every theory ('increase its revenue streams'). Most theories explain company motives ('may be exploring') rather than a customer mechanism for a consumer proposition.\"\n    },\n    \"distinct_theories\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A5\", \"A7\", \"A9\", \"A11\"],\n      \"reason\": \"T1 (A5, stay focused) is a genuine alternative. T2, T3 and T4 (A7, A9, A11) are near rewordings of one idea, 'Kingspan may be exploring homeowner channels'. They have identical who-benefits and value-capture text, overlapping assumptions and identical predictions. None implies a different product, customer group or channel.\"\n    },\n    \"assumptions_predictions\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A5\", \"A7\", \"A9\", \"A11\"],\n      \"reason\": \"Assumptions are stated but vague, for example 'growing consumer awareness and demand' and 'has the resources and capabilities'. Predictions are hedged conditionals that are effectively unfalsifiable: 'may see continued growth', 'may see increased revenue', 'may need to adapt its marketing'. No observable result is named whose failure would put a theory in trouble.\"\n    },\n    \"evidence_judgement\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A8\", \"A10\"],\n      \"reason\": \"A8 and A10 cite the same 2011 quote ('order products with delivery to any mainland UK address') as supporting both T1 and T2. It supports neither:\\n- Against T1: it shows a direct ordering route existed, which cuts against T1's claim that focus is not driven by a direct channel.\\n- Against T2: it says nothing about grants or Irish homeowner demand.\\nThe source is also mislabelled. A8 and A10 call it company_assertion, but the dossier class is verified_observation. The only limit noted is Ireland versus UK. A8 and A10 omit that the excerpt is from 2011 and that 'buyers' need not be homeowners. The RT\u00c9 excerpts on earnings and residential activity are never assessed.\"\n    },\n    \"seeking_challenge\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A6\"],\n      \"reason\": \"Searches A2 to A4 are descriptive. A6 looks for evidence that Kingspan 'is actively exploring new sales channels', which confirms the expansion theories. No search looks for evidence against a favoured theory, such as weak homeowner demand, installer-led purchasing or channel conflict. The run does not report finding nothing against any theory.\"\n    },\n    \"experiment_design\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A12\"],\n      \"reason\": \"The run stopped at A12 (context limit) before any test was proposed or declined. The stage is applicable but was not reached.\"\n    },\n    \"revision\": {\n      \"status\": \"not_applicable\",\n      \"score\": null,\n      \"event_ids\": [],\n      \"reason\": \"Revision is excluded from packet.applicable_dimensions. scheduled_update is false and no update was delivered.\"\n    },\n    \"recommendation\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A12\"],\n      \"reason\": \"A12: 'The investigation stopped before a recommendation (context limit).' No recommendation was produced.\"\n    }\n  },\n  \"red_flags\": [\n    {\n      \"kind\": \"incomplete\",\n      \"event_ids\": [\"A12\"],\n      \"reason\": \"The episode ended at the context limit with no test design and no recommendation.\"\n    },\n    {\n      \"kind\": \"unsupported_inference\",\n      \"event_ids\": [\"A8\", \"A10\"],\n      \"reason\": \"One 2011 UK direct-ordering quote is claimed to support both T1 (focus on professionals rather than a direct channel) and T2 (grant-driven homeowner demand). The excerpt supports neither claim.\"\n    },\n    {\n      \"kind\": \"invented_observation\",\n      \"event_ids\": [\"A11\"],\n      \"reason\": \"T4 asserts that Kingspan is 'responding to its record profits'. No dossier excerpt mentions record profits. kingspan-rte-earners only identifies the biggest earners and the fastest-growing division.\"\n    },\n    {\n      \"kind\": \"unsupported_inference\",\n      \"event_ids\": [\"A6\", \"A7\"],\n      \"reason\": \"T2 rests on increasing grants and incentives for energy upgrades in Ireland. kingspan-seai-2024 appears in search results, but the dossier provides no excerpt for it, so the premise is unsupported by the supplied evidence.\"\n    },\n    {\n      \"kind\": \"other\",\n      \"event_ids\": [\"A1\"],\n      \"reason\": \"The framing misstates the question, describing existing products as for individual buyers. It also imposes a 'no expansion of customer groups' constraint that contradicts the investigated alternatives.\"\n    },\n    {\n      \"kind\": \"other\",\n      \"event_ids\": [\"A8\", \"A10\"],\n      \"reason\": \"The source class is mislabelled: kingspan-direct-2011 is verified_observation in the dossier but is called company_assertion.\"\n    }\n  ],\n  \"suitable_for_training\": false,\n  \"screen_reason\": \"Rejected for three reasons:\\n- The episode is incomplete: it stopped at A12 before experiment design and recommendation.\\n- It contains material unsupported inferences: A8 and A10 misread support, and T2's grant premise has no excerpt behind it.\\n- It contains an invented claim: 'record profits' in A11.\\nThe rival theories are also largely rewordings, and predictions are unfalsifiable.\"\n}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 5612
+      },
+      "cache_creation_input_tokens": 5612,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 3817,
+      "output_tokens_details": {
+        "thinking_tokens": 1495
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.104416,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "39e2ebbdeb90b140f9fe90b154bbe7a8db9a13ea26c1bbf96a26c470d6aacac5",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "8ee5f681ed80d3e0",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 lists obvious options (no expansion, limited, full differentiation). The objective misstates the case: it calls the existing products 'for individual buyers' when the question says they are for construction professionals. A1 also adds the constraint 'No expansion of existing product lines or customer groups', which contradicts the question and would rule out the options being studied. It labels budget and time limits as analyst assumptions, which is correct. It does not separate the objective from the suggested solution, and it finds no specific use case or overlooked constraint."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A5",
+          "A7",
+          "A9",
+          "A11"
+        ],
+        "reason": "The best theory is T2 (A7). It names a benefit: grants for energy upgrades may drive homeowner demand. It does not explain which homeowners change behaviour, through what purchase path, or why they would buy from Kingspan rather than through installers. Value capture is generic in every theory ('increase its revenue streams'). Most theories explain company motives ('may be exploring') rather than a customer mechanism for a consumer proposition."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A5",
+          "A7",
+          "A9",
+          "A11"
+        ],
+        "reason": "T1 (A5, stay focused) is a genuine alternative. T2, T3 and T4 (A7, A9, A11) are near rewordings of one idea, 'Kingspan may be exploring homeowner channels'. They have identical who-benefits and value-capture text, overlapping assumptions and identical predictions. None implies a different product, customer group or channel."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A5",
+          "A7",
+          "A9",
+          "A11"
+        ],
+        "reason": "Assumptions are stated but vague, for example 'growing consumer awareness and demand' and 'has the resources and capabilities'. Predictions are hedged conditionals that are effectively unfalsifiable: 'may see continued growth', 'may see increased revenue', 'may need to adapt its marketing'. No observable result is named whose failure would put a theory in trouble."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A8",
+          "A10"
+        ],
+        "reason": "A8 and A10 cite the same 2011 quote ('order products with delivery to any mainland UK address') as supporting both T1 and T2. It supports neither:\n- Against T1: it shows a direct ordering route existed, which cuts against T1's claim that focus is not driven by a direct channel.\n- Against T2: it says nothing about grants or Irish homeowner demand.\nThe source is also mislabelled. A8 and A10 call it company_assertion, but the dossier class is verified_observation. The only limit noted is Ireland versus UK. A8 and A10 omit that the excerpt is from 2011 and that 'buyers' need not be homeowners. The RT\u00c9 excerpts on earnings and residential activity are never assessed."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A6"
+        ],
+        "reason": "Searches A2 to A4 are descriptive. A6 looks for evidence that Kingspan 'is actively exploring new sales channels', which confirms the expansion theories. No search looks for evidence against a favoured theory, such as weak homeowner demand, installer-led purchasing or channel conflict. The run does not report finding nothing against any theory."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A12"
+        ],
+        "reason": "The run stopped at A12 (context limit) before any test was proposed or declined. The stage is applicable but was not reached."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions. scheduled_update is false and no update was delivered."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A12"
+        ],
+        "reason": "A12: 'The investigation stopped before a recommendation (context limit).' No recommendation was produced."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A12"
+        ],
+        "reason": "The episode ended at the context limit with no test design and no recommendation."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A8",
+          "A10"
+        ],
+        "reason": "One 2011 UK direct-ordering quote is claimed to support both T1 (focus on professionals rather than a direct channel) and T2 (grant-driven homeowner demand). The excerpt supports neither claim."
+      },
+      {
+        "kind": "invented_observation",
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "T4 asserts that Kingspan is 'responding to its record profits'. No dossier excerpt mentions record profits. kingspan-rte-earners only identifies the biggest earners and the fastest-growing division."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A6",
+          "A7"
+        ],
+        "reason": "T2 rests on increasing grants and incentives for energy upgrades in Ireland. kingspan-seai-2024 appears in search results, but the dossier provides no excerpt for it, so the premise is unsupported by the supplied evidence."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The framing misstates the question, describing existing products as for individual buyers. It also imposes a 'no expansion of customer groups' constraint that contradicts the investigated alternatives."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A8",
+          "A10"
+        ],
+        "reason": "The source class is mislabelled: kingspan-direct-2011 is verified_observation in the dossier but is called company_assertion."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected for three reasons:\n- The episode is incomplete: it stopped at A12 before experiment design and recommendation.\n- It contains material unsupported inferences: A8 and A10 misread support, and T2's grant premise has no excerpt behind it.\n- It contains an invented claim: 'record profits' in A11.\nThe rival theories are also largely rewordings, and predictions are unfalsifiable."
+  },
+  "seconds": 36.086
+}

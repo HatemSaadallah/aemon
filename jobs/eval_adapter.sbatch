@@ -11,6 +11,8 @@
 # Development evaluation, B against C: the same bf16 Tiny Aya in the same llama.cpp build, first alone, then with the trained
 # adapter, on the same cases, controller and settings, after checking the converted adapter against the PEFT one. Set ADAPTER, NAME, CASES and REVISION, and PROMPT to match the
 # rows the adapter was trained on (compact for compact rows). Both arms use it. Not the final test.
+# RECOVERY=mask_rereads,progress,... switches on the experimental recovery features (development split only).
+# RUNNER=aemon.agent.experimental.verify runs the experimental evidence-verification layer (development split only).
 set -euo pipefail
 L=$HOME/lexsi
 export PYTHONPATH=$L/code_${REVISION:-unset}/src  # the package, from this job's own copy of the code
@@ -36,8 +38,8 @@ arm() {  # name, extra server arguments
   for i in $(seq 1 120); do curl -sf http://127.0.0.1:$PORT/health > /dev/null && break; kill -0 $SERVER || { echo "server died"; tail -5 $OUT/${NAME}_$1.server.log; exit 1; }; sleep 5; done
   echo "arm $1 server ready $(date +%T)"
   cd $L/code_$REVISION
-  PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 CODE_REVISION=$REVISION $L/env/bin/python -W ignore -m strategy_agent.agent.runner --url http://127.0.0.1:$PORT --prompt ${PROMPT:-staged} --cases "$CASES" --split ${SPLIT:-development} \
-    --context 12288 --max-tokens 520 --max-turns 45 --attempts ${ATTEMPTS:-1} --model-label "tiny-aya-global bf16 af89d21 $1" --weights-sha256 $WEIGHTS --manifest $OUT/provenance.jsonl \
+  PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 CODE_REVISION=$REVISION $L/env/bin/python -W ignore -m ${RUNNER:-aemon.agent.run_investigations} --url http://127.0.0.1:$PORT --prompt ${PROMPT:-staged} --cases "$CASES" --split ${SPLIT:-development} \
+    --context 12288 --max-tokens 520 --max-turns ${MAX_TURNS:-45} ${REREAD_LIMIT:+--reread-limit $REREAD_LIMIT} ${SOURCE_DATES:+--source-dates} ${STUCK_HELP:+--stuck-help} ${MIN_ASSESSED:+--min-assessed $MIN_ASSESSED} ${RECOVERY:+--recovery $RECOVERY} --attempts ${ATTEMPTS:-1} --model-label "tiny-aya-global bf16 af89d21 $1" --weights-sha256 $WEIGHTS --manifest $OUT/provenance.jsonl \
     --output $OUT/${NAME}_$1.json > $OUT/${NAME}_$1.log 2>&1 || true
   echo "arm $1 finished $(date +%T)"
   $L/env/bin/python -c "import json; s=json.load(open('$OUT/${NAME}_$1.json'))['summary']; print('$1', json.dumps({k: s[k] for k in ('episodes', 'finished', 'end_to_end_success', 'stop_reasons', 'refused_calls', 'mean_calls')}))"
@@ -47,7 +49,7 @@ if [ -n "${SKIP_ADAPTER:-}" ]; then arm base ""; echo "evaluation done $(date +%
 $L/llama.cpp/build/bin/llama-server -m $G --lora $LORA --lora-init-without-apply -ngl 99 -c 12288 --parallel 1 --host 127.0.0.1 --port $PORT --no-webui > $OUT/${NAME}_conversion.server.log 2>&1 &
 SERVER=$!
 for i in $(seq 1 120); do curl -sf http://127.0.0.1:$PORT/health > /dev/null && break; sleep 5; done
-(cd $L/code_$REVISION && HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 $L/env/bin/python -W ignore -m strategy_agent.evaluation.conversion_check --model $L/models/tiny-aya-global --adapter $ADAPTER \
+(cd $L/code_$REVISION && HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 $L/env/bin/python -W ignore -m aemon.evaluation.conversion.check --model $L/models/tiny-aya-global --adapter $ADAPTER \
   --url http://127.0.0.1:$PORT --rows ${ROWS:-$L/rows/$NAME.jsonl} --output $OUT/${NAME}_conversion.json 2>&1 | tail -2 | sed 's/^/conversion check /') || true  # the verdict is read from the JSON below
 if [ "$($L/env/bin/python -c "import json; print(json.load(open('$OUT/${NAME}_conversion.json'))['summary']['passed'])" 2>/dev/null)" != True ]; then
   # DIAGNOSTIC=1 runs the arms anyway, for development only: every output of this run is marked, and it never selects a model

@@ -1,0 +1,180 @@
+{"case": "cotral-new-evidence-comfort", "attempt": 10, "stop": "finished", "turns": 30, "passed": 12, "failed": ["testable_predictions", "evidence_classes", "evidence_kinds", "no_invented_numbers"]}
+{"case": "hilti-base", "attempt": 10, "stop": "finished", "turns": 19, "passed": 12, "failed": ["evidence_classes", "evidence_kinds", "existing_offering"]}
+{"case": "cotral-new-evidence-comfort", "attempt": 11, "stop": "repeated errors", "turns": 31, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_classes"]}
+{"case": "sigvaris-base", "attempt": 10, "stop": "finished", "turns": 25, "passed": 14, "failed": ["testable_predictions"]}
+{"case": "hilti-base", "attempt": 11, "stop": "finished", "turns": 27, "passed": 14, "failed": ["evidence_kinds"]}
+{"case": "sigvaris-base", "attempt": 11, "stop": "finished", "turns": 27, "passed": 12, "failed": ["causal_form", "evidence_classes", "evidence_kinds"]}
+{"case": "nalgene-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 26, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_classes"]}
+{"case": "statitrol-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 31, "passed": 14, "failed": ["testable_predictions", "evidence_classes", "experiment"]}
+{"case": "nalgene-new-evidence-irrelevant", "attempt": 11, "stop": "finished", "turns": 30, "passed": 16, "failed": ["existing_offering"]}
+{"case": "statitrol-new-evidence-irrelevant", "attempt": 11, "stop": "repeated errors", "turns": 29, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_classes"]}
+{"case": "diatek-base", "attempt": 10, "stop": "finished", "turns": 26, "passed": 12, "failed": ["testable_predictions", "evidence_classes", "no_invented_numbers"]}
+{"case": "trdc-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 26, "passed": 14, "failed": ["testable_predictions", "evidence_kinds", "no_invented_numbers"]}
+{"case": "diatek-base", "attempt": 11, "stop": "repeated errors", "turns": 33, "passed": 9, "failed": ["finished"]}
+{"case": "aspen-base", "attempt": 10, "stop": "repeated errors", "turns": 25, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_classes", "evidence_kinds"]}
+{"case": "trdc-new-evidence-irrelevant", "attempt": 11, "stop": "repeated errors", "turns": 26, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_kinds"]}
+{"case": "aspen-base", "attempt": 11, "stop": "finished", "turns": 29, "passed": 11, "failed": ["testable_predictions", "evidence_classes", "evidence_kinds", "no_invented_numbers"]}
+{"case": "orasure-base", "attempt": 10, "stop": "finished", "turns": 33, "passed": 13, "failed": ["testable_predictions", "no_invented_numbers"]}
+{"case": "orasure-base", "attempt": 11, "stop": "repeated errors", "turns": 29, "passed": 8, "failed": ["finished", "testable_predictions"]}
+{"case": "maglite-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 33, "passed": 15, "failed": ["testable_predictions", "evidence_classes"]}
+{"case": "maglite-new-evidence-irrelevant", "attempt": 11, "stop": "finished", "turns": 36, "passed": 14, "failed": ["evidence_classes", "evidence_kinds", "no_invented_numbers"]}
+{"case": "ti-base", "attempt": 10, "stop": "finished", "turns": 27, "passed": 12, "failed": ["testable_predictions", "experiment", "existing_offering"]}
+{"case": "ti-base", "attempt": 11, "stop": "finished", "turns": 27, "passed": 12, "failed": ["experiment", "existing_offering", "no_invented_numbers"]}
+{"case": "sma-new-evidence-irrelevant", "attempt": 11, "stop": "finished", "turns": 34, "passed": 14, "failed": ["testable_predictions", "evidence_classes", "evidence_kinds"]}
+{
+ "summary": {
+  "episodes": 23,
+  "finished": 16,
+  "end_to_end_success": 5,
+  "stop_reasons": {
+   "finished": 16,
+   "repeated errors": 7
+  },
+  "furthest_stage": {
+   "finish": 16,
+   "challenge_theory": 7
+  },
+  "checks": {
+   "finished": {
+    "passed": 16,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "framing": {
+    "passed": 23,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "theories": {
+    "passed": 23,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "causal_form": {
+    "passed": 22,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "testable_predictions": {
+    "passed": 7,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "evidence_use": {
+    "passed": 23,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "evidence_classes": {
+    "passed": 10,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "evidence_kinds": {
+    "passed": 13,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "evidence_limits": {
+    "passed": 23,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   },
+   "disconfirmation": {
+    "passed": 16,
+    "reached": 16,
+    "applied": 23,
+    "of_all": 23
+   },
+   "experiment": {
+    "passed": 13,
+    "reached": 16,
+    "applied": 23,
+    "of_all": 23
+   },
+   "revision": {
+    "passed": 7,
+    "reached": 7,
+    "applied": 11,
+    "of_all": 23
+   },
+   "existing_offering": {
+    "passed": 11,
+    "reached": 15,
+    "applied": 21,
+    "of_all": 23
+   },
+   "no_invented_numbers": {
+    "passed": 9,
+    "reached": 16,
+    "applied": 23,
+    "of_all": 23
+   },
+   "simulated_not_used": {
+    "passed": 7,
+    "reached": 7,
+    "applied": 11,
+    "of_all": 23
+   },
+   "recommendation": {
+    "passed": 16,
+    "reached": 16,
+    "applied": 23,
+    "of_all": 23
+   },
+   "tool_use": {
+    "passed": 23,
+    "reached": 23,
+    "applied": 23,
+    "of_all": 23
+   }
+  },
+  "rejections": {
+   "misquote": 5,
+   "repeat": 1
+  },
+  "shock_coverage": {
+   "cases": 11,
+   "delivered": 7,
+   "read": 7,
+   "held_affected_theory": 2,
+   "addressed_an_affected_theory": 1,
+   "bore_on_favoured": 1,
+   "cited_in_revision": 7,
+   "favoured_changed": 0
+  },
+  "supporting_evidence_attempted": 23,
+  "rejected_finishes": 0,
+  "harness_actions": 0,
+  "refused_calls": 6,
+  "recovered_after_refusal": 5,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 10117368,
+   "completion_tokens": 1010527,
+   "seconds": 8412.289,
+   "usd": 0
+  },
+  "mean_calls": 23.73913043478261
+ },
+ "auditkit": {
+  "cases": 23,
+  "replay_mismatches": 0,
+  "guards_cleared": 5,
+  "guards_not_cleared": 18,
+  "other": 0,
+  "known_tool_names": 1.0,
+  "redundant_tool_calls": 0.001402524544179523,
+  "no_looping": 1.0
+ }
+}
+3 episodes failed in the harness, and the server refused []

@@ -29,8 +29,8 @@ TAG=$OUT/${NAME}_${SLURM_JOB_ID}
 G=$L/models/tiny-aya-global-bf16.gguf
 PORT=$((20000 + SLURM_JOB_ID % 20000))
 PY=$L/env/bin/python
-$PY -m strategy_agent.evaluation.conversion_diagnose summarize --reports "$REFERENCE_REPORT" --output "$TAG.saved.json"
-$PY -m strategy_agent.evaluation.conversion_diagnose audit-tensors --adapter "$ADAPTER" --gguf "$GGUF" \
+$PY -m aemon.evaluation.conversion.diagnose summarize --reports "$REFERENCE_REPORT" --output "$TAG.saved.json"
+$PY -m aemon.evaluation.conversion.diagnose audit-tensors --adapter "$ADAPTER" --gguf "$GGUF" \
  --base-config "$L/models/tiny-aya-global/config.json" --output "$TAG.tensors.json"
 sha256sum "$L/llama.cpp/convert_lora_to_gguf.py" "$L/llama.cpp/build/bin/llama-server" > "$TAG.exporter-runtime.sha256"
 git -C "$L/llama.cpp" rev-parse HEAD > "$TAG.llama-commit.txt"
@@ -48,7 +48,7 @@ curl -sf http://127.0.0.1:$PORT/health > /dev/null || exit 1
 EXTRA=()
 # Only set this when the original archive is identified and accepting its weaker prompt identity is recorded.
 [ "${ACK_RECONSTRUCTED:-0}" != 1 ] || EXTRA+=(--ack-reconstructed)
-$PY -m strategy_agent.evaluation.conversion_diagnose replay --model "$L/models/tiny-aya-global" --adapter "$ADAPTER" --gguf "$GGUF" \
+$PY -m aemon.evaluation.conversion.diagnose replay --model "$L/models/tiny-aya-global" --adapter "$ADAPTER" --gguf "$GGUF" \
  --base-gguf "$G" --server-pid "$SERVER" --reference-report "$REFERENCE_REPORT" --rows "$ROWS" \
  --url http://127.0.0.1:$PORT --tokens 32 --full-logprobs "${EXTRA[@]}" --output "$TAG.replay.json"
 echo "Diagnostic only; no model qualifies from this run. Small JSON evidence is under $TAG; arrays remain archived on the cluster."

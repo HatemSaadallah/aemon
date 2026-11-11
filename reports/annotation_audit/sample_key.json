@@ -1,0 +1,302 @@
+[
+ {
+  "n": 1,
+  "id": "martek-rfb-walmart",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 2,
+  "id": "kes-s13-testimonials",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 3,
+  "id": "trdc-feeling-never",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 4,
+  "id": "nilfisk-irobot",
+  "kind_v1": "analogy"
+ },
+ {
+  "n": 5,
+  "id": "martek-pr-channel",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 6,
+  "id": "netafim-in-homekit",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 7,
+  "id": "mdx-spark-blister",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 8,
+  "id": "superior-rcs-gardening",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 9,
+  "id": "blackdecker-spinoff-motor",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 10,
+  "id": "a123-osti-fleet",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 11,
+  "id": "resmed-pm-ohare-parity",
+  "kind_v1": "independent_study"
+ },
+ {
+  "n": 12,
+  "id": "hra-upw-50",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 13,
+  "id": "blackdecker-uspto-hoover",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 14,
+  "id": "flir-ah-hunters",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 15,
+  "id": "probi-r1924-art10",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 16,
+  "id": "searle-asw-pboi",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 17,
+  "id": "technogym-peloton-free-users",
+  "kind_v1": "analogy"
+ },
+ {
+  "n": 18,
+  "id": "portwest-ppe-private-rainwear",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 19,
+  "id": "lenzing-hustvedt-organic",
+  "kind_v1": "independent_study"
+ },
+ {
+  "n": 20,
+  "id": "resmed-pm-wake",
+  "kind_v1": "independent_study"
+ },
+ {
+  "n": 21,
+  "id": "festool-fww-system",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 22,
+  "id": "portwest-carhartt-beanie",
+  "kind_v1": "analogy"
+ },
+ {
+  "n": 23,
+  "id": "nalgene-lore-mission",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 24,
+  "id": "statitrol-ieee-entrants",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 25,
+  "id": "illumina-kpbs-pivot",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 26,
+  "id": "portwest-dickies-decline",
+  "kind_v1": "analogy"
+ },
+ {
+  "n": 27,
+  "id": "3m-lemelson-waste",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 28,
+  "id": "aspen-s10-toasty",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 29,
+  "id": "nilfisk-ev-outsourced",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 30,
+  "id": "ti-994-osborne",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 31,
+  "id": "trdc-patent-airforce",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 32,
+  "id": "a123-ab7b-fleets",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 33,
+  "id": "sigvaris-recovery-meta",
+  "kind_v1": "independent_study"
+ },
+ {
+  "n": 34,
+  "id": "gore-wiki-expiry",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 35,
+  "id": "hilti-b2b-reach",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 36,
+  "id": "searle-csm-critics",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 37,
+  "id": "probi-buoy-2003claim",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 38,
+  "id": "blackdecker-uspto-mower",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 39,
+  "id": "kes-s09-floral",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 40,
+  "id": "sma-pvf-loans",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 41,
+  "id": "nalgene-wiki-labsuppliers",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 42,
+  "id": "qdi-sp05-consumer",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 43,
+  "id": "recaro-pr-licensees",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 44,
+  "id": "carrier-rea-farms",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 45,
+  "id": "superior-nc-plant",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 46,
+  "id": "resmed-pm-fitbit2012",
+  "kind_v1": "independent_study"
+ },
+ {
+  "n": 47,
+  "id": "cree-bdn-rebates",
+  "kind_v1": "market_fact"
+ },
+ {
+  "n": 48,
+  "id": "sievi-ppe-free",
+  "kind_v1": "regulation"
+ },
+ {
+  "n": 49,
+  "id": "arri-oneplus-hasselblad",
+  "kind_v1": "analogy"
+ },
+ {
+  "n": 50,
+  "id": "cree-wiki-sold",
+  "kind_v1": "company_history"
+ },
+ {
+  "n": 51,
+  "id": "sigvaris-cochrane-flights",
+  "kind_v1": "independent_study"
+ },
+ {
+  "n": 52,
+  "id": "danfoss-eq3-lidl",
+  "kind_v1": "channel_fact"
+ },
+ {
+  "n": 53,
+  "id": "searle-csm-research",
+  "kind_v1": "customer_observation"
+ },
+ {
+  "n": 54,
+  "id": "mag-hist-spread",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 55,
+  "id": "mdx-vert",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 56,
+  "id": "hilti-craftsman-pro-label",
+  "kind_v1": "analogy"
+ },
+ {
+  "n": 57,
+  "id": "microban-wect-triclosan",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 58,
+  "id": "perrigo-bar-retailers",
+  "kind_v1": "company_assertion"
+ },
+ {
+  "n": 59,
+  "id": "koppert-wsu-shipped",
+  "kind_v1": "independent_study"
+ },
+ {
+  "n": 60,
+  "id": "diatek-pm-review",
+  "kind_v1": "independent_study"
+ }
+]

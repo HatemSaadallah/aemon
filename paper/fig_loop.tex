@@ -1,0 +1,13 @@
+\begin{tikzpicture}[every node/.style={font=\small},
+  box/.style={draw=accent!70, rounded corners=3pt, fill=accent!6, align=center, minimum height=12mm, text width=44mm},
+  env/.style={draw=support!70, rounded corners=3pt, fill=support!6, align=center, minimum height=12mm, text width=44mm},
+  arr/.style={-{Stealth[length=2.2mm]}, thick, draw=black!60}]
+\node[box] (obs) at (0,0) {Compact observation $o_t=\phi(s_t)$\\with stage guidance $g(s_t)$};
+\node[box] (policy) at (0,-2.6) {Policy $\pi_\theta$ (Tiny Aya + LoRA)\\schema-constrained to $A(s_t)$};
+\node[env] (guard) at (8,-2.6) {Guarded tools $\mathcal{T}$\\quote match, distinctness,\\simulated-evidence rules};
+\node[env] (state) at (8,0) {Investigation state $s_{t+1}$\\frame, theories, assessed quotes,\\tests, position, revisions};
+\draw[arr] (obs) -- node[left]{read} (policy);
+\draw[arr] (policy) -- node[above]{tool call $a_t$} (guard);
+\draw[arr] (guard) -- node[right, align=left]{accepted: update\\refused: reason only} (state);
+\draw[arr] (state) -- node[above]{stage controller $\mathcal{C}$} (obs);
+\end{tikzpicture}

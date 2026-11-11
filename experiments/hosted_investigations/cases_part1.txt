@@ -1,0 +1,1 @@
+zarges-base,cotral-new-evidence-irrelevant,festool-base,flir-base,qdi-base,koppert-new-evidence-irrelevant,blackdecker-new-evidence-irrelevant,sealedair-new-evidence-irrelevant,microban-base,carrier-new-evidence-irrelevant,perrigo-new-evidence-irrelevant,lenzing-new-evidence-irrelevant,netafim-base,martek-new-evidence-irrelevant

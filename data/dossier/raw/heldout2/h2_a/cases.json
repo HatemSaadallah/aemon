@@ -1,0 +1,49 @@
+{
+ "cases": [
+  {
+   "company": "Drägerwerk AG & Co. KGaA",
+   "question": "Should Drägerwerk AG & Co. KGaA develop a differentiated consumer proposition for a specific use case, beyond its existing medical and safety technology for hospitals, industry, fire services and police? What evidence would justify that investment?",
+   "brief": "Drägerwerk AG & Co. KGaA makes medical and safety technology, including gas detectors, respiratory protection and alcohol and drug testing devices, for hospitals, industry, fire services and police. It is a listed, family-run group organised in a medical and a safety division. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "draeger",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "draeger-base",
+   "premise_records": [
+    "draeger-fy2024-divisions"
+   ],
+   "test_warranted": true
+  },
+  {
+   "company": "Testo SE & Co. KGaA",
+   "question": "Should Testo SE & Co. KGaA develop a differentiated consumer proposition for a specific use case, beyond its existing portable and stationary measuring instruments for trades and industry? What evidence would justify that investment?",
+   "brief": "Testo SE & Co. KGaA makes portable and stationary measuring instruments, used mainly by heating, air-conditioning and refrigeration trades, food businesses and industry. It is a privately held group headquartered in the Black Forest with subsidiaries worldwide. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "testo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "testo-base",
+   "premise_records": [
+    "testo-heating-trades",
+    "testo-sales-model",
+    "testo-smartprobes-technicians"
+   ],
+   "test_warranted": true
+  },
+  {
+   "company": "Hach Company",
+   "question": "Should Hach Company develop a differentiated consumer proposition for a specific use case, beyond its existing water-quality analysis instruments for utilities and industry? What evidence would justify that investment?",
+   "brief": "Hach Company makes water-quality analysis instruments, reagents and software for municipal water utilities and industrial plants. It is a wholly owned subsidiary of the listed US group Veralto. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "hach",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "hach-base",
+   "premise_records": [
+    "hach-about-facilities",
+    "hach-veralto-customers"
+   ],
+   "test_warranted": true
+  }
+ ]
+}

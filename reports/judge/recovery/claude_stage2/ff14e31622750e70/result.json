@@ -1,0 +1,141 @@
+{
+  "packet_id": "ff14e31622750e70",
+  "packet_sha256": "8eff9af293768afb6f78c90405f60785e36f0e65e71cdb860fb2b45096b67e4c",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "deca9c92f4540aaaeab53d14ae9d8f3916aed5ff60ff35058ded8521fdf21ace",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\":\"ff14e31622750e70\",\"dimensions\":{\"problem_framing\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A1\"],\"reason\":\"A1 separates the objective (is there enough evidence to justify investment) from the proposed solution. It lists real alternatives, including no expansion, a route-to-market change and redesign, and names B2B relationships and reach to individual buyers as constraints. It does not reach rung 3. It never notes that hlb-junior (A2) already shows a consumer use-case product for children, concerts and lawn mowing, which is a premise a good analyst would want flagged. It also lists 'construction' as a consumer use case. 'Face protection' as an existing market is not supported by any excerpt; hlb-head refers to head protection. The \u20ac20,000 budget and 12-week timeline are treated as assumed constraints, not observations.\"},\"causal_mechanism\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"T1 (A9) states who changes behaviour (consumers who see hearing protection as a lifestyle or status accessory), why (comfort and design), and how value is captured (premium price, direct-to-consumer or specialty retail, repeat purchase). T2 (A10) is parallel, built on medical certification. Both are framed conditionally ('if consumers view...'), so they are not stated as fact. The value-capture step is generic, though. Neither theory addresses why Hellberg, rather than rivals, would capture the value. T2's 'medical standards' are left undefined.\"},\"distinct_theories\":{\"status\":\"scored\",\"score\":3,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"T1 (lifestyle accessory: specialty or DTC channels, design-led product) and T2 (health safeguard: medical supply channels, certification-led product, hearing-sensitive customers) are genuine rivals. They imply different products, customers and channels.\"},\"assumptions_predictions\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"The predictions are observable: stated willingness to pay, purchase intent comparisons and repeat purchase rates. The 20% and 15% thresholds are assumptions, not observed results. The predictions mostly rely on stated survey intent and largely mirror each other across T1 and T2. As written, they would not clearly put either theory in trouble or separate one from the other.\"},\"evidence_judgement\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A11\",\"A12\",\"A14\",\"A15\"],\"reason\":\"Each assessment labels its source as a company assertion and correctly marks it neutral. Each also states what the source does not show: consumer perception or purchase behaviour. There is no misreading. Limits on date, place and fit to the customer group are not stated. A11 and A12 do not note that hlb-head is about head protection rather than hearing. The en352-harmonised verified observation found in A6 and A8 is never assessed, despite its relevance to T2's certification premise.\"},\"seeking_challenge\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A13\",\"A15\"],\"reason\":\"A13 runs a search explicitly against T1. Its findings (sdn-x2, crutzen-2021-celebrate-safe) are never reported or assessed against T1. sdn-shop is assessed only against T2 (A15). The challenge was initiated, but nothing found was reported fairly.\"},\"experiment_design\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A16\"],\"reason\":\"The run stopped (A16) before any test was proposed or declined.\"},\"revision\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A16\"],\"reason\":\"A scheduled update applied (scheduled_update true) but was never delivered (update_delivered false), and the run stopped at A16.\"},\"recommendation\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A16\"],\"reason\":\"The investigation stopped before a recommendation, due to repeated errors (A16).\"}},\"red_flags\":[{\"kind\":\"incomplete\",\"event_ids\":[\"A16\"],\"reason\":\"The episode ended without a completed recommendation. Experiment design and revision were never reached.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A1\"],\"reason\":\"The framing describes the existing business as 'B2B hearing and face protection markets'. No supplied excerpt mentions face protection; hlb-head refers to head protection. The framing also implies there is no current consumer offering, which hlb-junior contradicts.\"}],\"suitable_for_training\":false,\"screen_reason\":\"The episode is incomplete. It stopped at A16 with no experiment design, revision or recommendation, so it must be rejected regardless of the moderate quality of its framing, theories and neutral evidence assessments.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 5693
+      },
+      "cache_creation_input_tokens": 5693,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 2841,
+      "output_tokens_details": {
+        "thinking_tokens": 1251
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.085301,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "36cff4add664cd2fe713579669cb1564ac7de939a7094b861734e2955f0d808a",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "ff14e31622750e70",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (is there enough evidence to justify investment) from the proposed solution. It lists real alternatives, including no expansion, a route-to-market change and redesign, and names B2B relationships and reach to individual buyers as constraints. It does not reach rung 3. It never notes that hlb-junior (A2) already shows a consumer use-case product for children, concerts and lawn mowing, which is a premise a good analyst would want flagged. It also lists 'construction' as a consumer use case. 'Face protection' as an existing market is not supported by any excerpt; hlb-head refers to head protection. The \u20ac20,000 budget and 12-week timeline are treated as assumed constraints, not observations."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 (A9) states who changes behaviour (consumers who see hearing protection as a lifestyle or status accessory), why (comfort and design), and how value is captured (premium price, direct-to-consumer or specialty retail, repeat purchase). T2 (A10) is parallel, built on medical certification. Both are framed conditionally ('if consumers view...'), so they are not stated as fact. The value-capture step is generic, though. Neither theory addresses why Hellberg, rather than rivals, would capture the value. T2's 'medical standards' are left undefined."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 3,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 (lifestyle accessory: specialty or DTC channels, design-led product) and T2 (health safeguard: medical supply channels, certification-led product, hearing-sensitive customers) are genuine rivals. They imply different products, customers and channels."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The predictions are observable: stated willingness to pay, purchase intent comparisons and repeat purchase rates. The 20% and 15% thresholds are assumptions, not observed results. The predictions mostly rely on stated survey intent and largely mirror each other across T1 and T2. As written, they would not clearly put either theory in trouble or separate one from the other."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14",
+          "A15"
+        ],
+        "reason": "Each assessment labels its source as a company assertion and correctly marks it neutral. Each also states what the source does not show: consumer perception or purchase behaviour. There is no misreading. Limits on date, place and fit to the customer group are not stated. A11 and A12 do not note that hlb-head is about head protection rather than hearing. The en352-harmonised verified observation found in A6 and A8 is never assessed, despite its relevance to T2's certification premise."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A13",
+          "A15"
+        ],
+        "reason": "A13 runs a search explicitly against T1. Its findings (sdn-x2, crutzen-2021-celebrate-safe) are never reported or assessed against T1. sdn-shop is assessed only against T2 (A15). The challenge was initiated, but nothing found was reported fairly."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "The run stopped (A16) before any test was proposed or declined."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "A scheduled update applied (scheduled_update true) but was never delivered (update_delivered false), and the run stopped at A16."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "The investigation stopped before a recommendation, due to repeated errors (A16)."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "The episode ended without a completed recommendation. Experiment design and revision were never reached."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The framing describes the existing business as 'B2B hearing and face protection markets'. No supplied excerpt mentions face protection; hlb-head refers to head protection. The framing also implies there is no current consumer offering, which hlb-junior contradicts."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete. It stopped at A16 with no experiment design, revision or recommendation, so it must be rejected regardless of the moderate quality of its framing, theories and neutral evidence assessments."
+  },
+  "seconds": 26.481
+}

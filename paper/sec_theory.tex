@@ -1,0 +1,92 @@
+\section{Theory: decisions as tests of theories}\label{sec:theory}
+
+\subsection{The scientific approach to strategy}
+Our target behaviour comes from the scientific approach to entrepreneurial and strategic decisions
+\citep{camuffo2020scientific,camuffo2024theory}. A decision maker facing an uncertain opportunity should (i) frame the
+decision and its real alternatives, including doing nothing; (ii) state \emph{theories}: causal accounts of who would
+change their behaviour and why; (iii) derive predictions that tell the theories apart; (iv) gather evidence for and
+against each, looking hardest for evidence against the favoured one; (v) when information is worth its cost, run a test
+with a decision rule fixed in advance; and (vi) revise when new evidence arrives. Field experiments with start-ups found
+that founders trained this way made more accurate decisions, pivoting or terminating sooner when evidence contradicted
+them \citep{camuffo2020scientific}.
+
+\subsection{A theory as a restriction on beliefs}
+\citet{camuffo2024theory} formalise a theory as a Bayesian network with a restriction. We follow their running example,
+Luxottica deciding whether eyeglasses could become a fashion product.
+
+\paragraph{Attributes and states.} An \emph{attribute} is a question with an uncertain answer. Two attributes define the
+state space: can the firm design fashion eyewear ($Y$ or $N$), and will demand be high or low ($H$ or $L$). The four
+states are $\{YH, YL, NH, NL\}$, and the decision maker cares about the probability of high demand,
+\begin{equation}
+  P(H) = \theta_Y\,\theta_{H|Y} + (1-\theta_Y)\,\theta_{H|N},
+  \label{eq:ph}
+\end{equation}
+where $\theta_Y = P(Y)$, $\theta_{H|Y} = P(H\mid Y)$ and $\theta_{H|N} = P(H\mid N)$.
+
+\paragraph{The theory.} The theory ``fashion design causes demand'' is one arrow $Y \to H$ in a Bayesian network together
+with an inequality on its conditional probabilities,
+\begin{equation}
+  \Theta = \{\theta : \theta_{H|Y} > \theta_{H|N}\},
+  \qquad
+  \tilde\Theta = \{\theta : \theta_{H|Y} = \theta_{H|N}\},
+\end{equation}
+where $\tilde\Theta$ is the null hypothesis that design has no effect.
+
+\paragraph{Value of a theory.} The parameters are unknown, so the decision maker holds a distribution $\mu$ over them. Let
+$V_\Theta = \E_{\mu}[P(H)\mid\theta\in\Theta]$ and $V_{\tilde\Theta} = \E_{\mu}[P(H)\mid\theta\in\tilde\Theta]$. With prior
+$\omega$ that the theory is right, its value is
+\begin{equation}
+  V = \omega\,V_\Theta + (1-\omega)\,V_{\tilde\Theta}.
+  \label{eq:value}
+\end{equation}
+
+\paragraph{A worked example.} Take $\theta_{H|N}=0.5$ and $\theta_Y=0.8$ with probability one, and $\theta_{H|Y}$ uniform.
+Under the theory $\theta_{H|Y}$ is uniform on $(0.5,1)$, so $\E[\theta_{H|Y}\mid\Theta]=0.75$ and
+\begin{equation}
+  V_\Theta = 0.8\cdot 0.75 + 0.2\cdot 0.5 = 0.70 .
+\end{equation}
+Without the restriction $\theta_{H|Y}$ averages $0.5$ and $P(H)=0.5$. The theory raises belief in high demand by
+\emph{ruling parameter values out}: it is informative precisely because it can be wrong.
+
+\paragraph{Experiments.} An experiment produces evidence that updates $\mu$, and with it $V_\Theta$ and
+$V_{\tilde\Theta}$. In their account the prior on the theory itself changes only when the evidence moves the beliefs about
+parameters far enough, $\lVert \mu' - \mu \rVert > \mu^*$: a small surprise adjusts parameters, a large one shakes belief in
+the theory. A rival theory has its own value $Q$, built the same way. With costly experiments the decision maker should
+commit once $V$ is far enough above or below $Q$, and experiment in between, the logic of optimal stopping for
+costly information \citep{moscarini2001optimal}. Experiments are assumed Bayes plausible: before running one there is no
+reason to expect it to move the value in a particular direction.
+
+\begin{remark}[Bayesian updating, illustrated]\label{rem:bayes}
+For intuition, suppose $n$ customers are shown the fashion design and $k$ buy. Under the theory, with
+$\theta_{H|Y}\sim U(\theta_{H|N},1)$, and under the null, with $\theta_{H|Y}=\theta_{H|N}$, the marginal likelihoods are
+\begin{equation}
+  m_\Theta(k) = \frac{1}{1-\theta_{H|N}}\int_{\theta_{H|N}}^{1}\binom{n}{k}p^k(1-p)^{n-k}\,dp,
+  \qquad
+  m_{\tilde\Theta}(k) = \binom{n}{k}\theta_{H|N}^k(1-\theta_{H|N})^{n-k},
+\end{equation}
+and Bayes' rule gives the posterior on the theory
+\begin{equation}
+  \omega' = \frac{\omega\, m_\Theta(k)}{\omega\, m_\Theta(k) + (1-\omega)\, m_{\tilde\Theta}(k)}.
+\end{equation}
+Full updating moves $\omega$ after every observation; the threshold rule of \citet{camuffo2024theory} moves it only after
+large surprises, so this calculation overstates how often a theory itself is revised.
+\end{remark}
+
+\subsection{From the framework to an agent}
+The agent in this paper does \emph{not} compute these quantities, and neither does its environment. A computed update would
+need an invented network and invented likelihoods, and assumed ratios could manufacture exactly the revision we want to
+measure. Instead the agent carries out the framework's steps in words, with tools and quoted evidence, and the environment
+enforces their form:
+\begin{itemize}
+  \item \emph{theories} are explicit causal claims (who benefits, why behaviour changes, how value is captured), and two of
+        them must be genuinely distinct (\cref{sec:env});
+  \item \emph{evidence} is a quoted passage from a source, assessed as supporting, contradicting or having no bearing on a
+        theory, with what it does not show;
+  \item \emph{tests} carry a prediction per theory and a decision rule, within a budget and a time limit;
+  \item \emph{beliefs} are stated on a five-step verbal scale (very unlikely, unlikely, uncertain, likely, very likely)
+        when the agent takes a position and again after new evidence. The scale is a within-run signal, not a calibrated
+        probability; a direction check asks only whether undermining evidence did not raise the affected theory and
+        supporting evidence did not lower it.
+\end{itemize}
+The framework thus supplies the \emph{grammar} of a good investigation; the environment makes that grammar executable;
+and fine-tuning teaches a small model to speak it.

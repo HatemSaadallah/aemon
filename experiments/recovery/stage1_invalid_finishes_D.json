@@ -1,0 +1,847 @@
+{
+ "config": "D",
+ "finished": 11,
+ "by_check_and_origin": {
+  "evidence_classes / both": 2,
+  "evidence_classes / continuation": 2,
+  "evidence_classes / prefix": 1,
+  "evidence_kinds / continuation": 1,
+  "evidence_kinds / prefix": 5,
+  "existing_offering / both": 1,
+  "experiment / continuation": 5,
+  "experiment / prefix": 1,
+  "no_invented_numbers / both": 3,
+  "no_invented_numbers / continuation": 4,
+  "testable_predictions / both": 2,
+  "tool_use / unlocated": 5
+ },
+ "runs": [
+  {
+   "checkpoint": "1e8e670e008d",
+   "case": "masimo-new-evidence-irrelevant",
+   "stratum": "other",
+   "turns_left": 25,
+   "continuation_accepted": [
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "assess_evidence",
+    "challenge_theory",
+    "propose_test",
+    "state_position",
+    "read_source",
+    "revise_theory",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_classes",
+     "detail": "['T1', 'T2'] rest only on company claims",
+     "origin": "both",
+     "calls": [
+      "prefix:add_theory",
+      "prefix:add_theory",
+      "prefix:assess_evidence",
+      "continuation:assess_evidence",
+      "continuation:revise_theory"
+     ]
+    },
+    {
+     "check": "experiment",
+     "detail": "proposed a test where more information is not worth its cost",
+     "origin": "continuation",
+     "calls": [
+      "continuation:propose_test"
+     ]
+    },
+    {
+     "check": "tool_use",
+     "detail": "29 of 39 calls accepted, 8 searches",
+     "origin": "unlocated",
+     "calls": null
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Preference Test: Medical-Grade vs Convenience Features",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized exposure to two versions of a home monitoring device concept. Participants view a device description emphasizing medical-grade accuracy (T1) or convenience features (T2). They then indicate purchase intent (1‑10 scale) and maximum willingness to pay (EUR).",
+     "sample": "400 U.S. adults recruited via an online panel, balanced for age, gender, and income. Randomly assigned to see either the accuracy description or the convenience description.",
+     "measure": "Purchase intent score (1‑10) and willingness to pay (EUR).",
+     "prediction_by_theory": {
+      "T1": "Higher purchase intent and willingness to pay when accuracy is highlighted.",
+      "T2": "Higher purchase intent and willingness to pay when convenience is highlighted."
+     },
+     "decision_rule": "If the average willingness to pay for the accuracy version exceeds the convenience version by at least €10, proceed with a differentiated consumer proposition built on medical‑grade accuracy. If the difference is less than €10, maintain focus on professional healthcare.",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "8cd710c1d788",
+   "case": "cotral-new-evidence-favours-looks",
+   "stratum": "other",
+   "turns_left": 13,
+   "continuation_accepted": [
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_classes",
+     "detail": "['T1', 'T2'] rest only on company claims",
+     "origin": "prefix",
+     "calls": [
+      "prefix:add_theory",
+      "prefix:add_theory",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:revise_theory"
+     ]
+    },
+    {
+     "check": "experiment",
+     "detail": "0 of 1 tests discriminate: X1: predictions barely differ",
+     "origin": "prefix",
+     "calls": [
+      "prefix:propose_test"
+     ]
+    },
+    {
+     "check": "no_invented_numbers",
+     "detail": "numbers with no source: ['500', '60']",
+     "origin": "both",
+     "calls": {
+      "500": [
+       "prefix:state_position",
+       "continuation:finish"
+      ],
+      "60": [
+       "prefix:add_theory",
+       "prefix:add_theory",
+       "prefix:state_position",
+       "continuation:finish"
+      ]
+     }
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Musician vs Sleep Aid Purchase Intent Survey",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized exposure to a product description and a choice between two custom-moulded hearing protection options: (1) Performanceenhancing version marketed for musicians (soundpreserving, comfort, style) and (2) Medicalgrade version marketed for sleep aid users (sleep disruption reduction, comfort, discreet). Participants indicate",
+     "sample": "400 respondents: 200 self-identified musicians (via musician forums, social media, and musician associations) and 200 sleep aid users (via sleep aid websites, forums, and health professionals). Randomly assigned to see either the musician",
+     "measure": "Percentage of respondents who indicate \"Would purchase\" for each option. Secondary measure: willingness to pay (WTP) in euros.",
+     "prediction_by_theory": {
+      "T1": "Musicians will show higher \"Would purchase\" and higher WTP for the performanceenhancing version than sleep aid users.",
+      "T2": "Sleep aid users will show higher \"Would purchase\" and higher WTP for the medicalgrade version than musicians."
+     },
+     "decision_rule": "If the percentage of musicians who would purchase the performanceenhancing version exceeds that of sleep aid users by at least 10 percentage points, proceed with a musician-focused differentiated proposition. If sleep aid users exceed",
+     "cost_eur": 15000,
+     "weeks": 6
+    },
+    "where": "prefix"
+   }
+  },
+  {
+   "checkpoint": "7bbf6c85a335",
+   "case": "stihl-base",
+   "stratum": "test / repeated errors",
+   "turns_left": 4,
+   "continuation_accepted": [
+    "propose_test",
+    "state_position",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_kinds",
+     "detail": "2 of 4 kinds match the annotation",
+     "origin": "prefix",
+     "calls": [
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence"
+     ]
+    },
+    {
+     "check": "experiment",
+     "detail": "proposed a test where more information is not worth its cost",
+     "origin": "continuation",
+     "calls": [
+      "continuation:propose_test"
+     ]
+    },
+    {
+     "check": "no_invented_numbers",
+     "detail": "numbers with no source: ['25', '55']",
+     "origin": "continuation",
+     "calls": {
+      "25": [
+       "continuation:propose_test",
+       "continuation:finish"
+      ],
+      "55": [
+       "continuation:propose_test"
+      ]
+     }
+    },
+    {
+     "check": "tool_use",
+     "detail": "35 of 44 calls accepted, 8 searches",
+     "origin": "unlocated",
+     "calls": null
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Homeowner Preference Test: Safety vs Sustainability",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated product offers and willingness-to-pay questions.",
+     "sample": "500 homeowners (aged 25-55) recruited via panel, balanced for region and prior outdoor power tool ownership.",
+     "measure": "1) Purchase intent: binary (would buy) or willingness to pay a premium (eur). 2) Primary reason: open‑ended rating on safety vs sustainability.",
+     "prediction_by_theory": {
+      "T1": "Safety‑focused offer will achieve at least 10% higher purchase intent than sustainability‑focused offer.",
+      "T2": "Sustainability‑focused offer will achieve at least 10% higher purchase intent than safety‑focused offer."
+     },
+     "decision_rule": "If safety‑focused offer meets the 10‑percentage‑point threshold, recommend developing a differentiated consumer proposition emphasizing safety and convenience. If sustainability‑focused offer meets the threshold, recommend a green‑focused proposition. If neither meets, recommend no expansion.",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "ddd7446e810b",
+   "case": "carrier-new-evidence-irrelevant",
+   "stratum": "test / repeated errors",
+   "turns_left": 20,
+   "continuation_accepted": [
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "propose_test",
+    "state_position",
+    "read_source",
+    "revise_theory",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_classes",
+     "detail": "['T1', 'T2'] rest only on company claims",
+     "origin": "both",
+     "calls": [
+      "prefix:add_theory",
+      "prefix:add_theory",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "continuation:revise_theory"
+     ]
+    },
+    {
+     "check": "evidence_kinds",
+     "detail": "0 of 2 kinds match the annotation",
+     "origin": "prefix",
+     "calls": [
+      "prefix:assess_evidence",
+      "prefix:assess_evidence"
+     ]
+    },
+    {
+     "check": "existing_offering",
+     "detail": "never read what the company already sells in small packs",
+     "origin": "both",
+     "calls": [
+      "prefix:read_source",
+      "prefix:read_source",
+      "prefix:read_source",
+      "prefix:read_source",
+      "prefix:read_source",
+      "prefix:read_source",
+      "prefix:read_source",
+      "prefix:read_source",
+      "prefix:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source",
+      "continuation:read_source"
+     ]
+    },
+    {
+     "check": "no_invented_numbers",
+     "detail": "numbers with no source: ['30', '65']",
+     "origin": "continuation",
+     "calls": {
+      "30": [
+       "continuation:propose_test",
+       "continuation:finish"
+      ],
+      "65": [
+       "continuation:propose_test"
+      ]
+     }
+    },
+    {
+     "check": "testable_predictions",
+     "detail": "no specific measurable prediction in ['T2']",
+     "origin": "both",
+     "calls": [
+      "prefix:add_theory",
+      "prefix:add_theory",
+      "continuation:revise_theory"
+     ]
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Status vs Demo Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated product presentation and choice.",
+     "sample": "200 U.S. homeowners (ages 30-65) recruited via an online panel, balanced for income and geographic region.",
+     "measure": "1) Willingness to pay a premium (binary: would pay more than $1,000). 2) Preference for status marketing vs functional demo (binary: would prefer status messaging or a demo).",
+     "prediction_by_theory": {
+      "T1": "Affluent homeowners will show higher willingness to pay a premium and prefer status messaging when presented with a differentiated residential unit marketed as a status good.",
+      "T2": "Homeowners will show higher willingness to pay a small demo fee and prefer a demo when presented with a residential unit, indicating they need functional proof before committing."
+     },
+     "decision_rule": "If the majority of affluent homeowners (at least 60%) show higher willingness to pay a premium and prefer status messaging, proceed with a differentiated residential proposition. If the majority show higher willingness to pay a demo fee and prefer a demo, proceed with a limited‑",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "6c3e6252b224",
+   "case": "trdc-new-evidence-irrelevant",
+   "stratum": "test / repeated errors",
+   "turns_left": 16,
+   "continuation_accepted": [
+    "propose_test",
+    "state_position",
+    "read_source",
+    "revise_theory",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_kinds",
+     "detail": "0 of 6 kinds match the annotation",
+     "origin": "prefix",
+     "calls": [
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence",
+      "prefix:assess_evidence"
+     ]
+    },
+    {
+     "check": "testable_predictions",
+     "detail": "no specific measurable prediction in ['T1', 'T2']",
+     "origin": "both",
+     "calls": [
+      "prefix:add_theory",
+      "prefix:add_theory",
+      "continuation:revise_theory"
+     ]
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Fashion vs Thermal Messaging Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase scenarios.",
+     "sample": "300 US adults recruited via an online panel, stratified by age and gender to reflect the target consumer base.",
+     "measure": "Purchase intent (binary: \"Would buy\") and maximum willingness to pay (WTP) in euros.",
+     "prediction_by_theory": {
+      "T1": "At least 40% of respondents will express purchase intent for a thermal-regulating PCM garment, and WTP will be at least €50.",
+      "T2": "At least 40% of respondents will express purchase intent for a PCM garment marketed as fashion/status, and WTP will be at least €50."
+     },
+     "decision_rule": "If the proportion of respondents who express purchase intent for the thermal scenario exceeds the proportion for the fashion scenario by at least 10 percentage points, adopt T1. If the difference is less than 10 points, adopt T2. If neither meets the threshold, no expansion is recommended.",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "1bf66800d6d1",
+   "case": "aspen-new-evidence-irrelevant",
+   "stratum": "test / turn limit",
+   "turns_left": 17,
+   "continuation_accepted": [
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "propose_test",
+    "state_position",
+    "read_source",
+    "revise_theory",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_kinds",
+     "detail": "1 of 2 kinds match the annotation",
+     "origin": "prefix",
+     "calls": [
+      "prefix:assess_evidence",
+      "prefix:assess_evidence"
+     ]
+    },
+    {
+     "check": "experiment",
+     "detail": "0 of 1 tests discriminate: X1: predictions barely differ",
+     "origin": "continuation",
+     "calls": [
+      "continuation:propose_test"
+     ]
+    },
+    {
+     "check": "no_invented_numbers",
+     "detail": "numbers with no source: ['20']",
+     "origin": "both",
+     "calls": {
+      "20": [
+       "prefix:frame_problem",
+       "prefix:add_theory",
+       "continuation:propose_test",
+       "continuation:state_position",
+       "continuation:finish"
+      ]
+     }
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Preference Test: Premium vs. Eco‑Green Messaging",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice experiment with between‑subjects design. Participants are randomly assigned to one of two message conditions: (A) Premium‑performance messaging (high‑end NASA‑developed, superior thermal comfort) or (B) Eco‑green messaging (sustainable, reduces energy consumption). They view a product description of the same flexible aerogel blanket and are asked to indicate purchase intent (yes‑no) and maximum price they would pay.",
+     "sample": "400 U.S. homeowners recruited via an online panel, balanced for income, education, and environmental concern. Randomly assigned 200 to Premium condition, 200 to Eco‑Green condition.",
+     "measure": "Purchase intent (binary: intent to buy) and maximum price willingness to pay (continuous).",
+     "prediction_by_theory": {
+      "T1": "Premium condition will show higher purchase intent and higher willingness to pay than Eco‑Green condition.",
+      "T2": "Eco‑Green condition will show higher purchase intent and higher willingness to pay than Premium condition."
+     },
+     "decision_rule": "If the difference in purchase intent between Premium and Eco‑Green conditions exceeds 5 percentage points and the difference in willingness to pay exceeds €50, we conclude that the premium‑performance message drives higher adoption. If the difference is ≤ 5 points and ≤ €50, we conclude the eco‑green message drives adoption. If neither difference meets the thresholds, we conclude neither message is effective.",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "af00af23d36c",
+   "case": "leitz-base",
+   "stratum": "test / turn limit",
+   "turns_left": 5,
+   "continuation_accepted": [
+    "propose_test",
+    "state_position",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_kinds",
+     "detail": "0 of 2 kinds match the annotation",
+     "origin": "prefix",
+     "calls": [
+      "prefix:assess_evidence",
+      "prefix:assess_evidence"
+     ]
+    },
+    {
+     "check": "no_invented_numbers",
+     "detail": "numbers with no source: ['120', '150']",
+     "origin": "continuation",
+     "calls": {
+      "120": [
+       "continuation:propose_test",
+       "continuation:finish"
+      ],
+      "150": [
+       "continuation:propose_test",
+       "continuation:finish"
+      ]
+     }
+    },
+    {
+     "check": "tool_use",
+     "detail": "25 of 43 calls accepted, 4 searches",
+     "origin": "unlocated",
+     "calls": null
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Pilot Sales Experiment",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase offers and willingness-to-pay (WTP) questions.",
+     "sample": "200 respondents: 100 self-identified professional cinema photographers (via industry forum) and 100 self-identified individual photographers (via hobbyist forum). Recruit via social media ads targeting Germany and Austria.",
+     "measure": "Percentage of respondents who express intent to purchase (yes/no) and average WTP in euros.",
+     "prediction_by_theory": {
+      "T1": "At least 15% of cinema photographers will indicate intent to purchase for exposure testing; average WTP ≥ €150.",
+      "T2": "At least 15% of individual photographers will indicate intent to purchase for high-quality, portable photography; average WTP ≥ €120."
+     },
+     "decision_rule": "If either theory’s predicted intent rate meets its threshold (15% for T1, 15% for T2), proceed to develop a differentiated consumer proposition for that use case. If neither meets its threshold, recommend no expansion.",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "2ffe3d150bd5",
+   "case": "festool-new-evidence-irrelevant",
+   "stratum": "test / turn limit",
+   "turns_left": 16,
+   "continuation_accepted": [
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "propose_test",
+    "state_position",
+    "read_source",
+    "revise_theory",
+    "finish"
+   ],
+   "failures": [],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Festool Hobbyist Preference Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice-based conjoint survey with simulated purchase scenarios.",
+     "sample": "200 self-identified hobbyist woodworkers (US and UK) recruited via panel, balanced for age, gender, and prior purchase of Festool.",
+     "measure": "1) Willingness-to-pay (WTP) for Festool at three price points (current premium price, discounted hobbyist price, and big-box price). 2) Purchase intent (binary: would buy). 3) Primary purchase driver (brand prestige vs. price).",
+     "prediction_by_theory": {
+      "T1": "WTP at premium price will be at least 20% higher than at discounted hobbyist price, and purchase intent will be higher when prestige is emphasized.",
+      "T2": "WTP at big-box price will be at least 20% higher than at premium price, and purchase intent will be higher when price is emphasized."
+     },
+     "decision_rule": "If WTP at premium price exceeds WTP at big-box price by ≥20% and purchase intent at premium price exceeds purchase intent at big-box price by ≥20%, proceed with differentiated hobbyist proposition (T1). Else if WTP at big-box price exceeds premium price by ≥20% and purchase intent at big-box price exceeds purchase intent at premium price by ≥20%, adopt unified range (T2). If neither threshold is met, maintain single range.",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "c55cc0fed99f",
+   "case": "lenzing-new-evidence-irrelevant",
+   "stratum": "theories / repeated errors",
+   "turns_left": 28,
+   "continuation_accepted": [
+    "read_source",
+    "read_source",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "search_evidence",
+    "search_evidence",
+    "read_source",
+    "read_source",
+    "add_theory",
+    "add_theory",
+    "assess_evidence",
+    "assess_evidence",
+    "challenge_theory",
+    "read_source",
+    "read_source",
+    "propose_test",
+    "state_position",
+    "read_source",
+    "revise_theory",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_classes",
+     "detail": "['T1', 'T2'] rest only on company claims",
+     "origin": "continuation",
+     "calls": [
+      "continuation:add_theory",
+      "continuation:add_theory",
+      "continuation:assess_evidence",
+      "continuation:assess_evidence",
+      "continuation:revise_theory"
+     ]
+    },
+    {
+     "check": "experiment",
+     "detail": "0 of 1 tests discriminate: X1: predictions barely differ",
+     "origin": "continuation",
+     "calls": [
+      "continuation:propose_test"
+     ]
+    },
+    {
+     "check": "no_invented_numbers",
+     "detail": "numbers with no source: ['200000']",
+     "origin": "both",
+     "calls": {
+      "200000": [
+       "not found in calls"
+      ]
+     }
+    },
+    {
+     "check": "tool_use",
+     "detail": "33 of 42 calls accepted, 8 searches",
+     "origin": "unlocated",
+     "calls": null
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer vs Fashion Brand Messaging Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized messaging exposure. Participants are randomly assigned to one of two groups. Group A sees a premium, transparent sustainability message about lyocell and modal (e.g., \"Lenzing Tencel: 100% organic, traceable, and certified sustainable\"). Group B sees a cost‑focused, B2B‑focused message (e.g., \"Lenzing provides high‑quality, long‑term fibre contracts for fashion brands\"). Both groups view a neutral product description of lyocell and modal.",
+     "sample": "400 participants: 200 self‑identified eco‑conscious shoppers (recruited via sustainability forums) and 200 fashion brands (rec ‑   10 fashion retailers and 5 small‑brand owners) from Europe and North America.",
+     "measure": "Purchase intent: binary choice (Would you buy lyocell apparel from Lenzing? Yes/No). Also collect willingness‑to‑pay (WTP) for a sample product (e.g., a T‑shirt).",
+     "prediction_by_theory": {
+      "T1": "Group A will show at least 15% higher purchase intent than Group B, and WTP will be at least 20% above a baseline of €15 for a T‑shirt.",
+      "T2": "Group B will show at least 15% higher purchase intent than Group A, and WTP will be at least 10% above a baseline of €15 for a T‑shirt."
+     },
+     "decision_rule": "If Group A’s purchase intent exceeds Group B’s by ≥ 15 percentage points AND its WTP exceeds Group B’s by ≥ 20%, proceed to develop a differentiated consumer proposition for eco‑conscious shoppers. If Group B’s intent exceeds Group A’s by ≥ 15 percentage points AND its WTP exceeds Group A’s by ≥ 10%,",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "a5ada7385b7c",
+   "case": "moldex-new-evidence-irrelevant",
+   "stratum": "theories / repeated errors",
+   "turns_left": 39,
+   "continuation_accepted": [
+    "search_evidence",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "read_source",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "read_source",
+    "add_theory",
+    "add_theory",
+    "assess_evidence",
+    "assess_evidence",
+    "challenge_theory",
+    "read_source",
+    "propose_test",
+    "state_position",
+    "read_source",
+    "revise_theory",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "no_invented_numbers",
+     "detail": "numbers with no source: ['18']",
+     "origin": "continuation",
+     "calls": {
+      "18": [
+       "continuation:propose_test",
+       "continuation:finish"
+      ]
+     }
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Lifestyle vs Medical Messaging Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized messaging and choice-based conjoint (CBC) design.",
+     "sample": "500 UK adults aged 18-35, recruited via an online panel, balanced for gender and geographic region.",
+     "measure": "Willingness-to-pay (WTP) for a styled earplug (lifestyle) versus a medical earplug (health necessity) and purchase intent (binary: would buy).",
+     "prediction_by_theory": {
+      "T1": "Higher WTP and purchase intent for the lifestyle messaging (styled earplug for outdoor recreation).",
+      "T2": "Higher WTP and purchase intent for the medical messaging (earplug for hearing sensitivity)."
+     },
+     "decision_rule": "If the average WTP for the lifestyle messaging exceeds the WTP for the medical messaging by at least 10% points, proceed with a differentiated lifestyle proposition. If the difference is less than 5% points, no",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  },
+  {
+   "checkpoint": "1be62b10fe6e",
+   "case": "resmed-base",
+   "stratum": "theories / turn limit",
+   "turns_left": 33,
+   "continuation_accepted": [
+    "search_evidence",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "read_source",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "read_source",
+    "search_evidence",
+    "read_source",
+    "add_theory",
+    "add_theory",
+    "assess_evidence",
+    "assess_evidence",
+    "challenge_theory",
+    "read_source",
+    "read_source",
+    "read_source",
+    "propose_test",
+    "state_position",
+    "finish"
+   ],
+   "failures": [
+    {
+     "check": "evidence_classes",
+     "detail": "['T1'] rest only on company claims",
+     "origin": "continuation",
+     "calls": [
+      "continuation:add_theory",
+      "continuation:add_theory",
+      "continuation:assess_evidence",
+      "continuation:assess_evidence"
+     ]
+    },
+    {
+     "check": "evidence_kinds",
+     "detail": "1 of 2 kinds match the annotation",
+     "origin": "continuation",
+     "calls": [
+      "continuation:assess_evidence",
+      "continuation:assess_evidence"
+     ]
+    },
+    {
+     "check": "experiment",
+     "detail": "0 of 1 tests discriminate: X1: predictions barely differ",
+     "origin": "continuation",
+     "calls": [
+      "continuation:propose_test"
+     ]
+    },
+    {
+     "check": "tool_use",
+     "detail": "32 of 42 calls accepted, 8 searches",
+     "origin": "unlocated",
+     "calls": null
+    }
+   ],
+   "test_call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Home Monitoring vs. Clinic Visit Preference Survey",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized assignment to either a home-monitoring scenario or a clinic-visit scenario. Participants are recruited via a panel to match demographic and sleep apnoea status (e.g., diagnosed with OSA). They are shown a description of a non-contact sleep sensor (S+ or SleepMinder) and asked to indicate whether they would purchase it and at what price they would consider acceptable. After viewing the description, they are asked about their current method of sleep monitoring (clinic visits vs. home monitoring).",
+     "sample": "400 adults aged 25-65, recruited via an online panel, stratified by sleep apnoea status (diagnosed vs. not diagnosed). Target: 200 per arm.",
+     "measure": "Purchase intent: binary (would buy) and maximum price willing to pay. Also, self-reported importance of reducing clinic visits (1‑10 scale).",
+     "prediction_by_theory": {
+      "T1": "If the home-monitoring scenario is shown, purchase intent will be at least 15% higher than the clinic-visit scenario, and willingness to pay will be lower by $20 compared to the clinic scenario.",
+      "T2": "If the clinic-visit scenario is shown, purchase intent will be at least 15% higher than the home-monitoring scenario, and willingness to pay will be higher by $20 compared to the home scenario."
+     },
+     "decision_rule": "If the home-monitoring scenario yields purchase intent ≥ 15% higher than the clinic scenario AND willingness to pay ≤ €150, proceed with a differentiated consumer proposition for home use. If the clinic scenario yields higher intent, the test is inconclusive and further evidence is needed.",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "where": "continuation"
+   }
+  }
+ ]
+}

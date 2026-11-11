@@ -27,7 +27,12 @@ echo "teacher stage reports: $(echo $REPORTS | wc -w)"
 ROWS=$L/rows/${NAME}.jsonl
 rm -f $ROWS $L/rows/${NAME}.decisions.json
 # ROW_PROMPT and COMPACT=1 build the rows as the student will run: compact keeps late stages inside the length limit
-$L/env/bin/python -W ignore -m strategy_agent.pipeline.rows --reports $REPORTS --manifest $L/runs/teacher/provenance.jsonl --prompt ${ROW_PROMPT:-staged} ${COMPACT:+--compact} --output $ROWS
+$L/env/bin/python -W ignore -m aemon.rows.build_rows --reports $REPORTS --manifest $L/runs/teacher/provenance.jsonl --prompt ${ROW_PROMPT:-staged} ${COMPACT:+--compact} --output $ROWS
+if [ -n "${CURATE:-}" ]; then  # CuratorKIT decides which rows to keep (exact duplicates, secrets) and never rewrites one
+  $L/env/bin/python -c "import curatorkit, detect_secrets" || { echo "CURATE=1 needs curatorkit==0.1.25 and detect-secrets==1.5.0 in $L/env"; exit 1; }
+  $L/env/bin/python -W ignore -m aemon.rows.curate --rows $ROWS --output $L/rows/${NAME}.curated.jsonl --record $L/rows/${NAME}_curation | tail -1
+  mv $ROWS $L/rows/${NAME}.uncurated.jsonl && mv $L/rows/${NAME}.curated.jsonl $ROWS
+fi
 N=$(wc -l < $ROWS)
 echo "rows built: $N"
 # Recovery corrections (docs/RECOVERY_PILOT.md): kept ones become rows only if the manifest holds that exact reply
@@ -39,14 +44,14 @@ import json, sys
 print(json.dumps([c for path in sys.argv[1:] for c in json.load(open(path)) if c.get('kept')]))
 PY2
   rm -f $L/rows/${NAME}_corrections.jsonl
-  $L/env/bin/python -W ignore -m strategy_agent.pipeline.corrections rows --corrections $L/rows/${NAME}_corrections_in.json --manifest $L/runs/teacher/provenance.jsonl --output $L/rows/${NAME}_corrections.jsonl
+  $L/env/bin/python -W ignore -m aemon.teacher.corrections rows --corrections $L/rows/${NAME}_corrections_in.json --manifest $L/runs/teacher/provenance.jsonl --output $L/rows/${NAME}_corrections.jsonl
   EXTRA="--extra-rows $L/rows/${NAME}_corrections.jsonl --extra-token-share ${CORRECTION_SHARE:-0.2}"
   echo "correction rows: $(wc -l < $L/rows/${NAME}_corrections.jsonl)"
 fi
 [ "$N" -ge "${MIN_ROWS:-40}" ] || { echo "only $N rows, under the minimum of ${MIN_ROWS:-40}, so no training"; exit 1; }
 # Before training (docs/FINAL_EVAL_PLAN.md): row coverage on the same reports. Any length refusal or any target naming
 # something missing from its context stops the run, in the format the rows were built in.
-$L/env/bin/python -W ignore -m strategy_agent.pipeline.row_coverage --reports $REPORTS --manifest $L/runs/teacher/provenance.jsonl --tokenizer $L/models/tiny-aya-global \
+$L/env/bin/python -W ignore -m aemon.rows.row_coverage --reports $REPORTS --manifest $L/runs/teacher/provenance.jsonl --tokenizer $L/models/tiny-aya-global \
   --output $L/rows/${NAME}_coverage.json > /dev/null
 $L/env/bin/python - $L/rows/${NAME}_coverage.json ${COMPACT:+compact} <<'PY2' || { echo "row coverage gate failed, no training"; exit 1; }
 import json, sys
@@ -58,15 +63,15 @@ sys.exit(1 if refused or ungrounded else 0)
 PY2
 head -n 10 $ROWS > $L/rows/${NAME}_overfit10.jsonl
 set +e
-$L/env/bin/python -W ignore -m strategy_agent.training.train --model $L/models/tiny-aya-global --rows $L/rows/${NAME}_overfit10.jsonl --out $L/runs/${NAME}_overfit \
+$L/env/bin/python -W ignore -m aemon.training.train --model $L/models/tiny-aya-global --rows $L/rows/${NAME}_overfit10.jsonl --out $L/runs/${NAME}_overfit \
   --max-steps 60 --save-steps 20 --check 10 --require 8 --minutes 120
 RC=$?
 set -e
 [ $RC = 3 ] && { echo "overfit gate failed, no training run"; exit 1; }
 [ $RC != 0 ] && { echo "overfit run crashed with exit $RC, no training run"; exit 1; }
 echo "overfit gate passed $(date +%T)"
-$L/env/bin/python -W ignore -m strategy_agent.training.train --model $L/models/tiny-aya-global --rows $ROWS --out $L/runs/${NAME}_pilot \
-  --epochs ${EPOCHS:-3} --save-steps ${SAVE:-25} --minutes 560 $EXTRA --validation-cases ${VALIDATION:-$($L/env/bin/python -m strategy_agent.pipeline.splits)}
+$L/env/bin/python -W ignore -m aemon.training.train --model $L/models/tiny-aya-global --rows $ROWS --out $L/runs/${NAME}_pilot \
+  --epochs ${EPOCHS:-3} --save-steps ${SAVE:-25} --minutes 560 $EXTRA --validation-cases ${VALIDATION:-$($L/env/bin/python -m aemon.data.splits)}
 echo "training run finished $(date +%T)"
 # Conversion gate v2 (DECISIONS 2026-11-06) on the final adapter, on this job's GPU, before any evaluation. The old
 # checker picks the prompts and records its own result; the diagnosis replays them; the gate reads the diagnosis. A
@@ -78,7 +83,7 @@ conversion_gate() {
   $L/llama.cpp/build/bin/llama-server -m $G --lora $GG --lora-init-without-apply -ngl 99 -c 12288 --parallel 1 --host 127.0.0.1 --port $PORT --no-webui > $OUTC/${NAME}_gate_check.server.log 2>&1 &
   SERVER=$!
   for i in $(seq 1 120); do curl -sf http://127.0.0.1:$PORT/health > /dev/null && break; sleep 5; done
-  (cd $L/code_$GATE_REV && PYTHONPATH=$L/code_$GATE_REV/src HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 $L/env/bin/python -W ignore -m strategy_agent.evaluation.conversion_check \
+  (cd $L/code_$GATE_REV && PYTHONPATH=$L/code_$GATE_REV/src HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 $L/env/bin/python -W ignore -m aemon.evaluation.conversion.check \
     --model $L/models/tiny-aya-global --adapter $L/runs/${NAME}_pilot/adapter --url http://127.0.0.1:$PORT --rows $L/rows/${NAME}.jsonl --output $OUTC/${NAME}_gate_check.json 2>&1 | tail -1) || true
   kill $SERVER 2>/dev/null; sleep 5
   # paths first: in a prefix assignment, the ones after NAME=... would already see the new NAME
@@ -87,7 +92,7 @@ conversion_gate() {
     bash $L/code_$GATE_REV/jobs/diagnose_conversion.sbatch > $OUTC/${NAME}_gate_diagnosis.log 2>&1 || true
   local DX=$L/runs/conversion_diagnosis/${NAME}_final_${SLURM_JOB_ID}.replay.json
   [ -f $DX ] || { echo "no diagnosis replay, see $OUTC/${NAME}_gate_diagnosis.log"; return 1; }
-  PYTHONPATH=$L/code_$GATE_REV/src $L/env/bin/python -m strategy_agent.evaluation.conversion_gate --replay $DX \
+  PYTHONPATH=$L/code_$GATE_REV/src $L/env/bin/python -m aemon.evaluation.conversion.gate --replay $DX \
     --tensors $L/runs/conversion_diagnosis/${NAME}_final_${SLURM_JOB_ID}.tensors.json --output $OUTC/${NAME}_gate_v2.json
 }
 set +e

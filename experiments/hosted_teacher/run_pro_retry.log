@@ -1,0 +1,3 @@
+{"balance_usd_before": 3.96, "budget_usd": 1.0, "model": "deepseek-api deepseek-v4-pro DeepSeek-V4-Pro-0813"}
+{"by_family": {"numbers": {"answers": 3, "refused": 3}, "experiment": {"answers": 9, "kept": 1, "refused": 8}}, "top_rejections": {"numbers": [["request failed: RuntimeError", 2], ["gate: no_invented_numbers: numbers with no source: ['10', '4', '5']", 1]], "experiment": [["request failed: RuntimeError", 5], ["still over the length limit after one shortening: uncertain, why_next", 1], ["the justification names nothing from the state", 1], ["gate: the decline gives no reason testing is not worth it (no effect on the decision, already settled, worth less than acting, or over the stated limits)", 1]]}}
+{"spent_usd_estimate": 0.1453, "balance_usd_after": 3.55}

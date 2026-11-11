@@ -1,0 +1,795 @@
+{
+ "version": "evidence-kinds-v2-proposed",
+ "status": "proposed, not reviewed; training companies only; v1 unchanged",
+ "guide": "docs/EVIDENCE_KIND_GUIDE.md",
+ "records": {
+  "a123-ab8-deposits": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "a123-ab8-install": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "a123-ab8-price": {
+   "kind_v1": "product_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "a123-iw-online": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "a123-iw-six": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "a123-nbf-price": {
+   "kind_v1": "product_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "a123-wiki-tools": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "carrier-ch-1930": {
+   "kind_v1": "company_history",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "carrier-ch-chiller": {
+   "kind_v1": "company_history",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "carrier-ch-gates": {
+   "kind_v1": "company_history",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "carrier-ch-milam": {
+   "kind_v1": "company_history",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "carrier-doe-metropolitan": {
+   "kind_v1": "company_history",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "carrier-wc-lyle": {
+   "kind_v1": "company_history",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "carrier-wic-crash": {
+   "kind_v1": "financial_context",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind financial_context is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "cree-fool-brand": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "cree-ledp-price": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "cree-pr-ecosmart": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "cree-pr-stores": {
+   "kind_v1": "channel_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "cree-wiki-first": {
+   "kind_v1": "company_history",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "cree-wiki-ruud": {
+   "kind_v1": "company_history",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "cree-wiki-sold": {
+   "kind_v1": "company_history",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping",
+   "independent": "market_fact"
+  },
+  "danfoss-eq3-lidl": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping",
+   "independent": "analogy"
+  },
+  "danfoss-php-installer": {
+   "kind_v1": "channel_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "danfoss-sup-2011": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "danfoss-sup-adapters": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "danfoss-sup-link": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "danfoss-wiki-1943": {
+   "kind_v1": "company_history",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "danfoss-wiki-first": {
+   "kind_v1": "company_history",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "osram-ee-40": {
+   "kind_v1": "financial_context",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind financial_context is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "osram-em-clb": {
+   "kind_v1": "financial_context",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind financial_context is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "osram-em-lls": {
+   "kind_v1": "financial_context",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind financial_context is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "osram-gt-19": {
+   "kind_v1": "financial_context",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind financial_context is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "osram-ldv-april": {
+   "kind_v1": "company_history",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "osram-ldv-channels": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "osram-lg1-season": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "osram-lg2-99": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "osram-lg2-endusers": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "osram-li14-led": {
+   "kind_v1": "financial_context",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind financial_context is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "osram-tr-tesco": {
+   "kind_v1": "channel_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind channel_fact is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "sma-11-backup": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "sma-irt-cuts": {
+   "kind_v1": "financial_context",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind financial_context is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "sma-rem-household": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "sma-sla-delivery": {
+   "kind_v1": "product_fact",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion"
+   ],
+   "reason": "v1 kind product_fact is not one of the tool's six; mapped by the guide (company origin, rule 4)",
+   "source": "mapping"
+  },
+  "sma-wiki-sunnyboy": {
+   "kind_v1": "company_history",
+   "kind": "market_fact",
+   "acceptable": [
+    "market_fact"
+   ],
+   "reason": "v1 kind company_history is not one of the tool's six; mapped by the guide (third-party fact, rule 6)",
+   "source": "mapping"
+  },
+  "martek-rfb-walmart": {
+   "kind_v1": "market_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['customer_observation']",
+   "source": "audit sample"
+  },
+  "kes-s13-testimonials": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation"
+   ],
+   "reason": "independent label agrees; also defensible: ['company_assertion']",
+   "source": "audit sample"
+  },
+  "nilfisk-irobot": {
+   "kind_v1": "analogy",
+   "kind": "analogy",
+   "acceptable": [
+    "analogy",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "martek-pr-channel": {
+   "kind_v1": "company_assertion",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "mdx-spark-blister": {
+   "kind_v1": "company_assertion",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "superior-rcs-gardening": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "blackdecker-spinoff-motor": {
+   "kind_v1": "market_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "company_assertion",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['company_assertion']",
+   "source": "audit sample"
+  },
+  "a123-osti-fleet": {
+   "kind_v1": "market_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent blind label company_assertion (medium): Company co-authored report on its own deployment numbers; also describes adoption by fleets.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "hra-upw-50": {
+   "kind_v1": "regulation",
+   "kind": "regulation",
+   "acceptable": [
+    "market_fact",
+    "regulation"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "blackdecker-uspto-hoover": {
+   "kind_v1": "company_assertion",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion",
+    "market_fact"
+   ],
+   "reason": "independent blind label market_fact (medium): Company history about an executive's background, not a plan or performance claim.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "flir-ah-hunters": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent blind label market_fact (medium): Trade article describing what the product technology does for hunters.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "searle-asw-pboi": {
+   "kind_v1": "regulation",
+   "kind": "regulation",
+   "acceptable": [
+    "market_fact",
+    "regulation"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "technogym-peloton-free-users": {
+   "kind_v1": "analogy",
+   "kind": "analogy",
+   "acceptable": [
+    "analogy",
+    "company_assertion",
+    "customer_observation"
+   ],
+   "reason": "independent label agrees; also defensible: ['company_assertion', 'customer_observation']",
+   "source": "audit sample"
+  },
+  "lenzing-hustvedt-organic": {
+   "kind_v1": "independent_study",
+   "kind": "independent_study",
+   "acceptable": [
+    "customer_observation",
+    "independent_study"
+   ],
+   "reason": "independent label agrees; also defensible: ['customer_observation']",
+   "source": "audit sample"
+  },
+  "portwest-carhartt-beanie": {
+   "kind_v1": "analogy",
+   "kind": "analogy",
+   "acceptable": [
+    "analogy",
+    "customer_observation"
+   ],
+   "reason": "independent label agrees; also defensible: ['customer_observation']",
+   "source": "audit sample"
+  },
+  "nalgene-lore-mission": {
+   "kind_v1": "company_assertion",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion",
+    "market_fact"
+   ],
+   "reason": "independent blind label market_fact (low): Fragment of company history about an executive's response to new uses; little claim content.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "statitrol-ieee-entrants": {
+   "kind_v1": "market_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "analogy",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['analogy']",
+   "source": "audit sample"
+  },
+  "portwest-dickies-decline": {
+   "kind_v1": "analogy",
+   "kind": "analogy",
+   "acceptable": [
+    "analogy",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "3m-lemelson-waste": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact', 'company_assertion']",
+   "source": "audit sample"
+  },
+  "nilfisk-ev-outsourced": {
+   "kind_v1": "market_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "company_assertion",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['company_assertion']",
+   "source": "audit sample"
+  },
+  "ti-994-osborne": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "trdc-patent-airforce": {
+   "kind_v1": "regulation",
+   "kind": "regulation",
+   "acceptable": [
+    "market_fact",
+    "regulation"
+   ],
+   "reason": "independent blind label market_fact (high): Patent statement of government funding.",
+   "source": "audit sample",
+   "proposed_correction": "market_fact"
+  },
+  "a123-ab7b-fleets": {
+   "kind_v1": "market_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent blind label customer_observation (medium): Deliveries to governments and fleets, likely company-reported figures.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "gore-wiki-expiry": {
+   "kind_v1": "regulation",
+   "kind": "regulation",
+   "acceptable": [
+    "market_fact",
+    "regulation"
+   ],
+   "reason": "independent blind label market_fact (high): Encyclopedia fact on patent expiry and competitor availability.",
+   "source": "audit sample",
+   "proposed_correction": "market_fact"
+  },
+  "hilti-b2b-reach": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent blind label market_fact (medium): Trade blog characterising the company's channel and market position.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "searle-csm-critics": {
+   "kind_v1": "regulation",
+   "kind": "regulation",
+   "acceptable": [
+    "market_fact",
+    "regulation"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "kes-s09-floral": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation"
+   ],
+   "reason": "independent label agrees; also defensible: ['company_assertion']",
+   "source": "audit sample"
+  },
+  "sma-pvf-loans": {
+   "kind_v1": "regulation",
+   "kind": "regulation",
+   "acceptable": [
+    "market_fact",
+    "regulation"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "nalgene-wiki-labsuppliers": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "qdi-sp05-consumer": {
+   "kind_v1": "company_assertion",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion",
+    "regulation"
+   ],
+   "reason": "independent label agrees; also defensible: ['regulation']",
+   "source": "audit sample"
+  },
+  "superior-nc-plant": {
+   "kind_v1": "market_fact",
+   "kind": "market_fact",
+   "acceptable": [
+    "company_assertion",
+    "market_fact"
+   ],
+   "reason": "independent blind label company_assertion (medium): Company plans for a plant and jobs, as reported by trade press.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "arri-oneplus-hasselblad": {
+   "kind_v1": "analogy",
+   "kind": "analogy",
+   "acceptable": [
+    "analogy",
+    "market_fact"
+   ],
+   "reason": "independent label agrees; also defensible: ['market_fact']",
+   "source": "audit sample"
+  },
+  "searle-csm-research": {
+   "kind_v1": "customer_observation",
+   "kind": "customer_observation",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation"
+   ],
+   "reason": "independent blind label company_assertion (high): Company person describing its own past research.",
+   "source": "audit sample",
+   "proposed_correction": "company_assertion"
+  },
+  "mag-hist-spread": {
+   "kind_v1": "company_assertion",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation"
+   ],
+   "reason": "independent blind label customer_observation (medium): Users spreading word of mouth, as told by the company's own history page.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "hilti-craftsman-pro-label": {
+   "kind_v1": "analogy",
+   "kind": "analogy",
+   "acceptable": [
+    "analogy",
+    "customer_observation"
+   ],
+   "reason": "independent label agrees; also defensible: ['customer_observation']",
+   "source": "audit sample"
+  },
+  "perrigo-bar-retailers": {
+   "kind_v1": "company_assertion",
+   "kind": "company_assertion",
+   "acceptable": [
+    "company_assertion",
+    "customer_observation",
+    "market_fact"
+   ],
+   "reason": "independent blind label market_fact (low): Company slide asserting a market reason (retailer margins) for store-brand investment.",
+   "source": "audit sample",
+   "proposed_correction": null
+  },
+  "koppert-wsu-shipped": {
+   "kind_v1": "independent_study",
+   "kind": "independent_study",
+   "acceptable": [
+    "customer_observation",
+    "independent_study",
+    "market_fact"
+   ],
+   "reason": "independent blind label market_fact (medium): Extension leaflet describing the supply chain for lady beetles.",
+   "source": "audit sample",
+   "proposed_correction": null
+  }
+ }
+}

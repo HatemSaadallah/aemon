@@ -1,0 +1,236 @@
+{
+ "counts": {
+  "answers": 178,
+  "valid": 178,
+  "failures": 0,
+  "kept": 3,
+  "verification": {
+   "not kept": 172,
+   "refused by today's gates": 3,
+   "passed every check": 3
+  },
+  "by_call": "3 propose_test",
+  "rejections": [
+   [
+    "why_next does not say which theories the test separates",
+    59
+   ],
+   [
+    "in the test stage only proposing a discriminating test or justifying declining one advances the investigation",
+    36
+   ],
+   [
+    "the call does not act on what the justification names",
+    20
+   ],
+   [
+    "gate: learned stops at its length limit (700 characters), cut mid-text",
+    17
+   ],
+   [
+    "repeats an earlier call",
+    12
+   ],
+   [
+    "gate: the arms differ only in wording or message, with no product or price difference and no same-price control",
+    10
+   ],
+   [
+    "the justification names nothing from the state",
+    9
+   ],
+   [
+    "refused by the tools: prediction_by_theory needs one prediction for each theory in the test",
+    4
+   ],
+   [
+    "gate: method stops at its length limit (900 characters), cut mid-text",
+    2
+   ],
+   [
+    "gate: the predictions barely differ",
+    1
+   ],
+   [
+    "gate: learned stops at its length limit (698 characters), cut mid-text",
+    1
+   ],
+   [
+    "gate: the decision rule leads straight to developing a product, not to a bounded next step",
+    1
+   ],
+   [
+    "the decision rule has no threshold",
+    1
+   ],
+   [
+    "gate: euros in a case set in 1970",
+    1
+   ],
+   [
+    "gate: a recovery from a refused finish must finish, citing real evidence",
+    1
+   ]
+  ]
+ },
+ "examples": [
+  {
+   "n": 1,
+   "case": "carrier-base",
+   "case_date": "1928",
+   "origin": "test step",
+   "question": "It is 1928. Should Carrier Engineering Corporation develop a differentiated consumer proposition for a specific use case, building on its refrigeration and humidity-control engineering? What evidence would justify that investment?",
+   "student_turn": 25,
+   "student_run": "0529be2990a5dda0df121ebbb8671c7a9f39736155392761b1353b91d216af2a",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Homeowners will adopt residential air conditioning if they perceive it as a status symbol and a marker of modernity, because they value prestige and want to demonstrate affluence.",
+    "T2": "Homeowners will adopt residential air conditioning if they experience it firsthand through a demo or trial, because they need to assess comfort and functionality before committing to a purchase."
+   },
+   "sources_read": {
+    "carrier-ch-1930": "unknown (accessed 2026-11-03)",
+    "carrier-doe-flocked": "2015-07-20",
+    "carrier-doe-metropolitan": "2015-07-20",
+    "carrier-wc-hesitant": "unknown (accessed 2026-11-03)",
+    "carrier-wc-lyle": "unknown (accessed 2026-11-03)",
+    "carrier-wic-crash": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Demo vs No‑Demo Retail Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Set up two comparable department‑store locations (e.g., Macy’s and Gimbels) in a major city. In Store A, install a working Carrier window‑sill unit as a live demo; staff present the product emphasizing comfort and prestige, and offer purchase at a fixed price (e.g., $500). In Store B, display a non‑functional model and identical signage, same staff pitch, same price, but no functional demo. Track the number of units sold in each store over 12 weeks.",
+     "sample": "200 customers (100 per store) will be exposed to the respective presentation. The stores will be selected to have similar foot traffic and demographic profiles based on 1928 census data for the city.",
+     "measure": "Purchase conversion rate: units sold divided by total customers approached (or foot traffic estimated).",
+     "prediction_by_theory": {
+      "T1": "Purchase rates will be similar between the two stores because status/prestige, not demo, drives purchase. The difference in conversion rates will be less than 5 percentage points.",
+      "T2": "The store with a functional demo will achieve a higher purchase rate than the store without a demo. We predict at least a 10‑percentage‑point increase in conversion (e.g., 8 % vs 18 %)."
+     },
+     "decision_rule": "If Store A’s conversion rate exceeds Store B’s by ≥10 percentage points, proceed to a limited pilot of residential installations in selected neighborhoods. If the difference is less than 5 percentage points, conclude that demo experience does not materially increase demand and halt consumer expansion plans for the time being. If the difference is between 5 and 10 points, conduct a follow‑up survey of non‑purchasers to assess whether lack of demo was a barrier before deciding.",
+     "cost_eur": 18000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "We have read several sources about Carrier’s B2B installations, the 1928 founding of Carrier-Lyle aimed at residential market, and general consumer hesitation. No direct evidence shows whether prestige or demo experience drives homeowner adoption. Two open theories explain adoption: T1 (status/prestige) and T2 (hands‑on demo). We need a test that can discriminate between them within the €20,000 budget and 12‑week limit.",
+    "uncertain": "Which driver‑status or demo‑is the primary motivator for 1928 homeowners to purchase residential air conditioning?",
+    "why_next": "A low‑cost test that varies the presence of a functional demo while keeping price and messaging constant can test T2 directly. If demo increases purchase rates, T2 is supported; if not, T1 gains credibility. This test is affordable, time‑bound, and uses existing retail locations, meeting the constraints."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\":\"We have read several sources about Carrier\\u2019s B2B installations, the 1928 founding of Carrier-Lyle aimed at residential market, and general consumer hesitation. No direct evidence shows whether prestige or demo experience drives homeowner adoption. Two open theories explain adoption: T1 (status/prestige) and T2 (hands\\u2011on demo). We need a test that can discriminate between them within the \\u20ac20,000 budget and 12\\u2011week limit.\",\"uncertain\":\"Which driver\\u2011status or demo\\u2011is the primary motivator for 1928 homeowners to purchase residential air conditioning?\",\"why_next\":\"A low\\u2011cost test that varies the presence of a functional demo while keeping price and messaging constant can test T2 directly. If demo increases purchase rates, T2 is supported; if not, T1 gains credibility. This test is affordable, time\\u2011bound, and uses existing retail locations, meeting the constraints.\",\"call\":{\"name\":\"propose_test\",\"arguments\":{\"name\":\"Demo vs No\\u2011Demo Retail Test\",\"theories\":[\"T1\",\"T2\"],\"method\":\"Set up two comparable department\\u2011store locations (e.g., Macy\\u2019s and Gimbels) in a major city. In Store A, install a working Carrier window\\u2011sill unit as a live demo; staff present the product emphasizing comfort and prestige, and offer purchase at a fixed price (e.g., $500). In Store B, display a non\\u2011functional model and identical signage, same staff pitch, same price, but no functional demo. Track the number of units sold in each store over 12 weeks.\",\"sample\":\"200 customers (100 per store) will be exposed to the respective presentation. The stores will be selected to have similar foot traffic and demographic profiles based on 1928 census data for the city.\",\"measure\":\"Purchase conversion rate: units sold divided by total customers approached (or foot traffic estimated).\",\"prediction_by_theory\":{\"T1\":\"Purchase rates will be similar between the two stores because status/prestige, not demo, drives purchase. The difference in conversion rates will be less than 5 percentage points.\",\"T2\":\"The store with a functional demo will achieve a higher purchase rate than the store without a demo. We predict at least a 10\\u2011percentage\\u2011point increase in conversion (e.g., 8\\u00a0% vs 18\\u00a0%).\"},\"decision_rule\":\"If Store A\\u2019s conversion rate exceeds Store B\\u2019s by \\u226510 percentage points, proceed to a limited pilot of residential installations in selected neighborhoods. If the difference is less than 5 percentage points, conclude that demo experience does not materially increase demand and halt consumer expansion plans for the time being. If the difference is between 5 and 10 points, conduct a follow\\u2011up survey of non\\u2011purchasers to assess whether lack of demo was a barrier before deciding.\",\"cost_eur\":18000,\"weeks\":12}}}",
+   "keep": null
+  },
+  {
+   "n": 2,
+   "case": "festool-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "reread",
+   "question": "Should Festool develop a differentiated proposition for hobbyist woodworkers, beyond its existing offering, or keep a single range for all buyers? What evidence would justify either choice?",
+   "student_turn": 31,
+   "student_run": "82f742c5cff6860823994ad0908ba212eb6acc64187987387c00a9fbed670a4b",
+   "skill": "experiment-reread",
+   "theories": {
+    "T1": "Hobbyist woodworkers value exclusivity and brand prestige, leading them to purchase Festool at premium prices rather than at big-box retailers.",
+    "T2": "Hobbyist woodworkers prioritize functionality and cost-effectiveness, seeking affordable tools that deliver reliable performance, and are willing to purchase at big-box retailers because price is a primary decision factor."
+   },
+   "sources_read": {
+    "festool-bigbox": "2015-06-18",
+    "festool-freedonia-cordless": "2024-09-26",
+    "festool-fww-price": "2006-10 (first replies dated 2006-10-23)",
+    "festool-hobby-growth": "2015-06-18",
+    "festool-mix": "2015-06-18",
+    "festool-ukw-overpaid": "2015-06-02",
+    "festool-woodcraft-origin": "2015-06-18"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Festool Hobbyist Preference Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice experiment with refundable deposit to measure real purchase intent.",
+     "sample": "400 hobbyist woodworkers recruited via woodworking forums and social media (estimated cost €50 per participant for recruitment, screening, and deposit handling).",
+     "measure": "Conversion rate to refundable deposit (€30) for each version offered.",
+     "prediction_by_theory": {
+      "T1": "Exclusive version (higher price, specialty channel) will achieve >=15% deposit conversion; lower‑priced big‑box version will achieve <=5%.",
+      "T2": "Lower‑priced big‑box version will achieve >=15% deposit conversion; exclusive version will achieve <=5%."
+     },
+     "decision_rule": "If exclusive version conversion >=15% AND lower‑priced version conversion <=5% → proceed with differentiated hobbyist proposition (exclusive line). If opposite pattern → keep single range and consider big‑box distribution. If both >=10% or both <=10% → conduct follow‑up qualitative study to explore mixed drivers.",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "From the dossier we know Festool’s historical split between hobbyists (now ~40%) and professionals (now ~60%). Hobbyists have expressed price concerns (“Why are they so expensive?”) and some perceive premium pricing as overpaying, while the brand’s limited distribution to specialty dealers like Woodcraft originally attracted hobbyists. No direct survey data on willingness to pay or price sensitivity exists. The two open theories are: T1 – hobbyists buy Festool for exclusivity/prestige; T2 – hobbyists buy for functionality/cost‑effectiveness and prefer big‑box availability. A test must distinguish these mechanisms with real commitment within €20k and 12 weeks.",
+    "uncertain": "Which attribute drives hobbyists’ purchase decision – brand prestige/exclusivity or price/functionality? We lack direct evidence of willingness to pay or channel preference.",
+    "why_next": "A controlled experiment offering two versions of the same Festool tool – one positioned as an exclusive, higher‑priced specialty‑dealer item and one as a lower‑priced big‑box item – will let us measure actual purchase intent (e.g., refundable deposits). T1 predicts higher take‑up for the exclusive version; T2 predicts higher take‑up for the lower‑priced version. The result will indicate which mechanism holds, informing whether to develop a differentiated hobbyist proposition or keep a single range."
+   },
+   "decision_at_generation": "kept",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"From the dossier we know Festool\\u2019s historical split between hobbyists (now ~40%) and professionals (now ~60%). Hobbyists have expressed price concerns (\\u201cWhy are they so expensive?\\u201d) and some perceive premium pricing as overpaying, while the brand\\u2019s limited distribution to specialty dealers like Woodcraft originally attracted hobbyists. No direct survey data on willingness to pay or price sensitivity exists. The two open theories are: T1 \\u2013 hobbyists buy Festool for exclusivity/prestige; T2 \\u2013 hobbyists buy for functionality/cost\\u2011effectiveness and prefer big\\u2011box availability. A test must distinguish these mechanisms with real commitment within \\u20ac20k and 12 weeks.\", \"uncertain\": \"Which attribute drives hobbyists\\u2019 purchase decision \\u2013 brand prestige/exclusivity or price/functionality? We lack direct evidence of willingness to pay or channel preference.\", \"why_next\": \"A controlled experiment offering two versions of the same Festool tool \\u2013 one positioned as an exclusive, higher\\u2011priced specialty\\u2011dealer item and one as a lower\\u2011priced big\\u2011box item \\u2013 will let us measure actual purchase intent (e.g., refundable deposits). T1 predicts higher take\\u2011up for the exclusive version; T2 predicts higher take\\u2011up for the lower\\u2011priced version. The result will indicate which mechanism holds, informing whether to develop a differentiated hobbyist proposition or keep a single range.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Festool Hobbyist Preference Test\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Online choice experiment with refundable deposit to measure real purchase intent.\", \"sample\": \"400 hobbyist woodworkers recruited via woodworking forums and social media (estimated cost \\u20ac50 per participant for recruitment, screening, and deposit handling).\", \"measure\": \"Conversion rate to refundable deposit (\\u20ac30) for each version offered.\", \"prediction_by_theory\": {\"T1\": \"Exclusive version (higher price, specialty channel) will achieve >=15% deposit conversion; lower\\u2011priced big\\u2011box version will achieve <=5%.\", \"T2\": \"Lower\\u2011priced big\\u2011box version will achieve >=15% deposit conversion; exclusive version will achieve <=5%.\"}, \"decision_rule\": \"If exclusive version conversion >=15% AND lower\\u2011priced version conversion <=5% \\u2192 proceed with differentiated hobbyist proposition (exclusive line). If opposite pattern \\u2192 keep single range and consider big\\u2011box distribution. If both >=10% or both <=10% \\u2192 conduct follow\\u2011up qualitative study to explore mixed drivers.\", \"cost_eur\": 20000, \"weeks\": 12}}}",
+   "keep": null
+  },
+  {
+   "n": 3,
+   "case": "arri-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should ARRI develop a differentiated proposition of its own for individual creators, beyond its professional cinema range and its smartphone partnership, or keep its consumer presence to partners? What evidence would justify either choice?",
+   "student_turn": 39,
+   "student_run": "9e7ee03b6479a36661979543abc4569ea30820b299b02347268bf1dc586aa16c",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Individual creators will adopt ARRI products if they perceive the brand as a professional standard and are willing to pay a premium for reliability and image quality.",
+    "T2": "Individual creators will adopt ARRI products if they perceive the brand as a professional standard and are willing to pay a premium for reliability and image quality, but will also be attracted by the smartphone partnership that already provides them with a professional-grade camera and creative control."
+   },
+   "sources_read": {
+    "arri-alexa-price": "2025-08-07",
+    "arri-cined-challenges": "2025-12-01",
+    "arri-core-focus": "2025-12-16",
+    "arri-honor-milestone": "2026-08-12",
+    "arri-ymc-backlash": "2026-09-29",
+    "arri-ymc-use-not-own": "2026-09-29"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "ARRI Creator Camera Pre‑order Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online landing page offering a limited‑edition ARRI Creator Camera (specs comparable to ALEXA 35 but priced at €2,500) with two variants:\n1) Direct‑only: Camera sold directly via ARRI website, payment required for pre‑order.\n2) Direct‑plus‑Partner: Same camera plus a free 1‑year ARRI imaging software subscription (mirroring the HONOR partnership benefit).\nParticipants (individual creators, YouTubers, indie filmmakers) are randomly assigned to one variant. They see product description, price, and partner benefit (if applicable). The page tracks whether they click “Pre‑order Now” and provide a deposit (€500).",
+     "sample": "300 participants, recruited via creator forums and social media ads targeting content creators with 10k‑100‑k followers. Stratify to include both professional and hobbyist creators.",
+     "measure": "Conversion rate (pre‑order deposit) per variant. Secondary: stated willingness to pay at €2,500 vs €1,500 (optional survey).",
+     "prediction_by_theory": {
+      "T1": "Conversion rates will be similar between variants because brand prestige alone drives purchase; the partner benefit will not significantly increase uptake.",
+      "T2": "The Direct‑plus‑Partner variant will have a higher conversion rate (e.g., +15 percentage points) because the partnership provides additional value that persuades creators to buy."
+     },
+     "decision_rule": "If the conversion rate for Direct‑plus‑Partner exceeds Direct‑only by at least 10 percentage points (e.g., 20% vs 10%), proceed to develop a differentiated direct‑to‑individual line incorporating partner benefits. If the difference is less than 10 points, maintain consumer presence limited to partners and avoid new direct offerings. If conversion rates are both below 5%, stop testing and revisit demand assumptions.",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "We have identified ARRI’s current professional focus, its existing smartphone partnership (HONOR), and evidence that creators currently use ARRI gear via rental rather than ownership. No public evidence shows individual creators’ willingness to pay for ARRI products directly, nor how the smartphone partnership influences purchase intent. The two open theories differ only in whether the smartphone partnership is a necessary attractor (T2) or merely complementary (T1). Without evidence that the partnership changes purchase behaviour, the theories remain indistinguishable based on existing sources.",
+    "uncertain": "T1 and T2 are both plausible but not empirically separated. We lack data on demand, price sensitivity, or whether the partnership drives adoption beyond brand prestige.",
+    "why_next": "A low‑cost test can directly measure individual creators’ purchase intent for a new ARRI camera offered directly, and compare it to intent when the same camera is offered with an added smartphone‑partner benefit (e.g., free ARRI imaging software subscription). This will test whether the partnership adds a distinct driver (supporting T2) or if brand alone suffices (supporting T1). The test stays within the €20,000 budget and 12‑week window, uses real product information (camera specs, price, partner benefit), and collects consequential behaviour (pre‑orders or deposits)."
+   },
+   "decision_at_generation": "kept",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"We have identified ARRI\\u2019s current professional focus, its existing smartphone partnership (HONOR), and evidence that creators currently use ARRI gear via rental rather than ownership. No public evidence shows individual creators\\u2019 willingness to pay for ARRI products directly, nor how the smartphone partnership influences purchase intent. The two open theories differ only in whether the smartphone partnership is a necessary attractor (T2) or merely complementary (T1). Without evidence that the partnership changes purchase behaviour, the theories remain indistinguishable based on existing sources.\", \"uncertain\": \"T1 and T2 are both plausible but not empirically separated. We lack data on demand, price sensitivity, or whether the partnership drives adoption beyond brand prestige.\", \"why_next\": \"A low\\u2011cost test can directly measure individual creators\\u2019 purchase intent for a new ARRI camera offered directly, and compare it to intent when the same camera is offered with an added smartphone\\u2011partner benefit (e.g., free ARRI imaging software subscription). This will test whether the partnership adds a distinct driver (supporting T2) or if brand alone suffices (supporting T1). The test stays within the \\u20ac20,000 budget and 12\\u2011week window, uses real product information (camera specs, price, partner benefit), and collects consequential behaviour (pre\\u2011orders or deposits).\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"ARRI Creator Camera Pre\\u2011order Test\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Online landing page offering a limited\\u2011edition ARRI Creator Camera (specs comparable to ALEXA 35 but priced at \\u20ac2,500) with two variants:\\n1) Direct\\u2011only: Camera sold directly via ARRI website, payment required for pre\\u2011order.\\n2) Direct\\u2011plus\\u2011Partner: Same camera plus a free 1\\u2011year ARRI imaging software subscription (mirroring the HONOR partnership benefit).\\nParticipants (individual creators, YouTubers, indie filmmakers) are randomly assigned to one variant. They see product description, price, and partner benefit (if applicable). The page tracks whether they click \\u201cPre\\u2011order Now\\u201d and provide a deposit (\\u20ac500).\", \"sample\": \"300 participants, recruited via creator forums and social media ads targeting content creators with 10k\\u2011100\\u2011k followers. Stratify to include both professional and hobbyist creators.\", \"measure\": \"Conversion rate (pre\\u2011order deposit) per variant. Secondary: stated willingness to pay at \\u20ac2,500 vs \\u20ac1,500 (optional survey).\", \"prediction_by_theory\": {\"T1\": \"Conversion rates will be similar between variants because brand prestige alone drives purchase; the partner benefit will not significantly increase uptake.\", \"T2\": \"The Direct\\u2011plus\\u2011Partner variant will have a higher conversion rate (e.g., +15 percentage points) because the partnership provides additional value that persuades creators to buy.\"}, \"decision_rule\": \"If the conversion rate for Direct\\u2011plus\\u2011Partner exceeds Direct\\u2011only by at least 10 percentage points (e.g., 20% vs 10%), proceed to develop a differentiated direct\\u2011to\\u2011individual line incorporating partner benefits. If the difference is less than 10 points, maintain consumer presence limited to partners and avoid new direct offerings. If conversion rates are both below 5%, stop testing and revisit demand assumptions.\", \"cost_eur\": 20000, \"weeks\": 12}}}",
+   "keep": null
+  }
+ ]
+}

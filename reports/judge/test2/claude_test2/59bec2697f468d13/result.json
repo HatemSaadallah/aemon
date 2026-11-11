@@ -1,0 +1,186 @@
+{
+  "packet_id": "59bec2697f468d13",
+  "packet_sha256": "b33ca2ab9b1372548e752d454c5ee1240f85588bc59196ab0fe18b4b6688171d",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"59bec2697f468d13\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A1\"], \"reason\": \"A1 separates the objective (whether to invest, based on demand, willingness to pay and value capture) from the suggested solution, and lists five alternatives, including partnering and licensing. That would normally reach rung 2. However, A1 states a '\u20ac20,000 and 12-week' test budget and timeline that appears nowhere in the case or sources. Under the rubric, an invented number caps this dimension at 1. A1 also does not notice that the sources already show a home consumer kit (CPR Anytime, Mini Anne, about $30, laerdal-nbc-mini-anne-2006 and laerdal-cpranytime-home). The premise that a consumer proposition would be 'beyond' existing products is therefore partly false, and A1 leaves it uncorrected.\"}, \"causal_mechanism\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"T1 (A9) says who changes behaviour (households), why (perceived risk to family members) and how value is captured (DTC sales, subscription, premium pricing). The chain is incomplete for rung 3. The trigger, 'growing public awareness \u2026 of bystander CPR success rates', is asserted without source support. The capture step is asserted without addressing the evidence that the existing kit is a low-priced (~$30) product also distributed through AHA and funder donations (laerdal-nbc-mini-anne-2006, laerdal-nicu-kits-donated). Nothing explains why this manufacturer, rather than the distributor or donor, would capture a premium.\"}, \"distinct_theories\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"T1 and T2 share the same customer (individual households), product (home kit), channel (DTC), value capture and first prediction. They differ only in the stated purchase motive (risk reduction versus convenience). This is close to a rewording of one idea and implies no different product, customer or channel. The framed alternatives (B2B expansion, partnering, licensing, institutional/discharge distribution) are not developed as rival theories.\"}, \"assumptions_predictions\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"The predictions are observable: purchase intent compared with a generic health product, and the reasons respondents cite in a survey. The second prediction differs between T1 and T2. The first is identical in both theories, so it cannot discriminate between them. The assumptions are vague (e.g. 'Marketing can effectively communicate\u2026'). It is not stated what failure would put a theory in serious trouble, especially the value-capture claims (subscription, premium).\"}, \"evidence_judgement\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A11\", \"A12\", \"A14\", \"A15\"], \"reason\": \"Only agreeing evidence is cited. The same two excerpts are scored as 'supports' for both T1 and T2, so they discriminate nothing. The company product description (A11/A12) is counted as support for consumer purchase motives, although the 'does not show' notes partly concede this. A14/A15 relabel the AHA prevalence statement as 'independent_study' when the dossier classes it as verified_observation. No limits of date, place or customer fit are stated, for example that the data are US-only and the press piece is from 2006. The investigation never assesses the disconfirming or nuancing sources it retrieved: laerdal-ilcor-family-training ('may not take up training') and laerdal-acc-home-vs-public (lower in-home bystander CPR rates).\"}, \"seeking_challenge\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A13\", \"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\", \"A8\"], \"reason\": \"A13 searches against T1 and retrieves laerdal-ilcor-family-training, which notes that target groups 'may not take up training'. That is genuinely relevant contrary evidence. The findings are never reported or weighed: A14/A15 return to supportive evidence and the run stops at A16. No challenge search targets T2. Searches A2\u2013A8 are near-duplicate queries returning the same sources.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A16\"], \"reason\": \"No test was proposed before the run stopped at the turn limit (A16). The prediction text in A9/A10 is not a designed experiment. The stage was not reached and contributes zero to the all-case composite.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is not listed in packet.applicable_dimensions. scheduled_update is false and no update was delivered.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A16\"], \"reason\": \"A16: 'The investigation stopped before a recommendation (turn limit).' No position, next action or reversal condition was given. The stage was not reached and contributes zero to the all-case composite.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A16\"], \"reason\": \"The episode ended at the turn limit with no experiment design and no recommendation.\"}, {\"kind\": \"invented_observation\", \"event_ids\": [\"A1\"], \"reason\": \"The \u20ac20,000 test budget and 12-week timeline are stated as constraints but appear in no supplied source or case field.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"'Growing public awareness of cardiac arrest prevalence and bystander CPR success rates' is asserted as the behavioural driver without source support. The value-capture claims (subscription, premium pricing) are also unsupported by any source.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A11\", \"A12\", \"A14\", \"A15\"], \"reason\": \"A company product description and US cardiac-arrest prevalence data are each marked as 'supports' for consumer purchase motives in both theories. Neither source speaks to consumer demand or motive, so the support label overstates them even though the 'does not show' notes are present.\"}, {\"kind\": \"non_discriminating_test\", \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"The proposed purchase-intent test (kit versus generic health product) appears identically in both theories. Its outcome would not separate T1 from T2.\"}, {\"kind\": \"other\", \"event_ids\": [\"A14\", \"A15\"], \"reason\": \"Source class mislabelled: laerdal-aha-homes is classed verified_observation in the dossier but assessed as 'independent_study'.\"}, {\"kind\": \"other\", \"event_ids\": [\"A13\"], \"reason\": \"Contrary evidence was retrieved in the challenge search (laerdal-ilcor-family-training) but never assessed or reported.\"}], \"suitable_for_training\": false, \"screen_reason\": \"Rejected: the episode is incomplete, stopping at A16 before experiment design or a recommendation. It also contains an invented budget and timeline (A1), unsupported mechanism and support claims (A9\u2013A15), a non-discriminating shared prediction (A9/A10), and contrary evidence retrieved but ignored (A13). This is an automated-instrument judgement, not proof of commercial correctness.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 6587
+      },
+      "cache_creation_input_tokens": 6587,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 3944,
+      "output_tokens_details": {
+        "thinking_tokens": 1476
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.111831,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "09403912101c15b0fd09430d8d836fbe0ce97dfa3ece92fab13a087ed2d38900",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "59bec2697f468d13",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether to invest, based on demand, willingness to pay and value capture) from the suggested solution, and lists five alternatives, including partnering and licensing. That would normally reach rung 2. However, A1 states a '\u20ac20,000 and 12-week' test budget and timeline that appears nowhere in the case or sources. Under the rubric, an invented number caps this dimension at 1. A1 also does not notice that the sources already show a home consumer kit (CPR Anytime, Mini Anne, about $30, laerdal-nbc-mini-anne-2006 and laerdal-cpranytime-home). The premise that a consumer proposition would be 'beyond' existing products is therefore partly false, and A1 leaves it uncorrected."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 (A9) says who changes behaviour (households), why (perceived risk to family members) and how value is captured (DTC sales, subscription, premium pricing). The chain is incomplete for rung 3. The trigger, 'growing public awareness \u2026 of bystander CPR success rates', is asserted without source support. The capture step is asserted without addressing the evidence that the existing kit is a low-priced (~$30) product also distributed through AHA and funder donations (laerdal-nbc-mini-anne-2006, laerdal-nicu-kits-donated). Nothing explains why this manufacturer, rather than the distributor or donor, would capture a premium."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 and T2 share the same customer (individual households), product (home kit), channel (DTC), value capture and first prediction. They differ only in the stated purchase motive (risk reduction versus convenience). This is close to a rewording of one idea and implies no different product, customer or channel. The framed alternatives (B2B expansion, partnering, licensing, institutional/discharge distribution) are not developed as rival theories."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The predictions are observable: purchase intent compared with a generic health product, and the reasons respondents cite in a survey. The second prediction differs between T1 and T2. The first is identical in both theories, so it cannot discriminate between them. The assumptions are vague (e.g. 'Marketing can effectively communicate\u2026'). It is not stated what failure would put a theory in serious trouble, especially the value-capture claims (subscription, premium)."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14",
+          "A15"
+        ],
+        "reason": "Only agreeing evidence is cited. The same two excerpts are scored as 'supports' for both T1 and T2, so they discriminate nothing. The company product description (A11/A12) is counted as support for consumer purchase motives, although the 'does not show' notes partly concede this. A14/A15 relabel the AHA prevalence statement as 'independent_study' when the dossier classes it as verified_observation. No limits of date, place or customer fit are stated, for example that the data are US-only and the press piece is from 2006. The investigation never assesses the disconfirming or nuancing sources it retrieved: laerdal-ilcor-family-training ('may not take up training') and laerdal-acc-home-vs-public (lower in-home bystander CPR rates)."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A13",
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8"
+        ],
+        "reason": "A13 searches against T1 and retrieves laerdal-ilcor-family-training, which notes that target groups 'may not take up training'. That is genuinely relevant contrary evidence. The findings are never reported or weighed: A14/A15 return to supportive evidence and the run stops at A16. No challenge search targets T2. Searches A2\u2013A8 are near-duplicate queries returning the same sources."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "No test was proposed before the run stopped at the turn limit (A16). The prediction text in A9/A10 is not a designed experiment. The stage was not reached and contributes zero to the all-case composite."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is not listed in packet.applicable_dimensions. scheduled_update is false and no update was delivered."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "A16: 'The investigation stopped before a recommendation (turn limit).' No position, next action or reversal condition was given. The stage was not reached and contributes zero to the all-case composite."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "The episode ended at the turn limit with no experiment design and no recommendation."
+      },
+      {
+        "kind": "invented_observation",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The \u20ac20,000 test budget and 12-week timeline are stated as constraints but appear in no supplied source or case field."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "'Growing public awareness of cardiac arrest prevalence and bystander CPR success rates' is asserted as the behavioural driver without source support. The value-capture claims (subscription, premium pricing) are also unsupported by any source."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14",
+          "A15"
+        ],
+        "reason": "A company product description and US cardiac-arrest prevalence data are each marked as 'supports' for consumer purchase motives in both theories. Neither source speaks to consumer demand or motive, so the support label overstates them even though the 'does not show' notes are present."
+      },
+      {
+        "kind": "non_discriminating_test",
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The proposed purchase-intent test (kit versus generic health product) appears identically in both theories. Its outcome would not separate T1 from T2."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A14",
+          "A15"
+        ],
+        "reason": "Source class mislabelled: laerdal-aha-homes is classed verified_observation in the dossier but assessed as 'independent_study'."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A13"
+        ],
+        "reason": "Contrary evidence was retrieved in the challenge search (laerdal-ilcor-family-training) but never assessed or reported."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected: the episode is incomplete, stopping at A16 before experiment design or a recommendation. It also contains an invented budget and timeline (A1), unsupported mechanism and support claims (A9\u2013A15), a non-discriminating shared prediction (A9/A10), and contrary evidence retrieved but ignored (A13). This is an automated-instrument judgement, not proof of commercial correctness."
+  },
+  "seconds": 36.871
+}

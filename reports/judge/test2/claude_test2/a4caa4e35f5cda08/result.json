@@ -1,0 +1,142 @@
+{
+  "packet_id": "a4caa4e35f5cda08",
+  "packet_sha256": "7a0084b4f8426dfb35e472398275ac18e850482897f25588a0c1fabcc2132e40",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\":\"a4caa4e35f5cda08\",\"dimensions\":{\"problem_framing\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A1\"],\"reason\":\"A1 separates the objective (decide whether to invest, based on demand, positioning and feasibility) from candidate solutions. It lists four alternatives, including no expansion and licensing to consumer brands, and it flags that reach to individual buyers is unknown. It does not correct a premise or find a non-obvious constraint, and it leaves the 'specific use case' undefined (home office, small retail or travel). The \u20ac20,000 / 12-week budget in A1 cannot be traced to the case text in the packet, so its origin cannot be verified here. That does not raise the score.\"},\"causal_mechanism\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\"],\"reason\":\"T1 (A9) says who changes behaviour and why: home consumers move from generic appliances to premium ones because they associate the product with quality, convenience and status. It also names value capture: premium pricing and service revenue. The chain is generic and not tied to a specific use case. 'Repeat purchases' of a durable machine is asserted without explanation. Integrated grinders are offered as a differentiator, but frankecoffee-home-machines is a company claim that every Franke machine has one, so the dossier does not show grinders set Franke apart. This falls short of a full chain to value Franke captures.\"},\"distinct_theories\":{\"status\":\"scored\",\"score\":0,\"event_ids\":[\"A9\"],\"reason\":\"The theories event A9 contains only one theory (T1). No rival explanation is offered, such as a non-commercial or office use case suggested by frankecoffee-a300-noncommercial, or a licensing theory matching alternative 4 in A1.\"},\"assumptions_predictions\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\"],\"reason\":\"The assumptions are stated, and the predictions are observable: purchase intent, satisfaction or recommendation, and repeat purchase rate. The main prediction compares a premium-priced Franke machine with a low-priced comparable machine. That comparison mixes brand with price and would not cleanly threaten T1 if it failed. The repeat-purchase prediction is ill-defined for a durable good. The predictions are observable, but failure would not clearly put T1 in trouble.\"},\"evidence_judgement\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A2\",\"A3\",\"A4\",\"A5\",\"A6\",\"A7\",\"A8\",\"A10\"],\"reason\":\"Sources were retrieved in A2\u2013A8, but no assessment event occurs before the run stops at A10. Source classes and limits are never evaluated. For example, frankecoffee-delonghi-premiumisation is about De'Longhi, not Franke, and frankecoffee-linea-micra is about La Marzocco.\"},\"seeking_challenge\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A2\",\"A3\",\"A4\",\"A5\",\"A6\",\"A7\",\"A8\",\"A9\",\"A10\"],\"reason\":\"All searches (A2\u2013A8) happen before T1 is formed in A9 and are near-duplicate queries about Franke home use. No search against T1 occurs before the stop at A10.\"},\"experiment_design\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A10\"],\"reason\":\"No test is proposed or declined before the turn limit stop at A10.\"},\"revision\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A10\"],\"reason\":\"Revision is in applicable_dimensions and an update was scheduled, but update_delivered is false and the run stopped at A10.\"},\"recommendation\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A10\"],\"reason\":\"A10 shows the investigation stopped before any recommendation because of the turn limit.\"}},\"red_flags\":[{\"kind\":\"incomplete\",\"event_ids\":[\"A10\"],\"reason\":\"The episode ends at the turn limit with no recommendation, no evidence assessment, no test and no revision.\"}],\"suitable_for_training\":false,\"screen_reason\":\"Rejected as incomplete. A10 shows the run stopped before a recommendation, and evidence judgement, challenge, experiment, revision and recommendation are all not reached. These unreached stages contribute zero to the all-case composite. Among the reached stages, only one theory was produced (A9), and its predictions do not cleanly discriminate.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4845
+      },
+      "cache_creation_input_tokens": 4845,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 2620,
+      "output_tokens_details": {
+        "thinking_tokens": 1155
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.076641,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "8c0c8b2279ed052db4ff97098fadf07d71d31d4dc21e1208dbfd83c4965bb4f5",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "a4caa4e35f5cda08",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (decide whether to invest, based on demand, positioning and feasibility) from candidate solutions. It lists four alternatives, including no expansion and licensing to consumer brands, and it flags that reach to individual buyers is unknown. It does not correct a premise or find a non-obvious constraint, and it leaves the 'specific use case' undefined (home office, small retail or travel). The \u20ac20,000 / 12-week budget in A1 cannot be traced to the case text in the packet, so its origin cannot be verified here. That does not raise the score."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "T1 (A9) says who changes behaviour and why: home consumers move from generic appliances to premium ones because they associate the product with quality, convenience and status. It also names value capture: premium pricing and service revenue. The chain is generic and not tied to a specific use case. 'Repeat purchases' of a durable machine is asserted without explanation. Integrated grinders are offered as a differentiator, but frankecoffee-home-machines is a company claim that every Franke machine has one, so the dossier does not show grinders set Franke apart. This falls short of a full chain to value Franke captures."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "The theories event A9 contains only one theory (T1). No rival explanation is offered, such as a non-commercial or office use case suggested by frankecoffee-a300-noncommercial, or a licensing theory matching alternative 4 in A1."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "The assumptions are stated, and the predictions are observable: purchase intent, satisfaction or recommendation, and repeat purchase rate. The main prediction compares a premium-priced Franke machine with a low-priced comparable machine. That comparison mixes brand with price and would not cleanly threaten T1 if it failed. The repeat-purchase prediction is ill-defined for a durable good. The predictions are observable, but failure would not clearly put T1 in trouble."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8",
+          "A10"
+        ],
+        "reason": "Sources were retrieved in A2\u2013A8, but no assessment event occurs before the run stops at A10. Source classes and limits are never evaluated. For example, frankecoffee-delonghi-premiumisation is about De'Longhi, not Franke, and frankecoffee-linea-micra is about La Marzocco."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8",
+          "A9",
+          "A10"
+        ],
+        "reason": "All searches (A2\u2013A8) happen before T1 is formed in A9 and are near-duplicate queries about Franke home use. No search against T1 occurs before the stop at A10."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A10"
+        ],
+        "reason": "No test is proposed or declined before the turn limit stop at A10."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A10"
+        ],
+        "reason": "Revision is in applicable_dimensions and an update was scheduled, but update_delivered is false and the run stopped at A10."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A10"
+        ],
+        "reason": "A10 shows the investigation stopped before any recommendation because of the turn limit."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A10"
+        ],
+        "reason": "The episode ends at the turn limit with no recommendation, no evidence assessment, no test and no revision."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected as incomplete. A10 shows the run stopped before a recommendation, and evidence judgement, challenge, experiment, revision and recommendation are all not reached. These unreached stages contribute zero to the all-case composite. Among the reached stages, only one theory was produced (A9), and its predictions do not cleanly discriminate."
+  },
+  "seconds": 25.913
+}

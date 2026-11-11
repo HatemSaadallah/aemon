@@ -32,12 +32,16 @@ export interface Source {
 }
 
 export interface Final {
+  draft?: boolean;
+  stopped_because?: string;
+  draft_source?: string;
   recommendation?: string;
   next_action?: string;
   favoured_theory?: string;
   target_customer?: string;
   value_proposition?: string;
   uncertainty?: string;
+  company_position?: string;
   would_change_if?: unknown[];
   [key: string]: unknown;
 }
@@ -63,6 +67,8 @@ export interface StoppingPoint {
 
 export interface RunRecord {
   case: string;
+  answer_flags?: { check: string; label: string; detail?: string }[];
+  finish_guard?: boolean;
   company: string;
   question?: string;
   calls: Call[];
@@ -76,9 +82,13 @@ export interface RunRecord {
   assessments?: Assessment[];
   tests?: Record<string, Record<string, unknown>>;
   test_declined?: { reason?: string } | null;
-  revisions?: { theory_id: string; status: string; reason?: string }[];
+  revisions?: { theory_id: string; status: string; reason?: string; evidence_ids?: string[]; new_claim?: string }[];
+  challenge_searches?: { theory_id: string; query: string; found?: string[] }[];
   frame?: { objective?: string; alternatives?: string[]; constraints?: string[] };
   memory_used?: string[];
+  depth?: string;
+  resumed_after_turn?: number;
+  continued_after_turn?: number;
 }
 
 export interface Workflow {
@@ -100,6 +110,7 @@ export interface TryStatus {
   adapter_loaded: boolean;
   model: { id: string; label: string; available: boolean };
   busy: boolean;
+  depths?: { id: string; label: string; searches: number; turns: number }[];
 }
 
 export interface RunSummary {
@@ -110,6 +121,7 @@ export interface RunSummary {
   stage_at_stop: string | null;
   recommendation: string | null;
   position: string | null;
+  draft?: boolean;
 }
 
 export interface HistoryEntry {
@@ -136,6 +148,7 @@ export interface TryRun {
   status: 'running' | 'finished' | 'failed' | string;
   record: RunRecord | null;
   error: string | null;
+  wrapping?: boolean;
   cached_at?: number | null;
   identity?: Record<string, unknown> | null;
 }
@@ -211,6 +224,7 @@ export interface BeliefRow { id: string; claim: string; before: string | null; a
 export interface EvidenceRow { id: string; supports: number; contradicts: number; neutral: number; independent_supports: number; independent_contradicts: number }
 export interface TestNumbers { declined: boolean; reason?: string; name?: string; cost?: number; budget?: number; weeks?: number; max_weeks?: number; people?: number; predictions?: Record<string, string>; rule?: string; method?: string; measure?: string; sample?: string }
 export interface Metrics {
+  confidence: { level: 'High' | 'Moderate' | 'Low'; score: number; out_of: number; checks: { label: string; passed: boolean }[]; action: string; why: string; rule: string } | null;
   finished: boolean;
   beliefs: BeliefRow[];
   scale: string[];
@@ -222,7 +236,28 @@ export interface Metrics {
 }
 export interface Assessment { theory_id: string; evidence_id: string; direction: 'supports' | 'contradicts' | 'neutral'; quote?: string; does_not_show?: string; class?: string }
 export interface FollowUpItem { id: string; question: string; answer: string | null; sources: string[]; status: 'answering' | 'answered' | 'not_in_record' | 'failed' | string; created: number }
-export interface RunDetail { record: RunRecord; metrics: Metrics; suggestions: string[]; followups: FollowUpItem[]; memory_used: string[] }
+export interface RunDetail { record: RunRecord; metrics: Metrics; suggestions: string[]; followups: FollowUpItem[]; memory_used: string[]; settings?: { depth?: string; live?: boolean; context?: string | null; asked_online?: boolean; attachments?: { id: string; name: string; kind: string; url?: string; passages: number; words: number }[] } }
 export interface MemoryNote { id: string; text: string; project: string | null; workspace: string | null; created: number }
 export interface MemoryState { enabled: boolean; global: MemoryNote[]; company: MemoryNote[]; project: MemoryNote[]; limit: number }
-export interface MindNode { id: string; kind: 'company' | 'project' | 'investigation' | 'explanation' | 'evidence'; label: string; detail?: string; status?: string; belief?: string | null; favoured?: boolean; direction?: string; supports?: number; contradicts?: number; pinned?: boolean; started?: number | null; children: MindNode[] }
+
+// Company directory and profiles (app/companies.py). Facts are curated from the company's dossier and cite it.
+export interface Asset { illustrative?: string; file: string; source_url: string; author?: string; licence?: string; licence_url?: string | null; trademark?: boolean; retrieved: string }
+export interface Cite { id: string; title: string; date?: string; origin: string; url?: string | null }
+export interface Fact { text: string; sources: Cite[]; basis?: 'company' | 'independent' }
+export interface CompanySummary { id: string; name: string; legal_name: string; tagline: string | null; industry: string | null; headquarters: string | null; case_year: number | null; accent: string; logo?: Asset | null; banner?: Asset | null; sources: number; independent_sources: number; investigations: number; profiled: boolean }
+export interface LibrarySource { id: string; title: string; publisher: string | null; url: string | null; date: string | null; origin: string; kind: string | null; about: string | null; excerpt: string; limitation: string | null; does_not_establish: string | null; after_case: boolean; existing_offering: boolean }
+export interface CompanyProfile extends Omit<CompanySummary, 'investigations'> {
+  brief_description: string;
+  facts: Partial<Record<'industry' | 'headquarters' | 'founded' | 'parent' | 'website', Fact>>;
+  case_context: { set_in: string; note: string | null } | null;
+  about: Fact[]; customers: Fact[]; markets: Fact[]; positioning: Fact[];
+  products: { name: string; description: string; customers?: string | null; sources: Cite[] }[];
+  timeline: { date: string; event: string; sources: Cite[] }[];
+  context_companies: { name: string; relation_in_records: string; sources: Cite[] }[];
+  library: LibrarySource[];
+  investigations: HistoryEntry[];
+  questions: string[];
+  scenarios: { case: string; label: string; question: string }[];
+  related: CompanySummary[];
+  others: CompanySummary[];
+}

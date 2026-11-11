@@ -1,0 +1,312 @@
+{
+ "summary": {
+  "verified": 61
+ },
+ "results": [
+  {
+   "id": "kingspan-ar2025-segment",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-ar2025-footprint",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-ar2024-rigid",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-homeowner-hub",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-homeowner-diy",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-oss-ireland",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-oss-older-homes",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-direct-2011",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-rte-earners",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-rte-residential",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-grenfell-k15",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-nao-eco",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-nao-causes",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-cibse-remediation",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-seai-2024",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-ie-oss-count",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-ie-applications",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-est-rafters",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-est-topup-saving",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-bq-marketplace",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-bq-sensit",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kingspan-cotality-intent",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-investor-positioning",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-fy25-chemical-service",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-fy25-touchntuff",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-fy25-household-exit",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-ar25-discontinued",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-ar25-exit-size",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-fool-sw-size",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-fool-sw-sale",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-erj-core-focus",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-erj-marigold-sale",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-grocer-partnership",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-morningstar-exit",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-fool-fy26-segments",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-fool-fy26-simplify",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-iga-vileda-listing",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-productreview-decline",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-werkado-household-use",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-nhs-eczema-gloves",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-fmt-oversupply",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ansell-star-china-supply",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-ir-overview",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-ir-geography",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-profile-food-retail",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-ar25-channels",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-ar25-ohaus",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-ar25-price-premium",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-q3-2026-sales",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-atk-tolerance",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-atk-certified-rival",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-atk-by-weight",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-atk-precision-need",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-atk-precision-winner",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-techgearlab-small-loads",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-gearpatrol-price",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-dcn-acaia",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-marketintelo-coffee",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-nca-home-coffee",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-nhs-carb-counting",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "mettler-dinvests-switching",
+   "status": "verified",
+   "detail": "exact"
+  }
+ ]
+}

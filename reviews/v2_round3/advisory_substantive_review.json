@@ -1,0 +1,847 @@
+[
+ {
+  "batch": "targeted5w",
+  "n": 1,
+  "case": "festool-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "borderline",
+  "teaches": "customer_observation labelled correctly from forum post",
+  "problems": [
+   "'contradicts' is a stretch: feeling overpaid does not refute paying for prestige",
+   "quote not specific to hobbyists"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 2,
+  "case": "gore-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (should be market_fact, not independent_study)",
+   "source dated after the case date (company history ~2004, hindsight 'eventually')",
+   "medical source weighed against outdoor theory is trivially neutral"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 3,
+  "case": "aspen-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2022 review for 2009 case)",
+   "source is about clothing, not home insulation",
+   "reasoning text truncated mid-sentence",
+   "reasoning does not match the call: why_next says four assessments, call makes one"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 4,
+  "case": "leitz-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (should be market_fact, not independent_study)",
+   "direction overstated: source does not bear on the theory's mechanism: lens coverage does not contradict exposure-testing use",
+   "reasoning misreads the quote (lens designed for cine format, not camera unfit for cinema)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 5,
+  "case": "illumina-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "borderline",
+  "teaches": "regulation labelled correctly; regulatory access is not demand",
+  "problems": [
+   "learned cites Helix press release dated 2015-08-18, possibly after the mid-2015 case date",
+   "uncertain says it supports an assumption while direction is neutral"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 6,
+  "case": "sensirion-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "reasoning does not match the call: labelled company_assertion but why_next calls it independent of Sensirion",
+   "segment share of Sensirion sales presented as market size",
+   "T1 and T2 nearly identical, cannot be separated"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 7,
+  "case": "cree-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2013 Energy Star event for late-2012 case)",
+   "evidence kind mislabelled (Wikipedia fact, not independent_study)",
+   "why_next claims a non-price fact helps test price barrier"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 8,
+  "case": "carrier-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (should be market_fact, not independent_study)",
+   "source dated after the case date (learned cites a 1938 article for a 1928 case)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 9,
+  "case": "reynolds-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (company intent reported by third party, not independent_study)",
+   "direction overstated: source does not bear on the theory's mechanism: company promotion intent labelled as support for consumer adoption"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 10,
+  "case": "martek-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (Wikipedia sales figure is market_fact)",
+   "source dated after the case date (martek-ni10-99pct 2010 in read set)"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 11,
+  "case": "hra-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (EMA statement is regulation/market_fact, not independent_study)",
+   "source dated after the case date (Nov 2014 sources for early-2014 case)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 12,
+  "case": "cotral-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "borderline",
+  "teaches": "company_assertion labelled neutral for a B2B process claim",
+  "problems": [
+   "low teaching value",
+   "why_next infers sales model limits from one sentence"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 13,
+  "case": "superior-base",
+  "call": "assess_evidence",
+  "verdict": "borderline",
+  "teaches": "neutral call on a channel fact; notes reach gap without overclaiming",
+  "problems": [
+   "company_assertion vs market_fact label uncertain for news narration"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 14,
+  "case": "superior-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (superior-base n13: same source, same quote)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 15,
+  "case": "oxo-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (museum archive history, not independent_study)",
+   "direction overstated: source does not bear on the theory's mechanism: design intent for everyone does not contradict grip-strength demand"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 16,
+  "case": "oxo-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (oxo-base n15)",
+   "evidence kind mislabelled",
+   "direction overstated: source does not bear on the theory's mechanism"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 17,
+  "case": "embrace-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "reasoning does not match the call: labelled company_assertion but called independent observation",
+   "reasoning text truncated mid-sentence",
+   "quote is about a different product (swaddles)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 18,
+  "case": "sigvaris-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (market report is market_fact)",
+   "direction overstated: source does not bear on the theory's mechanism: medical-grade price for uninsured does not bear on non-medical buyers",
+   "reasoning attributes a 'low price sensitivity' assumption T1 does not state"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 19,
+  "case": "andis-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "direction overstated: source does not bear on the theory's mechanism: current low list prices do not contradict willingness to pay a premium"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 20,
+  "case": "arri-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "reasoning does not match the call: labelled company_assertion but called independent of ARRI",
+   "T1 and T2 nearly identical, cannot be separated",
+   "$55,000 cinema camera irrelevant to creators"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 21,
+  "case": "nalgene-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "present-day company web page used for a mid-1970s case",
+   "uncertain field holds a plan, not an uncertainty",
+   "speculative inference about limits on consumer pivot"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 22,
+  "case": "nalgene-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "hindsight outcome (later consumer division success) used as support",
+   "source dated after the case date",
+   "evidence kind mislabelled",
+   "reasoning text truncated mid-sentence (does_not_show)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 23,
+  "case": "grundens-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "reasoning text truncated mid-sentence (learned spills into uncertain)",
+   "evidence kind mislabelled",
+   "undated participation figure, may postdate 2014"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 24,
+  "case": "koppert-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "'contradicts' although does_not_show admits the ban may not cover biologicals",
+   "French law described as an EU ban",
+   "invents a regulatory premise T1 does not contain"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 25,
+  "case": "statitrol-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "misreads SmokeGard (Statitrol's own product) as a competitor",
+   "evidence kind mislabelled (prize review history is market_fact)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 26,
+  "case": "blackdecker-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (1981 NASA Spinoff for 1977 case)",
+   "reasoning falsely calls it a pre-1977 account",
+   "evidence kind mislabelled"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 27,
+  "case": "diatek-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (JPL third-party account is market_fact, not company_assertion)",
+   "T1 and T2 nearly identical, cannot be separated"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 28,
+  "case": "kes-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "current EPA page (accessed 2026) used for a 2002 case",
+   "2009 and 2013 sources in the read set",
+   "'neutral' while the quote undercuts the technology claim"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 29,
+  "case": "trdc-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "present-day NASA disclaimer used for a 1990 case",
+   "evidence kind mislabelled (policy statement, not independent_study)",
+   "trivially irrelevant"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 30,
+  "case": "qdi-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "learned relies on 2022 sources and a Sep-2003 FDA entry for an early-2003 case"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 31,
+  "case": "recaro-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2019 study for late-2017 case)",
+   "study is of a generic console chair, not Recaro"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 32,
+  "case": "msa-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (July 2011 release, 2012 DIY data for early-2011 case)",
+   "distribution presence labelled as support for a motive claim"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 33,
+  "case": "sensirion-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2024 study for 2021 case)",
+   "T1 and T2 nearly identical, cannot be separated"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 34,
+  "case": "netafim-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "direction overstated: source does not bear on the theory's mechanism: product variants labelled as support for 'medical necessity for plants'",
+   "theory itself incoherent"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 35,
+  "case": "sma-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2016 article for April-2013 case)",
+   "forecast by a research firm spokesperson labelled independent_study",
+   "reasoning text truncated mid-sentence"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 36,
+  "case": "a123-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "hindsight Wikipedia outcome for early-2010 case",
+   "reasoning does not match the call: why_next discusses adding a third theory and another source"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 37,
+  "case": "reynolds-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (reynolds-base n9)",
+   "falsely calls a 2011 article a contemporary source compiled about 1997",
+   "evidence kind mislabelled",
+   "direction overstated: source does not bear on the theory's mechanism"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 38,
+  "case": "perrigo-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (company-history 'observers contended' is market_fact)",
+   "fabricated '15-20%' premium and a moderate-premium assumption T1 does not state",
+   "uncertain field holds a plan"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 39,
+  "case": "cotral-new-evidence-looks",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "direction overstated: source does not bear on the theory's mechanism: company capability claim labelled as support for adoption",
+   "near-duplicate of another example (cotral n40/n41 same source)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 40,
+  "case": "cotral-new-evidence-comfort",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "reasoning text truncated mid-sentence (learned cut, uncertain starts lowercase)",
+   "near-duplicate of another example (cotral n39)"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 41,
+  "case": "cotral-new-evidence-favours-looks",
+  "call": "assess_evidence",
+  "verdict": "borderline",
+  "teaches": "company capability claim correctly kept neutral",
+  "problems": [
+   "low teaching value",
+   "why_next 'without introducing supportive bias' is a poor rationale"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 42,
+  "case": "andis-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (andis-base n19)",
+   "direction overstated: source does not bear on the theory's mechanism"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 43,
+  "case": "orasure-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2012 retail news for late-2005 case)",
+   "reasoning does not match the call: why_next hedges between two sources and plans searches"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 44,
+  "case": "resmed-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (Oct-2014 S+ launch for mid-2014 case)",
+   "company product claim labelled as support for demand",
+   "reasoning does not match the call: why_next talks of assessing two sources"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 45,
+  "case": "cree-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (cree-base n7)",
+   "source dated after the case date",
+   "reasoning text truncated mid-sentence"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 46,
+  "case": "danfoss-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2017 market forecast for late-2015 case)",
+   "evidence kind mislabelled (market forecast is market_fact)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 47,
+  "case": "cotral-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (cotral n41 same call)",
+   "why_next wrongly says ctl-filter is less relevant"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 48,
+  "case": "zarges-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "keep",
+  "teaches": "formal product testing labelled independent_study and kept neutral on brand demand",
+  "problems": [
+   "slight speculation that ZARGES may be among failed ladders (hedged)"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 49,
+  "case": "technogym-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (search-trend analysis is market_fact)",
+   "direction overstated: source does not bear on the theory's mechanism: category search downtrend does not contradict the premium-lifestyle mechanism"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 50,
+  "case": "technogym-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (technogym-base n49)",
+   "evidence kind mislabelled",
+   "direction overstated: source does not bear on the theory's mechanism"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 51,
+  "case": "koppert-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (a law is regulation, not independent_study)",
+   "'contradicts' although applicability to biologicals is unknown"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 52,
+  "case": "trdc-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2008 study for 1990 case)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 53,
+  "case": "tupper-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled",
+   "misreads premiums (given away by other firms) as consumers buying plastic goods",
+   "uncertain 'None yet.'"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 54,
+  "case": "flir-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (price is 'says the company', company_assertion)",
+   "source dated after the case date (2014 sources for mid-2013 case)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 55,
+  "case": "recaro-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (recaro n31)",
+   "source dated after the case date",
+   "reasoning does not match the call: learned plans a search and a third theory"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 56,
+  "case": "stihl-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (competition-authority ruling is regulation)",
+   "source dated after the case date (2019 sources for Nov-2018 case)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 57,
+  "case": "maglite-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "direction overstated: source does not bear on the theory's mechanism: cheaper manufacture does not contradict status perception",
+   "reasoning does not match the call: calls the company's own patent an independent document"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 58,
+  "case": "maglite-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "evidence kind mislabelled (company-history compilation is market_fact)",
+   "company design intent says little about T1"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 59,
+  "case": "osram-new-evidence-irrelevant",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated after the case date (2016 and mid-2015 sources for early-2015 case)",
+   "reasoning does not match the call: why_next is about adding a third theory"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5w",
+  "n": 60,
+  "case": "martek-base",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "near-duplicate of another example (martek n10)",
+   "evidence kind mislabelled",
+   "source dated after the case date"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5e",
+  "n": 1,
+  "case": "carrier-base",
+  "call": "propose_test",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "euros in a 1928 case",
+   "fabricated $500 price and '1928 census' (no 1928 census)"
+  ],
+  "confidence": "high"
+ },
+ {
+  "batch": "targeted5e",
+  "n": 2,
+  "case": "festool-new-evidence-irrelevant",
+  "call": "propose_test",
+  "verdict": "borderline",
+  "teaches": "price-and-channel arms with deposit commitment and opposing predictions",
+  "problems": [
+   "arms confound price, channel and positioning",
+   "assignment unclear (choice experiment vs randomized versions)",
+   "invented €50-per-participant cost",
+   "decision-rule bands overlap / leave gaps"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "batch": "targeted5e",
+  "n": 3,
+  "case": "arri-new-evidence-irrelevant",
+  "call": "propose_test",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "T1 and T2 nearly identical, cannot be separated",
+   "fabricated €2,500 camera 'comparable to ALEXA 35'",
+   "arm differs by a software subscription, not the smartphone partnership",
+   "decision rule leads straight to developing a product line"
+  ],
+  "confidence": "high"
+ }
+]

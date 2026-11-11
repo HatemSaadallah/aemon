@@ -1,0 +1,137 @@
+{
+  "packet_id": "b5121313503030c6",
+  "packet_sha256": "d07f9afab56894852d165da55f970e59e9333984921a5dce70180c7796c4ab52",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\n  \"packet_id\": \"b5121313503030c6\",\n  \"dimensions\": {\n    \"problem_framing\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A1\"],\n      \"reason\": \"A1 separates the objective from the suggested solution. The objective is to decide whether to invest, based on evidence of demand, willingness to pay and value capture. A1 also lists real alternatives: no expansion, a change of route to buyers, a different customer group, and an undifferentiated adjacent product. It records that reach to individual buyers is unknown. It does not reach rung 3. It does not correct a premise or surface a non-obvious constraint, for example that the case's commercial product evidence (racks per hour, configurable UC) may not transfer to households. The \\u20ac20,000 budget and 12-week limit are not in the supplied case text. They are treated here as task constraints, not as observations.\"\n    },\n    \"causal_mechanism\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A8\"],\n      \"reason\": \"No theory or mechanism was stated before the run stopped at A8.\"\n    },\n    \"distinct_theories\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A8\"],\n      \"reason\": \"No theories were generated before the stop at A8.\"\n    },\n    \"assumptions_predictions\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A8\"],\n      \"reason\": \"No assumptions or predictions were stated before the stop at A8.\"\n    },\n    \"evidence_judgement\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\", \"A8\"],\n      \"reason\": \"Searches A2 to A7 returned sources, but none were assessed. For example, winterhalter-uc-configurable is a company_claim, and the claim of household relevance in winterhalter-eu-formats was never tested before the stop at A8.\"\n    },\n    \"seeking_challenge\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\", \"A8\"],\n      \"reason\": \"There was no favoured theory to challenge. Searches A2 to A7 were repetitive 'consumer' queries that ended in errors at A8, with no evaluation of contrary evidence.\"\n    },\n    \"experiment_design\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A8\"],\n      \"reason\": \"No test was proposed or declined before the stop at A8.\"\n    },\n    \"revision\": {\n      \"status\": \"not_applicable\",\n      \"score\": null,\n      \"event_ids\": [],\n      \"reason\": \"Revision is excluded from packet.applicable_dimensions. No update was scheduled or delivered.\"\n    },\n    \"recommendation\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A8\"],\n      \"reason\": \"A8 states that the investigation stopped before a recommendation because of repeated errors.\"\n    }\n  },\n  \"red_flags\": [\n    {\n      \"kind\": \"incomplete\",\n      \"event_ids\": [\"A8\"],\n      \"reason\": \"The episode ended without a completed recommendation. Only framing (A1) and repetitive searches (A2 to A7) occurred.\"\n    }\n  ],\n  \"suitable_for_training\": false,\n  \"screen_reason\": \"The episode is incomplete. It stopped at A8 after repeated errors, with no theories, evidence assessment, test or recommendation. Incomplete episodes are rejected regardless of the adequate framing in A1.\"\n}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4093
+      },
+      "cache_creation_input_tokens": 4093,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1764,
+      "output_tokens_details": {
+        "thinking_tokens": 533
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.055761,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "d409563f4baf62678bbf1aa74e506de1c7f1037b722291dcb67b7166a1e776e3",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "b5121313503030c6",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective from the suggested solution. The objective is to decide whether to invest, based on evidence of demand, willingness to pay and value capture. A1 also lists real alternatives: no expansion, a change of route to buyers, a different customer group, and an undifferentiated adjacent product. It records that reach to individual buyers is unknown. It does not reach rung 3. It does not correct a premise or surface a non-obvious constraint, for example that the case's commercial product evidence (racks per hour, configurable UC) may not transfer to households. The \u20ac20,000 budget and 12-week limit are not in the supplied case text. They are treated here as task constraints, not as observations."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No theory or mechanism was stated before the run stopped at A8."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No theories were generated before the stop at A8."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No assumptions or predictions were stated before the stop at A8."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8"
+        ],
+        "reason": "Searches A2 to A7 returned sources, but none were assessed. For example, winterhalter-uc-configurable is a company_claim, and the claim of household relevance in winterhalter-eu-formats was never tested before the stop at A8."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8"
+        ],
+        "reason": "There was no favoured theory to challenge. Searches A2 to A7 were repetitive 'consumer' queries that ended in errors at A8, with no evaluation of contrary evidence."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No test was proposed or declined before the stop at A8."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions. No update was scheduled or delivered."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "A8 states that the investigation stopped before a recommendation because of repeated errors."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "The episode ended without a completed recommendation. Only framing (A1) and repetitive searches (A2 to A7) occurred."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete. It stopped at A8 after repeated errors, with no theories, evidence assessment, test or recommendation. Incomplete episodes are rejected regardless of the adequate framing in A1."
+  },
+  "seconds": 16.653
+}

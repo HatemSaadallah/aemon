@@ -1,0 +1,23 @@
+{"case": "cotral-base", "attempt": 11, "stop": "finished", "turns": 23, "passed": 12, "failed": ["testable_predictions", "evidence_classes"]}
+{"case": "cotral-base", "attempt": 10, "stop": "finished", "turns": 37, "passed": 10, "failed": ["testable_predictions", "evidence_classes", "experiment", "no_invented_numbers"]}
+{"case": "portwest-base", "attempt": 10, "stop": "finished", "turns": 23, "passed": 11, "failed": ["testable_predictions", "evidence_classes", "experiment", "no_invented_numbers"]}
+{"case": "portwest-base", "attempt": 11, "stop": "finished", "turns": 29, "passed": 11, "failed": ["testable_predictions", "evidence_kinds", "experiment", "no_invented_numbers"]}
+{"case": "portwest-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 26, "passed": 15, "failed": ["evidence_kinds", "experiment"]}
+{"case": "portwest-new-evidence-irrelevant", "attempt": 11, "stop": "finished", "turns": 29, "passed": 14, "failed": ["evidence_classes", "experiment", "no_invented_numbers"]}
+{"case": "arri-base", "attempt": 10, "stop": "repeated errors", "turns": 30, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_classes", "evidence_kinds"]}
+{"case": "arri-base", "attempt": 11, "stop": "repeated errors", "turns": 28, "passed": 8, "failed": ["finished", "evidence_classes"]}
+{"case": "grundens-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 29, "passed": 14, "failed": ["evidence_kinds", "existing_offering", "no_invented_numbers"]}
+{"case": "grundens-new-evidence-irrelevant", "attempt": 11, "stop": "repeated errors", "turns": 26, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_kinds"]}
+{"case": "sealedair-base", "attempt": 10, "stop": "repeated errors", "turns": 30, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_kinds"]}
+{"case": "sealedair-base", "attempt": 11, "stop": "finished", "turns": 28, "passed": 14, "failed": ["testable_predictions"]}
+{"case": "gore-base", "attempt": 10, "stop": "repeated errors", "turns": 27, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_kinds"]}
+{"case": "gore-base", "attempt": 11, "stop": "finished", "turns": 25, "passed": 14, "failed": ["testable_predictions"]}
+{"case": "leitz-base", "attempt": 10, "stop": "finished", "turns": 38, "passed": 13, "failed": ["testable_predictions", "no_invented_numbers"]}
+{"case": "leitz-base", "attempt": 11, "stop": "repeated errors", "turns": 27, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_classes"]}
+{"case": "illumina-new-evidence-irrelevant", "attempt": 11, "stop": "repeated errors", "turns": 26, "passed": 9, "failed": ["finished"]}
+{"case": "illumina-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 40, "passed": 14, "failed": ["evidence_kinds", "experiment", "existing_offering"]}
+{"case": "recaro-base", "attempt": 10, "stop": "finished", "turns": 33, "passed": 14, "failed": ["no_invented_numbers"]}
+{"case": "recaro-base", "attempt": 11, "stop": "repeated errors", "turns": 30, "passed": 8, "failed": ["finished", "testable_predictions"]}
+{"case": "intel-base", "attempt": 11, "stop": "repeated errors", "turns": 25, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_kinds"]}
+{"case": "intel-base", "attempt": 10, "stop": "repeated errors", "turns": 24, "passed": 7, "failed": ["finished", "causal_form", "testable_predictions"]}
+{"case": "cree-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 33, "passed": 15, "failed": ["evidence_classes", "no_invented_numbers"]}

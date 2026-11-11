@@ -1,12 +1,22 @@
 [project]
-name = "strategy-agent"
+name = "aemon"
 version = "0.1.0"
 description = "A theory-driven strategic investigation agent, distilled into Tiny Aya with AgentTune and evaluated with AuditKIT"
 requires-python = ">=3.12"
-dependencies = ["pydantic>=2.14"]
+# Lower bounds are the versions the frozen runs used; requirements.lock.txt pins the exact set.
+dependencies = [
+  "pydantic>=2.14",
+  "jsonschema>=4.26.0",     # the hosted teacher checks tool arguments against the schema
+  "tenacity>=9.2.1",        # the hosted client's retry
+  "python-dotenv>=1.2.4",   # keys from .env (never printed)
+  "scipy>=1.18.1",          # Spearman in the judge report
+  "tabulate>=0.10.0",       # the cluster helper's tables
+]
 
 [project.optional-dependencies]
 dev = ["ruff>=0.17", "pyright>=1.1.414"]
+curation = ["curatorkit==0.1.25", "detect-secrets==1.5.0"]  # rows/curate.py (CURATE=1)
+tracking = ["mlflow==3.18.0"]  # ops/mlflow
 
 [build-system]
 requires = ["setuptools>=68"]
@@ -35,3 +45,6 @@ pythonVersion = "3.12"
 venvPath = "."
 venv = ".venv"
 extraPaths = ["src", "app"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

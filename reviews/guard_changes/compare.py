@@ -13,7 +13,7 @@ from types import SimpleNamespace
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from strategy import checks  # noqa: E402
-from strategy_agent.env.cases import load_cases  # noqa: E402
+from aemon.environment.cases import load_cases  # noqa: E402
 
 RUNS = ROOT / 'tooling' / 'real_model' / 'strategy'
 REPORTS = {'open arm': 'staged/base_q4_open.json', 'first controller': 'staged/base_q4_structured.json', 'corrected controller': 'staged/base_q4_structured_v3.json',

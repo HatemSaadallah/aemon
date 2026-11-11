@@ -1,0 +1,278 @@
+{
+ "summary": {
+  "verified": 50,
+  "fetch_failed": 4
+ },
+ "results": [
+  {
+   "id": "tennant-ir-overview",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-10q-customers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-10q-nonresidential",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-10q-channel-split",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-q3-2025-results",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-t360-midtier",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-cs5-small-spaces",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-nilfisk-consumer-growth",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-nilfisk-consumer-share",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-nilfisk-q2-consumer",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-karcher-2023-split",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-karcher-2025-market",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-irobot-competition",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-irobot-valuation",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-tineco-wetdry",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-sharkninja-extractor",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-rugdoctor-retail",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-rugdoctor-about",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "tennant-aci-spring-cleaning",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-ar25-business",
+   "status": "verified",
+   "detail": "exact apart from punctuation"
+  },
+  {
+   "id": "belimo-ar25-large-commercial",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-ar25-oem-integrators",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-2025-sales",
+   "status": "fetch_failed",
+   "detail": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "belimo-2025-datacenter",
+   "status": "fetch_failed",
+   "detail": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "belimo-retrofit",
+   "status": "fetch_failed",
+   "detail": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "belimo-pres-channels",
+   "status": "fetch_failed",
+   "detail": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "belimo-achr-residential-2015",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-resideo-pro-installed",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-resideo-entry-thermostats",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-danfoss-ally",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-tado-techcrunch",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-tado-profitable",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-nest-europe",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-airthings-consumer-decline",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-airthings-q2-sentiment",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-eia-programmable",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "belimo-energystar-smart",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-about-community",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-boilerplate",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-group-27-countries",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-cpranytime-home",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-cpranytime-intended",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-mini-manikins",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-military",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-aha-homes",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-aha-confidence",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-acc-home-vs-public",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-ilcor-family-training",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-nbc-mini-anne-2006",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-mnt-video-only",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-bhf-revivr",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-aed-com-listing",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-nicu-kits-donated",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "laerdal-cleveland-survey",
+   "status": "verified",
+   "detail": "exact"
+  }
+ ]
+}

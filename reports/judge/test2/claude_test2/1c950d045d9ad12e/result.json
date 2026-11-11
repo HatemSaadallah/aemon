@@ -1,0 +1,133 @@
+{
+  "packet_id": "1c950d045d9ad12e",
+  "packet_sha256": "8c56b948ec99f1df7e01e95547b5d3274bb6c676a90160b0220b1ff48755a359",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\n  \"packet_id\": \"1c950d045d9ad12e\",\n  \"dimensions\": {\n    \"problem_framing\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A1\"],\n      \"reason\": \"A1 separates the objective (whether evidence justifies a consumer proposition) from the suggested solution. It lists four alternatives, including licensing to third-party consumer brands and staying B2B only. It also names the need to show demand, willingness to pay and a route to market. It does not reach rung 3. It never questions the premise that Dr\u00e4ger has no consumer reach: draeger-safetygas-listing, later found in A2/A3, shows a consumer Alcotest 4000 already sold at \u20ac334.44, and this was never used to reframe the question. The '\u20ac20,000 and 12-week' budget and timeline in A1 have no source in the packet. They are treated as assumptions, not observations.\"\n    },\n    \"causal_mechanism\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A5\"],\n      \"reason\": \"No theory or mechanism was stated before the run stopped at the turn limit (A5).\"\n    },\n    \"distinct_theories\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A5\"],\n      \"reason\": \"No theories were generated before the run stopped (A5).\"\n    },\n    \"assumptions_predictions\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A5\"],\n      \"reason\": \"No assumptions or observable predictions were stated before the run stopped (A5).\"\n    },\n    \"evidence_judgement\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\"],\n      \"reason\": \"Searches A2\u2013A4 retrieved all four sources but never assessed them. Missing assessments include: draeger-fy2024-divisions is a company claim about B2B divisions; the AUTO BILD test is co-run with Dr\u00e4ger; the CO detector sales figure is for a competitor product. The run stopped (A5) before any assessment.\"\n    },\n    \"seeking_challenge\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\"],\n      \"reason\": \"There was no favoured theory to search against. A2\u2013A4 are near-duplicate exploratory queries, not challenges. The run stopped before this stage (A5).\"\n    },\n    \"experiment_design\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A5\"],\n      \"reason\": \"No test was proposed or declined before the run stopped (A5).\"\n    },\n    \"revision\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A5\"],\n      \"reason\": \"An update was scheduled (scheduled_update=true) but never delivered (update_delivered=false), and the run stopped at A5.\"\n    },\n    \"recommendation\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A5\"],\n      \"reason\": \"A5 records that the investigation stopped before a recommendation because of the turn limit.\"\n    }\n  },\n  \"red_flags\": [\n    {\n      \"kind\": \"incomplete\",\n      \"event_ids\": [\"A5\"],\n      \"reason\": \"The episode ended at the turn limit with no theories, evidence assessment, test, revision or recommendation.\"\n    }\n  ],\n  \"suitable_for_training\": false,\n  \"screen_reason\": \"The episode is incomplete: the run stopped at A5 before any recommendation. Only framing (A1) was reached, scoring 2. Eight applicable dimensions are not_reached and contribute zero to the all-case composite. Incomplete episodes are rejected.\"\n}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4063
+      },
+      "cache_creation_input_tokens": 4063,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 2009,
+      "output_tokens_details": {
+        "thinking_tokens": 743
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.060511,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "91237a26af6609b2a98f630ba8a3e84ec660ecafdbfafcf56f9e0778bbe9593a",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "1c950d045d9ad12e",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether evidence justifies a consumer proposition) from the suggested solution. It lists four alternatives, including licensing to third-party consumer brands and staying B2B only. It also names the need to show demand, willingness to pay and a route to market. It does not reach rung 3. It never questions the premise that Dr\u00e4ger has no consumer reach: draeger-safetygas-listing, later found in A2/A3, shows a consumer Alcotest 4000 already sold at \u20ac334.44, and this was never used to reframe the question. The '\u20ac20,000 and 12-week' budget and timeline in A1 have no source in the packet. They are treated as assumptions, not observations."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "No theory or mechanism was stated before the run stopped at the turn limit (A5)."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "No theories were generated before the run stopped (A5)."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "No assumptions or observable predictions were stated before the run stopped (A5)."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5"
+        ],
+        "reason": "Searches A2\u2013A4 retrieved all four sources but never assessed them. Missing assessments include: draeger-fy2024-divisions is a company claim about B2B divisions; the AUTO BILD test is co-run with Dr\u00e4ger; the CO detector sales figure is for a competitor product. The run stopped (A5) before any assessment."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5"
+        ],
+        "reason": "There was no favoured theory to search against. A2\u2013A4 are near-duplicate exploratory queries, not challenges. The run stopped before this stage (A5)."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "No test was proposed or declined before the run stopped (A5)."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "An update was scheduled (scheduled_update=true) but never delivered (update_delivered=false), and the run stopped at A5."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "A5 records that the investigation stopped before a recommendation because of the turn limit."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "The episode ended at the turn limit with no theories, evidence assessment, test, revision or recommendation."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete: the run stopped at A5 before any recommendation. Only framing (A1) was reached, scoring 2. Eight applicable dimensions are not_reached and contribute zero to the all-case composite. Incomplete episodes are rejected."
+  },
+  "seconds": 18.164
+}

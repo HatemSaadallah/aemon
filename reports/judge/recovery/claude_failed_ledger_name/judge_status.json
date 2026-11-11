@@ -1,0 +1,6 @@
+{
+ "backend": "claude",
+ "qualification": "reports/judge/claude_score_qualification_8000.json",
+ "qualification_status": "qualified_for_scoring",
+ "diagnostic_only": false
+}

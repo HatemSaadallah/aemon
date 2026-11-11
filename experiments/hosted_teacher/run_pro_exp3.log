@@ -1,0 +1,3 @@
+{"balance_usd_before": 9.65, "budget_usd": 0.6, "model": "deepseek-api deepseek-v4-pro DeepSeek-V4-Pro-0813"}
+{"by_family": {"experiment": {"answers": 13, "refused": 12, "kept": 1}}, "top_rejections": {"experiment": [["gate: the arms differ only in wording or message, with no product or price difference and no same-price control", 3], ["request failed: RuntimeError", 3], ["still over the length limit after one shortening: reason", 2], ["still over the length limit after one shortening: why_next", 2], ["still over the length limit after one shortening: reason, learned", 1]]}}
+{"spent_usd_estimate": 0.3235, "balance_usd_after": 5.23}

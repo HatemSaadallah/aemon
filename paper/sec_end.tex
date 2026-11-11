@@ -1,0 +1,86 @@
+\section{Aemon: the agent as a product}\label{sec:app}
+An agent that only exists in an evaluation harness is not useful to a manager. Aemon runs the fine-tuned model
+locally (FastAPI and React over a llama.cpp server) and is designed, after a review of how current research assistants
+present long-running work, for readers who are not analysts.
+
+\begin{itemize}
+  \item \textbf{Answer first.} A finished investigation opens with the recommendation, a confidence label and score,
+        the next step and what would change the answer, then four headline numbers, then the explanations compared,
+        the test, the sources, and only then the full trace.
+  \item \textbf{Numbers counted from the record.} Every chart is computed from the investigation's own record, never
+        estimated: how likely each explanation was judged before and after new evidence (an arrow plot on the five-step
+        scale), how many weighed sources support or contradict each explanation (diverging bars), the mix of
+        independent sources and company claims, and the test's cost and duration against its budget.
+  \item \textbf{A confidence score out of five.} One point for each of five plain checks: the leading explanation is
+        judged likely or better; it is judged very likely; at least two independent sources support it; no independent
+        source contradicts it; at least three sources were weighed for it. Five is High, three or four Moderate, two or
+        fewer Low, and a draft written after a run stopped early is never more than Low. On the final test's 28 finished
+        runs the score was 2 in 24 runs, 3 in two and 4 in two: the agent never judges its favourite very likely, and it
+        weighs few independent sources, which is exactly what the iteration targets.
+  \item \textbf{Follow-up questions grounded in the investigation.} A follow-up is answered by the base model (adapters
+        off) from the investigation's record and source excerpts only, under a schema whose citations can name only
+        sources in the record; ``Re-investigate with this'' reruns the investigation with the new information, files
+        or links instead.
+  \item \textbf{Steps a reader can follow.} The trace is shown as the seven steps a manager would recognise (understand
+        the question, gather sources, list explanations, weigh the evidence, stress-test the favourite, design a test,
+        recommend), each expandable to its actions and each action to exactly what was read, quoted or decided.
+  \item \textbf{Investigations that do not die.} Runs keep going when the page is closed; every turn is saved, and
+        after a restart unfinished runs resume by replaying their saved turns, each of which must reproduce its saved
+        result. A run that stops early can be continued from where it stopped, and if it ends without a recommendation
+        Aemon writes a labelled draft from what it found.
+  \item \textbf{Memory, projects, attachments and web search.} Notes about the person, the company or a project are
+        given to the agent as context, never as evidence; attached files and links become quotable sources labelled as
+        the person's own; an optional live web search saves every page it reads and labels it unchecked; a mind map
+        shows every investigation; every result downloads as a PDF report.
+\end{itemize}
+None of these features is part of the evaluated setup; the reported results apply to the frozen configuration.
+
+\section{Limitations}\label{sec:limits}
+\begin{itemize}
+  \item \textbf{Generalisation.} Four test companies, all business-to-business manufacturers asked the same family of
+        question, support only a limited claim. The second test set addresses this partly; other industries and other
+        kinds of strategic question remain untested.
+  \item \textbf{Replications.} Three attempts per case at temperature 0 are close to repeats; the effective sample is
+        nearer 16 cases than 48 runs, which is why the intervals resample whole cases.
+  \item \textbf{Judges.} Both judges are language models. They were qualified and agree closely, but they may share
+        biases, and no strategy expert has scored the runs.
+  \item \textbf{Absolute quality.} 1.48 of 3 is a large relative gain but a modest absolute score; 20 of 48 runs ended
+        before a recommendation, and the recommendation, revision, experiment design and evidence judgement remain the
+        weakest dimensions.
+  \item \textbf{Comparators.} The comparison is with the same base model under its best prompt. Neither the teacher nor
+        a closed model was run on the final test for quality; Claude appears only in the cost comparison.
+  \item \textbf{Beliefs and confidence.} Beliefs are the agent's own verbal scale, not calibrated probabilities, and the
+        belief check tests direction only.
+  \item \textbf{Sources and outcomes.} The dossier is fixed and curated, with short excerpts; what-if results are
+        written by the case authors; no recommendation was checked against what a company later did, and no proposed
+        test was run. The results measure the quality of the investigation, not whether its advice would pay off.
+  \item \textbf{Training.} One training run and one seed; variance across runs is not measured. The training data has a
+        known defect, the 240-character cut of test designs, and no example of declining a test.
+  \item \textbf{Controls.} The scripted negative controls could not run on the held-out cases and are reported for
+        development only.
+  \item \textbf{Teacher errors in the training data.} The rows are valid, accepted calls, but their content carries
+        the teacher's errors (Section~\ref{sec:negative}): invented numbers, wrong evidence kinds, overstated support,
+        and, in historical training cases, sources published after the case date. The model reproduces the first two.
+  \item \textbf{Our own instruments.} The mechanical experiment check is lenient: on development it passes 9 tests, 8
+        of which fail stricter design screens. The evidence-kind annotation is about 80\% reliable. Both are reported
+        as they are, and the frozen numbers use them unchanged.
+  \item \textbf{Mechanical validity.} Few runs pass every check: 1 of 48 on the final test and 4 of 72 on the second.
+        The quality gains are measured by blind judges, not by mechanical validity.
+\end{itemize}
+
+\section{Conclusion}\label{sec:conclusion}
+A small open model can learn a meaningful part of a disciplined strategy procedure from a larger model's tool-using
+investigations, provided the environment makes the procedure executable and the data are filtered for exactness. On a
+frozen test it framed problems better, built genuinely distinct causal theories, gathered and weighed quoted evidence and
+finished far more investigations than its base model, at a fraction of the cost of a closed model. It did not learn what
+its teacher rarely showed it: declining a test that is not worth its cost, responding to directional new evidence, and
+writing complete decision rules, and it inherited the teacher's habits of unsupported numbers and loose evidence
+labels. Neither runtime aids nor corrective examples from the same teacher repaired these, which places the remaining
+gap in the quality of the supervision. A better teacher for evidence judgement is the next step. Equally important is how the result was obtained: an environment that refuses rather than trusts,
+training data bound to its provenance, judges qualified before use, and a test frozen and run once.
+
+\section*{Team and acknowledgements}
+Hatem Saadallah and Nour Jennane, Master's students in artificial intelligence and AI researchers (team Two-eyed
+Ravens). Built with AgentTune and AuditKIT (Lexsi Labs), Tiny Aya and Command A+ (Cohere), PEFT, TRL and llama.cpp.
+Claude (Anthropic) and Codex (OpenAI) served as blind judges and as coding assistants; no Claude output was used as
+training data.

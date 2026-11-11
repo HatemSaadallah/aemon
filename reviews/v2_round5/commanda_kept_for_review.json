@@ -1,0 +1,2044 @@
+{
+ "counts": {
+  "answers": 107,
+  "valid": 107,
+  "failures": 0,
+  "kept": 27,
+  "verification": {
+   "not kept": 76,
+   "refused by today's gates": 4,
+   "passed every check": 27
+  },
+  "by_call": "10 revise_theory, 7 assess_evidence, 6 read_source, 2 propose_test, 2 add_theory",
+  "rejections": [
+   [
+    "the justification names nothing from the state",
+    13
+   ],
+   [
+    "gate: the evidence kind does not match what the source is",
+    13
+   ],
+   [
+    "gate: the finish cites a source it never assessed (padding)",
+    10
+   ],
+   [
+    "the call does not act on what the justification names",
+    6
+   ],
+   [
+    "gate: the arms differ only in wording or message, with no product or price difference and no same-price control",
+    6
+   ],
+   [
+    "gate: the next action runs X1, an earlier test that fails a design screen",
+    4
+   ],
+   [
+    "gate: method stops at its length limit (900 characters), cut mid-text",
+    3
+   ],
+   [
+    "gate: sample stops at its length limit (500 characters), cut mid-text",
+    2
+   ],
+   [
+    "gate: learned stops at its length limit (700 characters), cut mid-text",
+    2
+   ],
+   [
+    "gate: no_invented_numbers: numbers with no source: ['5000']",
+    1
+   ],
+   [
+    "gate: no_invented_numbers: numbers with no source: ['15', '2', '20', '3']",
+    1
+   ],
+   [
+    "why_next does not say which theories the test separates",
+    1
+   ],
+   [
+    "in the test stage only proposing a discriminating test or justifying declining one advances the investigation",
+    1
+   ],
+   [
+    "gate: euros in a case set in 1991",
+    1
+   ],
+   [
+    "gate: a weighing state needs assess_evidence",
+    1
+   ],
+   [
+    "repeats an earlier call",
+    1
+   ],
+   [
+    "gate: a recovery from a refused finish must finish, citing real evidence",
+    1
+   ],
+   [
+    "refused by the tools: a simulated result cannot support a recommendation about real demand",
+    1
+   ],
+   [
+    "gate: no_invented_numbers: numbers with no source: ['18', '45']",
+    1
+   ],
+   [
+    "gate: euros in a case set in 1946",
+    1
+   ],
+   [
+    "refused by the tools: prediction_by_theory needs one prediction for each theory in the test",
+    1
+   ],
+   [
+    "gate: the predictions barely differ",
+    1
+   ],
+   [
+    "refused by the tools: that quote is not in the source. Copy its exact words",
+    1
+   ],
+   [
+    "gate: no_invented_numbers: numbers with no source: ['100']",
+    1
+   ],
+   [
+    "gate: no_invented_numbers: numbers with no source: ['25']",
+    1
+   ],
+   [
+    "gate: no_invented_numbers: numbers with no source: ['6']",
+    1
+   ],
+   [
+    "gate: no_invented_numbers: numbers with no source: ['25', '5000', '55']",
+    1
+   ],
+   [
+    "gate: why_next stops at its length limit (700 characters), cut mid-text",
+    1
+   ],
+   [
+    "gate: the decision rule leads straight to developing a product, not to a bounded next step",
+    1
+   ],
+   [
+    "gate: the cost per participant is not credible for the stated sample",
+    1
+   ]
+  ]
+ },
+ "examples": [
+  {
+   "n": 1,
+   "case": "arri-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should ARRI develop a differentiated proposition of its own for individual creators, beyond its professional cinema range and its smartphone partnership, or keep its consumer presence to partners? What evidence would justify either choice?",
+   "student_turn": 39,
+   "student_run": "9e7ee03b6479a36661979543abc4569ea30820b299b02347268bf1dc586aa16c",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Individual creators will adopt ARRI products if they perceive the brand as a professional standard and are willing to pay a premium for reliability and image quality.",
+    "T2": "Individual creators will adopt ARRI products if they perceive the brand as a professional standard and are willing to pay a premium for reliability and image quality, but will also be attracted by the smartphone partnership that already provides them with a professional-grade camera and creative control."
+   },
+   "sources_read": {
+    "arri-alexa-price": "2025-08-07",
+    "arri-cined-challenges": "2025-12-01",
+    "arri-core-focus": "2025-12-16",
+    "arri-honor-milestone": "2026-08-12",
+    "arri-ymc-backlash": "2026-09-29",
+    "arri-ymc-use-not-own": "2026-09-29"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "ARRI Creator Purchase Intent Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase scenario",
+     "sample": "300 individual creators (YouTubers, indie filmmakers, content creators) recruited via creator platforms (e.g., Patreon, YouTube creator forums). Randomly assigned to Control (n=150) or Treatment (n=150).",
+     "measure": "1) Maximum price willing to pay for a new ARRI camera line marketed to individual creators (open‑ended). 2) Binary purchase intent (\"Would you buy this camera?\"). 3) Perceived professional credibility (1‑10 scale).",
+     "prediction_by_theory": {
+      "T1": "Both groups will show similar willingness to pay and purchase intent, driven by brand perception as professional standard.",
+      "T2": "Treatment group (with smartphone partnership highlighted) will show significantly higher willingness to pay and purchase intent than Control, because the partnership adds perceived value and accessibility."
+     },
+     "decision_rule": "Calculate average willingness to pay (WTP) for Control (WTP_C) and Treatment (WTP_T). If WTP_T − WTP_C ≥ €400 AND purchase intent in Treatment ≥ 10 percentage points higher than Control, then proceed to develop a differentiated direct‑to‑individual creator proposition leveraging the smartphone partnership. Otherwise, keep consumer presence limited to existing partner relationships.",
+     "cost_eur": 18000,
+     "weeks": 10
+    }
+   },
+   "justification": {
+    "learned": "We have read six public sources about ARRI’s professional focus, job cuts, smartphone partnership with HONOR, and creator perception that ARRI is a brand used not owned. The sources do not directly show demand or willingness to pay from individual creators. Theory T1 posits creators will buy ARRI if they see it as a professional standard and are willing to pay a premium. Theory T2 adds that the existing smartphone partnership will further attract creators. No evidence yet supports or refutes these mechanisms; the available sources only describe current market position and brand perception.",
+    "uncertain": "The key uncertainty is whether individual creators would actually purchase ARRI products at premium prices, and whether the smartphone partnership meaningfully increases that intent. The existing evidence only states creators use ARRI gear via rentals and that ARRI is expanding into content creation via HONOR, but does not quantify demand or price sensitivity.",
+    "why_next": "A low‑cost survey test can separate the two theories by measuring how willingness to pay and purchase intent change when the smartphone partnership is highlighted. This directly tests T2’s claim that the partnership adds value beyond the professional brand. If the partnership has no effect, T1 is supported; if it raises intent, T2 is supported. The test is affordable (€20k budget, 12‑week timeline) and can be executed online with a representative sample of individual creators."
+   },
+   "decision_at_generation": "kept",
+   "flags": [
+    "stated preference only",
+    "rule leads straight to developing or launching"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"We have read six public sources about ARRI\\u2019s professional focus, job cuts, smartphone partnership with HONOR, and creator perception that ARRI is a brand used not owned. The sources do not directly show demand or willingness to pay from individual creators. Theory T1 posits creators will buy ARRI if they see it as a professional standard and are willing to pay a premium. Theory T2 adds that the existing smartphone partnership will further attract creators. No evidence yet supports or refutes these mechanisms; the available sources only describe current market position and brand perception.\", \"uncertain\": \"The key uncertainty is whether individual creators would actually purchase ARRI products at premium prices, and whether the smartphone partnership meaningfully increases that intent. The existing evidence only states creators use ARRI gear via rentals and that ARRI is expanding into content creation via HONOR, but does not quantify demand or price sensitivity.\", \"why_next\": \"A low\\u2011cost survey test can separate the two theories by measuring how willingness to pay and purchase intent change when the smartphone partnership is highlighted. This directly tests T2\\u2019s claim that the partnership adds value beyond the professional brand. If the partnership has no effect, T1 is supported; if it raises intent, T2 is supported. The test is affordable (\\u20ac20k budget, 12\\u2011week timeline) and can be executed online with a representative sample of individual creators.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"ARRI Creator Purchase Intent Test\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Online survey with simulated purchase scenario\", \"sample\": \"300 individual creators (YouTubers, indie filmmakers, content creators) recruited via creator platforms (e.g., Patreon, YouTube creator forums). Randomly assigned to Control (n=150) or Treatment (n=150).\", \"measure\": \"1) Maximum price willing to pay for a new ARRI camera line marketed to individual creators (open\\u2011ended). 2) Binary purchase intent (\\\"Would you buy this camera?\\\"). 3) Perceived professional credibility (1\\u201110 scale).\", \"prediction_by_theory\": {\"T1\": \"Both groups will show similar willingness to pay and purchase intent, driven by brand perception as professional standard.\", \"T2\": \"Treatment group (with smartphone partnership highlighted) will show significantly higher willingness to pay and purchase intent than Control, because the partnership adds perceived value and accessibility.\"}, \"decision_rule\": \"Calculate average willingness to pay (WTP) for Control (WTP_C) and Treatment (WTP_T). If WTP_T \\u2212 WTP_C \\u2265 \\u20ac400 AND purchase intent in Treatment \\u2265 10 percentage points higher than Control, then proceed to develop a differentiated direct\\u2011to\\u2011individual creator proposition leveraging the smartphone partnership. Otherwise, keep consumer presence limited to existing partner relationships.\", \"cost_eur\": 18000, \"weeks\": 10}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Creator Preference Test: ARRI vs. HONOR Camera Offer",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase offer. Participants are randomly assigned to see either a direct-to-individual creator ARRI camera offer (new premium camera line) or a direct-to-individual creator HONOR camera offer (existing professional camera). They are asked about willingness to pay (EUR),…",
+     "sample": "400 individual creators (filmmakers, YouTubers, content creators) recruited via creator platforms and social media. Stratify by experience level (beginner vs. professional) to capture both rental users and serious creators.",
+     "measure": "1) Willingness to pay (EUR amount). 2) Purchase intent score (1-10). 3) Ownership intent (1-10).",
+     "prediction_by_theory": {
+      "T1": "Higher willingness to pay and purchase intent for the ARRI offer than for the HONOR offer, because creators perceive ARRI as a professional standard and are willing to pay a premium.",
+      "T2": "Higher willingness to pay and purchase intent for the HONOR offer than for the ARRI offer, because creators already use a professional camera via the smartphone partnership and value the existing functional advantage."
+     },
+     "decision_rule": "If the average willingness to pay for ARRI exceeds that for HONOR by at least 20% (e.g., €15,000 vs €12,000), and purchase intent for ARRI is at least 5 points higher, proceed with a differentiated ARRI direct-to-individual proposition. If",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "passes the experiment checks (the correction must be better on substance)",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "Survey-only stated preference: the measures are open-ended WTP, binary purchase intent and a 1-10 credibility Likert, with no behavioural consequence or real commitment.; Framing-only arms: Control vs Treatment differ only by highlighting the HONOR smartphone partnership for the same new ARRI camera line at the same price, with no same-price/behavioural control.; Decision rule jumps straight to 'proceed to develop a differentiated direct-to-individual creator proposition' from stated intent, instead of a bounded next step such as a reservation, deposit or pilot.; T2 is largely a variant/superset of T1 (T1's adoption mechanism plus the partnership attraction) rather than a genuinely independent rival theory.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "Survey-only stated preference: the measures are open-ended WTP, binary purchase intent and a 1-10 credibility Likert, with no behavioural consequence or real commitment.",
+     "Framing-only arms: Control vs Treatment differ only by highlighting the HONOR smartphone partnership for the same new ARRI camera line at the same price, with no same-price/behavioural control.",
+     "Decision rule jumps straight to 'proceed to develop a differentiated direct-to-individual creator proposition' from stated intent, instead of a bounded next step such as a reservation, deposit or pilot.",
+     "T2 is largely a variant/superset of T1 (T1's adoption mechanism plus the partnership attraction) rather than a genuinely independent rival theory."
+    ],
+    "teaches": "A stated-preference, framing-only survey cannot support a development decision: the same-price/behavioural test must involve real commitment, and the decision rule should be a bounded next step rather than launching a proposition.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 2,
+   "case": "perrigo-base",
+   "case_date": "2014",
+   "origin": "evidence kind",
+   "question": "It is late 2014. Should Perrigo develop a differentiated consumer proposition for a specific use case, building on its over-the-counter medicine development and manufacturing? What evidence would justify that investment?",
+   "student_turn": 29,
+   "student_run": "104e11ec76e4b6cdf3c102336f3864d6e31dd3a6ae67be089d748647e9bfdbb1",
+   "skill": "classify",
+   "theories": {
+    "T1": "Consumers will adopt a differentiated Perrigo consumer brand if they perceive it as a premium, quality product that differentiates from generic alternatives, leading to higher willingness to pay and repeat purchases.",
+    "T2": "Consumers will adopt a differentiated Perrigo consumer brand if they perceive it as a convenient, convenient-to-buy product that is readily available in pharmacies and retail outlets, leading to higher purchase frequency and lower price sensitivity."
+   },
+   "sources_read": {
+    "perrigo-bar-penetration": "2013-03-13",
+    "perrigo-bar-retailers": "2013-03-13",
+    "perrigo-fu-goodsense": "unknown (accessed 2026-11-03); compiled about 2004",
+    "perrigo-fu-suspicious": "unknown (accessed 2026-11-03); compiled about 2004",
+    "perrigo-pml-gsk": "2014-11",
+    "perrigo-ppr-omega": "2014-11-06",
+    "perrigo-ppr-pharmacies": "2014-11-06"
+   },
+   "call": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "perrigo-bar-retailers",
+     "direction": "neutral",
+     "quote": "Big Dollar Profits and Margin for Retailers Reason for Large Investments by Retailers in Store Brands",
+     "evidence_kind": "company_assertion",
+     "does_not_show": "The quote does not specify whether the profits come from premium pricing or from volume, nor does it address consumer willingness to pay a premium for a differentiated brand."
+    }
+   },
+   "justification": {
+    "learned": "We have identified Perrigo’s existing store‑brand success (48% penetration for Cetirizine), retailer motivations for store‑brand investment, the small scale of Perrigo’s own consumer brand Good Sense, consumer price‑sensitivity and suspicion of large price gaps, Omega’s large OTC market position after acquiring GSK brands, and Perrigo’s extensive pharmacy distribution network.",
+    "uncertain": "No direct evidence yet shows consumer willingness to pay a premium for a differentiated Perrigo brand or the impact of convenience on purchase frequency.",
+    "why_next": "We need to weigh a source that directly addresses consumer perception of store‑brand quality or price sensitivity, because that will test both T1 (premium perception) and T2 (convenience‑driven purchase). The “Big Dollar Profits and Margin for Retailers” claim from Perrigo’s 2013 presentation links retailer investment to profitability of store brands, which can be used to assess whether convenience and availability (T2) are sufficient drivers, while also hinting that retailers see value in store‑brand positioning that could be leveraged for a premium proposition."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have identified Perrigo\\u2019s existing store\\u2011brand success (48% penetration for Cetirizine), retailer motivations for store\\u2011brand investment, the small scale of Perrigo\\u2019s own consumer brand Good Sense, consumer price\\u2011sensitivity and suspicion of large price gaps, Omega\\u2019s large OTC market position after acquiring GSK brands, and Perrigo\\u2019s extensive pharmacy distribution network.\", \"uncertain\": \"No direct evidence yet shows consumer willingness to pay a premium for a differentiated Perrigo brand or the impact of convenience on purchase frequency.\", \"why_next\": \"We need to weigh a source that directly addresses consumer perception of store\\u2011brand quality or price sensitivity, because that will test both T1 (premium perception) and T2 (convenience\\u2011driven purchase). The \\u201cBig Dollar Profits and Margin for Retailers\\u201d claim from Perrigo\\u2019s 2013 presentation links retailer investment to profitability of store brands, which can be used to assess whether convenience and availability (T2) are sufficient drivers, while also hinting that retailers see value in store\\u2011brand positioning that could be leveraged for a premium proposition.\", \"call\": {\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"perrigo-bar-retailers\", \"direction\": \"neutral\", \"quote\": \"Big Dollar Profits and Margin for Retailers Reason for Large Investments by Retailers in Store Brands\", \"evidence_kind\": \"company_assertion\", \"does_not_show\": \"The quote does not specify whether the profits come from premium pricing or from volume, nor does it address consumer willingness to pay a premium for a differentiated brand.\"}}}",
+   "student_action": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "perrigo-bar-penetration",
+     "direction": "supports",
+     "quote": "Store brand Cetirizine increased to 48% penetration",
+     "evidence_kind": "company_assertion",
+     "does_not_show": "The source does not explain why consumers adopted the store brand or whether they perceived it as premium quality."
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "labelled perrigo-bar-penetration as company_assertion; the annotation (v1) says market_fact",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "why_next contradicts the call: it says the source 'can be used to assess whether convenience and availability (T2) are sufficient drivers,' but the call assesses the evidence against T1 (premium perception/willingness to pay).; why_next says the needed next evidence is a source that 'directly addresses consumer perception of store-brand quality or price sensitivity,' but the call instead weighs perrigo-bar-retailers, a retailer-profitability claim that the call's own does_not_show admits does not address consumer willingness to pay.; why_next's claim that the source 'hints' at a premium proposition is in tension with the neutral direction assigned for T1, making the reasoning internally inconsistent.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "why_next contradicts the call: it says the source 'can be used to assess whether convenience and availability (T2) are sufficient drivers,' but the call assesses the evidence against T1 (premium perception/willingness to pay).",
+     "why_next says the needed next evidence is a source that 'directly addresses consumer perception of store-brand quality or price sensitivity,' but the call instead weighs perrigo-bar-retailers, a retailer-profitability claim that the call's own does_not_show admits does not address consumer willingness to pay.",
+     "why_next's claim that the source 'hints' at a premium proposition is in tension with the neutral direction assigned for T1, making the reasoning internally inconsistent."
+    ],
+    "teaches": "",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 3,
+   "case": "koppert-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "evidence kind",
+   "question": "Should Koppert develop a differentiated proposition for home gardeners, building on its biological crop protection for professional growers, or stay with professional growers? What evidence would justify either choice?",
+   "student_turn": 20,
+   "student_run": "b89ac41d133f2dcff9612896989aafd3b897ccb367976c65bdfa80ae071ba8db",
+   "skill": "classify",
+   "theories": {
+    "T1": "Home gardeners will adopt Koppert's biological controls if they perceive them as convenient, easy to use, and safe for children and pets, leading to higher purchase frequency and willingness to pay a premium.",
+    "T2": "Home gardeners will adopt Koppert's biological controls if they perceive them as a status symbol or a way to differentiate their garden, leading to higher purchase frequency and willingness to pay a premium."
+   },
+   "sources_read": {
+    "koppert-agro-ban": "2017-04-06",
+    "koppert-lo-canada": "2007-03-14",
+    "koppert-martha-visit": "2018-01 (from URL)",
+    "koppert-wsu-shipped": "2017-07 (as printed)"
+   },
+   "call": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "koppert-wsu-shipped",
+     "direction": "supports",
+     "quote": "Adult beetles, which congregate in the fall, are collected from their native habitat, placed under prolonged hibernation, and shipped to farmers and home gardeners alike …",
+     "evidence_kind": "independent_study",
+     "does_not_show": "It does not show home gardeners' purchase intent or willingness to pay a premium; it only describes the distribution mechanism."
+    }
+   },
+   "justification": {
+    "learned": "We have read four sources about Koppert and biological controls for home gardeners. The sources show Koppert already serves home gardeners (Koppert Canada), provides ready-to-use lady beetles (WSU), offers bespoke consultation for high-profile gardeners (Martha Stewart), and faces regulatory bans on chemical pesticides for amateurs (AgroPages). These give us evidence on current offerings, distribution, perceived value, and regulatory context.",
+    "uncertain": "We lack direct data on home gardener demand, willingness to pay, or competitive landscape. The sources are anecdotal or regulatory, not market research.",
+    "why_next": "We need to weigh a source that directly touches on home gardener adoption motives to test our theories. The Martha Stewart visit describes a premium, personalized service, which can be used to assess the status-driven theory (T2). We will assess T1 with the WSU source on lady beetles, which highlights convenience of receiving ready-to-use biological controls. We will also add a third theory about regulatory pressure creating demand for biological alternatives, distinct from convenience or status motives."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have read four sources about Koppert and biological controls for home gardeners. The sources show Koppert already serves home gardeners (Koppert Canada), provides ready-to-use lady beetles (WSU), offers bespoke consultation for high-profile gardeners (Martha Stewart), and faces regulatory bans on chemical pesticides for amateurs (AgroPages). These give us evidence on current offerings, distribution, perceived value, and regulatory context.\", \"uncertain\": \"We lack direct data on home gardener demand, willingness to pay, or competitive landscape. The sources are anecdotal or regulatory, not market research.\",\"why_next\":\"We need to weigh a source that directly touches on home gardener adoption motives to test our theories. The Martha Stewart visit describes a premium, personalized service, which can be used to assess the status-driven theory (T2). We will assess T1 with the WSU source on lady beetles, which highlights convenience of receiving ready-to-use biological controls. We will also add a third theory about regulatory pressure creating demand for biological alternatives, distinct from convenience or status motives.\",\"call\": {\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"koppert-wsu-shipped\", \"direction\": \"supports\", \"quote\": \"Adult beetles, which congregate in the fall, are collected from their native habitat, placed under prolonged hibernation, and shipped to farmers and home gardeners alike …\", \"evidence_kind\": \"independent_study\", \"does_not_show\": \"It does not show home gardeners' purchase intent or willingness to pay a premium; it only describes the distribution mechanism.\"}}}",
+   "student_action": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "koppert-lo-canada",
+     "direction": "supports",
+     "quote": "Koppert Canada Limited is a subsidiary of Koppert BV, providing a full complement of biological controls and natural pollination products to both the professional grower …",
+     "evidence_kind": "independent_study",
+     "does_not_show": "The source does not provide data on home gardener purchase intent, willingness to pay, or actual adoption rates."
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "labelled koppert-lo-canada as independent_study; the annotation (v1) says market_fact",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "Labels koppert-wsu-shipped as independent_study, but the quote is a descriptive WSU shipping/distribution note (press/extension text), not an independent study with design or results.; The 'supports' direction overclaims: the quote only says beetles are shipped to farmers and home gardeners; it does not show perceived convenience, ease of use, safety, purchase frequency, or willingness to pay a premium. The justification's claim that it 'highlights convenience of receiving ready-to-use biological controls' is not in the quote.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "Labels koppert-wsu-shipped as independent_study, but the quote is a descriptive WSU shipping/distribution note (press/extension text), not an independent study with design or results.",
+     "The 'supports' direction overclaims: the quote only says beetles are shipped to farmers and home gardeners; it does not show perceived convenience, ease of use, safety, purchase frequency, or willingness to pay a premium. The justification's claim that it 'highlights convenience of receiving ready-to-use biological controls' is not in the quote."
+    ],
+    "teaches": "Classify evidence kind accurately (a descriptive shipping note is not an independent study) and do not stretch a distribution fact into support for an adoption-motive theory beyond what the quote shows.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 4,
+   "case": "cotral-new-evidence-favours-looks",
+   "case_date": "present day",
+   "origin": "after two refusals",
+   "question": "Should Cotral Lab develop a differentiated consumer proposition for a specific use case, beyond its existing hearing-protection offering? What evidence would justify that investment?",
+   "student_turn": 34,
+   "student_run": "6610e81c0cda0a8b6105159526dfaf157be8bd3aa02fd9704d70f7a86f2bf255",
+   "skill": "unstick",
+   "theories": {
+    "T1": "Professional musicians will adopt custom-moulded hearing protection if it is marketed as a performanceenhancing tool that preserves sound quality while blocking noise, because they value accurate sound and are willing to pay a premium for a product that does not compromise their craft.",
+    "T2": "Sleep aid users will adopt custom-moulded hearing protection if it is marketed as a medical-grade solution that reduces sleep disruption caused by background noise, because they seek a product that addresses a specific health concern and are willing to pay for a solution that improves sleep quality."
+   },
+   "sources_read": {
+    "SYN-C": "n/a",
+    "bockstael-2015-looks": "2015-07 to 2015-08",
+    "ctl-3d": "unknown",
+    "ctl-channel": "2025 (exact date not shown)",
+    "ctl-deal": "2025 (exact date not shown)",
+    "ctl-filter": "2024-04-02 (last updated)",
+    "ctl-it1": "unknown",
+    "ctl-onsite": "unknown",
+    "minuendo-claim": "unknown (accessed 2026-11-01)"
+   },
+   "call": {
+    "name": "read_source",
+    "arguments": {
+     "id": "etymotic-er20xs"
+    }
+   },
+   "justification": {
+    "learned": "The investigation has identified two theories (musicians T1 and sleep aid T2) and a test proposal, but the finish was refused because it used simulated evidence (SYN-C) to support a recommendation about real demand. We still have an unread source (etymotic-er20xs) that could provide additional market evidence, and we have not yet added a third theory covering another segment (e.g., industrial workers).",
+    "uncertain": "Whether we can add a third theory without reading the unread source, and whether the existing evidence (excluding simulated) is sufficient to justify a recommendation.",
+    "why_next": "We need to add a third theory to meet the requirement of at least three distinct causal explanations, and then reassess evidence without relying on simulated data. Reading the unread source first would give us evidence to support the new theory, but we can only make one call now. Adding the theory now is the critical step to satisfy the process rules, after which we can revise the finish to exclude simulated evidence."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"The investigation has identified two theories (musicians T1 and sleep aid T2) and a test proposal, but the finish was refused because it used simulated evidence (SYN-C) to support a recommendation about real demand. We still have an unread source (etymotic-er20xs) that could provide additional market evidence, and we have not yet added a third theory covering another segment (e.g., industrial workers).\", \"uncertain\": \"Whether we can add a third theory without reading the unread source, and whether the existing evidence (excluding simulated) is sufficient to justify a recommendation.\", \"why_next\": \"We need to add a third theory to meet the requirement of at least three distinct causal explanations, and then reassess evidence without relying on simulated data. Reading the unread source first would give us evidence to support the new theory, but we can only make one call now. Adding the theory now is the critical step to satisfy the process rules, after which we can revise the finish to exclude simulated evidence.\", \"call\": {\"name\": \"read_source\", \"arguments\": {\"id\": \"etymotic-er20xs\"}}}",
+   "student_action": {
+    "name": "finish",
+    "arguments": {
+     "recommendation": "Invest in a differentiated musician-focused proposition that positions custom-moulded hearing protection as a performanceenhancing tool that preserves sound quality. Begin with a limited pilot (e.g., 500 units) sold through musician retailers and online, using the existing 3D printing technology to …",
+     "target_customer": "Professional musicians (live performers, studio musicians) who need hearing protection for performances and studio work.",
+     "value_proposition": "Custom-moulded hearing protection marketed as a performanceenhancing tool that preserves sound quality, leveraging Cotral Lab’s 3D printing precision and comfort to justify a premium price.",
+     "favoured_theory": "T1",
+     "next_action": "Run the proposed musician vs sleep aid purchase intent survey (400 respondents, 6 weeks, €15,000) to validate purchase intent and willingness to pay for the performanceenhancing version.",
+     "uncertainty": "The size of the musician market and their willingness to pay a premium for soundpreserving hearing protection are unknown. Also uncertain is whether sleep aid users would adopt a medicalgrade version of the same product.",
+     "would_change_if": [
+      "If the survey shows sleep aid users would purchase the medicalgrade version at a rate comparable to or higher than musicians, we would shift focus to a sleep-focused proposition.",
+      "If no purchase intent is found among musicians, we would reconsider the investment in a differentiated musician proposition."
+     ],
+     "evidence_ids": [
+      "ctl-it1",
+      "bockstael-2015-looks",
+      "minuendo-claim",
+      "SYN-C"
+     ],
+     "beliefs": {
+      "T1": "likely",
+      "T2": "uncertain"
+     }
+    },
+    "accepted": false,
+    "category": "synthetic_as_evidence"
+   },
+   "why_wrong": "after two refusals the student made finish; last refusal: {'error': 'a simulated result cannot support a recommendation about real demand'}",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The justification contradicts the call: why_next says adding a third theory is the critical step to satisfy process rules, but the call is read_source, not add_theory.; The call does not do what the reasoning says is needed next, so it does not move the investigation forward as described.; The reasoning is internally inconsistent about the next step: it says reading the unread source would help, then says adding the theory now is critical, but makes neither the read coherently tied to that rationale nor the theory-adding call.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The justification contradicts the call: why_next says adding a third theory is the critical step to satisfy process rules, but the call is read_source, not add_theory.",
+     "The call does not do what the reasoning says is needed next, so it does not move the investigation forward as described.",
+     "The reasoning is internally inconsistent about the next step: it says reading the unread source would help, then says adding the theory now is critical, but makes neither the read coherently tied to that rationale nor the theory-adding call."
+    ],
+    "teaches": "A call must match its reasoning: if the critical next step is adding a third theory, the call should add that theory (or the reasoning must explain why reading first is the correct single move, without claiming the opposite). Contradictory why_next and call make the example unusable.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 5,
+   "case": "osram-base",
+   "case_date": "2015",
+   "origin": "after two refusals",
+   "question": "It is early 2015. Should Osram Licht AG develop a differentiated consumer proposition for a specific use case, building on its LED and lighting technology? What evidence would justify that investment?",
+   "student_turn": 12,
+   "student_run": "cde24ee571a961a3240763cfc392974ac0ca211add36e56e53d390cf4c161c89",
+   "skill": "unstick",
+   "theories": {},
+   "sources_read": {
+    "osram-ee-40": "2016-07-26",
+    "osram-ldv-april": "unknown (accessed 2026-11-03)",
+    "osram-li14-consumer": "2014-07-30"
+   },
+   "call": {
+    "name": "read_source",
+    "arguments": {
+     "id": "osram-tr-tesco"
+    }
+   },
+   "justification": {
+    "learned": "We have the brief and a frame already defined, but we haven't formally read the brief via read_brief and framed the problem ourselves. We also need to discover Osram’s existing consumer offerings. Two unread source results (“osram-tr-tesco” and “osram-wiki-sylvania”) likely contain consumer market information. Reading them will provide evidence to inform theories about why consumers might adopt a differentiated Osram consumer product.",
+    "uncertain": "We don't yet know what consumer products Osram sold in 2015, nor the size of that market, nor competitive dynamics.",
+    "why_next": "Reading the two unread sources will give us concrete data on Osram’s consumer presence and market context, allowing us to formulate evidence‑based theories about demand for a differentiated consumer proposition."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have the brief and a frame already defined, but we haven't formally read the brief via read_brief and framed the problem ourselves. We also need to discover Osram\\u2019s existing consumer offerings. Two unread source results (\\u201cosram-tr-tesco\\u201d and \\u201cosram-wiki-sylvania\\u201d) likely contain consumer market information. Reading them will provide evidence to inform theories about why consumers might adopt a differentiated Osram consumer product.\", \"uncertain\": \"We don't yet know what consumer products Osram sold in 2015, nor the size of that market, nor competitive dynamics.\", \"why_next\": \"Reading the two unread sources will give us concrete data on Osram\\u2019s consumer presence and market context, allowing us to formulate evidence\\u2011based theories about demand for a differentiated consumer proposition.\",\"call\": {\"name\": \"read_source\", \"arguments\": {\"id\": \"osram-tr-tesco\"}}}",
+   "student_action": {
+    "name": "search_evidence",
+    "arguments": {
+     "query": "Osram consumer LED work lights 2015"
+    },
+    "accepted": false,
+    "category": "repeat"
+   },
+   "why_wrong": "after two refusals the student made search_evidence; last refusal: {'error': 'you already ran that search. Read its results, or search for something different'}",
+   "quality_notes": [],
+   "keep": true,
+   "review_note": "After a search is refused as a repeat, the correct unstick move is to read an unread source already returned by prior search rather than search again; use that source to ground the next theory-building step.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "After a search is refused as a repeat, the correct unstick move is to read an unread source already returned by prior search rather than search again; use that source to ground the next theory-building step.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 6,
+   "case": "arri-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "simulated result arrived",
+   "question": "Should ARRI develop a differentiated proposition of its own for individual creators, beyond its professional cinema range and its smartphone partnership, or keep its consumer presence to partners? What evidence would justify either choice?",
+   "student_turn": 42,
+   "student_run": "9e7ee03b6479a36661979543abc4569ea30820b299b02347268bf1dc586aa16c",
+   "skill": "revise",
+   "theories": {
+    "T1": "Individual creators will adopt ARRI products if they perceive the brand as a professional standard and are willing to pay a premium for reliability and image quality.",
+    "T2": "Individual creators will adopt ARRI products if they perceive the brand as a professional standard and are willing to pay a premium for reliability and image quality, but will also be attracted by the smartphone partnership that already provides them with a professional-grade camera and creative control."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "arri-alexa-price": "2025-08-07",
+    "arri-cined-challenges": "2025-12-01",
+    "arri-core-focus": "2025-12-16",
+    "arri-honor-milestone": "2026-08-12",
+    "arri-ymc-backlash": "2026-09-29",
+    "arri-ymc-use-not-own": "2026-09-29"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated result SYN-D is irrelevant to T1 as it concerns a label printer and packing errors, not creator demand or ARRI product adoption. It does not affect the theory that creators will adopt ARRI products if they perceive the brand as a professional standard and are willing to pay a premium. Therefore T1 remains unchanged.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "Simulated result SYN-D is irrelevant to both T1 and T2 as it concerns a label printer and packing errors, not creator demand or ARRI product adoption. Therefore both theories remain unchanged.",
+    "uncertain": "No change to confidence levels.",
+    "why_next": "Proceed to propose a test or further evidence search if needed."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"Simulated result SYN-D is irrelevant to both T1 and T2 as it concerns a label printer and packing errors, not creator demand or ARRI product adoption. Therefore both theories remain unchanged.\", \"uncertain\": \"No change to confidence levels.\",\"why_next\": \"Proceed to propose a test or further evidence search if needed.\",\"call\": {\"name\": \"revise_theory\",\"arguments\": {\"theory_id\": \"T1\",\"status\": \"kept\",\"reason\": \"Simulated result SYN-D is irrelevant to T1 as it concerns a label printer and packing errors, not creator demand or ARRI product adoption. It does not affect the theory that creators will adopt ARRI products if they perceive the brand as a professional standard and are willing to pay a premium. Therefore T1 remains unchanged.\",\"new_claim\": \"none\",\"evidence_ids\": [\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns a label printer and packing errors, which does not address creator purchase behavior, willingness to pay, or the core assumptions of T1. Therefore it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The step is effectively a no-op: T1 is kept with new_claim 'none' and no confidence change in response to trivially off-topic simulated evidence about a label printer, so it teaches little and does not advance the investigation toward the ARRI decision.; why_next is generic ('Proceed to propose a test or further evidence search if needed') rather than naming a concrete, decision-relevant next move, which the rubric treats as a drop condition.; The justification says SYN-D is irrelevant to both T1 and T2, but the call revises only T1, leaving the reasoning and the action slightly misaligned.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The step is effectively a no-op: T1 is kept with new_claim 'none' and no confidence change in response to trivially off-topic simulated evidence about a label printer, so it teaches little and does not advance the investigation toward the ARRI decision.",
+     "why_next is generic ('Proceed to propose a test or further evidence search if needed') rather than naming a concrete, decision-relevant next move, which the rubric treats as a drop condition.",
+     "The justification says SYN-D is irrelevant to both T1 and T2, but the call revises only T1, leaving the reasoning and the action slightly misaligned."
+    ],
+    "teaches": "The nominal lesson is that irrelevant evidence should not force a theory revision, but the case presents it too trivially and records a no-op rather than a substantive investigation move.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 7,
+   "case": "sma-new-evidence-irrelevant",
+   "case_date": "2013",
+   "origin": "simulated result arrived",
+   "question": "It is April 2013. Should SMA Solar Technology AG develop a differentiated consumer proposition for a specific use case, building on its solar inverter, monitoring and energy-management technology? What evidence would justify that investment?",
+   "student_turn": 37,
+   "student_run": "81dc89b44a8cb44ea6d03384b9ee6d227052af95cdb9a3e51ec32366d2353e64",
+   "skill": "revise",
+   "theories": {
+    "T1": "Homeowners will adopt SMA solar inverters if they perceive the product as a premium, reliable smart home energy management system that offers real-time monitoring and control, because they value convenience and peace of mind.",
+    "T2": "Homeowners will adopt SMA solar inverters if they perceive the product as a reliable, utility‑level backup power solution that can provide continuous electricity during outages, because they need a safe, fail‑safe energy source for critical loads."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "sma-blog-operators": "2012-08-07",
+    "sma-irt-cuts": "2014-03-27",
+    "sma-p16-installed": "2016-01-18",
+    "sma-pvi-30mw": "2013-09-03",
+    "sma-rem-household": "2013-06-26",
+    "sma-wiki-sunnyboy": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated label printer test (SYN-D) does not address consumer adoption drivers for SMA inverters; it bears on no theory, so T1 remains unchanged.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "Simulated label printer test does not address consumer adoption drivers for SMA inverters; it bears on no theory. Therefore, both T1 and T2 remain unchanged.",
+    "uncertain": "None",
+    "why_next": "Proceed to search for additional evidence on consumer demand and willingness to pay for SMA's consumer proposition."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"Simulated label printer test does not address consumer adoption drivers for SMA inverters; it bears on no theory. Therefore, both T1 and T2 remain unchanged.\", \"uncertain\": \"None\", \"why_next\": \"Proceed to search for additional evidence on consumer demand and willingness to pay for SMA's consumer proposition.\",\"call\": {\"name\": \"revise_theory\",\"arguments\": {\"theory_id\":\"T1\",\"status\":\"kept\",\"reason\":\"Simulated label printer test (SYN-D) does not address consumer adoption drivers for SMA inverters; it bears on no theory, so T1 remains unchanged.\",\"new_claim\": \"none\",\"evidence_ids\":[\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns warehouse packing efficiency and does not address consumer perception of SMA inverters as a premium smart home energy management system. Therefore it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The example is flagged as teaching little: the student's action was already accepted and is essentially identical to the teacher's call, so there is no correction signal for training.; The learned/justification overstates the call: it says both T1 and T2 remain unchanged, but the call only revises T1 (kept) and does not actually update or address T2.; The state is temporally inconsistent with the April 2013 case date: sources_read includes items dated 2014-03-27, 2016-01-18, and a source accessed 2026-11-03, which would not be knowable at that time.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The example is flagged as teaching little: the student's action was already accepted and is essentially identical to the teacher's call, so there is no correction signal for training.",
+     "The learned/justification overstates the call: it says both T1 and T2 remain unchanged, but the call only revises T1 (kept) and does not actually update or address T2.",
+     "The state is temporally inconsistent with the April 2013 case date: sources_read includes items dated 2014-03-27, 2016-01-18, and a source accessed 2026-11-03, which would not be knowable at that time."
+    ],
+    "teaches": "At most, that an irrelevant simulated evidence item should leave a theory unchanged; this step is a trivial keep with no correction and little instructional value.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 8,
+   "case": "intel-new-evidence-irrelevant",
+   "case_date": "1991",
+   "origin": "simulated result arrived",
+   "question": "It is March 1991. Should Intel Corporation develop a differentiated consumer proposition for a specific use case, building on its microprocessors? What evidence would justify that investment?",
+   "student_turn": 24,
+   "student_run": "1e7d832b42ef82fdfea6115cb1cc9d91361ac1a9ef87bb45c6256a7d3da0766f",
+   "skill": "revise",
+   "theories": {
+    "T1": "Home networking will create a demand for Intel microprocessors, and if Intel can differentiate its chips for this use case, it can capture premium pricing.",
+    "T2": "Gamers will adopt Intel microprocessors if they offer superior gaming performance, and if Intel can differentiate its chips for gaming, it can capture premium pricing from this segment."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "intel-am386-budget": "unknown (accessed 2026-11-03)",
+    "intel-court-oem": "1991-03 (district court opinion)",
+    "intel-csm-nocare": "1991-02-12",
+    "intel-ib-buyer": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated result SYN-D about a label printer reducing packing errors is unrelated to home networking demand or Intel’s differentiation for that use case; it does not affect the theory.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "The simulated result SYN-D describes a label printer test that reduced packing errors. It does not address home networking or gaming demand, so it bears on neither T1 nor T2. Therefore the theories remain unchanged.",
+    "uncertain": "The simulated result is irrelevant to the theories.",
+    "why_next": "No evidence about consumer demand for home networking or gaming was provided."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"The simulated result SYN-D describes a label printer test that reduced packing errors. It does not address home networking or gaming demand, so it bears on neither T1 nor T2. Therefore the theories remain unchanged.\", \"uncertain\": \"The simulated result is irrelevant to the theories.\", \"why_next\": \"No evidence about consumer demand for home networking or gaming was provided.\",\"call\": {\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Simulated result SYN-D about a label printer reducing packing errors is unrelated to home networking demand or Intel\\u2019s differentiation for that use case; it does not affect the theory.\", \"new_claim\": \"none\", \"evidence_ids\": [\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns a label printer reducing packing errors and does not address home networking demand, consumer willingness to pay, or Intel’s ability to differentiate for that use case. Therefore it does not affect T1.",
+     "new_claim": "Home networking will create a demand for Intel microprocessors, and if Intel can differentiate its chips for this use case, it can capture premium pricing.",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The teacher call repeats the student's already-accepted action: same revise_theory on T1 with status kept and substantially the same reasoning, so it does not add a teachable correction or move the investigation forward.; The example teaches little: SYN-D is trivially irrelevant, and the reasoning never weighs quoted evidence or discriminates between the rival theories, so it is not a careful analyst's move worth training on.; why_next is a generic state observation ('No evidence about consumer demand for home networking or gaming was provided') rather than a specific, decision-relevant next step.; Minor mismatch: the learned text says both T1 and T2 remain unchanged, but the call only revises T1.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The teacher call repeats the student's already-accepted action: same revise_theory on T1 with status kept and substantially the same reasoning, so it does not add a teachable correction or move the investigation forward.",
+     "The example teaches little: SYN-D is trivially irrelevant, and the reasoning never weighs quoted evidence or discriminates between the rival theories, so it is not a careful analyst's move worth training on.",
+     "why_next is a generic state observation ('No evidence about consumer demand for home networking or gaming was provided') rather than a specific, decision-relevant next step.",
+     "Minor mismatch: the learned text says both T1 and T2 remain unchanged, but the call only revises T1."
+    ],
+    "teaches": "It would only teach that obviously irrelevant evidence can be noted and a theory kept unchanged, which is too weak and redundant with the student's own correct call.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 9,
+   "case": "recaro-new-evidence-irrelevant",
+   "case_date": "2017",
+   "origin": "simulated result arrived",
+   "question": "It is late 2017. Should Recaro Holding develop a differentiated consumer proposition for a specific use case, building on its seating design and ergonomics expertise? What evidence would justify that investment?",
+   "student_turn": 29,
+   "student_run": "1862814ccd124a42f7d6aaacbffd8d04b68373043c1367d9c8a7833ba77f495a",
+   "skill": "revise",
+   "theories": {
+    "T1": "Consumers will purchase Recaro gaming chairs because they perceive the product as a premium, high‑performance gaming experience, and are willing to pay a premium price for ergonomic design and brand prestige.",
+    "T2": "Consumers will purchase Recaro gaming chairs because they perceive the product as a status symbol and a reflection of personal taste, and are willing to pay a premium for brand prestige and design."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "recaro-bt-price": "unknown (accessed 2026-11-03); review of a 2020 model",
+    "recaro-dc-jury": "2020",
+    "recaro-dlsu-chair": "2019",
+    "recaro-fmt-secretlab": "2019-08-13",
+    "recaro-pr-group": "2019-05-28",
+    "recaro-wiki-artsana": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated warehouse test (SYN-D) does not address consumer purchase drivers for gaming chairs; it is irrelevant to T1's claim about ergonomic performance and premium pricing. Therefore T1 remains unchanged.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "The simulated warehouse test about a label printer reducing packing errors does not measure wearer or buyer behavior and therefore bears on neither T1 nor T2. It is irrelevant to the theories about gamer purchase drivers.",
+    "uncertain": "The simulated result does not affect the evidence base for either theory.",
+    "why_next": "We will keep both theories unchanged and proceed to the next stage."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"The simulated warehouse test about a label printer reducing packing errors does not measure wearer or buyer behavior and therefore bears on neither T1 nor T2. It is irrelevant to the theories about gamer purchase drivers.\", \"uncertain\": \"The simulated result does not affect the evidence base for either theory.\",\"why_next\":\"We will keep both theories unchanged and proceed to the next stage.\",\"call\": {\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Simulated warehouse test (SYN-D) does not address consumer purchase drivers for gaming chairs; it is irrelevant to T1's claim about ergonomic performance and premium pricing. Therefore T1 remains unchanged.\", \"new_claim\": \"none\", \"evidence_ids\": [\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns warehouse packing efficiency and does not address consumer demand drivers for Recaro gaming chairs. Therefore it does not affect T1.",
+     "new_claim": "Consumers will purchase Recaro gaming chairs because they perceive the product as a premium, high‑performance gaming experience, and are willing to pay a premium price for ergonomic design and brand prestige.",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The state is temporally inconsistent with the 2017 case: sources_read includes 2019–2020 sources (recaro-dlsu-chair 2019, recaro-fmt-secretlab 2019-08-13, recaro-pr-group 2019-05-28, recaro-dc-jury 2020, recaro-bt-price 2020 model), so the investigation is built on later-period facts.; The call is a no-op revision (status 'kept', new_claim 'none') that only discards an irrelevant result and then says 'proceed to the next stage' without a specific next step; it does not move the investigation forward. The example's own why_wrong note flags that it likely teaches little.; why_next says 'keep both theories unchanged' while the call only revises T1, and 'proceed to the next stage' is generic rather than a concrete next action.; The call's factual description of SYN-D ('label printer reducing packing errors') is not present in the cited source entry, which shows only 'n/a', so the reasoning is not grounded in the visible source text.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The state is temporally inconsistent with the 2017 case: sources_read includes 2019–2020 sources (recaro-dlsu-chair 2019, recaro-fmt-secretlab 2019-08-13, recaro-pr-group 2019-05-28, recaro-dc-jury 2020, recaro-bt-price 2020 model), so the investigation is built on later-period facts.",
+     "The call is a no-op revision (status 'kept', new_claim 'none') that only discards an irrelevant result and then says 'proceed to the next stage' without a specific next step; it does not move the investigation forward. The example's own why_wrong note flags that it likely teaches little.",
+     "why_next says 'keep both theories unchanged' while the call only revises T1, and 'proceed to the next stage' is generic rather than a concrete next action.",
+     "The call's factual description of SYN-D ('label printer reducing packing errors') is not present in the cited source entry, which shows only 'n/a', so the reasoning is not grounded in the visible source text."
+    ],
+    "teaches": "If kept, this would only teach that an irrelevant simulated warehouse result should leave a consumer-demand theory unchanged; it is a trivial no-op and the surrounding state uses post-2017 sources for a late-2017 decision.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 10,
+   "case": "maglite-new-evidence-irrelevant",
+   "case_date": "1983",
+   "origin": "simulated result arrived",
+   "question": "It is 1983. Should Mag Instrument develop a differentiated consumer proposition for a specific use case, building on its machined anodized-aluminium flashlights? What evidence would justify that investment?",
+   "student_turn": 30,
+   "student_run": "e31c307e22027dfac70efbe971bc9a8cf6a83159be3c438562244fddc9294a7f",
+   "skill": "revise",
+   "theories": {
+    "T1": "Civilians will adopt a differentiated consumer proposition because they perceive the Maglite as a status symbol and a symbol of professional reliability, leading them to purchase multiple units for personal use.",
+    "T2": "Consumers will adopt a differentiated consumer proposition because they need reliable, professional‑grade flashlights for outdoor recreation and home safety, and they will purchase multiple units to ensure availability."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "mag-amw-standard": "unknown (accessed 2026-11-03)",
+    "mag-fu-civilians": "unknown (accessed 2026-11-03); compiled about 2004",
+    "mag-fu-lawenforcement": "unknown (accessed 2026-11-03); compiled about 2004",
+    "mag-fu-magcharger": "unknown (accessed 2026-11-03); compiled about 2004",
+    "mag-fu-stores": "unknown (accessed 2026-11-03); compiled about 2004",
+    "mag-nbc-mass": "2010-07-06",
+    "mag-npr-price": "2010-09-29",
+    "mag-pat2-cheaper": "1983-06-14 (granted)"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated result SYN-D concerns warehouse packing errors and does not address consumer demand, willingness to pay, or purchase behavior, so it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "Simulated result SYN-D is irrelevant to both T1 and T2 as it concerns warehouse packing errors, not consumer demand or purchase behavior. Therefore, both theories remain unchanged.",
+    "uncertain": "The simulated result does not affect confidence in either theory.",
+    "why_next": "Proceed to propose a test that can differentiate T1 and T2 using the available budget and timeline."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"Simulated result SYN-D is irrelevant to both T1 and T2 as it concerns warehouse packing errors, not consumer demand or purchase behavior. Therefore, both theories remain unchanged.\", \"uncertain\": \"The simulated result does not affect confidence in either theory.\", \"why_next\": \"Proceed to propose a test that can differentiate T1 and T2 using the available budget and timeline.\", \"call\": {\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Simulated result SYN-D concerns warehouse packing errors and does not address consumer demand, willingness to pay, or purchase behavior, so it does not affect T1.\", \"new_claim\": \"none\", \"evidence_ids\": [\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns warehouse packing efficiency and does not address consumer demand, willingness to pay, or purchase behavior for a differentiated Maglite proposition. Therefore it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The revise_theory call is a no-op: status 'kept' with new_claim 'none' merely restates that SYN-D is irrelevant and does not move the investigation forward.; why_next is generic: 'Proceed to propose a test that can differentiate T1 and T2' names the goal but gives no discriminating test, arms, or decision rule.; The justification says both T1 and T2 remain unchanged, but the call only revises T1, so the stated reasoning is broader than the action taken.; The example teaches little: the student's call was already accepted and the move is correct but trivial, providing no corrective signal.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The revise_theory call is a no-op: status 'kept' with new_claim 'none' merely restates that SYN-D is irrelevant and does not move the investigation forward.",
+     "why_next is generic: 'Proceed to propose a test that can differentiate T1 and T2' names the goal but gives no discriminating test, arms, or decision rule.",
+     "The justification says both T1 and T2 remain unchanged, but the call only revises T1, so the stated reasoning is broader than the action taken.",
+     "The example teaches little: the student's call was already accepted and the move is correct but trivial, providing no corrective signal."
+    ],
+    "teaches": "Minimal: an irrelevant evidence item (warehouse packing errors) leaves the consumer-demand theories unchanged; the call is a correct but trivial no-op with a generic next step, so it adds little training value.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 11,
+   "case": "orasure-new-evidence-irrelevant",
+   "case_date": "2005",
+   "origin": "simulated result arrived",
+   "question": "It is late 2005. Should OraSure Technologies develop a differentiated consumer proposition for a specific use case, building on its rapid oral-fluid HIV antibody test for clinics and public-health programmes? What evidence would justify that investment?",
+   "student_turn": 29,
+   "student_run": "3bd90feb845d5b7373e053b3d4d3bf5505c23fb2bd7bb40fb3f804ee0ef9c546",
+   "skill": "revise",
+   "theories": {
+    "T1": "Individuals will adopt an at-home HIV test if they view it as a private, discreet way to monitor their health, and they are willing to pay a premium for convenience and reduced clinic visits.",
+    "T2": "Individuals will adopt an at-home HIV test if they view it as a medical necessity for early detection, and they are willing to pay a premium for accuracy and peace of mind."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "orasure-cln12-history": "2012-07",
+    "orasure-fda04-approval": "2004-03-26",
+    "orasure-hd05-mailin": "2005-10-26",
+    "orasure-k023487-db": "2003-03-20 (decision date)",
+    "orasure-k023487-label": "2002-10-15 (prepared)",
+    "orasure-nbc12-retail": "2012-07-03"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated result about label printer reducing packing errors does not address consumer motivations, willingness to pay, or adoption of at-home HIV tests. It is irrelevant to T1.",
+     "new_claim": "Individuals will adopt an at-home HIV test if they view it as a private, discreet way to monitor their health, and they are willing to pay a premium for convenience and reduced clinic visits.",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "revise_theory",
+    "uncertain": "T1",
+    "why_next": "Simulated warehouse test result does not address consumer demand or willingness to pay for at-home HIV tests. It is irrelevant to T1's claim about privacy-driven adoption and premium pricing. Therefore T1 remains unchanged (status kept)."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"revise_theory\", \"uncertain\": \"T1\", \"why_next\": \"Simulated warehouse test result does not address consumer demand or willingness to pay for at-home HIV tests. It is irrelevant to T1's claim about privacy-driven adoption and premium pricing. Therefore T1 remains unchanged (status kept).\", \"call\": {\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Simulated result about label printer reducing packing errors does not address consumer motivations, willingness to pay, or adoption of at-home HIV tests. It is irrelevant to T1.\", \"new_claim\": \"Individuals will adopt an at-home HIV test if they view it as a private, discreet way to monitor their health, and they are willing to pay a premium for convenience and reduced clinic visits.\", \"evidence_ids\": [\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns warehouse labeling efficiency and does not address consumer motivations for privacy, convenience, or medical necessity. Therefore it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The teacher's call is a no-op that mirrors the student's already-accepted action: both keep T1 unchanged and merely note SYN-D is irrelevant. It does not demonstrate a corrective move or add anything the student did not already do, so it teaches little.; The call does not move the investigation forward: it only records that an operational/warehouse result is irrelevant to consumer-demand theories, without a next step toward the evidence the question actually needs (consumer adoption, willingness to pay, or a decision-relevant test).",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The teacher's call is a no-op that mirrors the student's already-accepted action: both keep T1 unchanged and merely note SYN-D is irrelevant. It does not demonstrate a corrective move or add anything the student did not already do, so it teaches little.",
+     "The call does not move the investigation forward: it only records that an operational/warehouse result is irrelevant to consumer-demand theories, without a next step toward the evidence the question actually needs (consumer adoption, willingness to pay, or a decision-relevant test)."
+    ],
+    "teaches": "A kept theory with an irrelevant operational result is a trivial, already-accepted no-op rather than a meaningful revision of belief or next investigative step.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 12,
+   "case": "sigvaris-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "simulated result arrived",
+   "question": "Should SIGVARIS GROUP develop a differentiated proposition for people who buy compression without a prescription, such as travellers or athletes, or keep its focus on medical compression? What evidence would justify either choice?",
+   "student_turn": 32,
+   "student_run": "bb829534d0bfd462f23fdfad4258c35d1dd129ef48562ad86ee2dcccb6fc2a4d",
+   "skill": "revise",
+   "theories": {
+    "T1": "Health-conscious consumers will adopt compression socks for non-medical purposes (travel, daily wear) because they perceive them as a health benefit, leading to higher willingness to pay and repeat purchases.",
+    "T2": "Athletes will adopt compression socks for non-medical performance benefits because they seek a competitive advantage, leading to higher purchase frequency and willingness to pay premium prices."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "sigvaris-about": "unknown (accessed 2026-11-03)",
+    "sigvaris-medical-grade-worth": "unknown (accessed 2026-11-03)",
+    "sigvaris-mordor-cep": "2025-09-12",
+    "sigvaris-mordor-channels": "2025-09-12",
+    "sigvaris-mordor-cost": "2025-09-12",
+    "sigvaris-review-travel": "2026-09-13",
+    "sigvaris-running-meta": "2025-01-20",
+    "sigvaris-travel-claim": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated warehouse test (SYN-D) concerns packing efficiency, not consumer purchase behavior for travel or athletic compression. It provides no evidence for or against T1, so the theory remains unchanged.",
+     "new_claim": ".",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "revise_theory",
+    "uncertain": "T1",
+    "why_next": "Simulated warehouse test about label printer reducing packing errors does not address consumer demand for travel or athletic compression; therefore no change to theory."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\":\"revise_theory\",\"uncertain\":\"T1\",\"why_next\":\"Simulated warehouse test about label printer reducing packing errors does not address consumer demand for travel or athletic compression; therefore no change to theory.\",\"call\":{\"name\":\"revise_theory\",\"arguments\":{\"theory_id\":\"T1\",\"status\":\"kept\",\"reason\":\"Simulated warehouse test (SYN-D) concerns packing efficiency, not consumer purchase behavior for travel or athletic compression. It provides no evidence for or against T1, so the theory remains unchanged.\",\"new_claim\":\".\",\"evidence_ids\":[\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns warehouse packing efficiency and does not address consumer demand, willingness to pay, or behavior of health-conscious travelers. Therefore it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The call is a no-op revision: T1 is kept with new_claim '.', so it only notes that SYN-D is irrelevant and does not move the investigation forward or add a decision-relevant update.; The example has little teaching value because the student's identical call was already accepted (why_wrong).",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The call is a no-op revision: T1 is kept with new_claim '.', so it only notes that SYN-D is irrelevant and does not move the investigation forward or add a decision-relevant update.",
+     "The example has little teaching value because the student's identical call was already accepted (why_wrong)."
+    ],
+    "teaches": "",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 13,
+   "case": "msa-new-evidence-irrelevant",
+   "case_date": "2011",
+   "origin": "simulated result arrived",
+   "question": "It is early 2011. Should MSA (Mine Safety Appliances) develop a differentiated consumer proposition for a specific use case, building on its respirators, hard hats and fall-protection products? What evidence would justify that investment?",
+   "student_turn": 27,
+   "student_run": "a1f658aaf346daa8d2606686253f5ca83653ac96816571a15e27f26c8a9bc131",
+   "skill": "revise",
+   "theories": {
+    "T1": "Homeowners under 35 will purchase MSA consumer safety products primarily for DIY projects because they view safety gear as essential for completing tasks safely.",
+    "T2": "Homeowners under 35 will purchase MSA consumer safety products primarily for outdoor recreation activities because they view safety gear as essential for protecting themselves and their gear in nature-based settings."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "msa-2014-jv": "2014-03-07",
+    "msa-jchs-decline": "2012-12-05",
+    "msa-jchs-diy": "2012-12-05",
+    "msa-jv-1998": "2011-07-25",
+    "msa-jv-retailers": "2011-07-25",
+    "msa-jv-storefronts": "2011-07-25"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated result SYN-D concerns a warehouse label printer and does not address consumer demand for DIY safety gear; therefore it does not affect T1. Keeping T1 unchanged.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "Simulated result SYN-D concerns a warehouse label printer reducing packing errors and does not address consumer demand for DIY or outdoor safety gear. It bears on neither T1 nor T2, so both theories remain unchanged.",
+    "uncertain": "The simulated result is irrelevant to the theories as it measures operational efficiency, not consumer behavior.",
+    "why_next": "We should continue searching for evidence of consumer demand and competitive landscape before deciding on a test."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"Simulated result SYN-D concerns a warehouse label printer reducing packing errors and does not address consumer demand for DIY or outdoor safety gear. It bears on neither T1 nor T2, so both theories remain unchanged.\", \"uncertain\": \"The simulated result is irrelevant to the theories as it measures operational efficiency, not consumer behavior.\",\"why_next\":\"We should continue searching for evidence of consumer demand and competitive landscape before deciding on a test.\",\"call\": {\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Simulated result SYN-D concerns a warehouse label printer and does not address consumer demand for DIY safety gear; therefore it does not affect T1. Keeping T1 unchanged.\", \"new_claim\": \"none\", \"evidence_ids\": [\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns warehouse packing efficiency and does not address consumer purchase behavior or safety gear motivations for homeowners under 35. Therefore it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "No-op, low-teaching-value call: the revision merely keeps T1 unchanged on the grounds that SYN-D is irrelevant, so it does not move the investigation forward; the reviewer note itself says it likely teaches little.; Grounding gap: SYN-D is listed as 'n/a' in sources_read, yet the reasoning asserts specific content about it (warehouse label printer reducing packing errors) that is not shown or quotable from the state.; Scope mismatch: the justification says both T1 and T2 remain unchanged, but the call revises only T1, so the reasoning is broader than the action taken.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "No-op, low-teaching-value call: the revision merely keeps T1 unchanged on the grounds that SYN-D is irrelevant, so it does not move the investigation forward; the reviewer note itself says it likely teaches little.",
+     "Grounding gap: SYN-D is listed as 'n/a' in sources_read, yet the reasoning asserts specific content about it (warehouse label printer reducing packing errors) that is not shown or quotable from the state.",
+     "Scope mismatch: the justification says both T1 and T2 remain unchanged, but the call revises only T1, so the reasoning is broader than the action taken."
+    ],
+    "teaches": "",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 14,
+   "case": "illumina-new-evidence-irrelevant",
+   "case_date": "2015",
+   "origin": "simulated result arrived",
+   "question": "It is mid-2015. Should Illumina develop a differentiated consumer proposition for a specific use case, building on its DNA sequencing and genotyping technology? What evidence would justify that investment?",
+   "student_turn": 40,
+   "student_run": "8563dd95d52783f363d6081fe8dc92eba9679796a1147995cd4154ad7918b024",
+   "skill": "revise",
+   "theories": {
+    "T1": "Consumers will adopt Illumina’s direct‑to‑consumer genetic testing because they view it as a health‑management tool that provides actionable insights, leading them to purchase at‑home kits.",
+    "T2": "Consumers will adopt Illumina’s direct‑to‑consumer genetic testing because they seek ancestry and heritage insights, leading them to purchase at‑home kits."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "illumina-ajmc-bloom": "2015-02",
+    "illumina-kpbs-pivot": "2015-08-18",
+    "illumina-pr-about": "2015-08-18",
+    "illumina-pr-dilutive": "2015-08-18",
+    "illumina-pr-helix": "2015-08-18",
+    "illumina-wiki-fda2010": "accessed 2026-11"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated result SYN-D concerns a label printer and packing errors; it does not provide evidence relevant to consumer adoption of genetic testing and thus does not affect the theory. Status kept.",
+     "new_claim": "",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "The simulated result SYN-D describes a label printer reducing packing errors and explicitly states it measured nothing about wearers or buyers. It does not address consumer demand, purchase intent, or any mechanism in T1 (health‑management adoption) or T2 (ancestry adoption). Therefore it bears on neither theory and is irrelevant to the investigation.",
+    "uncertain": "The simulated result does not affect confidence in either theory.",
+    "why_next": "We will keep both theories unchanged and proceed to search for real evidence of consumer demand for Illumina’s genetic testing."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"The simulated result SYN-D describes a label printer reducing packing errors and explicitly states it measured nothing about wearers or buyers. It does not address consumer demand, purchase intent, or any mechanism in T1 (health\\u2011management adoption) or T2 (ancestry adoption). Therefore it bears on neither theory and is irrelevant to the investigation.\", \"uncertain\": \"The simulated result does not affect confidence in either theory.\",\"why_next\":\"We will keep both theories unchanged and proceed to search for real evidence of consumer demand for Illumina\\u2019s genetic testing.\",\"call\": {\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Simulated result SYN-D concerns a label printer and packing errors; it does not provide evidence relevant to consumer adoption of genetic testing and thus does not affect the theory. Status kept.\", \"new_claim\": \"\", \"evidence_ids\": [\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns warehouse packing efficiency and does not address consumer demand for health‑focused genetic testing. Therefore it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The revise call is a no-op (status kept, no new claim) that only marks the simulated result as irrelevant; it does not demonstrate careful weighing of rival theories or a substantive revision, so it teaches little.; The reasoning and why_next say the result bears on neither theory and that both theories will be kept unchanged, but the call only revises T1, so the action is incomplete/mismatched with the stated plan.; SYN-D is listed with no visible content or date (n/a), so the specific claims about what it measured are not grounded in the state as shown.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The revise call is a no-op (status kept, no new claim) that only marks the simulated result as irrelevant; it does not demonstrate careful weighing of rival theories or a substantive revision, so it teaches little.",
+     "The reasoning and why_next say the result bears on neither theory and that both theories will be kept unchanged, but the call only revises T1, so the action is incomplete/mismatched with the stated plan.",
+     "SYN-D is listed with no visible content or date (n/a), so the specific claims about what it measured are not grounded in the state as shown."
+    ],
+    "teaches": "A trivial keep on clearly irrelevant evidence with no substantive revision; not a useful demonstration of the revise skill.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 15,
+   "case": "embrace-new-evidence-irrelevant",
+   "case_date": "2016",
+   "origin": "simulated result arrived",
+   "question": "It is March 2016. Should Embrace Innovations develop a differentiated consumer proposition for a specific use case, building on its infant-warming technology? What evidence would justify that investment?",
+   "student_turn": 31,
+   "student_run": "33a1ff40a89ca088e1c1f0d9b450a3b358a57a6db12372a3c899e2c6240669ff",
+   "skill": "revise",
+   "theories": {
+    "T1": "Parents of premature and low-birth-weight infants in low-resource settings will adopt a home infant warmer if it is priced below $100 and marketed as a life-saving medical device that reduces the risk of SIDS.",
+    "T2": "Parents of premature and low-birth-weight infants will adopt a home infant warmer if it is marketed as a fashion accessory and sold through trendy consumer channels, because they view infant care as a status symbol and are willing to pay a premium for design and brand."
+   },
+   "sources_read": {
+    "SYN-D": "n/a",
+    "embrace-cnbc-price": "2016-02-22",
+    "embrace-ee-origin": "unknown (accessed 2026-11-02)",
+    "embrace-gsb-investors": "2012",
+    "embrace-her-sids": "2015-05-16",
+    "embrace-smg-launch": "unknown (object made 2017; accessed 2026-11-02)"
+   },
+   "call": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated warehouse test (SYN-D) does not address infant warmer adoption, pricing, or consumer messaging. It is irrelevant to T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   },
+   "justification": {
+    "learned": "The simulated warehouse test (SYN-D) concerns a label printer and packing errors, not infant warmers or buyer behavior. It does not address any of the existing theories (T1, T2). Therefore it bears on none of them and should be recorded as irrelevant, leaving the theories unchanged.",
+    "uncertain": "The simulated result does not provide any new information about consumer demand, pricing, or distribution channels for Embrace’s infant warmer. It cannot support or contradict T1, T2, or any potential third theory.",
+    "why_next": "Proceed to add a third theory that explains adoption via trusted retail/healthcare channels, then assess available evidence for all three. After that, propose a single test that distinguishes all three theories within the €20,000 budget and 12‑week timeline."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"The simulated warehouse test (SYN-D) concerns a label printer and packing errors, not infant warmers or buyer behavior. It does not address any of the existing theories (T1, T2). Therefore it bears on none of them and should be recorded as irrelevant, leaving the theories unchanged.\", \"uncertain\": \"The simulated result does not provide any new information about consumer demand, pricing, or distribution channels for Embrace\\u2019s infant warmer. It cannot support or contradict T1, T2, or any potential third theory.\",\"why_next\":\"Proceed to add a third theory that explains adoption via trusted retail/healthcare channels, then assess available evidence for all three. After that, propose a single test that distinguishes all three theories within the \\u20ac20,000 budget and 12\\u2011week timeline.\",\"call\": {\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Simulated warehouse test (SYN-D) does not address infant warmer adoption, pricing, or consumer messaging. It is irrelevant to T1.\", \"new_claim\": \"none\", \"evidence_ids\": [\"SYN-D\"]}}}",
+   "student_action": {
+    "name": "revise_theory",
+    "arguments": {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Simulated evidence SYN-D concerns warehouse packing efficiency and does not address consumer demand, pricing, or marketing positioning for the infant warmer. Therefore it does not affect T1.",
+     "new_claim": "none",
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the student's own call already passes this family's gate: likely teaches little",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The why_next is not grounded in the state: it invents a third theory ('trusted retail/healthcare channels') that is not among the named theories and is not tied to any cited source, and it states a €20,000 budget and 12-week timeline that do not appear in the shown state or cited sources.; The example teaches little: the student's own revise_theory call already matched the teacher call and was accepted, so it demonstrates no correction or new analytical move (why_wrong: 'likely teaches little').; The call records SYN-D only against T1 even though the reasoning says the evidence bears on none of T1 and T2, leaving the revision asymmetric relative to the stated conclusion.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The why_next is not grounded in the state: it invents a third theory ('trusted retail/healthcare channels') that is not among the named theories and is not tied to any cited source, and it states a €20,000 budget and 12-week timeline that do not appear in the shown state or cited sources.",
+     "The example teaches little: the student's own revise_theory call already matched the teacher call and was accepted, so it demonstrates no correction or new analytical move (why_wrong: 'likely teaches little').",
+     "The call records SYN-D only against T1 even though the reasoning says the evidence bears on none of T1 and T2, leaving the revision asymmetric relative to the stated conclusion."
+    ],
+    "teaches": "A useful version would show how to record irrelevant evidence against the theories it fails to touch and would keep proposed next theories and budgets grounded in the state's named theories and sources.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 16,
+   "case": "technogym-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "evidence kind",
+   "question": "Should Technogym develop a differentiated proposition for home users, beyond its existing premium home equipment and apps, or keep its current consumer offer? What evidence would justify either choice?",
+   "student_turn": 24,
+   "student_run": "101b6bfdac4ac76820eec7a036f2e6598fef3c0d8edb1a4bd18ea6942f66277a",
+   "skill": "classify",
+   "theories": {
+    "T1": "Home users will adopt a differentiated proposition if they perceive it as a premium lifestyle experience rather than just a functional product.",
+    "T2": "Home users will adopt a differentiated proposition if they experience a measurable health benefit that cannot be achieved with existing generic equipment."
+   },
+   "sources_read": {
+    "technogym-500k-homes": "2025-03-26",
+    "technogym-athletech-b2b": "2025-03-26",
+    "technogym-consumer-headwind": "2025-03-26",
+    "technogym-cw-price-subs": "2022-12-12",
+    "technogym-ggr-search-down": "unknown (covers 2022 to 2023 search data)",
+    "technogym-home-design": "unknown (accessed 2026-11-03)",
+    "technogym-peloton-2021-gyms": "2021-11-05"
+   },
+   "call": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T2",
+     "evidence_id": "technogym-cw-price-subs",
+     "direction": "neutral",
+     "quote": "simplicity of use is brilliant, but you might find yourself with hefty monthly subscription bills to get the most out of the bike.",
+     "evidence_kind": "customer_observation",
+     "does_not_show": "It does not demonstrate that home users seek measurable health benefits or that they would pay more for such features."
+    }
+   },
+   "justification": {
+    "learned": "We have read seven sources about Technogym. None directly address measurable health benefits that differentiate home equipment, which is core to Theory T2. The best available evidence is a verified review of Technogym’s Ride smart bike that discusses usability and subscription cost but not health outcomes.",
+    "uncertain": "Whether home users value health benefits enough to pay a premium remains unknown. No source quantifies demand for health‑focused features or willingness to pay for measurable outcomes.",
+    "why_next": "Assess the Ride smart bike review (technogym‑cw‑price‑subs) against T2 to establish a baseline of evidence. Then, if needed, use the remaining challenge search to look for contradictory evidence on health‑benefit demand."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have read seven sources about Technogym. None directly address measurable health benefits that differentiate home equipment, which is core to Theory T2. The best available evidence is a verified review of Technogym\\u2019s Ride smart bike that discusses usability and subscription cost but not health outcomes.\", \"uncertain\": \"Whether home users value health benefits enough to pay a premium remains unknown. No source quantifies demand for health\\u2011focused features or willingness to pay for measurable outcomes.\", \"why_next\": \"Assess the Ride smart bike review (technogym\\u2011cw\\u2011price\\u2011subs) against T2 to establish a baseline of evidence. Then, if needed, use the remaining challenge search to look for contradictory evidence on health\\u2011benefit demand.\",\"call\": {\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T2\", \"evidence_id\": \"technogym-cw-price-subs\", \"direction\": \"neutral\", \"quote\": \"simplicity of use is brilliant, but you might find yourself with hefty monthly subscription bills to get the most out of the bike.\", \"evidence_kind\": \"customer_observation\", \"does_not_show\": \"It does not demonstrate that home users seek measurable health benefits or that they would pay more for such features.\"}}}",
+   "student_action": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T2",
+     "evidence_id": "technogym-cw-price-subs",
+     "direction": "supports",
+     "quote": "simplicity of use is brilliant, but you might find yourself with hefty monthly subscription bills to get the most out of the bike.",
+     "evidence_kind": "independent_study",
+     "does_not_show": "It does not demonstrate that health benefits are the primary driver of purchase decisions or that users would pay a premium for them."
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "labelled technogym-cw-price-subs as independent_study; the annotation (v1) says customer_observation",
+   "quality_notes": [],
+   "keep": true,
+   "review_note": "A firsthand product review should be classified as customer_observation, not independent_study. A quote about usability and subscription cost is neutral for a health-benefit theory, and the assessment correctly states what the evidence fails to show rather than overreading it.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "A firsthand product review should be classified as customer_observation, not independent_study. A quote about usability and subscription cost is neutral for a health-benefit theory, and the assessment correctly states what the evidence fails to show rather than overreading it.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 17,
+   "case": "qdi-base",
+   "case_date": "2003",
+   "origin": "evidence kind",
+   "question": "It is early 2003. Should Quantum Devices, Inc. develop a differentiated consumer proposition for a specific use case, building on its high-intensity LED light sources for medical research and military first aid? What evidence would justify that investment?",
+   "student_turn": 16,
+   "student_run": "9fcfaf549a6ff523621ec19198e7f4b790d2effcb0dc8c09f4288bfa365bdea8",
+   "skill": "classify",
+   "theories": {
+    "T1": "Consumers will adopt home photodynamic therapy LED devices if they view them as a medical necessity for skin conditions like acne or psoriasis, and the device is marketed as a safe, FDA-cleared solution.",
+    "T2": "Consumers will adopt home photodynamic therapy LED devices if they view them as a convenient, at‑home alternative to clinical treatments, and the device is marketed as a quick‑fix for skin conditions."
+   },
+   "sources_read": {
+    "qdi-fda-k032229": "2003-09-12 (database entry)",
+    "qdi-ftc-cureall": "1999-06-18",
+    "qdi-pm-mucositis2002": "2002-12",
+    "qdi-sp22-exit": "2022-05-19",
+    "qdi-sp22-homesplit": "2022-05-19"
+   },
+   "call": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "qdi-fda-k032229",
+     "direction": "supports",
+     "quote": "Device Classification Name Lamp, Infrared, Therapeutic Heating 510(k) Number K032229 Device Name QUANTUM WARP 10 LIGHT DELIVERY SYSTEM",
+     "evidence_kind": "regulation",
+     "does_not_show": "The FDA clearance does not demonstrate consumer demand for home photodynamic therapy devices or that consumers view them as a medical necessity."
+    }
+   },
+   "justification": {
+    "learned": "We have read five sources: FDA 510(k) clearance (qdi-fda-k032229), FTC health fraud notice (qdi-ftc-cureall), NASA mucositis study (qdi-pm-mucositis2002), and two 2022 NASA spinoff articles (qdi-sp22-exit, qdi-sp22-homesplit). These show Quantum Devices has an FDA-cleared therapeutic light device and medical research validation, but do not directly show consumer demand for home photodynamic therapy.",
+    "uncertain": "Consumer demand for home LED therapy devices in 2003 is unknown; no evidence of individual buyer adoption was found in the read sources. The two unread sources (qdi-pm-whelan2001, qdi-sp05-consumer) may contain relevant consumer data.",
+    "why_next": "Read the two unread sources to find any evidence of consumer interest or sales, then assess how they bear on T1 and T2. After that, add a third theory about a different customer segment or route to market, and assess evidence for it."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have read five sources: FDA 510(k) clearance (qdi-fda-k032229), FTC health fraud notice (qdi-ftc-cureall), NASA mucositis study (qdi-pm-mucositis2002), and two 2022 NASA spinoff articles (qdi-sp22-exit, qdi-sp22-homesplit). These show Quantum Devices has an FDA-cleared therapeutic light device and medical research validation, but do not directly show consumer demand for home photodynamic therapy.\", \"uncertain\": \"Consumer demand for home LED therapy devices in 2003 is unknown; no evidence of individual buyer adoption was found in the read sources. The two unread sources (qdi-pm-whelan2001, qdi-sp05-consumer) may contain relevant consumer data.\", \"why_next\": \"Read the two unread sources to find any evidence of consumer interest or sales, then assess how they bear on T1 and T2. After that, add a third theory about a different customer segment or route to market, and assess evidence for it.\",\"call\": {\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"qdi-fda-k032229\", \"direction\": \"supports\", \"quote\": \"Device Classification Name Lamp, Infrared, Therapeutic Heating 510(k) Number K032229 Device Name QUANTUM WARP 10 LIGHT DELIVERY SYSTEM\", \"evidence_kind\": \"regulation\", \"does_not_show\": \"The FDA clearance does not demonstrate consumer demand for home photodynamic therapy devices or that consumers view them as a medical necessity.\"}}}",
+   "student_action": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "qdi-fda-k032229",
+     "direction": "supports",
+     "quote": "Device Classification Name Lamp, Infrared, Therapeutic Heating 510(k) Number K032229 Device Name QUANTUM WARP 10 LIGHT DELIVERY SYSTEM",
+     "evidence_kind": "independent_study",
+     "does_not_show": "It does not show consumer demand, price sensitivity, or marketing effectiveness; it only confirms FDA clearance for medical use."
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "labelled qdi-fda-k032229 as independent_study; the annotation (v1) says regulation",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The case is set in early 2003, but the cited FDA 510(k) (qdi-fda-k032229) is dated 2003-09-12, so the clearance was not knowable at the decision date and cannot be used as contemporaneous support for T1.; The read sources and learned summary include 2022 NASA spinoff articles (qdi-sp22-exit, qdi-sp22-homesplit) in a 2003 investigation, treating later-period facts as if they were available.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The case is set in early 2003, but the cited FDA 510(k) (qdi-fda-k032229) is dated 2003-09-12, so the clearance was not knowable at the decision date and cannot be used as contemporaneous support for T1.",
+     "The read sources and learned summary include 2022 NASA spinoff articles (qdi-sp22-exit, qdi-sp22-homesplit) in a 2003 investigation, treating later-period facts as if they were available."
+    ],
+    "teaches": "It would teach classifying an FDA 510(k) database entry as regulatory evidence and limiting its relevance to consumer demand, but the example is unsafe because it relies on sources dated after the case's early-2003 setting.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 18,
+   "case": "grundens-base",
+   "case_date": "2014",
+   "origin": "evidence kind",
+   "question": "It is 2014. Should Grundéns develop a differentiated proposition for recreational anglers, building on its commercial fishing raingear? What evidence would justify that investment?",
+   "student_turn": 28,
+   "student_run": "7f9ac0be5e95ed9d18431b4e4016d416ae125f28339b97dc9f05043e9a0a3d8b",
+   "skill": "classify",
+   "theories": {
+    "T1": "Recreational anglers will adopt Grundéns raingear because they value durability and professional-grade performance, and they are willing to pay a premium for gear that keeps them dry and comfortable during extended fishing sessions.",
+    "T2": "Recreational anglers will adopt Grundéns raingear because they value brand recognition and the perceived prestige of using a professional‑grade fishing brand, and they are willing to pay a premium for that association."
+   },
+   "sources_read": {
+    "grundens-ai-us": "2024-06-29",
+    "grundens-nf-herkules": "unknown (accessed 2026-11-03)",
+    "grundens-oia-commitment": "2024-07-24",
+    "grundens-sgb-footwear": "2021-04-08",
+    "grundens-sgb-restaurants": "2021-04-08",
+    "grundens-sgb-versatility": "2021-04-08",
+    "grundens-tot-channel": "2016-04-14",
+    "grundens-wiki-churn": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "grundens-sgb-versatility",
+     "direction": "supports",
+     "quote": "\"Similar to some of our outerwear, versatility and utility make them great for recreational fishing and commercial fishing and around the boatyard, home or farm.\"",
+     "evidence_kind": "company_assertion",
+     "does_not_show": "The quote does not demonstrate that recreational anglers are willing to pay a premium for this gear, nor that durability is the primary purchase driver; it only states the gear is suitable for recreational use."
+    }
+   },
+   "justification": {
+    "learned": "We have identified Grundéns’ existing commercial fishing raingear and evidence of its expansion into sport fishing apparel (e.g., the 2016 launch). The source grundens-sgb-versatility states the gear’s versatility makes it suitable for both commercial and recreational fishing, directly linking product attributes to recreational use. This source is appropriate to weigh because it provides a non-company assertion (from a CEO interview) that describes the product’s fit for recreational anglers, informing T1’s claim about durability and performance as purchase drivers.",
+    "uncertain": "None yet; we will assess this source against T1 to see if it supports the durability/performance driver or is neutral.",
+    "why_next": "Assess grundens-sgb-versatility against T1 to determine if it supports the theory that anglers value durability and professional-grade performance. This will help decide whether to proceed with theory refinement or evidence gathering."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\":\"We have identified Grund\\u00e9ns\\u2019 existing commercial fishing raingear and evidence of its expansion into sport fishing apparel (e.g., the 2016 launch). The source grundens-sgb-versatility states the gear\\u2019s versatility makes it suitable for both commercial and recreational fishing, directly linking product attributes to recreational use. This source is appropriate to weigh because it provides a non-company assertion (from a CEO interview) that describes the product\\u2019s fit for recreational anglers, informing T1\\u2019s claim about durability and performance as purchase drivers.\",\"uncertain\":\"None yet; we will assess this source against T1 to see if it supports the durability/performance driver or is neutral.\",\"why_next\":\"Assess grundens-sgb-versatility against T1 to determine if it supports the theory that anglers value durability and professional-grade performance. This will help decide whether to proceed with theory refinement or evidence gathering.\",\"call\":{\"name\":\"assess_evidence\",\"arguments\":{\"theory_id\":\"T1\",\"evidence_id\":\"grundens-sgb-versatility\",\"direction\":\"supports\",\"quote\":\"\\\"Similar to some of our outerwear, versatility and utility make them great for recreational fishing and commercial fishing and around the boatyard, home or farm.\\\"\",\"evidence_kind\":\"company_assertion\",\"does_not_show\":\"The quote does not demonstrate that recreational anglers are willing to pay a premium for this gear, nor that durability is the primary purchase driver; it only states the gear is suitable for recreational use.\"}}}",
+   "student_action": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "grundens-nf-herkules",
+     "direction": "supports",
+     "quote": "The Herkules 16 bibs were crafted to keep commercial fishermen dry and comfortable through the long hours your captain may throw at you.",
+     "evidence_kind": "independent_study",
+     "does_not_show": "It does not show that recreational anglers would adopt the same gear, nor that they value durability as a primary driver."
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "labelled grundens-nf-herkules as independent_study; the annotation (v1) says market_fact",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The assessed source grundens-sgb-versatility is dated 2021-04-08, seven years after the 2014 case date, so it cannot establish what was knowable when the 2014 investment decision was being made.; The quote only says the gear's versatility makes it suitable for recreational use; it does not show that recreational anglers adopt it for durability/performance or are willing to pay a premium. Labeling the direction as 'supports' overstates the evidence, and the does_not_show field admits it does not show the core claims.; The justification calls the source a 'non-company assertion (from a CEO interview)' while the call classifies it as company_assertion; a CEO interview is a company assertion, so the reasoning contradicts the call and mislabels the source.; The 'uncertain' field says 'None yet' but then says it will assess the source against T1, which is inconsistent with already making the assess_evidence call.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The assessed source grundens-sgb-versatility is dated 2021-04-08, seven years after the 2014 case date, so it cannot establish what was knowable when the 2014 investment decision was being made.",
+     "The quote only says the gear's versatility makes it suitable for recreational use; it does not show that recreational anglers adopt it for durability/performance or are willing to pay a premium. Labeling the direction as 'supports' overstates the evidence, and the does_not_show field admits it does not show the core claims.",
+     "The justification calls the source a 'non-company assertion (from a CEO interview)' while the call classifies it as company_assertion; a CEO interview is a company assertion, so the reasoning contradicts the call and mislabels the source.",
+     "The 'uncertain' field says 'None yet' but then says it will assess the source against T1, which is inconsistent with already making the assess_evidence call."
+    ],
+    "teaches": "Do not use sources dated after the case date to decide what was knowable at the time; a CEO interview is a company assertion, not an independent source; and a quote showing mere suitability for a use does not by itself support a theory of adoption driven by durability/performance and premium willingness.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 19,
+   "case": "moldex-new-evidence-looks",
+   "case_date": "present day",
+   "origin": "after two refusals",
+   "question": "Should Moldex-Metric develop a differentiated consumer proposition for a specific use case, beyond its existing hearing-protection offering? What evidence would justify that investment?",
+   "student_turn": 14,
+   "student_run": "09cef131d5bbeaefd1bfec2be7d2e605834fbc70f05a62a3933718fc2b91b8ea",
+   "skill": "unstick",
+   "theories": {},
+   "sources_read": {
+    "mdx-channel": "unknown (page footer 2026)",
+    "mdx-core": "unknown (page footer 2026)",
+    "mdx-origin": "2005-11-22",
+    "mdx-patents": "unknown (page footer 2026)",
+    "mdx-retail-listing": "unknown"
+   },
+   "call": {
+    "name": "read_source",
+    "arguments": {
+     "id": "uvx-sports"
+    }
+   },
+   "justification": {
+    "learned": "We have read six sources (mdx-core, mdx-origin, mdx-patents, mdx-retail-listing, mdx-channel, uvx-sports) and performed four searches to find consumer demand evidence. The last duplicate search was refused. We now need to add theories and assess evidence to determine if a differentiated consumer proposition is justified.",
+    "uncertain": "Whether there is sufficient public evidence of demand, willingness to pay, and competitive positioning for a specific use case beyond hearing protection. The uvx-sports source and new searches may provide needed data.",
+    "why_next": "Read uvx-sports to uncover any existing consumer positioning or use cases, then add two theories (T1: outdoor recreation lifestyle demand; T2: DIY/home convenience demand) and assess evidence from the new searches and existing sources against them."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\":\"We have read six sources (mdx-core, mdx-origin, mdx-patents, mdx-retail-listing, mdx-channel, uvx-sports) and performed four searches to find consumer demand evidence. The last duplicate search was refused. We now need to add theories and assess evidence to determine if a differentiated consumer proposition is justified.\",\"uncertain\":\"Whether there is sufficient public evidence of demand, willingness to pay, and competitive positioning for a specific use case beyond hearing protection. The uvx-sports source and new searches may provide needed data.\",\"why_next\":\"Read uvx-sports to uncover any existing consumer positioning or use cases, then add two theories (T1: outdoor recreation lifestyle demand; T2: DIY/home convenience demand) and assess evidence from the new searches and existing sources against them.\",\"call\":{\"name\":\"read_source\",\"arguments\":{\"id\":\"uvx-sports\"}}}",
+   "student_action": {
+    "name": "search_evidence",
+    "arguments": {
+     "query": "Moldex hearing protection fashion lifestyle"
+    },
+    "accepted": false,
+    "category": "repeat"
+   },
+   "why_wrong": "after two refusals the student made search_evidence; last refusal: {'error': 'you already ran that search. Read its results, or search for something different'}",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The learned field says uvx-sports has already been read (\"We have read six sources ... uvx-sports\"), but sources_read does not include uvx-sports and the call is read_source uvx-sports. Either the call is rereading a source already read, or the learned summary is false about the state; either way it contradicts the call and the state.; The justification claims six sources read when only five are listed in sources_read, so the grounding of the reasoning is inaccurate for the given state.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The learned field says uvx-sports has already been read (\"We have read six sources ... uvx-sports\"), but sources_read does not include uvx-sports and the call is read_source uvx-sports. Either the call is rereading a source already read, or the learned summary is false about the state; either way it contradicts the call and the state.",
+     "The justification claims six sources read when only five are listed in sources_read, so the grounding of the reasoning is inaccurate for the given state."
+    ],
+    "teaches": "The example is unusable as-is: it teaches a reasoning summary that misstates the investigation state and contradicts its own next action, so it would reinforce state-tracking errors rather than a correct unstick move.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 20,
+   "case": "sigvaris-base",
+   "case_date": "present day",
+   "origin": "after two refusals",
+   "question": "Should SIGVARIS GROUP develop a differentiated proposition for people who buy compression without a prescription, such as travellers or athletes, or keep its focus on medical compression? What evidence would justify either choice?",
+   "student_turn": 12,
+   "student_run": "13d3fd89c2eeff6ed70fa5fc32b454720931929a5ea569f6ae5a2dc29c755ae5",
+   "skill": "unstick",
+   "theories": {},
+   "sources_read": {
+    "sigvaris-about": "unknown (accessed 2026-11-03)",
+    "sigvaris-medical-grade-worth": "unknown (accessed 2026-11-03)",
+    "sigvaris-review-travel": "2026-09-13"
+   },
+   "call": {
+    "name": "read_source",
+    "arguments": {
+     "id": "sigvaris-mordor-cep"
+    }
+   },
+   "justification": {
+    "learned": "We have read three SIGVARIS sources (about, medical-grade-worth, review-travel) and have four unread search results (sigvaris-mordor-cep, sigvaris-mordor-channels, sigvaris-mordor-cost, sigvaris-travel-claim) that likely contain market and channel data. The last search was refused because it duplicated a prior query. We need to add at least two causal theories about why non-prescription buyers might adopt SIGVARIS or not, and assess evidence against them.",
+    "uncertain": "",
+    "why_next": "Read unread search results to gather evidence on SIGVARIS’s current individual buyer reach, travel/athlete demand, and competitive landscape before framing the problem and adding theories."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have read three SIGVARIS sources (about, medical-grade-worth, review-travel) and have four unread search results (sigvaris-mordor-cep, sigvaris-mordor-channels, sigvaris-mordor-cost, sigvaris-travel-claim) that likely contain market and channel data. The last search was refused because it duplicated a prior query. We need to add at least two causal theories about why non-prescription buyers might adopt SIGVARIS or not, and assess evidence against them.\", \"uncertain\": \"\", \"why_next\": \"Read unread search results to gather evidence on SIGVARIS\\u2019s current individual buyer reach, travel/athlete demand, and competitive landscape before framing the problem and adding theories.\", \"call\": {\"name\": \"read_source\", \"arguments\": {\"id\": \"sigvaris-mordor-cep\"}}}",
+   "student_action": {
+    "name": "search_evidence",
+    "arguments": {
+     "query": "SIGVARIS travel compression socks"
+    },
+    "accepted": false,
+    "category": "repeat"
+   },
+   "why_wrong": "after two refusals the student made search_evidence; last refusal: {'error': 'you already ran that search. Read its results, or search for something different'}",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The justification's 'uncertain' field is empty, so the reasoning is incomplete (the rubric requires learned, uncertain, and why_next to be substantive).",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The justification's 'uncertain' field is empty, so the reasoning is incomplete (the rubric requires learned, uncertain, and why_next to be substantive)."
+    ],
+    "teaches": "After repeated search refusals, reading an unread source is a reasonable way to unstick the investigation, but the reasoning must still state what remains uncertain, not leave that field blank.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 21,
+   "case": "danfoss-base",
+   "case_date": "2015",
+   "origin": "after two refusals",
+   "question": "It is late 2015. Should Danfoss A/S develop a differentiated consumer proposition for a specific use case, building on its thermostatic radiator valve and electronic heating-control technology? What evidence would justify that investment?",
+   "student_turn": 15,
+   "student_run": "e395a82e7f95f8660d8629379d5c669eb8a6a63bbfc6368e5b496aaec97ae7c9",
+   "skill": "unstick",
+   "theories": {},
+   "sources_read": {
+    "danfoss-eco-30": "unknown (accessed 2026-11-03)",
+    "danfoss-prn-cagr": "2017-05-11",
+    "danfoss-prn-zones": "2017-05-11",
+    "danfoss-wiki-1943": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "read_source",
+    "arguments": {
+     "id": "danfoss-php-installer"
+    }
+   },
+   "justification": {
+    "learned": "We have read four sources: Danfoss Eco product claim, market CAGR, market zones, and Wikipedia history. We have not yet read two unread sources (danfoss-php-installer, danfoss-sup-2011) that may contain evidence of consumer offerings or direct sales. No theories have been added yet. The last search for \"Danfoss Eco 30 price\" was refused because the same query was already run. We have one search remaining, which we can use later after reading the unread sources.",
+    "uncertain": "",
+    "why_next": "Read the two unread sources to uncover any evidence of Danfoss consumer products, direct sales, or pricing that could inform theories about demand and value capture."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have read four sources: Danfoss Eco product claim, market CAGR, market zones, and Wikipedia history. We have not yet read two unread sources (danfoss-php-installer, danfoss-sup-2011) that may contain evidence of consumer offerings or direct sales. No theories have been added yet. The last search for \\\"Danfoss Eco 30 price\\\" was refused because the same query was already run. We have one search remaining, which we can use later after reading the unread sources.\", \"uncertain\": \"\", \"why_next\": \"Read the two unread sources to uncover any evidence of Danfoss consumer products, direct sales, or pricing that could inform theories about demand and value capture.\", \"call\": {\"name\": \"read_source\", \"arguments\": {\"id\": \"danfoss-php-installer\"}}}",
+   "student_action": {
+    "name": "search_evidence",
+    "arguments": {
+     "query": "Danfoss direct to consumer sales"
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "after two refusals the student made search_evidence; last refusal: {'error': 'you already ran that search. Read its results, or search for something different'}",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The reasoning is incomplete under the stated criteria: the 'uncertain' field is empty, while the rubric requires learned/uncertain/why_next not to be empty, generic, or contradictory.; The justification treats two already-read sources dated 2017-05-11 (danfoss-prn-cagr, danfoss-prn-zones) as part of the evidence base in a late-2015 case without flagging that they post-date the decision and were not knowable then.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The reasoning is incomplete under the stated criteria: the 'uncertain' field is empty, while the rubric requires learned/uncertain/why_next not to be empty, generic, or contradictory.",
+     "The justification treats two already-read sources dated 2017-05-11 (danfoss-prn-cagr, danfoss-prn-zones) as part of the evidence base in a late-2015 case without flagging that they post-date the decision and were not knowable then."
+    ],
+    "teaches": "A corrected example would state what remains uncertain and ensure any evidence used or acknowledged fits the late-2015 case date, while reading one named unread source as a bounded next step.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 22,
+   "case": "diatek-new-evidence-irrelevant",
+   "case_date": "1991",
+   "origin": "after two refusals",
+   "question": "It is mid-1991. Should Diatek Corporation develop a differentiated consumer proposition for a specific use case, building on its infrared ear thermometer for hospitals? What evidence would justify that investment?",
+   "student_turn": 12,
+   "student_run": "da486231476e486fe83773f4100ab983e0f6e1f6181883ddab5bdc3e1e0b5993",
+   "skill": "unstick",
+   "theories": {},
+   "sources_read": {
+    "diatek-jpl-market": "2013-05-08",
+    "diatek-jpl-tap": "2013-05-08",
+    "diatek-spinoff-device": "1991 (originally published; note on later acquisition added afterwards)"
+   },
+   "call": {
+    "name": "read_source",
+    "arguments": {
+     "id": "diatek-patent-rival"
+    }
+   },
+   "justification": {
+    "learned": "We have read three sources about Diatek’s infrared ear thermometer development (JPL collaborations, NASA spinoff) but none address consumer sales or demand. Two unread sources (diatek-patent-rival, diatek-pm-zones) may contain evidence of market positioning, competition, or regulatory status. The last search for “Diatek thermometer sales” was refused because it was a duplicate query. We need new evidence on consumer demand, competitive landscape, and regulatory feasibility before forming theories.",
+    "uncertain": "Whether Diatek already sells to individual buyers, the size of any home market, and willingness to pay for a differentiated use case remain unknown. The unread sources may clarify these points.",
+    "why_next": "Reading diatek-patent-rival will provide the first evidence on Diatek’s consumer market positioning, patents, or regulatory claims, which is required to assess demand and feasibility before adding theories. This call addresses the missing evidence step in the investigation."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\":\"We have read three sources about Diatek\\u2019s infrared ear thermometer development (JPL collaborations, NASA spinoff) but none address consumer sales or demand. Two unread sources (diatek-patent-rival, diatek-pm-zones) may contain evidence of market positioning, competition, or regulatory status. The last search for \\u201cDiatek thermometer sales\\u201d was refused because it was a duplicate query. We need new evidence on consumer demand, competitive landscape, and regulatory feasibility before forming theories.\",\"uncertain\":\"Whether Diatek already sells to individual buyers, the size of any home market, and willingness to pay for a differentiated use case remain unknown. The unread sources may clarify these points.\",\"why_next\":\"Reading diatek-patent-rival will provide the first evidence on Diatek\\u2019s consumer market positioning, patents, or regulatory claims, which is required to assess demand and feasibility before adding theories. This call addresses the missing evidence step in the investigation.\",\"call\":{\"name\":\"read_source\",\"arguments\":{\"id\":\"diatek-patent-rival\"}}}",
+   "student_action": {
+    "name": "search_evidence",
+    "arguments": {
+     "query": "Diatek consumer thermometer"
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "after two refusals the student made search_evidence; last refusal: {'error': 'you already ran that search. Read its results, or search for something different'}",
+   "quality_notes": [],
+   "keep": true,
+   "review_note": "When stuck after repeated refused searches, pivot to the unread sources already available in the investigation. Here the correct unstick move is to stop searching for new evidence and instead read an unread source that may speak to consumer positioning, patents, or regulatory status, before forming theories.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "When stuck after repeated refused searches, pivot to the unread sources already available in the investigation. Here the correct unstick move is to stop searching for new evidence and instead read an unread source that may speak to consumer positioning, patents, or regulatory status, before forming theories.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 23,
+   "case": "resmed-base",
+   "case_date": "2014",
+   "origin": "after two refusals",
+   "question": "It is mid-2014. Should ResMed develop a differentiated consumer proposition for a specific use case, building on its non-contact sleep-sensing technology and sleep-medicine expertise? What evidence would justify that investment?",
+   "student_turn": 14,
+   "student_run": "080984b522ae578f08c24f08a0f001f9aff6a0bce6c6a3e46821be9d83e47323",
+   "skill": "unstick",
+   "theories": {},
+   "sources_read": {
+    "resmed-10k-clinics": "2014-08 (fiscal year ended 2014-06-30)",
+    "resmed-pr-biancamed": "2011-07-06",
+    "resmed-pr-settings": "2011-07-06",
+    "resmed-pr-splus": "2014-10-07",
+    "resmed-tc-zeo-capital": "2013-05-22"
+   },
+   "call": {
+    "name": "add_theory",
+    "arguments": {
+     "claim": "Health‑conscious consumers will buy ResMed’s non‑contact sleep sensor as a wellness tool because they value actionable sleep insights and convenience over clinical accuracy alone.",
+     "who_benefits": "Consumers gain personalized sleep data and early awareness of sleep issues; ResMed gains revenue, brand extension into consumer wellness, and data that could improve its clinical products.",
+     "why_behaviour_changes": "Rising consumer interest in sleep health and wearable tech creates a market for easy‑to‑use devices. Non‑contact sensing removes the hassle of wearing equipment, aligning with consumer preferences for seamless health monitoring.",
+     "how_value_is_captured": "ResMed sells the device at a retail price (e.g., $149.99) and can capture recurring value through app subscriptions, data services, or cross‑selling clinical products to users who discover they have a disorder. The sensor’s accuracy, proven",
+     "assumptions": [
+      "Consumers trust a non‑contact sensor validated against polysomnography for personal health insights.",
+      "Retail distribution (e.g., Bed Bath & Beyond) and online channels can reach the target demographic.",
+      "Health‑conscious consumers are willing to pay a premium for convenience and data insights.",
+      "The device’s accuracy is sufficient for wellness tracking, not just clinical diagnosis.",
+      "ResMed can integrate consumer data into its product development without violating privacy expectations."
+     ],
+     "predictions": [
+      "Among surveyed health‑conscious adults (e.g., 25–45 years, regular fitness tracker users), at least 30 % would express intent to purchase the sensor within 6 months at the listed price or higher.",
+      "Sales through retail and online channels would generate at least €500k in revenue in the first year if 10 % of the target market (approx. 2 M households) buys the device.",
+      "User engagement with the companion app would exceed 70 % of purchasers within the first month, indicating willingness to continue using the service."
+     ]
+    }
+   },
+   "justification": {
+    "learned": "We have read ResMed’s 2014 10-K, its acquisition of BiancaMed (non-contact sensor), the 2014 launch of S+ consumer product at $149.99 via retail, and a TechCrunch article on capital intensity of consumer health devices. No evidence yet on actual consumer demand, willingness to pay beyond the listed price, or market size. The last search was refused because it was a duplicate. We need to gather evidence on consumer market size, willingness to pay, and any sales data for S+ or similar devices. We also need to formulate at least two causal theories explaining why consumers would adopt a ResMed consumer proposition, each with distinct mechanisms, assumptions, and predictions. After adding thes e",
+    "uncertain": "Whether there is sufficient demand to justify a €20k, 12‑week test; whether consumers would pay the listed price or more; how ResMed could reach individual buyers given its B2B focus and retail partnership with Bed Bath & Beyond. The theories will be assessed against new evidence from searches.",
+    "why_next": "Add two theories (T1 and T2) with different causal mechanisms for consumer adoption, then search for evidence that supports or challenges them. Use search_evidence to find consumer market data, willingness to pay, and any sales figures for ResMed S+ or comparable devices. Read the resulting sources and assess them against the theories. The next call will be add_theory to create T1 and T2."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\":\"We have read ResMed\\u2019s 2014 10-K, its acquisition of BiancaMed (non-contact sensor), the 2014 launch of S+ consumer product at $149.99 via retail, and a TechCrunch article on capital intensity of consumer health devices. No evidence yet on actual consumer demand, willingness to pay beyond the listed price, or market size. The last search was refused because it was a duplicate. We need to gather evidence on consumer market size, willingness to pay, and any sales data for S+ or similar devices. We also need to formulate at least two causal theories explaining why consumers would adopt a ResMed consumer proposition, each with distinct mechanisms, assumptions, and predictions. After adding thes e\",\"uncertain\":\"Whether there is sufficient demand to justify a \\u20ac20k, 12\\u2011week test; whether consumers would pay the listed price or more; how ResMed could reach individual buyers given its B2B focus and retail partnership with Bed Bath & Beyond. The theories will be assessed against new evidence from searches.\",\"why_next\":\"Add two theories (T1 and T2) with different causal mechanisms for consumer adoption, then search for evidence that supports or challenges them. Use search_evidence to find consumer market data, willingness to pay, and any sales figures for ResMed S+ or comparable devices. Read the resulting sources and assess them against the theories. The next call will be add_theory to create T1 and T2.\",\"call\":{\"name\":\"add_theory\",\"arguments\":{\"claim\":\"Health\\u2011conscious consumers will buy ResMed\\u2019s non\\u2011contact sleep sensor as a wellness tool because they value actionable sleep insights and convenience over clinical accuracy alone.\",\"who_benefits\":\"Consumers gain personalized sleep data and early awareness of sleep issues; ResMed gains revenue, brand extension into consumer wellness, and data that could improve its clinical products.\",\"why_behaviour_changes\":\"Rising consumer interest in sleep health and wearable tech creates a market for easy\\u2011to\\u2011use devices. Non\\u2011contact sensing removes the hassle of wearing equipment, aligning with consumer preferences for seamless health monitoring.\",\"how_value_is_captured\":\"ResMed sells the device at a retail price (e.g., $149.99) and can capture recurring value through app subscriptions, data services, or cross\\u2011selling clinical products to users who discover they have a disorder. The sensor\\u2019s accuracy, proven\",\"assumptions\":[\"Consumers trust a non\\u2011contact sensor validated against polysomnography for personal health insights.\",\"Retail distribution (e.g., Bed Bath & Beyond) and online channels can reach the target demographic.\",\"Health\\u2011conscious consumers are willing to pay a premium for convenience and data insights.\",\"The device\\u2019s accuracy is sufficient for wellness tracking, not just clinical diagnosis.\",\"ResMed can integrate consumer data into its product development without violating privacy expectations.\"],\"predictions\":[\"Among surveyed health\\u2011conscious adults (e.g., 25\\u201345 years, regular fitness tracker users), at least 30\\u202f% would express intent to purchase the sensor within 6\\u202fmonths at the listed price or higher.\",\"Sales through retail and online channels would generate at least \\u20ac500k in revenue in the first year if 10\\u202f% of the target market (approx. 2\\u202fM households) buys the device.\",\"User engagement with the companion app would exceed 70\\u202f% of purchasers within the first month, indicating willingness to continue using the service.\"]}}}",
+   "student_action": {
+    "name": "read_source",
+    "arguments": {
+     "id": "resmed-pr-biancamed"
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "after two refusals the student made read_source; last refusal: {'error': 'you already ran that search. Read its results, or search for something different'}",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "Relies on a source dated after the case date for what was knowable then: resmed-pr-splus is 2014-10-07, but the question says it is mid-2014, yet the theory uses the S+ retail launch and $149.99 price as if already known.; The how_value_is_captured field is truncated mid-sentence ('The sensor's accuracy, proven') and the learned field has a broken ending ('After adding thes e'), so the reasoning is incomplete.; The revenue prediction is internally inconsistent and unsourced: 10% of 2M households at $149.99 would be roughly $30M, not EUR 500k, and the 2M-household target market is not in any cited source.; Currency is inconsistent: the device price is in dollars while predictions use EUR 500k and a EUR 20k test, with no conversion or source.; why_next says to add two theories (T1 and T2), but the call adds only one theory, and the 30% purchase-intent prediction is a survey-only stated-preference measure rather than a behavioural or commitment-based prediction.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "Relies on a source dated after the case date for what was knowable then: resmed-pr-splus is 2014-10-07, but the question says it is mid-2014, yet the theory uses the S+ retail launch and $149.99 price as if already known.",
+     "The how_value_is_captured field is truncated mid-sentence ('The sensor's accuracy, proven') and the learned field has a broken ending ('After adding thes e'), so the reasoning is incomplete.",
+     "The revenue prediction is internally inconsistent and unsourced: 10% of 2M households at $149.99 would be roughly $30M, not EUR 500k, and the 2M-household target market is not in any cited source.",
+     "Currency is inconsistent: the device price is in dollars while predictions use EUR 500k and a EUR 20k test, with no conversion or source.",
+     "why_next says to add two theories (T1 and T2), but the call adds only one theory, and the 30% purchase-intent prediction is a survey-only stated-preference measure rather than a behavioural or commitment-based prediction."
+    ],
+    "teaches": "A correct add_theory at this unstick step would be grounded in sources already knowable by mid-2014, use complete non-truncated fields, keep currency and arithmetic consistent, and make predictions that discriminate behaviorally rather than via stated intent.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 24,
+   "case": "carrier-new-evidence-irrelevant",
+   "case_date": "1928",
+   "origin": "after two refusals",
+   "question": "It is 1928. Should Carrier Engineering Corporation develop a differentiated consumer proposition for a specific use case, building on its refrigeration and humidity-control engineering? What evidence would justify that investment?",
+   "student_turn": 13,
+   "student_run": "f952ba484b230a76ab5f1c4624843d4bc7c3af049b8161033a6d0fd3f9b1ffe7",
+   "skill": "unstick",
+   "theories": {},
+   "sources_read": {
+    "carrier-doe-metropolitan": "2015-07-20",
+    "carrier-wc-hesitant": "unknown (accessed 2026-11-03)",
+    "carrier-wc-lyle": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "add_theory",
+    "arguments": {
+     "claim": "Middle‑class households will adopt home air conditioning if presented as a health and comfort necessity rather than a luxury, because rising awareness of indoor air quality and heat‑related illness will motivate purchase.",
+     "who_benefits": "Carrier Engineering Corporation and its Carrier-Lyle subsidiary benefit by capturing early residential market share and premium pricing for health‑focused systems.",
+     "why_behaviour_changes": "Public health campaigns and physician endorsements in the 1920s linked indoor cooling to reduced respiratory illness; consumers who previously viewed AC as optional will reclassify it as essential for family health.",
+     "how_value_is_captured": "Carrier captures value through higher margins on residential units sold under the Carrier-Lyle brand and through brand association with health and scientific authority.",
+     "assumptions": [
+      "Public health discourse in the 1920s increasingly framed indoor cooling as medically beneficial.",
+      "Middle‑class households have discretionary income to spend on health‑related home improvements.",
+      "Carrier can effectively communicate health benefits through Margaret Ingels’ advocacy and medical partnerships."
+     ],
+     "predictions": [
+      "In markets where Carrier runs health‑focused advertising, residential unit sales will increase by at least 15% compared to markets with generic advertising.",
+      "Surveyed households will cite “health” or “doctor recommendation” as primary reason for purchase when asked."
+     ]
+    }
+   },
+   "justification": {
+    "learned": "We have read three sources: a DOE history showing Carrier’s 1922 theater installation (carrier-doe-metropolitan), a company claim about Depression-era consumer hesitancy (carrier-wc-hesitant), and a company claim that Carrier founded Carrier-Lyle in 1928 to target residential buyers with Margaret Ingels promoting home “Manufactured Weather” (carrier-wc-lyle). We have one search remaining and no theories yet. The last search was refused because it duplicated a prior query.",
+    "uncertain": "",
+    "why_next": "Add two causal theories about consumer adoption of Carrier’s residential proposition, each with distinct mechanisms and evidence from the sources read. Use add_theory for each."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have read three sources: a DOE history showing Carrier\\u2019s 1922 theater installation (carrier-doe-metropolitan), a company claim about Depression-era consumer hesitancy (carrier-wc-hesitant), and a company claim that Carrier founded Carrier-Lyle in 1928 to target residential buyers with Margaret Ingels promoting home \\u201cManufactured Weather\\u201d (carrier-wc-lyle). We have one search remaining and no theories yet. The last search was refused because it duplicated a prior query.\", \"uncertain\": \"\", \"why_next\": \"Add two causal theories about consumer adoption of Carrier\\u2019s residential proposition, each with distinct mechanisms and evidence from the sources read. Use add_theory for each.\", \"call\": {\"name\": \"add_theory\", \"arguments\": {\"claim\": \"Middle\\u2011class households will adopt home air conditioning if presented as a health and comfort necessity rather than a luxury, because rising awareness of indoor air quality and heat\\u2011related illness will motivate purchase.\", \"who_benefits\": \"Carrier Engineering Corporation and its Carrier-Lyle subsidiary benefit by capturing early residential market share and premium pricing for health\\u2011focused systems.\", \"why_behaviour_changes\": \"Public health campaigns and physician endorsements in the 1920s linked indoor cooling to reduced respiratory illness; consumers who previously viewed AC as optional will reclassify it as essential for family health.\", \"how_value_is_captured\": \"Carrier captures value through higher margins on residential units sold under the Carrier-Lyle brand and through brand association with health and scientific authority.\", \"assumptions\": [\"Public health discourse in the 1920s increasingly framed indoor cooling as medically beneficial.\", \"Middle\\u2011class households have discretionary income to spend on health\\u2011related home improvements.\", \"Carrier can effectively communicate health benefits through Margaret Ingels\\u2019 advocacy and medical partnerships.\"], \"predictions\": [\"In markets where Carrier runs health\\u2011focused advertising, residential unit sales will increase by at least 15% compared to markets with generic advertising.\", \"Surveyed households will cite \\u201chealth\\u201d or \\u201cdoctor recommendation\\u201d as primary reason for purchase when asked.\"]}}}",
+   "student_action": {
+    "name": "search_evidence",
+    "arguments": {
+     "query": "Carrier-Lyle residential market 1928"
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "after two refusals the student made search_evidence; last refusal: {'error': 'you already ran that search. Read its results, or search for something different'}",
+   "quality_notes": [
+    "why_next says to read but the call adds a theory"
+   ],
+   "keep": false,
+   "review_note": "why_next says to add two causal theories ('Add two causal theories... Use add_theory for each') but the call adds only one, so the reasoning contradicts the action taken.; The theory's mechanism and assumptions invoke 1920s public-health campaigns, physician endorsements, medical partnerships, indoor-air-quality awareness, and heat-related illness that are not in any source read. The sources only support Carrier-Lyle's 1928 residential targeting and Margaret Ingels promoting 'Manufactured Weather', plus Depression-era consumer hesitancy.; The 15% sales-increase prediction is a specific number not grounded in the cited sources, and the second prediction is a survey-only stated-intention measure rather than a behavior or commitment.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "why_next says to add two causal theories ('Add two causal theories... Use add_theory for each') but the call adds only one, so the reasoning contradicts the action taken.",
+     "The theory's mechanism and assumptions invoke 1920s public-health campaigns, physician endorsements, medical partnerships, indoor-air-quality awareness, and heat-related illness that are not in any source read. The sources only support Carrier-Lyle's 1928 residential targeting and Margaret Ingels promoting 'Manufactured Weather', plus Depression-era consumer hesitancy.",
+     "The 15% sales-increase prediction is a specific number not grounded in the cited sources, and the second prediction is a survey-only stated-intention measure rather than a behavior or commitment."
+    ],
+    "teaches": "A grounded unstick move here would add theories whose mechanisms and assumptions follow from the sources already read (e.g., comfort/'Manufactured Weather' framing and the 1928 Carrier-Lyle residential launch), and why_next should match the exact number and type of calls actually made.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 25,
+   "case": "sealedair-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Sealed Air develop a differentiated consumer proposition for a specific use case, building on its Bubble Wrap brand? What evidence would justify that investment?",
+   "student_turn": 30,
+   "student_run": "d4280c55141791e93d15b1bb05dc5e9f7cff290b057c6a39484771757228ba2a",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Consumers will adopt a differentiated Bubble Wrap proposition for home moving because they value the sound and tactile experience of popping the wrap, and they seek a fun, stress‑reducing activity for moving tasks.",
+    "T2": "Consumers will adopt a differentiated Bubble Wrap proposition for small‑business packaging because they need lightweight, space‑saving protective material that reduces shipping costs and improves storage efficiency."
+   },
+   "sources_read": {
+    "sealedair-ap-stress": "2010-01-24",
+    "sealedair-cbc-anger": "2015-07-02",
+    "sealedair-cbc-share": "2015-07-02",
+    "sealedair-dz-foam": "2015-07-06",
+    "sealedair-fortune-ecom": "2015-07-02",
+    "sealedair-pr-markets": "2026-01-26",
+    "sealedair-sbt-eliminate": "2015-07 (from URL)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Bubble Wrap Consumer Proposition Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online controlled experiment with two product concepts shown to separate target segments. Participants are recruited via panels matching home‑movers and small‑business owners. Each participant sees one concept (randomised). Concepts are presented with product images, a brief description, price, and a purchase‑intent question. For the moving concept, emphasise the popping sound and stress relief; for the small‑business concept, emphasise space‑saving, pop‑less material and cost efficiency. A control group sees a generic packaging option at a baseline price to capture baseline intent. After exposure, participants answer: \"Would you buy this product at the shown price?\" (Yes/No). We also collect demographic verification (recent move or business shipping activity).",
+     "sample": "300 participants: 150 home‑movers (moved in past 12‑months) and 150 small‑business owners (ship >10 parcels/month). Randomised equally to moving concept, small‑business concept, or control (50 each per segment).",
+     "measure": "Purchase intent (binary yes/no) and self‑reported stress level (1‑0) for movers; self‑reported shipping cost importance (1‑0) for business owners. Also collect willingness to pay (maximum price).",
+     "prediction_by_theory": {
+      "T1": "Among home‑movers shown the moving concept, ≥30% will intend to purchase (exceeding the 20% baseline from control).",
+      "T2": "Among small‑business owners shown the small‑business concept, ≥25% will intend to purchase (exceeding the 20% baseline from control)."
+     },
+     "decision_rule": "Calculate purchase intent for each concept separately. If moving concept intent ≥30% AND significantly higher than control (p<0.05), proceed to develop the home‑moving proposition. Else if small‑business concept intent ≥25% AND significantly higher than control, proceed to develop the small‑business proposition. If neither meets threshold, stop expansion. The thresholds are based on T1 and T2 predictions and reflect a meaningful lift over baseline. The test cost is €20,000 (participant incentives €5 each, platform fees, design).",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "We have two open theories about consumer adoption of a differentiated Bubble Wrap proposition. T1 posits demand driven by the fun, stress‑relieving popping experience for home moving (supported by sealedair-ap-stress). T2 posits demand driven by efficiency and cost savings for small‑business packaging (supported by sealedair-fortune-ecom). Evidence shows strong emotional attachment to the pop sound but does not yet prove purchase intent for either use case. No search budget remains, so we rely on existing sources to design a test that separates the two mechanisms.",
+    "uncertain": "It is uncertain whether consumers will pay a premium for a branded, experience‑driven moving kit (T1) or for an efficiency‑focused small‑business kit (T2). The existing evidence only shows interest in the pop experience and in space‑saving material, not actual purchase behaviour or willingness to pay. The test must determine which mechanism, if any, drives real purchase intent.",
+    "why_next": "Propose a 12‑week, €20,000 test that offers two distinct product concepts to separate target segments, measuring real purchase intent. This will distinguish T1 (fun/popping drives home‑mover intent) from T2 (efficiency drives small‑business intent) and provide a decision rule to proceed with one proposition or stop."
+   },
+   "decision_at_generation": "kept",
+   "flags": [
+    "stated preference only",
+    "rule leads straight to developing or launching"
+   ],
+   "teacher_reply_raw": "{\"learned\":\"We have two open theories about consumer adoption of a differentiated Bubble Wrap proposition. T1 posits demand driven by the fun, stress‑relieving popping experience for home moving (supported by sealedair-ap-stress). T2 posits demand driven by efficiency and cost savings for small‑business packaging (supported by sealedair-fortune-ecom). Evidence shows strong emotional attachment to the pop sound but does not yet prove purchase intent for either use case. No search budget remains, so we rely on existing sources to design a test that separates the two mechanisms.\",\"uncertain\":\"It is uncertain whether consumers will pay a premium for a branded, experience‑driven moving kit (T1) or for an efficiency‑focused small‑business kit (T2). The existing evidence only shows interest in the pop experience and in space‑saving material, not actual purchase behaviour or willingness to pay. The test must determine which mechanism, if any, drives real purchase intent.\",\"why_next\":\"Propose a 12\\u2011week, \\u20ac20,000 test that offers two distinct product concepts to separate target segments, measuring real purchase intent. This will distinguish T1 (fun/popping drives home\\u2011mover intent) from T2 (efficiency drives small\\u2011business intent) and provide a decision rule to proceed with one proposition or stop.\",\"call\":{\"name\":\"propose_test\",\"arguments\":{\"name\":\"Bubble Wrap Consumer Proposition Test\",\"theories\":[\"T1\",\"T2\"],\"method\":\"Online controlled experiment with two product concepts shown to separate target segments. Participants are recruited via panels matching home\\u2011movers and small\\u2011business owners. Each participant sees one concept (randomised). Concepts are presented with product images, a brief description, price, and a purchase‑intent question. For the moving concept, emphasise the popping sound and stress relief; for the small\\u2011business concept, emphasise space\\u2011saving, pop\\u2011less material and cost efficiency. A control group sees a generic packaging option at a baseline price to capture baseline intent. After exposure, participants answer: \\\"Would you buy this product at the shown price?\\\" (Yes/No). We also collect demographic verification (recent move or business shipping activity).\",\"sample\":\"300 participants: 150 home\\u2011movers (moved in past 12\\u2011months) and 150 small\\u2011business owners (ship >10 parcels/month). Randomised equally to moving concept, small\\u2011business concept, or control (50 each per segment).\",\"measure\":\"Purchase intent (binary yes/no) and self\\u2011reported stress level (1\\u20110) for movers; self\\u2011reported shipping cost importance (1\\u20110) for business owners. Also collect willingness to pay (maximum price).\",\"prediction_by_theory\":{\"T1\":\"Among home\\u2011movers shown the moving concept, \\u226530% will intend to purchase (exceeding the 20% baseline from control).\",\"T2\":\"Among small\\u2011business owners shown the small\\u2011business concept, \\u226525% will intend to purchase (exceeding the 20% baseline from control).\"},\"decision_rule\":\"Calculate purchase intent for each concept separately. If moving concept intent \\u226530% AND significantly higher than control (p<0.05), proceed to develop the home\\u2011moving proposition. Else if small\\u2011business concept intent \\u226525% AND significantly higher than control, proceed to develop the small\\u2011business proposition. If neither meets threshold, stop expansion. The thresholds are based on T1 and T2 predictions and reflect a meaningful lift over baseline. The test cost is \\u20ac20,000 (participant incentives \\u20ac5 each, platform fees, design).\",\"cost_eur\":20000,\"weeks\":12}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Preference Test: Moving vs Small Business Messaging",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice experiment with randomized messaging. Participants view two product descriptions of a branded Bubble Wrap kit for a specific use case (moving vs small business packaging). They then indicate purchase intent on a 7‑point scale and maximum price they would pay. The experiment is run in t…",
+     "sample": "500 adults recruited via an online panel, balanced for age, gender, and geographic region. Randomly assigned to either the moving message group (description emphasizing sound, stress relief, and fun) or the small business message group (des",
+     "measure": "Purchase intent score (1‑10) and maximum price willingness to pay. Secondary measure: self‑reported stress level (1‑10) for the moving group, and shipping cost impact for the small business group.",
+     "prediction_by_theory": {
+      "T1": "Group receiving the moving message will report higher purchase intent (score ≥ 6) and be willing to pay at least 20% above the small business price point, indicating demand for the experience‑driven proposition.",
+      "T2": "Group receiving the small business message will report higher purchase intent (score ≥ 6) and be willing to pay at least 20% above the small business price point, indicating demand for the efficiency‑focused proposition."
+     },
+     "decision_rule": "If the moving group’s average purchase intent score is at least 6 and at least 20% above the small business group’s score, proceed to develop a differentiated moving proposition. If the small business group’s score is at least 6 and at",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the arms differ only in wording or message, with no product or price difference and no same-price control; 0 of 1 tests discriminate: X1: predictions barely differ",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The proposed test is survey-only stated preference: purchase intent (Yes/No), self-reported stress/shipping-cost importance, and maximum willingness to pay are all stated responses with no actual purchase, deposit, pre-order, or other behavioural commitment, so it cannot establish real adoption or willingness to pay.; The decision rule jumps straight to 'proceed to develop the home-moving proposition' or 'proceed to develop the small-business proposition' rather than a bounded next step (e.g., a limited pilot, deposit-backed reservation, or concept/price refinement with a clear go/no-go gate).",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The proposed test is survey-only stated preference: purchase intent (Yes/No), self-reported stress/shipping-cost importance, and maximum willingness to pay are all stated responses with no actual purchase, deposit, pre-order, or other behavioural commitment, so it cannot establish real adoption or willingness to pay.",
+     "The decision rule jumps straight to 'proceed to develop the home-moving proposition' or 'proceed to develop the small-business proposition' rather than a bounded next step (e.g., a limited pilot, deposit-backed reservation, or concept/price refinement with a clear go/no-go gate)."
+    ],
+    "teaches": "A valid experiment here would need an incentive-compatible or behavioural measure of adoption (e.g., actual purchase, deposit, or pre-order) and a bounded next step with a clear threshold, rather than stated purchase intent feeding directly into developing a proposition.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 26,
+   "case": "danfoss-new-evidence-irrelevant",
+   "case_date": "2015",
+   "origin": "evidence kind",
+   "question": "It is late 2015. Should Danfoss A/S develop a differentiated consumer proposition for a specific use case, building on its thermostatic radiator valve and electronic heating-control technology? What evidence would justify that investment?",
+   "student_turn": 19,
+   "student_run": "d74b48eeea18a090e1dd8676e9b520274ea26960e518a86c094e93fe08b3c7b9",
+   "skill": "classify",
+   "theories": {
+    "T1": "Homeowners will adopt a differentiated consumer proposition if they perceive the product as a clear energy‑saving benefit that can be demonstrated to utility providers or insurance companies, because they value lower bills and are willing to pay a premium for measurable savings.",
+    "T2": "Homeowners will adopt a differentiated consumer proposition if they perceive the product as a convenience feature that simplifies heating control, because they value time savings and ease of use, and are willing to pay for a product that integrates with their existing smart home ecosystem."
+   },
+   "sources_read": {
+    "danfoss-eco-30": "unknown (accessed 2026-11-03)",
+    "danfoss-php-installer": "2017-07-19",
+    "danfoss-prn-cagr": "2017-05-11",
+    "danfoss-prn-zones": "2017-05-11",
+    "danfoss-wiki-1943": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T2",
+     "evidence_id": "danfoss-eco-30",
+     "direction": "supports",
+     "quote": "Danfoss Eco™ is easy to install, easy to use and gives you up to 30% savings on your heating consumption.",
+     "evidence_kind": "company_assertion",
+     "does_not_show": "It does not demonstrate that homeowners value convenience or smart-home integration as a primary purchase driver, nor that they are willing to pay a premium for remote control features."
+    }
+   },
+   "justification": {
+    "learned": "We have assessed T1 against danfoss-eco-30. Next we need to assess T2 with a source, add a third theory, and then challenge a theory using the remaining challenge search.",
+    "uncertain": "",
+    "why_next": "Assess T2 with danfoss-eco-30 (company claim) to see if it supports the convenience claim. Then add a third theory T3 with a different causal driver. Finally use the kept_for_challenge to search for evidence that could disprove one theory."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\": \"We have assessed T1 against danfoss-eco-30. Next we need to assess T2 with a source, add a third theory, and then challenge a theory using the remaining challenge search.\", \"uncertain\": \"\", \"why_next\": \"Assess T2 with danfoss-eco-30 (company claim) to see if it supports the convenience claim. Then add a third theory T3 with a different causal driver. Finally use the kept_for_challenge to search for evidence that could disprove one theory.\",\"call\": {\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T2\", \"evidence_id\": \"danfoss-eco-30\", \"direction\": \"supports\", \"quote\": \"Danfoss Eco\\u2122 is easy to install, easy to use and gives you up to 30% savings on your heating consumption.\", \"evidence_kind\": \"company_assertion\", \"does_not_show\": \"It does not demonstrate that homeowners value convenience or smart-home integration as a primary purchase driver, nor that they are willing to pay a premium for remote control features.\"}}}",
+   "student_action": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T2",
+     "evidence_id": "danfoss-prn-zones",
+     "direction": "supports",
+     "quote": "Given the format of residential heating in Europe , which is dominated by boiler-based systems for the circulation of hot water around the home, the development of heating technology with smart thermostats offered by Nest and its European competitors Tado and Netatmo do not provide independent contr…",
+     "evidence_kind": "independent_study",
+     "does_not_show": "It does not show that homeowners are willing to pay a premium for convenience or that they prefer remote control over other benefits."
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "labelled danfoss-prn-zones as independent_study; the annotation (v1) says market_fact",
+   "quality_notes": [],
+   "keep": false,
+   "review_note": "The 'uncertain' field is empty, but the rubric requires learned, uncertain, and why_next to be non-empty, specific, and consistent with the call.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The 'uncertain' field is empty, but the rubric requires learned, uncertain, and why_next to be non-empty, specific, and consistent with the call."
+    ],
+    "teaches": "The step would otherwise teach classifying a company product claim as company_assertion and limiting its support for a convenience theory, but the incomplete reasoning makes it unsafe to train on.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 27,
+   "case": "sigvaris-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "evidence kind",
+   "question": "Should SIGVARIS GROUP develop a differentiated proposition for people who buy compression without a prescription, such as travellers or athletes, or keep its focus on medical compression? What evidence would justify either choice?",
+   "student_turn": 23,
+   "student_run": "bb829534d0bfd462f23fdfad4258c35d1dd129ef48562ad86ee2dcccb6fc2a4d",
+   "skill": "classify",
+   "theories": {
+    "T1": "Health-conscious consumers will adopt compression socks for non-medical purposes (travel, daily wear) because they perceive them as a health benefit, leading to higher willingness to pay and repeat purchases.",
+    "T2": "Athletes will adopt compression socks for non-medical performance benefits because they seek a competitive advantage, leading to higher purchase frequency and willingness to pay premium prices."
+   },
+   "sources_read": {
+    "sigvaris-about": "unknown (accessed 2026-11-03)",
+    "sigvaris-medical-grade-worth": "unknown (accessed 2026-11-03)",
+    "sigvaris-mordor-cep": "2025-09-12",
+    "sigvaris-mordor-channels": "2025-09-12",
+    "sigvaris-mordor-cost": "2025-09-12",
+    "sigvaris-review-travel": "2026-09-13",
+    "sigvaris-travel-claim": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "sigvaris-review-travel",
+     "direction": "supports",
+     "quote": "\"I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …\"",
+     "evidence_kind": "customer_observation",
+     "does_not_show": "The quote does not confirm that the reviewer perceives compression as a health benefit beyond DVT prevention, nor does it show willingness to pay a premium price for improved comfort or medical‑grade features."
+    }
+   },
+   "justification": {
+    "learned": "We have read seven sources about SIGVARIS and the compression market. The most relevant for T1 is a customer review describing personal use of compression socks for travel, which illustrates non‑medical adoption driven by health concerns (DVT prevention).",
+    "uncertain": "We still lack direct evidence of willingness to pay premiums for travel‑focused compression socks, and we have not assessed T2 or a potential fashion‑driven theory.",
+    "why_next": "Assess the customer review (sigvaris-review-travel) against T1 to see if it supports the health‑conscious adoption claim, then add a third theory (T3) on fashion‑driven demand to explore an alternative driver of non‑medical purchase."
+   },
+   "decision_at_generation": "kept",
+   "flags": [],
+   "teacher_reply_raw": "{\"learned\":\"We have read seven sources about SIGVARIS and the compression market. The most relevant for T1 is a customer review describing personal use of compression socks for travel, which illustrates non‑medical adoption driven by health concerns (DVT prevention).\",\"uncertain\":\"We still lack direct evidence of willingness to pay premiums for travel‑focused compression socks, and we have not assessed T2 or a potential fashion‑driven theory.\",\"why_next\":\"Assess the customer review (sigvaris-review-travel) against T1 to see if it supports the health‑conscious adoption claim, then add a third theory (T3) on fashion‑driven demand to explore an alternative driver of non‑medical purchase.\",\"call\":{\"name\":\"assess_evidence\",\"arguments\":{\"theory_id\":\"T1\",\"evidence_id\":\"sigvaris-review-travel\",\"direction\":\"supports\",\"quote\":\"\\\"I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …\\\"\",\"evidence_kind\":\"customer_observation\",\"does_not_show\":\"The quote does not confirm that the reviewer perceives compression as a health benefit beyond DVT prevention, nor does it show willingness to pay a premium price for improved comfort or medical‑grade features.\"}}}",
+   "student_action": {
+    "name": "assess_evidence",
+    "arguments": {
+     "theory_id": "T1",
+     "evidence_id": "sigvaris-review-travel",
+     "direction": "supports",
+     "quote": "I have worn compression socks while traveling for years but never more than that, even though I should have been wearing them daily. …",
+     "evidence_kind": "company_assertion",
+     "does_not_show": "The review does not quantify demand, willingness to pay, or the size of the travel market; it only describes personal experience."
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "labelled sigvaris-review-travel as company_assertion; the annotation (v1) says customer_observation",
+   "quality_notes": [],
+   "keep": true,
+   "review_note": "A customer review is a customer_observation, not a company_assertion; when a quote partially supports a theory, mark direction with the supported element and use a specific does_not_show to flag what the quote does not establish (e.g., willingness to pay or premium demand).",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T18:32:11+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "A customer review is a customer_observation, not a company_assertion; when a quote partially supports a theory, mark direction with the supported element and use a specific does_not_show to flag what the quote does not establish (e.g., willingness to pay or premium demand).",
+    "confidence": "medium"
+   }
+  }
+ ]
+}

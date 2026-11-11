@@ -12,7 +12,7 @@ Update: [first cluster receipt review](receipt_findings.md) and immutable small 
 
 The locally available Nov3 `second_adapter.gguf` is60,491,936bytes, SHA256 `be8a6b004dee357e6feab9a1404fc7f5c9dbbe3c3eeb79cbb4e97fb7cea0c1bd`. Its504tensor directory and payloads were read independently. There are exactly36layers ×7linear-module types ×A/B, every expected name and architecture-reference shape is present, all tensors areBF16(type30), and every tensor is finite and contains nonzero elements. Alpha metadata is32; all factor pairs have rank16. See local_second_findings.json and local_second_inventory_hashed.json, including per-tensor numeric hashes and a tensor-value identity that binds architecture/alpha and excludes provenance metadata.
 
-That excludes missing factors, wrong directory shapes/rank/type and nonfinite payloads **in this local artifact**. It does not establish that it is the cluster file, that factors equal the native PEFT checkpoint, that the actual cluster runtime applies the right scales, or that a trajectory change is harmless. The architecture reference is the pinned public Tiny Aya GGUF header already in scripts/gguf_header.json, not an independently obtained current native config.
+That excludes missing factors, wrong directory shapes/rank/type and nonfinite payloads **in this local artifact**. It does not establish that it is the cluster file, that factors equal the native PEFT checkpoint, that the actual cluster runtime applies the right scales, or that a trajectory change is harmless. The architecture reference is the pinned public Tiny Aya GGUF header already in scripts/cluster/gguf_header.json, not an independently obtained current native config.
 
 Public llama.cpp tagb12032 resolves at review time to commit `dde879bc4f954b809892fd0d660515f42536394a`. Its [runtime scale](https://github.com/ggml-org/llama.cpp/blob/dde879bc4f954b809892fd0d660515f42536394a/src/llama-adapter.h#L53) is request_scale ×alpha/rank: request1,alpha32,rank16 means2. The [exporter](https://github.com/ggml-org/llama.cpp/blob/dde879bc4f954b809892fd0d660515f42536394a/convert_lora_to_gguf.py#L413) writes alpha metadata and separate A/B factors, and the [Cohere2 conversion](https://github.com/ggml-org/llama.cpp/blob/dde879bc4f954b809892fd0d660515f42536394a/conversion/command_r.py#L37) has no Q/K permutation for these linear factors. The public graph has LoRA-aware Q/K/V, output and FFN paths. There is no obvious global-alpha or skipped-module defect in these inspected sources. **Actual cluster source/binary hashes remain unmatched.** Public source receipts are in public_sources.json; upstream code/weights are not copied into this PR.
 
@@ -70,9 +70,9 @@ Claude submits jobs/diagnose_conversion.sbatch using the existing persistent con
 
 CPU/local inspection examples:
 
-    python -m strategy_agent.evaluation.conversion_diagnose inventory --gguf PATH --output NEW.json
-    python -m strategy_agent.evaluation.conversion_diagnose summarize --reports SECOND.json THIRD.json --output NEW.json
-    python -m strategy_agent.evaluation.conversion_diagnose serve --port 8015 \
+    python -m aemon.evaluation.conversion.diagnose inventory --gguf PATH --output NEW.json
+    python -m aemon.evaluation.conversion.diagnose summarize --reports SECOND.json THIRD.json --output NEW.json
+    python -m aemon.evaluation.conversion.diagnose serve --port 8015 \
       --tensor-audit INVENTORY_OR_AUDIT.json --summary SUMMARY.json --replay REPLAY.json
 
 Open http://127.0.0.1:8015. The read-only backend and text-only UI show unknown evidence explicitly; /api/diagnosis exposes artifacts and unknown routes404. Until data arrive, the local artifact is structurally inspected and cluster margins/effects remain unknown. Model text is never inserted as HTML.

@@ -1,0 +1,153 @@
+{
+  "packet_id": "d60ebf05bb8f1dd1",
+  "packet_sha256": "f6765597da174a80a73ebbe7d47839afac9851ed270ef12e9708461711fb1a5b",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "deca9c92f4540aaaeab53d14ae9d8f3916aed5ff60ff35058ded8521fdf21ace",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"d60ebf05bb8f1dd1\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A1\"], \"reason\": \"A1 states an objective and lists four alternatives, including licensing (option 4) and no expansion (option 3). That would normally earn at least 2. However, A1 also imposes a '\u20ac20,000 and 12-week' test budget and timeline as a constraint, and nothing in the case or sources supplies that number. It also attributes 'shipping, aircraft' product lines to ACR, but the sources mention only military and commercial users (acr-mr-military). The rubric caps a dimension containing an invented number at 1. The framing does mention regulatory feasibility, but it does not engage the regulatory premise visible in the sources: the FCC rule change that permits ACR's personal beacon (acr-fr-waiver) and the mandatory NOAA registration (acr-fr-registration).\"}, \"causal_mechanism\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"No theory or mechanism was articulated before the run stopped at A8 on the turn limit.\"}, \"distinct_theories\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"No theories were generated before the stop at A8. The A1 alternatives are decision options, not rival explanations.\"}, \"assumptions_predictions\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"No assumptions or predictions were stated before the stop at A8.\"}, \"evidence_judgement\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\", \"A8\"], \"reason\": \"Sources were retrieved in A2 to A7, but none was assessed or classified, and no limits were stated, before the run stopped at A8.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\", \"A8\"], \"reason\": \"There was no favoured theory to challenge. Searches A2 and A4 to A7 are near-duplicate queries that returned the same sources, and none was aimed at disconfirmation. The run stopped at A8.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"No test was proposed or declined before the stop at A8.\"}, \"revision\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"An update was scheduled but never delivered (update_delivered false), and the run stopped at A8. Revision is applicable, so it is not_reached, not not_applicable.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"A8 records that the investigation stopped before a recommendation was made, because of the turn limit.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A8\"], \"reason\": \"The episode ended on the turn limit without a recommendation, theories, assessment, tests or revision.\"}, {\"kind\": \"other\", \"event_ids\": [\"A1\"], \"reason\": \"Invented numbers: a '\u20ac20,000 and 12-week' test budget and timeline is presented as a case constraint with no source support. It is not marked as an assumption.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A1\"], \"reason\": \"A1 describes ACR's existing B2B products as including 'shipping, aircraft'. The sources mention only military and commercial users (acr-mr-military, a company claim).\"}], \"suitable_for_training\": false, \"screen_reason\": \"The episode is incomplete: it stopped at A8 with no recommendation, and most stages were not reached. Not-reached stages contribute zero to the all-case composite. Framing also contains an invented budget figure. Six largely redundant searches without any assessment add no reasoning value.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4370
+      },
+      "cache_creation_input_tokens": 4370,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1933,
+      "output_tokens_details": {
+        "thinking_tokens": 584
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.060526,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "f061de3067aaa86ee06ee2c1330a1e50e7df27433d04d26e1ed421e1e15d7b2c",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "d60ebf05bb8f1dd1",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 states an objective and lists four alternatives, including licensing (option 4) and no expansion (option 3). That would normally earn at least 2. However, A1 also imposes a '\u20ac20,000 and 12-week' test budget and timeline as a constraint, and nothing in the case or sources supplies that number. It also attributes 'shipping, aircraft' product lines to ACR, but the sources mention only military and commercial users (acr-mr-military). The rubric caps a dimension containing an invented number at 1. The framing does mention regulatory feasibility, but it does not engage the regulatory premise visible in the sources: the FCC rule change that permits ACR's personal beacon (acr-fr-waiver) and the mandatory NOAA registration (acr-fr-registration)."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No theory or mechanism was articulated before the run stopped at A8 on the turn limit."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No theories were generated before the stop at A8. The A1 alternatives are decision options, not rival explanations."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No assumptions or predictions were stated before the stop at A8."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8"
+        ],
+        "reason": "Sources were retrieved in A2 to A7, but none was assessed or classified, and no limits were stated, before the run stopped at A8."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8"
+        ],
+        "reason": "There was no favoured theory to challenge. Searches A2 and A4 to A7 are near-duplicate queries that returned the same sources, and none was aimed at disconfirmation. The run stopped at A8."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No test was proposed or declined before the stop at A8."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "An update was scheduled but never delivered (update_delivered false), and the run stopped at A8. Revision is applicable, so it is not_reached, not not_applicable."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "A8 records that the investigation stopped before a recommendation was made, because of the turn limit."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "The episode ended on the turn limit without a recommendation, theories, assessment, tests or revision."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "Invented numbers: a '\u20ac20,000 and 12-week' test budget and timeline is presented as a case constraint with no source support. It is not marked as an assumption."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 describes ACR's existing B2B products as including 'shipping, aircraft'. The sources mention only military and commercial users (acr-mr-military, a company claim)."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete: it stopped at A8 with no recommendation, and most stages were not reached. Not-reached stages contribute zero to the all-case composite. Framing also contains an invented budget figure. Six largely redundant searches without any assessment add no reasoning value."
+  },
+  "seconds": 17.58
+}

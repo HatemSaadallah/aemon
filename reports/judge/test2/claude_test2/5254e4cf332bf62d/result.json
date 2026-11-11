@@ -1,0 +1,173 @@
+{
+  "packet_id": "5254e4cf332bf62d",
+  "packet_sha256": "fac519f639de8a1cf2d566d45954f22ae4a719d211558247b301e1f453569d3f",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\":\"5254e4cf332bf62d\",\"dimensions\":{\"problem_framing\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A1\"],\"reason\":\"A1 states the objective (whether public evidence justifies a consumer proposition) separately from the suggested solution. It lists real alternatives: B2B expansion, no expansion, retail partnership and licensing. It also flags that existing consumer reach must be identified. It does not correct a premise or surface a constraint a good analyst would miss. The \u20ac20,000 and 12-week budget is an assumption the agent introduced, not a case fact, but it is framed as a constraint rather than an observation.\"},\"causal_mechanism\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"The best theory is T2 (A10). It names who changes behaviour (homeowners), why (energy-cost sensitivity) and how value is captured (volume, margins, programme partnerships). The value-capture step is asserted, not traced. It does not address channel (e.g., marketplace-only listing) or installability, both of which determine whether Kingspan captures the value. T1 (A9) builds a safety-premium chain that ignores Kingspan's own Grenfell finding.\"},\"distinct_theories\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"T1 (safety and fire-resistance premium) and T2 (energy-cost payback) are rival purchase motivations, not rewordings of one idea. Both assume the same homeowner customer, a similar insulation product and an unspecified channel. They do not imply different products, customers or channels.\"},\"assumptions_predictions\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"Assumptions are explicit, and the predictions are observable: willingness to pay at least 15% or 10% more, purchase intent versus unmarked products, and regional sales. The percentage thresholds are proposed assumptions, not results. The regional-sales predictions are loose and could be explained by other factors, so failure would not clearly put either theory in trouble.\"},\"evidence_judgement\":{\"status\":\"scored\",\"score\":0,\"event_ids\":[\"A11\",\"A12\",\"A14\",\"A15\"],\"reason\":\"A11 cites the Grenfell finding that Kingspan 'knowingly created a false market' for K15 as support for a safety-premium theory. That misreads a source which, if anything, cuts against Kingspan's safety credibility. Its limit statement ('only indicates Kingspan's marketing strategy') also misdescribes the finding. A12 and A14 count company financial-performance excerpts as support for homeowner energy-saving demand. They are relabelled 'independent_study' although the dossier class is verified_observation. A14's limit statement, 'strategic focus on residential market recovery', is copied from A12 and is not in its source. A15 counts a company marketing claim as support. Directly relevant sources are never assessed: kingspan-cotality-intent (only 6.3% plan to install insulation), kingspan-est-rafters (rafter boards are 'not a DIY job') and kingspan-bq-marketplace (online only, sold by a third party).\"},\"seeking_challenge\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A13\"],\"reason\":\"A13 searches against T1 but reports no assessment of what it found. The contrary Grenfell evidence had already been recast as support in A11. No challenge was sought against T2, although the retrieved intent and EST sources bear directly against it.\"},\"experiment_design\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A16\"],\"reason\":\"The run stopped at A16 because of repeated errors, before any test was proposed or declined.\"},\"revision\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A16\"],\"reason\":\"A revision was scheduled (scheduled_update true) but never delivered (update_delivered false), and the run stopped at A16.\"},\"recommendation\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A16\"],\"reason\":\"A16 records that the investigation stopped before a recommendation.\"}},\"red_flags\":[{\"kind\":\"incomplete\",\"event_ids\":[\"A16\"],\"reason\":\"The episode ended because of repeated errors and has no recommendation, test design or revision.\"},{\"kind\":\"misleading_quote\",\"event_ids\":[\"A11\"],\"reason\":\"The Grenfell final-report finding of a 'false market' for K15 is presented as supporting a theory that homeowners will pay a premium for Kingspan's safety credentials. That reverses the source's evident import.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A11\",\"A12\",\"A14\"],\"reason\":\"Sources about the Grenfell finding, divisional earnings and residential pickup are treated as support for homeowner purchase motivations they do not address. A14's limit statement asserts a 'strategic focus on residential market recovery' that is absent from its excerpt.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A15\"],\"reason\":\"A company marketing claim that roof insulation is 'a great DIY project' is counted as support for T2. This treats a marketing claim as evidence of demand, while the independent EST source in the dossier says rafter-board installation is not DIY.\"},{\"kind\":\"other\",\"event_ids\":[\"A11\",\"A12\",\"A14\"],\"reason\":\"Source classes are misreported: dossier verified_observation items are relabelled 'independent_study'.\"},{\"kind\":\"other\",\"event_ids\":[\"A4\",\"A13\"],\"reason\":\"Retrieved contrary evidence (6.3% homeowner intent, rafters not DIY, B&Q online-only third-party listing) was never assessed.\"}],\"suitable_for_training\":false,\"screen_reason\":\"Rejected. The episode is incomplete: it stopped at A16 with no recommendation, and experiment design, revision and recommendation are not_reached, each contributing zero to the all-case composite. A11 misreads the Grenfell finding as support for a safety-premium theory. A12, A14 and A15 make unsupported inferences, including treating a marketing claim as demand support, and key contrary sources go unassessed. This is an automated screen, not a judgement of commercial correctness.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 6423
+      },
+      "cache_creation_input_tokens": 6423,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 3261,
+      "output_tokens_details": {
+        "thinking_tokens": 1193
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.097351,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "0f7ff5e8d58bbff9e6633933a77c6d2d92f0047aa8e9236c5b149b31ca1dd31e",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "5254e4cf332bf62d",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 states the objective (whether public evidence justifies a consumer proposition) separately from the suggested solution. It lists real alternatives: B2B expansion, no expansion, retail partnership and licensing. It also flags that existing consumer reach must be identified. It does not correct a premise or surface a constraint a good analyst would miss. The \u20ac20,000 and 12-week budget is an assumption the agent introduced, not a case fact, but it is framed as a constraint rather than an observation."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The best theory is T2 (A10). It names who changes behaviour (homeowners), why (energy-cost sensitivity) and how value is captured (volume, margins, programme partnerships). The value-capture step is asserted, not traced. It does not address channel (e.g., marketplace-only listing) or installability, both of which determine whether Kingspan captures the value. T1 (A9) builds a safety-premium chain that ignores Kingspan's own Grenfell finding."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 (safety and fire-resistance premium) and T2 (energy-cost payback) are rival purchase motivations, not rewordings of one idea. Both assume the same homeowner customer, a similar insulation product and an unspecified channel. They do not imply different products, customers or channels."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "Assumptions are explicit, and the predictions are observable: willingness to pay at least 15% or 10% more, purchase intent versus unmarked products, and regional sales. The percentage thresholds are proposed assumptions, not results. The regional-sales predictions are loose and could be explained by other factors, so failure would not clearly put either theory in trouble."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14",
+          "A15"
+        ],
+        "reason": "A11 cites the Grenfell finding that Kingspan 'knowingly created a false market' for K15 as support for a safety-premium theory. That misreads a source which, if anything, cuts against Kingspan's safety credibility. Its limit statement ('only indicates Kingspan's marketing strategy') also misdescribes the finding. A12 and A14 count company financial-performance excerpts as support for homeowner energy-saving demand. They are relabelled 'independent_study' although the dossier class is verified_observation. A14's limit statement, 'strategic focus on residential market recovery', is copied from A12 and is not in its source. A15 counts a company marketing claim as support. Directly relevant sources are never assessed: kingspan-cotality-intent (only 6.3% plan to install insulation), kingspan-est-rafters (rafter boards are 'not a DIY job') and kingspan-bq-marketplace (online only, sold by a third party)."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A13"
+        ],
+        "reason": "A13 searches against T1 but reports no assessment of what it found. The contrary Grenfell evidence had already been recast as support in A11. No challenge was sought against T2, although the retrieved intent and EST sources bear directly against it."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "The run stopped at A16 because of repeated errors, before any test was proposed or declined."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "A revision was scheduled (scheduled_update true) but never delivered (update_delivered false), and the run stopped at A16."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "A16 records that the investigation stopped before a recommendation."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "The episode ended because of repeated errors and has no recommendation, test design or revision."
+      },
+      {
+        "kind": "misleading_quote",
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "The Grenfell final-report finding of a 'false market' for K15 is presented as supporting a theory that homeowners will pay a premium for Kingspan's safety credentials. That reverses the source's evident import."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14"
+        ],
+        "reason": "Sources about the Grenfell finding, divisional earnings and residential pickup are treated as support for homeowner purchase motivations they do not address. A14's limit statement asserts a 'strategic focus on residential market recovery' that is absent from its excerpt."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A15"
+        ],
+        "reason": "A company marketing claim that roof insulation is 'a great DIY project' is counted as support for T2. This treats a marketing claim as evidence of demand, while the independent EST source in the dossier says rafter-board installation is not DIY."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14"
+        ],
+        "reason": "Source classes are misreported: dossier verified_observation items are relabelled 'independent_study'."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A4",
+          "A13"
+        ],
+        "reason": "Retrieved contrary evidence (6.3% homeowner intent, rafters not DIY, B&Q online-only third-party listing) was never assessed."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected. The episode is incomplete: it stopped at A16 with no recommendation, and experiment design, revision and recommendation are not_reached, each contributing zero to the all-case composite. A11 misreads the Grenfell finding as support for a safety-premium theory. A12, A14 and A15 make unsupported inferences, including treating a marketing claim as demand support, and key contrary sources go unassessed. This is an automated screen, not a judgement of commercial correctness."
+  },
+  "seconds": 30.973
+}

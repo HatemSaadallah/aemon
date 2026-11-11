@@ -1,0 +1,1063 @@
+{
+ "accessed": "2026-11-08",
+ "companies": [
+  {
+   "name": "Kingspan Group plc",
+   "slug": "kingspan",
+   "records": [
+    {
+     "id": "kingspan-ar2025-segment",
+     "type": "company_claim",
+     "source_title": "Kingspan Annual Report 2025 (online summary)",
+     "url": "https://annual-report.kingspan.com/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Kingspan's Insulated Building Envelopes segment is a global leader in advanced energy saving solutions for roofs, walls and floors, delivering high-performance building solutions for energy …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Kingspan Group, Insulated Building Envelopes segment",
+     "does_not_establish": "It does not say what share of this segment's sales reach homeowners rather than contractors, developers or merchants.",
+     "bears_on": [
+      "current_offering",
+      "current_buyers"
+     ]
+    },
+    {
+     "id": "kingspan-ar2025-footprint",
+     "type": "company_claim",
+     "source_title": "Kingspan Annual Report 2025 (online summary)",
+     "url": "https://annual-report.kingspan.com/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "In 2025 our manufacturing footprint increased to 278 sites. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Kingspan Group",
+     "does_not_establish": "It gives scale only and says nothing about consumer channels or consumer demand.",
+     "bears_on": [
+      "company_size"
+     ]
+    },
+    {
+     "id": "kingspan-ar2024-rigid",
+     "type": "company_claim",
+     "source_title": "Kingspan Annual Report 2024 - The Time Is Now (online summary)",
+     "url": "https://2024-annual-report.kingspan.com/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Kingspan is a world leader in rigid insulation boards, which accounts for approximately two thirds of our Insulation division.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Kingspan Insulation division",
+     "does_not_establish": "It does not split rigid board sales between trade, merchant and retail channels or between new build and home renovation.",
+     "bears_on": [
+      "current_offering"
+     ]
+    },
+    {
+     "id": "kingspan-homeowner-hub",
+     "type": "company_claim",
+     "source_title": "Your Home Insulation Hub: Tips, Guides & Solutions | Kingspan GB",
+     "url": "https://www.insulation.kingspan.com/gb/en/campaigns/home-insulation-hub",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "This page is a practical guide to improving your home's insulation. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Great Britain",
+     "population": "UK homeowners and DIY improvers",
+     "does_not_establish": "It shows that Kingspan already publishes homeowner guidance, not how many homeowners use it or buy as a result.",
+     "bears_on": [
+      "existing_consumer_reach",
+      "channels"
+     ]
+    },
+    {
+     "id": "kingspan-homeowner-diy",
+     "type": "company_claim",
+     "source_title": "Your Home Insulation Hub: Tips, Guides & Solutions | Kingspan GB",
+     "url": "https://www.insulation.kingspan.com/gb/en/campaigns/home-insulation-hub",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Installing quality products such as our roof insulation helps lock in warmth, reduce drafts, and improve overall comfort. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Great Britain",
+     "population": "UK homeowners and DIY improvers",
+     "does_not_establish": "It is the company's own marketing claim and does not show that DIY installation of its boards performs as specified in practice.",
+     "bears_on": [
+      "existing_consumer_reach",
+      "product_fit"
+     ]
+    },
+    {
+     "id": "kingspan-oss-ireland",
+     "type": "company_claim",
+     "source_title": "Kingspan Insulation One Stop Shop | Kingspan IE",
+     "url": "https://www.insulation.kingspan.com/ie/en/campaigns/kingspan-insulation-retrofit",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "The Kingspan Insulation One Stop Shop is registered with SEAI as a One Stop Shop for home energy upgrades and will manage the entire process, …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Ireland",
+     "population": "Irish homeowners and private landlords",
+     "does_not_establish": "It does not say how many homes the service has upgraded or whether it is profitable.",
+     "bears_on": [
+      "existing_consumer_reach",
+      "channels"
+     ]
+    },
+    {
+     "id": "kingspan-oss-older-homes",
+     "type": "company_claim",
+     "source_title": "Energy Efficient Home Improvements | Kingspan IE",
+     "url": "https://www.insulation.kingspan.com/ie/en/services/energy-efficient-home-improvements",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Focus on older homes: the scheme is particularly beneficial for homeowners of older homes (pre 2011) that require more extensive upgrades and deep retrofits.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Ireland",
+     "population": "Owners of Irish homes built before 2011",
+     "does_not_establish": "It names a target group but gives no data on how many such homeowners have enquired or signed up.",
+     "bears_on": [
+      "target_segment",
+      "existing_consumer_reach"
+     ]
+    },
+    {
+     "id": "kingspan-direct-2011",
+     "type": "verified_observation",
+     "source_title": "Kingspan sells direct to end-users (Builders' Merchants News)",
+     "url": "https://www.buildersmerchantsnews.co.uk/Kingspan-sells-direct-to-end-users/35629",
+     "source_date": "2011-03-18",
+     "excerpt": "Buyers can access the website and order products with delivery to any mainland UK address.",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United Kingdom",
+     "population": "UK end users of Kingspan insulation boards",
+     "does_not_establish": "It reports a 2011 launch and does not show whether the direct site still operates or how it performed.",
+     "bears_on": [
+      "existing_consumer_reach",
+      "prior_attempts"
+     ]
+    },
+    {
+     "id": "kingspan-rte-earners",
+     "type": "verified_observation",
+     "source_title": "Kingspan shares soar after record profits for 2024 (RTÉ News)",
+     "url": "https://www.rte.ie/news/business/2025/0221/1498003-kingspan-annual-results",
+     "source_date": "2025-02-21",
+     "excerpt": "Today's results show that the company's insulation and insulated panels remain by far its biggest earners, though its data centre solutions business was its fastest …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Kingspan Group divisions",
+     "does_not_establish": "It does not separate residential or consumer revenue from commercial and industrial revenue.",
+     "bears_on": [
+      "company_size",
+      "opportunity_cost"
+     ]
+    },
+    {
+     "id": "kingspan-rte-residential",
+     "type": "verified_observation",
+     "source_title": "Kingspan shares soar after record profits for 2024 (RTÉ News)",
+     "url": "https://www.rte.ie/news/business/2025/0221/1498003-kingspan-annual-results",
+     "source_date": "2025-02-21",
+     "excerpt": "It said that many European markets were under pressure coinciding with cost-driven price deflation and some tapering off in the district heating category, but added …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Europe",
+     "population": "Kingspan Insulation division",
+     "does_not_establish": "It reports the company's expectation of a residential pickup, not measured homeowner demand.",
+     "bears_on": [
+      "market_conditions",
+      "current_offering"
+     ]
+    },
+    {
+     "id": "kingspan-grenfell-k15",
+     "type": "verified_observation",
+     "source_title": "Irish firm Kingspan 'knowingly created false market' for insulation used on Grenfell tower - report (Irish Examiner)",
+     "url": "https://www.irishexaminer.com/business/companies/arid-41469346.html",
+     "source_date": "2024-09-04",
+     "excerpt": "The long-awaited final report into the devastating Grenfell Tower Fire has found that Irish insulation giant Kingspan \"knowingly created a false market\" for its K15 \u2026",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United Kingdom",
+     "population": "Kingspan UK insulation business; UK public",
+     "does_not_establish": "It does not measure how homeowners now perceive the Kingspan brand or whether this would weaken a consumer offer.",
+     "bears_on": [
+      "brand_risk",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "kingspan-nao-eco",
+     "type": "verified_observation",
+     "source_title": "Weak controls and oversight blamed for faulty home installations under energy efficiency scheme (National Audit Office press release)",
+     "url": "https://www.nao.org.uk/press-releases/weak-controls-and-oversight-blamed-for-faulty-home-installations-under-energy-efficiency-scheme/",
+     "source_date": "2025-10-14",
+     "excerpt": "But poor installation work has resulted in an estimated 22,000 to 23,000 homes with external wall insulation fitted under the scheme (98% of the total) …",
+     "access_limitation": "none",
+     "kind": "regulatory",
+     "geography": "Great Britain",
+     "population": "Homes insulated under the ECO scheme",
+     "does_not_establish": "It concerns installer quality under a subsidised scheme and does not attribute faults to any particular insulation manufacturer.",
+     "bears_on": [
+      "installation_risk",
+      "evidence_against",
+      "consumer_trust"
+     ]
+    },
+    {
+     "id": "kingspan-nao-causes",
+     "type": "verified_observation",
+     "source_title": "Weak controls and oversight blamed for faulty home installations under energy efficiency scheme (National Audit Office press release)",
+     "url": "https://www.nao.org.uk/press-releases/weak-controls-and-oversight-blamed-for-faulty-home-installations-under-energy-efficiency-scheme/",
+     "source_date": "2025-10-14",
+     "excerpt": "Possible explanations why so many installations have been carried out to such a poor standard include an under-skilled workforce, with work being subcontracted to individuals …",
+     "access_limitation": "none",
+     "kind": "regulatory",
+     "geography": "Great Britain",
+     "population": "Retrofit installers under the ECO scheme",
+     "does_not_establish": "It does not show that a manufacturer-led homeowner service would avoid these failures.",
+     "bears_on": [
+      "installation_risk",
+      "unmet_need"
+     ]
+    },
+    {
+     "id": "kingspan-cibse-remediation",
+     "type": "verified_observation",
+     "source_title": "NAO finds widespread failure in domestic retrofits (CIBSE Journal)",
+     "url": "https://www.cibsejournal.com/news/nao-finds-widespread-failure-in-domestic-retrofits/",
+     "source_date": "2025-10-30",
+     "excerpt": "The NAO report states that nearly all of the faulty installations have been remediated, at a cost of up to £18,000 per property.",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Great Britain",
+     "population": "Homes with faulty ECO and GBIS insulation",
+     "does_not_establish": "It reports remediation cost, not what homeowners would pay for a well-installed product.",
+     "bears_on": [
+      "installation_risk",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "kingspan-seai-2024",
+     "type": "verified_observation",
+     "source_title": "SEAI pays record €616m in grants for energy upgrades and projects in 2024 (RTÉ News)",
+     "url": "https://www.rte.ie/news/ireland/2025/0115/1490866-energy-upgrade-grants",
+     "source_date": "2025-01-15",
+     "excerpt": "Two thirds of the funding, or €420 million, was allocated to 54,000 home energy upgrades. …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Ireland",
+     "population": "Irish households receiving SEAI home upgrade grants in 2024",
+     "does_not_establish": "It does not show which suppliers or brands won this work or how much homeowners paid beyond the grant.",
+     "bears_on": [
+      "market_size",
+      "subsidy_dependence"
+     ]
+    },
+    {
+     "id": "kingspan-ie-oss-count",
+     "type": "verified_observation",
+     "source_title": "ieExplains: How to retrofit your home and what grants are available (Irish Examiner)",
+     "url": "https://www.irishexaminer.com/news/spotlight/arid-41895115.html",
+     "source_date": "2026-08-17",
+     "excerpt": "Some 7,763 homes have been upgraded through One Stop Shops.",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Ireland",
+     "population": "Irish homes upgraded through registered One Stop Shops",
+     "does_not_establish": "It is a total across all One Stop Shop providers and does not give Kingspan's share.",
+     "bears_on": [
+      "market_size",
+      "existing_consumer_reach"
+     ]
+    },
+    {
+     "id": "kingspan-ie-applications",
+     "type": "verified_observation",
+     "source_title": "ieExplains: How to retrofit your home and what grants are available (Irish Examiner)",
+     "url": "https://www.irishexaminer.com/news/spotlight/arid-41895115.html",
+     "source_date": "2026-08-17",
+     "excerpt": "In the first six months of 2026, the SEAI received 29,876 applications for the Better Energy Homes scheme, which provides grants for individual measures. …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Ireland",
+     "population": "Irish homeowners applying for single-measure grants",
+     "does_not_establish": "It shows grant applications rising but not why, and not whether the rise will last once grant terms change.",
+     "bears_on": [
+      "market_trend",
+      "subsidy_dependence"
+     ]
+    },
+    {
+     "id": "kingspan-est-rafters",
+     "type": "verified_observation",
+     "source_title": "Roof and loft insulation (Energy Saving Trust)",
+     "url": "https://energysavingtrust.org.uk/advice/roof-and-loft-insulation/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Another option for loft insulation is to fit rigid insulation boards between and over the sloping timbers that make up the roof itself, called rafters. …",
+     "access_limitation": "none",
+     "kind": "regulatory",
+     "geography": "United Kingdom",
+     "population": "UK householders considering roof insulation",
+     "does_not_establish": "It is advice, not data on how many homeowners attempt rigid board installation themselves.",
+     "bears_on": [
+      "product_fit",
+      "evidence_against",
+      "installation_risk"
+     ]
+    },
+    {
+     "id": "kingspan-est-topup-saving",
+     "type": "verified_observation",
+     "source_title": "Roof and loft insulation (Energy Saving Trust)",
+     "url": "https://energysavingtrust.org.uk/advice/roof-and-loft-insulation/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "If your current insulation is around 120mm thick, increasing to the 270mm (the minimum recommendation for new builds) could save you on your energy bills: …",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Great Britain",
+     "population": "Householders with existing partial loft insulation",
+     "does_not_establish": "It is a modelled average saving for mineral wool top-ups and does not apply directly to premium rigid boards.",
+     "bears_on": [
+      "willingness_to_pay",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "kingspan-bq-marketplace",
+     "type": "verified_observation",
+     "source_title": "100mm Kingspan Kooltherm K108 Cavity Insulation Board 1200mm x 450mm (x10 Boards) | B&Q",
+     "url": "https://www.diy.com/departments/100mm-kingspan-kooltherm-k108-cavity-insulation-board-1200mm-x-450mm-x10-boards-/2345673002075_BQ.prd",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Sold & shipped by Materials Market Available online only and not stocked in B&Q stores",
+     "access_limitation": "none",
+     "kind": "retail_listing",
+     "geography": "United Kingdom",
+     "population": "B&Q online shoppers",
+     "does_not_establish": "It shows one third-party marketplace listing, not sales volumes or whether Kingspan supplies the seller directly.",
+     "bears_on": [
+      "channels",
+      "existing_consumer_reach"
+     ]
+    },
+    {
+     "id": "kingspan-bq-sensit",
+     "type": "verified_observation",
+     "source_title": "Kingspan Watchman SENSiT Smart Oil Tank Monitor with Plug, WiFi App Connected Oil Level Gauge | B&Q",
+     "url": "https://www.diy.com/departments/kingspan-watchman-sensit-smart-oil-tank-monitor-with-plug-wifi-app-connected-oil-level-gauge/0718603111305_BQ.prd",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Smart Wi-Fi tank level monitoring System. …",
+     "access_limitation": "none",
+     "kind": "retail_listing",
+     "geography": "United Kingdom",
+     "population": "Households with heating oil tanks",
+     "does_not_establish": "It shows a Kingspan-branded consumer device on sale, not its sales or margin, and it is outside the insulation business.",
+     "bears_on": [
+      "existing_consumer_reach",
+      "channels"
+     ]
+    },
+    {
+     "id": "kingspan-cotality-intent",
+     "type": "verified_observation",
+     "source_title": "Homeowners and retrofit: the gap between attitudes and action (Cotality)",
+     "url": "https://www.cotality.com/uk/insights/articles/homeowner-attitudes",
+     "source_date": "2025-07-09",
+     "excerpt": "Only 6.3% of homeowners plan to install insulation in the next 12 months (Ecofurb).",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United Kingdom",
+     "population": "UK homeowners surveyed for Ecofurb's Home Retrofit Trends Index",
+     "does_not_establish": "It reports stated intentions from a survey run by a retrofit service firm, not purchases, and the sample design is not given here.",
+     "bears_on": [
+      "demand",
+      "evidence_against"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Ansell Limited",
+   "slug": "ansell",
+   "records": [
+    {
+     "id": "ansell-investor-positioning",
+     "type": "company_claim",
+     "source_title": "Investor Centre | Ansell",
+     "url": "https://investor.ansell.com/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Ansell is a global leader in personal protection and safety solutions, enabling safer workforces through quality, expertise, and sustainable innovation.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Ansell Limited",
+     "does_not_establish": "It is a positioning statement aimed at workforces and says nothing about individual or household buyers.",
+     "bears_on": [
+      "current_offering",
+      "current_buyers"
+     ]
+    },
+    {
+     "id": "ansell-fy25-chemical-service",
+     "type": "company_claim",
+     "source_title": "Ansell Limited FY25 Full Year Results (ASX announcement)",
+     "url": "https://announcements.asx.com.au/asxpdf/20250825/pdf/06n7vr1zrng07f.pdf",
+     "source_date": "2025-08-25",
+     "excerpt": "Chemical grew 4.9% on an organic constant currency-basis1, driven by higher sales of our high-end chemical hand and body protection ranges, and supported by increased …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Ansell Industrial segment customers",
+     "does_not_establish": "It shows a business-to-business selection service, not whether a comparable advisory service would work for households.",
+     "bears_on": [
+      "current_offering",
+      "channels"
+     ]
+    },
+    {
+     "id": "ansell-fy25-touchntuff",
+     "type": "company_claim",
+     "source_title": "Ansell Limited FY25 Full Year Results (ASX announcement)",
+     "url": "https://announcements.asx.com.au/asxpdf/20250825/pdf/06n7vr1zrng07f.pdf",
+     "source_date": "2025-08-25",
+     "excerpt": "Exam/Single Use sales grew 2.0% on an organic constant currency-basis1, including good growth in differentiated TouchNTuff® and MICROFLEX® product ranges.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Ansell Healthcare segment customers",
+     "does_not_establish": "It does not say how much of this growth, if any, comes from individual consumers buying through retail or online channels.",
+     "bears_on": [
+      "current_offering"
+     ]
+    },
+    {
+     "id": "ansell-fy25-household-exit",
+     "type": "company_claim",
+     "source_title": "Ansell Limited FY25 Full Year Results (ASX announcement)",
+     "url": "https://announcements.asx.com.au/asxpdf/20250825/pdf/06n7vr1zrng07f.pdf",
+     "source_date": "2025-08-25",
+     "excerpt": "Organic CC (Constant Currency) compares FY25 to FY24 at Constant Currency and adjusts for the effects of acquisitions, divestments and business exits including the KBU …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Ansell Limited",
+     "does_not_establish": "It records the exit but not the reasons, which are stated elsewhere, or whether any household glove supply continues under licence.",
+     "bears_on": [
+      "prior_attempts",
+      "evidence_against",
+      "existing_consumer_reach"
+     ]
+    },
+    {
+     "id": "ansell-ar25-discontinued",
+     "type": "company_claim",
+     "source_title": "Ansell Limited Annual Report 2025",
+     "url": "https://investor.ansell.com/FormBuilder/_Resource/_module/WEtAsUy_jk6Kmk_vOw9f5g/docs/results/Ansell_FYAE_2025.pdf",
+     "source_date": "2025-08",
+     "excerpt": "Exited Retail Household Gloves: Exclusion of results from the discontinued retail household gloves business.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Ansell Limited",
+     "does_not_establish": "It does not explain whether the business was unprofitable, too small or simply outside strategy.",
+     "bears_on": [
+      "prior_attempts",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "ansell-ar25-exit-size",
+     "type": "company_claim",
+     "source_title": "Ansell Limited Annual Report 2025",
+     "url": "https://investor.ansell.com/FormBuilder/_Resource/_module/WEtAsUy_jk6Kmk_vOw9f5g/docs/results/Ansell_FYAE_2025.pdf",
+     "source_date": "2025-08",
+     "excerpt": "Less Exited Retail Household Gloves ($0.1m) ($25.7m) - ($25.8m)",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Ansell Limited, prior-period sales by segment",
+     "does_not_establish": "This table row gives prior-period sales of the exited retail household glove line (about US$25.8m, almost all in Industrial) but not its margin.",
+     "bears_on": [
+      "prior_attempts",
+      "market_size",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "ansell-fool-sw-size",
+     "type": "verified_observation",
+     "source_title": "Ansell Limited sells condom business: Here's what you need to know (The Motley Fool Australia)",
+     "url": "https://fool.com.au/2017/05/25/ansell-limited-sells-condom-business-heres-what-you-need-to-know",
+     "source_date": "2017-05-25",
+     "excerpt": "Sexual Wellness is the group's smallest division. …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Ansell Sexual Wellness division (consumer condoms)",
+     "does_not_establish": "It describes a consumer business Ansell sold in 2017, not how a new consumer glove proposition would perform.",
+     "bears_on": [
+      "prior_attempts",
+      "existing_consumer_reach"
+     ]
+    },
+    {
+     "id": "ansell-fool-sw-sale",
+     "type": "verified_observation",
+     "source_title": "Ansell Limited sells condom business: Here's what you need to know (The Motley Fool Australia)",
+     "url": "https://fool.com.au/2017/05/25/ansell-limited-sells-condom-business-heres-what-you-need-to-know",
+     "source_date": "2017-05-25",
+     "excerpt": "The company announced this morning that it has already executed a binding agreement to sell the Sexual Wellness division for US$600 million ($800 million) to …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Ansell Limited",
+     "does_not_establish": "It does not show that consumer businesses as such were unattractive to Ansell, only that it chose to sell this one.",
+     "bears_on": [
+      "prior_attempts",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "ansell-erj-core-focus",
+     "type": "verified_observation",
+     "source_title": "Ansell launches \"transformation\" plan following business divestment (European Rubber Journal)",
+     "url": "https://www.european-rubber-journal.com/2017/07/24/ansell-launches-transformation-plan-following-business-divestment",
+     "source_date": "2017-07-24",
+     "excerpt": "The Australian company said it's objective was to increase growth through focus on core businesses selling to industrial and healthcare end markets, streamlined operations, and …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Ansell Limited",
+     "does_not_establish": "It reports a 2017 strategic choice and does not show whether that focus still holds or has been reviewed.",
+     "bears_on": [
+      "strategy_fit",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "ansell-erj-marigold-sale",
+     "type": "verified_observation",
+     "source_title": "Freudenberg acquires Marigold Household Gloves from Ansell (European Rubber Journal)",
+     "url": "https://www.european-rubber-journal.com/2013/12/24/freudenberg-acquires-marigold-household-gloves-from-ansell",
+     "source_date": "2013-12-24",
+     "excerpt": "This agreement acquires the global trademark rights for the Marigold brand, as well as the consumer household gloves business in the UK, Ireland, Italy, the …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "UK, Ireland, Italy, Netherlands, Hong Kong, Japan",
+     "population": "Consumer household glove buyers (Marigold brand)",
+     "does_not_establish": "It gives the size of one household glove brand in 2013, not the size or growth of the household glove category today.",
+     "bears_on": [
+      "prior_attempts",
+      "market_size",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "ansell-grocer-partnership",
+     "type": "verified_observation",
+     "source_title": "Marigold gloves business sold to FHCS (The Grocer)",
+     "url": "https://www.thegrocer.co.uk/companies/marigold-gloves-business-sold-to-fhcs/353090.article",
+     "source_date": "2013-12-23",
+     "excerpt": "FHCS said it and Ansell have had \"a strong partnership\" in household gloves for more than 20 years that had included \"leveraging Ansell's global expertise \u2026",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Household glove category; Ansell and Freudenberg Home and Cleaning Solutions",
+     "does_not_establish": "It describes a past division of roles and does not show that Ansell lacks consumer marketing capability today.",
+     "bears_on": [
+      "capabilities",
+      "channels",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "ansell-morningstar-exit",
+     "type": "verified_observation",
+     "source_title": "Ansell poised to return to growth (Morningstar Australia)",
+     "url": "https://www.morningstar.com.au/stocks/ansell-poised-to-return-to-growth",
+     "source_date": "2024-02-20",
+     "excerpt": "We have lowered our forecast five-year revenue compound annual growth rate to 2% from 3%, with the company intending to exit less differentiated low-margin chemical …",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Global",
+     "population": "Ansell Industrial segment",
+     "does_not_establish": "It is an analyst forecast and does not name household gloves explicitly or measure their margin.",
+     "bears_on": [
+      "evidence_against",
+      "margins"
+     ]
+    },
+    {
+     "id": "ansell-fool-fy26-segments",
+     "type": "verified_observation",
+     "source_title": "Ansell FY26 earnings: Sales and profit surge boost outlook (The Motley Fool Australia)",
+     "url": "https://www.fool.com.au/2026/08/24/ansell-fy26-earnings-sales-and-profit-surge-boost-outlook/",
+     "source_date": "2026-08-24",
+     "excerpt": "The Industrial segment benefited from mechanical glove innovation and recovery in major markets, while Healthcare sales were supported by cleanroom and surgical product demand.",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Ansell Industrial and Healthcare segments",
+     "does_not_establish": "It does not break out any sales to individual consumers.",
+     "bears_on": [
+      "current_offering",
+      "opportunity_cost"
+     ]
+    },
+    {
+     "id": "ansell-fool-fy26-simplify",
+     "type": "verified_observation",
+     "source_title": "Ansell FY26 earnings: Sales and profit surge boost outlook (The Motley Fool Australia)",
+     "url": "https://www.fool.com.au/2026/08/24/ansell-fy26-earnings-sales-and-profit-surge-boost-outlook/",
+     "source_date": "2026-08-24",
+     "excerpt": "My focus as we move forward will be to accelerate profitable growth and improve our customer centricity, through a program of commercial excellence to drive …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Ansell Limited",
+     "does_not_establish": "It is the CEO's statement as quoted in a news report and does not rule out a narrowly targeted consumer line.",
+     "bears_on": [
+      "strategy_fit",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "ansell-iga-vileda-listing",
+     "type": "verified_observation",
+     "source_title": "ViledaAnsell Super Protector Gloves Large | IGA Shop Online",
+     "url": "https://www.igashop.com.au/product/283593",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "The tough neoprene coating of Vileda Ansell Super Protector Gloves provides extra protection from household chemicals, hot & cold water, as well as a greater …",
+     "access_limitation": "none",
+     "kind": "retail_listing",
+     "geography": "Australia",
+     "population": "Australian supermarket shoppers",
+     "does_not_establish": "It shows the Ansell name still on a co-branded supermarket glove, not who makes it now or what Ansell earns from it.",
+     "bears_on": [
+      "existing_consumer_reach",
+      "brand_presence",
+      "channels"
+     ]
+    },
+    {
+     "id": "ansell-productreview-decline",
+     "type": "verified_observation",
+     "source_title": "Vileda Ansell Super Protector Gloves reviews | ProductReview.com.au",
+     "url": "https://www.productreview.com.au/listings/vileda-ansell-super-protector-gloves",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Since Ansell shared their popular cleaning rubber gloves with vileda company the product has gone downhill.",
+     "access_limitation": "none",
+     "kind": "retail_listing",
+     "geography": "Australia",
+     "population": "Two reviewers of a household glove",
+     "does_not_establish": "It is one consumer opinion from a page with two reviews and cannot represent wider consumer views.",
+     "bears_on": [
+      "brand_presence",
+      "consumer_perception"
+     ]
+    },
+    {
+     "id": "ansell-werkado-household-use",
+     "type": "verified_observation",
+     "source_title": "Werkado is testing - Ansell",
+     "url": "https://werkado.eu/en/?p=3536",
+     "source_date": "2023-09-14",
+     "excerpt": "Our testers mostly decided to challenge this pair on household tasks - cleaning the house, washing dishes, gardening. …",
+     "access_limitation": "none",
+     "kind": "retail_listing",
+     "geography": "Estonia, Latvia, Lithuania",
+     "population": "Staff testers at a Baltic workwear distributor",
+     "does_not_establish": "It is an informal test by a distributor's own staff, not a representative survey of consumer demand.",
+     "bears_on": [
+      "use_cases",
+      "product_fit"
+     ]
+    },
+    {
+     "id": "ansell-nhs-eczema-gloves",
+     "type": "verified_observation",
+     "source_title": "Eczema patient information leaflet (Oxford University Hospitals NHS Foundation Trust)",
+     "url": "https://www.ouh.nhs.uk/media/21gfdoo0/102367eczema.pdf",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Always use gloves (see next page) when washing up, or persuade someone else to wash the dishes.",
+     "access_limitation": "none",
+     "kind": "regulatory",
+     "geography": "United Kingdom",
+     "population": "Patients with hand eczema",
+     "does_not_establish": "It is clinical advice and does not show how many people follow it or would pay more for a specialist glove.",
+     "bears_on": [
+      "use_cases",
+      "target_segment"
+     ]
+    },
+    {
+     "id": "ansell-fmt-oversupply",
+     "type": "verified_observation",
+     "source_title": "Hartalega suffers RM52mil net loss as sales slump in Q1 (Free Malaysia Today)",
+     "url": "https://www.freemalaysiatoday.com/category/business/2023/08/09/hartalega-suffers-rm52mil-net-loss-as-sales-slump-in-q1",
+     "source_date": "2023-08-09",
+     "excerpt": "As a result, glove manufacturers are impacted by operating margin compression as the ASP price for rubber gloves remains competitive amid minimal success with the …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Malaysia; global glove supply",
+     "population": "Rubber glove manufacturers",
+     "does_not_establish": "It concerns mainly disposable glove makers in 2023 and does not measure prices in household or specialist consumer gloves.",
+     "bears_on": [
+      "margins",
+      "competition",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "ansell-star-china-supply",
+     "type": "verified_observation",
+     "source_title": "Glove sector on the mend (The Star)",
+     "url": "https://thestar.com.my/business/business-news/2023/11/09/glove-sector-on-the-mend",
+     "source_date": "2023-11-09",
+     "excerpt": "However, he pointed out that the glove oversupply situation will continue to weigh on glove maker's share price as China continues to ramp up production …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Malaysia and China; global glove supply",
+     "population": "Glove manufacturers",
+     "does_not_establish": "It is one analyst's view in 2023 and is about commodity gloves, not differentiated consumer products.",
+     "bears_on": [
+      "competition",
+      "evidence_against"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Mettler-Toledo International Inc.",
+   "slug": "mettler",
+   "records": [
+    {
+     "id": "mettler-ir-overview",
+     "type": "company_claim",
+     "source_title": "Mettler-Toledo International Inc., Investor Relations (Corporate Overview)",
+     "url": "https://investor.mt.com/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "METTLER TOLEDO is a global manufacturer and marketer of precision instruments for use in laboratory, industrial and food retailing applications.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Mettler-Toledo International Inc.",
+     "does_not_establish": "It names professional markets only and does not show whether any products reach households.",
+     "bears_on": [
+      "current_offering",
+      "current_buyers"
+     ]
+    },
+    {
+     "id": "mettler-ir-geography",
+     "type": "company_claim",
+     "source_title": "Mettler-Toledo International Inc., Investor Relations (Corporate Overview)",
+     "url": "https://investor.mt.com/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "METTLER TOLEDO is geographically diversified with sales in 2025 derived 42% from the Americas, 29% from Europe, and 29% from Asia/Rest of World.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Mettler-Toledo International Inc.",
+     "does_not_establish": "It gives regional mix only, not any split by customer type.",
+     "bears_on": [
+      "company_size"
+     ]
+    },
+    {
+     "id": "mettler-profile-food-retail",
+     "type": "company_claim",
+     "source_title": "Mettler-Toledo International Inc., Company Profile",
+     "url": "https://investor.mt.com/company-profile/default.aspx",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "From retailers' receiving docks to their checkout counters, we enhance efficient handling of fresh goods with weighing, packaging, pricing, wrapping, and labeling solutions.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Food retailers",
+     "does_not_establish": "It shows that shoppers meet Mettler-Toledo scales in stores, not that they would buy one for home use.",
+     "bears_on": [
+      "current_offering",
+      "brand_presence"
+     ]
+    },
+    {
+     "id": "mettler-ar25-channels",
+     "type": "company_claim",
+     "source_title": "Mettler-Toledo International Inc. 2025 Annual Report",
+     "url": "https://s202.q4cdn.com/258391627/files/doc_financials/2025/ar/MT-2025-Annual-Report-WEB-VERSION.pdf",
+     "source_date": "2026-02",
+     "excerpt": "Generally, more technically sophisticated products are sold through our direct sales force, while less complicated products are sold through indirect channels. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Mettler-Toledo customers",
+     "does_not_establish": "It does not name any consumer retail channel or give the size of indirect sales.",
+     "bears_on": [
+      "channels"
+     ]
+    },
+    {
+     "id": "mettler-ar25-ohaus",
+     "type": "company_claim",
+     "source_title": "Mettler-Toledo International Inc. 2025 Annual Report",
+     "url": "https://s202.q4cdn.com/258391627/files/doc_financials/2025/ar/MT-2025-Annual-Report-WEB-VERSION.pdf",
+     "source_date": "2026-02",
+     "excerpt": "Ohaus-branded products target markets, such as the educational market, in which customers are interested in lower cost, a more limited set of features, and less …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Americas mainly",
+     "population": "Lower-cost buyers of Ohaus-branded instruments",
+     "does_not_establish": "It shows the group already runs a lower-cost second brand, not that Ohaus sells to households or how large it is.",
+     "bears_on": [
+      "existing_consumer_reach",
+      "capabilities",
+      "channels"
+     ]
+    },
+    {
+     "id": "mettler-ar25-price-premium",
+     "type": "company_claim",
+     "source_title": "Mettler-Toledo International Inc. 2025 Annual Report",
+     "url": "https://s202.q4cdn.com/258391627/files/doc_financials/2025/ar/MT-2025-Annual-Report-WEB-VERSION.pdf",
+     "source_date": "2026-02",
+     "excerpt": "Our dedication to continuously bringing innovations to market helps increase our value proposition, stimulate replacement demand, gain market share, and support our price premiums in …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Mettler-Toledo customers",
+     "does_not_establish": "It refers to professional markets and does not show that consumers would pay a premium for the brand.",
+     "bears_on": [
+      "margins",
+      "brand_risk"
+     ]
+    },
+    {
+     "id": "mettler-q3-2026-sales",
+     "type": "company_claim",
+     "source_title": "Mettler-Toledo International Inc. Reports Third Quarter 2026 Results (press release)",
+     "url": "https://s202.q4cdn.com/258391627/files/content_files/MTD-3Q26-Earnings-Release-FINAL.pdf",
+     "source_date": "2026-11-05",
+     "excerpt": "Compared with the prior year, total reported sales increased 6% to $1.094 billion.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Global",
+     "population": "Mettler-Toledo International Inc.",
+     "does_not_establish": "It gives quarterly scale and growth only and says nothing about consumer products.",
+     "bears_on": [
+      "company_size",
+      "opportunity_cost"
+     ]
+    },
+    {
+     "id": "mettler-atk-tolerance",
+     "type": "verified_observation",
+     "source_title": "The Best Digital Kitchen Scales (America's Test Kitchen)",
+     "url": "https://www.americastestkitchen.com/equipment_reviews/1696",
+     "source_date": "2026-10-07",
+     "excerpt": "A range of ±3 grams is common and acceptable for most cooking, and most consumer-level scales don't specify their accuracy range.",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United States",
+     "population": "Home cooks; consumer kitchen scales tested by America's Test Kitchen",
+     "does_not_establish": "It is a product test, not a survey of what home cooks want or would pay for.",
+     "bears_on": [
+      "unmet_need",
+      "evidence_against"
+     ]
+    },
+    {
+     "id": "mettler-atk-certified-rival",
+     "type": "verified_observation",
+     "source_title": "The Best Digital Kitchen Scales (America's Test Kitchen)",
+     "url": "https://www.americastestkitchen.com/equipment_reviews/1696",
+     "source_date": "2026-10-07",
+     "excerpt": "The outlier is a new scale from Thermoworks, the Gravitas, which measures to a tenth of a gram and has a certified resolution of ±0.7 …",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United States",
+     "population": "Consumer kitchen scales",
+     "does_not_establish": "It shows a competitor already sells certified accuracy to home cooks, not how well that product sells.",
+     "bears_on": [
+      "competition",
+      "differentiation"
+     ]
+    },
+    {
+     "id": "mettler-atk-by-weight",
+     "type": "verified_observation",
+     "source_title": "The Best Digital Kitchen Scales (America's Test Kitchen)",
+     "url": "https://www.americastestkitchen.com/equipment_reviews/1696",
+     "source_date": "2026-10-07",
+     "excerpt": "Measuring ingredients by weight is the only way to ensure predictable results.",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United States",
+     "population": "Home bakers",
+     "does_not_establish": "It argues for weighing in general, not for a more precise or more expensive scale than current consumer models.",
+     "bears_on": [
+      "use_cases"
+     ]
+    },
+    {
+     "id": "mettler-atk-precision-need",
+     "type": "verified_observation",
+     "source_title": "The Best Precision Kitchen Scales (America's Test Kitchen)",
+     "url": "https://www.americastestkitchen.com/equipment_reviews/2538-the-best-precision-kitchen-scales",
+     "source_date": "2025-06-25",
+     "excerpt": "When weighing small amounts of ingredients such as yeast, salt , or xanthan gum, you need a precision scale that goes to a fraction of …",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United States",
+     "population": "Home bakers and cooks weighing small quantities",
+     "does_not_establish": "It names a use case but gives no data on how many households need it.",
+     "bears_on": [
+      "use_cases",
+      "target_segment"
+     ]
+    },
+    {
+     "id": "mettler-atk-precision-winner",
+     "type": "verified_observation",
+     "source_title": "The Best Precision Kitchen Scales (America's Test Kitchen)",
+     "url": "https://www.americastestkitchen.com/equipment_reviews/2538-the-best-precision-kitchen-scales",
+     "source_date": "2025-06-25",
+     "excerpt": "Winner American Weigh Scale Digital Pocket Scale Buy at American Weigh Scales $20 at Amazon This scale has a simple design and is straightforward to …",
+     "access_limitation": "none",
+     "kind": "retail_listing",
+     "geography": "United States",
+     "population": "Home buyers of precision kitchen scales",
+     "does_not_establish": "It shows the top-rated precision scale in one test retails at about $20, not what share of buyers would pay more.",
+     "bears_on": [
+      "willingness_to_pay",
+      "evidence_against",
+      "competition"
+     ]
+    },
+    {
+     "id": "mettler-techgearlab-small-loads",
+     "type": "verified_observation",
+     "source_title": "The Best Kitchen Scales (TechGearLab)",
+     "url": "https://techgearlab.com/topics/kitchen/best-kitchen-scale",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Only a few scales in our review could differentiate between masses under three grams.",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United States",
+     "population": "Consumer kitchen scales",
+     "does_not_establish": "It is one reviewer's test and does not show that home users notice or care about this gap.",
+     "bears_on": [
+      "unmet_need",
+      "differentiation"
+     ]
+    },
+    {
+     "id": "mettler-gearpatrol-price",
+     "type": "verified_observation",
+     "source_title": "How in the World Is This Coffee Scale $150? (Gear Patrol)",
+     "url": "https://www.gearpatrol.com/?p=74145",
+     "source_date": "2022-02-12",
+     "excerpt": "So do you need a fancy $150 coffee scale, or does a $50 model do enough? …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United States",
+     "population": "Home coffee brewers",
+     "does_not_establish": "It sets out a price band for premium coffee scales but gives no sales or share data.",
+     "bears_on": [
+      "willingness_to_pay",
+      "competition"
+     ]
+    },
+    {
+     "id": "mettler-dcn-acaia",
+     "type": "verified_observation",
+     "source_title": "Scale-Maker Acaia Closes Series A Funding, Expanding Global Efforts (Daily Coffee News)",
+     "url": "https://dailycoffeenews.com/2015/09/10/scale-maker-acaia-closes-series-a-funding-expanding-global-efforts",
+     "source_date": "2015-09-10",
+     "excerpt": "Acaia , makers of tech-forward scales and associated apps for home use and commercial applications, has closed a series A funding round with venture capital …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United States",
+     "population": "Home and commercial coffee scale buyers",
+     "does_not_establish": "It is a 2015 funding report and does not show Acaia's current sales or the category's profitability.",
+     "bears_on": [
+      "competition",
+      "market_trend"
+     ]
+    },
+    {
+     "id": "mettler-marketintelo-coffee",
+     "type": "verified_observation",
+     "source_title": "Precision Coffee Scale Market Research Report 2034 (Market Intelo)",
+     "url": "https://marketintelo.com/report/precision-coffee-scale-market",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "The precision coffee scale market is valued at $0.4 billion in 2025 and is projected to expand to $0.8 billion by 2034, advancing at a …",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Global",
+     "population": "Precision coffee scale buyers, home and commercial",
+     "does_not_establish": "It is a commercial report summary with undisclosed methods and should not be read as an audited market size.",
+     "bears_on": [
+      "market_size"
+     ]
+    },
+    {
+     "id": "mettler-nca-home-coffee",
+     "type": "verified_observation",
+     "source_title": "Grounds for celebration: Americans remain committed to coffee (National Coffee Association)",
+     "url": "https://ncausa.org/Newsroom/Grounds-for-celebration-Americans-remain-committed-to-coffee",
+     "source_date": "2025-09-09",
+     "excerpt": "85% of past-day coffee drinkers had coffee at breakfast; 82% drank coffee at home; and coffee drinkers consume an average of nearly 3 cups per …",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United States",
+     "population": "US adults who drank coffee in the past day",
+     "does_not_establish": "It shows coffee is mostly drunk at home but not how many home brewers weigh their coffee or own a scale.",
+     "bears_on": [
+      "market_size",
+      "use_cases"
+     ]
+    },
+    {
+     "id": "mettler-nhs-carb-counting",
+     "type": "verified_observation",
+     "source_title": "A guide to carbohydrate counting (Sherwood Forest Hospitals NHS Foundation Trust patient leaflet)",
+     "url": "https://www.sfh-tr.nhs.uk/media/2mwf3nmc/pil202406-02-cc-a-guide-to-carbohydrate-counting.pdf",
+     "source_date": "2024-06",
+     "excerpt": "Weighing foods give you a more accurate measure to work out the carbohydrate content. …",
+     "access_limitation": "none",
+     "kind": "regulatory",
+     "geography": "United Kingdom",
+     "population": "People with diabetes who count carbohydrates",
+     "does_not_establish": "It recommends ordinary digital kitchen scales and does not suggest that higher precision improves outcomes.",
+     "bears_on": [
+      "use_cases",
+      "target_segment"
+     ]
+    },
+    {
+     "id": "mettler-dinvests-switching",
+     "type": "verified_observation",
+     "source_title": "Honest Weight: Mettler-Toledo (D Invests, Substack)",
+     "url": "https://dinvests.substack.com/p/honest-weight-mettler-toledo",
+     "source_date": "2025-05-13",
+     "excerpt": "This flywheel locks in customers as switching providers of balances and lab equipment could be too costly as data, re-training and the risk of switching …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Laboratory customers of Mettler-Toledo",
+     "does_not_establish": "It is an individual investor's opinion and describes a laboratory advantage that need not carry over to households.",
+     "bears_on": [
+      "capabilities",
+      "evidence_against"
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,155 @@
+{
+ "runs": 225,
+ "arms": [
+  "dig_then_reason",
+  "v1",
+  "v1_rescue",
+  "v3",
+  "v3_rescue"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "v1": {
+     "mean": 1.065,
+     "n": 45
+    },
+    "v3": {
+     "mean": 0.863,
+     "n": 45
+    },
+    "v3_rescue": {
+     "mean": 1.17,
+     "n": 45
+    },
+    "v1_rescue": {
+     "mean": 1.197,
+     "n": 45
+    },
+    "dig_then_reason": {
+     "mean": 1.239,
+     "n": 45
+    }
+   },
+   "by_arm_company": {
+    "v1": {
+     "acr": 0.59,
+     "deere": 1.127,
+     "hellberg": 1.546,
+     "jotun": 0.366,
+     "neumann": 1.125,
+     "tanita": 0.917
+    },
+    "v3": {
+     "acr": 0.877,
+     "deere": 1.139,
+     "hellberg": 0.591,
+     "jotun": 0.97,
+     "neumann": 0.829,
+     "tanita": 1.183
+    },
+    "v3_rescue": {
+     "acr": 1.373,
+     "deere": 1.266,
+     "hellberg": 1.255,
+     "jotun": 1.065,
+     "neumann": 0.694,
+     "tanita": 1.243
+    },
+    "v1_rescue": {
+     "acr": 0.961,
+     "deere": 1.206,
+     "hellberg": 1.493,
+     "jotun": 0.817,
+     "neumann": 1.095,
+     "tanita": 1.169
+    },
+    "dig_then_reason": {
+     "acr": 1.352,
+     "deere": 1.252,
+     "hellberg": 1.425,
+     "jotun": 0.764,
+     "neumann": 1.215,
+     "tanita": 1.144
+    }
+   },
+   "by_arm_dimension": {
+    "v1": {
+     "assumptions_predictions": 1.4,
+     "causal_mechanism": 1.4,
+     "distinct_theories": 1.378,
+     "evidence_judgement": 0.711,
+     "experiment_design": 0.756,
+     "problem_framing": 1.644,
+     "recommendation": 0.578,
+     "revision": 0.963,
+     "seeking_challenge": 0.756
+    },
+    "v3": {
+     "assumptions_predictions": 1.022,
+     "causal_mechanism": 0.956,
+     "distinct_theories": 1.111,
+     "evidence_judgement": 0.511,
+     "experiment_design": 0.533,
+     "problem_framing": 1.778,
+     "recommendation": 0.422,
+     "revision": 0.667,
+     "seeking_challenge": 0.667
+    },
+    "v3_rescue": {
+     "assumptions_predictions": 1.4,
+     "causal_mechanism": 1.267,
+     "distinct_theories": 1.556,
+     "evidence_judgement": 0.8,
+     "experiment_design": 0.911,
+     "problem_framing": 1.733,
+     "recommendation": 0.778,
+     "revision": 1.333,
+     "seeking_challenge": 0.889
+    },
+    "v1_rescue": {
+     "assumptions_predictions": 1.6,
+     "causal_mechanism": 1.578,
+     "distinct_theories": 1.467,
+     "evidence_judgement": 0.822,
+     "experiment_design": 0.933,
+     "problem_framing": 1.667,
+     "recommendation": 0.622,
+     "revision": 1.148,
+     "seeking_challenge": 0.933
+    },
+    "dig_then_reason": {
+     "assumptions_predictions": 1.622,
+     "causal_mechanism": 1.644,
+     "distinct_theories": 1.6,
+     "evidence_judgement": 0.711,
+     "experiment_design": 0.844,
+     "problem_framing": 1.756,
+     "recommendation": 0.778,
+     "revision": 1.259,
+     "seeking_challenge": 0.978
+    }
+   },
+   "difference": {
+    "arms": "dig_then_reason minus v3",
+    "pairs": 45,
+    "cases": 15,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.375,
+     0.128,
+     0.623
+    ],
+    "by_company": {
+     "acr": 0.475,
+     "deere": 0.113,
+     "hellberg": 0.834,
+     "jotun": -0.206,
+     "neumann": 0.387,
+     "tanita": -0.039
+    }
+   }
+  }
+ },
+ "missing": []
+}

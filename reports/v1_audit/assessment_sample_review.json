@@ -1,0 +1,542 @@
+[
+ {
+  "n": 1,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "partly",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Describes a 2016 product launch, after the 2014 case; features marketing, not angler choice."
+ },
+ {
+  "n": 2,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "regulation",
+  "note": "The 1974 NFPA 74 revision is a standard change known at the case date, so it is regulation, not a study."
+ },
+ {
+  "n": 3,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Museum history of Farber's own 1988 inspiration; third-party account, weakly relevant, neutral fits."
+ },
+ {
+  "n": 4,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "defensible",
+  "kind_should_be": "independent_study",
+  "note": "Reviewer lab-test finding on waterproofness; irrelevant to the status theory, so neutral is right."
+ },
+ {
+  "n": 5,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "partly",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "2021 CEO remark about later footwear; marketing about versatility, not proof that anglers choose it for durability."
+ },
+ {
+  "n": 6,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "News sales figure for a licensee's juice; shows demand for a Probi-strain product, not for Probi's own DTC brand."
+ },
+ {
+  "n": 7,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "NASA history of Air Force pilot work; does not bear on healthcare buyers, so neutral is fine."
+ },
+ {
+  "n": 8,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "2024 statement reveals Grundens later served sport anglers; neutral on brand trust is fair."
+ },
+ {
+  "n": 9,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "2010 description of Chinese competition; unrelated to the Mag Charger theory."
+ },
+ {
+  "n": 10,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Other brands later adopting Gore-Tex is adoption after the case; no bearing on status motive."
+ },
+ {
+  "n": 11,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Returns of leaky first-generation product are a post-1978 outcome and cut against reliability rather than supporting it."
+ },
+ {
+  "n": 12,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "yes",
+  "kind_correct": "defensible",
+  "kind_should_be": "market_fact",
+  "note": "The 2013 home unit is a later outcome; neutral on the status theory is fair."
+ },
+ {
+  "n": 13,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "no",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "2024 company statement says nothing about status motives and reveals later sport-fishing focus."
+ },
+ {
+  "n": 14,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "customer_observation",
+  "note": "Users taking bottles camping in the mid-1970s is a customer observation, not a study."
+ },
+ {
+  "n": 15,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Pre-1948 lack of instructions supports the demonstration theory; this is a history fact, not a study."
+ },
+ {
+  "n": 16,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Post-case returns event; neutral on status theory is fair."
+ },
+ {
+  "n": 17,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Design firm's account of the 1989 origin supports the strain-reduction theory."
+ },
+ {
+  "n": 18,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Later adoption by other brands suggests a market, but not consumer willingness to pay a premium."
+ },
+ {
+  "n": 19,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Internal pre-1924 debate from a history article; neutral is fair."
+ },
+ {
+  "n": 20,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "no",
+  "kind_correct": "yes",
+  "kind_should_be": "customer_observation",
+  "note": "2014 user review of a product launched after mid-2013, and 'clumsy' cuts against the theory."
+ },
+ {
+  "n": 21,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "partly",
+  "kind_correct": "defensible",
+  "kind_should_be": "market_fact",
+  "note": "Market report on zone-control gaps; supports a need for zone control rather than ecosystem integration."
+ },
+ {
+  "n": 22,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "The 1991 launch fact is the case's own event; history article, not a study."
+ },
+ {
+  "n": 23,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "partly",
+  "kind_correct": "defensible",
+  "kind_should_be": "customer_observation",
+  "note": "Customers forgetting to recharge complicates the convenience theory rather than supporting it."
+ },
+ {
+  "n": 24,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "partly",
+  "kind_correct": "yes",
+  "kind_should_be": "independent_study",
+  "note": "2019 study not available in 2017; concerns a generic chair, with no evidence of a Recaro premium."
+ },
+ {
+  "n": 25,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "The 1991 launch fact is history; neutral is fair."
+ },
+ {
+  "n": 26,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "partly",
+  "kind_correct": "defensible",
+  "kind_should_be": "analogy",
+  "note": "Movie theatres are a parallel setting, not homeowner status demand."
+ },
+ {
+  "n": 27,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "defensible",
+  "kind_should_be": "company_assertion",
+  "note": "Farber's own words on hand pain; does not bear on status, so neutral fits."
+ },
+ {
+  "n": 28,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "market_fact",
+  "note": "FY2015 figure was not complete in early 2015; irrelevant to the smart-lighting theory."
+ },
+ {
+  "n": 29,
+  "group": "late-dated",
+  "hindsight": "yes",
+  "supports_as_stated": "no",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Later brand adoption reveals uptake and says nothing about status motives."
+ },
+ {
+  "n": 30,
+  "group": "late-dated",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Company account of the 1946-47 failure in stores supports the demonstration theory."
+ },
+ {
+  "n": 31,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "regulation",
+  "note": "Competition ruling shows an online price gap, not homeowner demand to buy online."
+ },
+ {
+  "n": 32,
+  "group": "other",
+  "hindsight": "yes",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Price of a 2020 model reported by a reviewer; a premium price is not evidence of a status motive."
+ },
+ {
+  "n": 33,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "defensible",
+  "kind_should_be": "company_assertion",
+  "note": "Acquirer's PR boast; irrelevant to the sleep theory, neutral fits."
+ },
+ {
+  "n": 34,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "market_fact",
+  "note": "Sales share figure; neutral is fair."
+ },
+ {
+  "n": 35,
+  "group": "other",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Product page for kits; no app features shown, neutral fits."
+ },
+ {
+  "n": 36,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "no",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Patent on beam and cheaper manufacture does not bear on proven durability; a patent is a market fact."
+ },
+ {
+  "n": 37,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "defensible",
+  "kind_should_be": "market_fact",
+  "note": "Third-party review repeating the maker's claim about another product; neutral fits."
+ },
+ {
+  "n": 38,
+  "group": "other",
+  "hindsight": "no",
+  "supports_as_stated": "no",
+  "kind_correct": "defensible",
+  "kind_should_be": "customer_observation",
+  "note": "Scouts using the bottles shows use, not trust in safety from leaching."
+ },
+ {
+  "n": 39,
+  "group": "other",
+  "hindsight": "yes",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Channel choice for a 1979-81 product reveals TI's later strategy and does not show adoption."
+ },
+ {
+  "n": 40,
+  "group": "other",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Textbook origin story; neutral is fair."
+ },
+ {
+  "n": 41,
+  "group": "other",
+  "hindsight": "no",
+  "supports_as_stated": "no",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Early novelty and premium products do not show a hygiene or status perception."
+ },
+ {
+  "n": 42,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Directory history noting Neuromins; neutral is fair."
+ },
+ {
+  "n": 43,
+  "group": "other",
+  "hindsight": "no",
+  "supports_as_stated": "no",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Capacity doubling does not show manufacturers' demand for branded foil."
+ },
+ {
+  "n": 44,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "partly",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Company's SIDS claim shows positioning, not parents' response."
+ },
+ {
+  "n": 45,
+  "group": "other",
+  "hindsight": "yes",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Feb 2018 brand launch is after the late-2017 case; neutral is fair."
+ },
+ {
+  "n": 46,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "partly",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Company marketing claim that ownership is a goal; weak evidence of the credibility signal."
+ },
+ {
+  "n": 47,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Product feature; neutral fits the medical-necessity theory."
+ },
+ {
+  "n": 48,
+  "group": "other",
+  "hindsight": "no",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Company history fragment; neutral fits the health theory."
+ },
+ {
+  "n": 49,
+  "group": "other",
+  "hindsight": "no",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Prototypes were made, but the excerpt says reception was mixed; that is omitted."
+ },
+ {
+  "n": 50,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "defensible",
+  "kind_should_be": "independent_study",
+  "note": "Company-cited Millward Brown survey supports willingness to pay."
+ },
+ {
+  "n": 51,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Investor slide on retailer margins; neutral fits."
+ },
+ {
+  "n": 52,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "defensible",
+  "kind_should_be": "independent_study",
+  "note": "Market research firm's finding supports price sensitivity."
+ },
+ {
+  "n": 53,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "analogy",
+  "note": "Review of a competitor's earplug; weak on professional fidelity demand."
+ },
+ {
+  "n": 54,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Company self-description; neutral fits."
+ },
+ {
+  "n": 55,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "partly",
+  "kind_correct": "defensible",
+  "kind_should_be": "market_fact",
+  "note": "Complexity supports convenience, but cost barrier cuts against professional pricing; about growers, not gardeners."
+ },
+ {
+  "n": 56,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "Blog says 'primarily', not 'exclusively', and the article is about Home Depot selling Hilti."
+ },
+ {
+  "n": 57,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "partly",
+  "kind_correct": "defensible",
+  "kind_should_be": "market_fact",
+  "note": "Shows that a kit is offered and its price, not that early adopters bought it."
+ },
+ {
+  "n": 58,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "company_assertion",
+  "note": "Company marketing; neutral is fair."
+ },
+ {
+  "n": 59,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "yes",
+  "kind_correct": "yes",
+  "kind_should_be": "independent_study",
+  "note": "Published study supports hobbyists seeking quality."
+ },
+ {
+  "n": 60,
+  "group": "other",
+  "hindsight": "n/a",
+  "supports_as_stated": "partly",
+  "kind_correct": "no",
+  "kind_should_be": "market_fact",
+  "note": "The kit being available to order is not a customer purchase."
+ }
+]

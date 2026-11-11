@@ -1,0 +1,1444 @@
+{
+ "counts": {
+  "answers": 48,
+  "valid": 48,
+  "failures": 0,
+  "kept": 15,
+  "by_call": "13 propose_test, 2 decline_test",
+  "rejections": [
+   [
+    "declined a test this case warrants",
+    19
+   ],
+   [
+    "the justification names nothing from the state",
+    2
+   ],
+   [
+    "over a length limit",
+    2
+   ],
+   [
+    "relies on reynolds-bend-industrial, dated 2011, after the case is set (1946)",
+    1
+   ],
+   [
+    "relies on flir-imv-teich, dated 2014, after the case is set (2013)",
+    1
+   ],
+   [
+    "the decision rule is not written out in full",
+    1
+   ],
+   [
+    "more information is not worth a test here, so the right call declines",
+    1
+   ],
+   [
+    "relies on mag-nbc-mass, dated 2010, after the case is set (1983)",
+    1
+   ],
+   [
+    "relies on cree-ledp-reason, dated 2013, after the case is set (2012)",
+    1
+   ],
+   [
+    "relies on nalgene-kelly-division, dated 2020, after the case is set (1970)",
+    1
+   ],
+   [
+    "relies on sma-p16-installed, dated 2016, after the case is set (2013)",
+    1
+   ],
+   [
+    "relies on oxo-smart-aha, dated 2017, after the case is set (1989)",
+    1
+   ],
+   [
+    "relies on trdc-pm-distribution, dated 2008, after the case is set (1990)",
+    1
+   ]
+  ],
+  "checks": {
+   "declined a test this case warrants": 19,
+   "passed the mechanical checks": 15,
+   "relies on reynolds-bend-industrial, dated 2011, after the case is set (1946)": 1,
+   "relies on flir-imv-teich, dated 2014, after the case is set (2013)": 1,
+   "the decision rule is not written out in full": 1,
+   "more information is not worth a test here, so the right call declines": 1,
+   "relies on mag-nbc-mass, dated 2010, after the case is set (1983)": 1,
+   "the justification names nothing from the state": 2,
+   "relies on cree-ledp-reason, dated 2013, after the case is set (2012)": 1,
+   "over a length limit": 2,
+   "relies on nalgene-kelly-division, dated 2020, after the case is set (1970)": 1,
+   "relies on sma-p16-installed, dated 2016, after the case is set (2013)": 1,
+   "relies on oxo-smart-aha, dated 2017, after the case is set (1989)": 1,
+   "relies on trdc-pm-distribution, dated 2008, after the case is set (1990)": 1
+  },
+  "gate": "mechanical checks only (DECISIONS 2026-11-10 19:05 UTC)"
+ },
+ "examples": [
+  {
+   "n": 1,
+   "case": "koppert-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Koppert develop a differentiated proposition for home gardeners, building on its biological crop protection for professional growers, or stay with professional growers? What evidence would justify either choice?",
+   "student_turn": 32,
+   "student_run": "b89ac41d133f2dcff9612896989aafd3b897ccb367976c65bdfa80ae071ba8db",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Home gardeners will adopt Koppert's biological controls if they perceive them as convenient, easy to use, and safe for children and pets, leading to higher purchase frequency and willingness to pay a premium.",
+    "T2": "Home gardeners will adopt Koppert's biological controls if they perceive them as a status symbol or a way to differentiate their garden, leading to higher purchase frequency and willingness to pay a premium."
+   },
+   "sources_read": {
+    "koppert-about-founded": "unknown (accessed 2026-11-03)",
+    "koppert-agro-ban": "2017-04-06",
+    "koppert-lo-canada": "2007-03-14",
+    "koppert-martha-visit": "2018-01 (from URL)",
+    "koppert-wsu-shipped": "2017-07 (as printed)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Home-gardener paid pre-order positioning test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: Dutch home gardeners who bought a garden pest-control product in the last 12 months, recruited online. Treatment: Two arms, same lady beetles and price: (A) a ready-to-use release tube with 'safe for children and pets, open and release' messaging (T1 mechanism); (B) a premium presentation box with 'a garden to be proud of' messaging (T2 mechanism). Control: A plain professional-style sachet with technical instructions only; same lady beetles and same price.",
+     "sample": "900 home gardeners (300 per arm) in the Netherlands, recruited via Dutch gardening Facebook groups and garden-center email newsletters, screened for a garden pest-control purchase in the past 12 months, then randomly assigned.",
+     "measure": "Paid pre-order conversion: share of visitors in each arm who complete a €5 deposit toward a spring shipment of a lady-beetle release pack, tracked by unique link.",
+     "prediction_by_theory": {
+      "T1": "Arm A (safety/ease) has the highest paid pre-order rate, at least 8 percentage points above control and at least 5 points above arm B.",
+      "T2": "Arm B (premium/status) has the highest paid pre-order rate, at least 8 percentage points above control and at least 5 points above arm A."
+     },
+     "decision_rule": "Develop the home proposition only if one arm's paid pre-order rate beats control by at least 8 percentage points AND beats the other arm by at least 5 points; the winning arm sets the positioning. If neither arm beats control by at least 8 points, stay with professional growers. If arm A wins: run a garden-center pilot of a ready-to-use safety/ease line. If arm B wins: run a specialty-retail pilot of a premium presentation line. If neither beats control: stay focused on professional growers and do not build a home line.",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "Koppert already reaches individual buyers: koppert-lo-canada says Koppert Canada serves \"the professional grower and the home gardening enthusiast\"; koppert-martha-visit shows a garden visit; koppert-wsu-shipped says lady beetles are \"shipped to farmers and home gardeners alike\". koppert-about-founded is only a founding story. koppert-agro-ban shows France banning non-agricultural pesticide sales from Jan 2019 (opportunity but regulatory risk). None quantify home-gardener demand, willingness to pay, or adoption; demand is unknown. The \"supports\" ratings for T1/T2 reflect existence/capability, not proven demand.",
+    "uncertain": "Whether measurable home-gardener demand exists; no source shows purchases, repeat use, or willingness to pay. Which mechanism drives buying: T1 (safety/convenience) or T2 (status/premium). Whether biological controls for amateurs are legally sellable in the EU after France's 2019 non-agricultural pesticide ban, and whether live-organism products can be profitably shipped to consumers. Sources predate 2026, so current demand is unverified.",
+    "why_next": "The decision depends on observable demand, which the dossier does not establish. A paid pre-order test separates T1 from T2 because each predicts its own positioning variant wins on real deposits, and it separates expansion from staying if neither variant beats the neutral control. I rely on T1 and T2 and on koppert-lo-canada (capability to reach enthusiasts) and koppert-agro-ban (regulatory context)."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message",
+    "rule leads straight to developing or launching"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Koppert already reaches individual buyers: koppert-lo-canada says Koppert Canada serves \\\"the professional grower and the home gardening enthusiast\\\"; koppert-martha-visit shows a garden visit; koppert-wsu-shipped says lady beetles are \\\"shipped to farmers and home gardeners alike\\\". koppert-about-founded is only a founding story. koppert-agro-ban shows France banning non-agricultural pesticide sales from Jan 2019 (opportunity but regulatory risk). None quantify home-gardener demand, willingness to pay, or adoption; demand is unknown. The \\\"supports\\\" ratings for T1/T2 reflect existence/capability, not proven demand.\", \"uncertain\": \"Whether measurable home-gardener demand exists; no source shows purchases, repeat use, or willingness to pay. Which mechanism drives buying: T1 (safety/convenience) or T2 (status/premium). Whether biological controls for amateurs are legally sellable in the EU after France's 2019 non-agricultural pesticide ban, and whether live-organism products can be profitably shipped to consumers. Sources predate 2026, so current demand is unverified.\", \"why_next\": \"The decision depends on observable demand, which the dossier does not establish. A paid pre-order test separates T1 from T2 because each predicts its own positioning variant wins on real deposits, and it separates expansion from staying if neither variant beats the neutral control. I rely on T1 and T2 and on koppert-lo-canada (capability to reach enthusiasts) and koppert-agro-ban (regulatory context).\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Home-gardener paid pre-order positioning test\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: Dutch home gardeners who bought a garden pest-control product in the last 12 months, recruited online. Treatment: Two arms, same lady beetles and price: (A) a ready-to-use release tube with 'safe for children and pets, open and release' messaging (T1 mechanism); (B) a premium presentation box with 'a garden to be proud of' messaging (T2 mechanism). Control: A plain professional-style sachet with technical instructions only; same lady beetles and same price.\", \"sample\": \"900 home gardeners (300 per arm) in the Netherlands, recruited via Dutch gardening Facebook groups and garden-center email newsletters, screened for a garden pest-control purchase in the past 12 months, then randomly assigned.\", \"measure\": \"Paid pre-order conversion: share of visitors in each arm who complete a €5 deposit toward a spring shipment of a lady-beetle release pack, tracked by unique link.\", \"prediction_by_theory\": {\"T1\": \"Arm A (safety/ease) has the highest paid pre-order rate, at least 8 percentage points above control and at least 5 points above arm B.\", \"T2\": \"Arm B (premium/status) has the highest paid pre-order rate, at least 8 percentage points above control and at least 5 points above arm A.\"}, \"decision_rule\": \"Develop the home proposition only if one arm's paid pre-order rate beats control by at least 8 percentage points AND beats the other arm by at least 5 points; the winning arm sets the positioning. If neither arm beats control by at least 8 points, stay with professional growers. If arm A wins: run a garden-center pilot of a ready-to-use safety/ease line. If arm B wins: run a specialty-retail pilot of a premium presentation line. If neither beats control: stay focused on professional growers and do not build a home line.\", \"cost_eur\": 20000, \"weeks\": 12}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Home Gardener Proposition Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase scenarios and willingness-to-pay (WTP) questions.",
+     "sample": "500 home gardeners recruited via garden forums and social media, balanced for age, garden size, and region.",
+     "measure": "Purchase intent (binary: would buy) and maximum WTP (in euros) for a retail package of lady beetles.",
+     "prediction_by_theory": {
+      "T1": "Purchase intent will be at least 20% higher for a convenience-focused package (simplified instructions, safety messaging) than for a status-focused package (branding, aesthetic details).",
+      "T2": "Purchase intent will be at least 15% higher for a status-focused package than for a convenience-focused package."
+     },
+     "decision_rule": "If the difference in purchase intent between the two package types is >=20 percentage points, conclude that the preferred proposition aligns with the corresponding theory. If the difference is <15 percentage points, both theories remain\nunc",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the arms differ only in wording or message, with no product or price difference and no same-price control",
+   "quality_notes": [],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": true,
+   "review_note": "A valid positioning test needs (1) a same-price neutral control arm, (2) a real behavioural commitment (paid pre-order deposit, not stated intent/WTP), (3) mutually exclusive predictions with numeric thresholds, and (4) bounded next steps (pilots) rather than immediate development. The teacher correctly fixed the student's survey-only, no-control test.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "A valid positioning test needs (1) a same-price neutral control arm, (2) a real behavioural commitment (paid pre-order deposit, not stated intent/WTP), (3) mutually exclusive predictions with numeric thresholds, and (4) bounded next steps (pilots) rather than immediate development. The teacher correctly fixed the student's survey-only, no-control test.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 2,
+   "case": "embrace-base",
+   "case_date": "2016",
+   "origin": "test step",
+   "question": "It is March 2016. Should Embrace Innovations develop a differentiated consumer proposition for a specific use case, building on its infant-warming technology? What evidence would justify that investment?",
+   "student_turn": 24,
+   "student_run": "8914da20df83c841df4e430d9ac163ca2c0914b46ff04c52ddaed62cb0b21067",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Parents of low‑birth‑weight infants will adopt a home‑use infant warmer if they perceive it as a medical necessity that reduces the risk of SIDS and is affordable, because they are willing to pay a premium for a product that addresses a serious health concern.",
+    "T2": "Parents of low‑birth‑weight infants will adopt a home‑use infant warmer if they perceive it as a convenient, affordable way to monitor their baby’s temperature and health at home, because they value time‑saving and ease of use, and are willing to pay a price that reflects the convenience."
+   },
+   "sources_read": {
+    "embrace-cnbc-price": "2016-02-22",
+    "embrace-ee-origin": "unknown (accessed 2026-11-02)",
+    "embrace-gsb-investors": "2012",
+    "embrace-her-sids": "2015-05-16",
+    "embrace-smg-launch": "unknown (object made 2017; accessed 2026-11-02)",
+    "embrace-yahoo-origin": "2015-05-18"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Deposit test of medical-necessity vs convenience home warmer propositions",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: US parents of premature or low-birth-weight infants who have brought, or are about to bring, their baby home, screened by a short questionnaire. Treatment: Landing page A (T1): home warming kit positioned as a clinical-grade safety device, 'developed from neonatal-care technology to help keep premature and low-birth-weight babies at a stable, safe temperature at home', with medical validation and a high/low temperature alarm; price $129 with a 'Reserve with a $20 refundable deposit' call-to-action. Control: Landing page B (T2): same layout, same $129 price and same $20 refundable deposit call-to-action, but positioned as a convenience device, 'easy at-home temperature monitoring and warming, fewer middle-of-the-night worries and fewer trips back to the clinic', with auto-regulating warmth, one-button use and smartphone temperature tracking.",
+     "sample": "About 600 screened parents (300 per arm, proposed), recruited over 4 weeks via paid social ads and posts in US preemie-parent and NICU support groups, then randomly assigned to one landing page; no claim of statistical power is made.",
+     "measure": "Proportion of visitors in each arm who complete the $20 refundable deposit within 6 weeks of the landing page going live. This is a real, if modest, financial commitment; it establishes relative interest in each proposition but not final full-price purchase.",
+     "prediction_by_theory": {
+      "T1": "The medical-necessity arm yields a higher deposit rate than the convenience arm, because parents of low-birth-weight infants act on health-risk fear and commit to the safety-focused device.",
+      "T2": "The convenience arm yields a higher deposit rate than the medical arm, because these parents value time-saving and easy monitoring and commit to the convenient device."
+     },
+     "decision_rule": "Proceed if one arm's deposit rate is at least 4% and at least 1.5 times the other arm's rate. Stop if both arms' deposit rates are below 2%. Treat 2% to 4%, or a margin under 1.5x, as inconclusive and run a small qualitative follow-up with depositors. If the medical arm wins, run a bounded paid pilot (proposed ~100-unit prototype run) through a pharmacy or medical channel, contingent on legal review of health claims. If the convenience arm wins, run the same-sized pilot through baby-retail or D2C. If both arms are below 2%, stop the home-kit consumer proposition and keep the current B2B focus and existing Little Lotus line. If inconclusive, interview depositors before committing further.",
+     "cost_eur": 18000,
+     "weeks": 10
+    }
+   },
+   "justification": {
+    "learned": "Public sources show Embrace began as a clinical warmer for low-resource settings (embrace-ee-origin) and launched in India in 2011 for institutional use (embrace-smg-launch). By Feb 2016 it sells consumer Little Lotus swaddles at $85 after a cut from $98 (embrace-cnbc-price): this proves a consumer channel and price point, not demand for a home medical warmer. T1 rests only on a company assertion about SIDS risk (embrace-her-sids). T2 has no direct support; embrace-ee-origin is neutral on convenience. A 2012 GSB case notes investor pressure against small segments (embrace-gsb-investors). No source shows revenue, unit sales or independent demand; home-warmer demand is unknown.",
+    "uncertain": "Whether parents of premature or low-birth-weight infants will pay for a home warming kit, and whether medical necessity (T1) or convenience (T2) drives commitment. Whether Embrace can legally market the SIDS claim on which T1 rests (embrace-her-sids). Whether the home LBW segment is large enough for investor returns (embrace-gsb-investors). Whether a $20 deposit predicts full-price purchase, and whether preemie/NICU recruitment oversamples engaged parents.",
+    "why_next": "The test separates T1 from T2 because both arms show the same $129 product and deposit call-to-action but activate different causal drivers: T1 predicts the medical-necessity/safety arm yields more deposits (health-risk fear), while T2 predicts the convenience/monitoring arm yields more (time-saving value). Holding price and presentation otherwise equal, a difference in deposit rate isolates which motivation drives real commitment. The threshold also acts as a go/no-go gate: near-zero deposits in both arms imply no consumer demand for the kit, supporting staying B2B or stopping."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Public sources show Embrace began as a clinical warmer for low-resource settings (embrace-ee-origin) and launched in India in 2011 for institutional use (embrace-smg-launch). By Feb 2016 it sells consumer Little Lotus swaddles at $85 after a cut from $98 (embrace-cnbc-price): this proves a consumer channel and price point, not demand for a home medical warmer. T1 rests only on a company assertion about SIDS risk (embrace-her-sids). T2 has no direct support; embrace-ee-origin is neutral on convenience. A 2012 GSB case notes investor pressure against small segments (embrace-gsb-investors). No source shows revenue, unit sales or independent demand; home-warmer demand is unknown.\", \"uncertain\": \"Whether parents of premature or low-birth-weight infants will pay for a home warming kit, and whether medical necessity (T1) or convenience (T2) drives commitment. Whether Embrace can legally market the SIDS claim on which T1 rests (embrace-her-sids). Whether the home LBW segment is large enough for investor returns (embrace-gsb-investors). Whether a $20 deposit predicts full-price purchase, and whether preemie/NICU recruitment oversamples engaged parents.\", \"why_next\": \"The test separates T1 from T2 because both arms show the same $129 product and deposit call-to-action but activate different causal drivers: T1 predicts the medical-necessity/safety arm yields more deposits (health-risk fear), while T2 predicts the convenience/monitoring arm yields more (time-saving value). Holding price and presentation otherwise equal, a difference in deposit rate isolates which motivation drives real commitment. The threshold also acts as a go/no-go gate: near-zero deposits in both arms imply no consumer demand for the kit, supporting staying B2B or stopping.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Deposit test of medical-necessity vs convenience home warmer propositions\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: US parents of premature or low-birth-weight infants who have brought, or are about to bring, their baby home, screened by a short questionnaire. Treatment: Landing page A (T1): home warming kit positioned as a clinical-grade safety device, 'developed from neonatal-care technology to help keep premature and low-birth-weight babies at a stable, safe temperature at home', with medical validation and a high/low temperature alarm; price $129 with a 'Reserve with a $20 refundable deposit' call-to-action. Control: Landing page B (T2): same layout, same $129 price and same $20 refundable deposit call-to-action, but positioned as a convenience device, 'easy at-home temperature monitoring and warming, fewer middle-of-the-night worries and fewer trips back to the clinic', with auto-regulating warmth, one-button use and smartphone temperature tracking.\", \"sample\": \"About 600 screened parents (300 per arm, proposed), recruited over 4 weeks via paid social ads and posts in US preemie-parent and NICU support groups, then randomly assigned to one landing page; no claim of statistical power is made.\", \"measure\": \"Proportion of visitors in each arm who complete the $20 refundable deposit within 6 weeks of the landing page going live. This is a real, if modest, financial commitment; it establishes relative interest in each proposition but not final full-price purchase.\", \"prediction_by_theory\": {\"T1\": \"The medical-necessity arm yields a higher deposit rate than the convenience arm, because parents of low-birth-weight infants act on health-risk fear and commit to the safety-focused device.\", \"T2\": \"The convenience arm yields a higher deposit rate than the medical arm, because these parents value time-saving and easy monitoring and commit to the convenient device.\"}, \"decision_rule\": \"Proceed if one arm's deposit rate is at least 4% and at least 1.5 times the other arm's rate. Stop if both arms' deposit rates are below 2%. Treat 2% to 4%, or a margin under 1.5x, as inconclusive and run a small qualitative follow-up with depositors. If the medical arm wins, run a bounded paid pilot (proposed ~100-unit prototype run) through a pharmacy or medical channel, contingent on legal review of health claims. If the convenience arm wins, run the same-sized pilot through baby-retail or D2C. If both arms are below 2%, stop the home-kit consumer proposition and keep the current B2B focus and existing Little Lotus line. If inconclusive, interview depositors before committing further.\", \"cost_eur\": 18000, \"weeks\": 10}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Parent Preference Survey for Home Infant Warmer",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized messaging to parents of low-birth-weight infants (n=300, recruited via parent forums and social media). Participants view a product description of the Embrace home warmer and are asked to rank importance of three attributes: (1) medical necessity (reduces SIDS risk), (2…",
+     "sample": "300 parents of low-birth-weight infants (premature or small for age) in the United States or India, recruited via online panels and social media groups.",
+     "measure": "Average ranking of importance for each attribute (1‑10 scale) and binary intent to purchase at a price above $150 (yes/no).",
+     "prediction_by_theory": {
+      "T1": "Parents will rank medical necessity highest and show intent to purchase above $150, indicating demand driven by health concern.",
+      "T2": "Parents will rank convenience highest and show intent to purchase above $150, indicating demand driven by convenience and time‑saving."
+     },
+     "decision_rule": "If the average ranking of medical necessity is at least 2 points higher than convenience, proceed to develop a medical‑necessity‑focused consumer proposition. If convenience ranks higher and the difference is at least 2 points, proceed to a",
+     "cost_eur": 15000,
+     "weeks": 8
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the decision rule leads straight to developing a product, not to a bounded next step",
+   "quality_notes": [],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": false,
+   "review_note": "The proposed experiment varies only positioning/copy between two arms of the same $129 product with the same $20 deposit call-to-action, and there is no same-price control arm (a neutral page). Under the rubric, arms that differ only in wording, framing, copy, message or positioning of the same product at the same price without a same-price control should be dropped.; The $20 refundable deposit is a modest commitment for a $129 product, and the example itself concedes it does not establish final full-price purchase; this is close to a token deposit for an expensive product, weakening the behavioural evidence.; Grounding issue: 'embrace-smg-launch' is dated 'object made 2017', after the March 2016 case date, yet it is cited to establish the 2011 India launch, so a post-case source is used for what should be knowable within the case period.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The proposed experiment varies only positioning/copy between two arms of the same $129 product with the same $20 deposit call-to-action, and there is no same-price control arm (a neutral page). Under the rubric, arms that differ only in wording, framing, copy, message or positioning of the same product at the same price without a same-price control should be dropped.",
+     "The $20 refundable deposit is a modest commitment for a $129 product, and the example itself concedes it does not establish final full-price purchase; this is close to a token deposit for an expensive product, weakening the behavioural evidence.",
+     "Grounding issue: 'embrace-smg-launch' is dated 'object made 2017', after the March 2016 case date, yet it is cited to establish the 2011 India launch, so a post-case source is used for what should be knowable within the case period."
+    ],
+    "teaches": "A messaging/positioning A/B test of the same product at the same price needs a same-price control arm; without it the test only shows which copy performs better, not whether either framing clears a real demand baseline. A small refundable deposit for a much more expensive product is weak evidence of purchase commitment.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 3,
+   "case": "superior-base",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Superior Glove develop a differentiated consumer proposition for a specific use case, beyond its existing work-glove offering? What evidence would justify that investment?",
+   "student_turn": 26,
+   "student_run": "255207f7a3c8b4ae79062d2f218982fb4ba85022a907866f67b5a3b361eac728",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Consumers will purchase Superior Glove gloves if they perceive them as a premium, high‑performance product for specific, high‑risk activities (e.g., outdoor recreation, cycling, gardening) because they trust the brand’s reputation for cut‑resistant materials and safety.",
+    "T2": "Consumers will purchase Superior Glove gloves if they perceive them as a safety‑first product recommended by trusted professionals (e.g., OSHA inspectors, safety managers) because they trust the brand’s safety credentials and want to meet regulatory requirements."
+   },
+   "sources_read": {
+    "superior-cut-specialist": "2014-10-27",
+    "superior-distribution-only": "2014-10-27",
+    "superior-nc-plant": "2025-01-14"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Paid-deposit landing page test of a consumer glove proposition",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: US adults aged 25-60 with interests in gardening, DIY and outdoor recreation, reached via paid Meta ads. Treatment: Two treatment landing pages, both offering the same first-run consumer glove at $24.99 with a $5 refundable pre-order deposit, same photo and page format. Arm A (T1): premium activity-specific positioning - 'Kevlar/Dyneema cut-resistant performance, engineered for serious gardeners'. Arm B (T2): safety-first positioning - 'ANSI A4 cut-rated; the glove safety professionals recommend for home use'. Control: A third landing page offering the identical glove at the same $24.99 price and $5 deposit, described only as a generic 'cut-resistant work glove' with no consumer use-case or safety-endorsement positioning.",
+     "sample": "Paid Meta ads randomized 1:1:1 to the three pages, about 1,500 unique visitors per arm (4,500 total), recruited over four weeks.",
+     "measure": "Primary: deposit conversion rate, the share of unique visitors who complete the $5 refundable pre-order deposit. Committing at the premium $24.99 price also signals willingness to pay that price.",
+     "prediction_by_theory": {
+      "T1": "Arm A (premium activity-specific) will have the highest deposit conversion rate, beating the control by at least 8 percentage points and beating Arm B by at least 5 points.",
+      "T2": "Arm B (safety-endorsed) will have the highest deposit conversion rate, beating the control by at least 8 percentage points and beating Arm A by at least 5 points."
+     },
+     "decision_rule": "Proceed only if the winning arm's deposit rate is at least 5% AND at least 8 percentage points above the control AND at least 5 points above the other treatment; otherwise no consumer expansion. Arm A wins: run a small production and retail/distributor pilot of a premium activity-specific glove. Arm B wins: pilot a safety-positioned consumer glove with professional-endorsement messaging. Control wins or neither treatment clears 5%: do not invest in a consumer proposition and keep the B2B work-glove focus.",
+     "cost_eur": 19000,
+     "weeks": 9
+    }
+   },
+   "justification": {
+    "learned": "The three sources show capability and channel, not demand: superior-cut-specialist claims cut-resistant gloves and Kevlar®/Dyneema® licensing; superior-distribution-only says sales went to \"distribution only\"; superior-nc-plant confirms a 2025 US PPE plant. Searches for Amazon, an online store and consumer reviews found nothing, so reach to individual buyers and demand are unknown. T1 (premium activity-specific) and T2 (safety-endorsed) remain open hypotheses with capability or neutral evidence, not customer behaviour.",
+    "uncertain": "Demand is unknown: no source shows consumers buy or search for Superior Glove outside work channels. The test measures paid deposits for a simulated offer, but distribution-only sales means it cannot show a route to individual buyers exists or that deposits become shipped sales. Deposits are commitment, not full purchases. Sample sizes, thresholds, cost and duration are proposed analyst parameters, not market facts.",
+    "why_next": "A test is justified because T1 and T2 make different predictions under the same offer: T1 predicts the premium activity-specific arm converts more, T2 predicts the safety-endorsed arm converts more, and both are checked against a generic control representing no differentiation. A winning differentiated arm with a real $5 deposit would justify a small pilot; a control win or no clear winner would stop the consumer investment. This separates T1 from T2 on mechanism (performance trust versus professional safety endorsement), using a real-money deposit at a premium price rather than stated preference."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"The three sources show capability and channel, not demand: superior-cut-specialist claims cut-resistant gloves and Kevlar®/Dyneema® licensing; superior-distribution-only says sales went to \\\"distribution only\\\"; superior-nc-plant confirms a 2025 US PPE plant. Searches for Amazon, an online store and consumer reviews found nothing, so reach to individual buyers and demand are unknown. T1 (premium activity-specific) and T2 (safety-endorsed) remain open hypotheses with capability or neutral evidence, not customer behaviour.\", \"uncertain\": \"Demand is unknown: no source shows consumers buy or search for Superior Glove outside work channels. The test measures paid deposits for a simulated offer, but distribution-only sales means it cannot show a route to individual buyers exists or that deposits become shipped sales. Deposits are commitment, not full purchases. Sample sizes, thresholds, cost and duration are proposed analyst parameters, not market facts.\", \"why_next\": \"A test is justified because T1 and T2 make different predictions under the same offer: T1 predicts the premium activity-specific arm converts more, T2 predicts the safety-endorsed arm converts more, and both are checked against a generic control representing no differentiation. A winning differentiated arm with a real $5 deposit would justify a small pilot; a control win or no clear winner would stop the consumer investment. This separates T1 from T2 on mechanism (performance trust versus professional safety endorsement), using a real-money deposit at a premium price rather than stated preference.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Paid-deposit landing page test of a consumer glove proposition\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: US adults aged 25-60 with interests in gardening, DIY and outdoor recreation, reached via paid Meta ads. Treatment: Two treatment landing pages, both offering the same first-run consumer glove at $24.99 with a $5 refundable pre-order deposit, same photo and page format. Arm A (T1): premium activity-specific positioning - 'Kevlar/Dyneema cut-resistant performance, engineered for serious gardeners'. Arm B (T2): safety-first positioning - 'ANSI A4 cut-rated; the glove safety professionals recommend for home use'. Control: A third landing page offering the identical glove at the same $24.99 price and $5 deposit, described only as a generic 'cut-resistant work glove' with no consumer use-case or safety-endorsement positioning.\", \"sample\": \"Paid Meta ads randomized 1:1:1 to the three pages, about 1,500 unique visitors per arm (4,500 total), recruited over four weeks.\", \"measure\": \"Primary: deposit conversion rate, the share of unique visitors who complete the $5 refundable pre-order deposit. Committing at the premium $24.99 price also signals willingness to pay that price.\", \"prediction_by_theory\": {\"T1\": \"Arm A (premium activity-specific) will have the highest deposit conversion rate, beating the control by at least 8 percentage points and beating Arm B by at least 5 points.\", \"T2\": \"Arm B (safety-endorsed) will have the highest deposit conversion rate, beating the control by at least 8 percentage points and beating Arm A by at least 5 points.\"}, \"decision_rule\": \"Proceed only if the winning arm's deposit rate is at least 5% AND at least 8 percentage points above the control AND at least 5 points above the other treatment; otherwise no consumer expansion. Arm A wins: run a small production and retail/distributor pilot of a premium activity-specific glove. Arm B wins: pilot a safety-positioned consumer glove with professional-endorsement messaging. Control wins or neither treatment clears 5%: do not invest in a consumer proposition and keep the B2B work-glove focus.\", \"cost_eur\": 19000, \"weeks\": 9}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Segmented Messaging Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized messaging. Participants are randomly assigned to one of three groups: (1) Premium outdoor glove proposition (high‑risk activities, safety focus, premium pricing); (2) Safety‑first professional proposition (endorsed by OSHA experts, compliance focus, premium pricing); (3…",
+     "sample": "500 U.S. adults aged 25‑55 who have purchased gloves in the past 12 months, recruited via an online panel. Stratify by gender and region to ensure diversity.",
+     "measure": "Purchase intent (binary: \"Would buy this glove for the described use case?\") and willingness to pay (EUR amount). Secondary measure: self‑reported trust in the brand for safety.",
+     "prediction_by_theory": {
+      "T1": "Premium outdoor proposition will achieve purchase intent ≥ 15% and willingness to pay ≥ €15 higher than the control.",
+      "T2": "Safety‑first professional proposition will achieve purchase intent ≥ 20% and willingness to pay ≥ €15 higher than the control."
+     },
+     "decision_rule": "If the premium outdoor group’s purchase intent ≥ 15% and willingness to pay ≥ €15 and is at least 5 percentage points higher than the safety‑first group, proceed to develop a differentiated consumer proposition for outdoor recreation. If",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the decision rule leads straight to developing a product, not to a bounded next step",
+   "quality_notes": [
+    "the arms differ only in wording or message, with no product or price difference and no same-price control"
+   ],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": true,
+   "review_note": "A discriminating, behavioral test can separate rival positioning theories when product and price are held identical: use a same-price generic control, measure real-money deposit conversion rather than stated intent, set explicit theory-specific thresholds, and route the outcome to a bounded pilot or no-go instead of full development.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "A discriminating, behavioral test can separate rival positioning theories when product and price are held identical: use a same-price generic control, measure real-money deposit conversion rather than stated intent, set explicit theory-specific thresholds, and route the outcome to a bounded pilot or no-go instead of full development.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 4,
+   "case": "netafim-new-evidence-irrelevant",
+   "case_date": "2025",
+   "origin": "test step",
+   "question": "It is mid-2025. Should Netafim develop a differentiated consumer proposition for a specific use case, building on its drip-irrigation technology? What evidence would justify that investment?",
+   "student_turn": 29,
+   "student_run": "cd21268a249e4db5c541c0f61efd6570df54059349aed08723d6bd972f719e51",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Consumers will adopt Netafim's drip irrigation kits because they perceive them as a healthful, eco-friendly alternative to sprinkler systems, leading to higher willingness to pay and repeat purchases.",
+    "T2": "Consumers will adopt Netafim's drip irrigation kits because they perceive them as a convenient, low‑maintenance solution for small urban gardens and balconies, leading to higher purchase frequency and repeat purchases."
+   },
+   "sources_read": {
+    "netafim-csu-efficiency": "unknown (accessed 2026-11-03)",
+    "netafim-in-homekit": "unknown (accessed 2026-11-03)",
+    "netafim-in-nonexpert": "unknown (accessed 2026-11-03)",
+    "netafim-in-pros": "unknown (accessed 2026-11-03)",
+    "netafim-in-variants": "unknown (accessed 2026-11-03)",
+    "netafim-wiki-revenue": "unknown (accessed 2026-11-03)",
+    "netafim-wiki-share": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Paid pre-order test: eco water-saving vs pre-assembled convenience drip kit",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: Home and balcony/terrace gardeners in a water-stressed Indian city (e.g., Bengaluru), where Netafim already sells consumer kits; screened online to own or plan a garden/terrace and be in-market for irrigation within the next 6 months. Treatment: Two arms shown an identical Netafim-branded garden-kit page with the same premium price and layout. Arm A kit includes a flow regulator/water meter and eco-certification and arrives unassembled (eco attribute). Arm B kit arrives pre-assembled, plug-and-play, low-maintenance, with no eco extras (convenience attribute). Control: Unbranded generic drip kit, unassembled, no eco extras, priced about 30% below the Netafim arms, with the same page layout.",
+     "sample": "Recruit 300 eligible gardeners via Facebook/Instagram ads and a local panel, randomly assigned 100 per arm; pay €20 incentive each, and offer a refundable €15 deposit to reserve the kit at launch.",
+     "measure": "Primary: share of each arm placing the refundable €15 pre-order deposit. Secondary: self-reported top purchase reason and willingness-to-pay ceiling recorded after the deposit decision.",
+     "prediction_by_theory": {
+      "T1": "Deposit rate in Arm A (eco) exceeds Arm B (convenience) by at least 10 percentage points, and A beats control; water conservation is the top stated reason among A buyers.",
+      "T2": "Deposit rate in Arm B (convenience) exceeds Arm A (eco) by at least 10 percentage points, and B beats control; convenience/low-maintenance is the top stated reason among B buyers."
+     },
+     "decision_rule": "Decision rule: ≥10 percentage-point deposit-rate advantage of one arm over the other, and that arm must beat control by ≥10 points. If A−B ≥10pp and A−control ≥10pp, eco-led proposition; if B−A ≥10pp and B−control ≥10pp, convenience-led; otherwise no differentiated consumer investment. If A wins, pilot an eco-certified water-saving kit for home gardeners and test sell-through with one retail/online partner. If B wins, pilot a pre-assembled plug-and-play kit for balcony/terrace users. If neither beats control, stop consumer expansion and stay with B2B/current lines.",
+     "cost_eur": 13500,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "Netafim already sells consumer garden drip kits in India—NetBow and ArrowFlow—described as easy to install for non-experts (netafim-in-homekit, netafim-in-nonexpert, netafim-in-variants). CSU Extension shows drip exceeds 90% efficiency versus 50–70% for sprinklers, supporting feasibility and eco framing but not demand (netafim-csu-efficiency). Company-level figures—over $1.063B revenue in 2019 and over 30% global drip share in 2020—say nothing about consumer demand (netafim-wiki-revenue, netafim-wiki-share). No source shows willingness to pay, purchase frequency, or whether eco or convenience drives buying.",
+    "uncertain": "Whether home gardeners buy for eco/water-saving reasons (T1) or for convenience/low-maintenance (T2), and whether either mechanism produces enough willingness to pay to justify a differentiated consumer proposition. Capability and technical efficiency are documented; customer motivation, price sensitivity and value capture are not. No read source contains demand or purchase data.",
+    "why_next": "Separates T1 from T2 by varying a real product attribute (eco water-saving features vs pre-assembled convenience) at equal price and measuring a real commitment (refundable deposit), so the result tells which proposition to build and whether either beats a generic control. A messaging-only survey could not separate the mechanisms; a deposit measures consequential behaviour within the €20,000/12-week limits."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message",
+    "varies product attributes or price levels"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Netafim already sells consumer garden drip kits in India—NetBow and ArrowFlow—described as easy to install for non-experts (netafim-in-homekit, netafim-in-nonexpert, netafim-in-variants). CSU Extension shows drip exceeds 90% efficiency versus 50–70% for sprinklers, supporting feasibility and eco framing but not demand (netafim-csu-efficiency). Company-level figures—over $1.063B revenue in 2019 and over 30% global drip share in 2020—say nothing about consumer demand (netafim-wiki-revenue, netafim-wiki-share). No source shows willingness to pay, purchase frequency, or whether eco or convenience drives buying.\", \"uncertain\": \"Whether home gardeners buy for eco/water-saving reasons (T1) or for convenience/low-maintenance (T2), and whether either mechanism produces enough willingness to pay to justify a differentiated consumer proposition. Capability and technical efficiency are documented; customer motivation, price sensitivity and value capture are not. No read source contains demand or purchase data.\", \"why_next\": \"Separates T1 from T2 by varying a real product attribute (eco water-saving features vs pre-assembled convenience) at equal price and measuring a real commitment (refundable deposit), so the result tells which proposition to build and whether either beats a generic control. A messaging-only survey could not separate the mechanisms; a deposit measures consequential behaviour within the €20,000/12-week limits.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Paid pre-order test: eco water-saving vs pre-assembled convenience drip kit\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: Home and balcony/terrace gardeners in a water-stressed Indian city (e.g., Bengaluru), where Netafim already sells consumer kits; screened online to own or plan a garden/terrace and be in-market for irrigation within the next 6 months. Treatment: Two arms shown an identical Netafim-branded garden-kit page with the same premium price and layout. Arm A kit includes a flow regulator/water meter and eco-certification and arrives unassembled (eco attribute). Arm B kit arrives pre-assembled, plug-and-play, low-maintenance, with no eco extras (convenience attribute). Control: Unbranded generic drip kit, unassembled, no eco extras, priced about 30% below the Netafim arms, with the same page layout.\", \"sample\": \"Recruit 300 eligible gardeners via Facebook/Instagram ads and a local panel, randomly assigned 100 per arm; pay €20 incentive each, and offer a refundable €15 deposit to reserve the kit at launch.\", \"measure\": \"Primary: share of each arm placing the refundable €15 pre-order deposit. Secondary: self-reported top purchase reason and willingness-to-pay ceiling recorded after the deposit decision.\", \"prediction_by_theory\": {\"T1\": \"Deposit rate in Arm A (eco) exceeds Arm B (convenience) by at least 10 percentage points, and A beats control; water conservation is the top stated reason among A buyers.\", \"T2\": \"Deposit rate in Arm B (convenience) exceeds Arm A (eco) by at least 10 percentage points, and B beats control; convenience/low-maintenance is the top stated reason among B buyers.\"}, \"decision_rule\": \"Decision rule: ≥10 percentage-point deposit-rate advantage of one arm over the other, and that arm must beat control by ≥10 points. If A−B ≥10pp and A−control ≥10pp, eco-led proposition; if B−A ≥10pp and B−control ≥10pp, convenience-led; otherwise no differentiated consumer investment. If A wins, pilot an eco-certified water-saving kit for home gardeners and test sell-through with one retail/online partner. If B wins, pilot a pre-assembled plug-and-play kit for balcony/terrace users. If neither beats control, stop consumer expansion and stay with B2B/current lines.\", \"cost_eur\": 13500, \"weeks\": 12}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Preference Test: Eco‑Conscious vs Urban Convenience",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice experiment with simulated purchase scenarios.",
+     "sample": "400 adult respondents recruited via an online panel, balanced for age, gender, and geographic region (Europe and India).",
+     "measure": "1) Choice of kit type (eco‑certified vs convenience‑focused). 2) Willingness to pay (WTP) for each option. 3) Intent to purchase (binary: \"Would buy\").",
+     "prediction_by_theory": {
+      "T1": "Eco‑certified kits will be chosen by at least 55% of respondents and have a WTP at least 20% above convenience kits.",
+      "T2": "Convenience kits will be chosen by at least 55% of respondents and have a WTP at least 15% above eco kits."
+     },
+     "decision_rule": "If the proportion of respondents choosing the eco‑certified option exceeds the convenience option by at least 5 percentage points and the WTP difference is at least €15, proceed to develop an eco‑focused consumer proposition. If the",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the decision rule leads straight to developing a product, not to a bounded next step",
+   "quality_notes": [],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": true,
+   "review_note": "When the read sources establish technical capability and existing product availability but no demand-side evidence, the correct move is a field experiment that varies a real product attribute (eco water-saving features and unassembled delivery vs pre-assembled plug-and-play convenience) at the same premium price, includes a cheaper generic control, and measures a behavioural commitment (refundable pre-order deposit) rather than stated intent alone. The test gives mutually exclusive, theory-specific predictions (T1: eco arm wins by ≥10pp and beats control; T2: convenience arm wins by ≥10pp and beats control), a clear measurable threshold, and escalates only to a bounded next step (pilot the winning kit and test sell-through with one partner), not to full development. The reasoning correctly weighs each source for what it does and does not show, and the test separates the two rival mechanisms without a survey-only design.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "When the read sources establish technical capability and existing product availability but no demand-side evidence, the correct move is a field experiment that varies a real product attribute (eco water-saving features and unassembled delivery vs pre-assembled plug-and-play convenience) at the same premium price, includes a cheaper generic control, and measures a behavioural commitment (refundable pre-order deposit) rather than stated intent alone. The test gives mutually exclusive, theory-specific predictions (T1: eco arm wins by ≥10pp and beats control; T2: convenience arm wins by ≥10pp and beats control), a clear measurable threshold, and escalates only to a bounded next step (pilot the winning kit and test sell-through with one partner), not to full development. The reasoning correctly weighs each source for what it does and does not show, and the test separates the two rival mechanisms without a survey-only design.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 5,
+   "case": "sealedair-new-evidence-irrelevant",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Sealed Air develop a differentiated consumer proposition for a specific use case, building on its Bubble Wrap brand? What evidence would justify that investment?",
+   "student_turn": 30,
+   "student_run": "d4280c55141791e93d15b1bb05dc5e9f7cff290b057c6a39484771757228ba2a",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Consumers will adopt a differentiated Bubble Wrap proposition for home moving because they value the sound and tactile experience of popping the wrap, and they seek a fun, stress‑reducing activity for moving tasks.",
+    "T2": "Consumers will adopt a differentiated Bubble Wrap proposition for small‑business packaging because they need lightweight, space‑saving protective material that reduces shipping costs and improves storage efficiency."
+   },
+   "sources_read": {
+    "sealedair-ap-stress": "2010-01-24",
+    "sealedair-cbc-anger": "2015-07-02",
+    "sealedair-cbc-share": "2015-07-02",
+    "sealedair-dz-foam": "2015-07-06",
+    "sealedair-fortune-ecom": "2015-07-02",
+    "sealedair-pr-markets": "2026-01-26",
+    "sealedair-sbt-eliminate": "2015-07 (from URL)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Poppable vs pop-less pre-order test across home movers and small shippers",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: US adults in two groups: (a) 300 people who moved in the past 12 months or plan to move within 12 weeks; (b) 300 small e-commerce sellers shipping at least 5 orders per week. Treatment: A branded Bubble Wrap landing page offering the original poppable wrap, described factually as 'pops when pressed,' at $14.99 with a $5 non-refundable pre-order deposit. Control: The identical branded Bubble Wrap landing page offering the pop-less wrap, described factually as 'takes up 1/50th the space, does not pop,' at the same $14.99 with the same $5 non-refundable deposit; layout, brand and price are otherwise identical.",
+     "sample": "Recruited via paid Facebook and Instagram ads with a two-question screener; 300 qualifying people per segment are randomly assigned 50/50 to the poppable or pop-less page.",
+     "measure": "Completed $5 non-refundable pre-order deposit (applied to the $14.99 price), reported as the deposit conversion rate in each of the four cells (segment x poppable/pop-less).",
+     "prediction_by_theory": {
+      "T1": "Home movers shown the poppable page convert at 12% or more and at least 5 points above the pop-less page; small shippers show no 5-point pop-less advantage because the fun/stress mechanism does not motivate them.",
+      "T2": "Small shippers shown the pop-less page convert at 12% or more and at least 5 points above the poppable page; home movers show no 5-point poppable advantage because the efficiency mechanism does not motivate them."
+     },
+     "decision_rule": "Favour T1 if home-mover poppable conversion is 12% or more and exceeds home-mover pop-less by at least 5 points, while shipper pop-less does not beat shipper poppable by 5 points. Favour T2 if shipper pop-less conversion is 12% or more and exceeds shipper poppable by at least 5 points, while home-mover poppable does not beat home-mover pop-less by 5 points. Otherwise stop. If T1 is favoured, run a limited pilot of the poppable moving kit through a consumer marketplace or retail listing before scaling. If T2 is favoured, run a small-business pilot of the space-saver kit with an e-commerce platform or office-supply retailer. If neither threshold is met, recommend no consumer expansion and refocus on the B2B core.",
+     "cost_eur": 20000,
+     "weeks": 10
+    }
+   },
+   "justification": {
+    "learned": "Bubble Wrap's appeal is the popping sensation, a \"stress reducer disguised as package cushioning\" (sealedair-ap-stress); losing poppability caused public anger (sealedair-cbc-anger). The pop-less redesign targets online retailers as it takes up one-fiftieth the space (sealedair-fortune-ecom), yet Sealed Air's best seller is liquid foam, not Bubble Wrap (sealedair-dz-foam). Bubble Wrap was 3.6% of sales in 2012, down from 5.7% in 2010, and Sealed Air considered eliminating it (sealedair-cbc-share; sealedair-sbt-eliminate). Stated end markets are B2B (sealedair-pr-markets). No source shows consumer willingness to pay, purchase behaviour, or current consumer reach, so demand is unproven.",
+    "uncertain": "Whether pop appeal converts into paid demand for home-moving (T1) and whether small shippers will pay for the pop-less space-saver (T2) are both unknown. The test cannot fully separate the physical attribute from its factual description, and ad-recruited respondents may differ from the broader market; a pre-order shows willingness to commit, not repeat or scaled demand. Sealed Air's consumer retail channel and group-level-only financials remain unknown.",
+    "why_next": "A test is worth its cost because the separating question is real purchasing behaviour, which none of the sources answer. It separates T1 from T2 because T1's fun/stress mechanism (sealedair-ap-stress) predicts home movers commit to the poppable wrap, while T2's efficiency mechanism (sealedair-fortune-ecom) predicts small shippers commit to the pop-less wrap. Each outcome leads to a bounded next step: a pilot for one proposition or stopping expansion."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Bubble Wrap's appeal is the popping sensation, a \\\"stress reducer disguised as package cushioning\\\" (sealedair-ap-stress); losing poppability caused public anger (sealedair-cbc-anger). The pop-less redesign targets online retailers as it takes up one-fiftieth the space (sealedair-fortune-ecom), yet Sealed Air's best seller is liquid foam, not Bubble Wrap (sealedair-dz-foam). Bubble Wrap was 3.6% of sales in 2012, down from 5.7% in 2010, and Sealed Air considered eliminating it (sealedair-cbc-share; sealedair-sbt-eliminate). Stated end markets are B2B (sealedair-pr-markets). No source shows consumer willingness to pay, purchase behaviour, or current consumer reach, so demand is unproven.\", \"uncertain\": \"Whether pop appeal converts into paid demand for home-moving (T1) and whether small shippers will pay for the pop-less space-saver (T2) are both unknown. The test cannot fully separate the physical attribute from its factual description, and ad-recruited respondents may differ from the broader market; a pre-order shows willingness to commit, not repeat or scaled demand. Sealed Air's consumer retail channel and group-level-only financials remain unknown.\", \"why_next\": \"A test is worth its cost because the separating question is real purchasing behaviour, which none of the sources answer. It separates T1 from T2 because T1's fun/stress mechanism (sealedair-ap-stress) predicts home movers commit to the poppable wrap, while T2's efficiency mechanism (sealedair-fortune-ecom) predicts small shippers commit to the pop-less wrap. Each outcome leads to a bounded next step: a pilot for one proposition or stopping expansion.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Poppable vs pop-less pre-order test across home movers and small shippers\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: US adults in two groups: (a) 300 people who moved in the past 12 months or plan to move within 12 weeks; (b) 300 small e-commerce sellers shipping at least 5 orders per week. Treatment: A branded Bubble Wrap landing page offering the original poppable wrap, described factually as 'pops when pressed,' at $14.99 with a $5 non-refundable pre-order deposit. Control: The identical branded Bubble Wrap landing page offering the pop-less wrap, described factually as 'takes up 1/50th the space, does not pop,' at the same $14.99 with the same $5 non-refundable deposit; layout, brand and price are otherwise identical.\", \"sample\": \"Recruited via paid Facebook and Instagram ads with a two-question screener; 300 qualifying people per segment are randomly assigned 50/50 to the poppable or pop-less page.\", \"measure\": \"Completed $5 non-refundable pre-order deposit (applied to the $14.99 price), reported as the deposit conversion rate in each of the four cells (segment x poppable/pop-less).\", \"prediction_by_theory\": {\"T1\": \"Home movers shown the poppable page convert at 12% or more and at least 5 points above the pop-less page; small shippers show no 5-point pop-less advantage because the fun/stress mechanism does not motivate them.\", \"T2\": \"Small shippers shown the pop-less page convert at 12% or more and at least 5 points above the poppable page; home movers show no 5-point poppable advantage because the efficiency mechanism does not motivate them.\"}, \"decision_rule\": \"Favour T1 if home-mover poppable conversion is 12% or more and exceeds home-mover pop-less by at least 5 points, while shipper pop-less does not beat shipper poppable by 5 points. Favour T2 if shipper pop-less conversion is 12% or more and exceeds shipper poppable by at least 5 points, while home-mover poppable does not beat home-mover pop-less by 5 points. Otherwise stop. If T1 is favoured, run a limited pilot of the poppable moving kit through a consumer marketplace or retail listing before scaling. If T2 is favoured, run a small-business pilot of the space-saver kit with an e-commerce platform or office-supply retailer. If neither threshold is met, recommend no consumer expansion and refocus on the B2B core.\", \"cost_eur\": 20000, \"weeks\": 10}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Preference Test: Moving vs Small Business Messaging",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice experiment with randomized messaging. Participants view two product descriptions of a branded Bubble Wrap kit for a specific use case (moving vs small business packaging). They then indicate purchase intent on a 7‑point scale and maximum price they would pay. The experiment is run in t…",
+     "sample": "500 adults recruited via an online panel, balanced for age, gender, and geographic region. Randomly assigned to either the moving message group (description emphasizing sound, stress relief, and fun) or the small business message group (des",
+     "measure": "Purchase intent score (1‑10) and maximum price willingness to pay. Secondary measure: self‑reported stress level (1‑10) for the moving group, and shipping cost impact for the small business group.",
+     "prediction_by_theory": {
+      "T1": "Group receiving the moving message will report higher purchase intent (score ≥ 6) and be willing to pay at least 20% above the small business price point, indicating demand for the experience‑driven proposition.",
+      "T2": "Group receiving the small business message will report higher purchase intent (score ≥ 6) and be willing to pay at least 20% above the small business price point, indicating demand for the efficiency‑focused proposition."
+     },
+     "decision_rule": "If the moving group’s average purchase intent score is at least 6 and at least 20% above the small business group’s score, proceed to develop a differentiated moving proposition. If the small business group’s score is at least 6 and at",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the arms differ only in wording or message, with no product or price difference and no same-price control; 0 of 1 tests discriminate: X1: predictions barely differ",
+   "quality_notes": [
+    "the arms differ only in wording or message, with no product or price difference and no same-price control"
+   ],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": true,
+   "review_note": "A correct behavioral experiment step: to separate a fun/stress home-moving theory from an efficiency small-shipper theory, the test compares the actual product attribute difference (poppable vs pop-less wrap) at the same price with a non-refundable $5 deposit, not a messaging-only survey. It sets segment-specific conversion thresholds that discriminate T1 from T2 and keeps next steps bounded (pilot or stop), while grounding the uncertainty in named sources showing pop appeal and B2B focus but no consumer willingness to pay.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "A correct behavioral experiment step: to separate a fun/stress home-moving theory from an efficiency small-shipper theory, the test compares the actual product attribute difference (poppable vs pop-less wrap) at the same price with a non-refundable $5 deposit, not a messaging-only survey. It sets segment-specific conversion thresholds that discriminate T1 from T2 and keeps next steps bounded (pilot or stop), while grounding the uncertainty in named sources showing pop appeal and B2B focus but no consumer willingness to pay.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 6,
+   "case": "perrigo-base",
+   "case_date": "2014",
+   "origin": "test step",
+   "question": "It is late 2014. Should Perrigo develop a differentiated consumer proposition for a specific use case, building on its over-the-counter medicine development and manufacturing? What evidence would justify that investment?",
+   "student_turn": 43,
+   "student_run": "104e11ec76e4b6cdf3c102336f3864d6e31dd3a6ae67be089d748647e9bfdbb1",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Consumers will adopt a differentiated Perrigo consumer brand if they perceive it as a premium, quality product that differentiates from generic alternatives, leading to higher willingness to pay and repeat purchases.",
+    "T2": "Consumers will adopt a differentiated Perrigo consumer brand if they perceive it as a convenient, convenient-to-buy product that is readily available in pharmacies and retail outlets, leading to higher purchase frequency and lower price sensitivity."
+   },
+   "sources_read": {
+    "perrigo-bar-penetration": "2013-03-13",
+    "perrigo-bar-retailers": "2013-03-13",
+    "perrigo-fu-goodsense": "unknown (accessed 2026-11-03); compiled about 2004",
+    "perrigo-fu-suspicious": "unknown (accessed 2026-11-03); compiled about 2004",
+    "perrigo-pml-gsk": "2014-11",
+    "perrigo-ppr-omega": "2014-11-06",
+    "perrigo-ppr-pharmacies": "2014-11-06"
+   },
+   "call": {
+    "name": "decline_test",
+    "arguments": {
+     "reason": "A fundamental constraint blocks the decision: Perrigo's core business makes store-brand OTCs for retailers who capture the margin (perrigo-bar-retailers), so a Perrigo-owned brand competes with those customers; a €20k/12-week consumer test cannot measure retailer stocking. T1 and T2 both predict adoption, so testing measures positioning, not go/no-go. Next is a channel/build-vs-buy review, not a consumer test."
+    }
+   },
+   "justification": {
+    "learned": "Public sources show Perrigo's core proposition is B2B store-brand OTC manufacturing: it pitches retailers on margin (perrigo-bar-retailers) and reports store brand Cetirizine at 48% penetration (perrigo-bar-penetration). Its own brand Good Sense is 'only a small percentage of sales' (perrigo-fu-goodsense); consumers became suspicious of the brand when the price gap widened (perrigo-fu-suspicious). Nov 2014: €3.6bn Omega acquisition, a European branded OTC business via pharmacies (perrigo-ppr-omega, perrigo-pml-gsk, perrigo-ppr-pharmacies). No demand data found for a Perrigo-owned brand.",
+    "uncertain": "Whether real consumer demand exists for a Perrigo-owned differentiated brand: demand is unmeasured and Good Sense's small share points away. Whether premium quality (T1) or convenience (T2) drives adoption: evidence is mostly company claims, not observed purchases. Whether retailers would tolerate a Perrigo-owned brand competing with their store brands. Whether Omega changes build-vs-buy.",
+    "why_next": "I decline because a consumer test cannot change the next step. The binding uncertainty is channel strategy: Perrigo's customers are retailers who keep store-brand margin (perrigo-bar-retailers), and a Perrigo-owned brand competes with them; a €20k/12-week consumer test cannot measure retailer stocking. T1 and T2 are weak rivals that both predict adoption, differing only on which attribute drives it, so a test measures positioning, not go/no-go. Existing evidence weakens an organically built brand (perrigo-fu-goodsense, perrigo-fu-suspicious). Next: retailer/channel assessment and build-vs-buy review of Omega."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "declines the test"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Public sources show Perrigo's core proposition is B2B store-brand OTC manufacturing: it pitches retailers on margin (perrigo-bar-retailers) and reports store brand Cetirizine at 48% penetration (perrigo-bar-penetration). Its own brand Good Sense is 'only a small percentage of sales' (perrigo-fu-goodsense); consumers became suspicious of the brand when the price gap widened (perrigo-fu-suspicious). Nov 2014: €3.6bn Omega acquisition, a European branded OTC business via pharmacies (perrigo-ppr-omega, perrigo-pml-gsk, perrigo-ppr-pharmacies). No demand data found for a Perrigo-owned brand.\", \"uncertain\": \"Whether real consumer demand exists for a Perrigo-owned differentiated brand: demand is unmeasured and Good Sense's small share points away. Whether premium quality (T1) or convenience (T2) drives adoption: evidence is mostly company claims, not observed purchases. Whether retailers would tolerate a Perrigo-owned brand competing with their store brands. Whether Omega changes build-vs-buy.\", \"why_next\": \"I decline because a consumer test cannot change the next step. The binding uncertainty is channel strategy: Perrigo's customers are retailers who keep store-brand margin (perrigo-bar-retailers), and a Perrigo-owned brand competes with them; a €20k/12-week consumer test cannot measure retailer stocking. T1 and T2 are weak rivals that both predict adoption, differing only on which attribute drives it, so a test measures positioning, not go/no-go. Existing evidence weakens an organically built brand (perrigo-fu-goodsense, perrigo-fu-suspicious). Next: retailer/channel assessment and build-vs-buy review of Omega.\", \"call\": {\"name\": \"decline_test\", \"arguments\": {\"reason\": \"A fundamental constraint blocks the decision: Perrigo's core business makes store-brand OTCs for retailers who capture the margin (perrigo-bar-retailers), so a Perrigo-owned brand competes with those customers; a €20k/12-week consumer test cannot measure retailer stocking. T1 and T2 both predict adoption, so testing measures positioning, not go/no-go. Next is a channel/build-vs-buy review, not a consumer test.\"}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Perrigo Consumer Brand Preference Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online between‑subjects survey with randomized product exposure. Participants are randomly assigned to see a branded OTC product (e.g., a cold‑medicinal spray) or a generic equivalent. They are then asked: “How likely would you be to purchase this product? (1‑10 scale) and “Would you be willing to p…",
+     "sample": "500 adults recruited via an online panel, balanced for age, gender, and geographic region, stratified to reflect the European OTC market (e.g., UK, Germany, France).",
+     "measure": "Primary outcome: purchase intent (binary: would buy) and willingness to pay premium (binary). Secondary outcome: perceived convenience (1‑10 scale) and perceived quality (1‑10 scale).",
+     "prediction_by_theory": {
+      "T1": "Participants who see the branded product will report higher purchase intent and willingness to pay a premium than those who see the generic.",
+      "T2": "Participants who see the branded product will report higher purchase intent and willingness to pay a premium than those who see the generic, even after controlling for convenience perception."
+     },
+     "decision_rule": "If the difference in purchase intent between the branded and generic groups is at least 10 percentage points and the difference in willingness to pay a premium is at least 10 percentage points, proceed with developing a differentiated brand",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "proposed a test where the case does not warrant one",
+   "quality_notes": [],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": true,
+   "review_note": "At a test step, a correct move can be to decline the proposed test rather than run it: here the student's test is a survey-only stated-preference measure of purchase intent/WTP, both rival theories predict the same observable result (so it would measure positioning, not discriminate between T1 and T2), and the binding strategic uncertainty is channel conflict with Perrigo's retailer customers. The teacher correctly redirects to a retailer/channel assessment and Omega build-vs-buy review, grounding the channel conflict and weak organic-brand evidence in the named sources.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "At a test step, a correct move can be to decline the proposed test rather than run it: here the student's test is a survey-only stated-preference measure of purchase intent/WTP, both rival theories predict the same observable result (so it would measure positioning, not discriminate between T1 and T2), and the binding strategic uncertainty is channel conflict with Perrigo's retailer customers. The teacher correctly redirects to a retailer/channel assessment and Omega build-vs-buy review, grounding the channel conflict and weak organic-brand evidence in the named sources.",
+    "confidence": "medium"
+   }
+  },
+  {
+   "n": 7,
+   "case": "netafim-base",
+   "case_date": "2025",
+   "origin": "test step",
+   "question": "It is mid-2025. Should Netafim develop a differentiated consumer proposition for a specific use case, building on its drip-irrigation technology? What evidence would justify that investment?",
+   "student_turn": 21,
+   "student_run": "7c56666e317523bf1fd81bf4e065b718182fa80eaba99d8e04339e2d7e567132",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Home gardeners will adopt Netafim's drip irrigation kits because they perceive the technology as a medical necessity for plant health, leading them to purchase multiple kits for different plants.",
+    "T2": "Home gardeners will adopt Netafim's drip irrigation kits because they value convenience and time savings, leading them to purchase kits for multiple plants or spaces."
+   },
+   "sources_read": {
+    "netafim-csu-efficiency": "unknown (accessed 2026-11-03)",
+    "netafim-in-homekit": "unknown (accessed 2026-11-03)",
+    "netafim-in-nonexpert": "unknown (accessed 2026-11-03)",
+    "netafim-in-variants": "unknown (accessed 2026-11-03)",
+    "netafim-wiki-revenue": "unknown (accessed 2026-11-03)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Plant-health vs convenience deposit test for Netafim garden kits",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: Urban home gardeners in India who own a balcony, terrace, small plot, pots or grow bags and are in the market for irrigation; Netafim already sells NetBow and ArrowFlow garden kits in this market. Treatment: A landing page offering a Netafim garden drip kit framed as essential for plant health, emphasising precise root-zone watering that keeps plants healthy and prevents loss, with a refundable ₹499 deposit to reserve a kit. Control: A landing page offering the same kit with identical layout, price and images, framed instead as convenience and time-saving, emphasising set-and-forget watering that removes daily hand-watering effort, with the same refundable ₹499 deposit.",
+     "sample": "Recruit 800 people via paid Facebook and Instagram ads geo-targeted to Indian metros using neutral creative that mentions neither plant health nor convenience; randomise click-throughs 1:1 to the two pages, 400 per arm.",
+     "measure": "The share of each arm that completes the refundable ₹499 deposit for a pre-order, a real purchase commitment rather than stated intent; also record the stated reason at checkout as a secondary check.",
+     "prediction_by_theory": {
+      "T1": "The plant-health page produces a higher deposit rate than the convenience page, because T1 holds that gardeners buy to secure plant health.",
+      "T2": "The convenience page produces a higher deposit rate than the plant-health page, because T2 holds that gardeners buy to save time and effort."
+     },
+     "decision_rule": "Proceed only if one arm's deposit rate is at least 6 percentage points above the other and also at least 8% in absolute terms; otherwise treat the two motivations as undifferentiated. If the plant-health arm leads by at least 6 points and reaches 8%, commission a small pilot run of a plant-health-positioned kit with one Indian garden retailer. If the convenience arm leads by the same rule, pilot a convenience-positioned kit. If neither, do not invest in a differentiated consumer proposition on this basis; revisit feasibility or B2B channel expansion.",
+     "cost_eur": 12000,
+     "weeks": 8
+    }
+   },
+   "justification": {
+    "learned": "Read sources show Netafim already markets garden drip kits for home gardens, terraces, balconies and kitchen gardens in India (netafim-in-homekit, netafim-in-variants, netafim-in-nonexpert). An independent extension source states drip exceeds 90 percent efficiency versus 50–70 percent for sprinklers (netafim-csu-efficiency), supporting technical capability. Company-level revenue is over $1.063 billion in 2019 (netafim-wiki-revenue) with no consumer-segment split. No source read shows consumer demand, purchase behaviour, willingness to pay or why an individual would buy multiple kits, so demand remains unknown and T1 and T2 are untested mechanisms.",
+    "uncertain": "Which mechanism drives a home gardener to buy: plant-health necessity (T1) or convenience/time-saving (T2), and whether either supports premium pricing and repeat multi-kit purchase. The kit evidence is company assertion; the efficiency figure shows capability, not motivation. A small refundable deposit and self-selected ad respondents could overstate true willingness to pay, and results in one Indian market may not generalise to other regions or use cases.",
+    "why_next": "The test separates T1 from T2 because both theories predict purchases but through different causal reasons. Holding product, price and layout identical while varying only the value proposition forces a direct comparison, and a refundable deposit measures real commitment rather than stated intent. A near-tie or weak absolute conversion would mean the two motivations do not differentiate demand, changing the decision to defer or stop a positioning-led consumer build in favour of feasibility work or B2B expansion."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Read sources show Netafim already markets garden drip kits for home gardens, terraces, balconies and kitchen gardens in India (netafim-in-homekit, netafim-in-variants, netafim-in-nonexpert). An independent extension source states drip exceeds 90 percent efficiency versus 50–70 percent for sprinklers (netafim-csu-efficiency), supporting technical capability. Company-level revenue is over $1.063 billion in 2019 (netafim-wiki-revenue) with no consumer-segment split. No source read shows consumer demand, purchase behaviour, willingness to pay or why an individual would buy multiple kits, so demand remains unknown and T1 and T2 are untested mechanisms.\", \"uncertain\": \"Which mechanism drives a home gardener to buy: plant-health necessity (T1) or convenience/time-saving (T2), and whether either supports premium pricing and repeat multi-kit purchase. The kit evidence is company assertion; the efficiency figure shows capability, not motivation. A small refundable deposit and self-selected ad respondents could overstate true willingness to pay, and results in one Indian market may not generalise to other regions or use cases.\", \"why_next\": \"The test separates T1 from T2 because both theories predict purchases but through different causal reasons. Holding product, price and layout identical while varying only the value proposition forces a direct comparison, and a refundable deposit measures real commitment rather than stated intent. A near-tie or weak absolute conversion would mean the two motivations do not differentiate demand, changing the decision to defer or stop a positioning-led consumer build in favour of feasibility work or B2B expansion.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Plant-health vs convenience deposit test for Netafim garden kits\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: Urban home gardeners in India who own a balcony, terrace, small plot, pots or grow bags and are in the market for irrigation; Netafim already sells NetBow and ArrowFlow garden kits in this market. Treatment: A landing page offering a Netafim garden drip kit framed as essential for plant health, emphasising precise root-zone watering that keeps plants healthy and prevents loss, with a refundable ₹499 deposit to reserve a kit. Control: A landing page offering the same kit with identical layout, price and images, framed instead as convenience and time-saving, emphasising set-and-forget watering that removes daily hand-watering effort, with the same refundable ₹499 deposit.\", \"sample\": \"Recruit 800 people via paid Facebook and Instagram ads geo-targeted to Indian metros using neutral creative that mentions neither plant health nor convenience; randomise click-throughs 1:1 to the two pages, 400 per arm.\", \"measure\": \"The share of each arm that completes the refundable ₹499 deposit for a pre-order, a real purchase commitment rather than stated intent; also record the stated reason at checkout as a secondary check.\", \"prediction_by_theory\": {\"T1\": \"The plant-health page produces a higher deposit rate than the convenience page, because T1 holds that gardeners buy to secure plant health.\", \"T2\": \"The convenience page produces a higher deposit rate than the plant-health page, because T2 holds that gardeners buy to save time and effort.\"}, \"decision_rule\": \"Proceed only if one arm's deposit rate is at least 6 percentage points above the other and also at least 8% in absolute terms; otherwise treat the two motivations as undifferentiated. If the plant-health arm leads by at least 6 points and reaches 8%, commission a small pilot run of a plant-health-positioned kit with one Indian garden retailer. If the convenience arm leads by the same rule, pilot a convenience-positioned kit. If neither, do not invest in a differentiated consumer proposition on this basis; revisit feasibility or B2B channel expansion.\", \"cost_eur\": 12000, \"weeks\": 8}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Purchase Intent Test for Netafim Home Garden Kits",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase scenarios.",
+     "sample": "500 adult gardeners in the UK and India, recruited via panel, balanced for garden size and experience.",
+     "measure": "Purchase intent (binary: would buy) and maximum willingness-to-pay (WTP) for a single kit.",
+     "prediction_by_theory": {
+      "T1": "Gardeners who are told drip irrigation is a medical necessity will show higher purchase intent than those told it saves time.",
+      "T2": "Gardeners who are told drip irrigation saves time will show higher purchase intent than those told it is a medical necessity."
+     },
+     "decision_rule": "If the proportion of gardeners indicating \"would buy\" for the medical‑necessity scenario exceeds 40% and the time‑saving scenario falls below 30%, we conclude T1 is more likely. If the opposite holds, T2 is more likely. If neither meets its",
+     "cost_eur": 12000,
+     "weeks": 8
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "0 of 1 tests discriminate: X1: predictions barely differ",
+   "quality_notes": [
+    "the arms differ only in wording or message, with no product or price difference and no same-price control"
+   ],
+   "composition": "experiment-structured-v1",
+   "shortened": false,
+   "keep": false,
+   "review_note": "The two arms differ only in message/framing (plant-health vs convenience) of the same kit at the same price, layout and images, with no same-price neutral control arm. This cannot show whether either message lifts demand over a baseline offer, so the test does not discriminate the decision-relevant question.; The refundable ₹499 deposit is a token commitment relative to the product price and is refundable, so it is a weak signal of real willingness to pay; the justification itself concedes it could overstate true willingness to pay.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The two arms differ only in message/framing (plant-health vs convenience) of the same kit at the same price, layout and images, with no same-price neutral control arm. This cannot show whether either message lifts demand over a baseline offer, so the test does not discriminate the decision-relevant question.",
+     "The refundable ₹499 deposit is a token commitment relative to the product price and is refundable, so it is a weak signal of real willingness to pay; the justification itself concedes it could overstate true willingness to pay."
+    ],
+    "teaches": "A framing-only A/B test of the same product at the same price is not a valid discriminator unless it includes a same-price neutral control; otherwise it can only compare two messages, not whether either message drives demand. A small refundable deposit is weaker than a real purchase commitment for a positioning investment decision.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 8,
+   "case": "msa-base",
+   "case_date": "2011",
+   "origin": "test step",
+   "question": "It is early 2011. Should MSA (Mine Safety Appliances) develop a differentiated consumer proposition for a specific use case, building on its respirators, hard hats and fall-protection products? What evidence would justify that investment?",
+   "student_turn": 27,
+   "student_run": "9635c8e223389b0410f65ae0397534861fdd1eaed548af8e42371d35dca49a62",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Consumers will adopt MSA safety products for DIY and outdoor recreation if they perceive the products as reliable, brand trusted, and convenient to purchase through retail channels.",
+    "T2": "Consumers will adopt MSA safety products for DIY and outdoor recreation if they perceive the products as a status symbol or brand prestige, leading them to purchase multiple pairs for different activities."
+   },
+   "sources_read": {
+    "msa-2014-jv": "2014-03-07",
+    "msa-jchs-diy": "2012-12-05",
+    "msa-jv-1998": "2011-07-25",
+    "msa-jv-retailers": "2011-07-25",
+    "msa-jv-storefronts": "2011-07-25"
+   },
+   "call": {
+    "name": "decline_test",
+    "arguments": {
+     "reason": "No experiment can change the decision. T1 (trust) and T2 (prestige) both predict premium DIY/outdoor purchases and both imply investing, differing only on driver and premium (10% vs 15%); a test is thus a trust-vs-prestige messaging test, not go/no-go. The real question — independent premium demand — lacks a rival theory and needs company sell-through/deposit data beyond €20,000/12 weeks."
+    }
+   },
+   "justification": {
+    "learned": "MSA has had a consumer arm since 1998 (msa-jv-1998). Company statements say by 2011 it sold through home-center/hardware/rental channels incl. The Home Depot, Do it Best, True Value (msa-jv-retailers), in 10,000+ storefronts, used by 'millions of North American consumers' (msa-jv-storefronts). These are company assertions about reach, not independent demand or willingness-to-pay evidence. msa-jchs-diy shows DIY ≈18% of 2011 US improvement spending, 29% among under-35s, but nothing on safety gear. Both that Dec-2012 post and the Jul-2011 JV release post-date early 2011, so decision-date demand evidence was only MSA's own statements.",
+    "uncertain": "Whether DIY/outdoor consumers would actually pay a premium for MSA-branded safety gear is unknown: no source independently measures demand, willingness to pay, or repeat purchase. Both T1 and T2 assume premium demand and differ only in driver (trust vs prestige) and premium size (10% vs 15%), so it is also uncertain whether that driver difference matters for go/no-go. Financials and MSA's internal sell-through data are not in the dossier.",
+    "why_next": "Declining is right. T1 and T2 do not separate on the decision: both predict DIY/outdoor consumers will buy at a premium, differing only in driver and premium size (10% vs 15%), so a test distinguishing them is messaging, not go/no-go, and the real uncertainty — independent premium demand — is not represented by a rival theory. Settling it needs sell-through or paid-deposit data requiring company cooperation beyond €20,000/12 weeks. Sources: msa-jv-retailers, msa-jv-storefronts, msa-jchs-diy; theories T1, T2."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "declines the test"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"MSA has had a consumer arm since 1998 (msa-jv-1998). Company statements say by 2011 it sold through home-center/hardware/rental channels incl. The Home Depot, Do it Best, True Value (msa-jv-retailers), in 10,000+ storefronts, used by 'millions of North American consumers' (msa-jv-storefronts). These are company assertions about reach, not independent demand or willingness-to-pay evidence. msa-jchs-diy shows DIY ≈18% of 2011 US improvement spending, 29% among under-35s, but nothing on safety gear. Both that Dec-2012 post and the Jul-2011 JV release post-date early 2011, so decision-date demand evidence was only MSA's own statements.\", \"uncertain\": \"Whether DIY/outdoor consumers would actually pay a premium for MSA-branded safety gear is unknown: no source independently measures demand, willingness to pay, or repeat purchase. Both T1 and T2 assume premium demand and differ only in driver (trust vs prestige) and premium size (10% vs 15%), so it is also uncertain whether that driver difference matters for go/no-go. Financials and MSA's internal sell-through data are not in the dossier.\", \"why_next\": \"Declining is right. T1 and T2 do not separate on the decision: both predict DIY/outdoor consumers will buy at a premium, differing only in driver and premium size (10% vs 15%), so a test distinguishing them is messaging, not go/no-go, and the real uncertainty — independent premium demand — is not represented by a rival theory. Settling it needs sell-through or paid-deposit data requiring company cooperation beyond €20,000/12 weeks. Sources: msa-jv-retailers, msa-jv-storefronts, msa-jchs-diy; theories T1, T2.\", \"call\": {\"name\": \"decline_test\", \"arguments\": {\"reason\": \"No experiment can change the decision. T1 (trust) and T2 (prestige) both predict premium DIY/outdoor purchases and both imply investing, differing only on driver and premium (10% vs 15%); a test is thus a trust-vs-prestige messaging test, not go/no-go. The real question — independent premium demand — lacks a rival theory and needs company sell-through/deposit data beyond €20,000/12 weeks.\"}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Messaging Test: Reliability vs Prestige",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice-based conjoint survey with simulated purchase scenarios.",
+     "sample": "500 adult DIY/home improvement participants recruited via an online panel, balanced for age, gender, and geographic region.",
+     "measure": "1) Purchase intent: binary (would buy) or willingness to pay (WTP) in euros. 2) Brand perception: 5-point Likert scale for reliability and prestige. 3) Product preference: ranking of two product variants (MSA consumer line vs generic brand)",
+     "prediction_by_theory": {
+      "T1": "Higher purchase intent and WTP for the consumer line when messaging emphasizes reliability and convenience (e.g., \"proven safety for DIY\").",
+      "T2": "Higher purchase intent and WTP for the consumer line when messaging emphasizes prestige and status (e.g., \"brand trusted by professionals\")."
+     },
+     "decision_rule": "If the consumer line achieves purchase intent >=30% AND WTP >=€15 (or >=10% premium over generic) AND brand perception reliability >=4.5 AND prestige >=4.5, proceed to develop the consumer proposition. Otherwise, maintain B2B focus.",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "proposed a test where the case does not warrant one",
+   "quality_notes": [],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": false,
+   "review_note": "The decline contradicts its own reasoning: it says 'No experiment can change the decision,' but then says the real question 'needs company sell-through/deposit data' and why_next says 'Settling it needs sell-through or paid-deposit data.' A deposit/preorder or sell-through pilot is exactly a decision-relevant test that could settle the go/no-go.; A feasible, decision-relevant test exists, so decline_test is not warranted: a bounded paid-deposit preorder or a small retail sell-through pilot in MSA's existing home-center channels would directly measure independent premium demand. The asserted 'beyond €20,000/12 weeks' ceiling is not grounded in the state or any cited source (the rejected student test was €18,000/10 weeks).; The reasoning uses sources dated after early 2011 (Jul-2011 releases, Dec-2012 post) while concluding that decision-date evidence was 'only MSA's own statements'; it flags the post-dating but still treats those post-dated company statements as the early-2011 demand picture.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The decline contradicts its own reasoning: it says 'No experiment can change the decision,' but then says the real question 'needs company sell-through/deposit data' and why_next says 'Settling it needs sell-through or paid-deposit data.' A deposit/preorder or sell-through pilot is exactly a decision-relevant test that could settle the go/no-go.",
+     "A feasible, decision-relevant test exists, so decline_test is not warranted: a bounded paid-deposit preorder or a small retail sell-through pilot in MSA's existing home-center channels would directly measure independent premium demand. The asserted 'beyond €20,000/12 weeks' ceiling is not grounded in the state or any cited source (the rejected student test was €18,000/10 weeks).",
+     "The reasoning uses sources dated after early 2011 (Jul-2011 releases, Dec-2012 post) while concluding that decision-date evidence was 'only MSA's own statements'; it flags the post-dating but still treats those post-dated company statements as the early-2011 demand picture."
+    ],
+    "teaches": "A decline is wrong when the decision hinges on a measurable demand signal and a bounded commitment test (paid deposit, preorder, or sell-through pilot) could settle it. Rejecting a survey-only messaging test is not the same as showing no experiment can change the decision, and a decline must not name the very test that would settle it.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 9,
+   "case": "koppert-base",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Koppert develop a differentiated proposition for home gardeners, building on its biological crop protection for professional growers, or stay with professional growers? What evidence would justify either choice?",
+   "student_turn": 25,
+   "student_run": "02783b65813f3163def53608a568b3b28d01b99f0152028a2b8beb4819f1166d",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Home gardeners will adopt Koppert's biological controls if they perceive them as convenient, safe, and effective, leading to repeat purchases and brand loyalty.",
+    "T2": "Home gardeners will adopt Koppert's biological controls if they perceive them as a status symbol or a reflection of environmental values, leading to higher purchase frequency and brand loyalty."
+   },
+   "sources_read": {
+    "koppert-agro-ban": "2017-04-06",
+    "koppert-lo-canada": "2007-03-14",
+    "koppert-martha-visit": "2018-01 (from URL)",
+    "koppert-wsu-shipped": "2017-07 (as printed)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Deposit test: convenience/safety vs eco-status framing for a Koppert garden kit",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: Dutch home gardeners aged 25-65 who own a garden and report pest damage on edible or ornamental plants in the past 12 months, recruited via Facebook/Instagram ads and Dutch gardening-community newsletters. Treatment: A proposed 'Koppert Garden Beneficials Starter Kit' (predatory mites for aphids and spider mites, €39.99) shown with convenience/safety framing: easy single-release sachets, no chemical residues, and clear effectiveness steps, with a call-to-action to pay a €10 deposit to pre-order, refunded if Koppert does not launch. Control: The identical kit, price, channel and €10 deposit call-to-action, but presented only with eco-status framing: 'the choice of conscious gardeners', sustainability and prestige imagery, membership-style language.",
+     "sample": "Recruit 600 gardeners (300 per arm) over 12 weeks through targeted social ads with a short screener (garden ownership, pest problem in the last 12 months, interest in non-chemical control); randomly assign eligible visitors to the two landing pages.",
+     "measure": "Share of each arm's eligible visitors who pay the €10 deposit (deposits / unique visitors). This is a real commitment rather than stated intent, but it measures initial willingness to pay, not repeat purchase or full-price conversion.",
+     "prediction_by_theory": {
+      "T1": "The convenience/safety arm will have a deposit rate at least 5 percentage points higher than the eco-status arm, because reduced perceived effort and risk, not status, is what makes risk-averse gardeners commit.",
+      "T2": "The eco-status arm will have a deposit rate at least 5 percentage points higher than the convenience/safety arm, because eco-conscious, status-motivated gardeners commit when the offer signals prestige rather than mere convenience."
+     },
+     "decision_rule": "Enter the home-gardener market only if the winning arm's deposit rate is at least 8% (proposed). If both arms are below 8%, stay with professional growers. If both clear 8% and differ by less than 5 percentage points, framing is not decisive and the lower-cost convenience/safety version should be piloted. Winning arm at or above 8%: run a 6-month, one-region retail/DTC pilot of that framing with a small kit production run. Both arms below 8%: stop home-gardener work and stay with professional growers. Both at or above 8% but within 5 points: pilot the cheaper convenience/safety version.",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "Evidence is thin: it shows reach, not demand. koppert-lo-canada (2007) says Koppert Canada supplied 'both the professional grower and the home gardening enthusiast' - capability, not purchase data. koppert-martha-visit (2018) is one affluent consumer's advisory visit, not scalable demand. koppert-wsu-shipped (2017) says lady beetles are 'shipped to farmers and home gardeners alike' - some buy, but not at Koppert's premium. koppert-agro-ban (2017) shows France banning non-agricultural pesticide sales to amateurs from Jan 2019 - a possible tailwind, unclear for biologicals. No source gives demand, adoption, or willingness to pay.",
+    "uncertain": "Open: whether enough home gardeners will pay a premium for a differentiated Koppert retail offer, and whether the driver is convenience/safety (T1) or eco-status (T2). A €10 deposit is real but partial - initial willingness to pay, not repeat or full-price conversion. Two arms lack a neutral arm, so intrinsic vs framing demand is not fully separable, though the absolute bar still decides go/no-go. A positive result still needs production and channel work.",
+    "why_next": "A test is worth running because a result can change the decision: the absolute threshold decides enter vs stay with professional growers, and the arm comparison separates T1 from T2 (each predicts its own framing wins by at least 5 percentage points because each names a different purchase driver - reduced effort/risk vs status/eco-signalling). koppert-lo-canada and koppert-wsu-shipped establish feasibility/reach but not demand, so a cheap real-commitment deposit test is the next justified step before any production or channel investment."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Evidence is thin: it shows reach, not demand. koppert-lo-canada (2007) says Koppert Canada supplied 'both the professional grower and the home gardening enthusiast' - capability, not purchase data. koppert-martha-visit (2018) is one affluent consumer's advisory visit, not scalable demand. koppert-wsu-shipped (2017) says lady beetles are 'shipped to farmers and home gardeners alike' - some buy, but not at Koppert's premium. koppert-agro-ban (2017) shows France banning non-agricultural pesticide sales to amateurs from Jan 2019 - a possible tailwind, unclear for biologicals. No source gives demand, adoption, or willingness to pay.\", \"uncertain\": \"Open: whether enough home gardeners will pay a premium for a differentiated Koppert retail offer, and whether the driver is convenience/safety (T1) or eco-status (T2). A €10 deposit is real but partial - initial willingness to pay, not repeat or full-price conversion. Two arms lack a neutral arm, so intrinsic vs framing demand is not fully separable, though the absolute bar still decides go/no-go. A positive result still needs production and channel work.\", \"why_next\": \"A test is worth running because a result can change the decision: the absolute threshold decides enter vs stay with professional growers, and the arm comparison separates T1 from T2 (each predicts its own framing wins by at least 5 percentage points because each names a different purchase driver - reduced effort/risk vs status/eco-signalling). koppert-lo-canada and koppert-wsu-shipped establish feasibility/reach but not demand, so a cheap real-commitment deposit test is the next justified step before any production or channel investment.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Deposit test: convenience/safety vs eco-status framing for a Koppert garden kit\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: Dutch home gardeners aged 25-65 who own a garden and report pest damage on edible or ornamental plants in the past 12 months, recruited via Facebook/Instagram ads and Dutch gardening-community newsletters. Treatment: A proposed 'Koppert Garden Beneficials Starter Kit' (predatory mites for aphids and spider mites, €39.99) shown with convenience/safety framing: easy single-release sachets, no chemical residues, and clear effectiveness steps, with a call-to-action to pay a €10 deposit to pre-order, refunded if Koppert does not launch. Control: The identical kit, price, channel and €10 deposit call-to-action, but presented only with eco-status framing: 'the choice of conscious gardeners', sustainability and prestige imagery, membership-style language.\", \"sample\": \"Recruit 600 gardeners (300 per arm) over 12 weeks through targeted social ads with a short screener (garden ownership, pest problem in the last 12 months, interest in non-chemical control); randomly assign eligible visitors to the two landing pages.\", \"measure\": \"Share of each arm's eligible visitors who pay the €10 deposit (deposits / unique visitors). This is a real commitment rather than stated intent, but it measures initial willingness to pay, not repeat purchase or full-price conversion.\", \"prediction_by_theory\": {\"T1\": \"The convenience/safety arm will have a deposit rate at least 5 percentage points higher than the eco-status arm, because reduced perceived effort and risk, not status, is what makes risk-averse gardeners commit.\", \"T2\": \"The eco-status arm will have a deposit rate at least 5 percentage points higher than the convenience/safety arm, because eco-conscious, status-motivated gardeners commit when the offer signals prestige rather than mere convenience.\"}, \"decision_rule\": \"Enter the home-gardener market only if the winning arm's deposit rate is at least 8% (proposed). If both arms are below 8%, stay with professional growers. If both clear 8% and differ by less than 5 percentage points, framing is not decisive and the lower-cost convenience/safety version should be piloted. Winning arm at or above 8%: run a 6-month, one-region retail/DTC pilot of that framing with a small kit production run. Both arms below 8%: stop home-gardener work and stay with professional growers. Both at or above 8% but within 5 points: pilot the cheaper convenience/safety version.\", \"cost_eur\": 20000, \"weeks\": 12}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Home Gardener Proposition Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online choice-based conjoint survey with a simulated purchase scenario.",
+     "sample": "500 adult home gardeners recruited via panel, balanced for region and gardening frequency.",
+     "measure": "Purchase intent (binary: \"Would buy this product?\") and willingness to pay (WTP) on a 7-point scale.",
+     "prediction_by_theory": {
+      "T1": "Purchase intent will be at least 20% higher for a pre-packaged, convenient kit than for a bare product without packaging.",
+      "T2": "Purchase intent will be at least 15% higher for a status-branded kit (e.g., eco‑label, limited edition) than for a standard kit."
+     },
+     "decision_rule": "If pre‑packaged convenience intent ≥ 20% and status branding intent ≤ 15% → recommend developing a differentiated home‑gardener proposition focused on convenience. If status branding intent ≥ 15% and convenience intent ≤ 20% → recommend a",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the arms differ only in wording or message, with no product or price difference and no same-price control",
+   "quality_notes": [
+    "the arms differ only in wording or message, with no product or price difference and no same-price control"
+   ],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": false,
+   "review_note": "The two arms differ only in framing/message (convenience/safety vs eco-status) for the identical kit at the identical €39.99 price and €10 deposit, with no same-price neutral control arm. The 'control' is actually a second framing treatment, not a control, so the design cannot separate framing effects from intrinsic demand or from a no-framing baseline.; The test does not satisfy the experiment-design rule: framing/copy-only variation without a same-price control is exactly the flagged exclusion, even though the deposit is a real commitment.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The two arms differ only in framing/message (convenience/safety vs eco-status) for the identical kit at the identical €39.99 price and €10 deposit, with no same-price neutral control arm. The 'control' is actually a second framing treatment, not a control, so the design cannot separate framing effects from intrinsic demand or from a no-framing baseline.",
+     "The test does not satisfy the experiment-design rule: framing/copy-only variation without a same-price control is exactly the flagged exclusion, even though the deposit is a real commitment."
+    ],
+    "teaches": "A message-only A/B with no neutral, same-price control cannot separate the two framing theories from baseline demand; the 'control' arm must present the product without the manipulated framing to be a real control. This example should be dropped rather than trained on.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 10,
+   "case": "resmed-new-evidence-irrelevant",
+   "case_date": "2014",
+   "origin": "test step",
+   "question": "It is mid-2014. Should ResMed develop a differentiated consumer proposition for a specific use case, building on its non-contact sleep-sensing technology and sleep-medicine expertise? What evidence would justify that investment?",
+   "student_turn": 22,
+   "student_run": "0ec015cbc1aacb45621903fcc0d89553500be9282231822b6f58840177cc300b",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Individuals with sleep apnoea will adopt a home sleep test device if they perceive it as convenient and accurate, and if they are willing to pay a premium for non-contact technology that avoids the need for clinic visits.",
+    "T2": "Insurance companies will cover home sleep tests if they are validated against polysomnography and demonstrate clinical efficacy, leading consumers to adopt home testing because they avoid clinic visits and reduce out-of-pocket costs."
+   },
+   "sources_read": {
+    "resmed-10k-clinics": "2014-08 (fiscal year ended 2014-06-30)",
+    "resmed-10k-dealer": "2014-08 (fiscal year ended 2014-06-30)",
+    "resmed-pm-dechazal2011": "2011-06 (epub 2010-08-12)",
+    "resmed-pr-biancamed": "2011-07-06",
+    "resmed-pr-splus": "2014-10-07"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Deposit-reservation test of a non-contact home sleep monitor: out-of-pocket vs insurance-covered",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: US adults aged 30-65 with suspected or diagnosed sleep apnoea or a referral for a sleep study, excluding anyone who completed a sleep study in the last 12 months. Treatment: A product page for the non-contact sleep monitor ('validated against polysomnography', 'no clinic visit', 'measures sleep and breathing') priced at $149.99, with a call-to-action requiring a $25 fully refundable deposit to reserve the device at that out-of-pocket price. Control: The identical product page and description, but priced at '$0 with insurance coverage'; it requires the same $25 fully refundable deposit, returned once the buyer's insurance coverage is verified.",
+     "sample": "Recruit 800 US adults via paid search and social ads targeting sleep-apnoea terms and communities over 8 weeks; randomly assign 400 to each offer. Ad spend, landing page and deposit processing sit within the €20,000 budget; deposits are refunded.",
+     "measure": "The share of visitors in each arm who complete the $25 refundable deposit within 14 days of first landing (a real commitment rather than stated purchase intent).",
+     "prediction_by_theory": {
+      "T1": "At least 8% of the out-of-pocket arm completes the deposit, and the covered arm is not more than about double that rate, because patients who value convenience and accuracy will pay the $149.99 premium out-of-pocket.",
+      "T2": "The out-of-pocket arm completes below 4% (willingness to pay under $100) while the covered arm completes at least 15%, because only insurance coverage removes the financial barrier and drives commitment."
+     },
+     "decision_rule": "Proceed to a bounded direct-to-consumer pilot if the out-of-pocket arm is at or above 8%; shift to a payer-covered/B2B route if the out-of-pocket arm is below 8% and the covered arm is at or above 15%; stop (no expansion) if the out-of-pocket arm is below 8% and the covered arm is below 15%. If T1 is supported (out-of-pocket ≥8%), run a small direct-to-consumer pilot with a limited production run and one retail or direct channel. If T2 is supported (covered ≥15% and out-of-pocket <8%), pursue home healthcare dealers and payers for a covered home-test route rather than a premium consumer product. If neither threshold is met, recommend no expansion and revisit only after improving accuracy or the channel.",
+     "cost_eur": 20000,
+     "weeks": 10
+    }
+   },
+   "justification": {
+    "learned": "As of mid-2014 ResMed's 10-K shows it sells via sleep clinics and home healthcare dealers, who then sell to the patient (resmed-10k-clinics, resmed-10k-dealer); its route to individuals is indirect. The 2011 BiancaMed deal supplied the non-contact SleepMinder (resmed-pr-biancamed), but 2011 validation showed 78% accuracy and kappa 0.38, worse in high-AHI (resmed-pm-dechazal2011). No source shows consumer demand, willingness to pay, or insurance coverage. The $149.99 S+ price is October 2014, after the decision date, so unusable. T1 and T2 rest on thin company assertions; demand is unknown.",
+    "uncertain": "The decisive unknowns are whether individuals with sleep apnoea would actually pay out-of-pocket (T1) or would commit only when insurance covers the device (T2), and whether ResMed can reach individual buyers directly rather than through dealers. The non-contact sensor's modest diagnostic agreement (kappa 0.38) also leaves open whether the proposition can be a credible home test or must be positioned as wellness monitoring. Financial data and real market demand figures are not in the dossier.",
+    "why_next": "The test separates T1 from T2 because both arms require the same real $25 refundable deposit and show the same product, varying only the stated price: $149.99 out-of-pocket versus $0 after insurance verification. T1 predicts meaningful out-of-pocket deposits, showing patients value convenience and accuracy enough to pay a premium; T2 predicts deposits only when coverage removes the cost. Low deposits in both arms would justify stopping. Relying on resmed-10k-dealer for the channel gap and resmed-pm-dechazal2011 for the accuracy caveat, the next action is this deposit test before any consumer investment."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"As of mid-2014 ResMed's 10-K shows it sells via sleep clinics and home healthcare dealers, who then sell to the patient (resmed-10k-clinics, resmed-10k-dealer); its route to individuals is indirect. The 2011 BiancaMed deal supplied the non-contact SleepMinder (resmed-pr-biancamed), but 2011 validation showed 78% accuracy and kappa 0.38, worse in high-AHI (resmed-pm-dechazal2011). No source shows consumer demand, willingness to pay, or insurance coverage. The $149.99 S+ price is October 2014, after the decision date, so unusable. T1 and T2 rest on thin company assertions; demand is unknown.\", \"uncertain\": \"The decisive unknowns are whether individuals with sleep apnoea would actually pay out-of-pocket (T1) or would commit only when insurance covers the device (T2), and whether ResMed can reach individual buyers directly rather than through dealers. The non-contact sensor's modest diagnostic agreement (kappa 0.38) also leaves open whether the proposition can be a credible home test or must be positioned as wellness monitoring. Financial data and real market demand figures are not in the dossier.\", \"why_next\": \"The test separates T1 from T2 because both arms require the same real $25 refundable deposit and show the same product, varying only the stated price: $149.99 out-of-pocket versus $0 after insurance verification. T1 predicts meaningful out-of-pocket deposits, showing patients value convenience and accuracy enough to pay a premium; T2 predicts deposits only when coverage removes the cost. Low deposits in both arms would justify stopping. Relying on resmed-10k-dealer for the channel gap and resmed-pm-dechazal2011 for the accuracy caveat, the next action is this deposit test before any consumer investment.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Deposit-reservation test of a non-contact home sleep monitor: out-of-pocket vs insurance-covered\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: US adults aged 30-65 with suspected or diagnosed sleep apnoea or a referral for a sleep study, excluding anyone who completed a sleep study in the last 12 months. Treatment: A product page for the non-contact sleep monitor ('validated against polysomnography', 'no clinic visit', 'measures sleep and breathing') priced at $149.99, with a call-to-action requiring a $25 fully refundable deposit to reserve the device at that out-of-pocket price. Control: The identical product page and description, but priced at '$0 with insurance coverage'; it requires the same $25 fully refundable deposit, returned once the buyer's insurance coverage is verified.\", \"sample\": \"Recruit 800 US adults via paid search and social ads targeting sleep-apnoea terms and communities over 8 weeks; randomly assign 400 to each offer. Ad spend, landing page and deposit processing sit within the €20,000 budget; deposits are refunded.\", \"measure\": \"The share of visitors in each arm who complete the $25 refundable deposit within 14 days of first landing (a real commitment rather than stated purchase intent).\", \"prediction_by_theory\": {\"T1\": \"At least 8% of the out-of-pocket arm completes the deposit, and the covered arm is not more than about double that rate, because patients who value convenience and accuracy will pay the $149.99 premium out-of-pocket.\", \"T2\": \"The out-of-pocket arm completes below 4% (willingness to pay under $100) while the covered arm completes at least 15%, because only insurance coverage removes the financial barrier and drives commitment.\"}, \"decision_rule\": \"Proceed to a bounded direct-to-consumer pilot if the out-of-pocket arm is at or above 8%; shift to a payer-covered/B2B route if the out-of-pocket arm is below 8% and the covered arm is at or above 15%; stop (no expansion) if the out-of-pocket arm is below 8% and the covered arm is below 15%. If T1 is supported (out-of-pocket ≥8%), run a small direct-to-consumer pilot with a limited production run and one retail or direct channel. If T2 is supported (covered ≥15% and out-of-pocket <8%), pursue home healthcare dealers and payers for a covered home-test route rather than a premium consumer product. If neither threshold is met, recommend no expansion and revisit only after improving accuracy or the channel.\", \"cost_eur\": 20000, \"weeks\": 10}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Willingness-to-Pay Survey for Sleep Apnea Home Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase offer and willingness-to-pay questions.",
+     "sample": "300 adult participants recruited via health forums and social media, balanced for sleep apnea status (current diagnosis vs. no diagnosis) and age (18-65).",
+     "measure": "1) Willingness-to-pay (WTP) for a non-contact home sleep test device (binary: would pay $0, $50, $100, $150, $200). 2) Purchase intent (binary: would purchase within 12 weeks).",
+     "prediction_by_theory": {
+      "T1": "WTP ≥ $150 and purchase intent ≥ 30% among participants with sleep apnea diagnosis.",
+      "T2": "WTP ≤ $100 and purchase intent ≤ 20% among participants with sleep apnea diagnosis."
+     },
+     "decision_rule": "If WTP ≥ $150 AND purchase intent ≥ 30% (T1), proceed to develop consumer proposition. If WTP ≤ $100 AND purchase intent ≤ 20% (T2), abandon consumer expansion. If neither threshold met, conduct further market research.",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "passes the experiment checks (the correction must be better on substance)",
+   "quality_notes": [],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": false,
+   "review_note": "The justification explicitly says the $149.99 S+ price is from October 2014, after the case date, and is 'unusable', but the proposed test then uses that exact $149.99 as the out-of-pocket arm's price. The call relies on a later-period fact the answer itself rules out, and the reasoning contradicts the call.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The justification explicitly says the $149.99 S+ price is from October 2014, after the case date, and is 'unusable', but the proposed test then uses that exact $149.99 as the out-of-pocket arm's price. The call relies on a later-period fact the answer itself rules out, and the reasoning contradicts the call."
+    ],
+    "teaches": "Test parameters must be knowable at the case date. Here the analyst correctly identifies the $149.99 S+ price as a post-decision (October 2014) fact and calls it unusable, then prices the out-of-pocket arm at exactly $149.99. A correct move would price the arm from contemporaneous mid-2014 information or treat the price as an explicitly chosen design parameter, not reuse a figure from a source it has already excluded.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 11,
+   "case": "embrace-new-evidence-irrelevant",
+   "case_date": "2016",
+   "origin": "test step",
+   "question": "It is March 2016. Should Embrace Innovations develop a differentiated consumer proposition for a specific use case, building on its infant-warming technology? What evidence would justify that investment?",
+   "student_turn": 28,
+   "student_run": "33a1ff40a89ca088e1c1f0d9b450a3b358a57a6db12372a3c899e2c6240669ff",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Parents of premature and low-birth-weight infants in low-resource settings will adopt a home infant warmer if it is priced below $100 and marketed as a life-saving medical device that reduces the risk of SIDS.",
+    "T2": "Parents of premature and low-birth-weight infants will adopt a home infant warmer if it is marketed as a fashion accessory and sold through trendy consumer channels, because they view infant care as a status symbol and are willing to pay a premium for design and brand."
+   },
+   "sources_read": {
+    "embrace-cnbc-price": "2016-02-22",
+    "embrace-ee-origin": "unknown (accessed 2026-11-02)",
+    "embrace-gsb-investors": "2012",
+    "embrace-her-sids": "2015-05-16",
+    "embrace-smg-launch": "unknown (object made 2017; accessed 2026-11-02)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Pre-order test of medical vs premium consumer warmer positioning",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: Expectant parents and parents of infants under six months in urban India (Bengaluru, Mumbai) who shop baby products online. Chosen because the Embrace Nest is widely used in India (embrace-smg-launch) and the company already sells online (embrace-cnbc-price). Treatment: Same product (Little Lotus-style warming swaddle) presented as a premium status item: 'NASA-inspired, design-led essential for modern families,' priced at $120 (about Rs 7,800), sold on a branded landing page with a refundable Rs 500 deposit. Control: Identical product presented as a medical device: 'clinically-inspired temperature regulation for premature and low-birth-weight babies; helps avoid temperature-linked SIDS,' priced at $85 (about Rs 5,500), same landing-page layout and deposit.",
+     "sample": "Identical Facebook/Instagram ads to matched urban-India parent audiences, randomly split 50/50 to the two pages. Target 1,000 visitors per arm (2,000 total) over 8-10 weeks; exclude anyone who saw both pages.",
+     "measure": "Share of visitors who complete a pre-order and pay a refundable Rs 500 (about $8) deposit within seven days. A paid deposit is real commitment, not stated intent.",
+     "prediction_by_theory": {
+      "T1": "Medical arm (control, $85) deposit conversion at least 8% and at least 4 percentage points above the premium arm (premium at most 4%), because price-sensitive parents with a medical need respond to safety framing and a low price.",
+      "T2": "Premium arm (treatment, $120) deposit conversion at least 6% and at least equal to the medical arm, because status-seeking parents prefer premium price and design framing and are not driven by discount medical messaging."
+     },
+     "decision_rule": "Proceed with the medical proposition if control conversion is at least 8% and control minus treatment is at least 4 points. Proceed with the premium proposition if treatment conversion is at least 6% and treatment is at least equal to control. If both arms are below 5%, do not invest in a consumer proposition. Bundled price and positioning means a win shows the whole proposition, not price alone. Medical win: build a small prototype run and a hospital-partner pilot. Premium win: keep the existing Little Lotus direction and extend it to the use case through current online retail. Both below 5%: stop the consumer proposition and remain B2B. A follow-up 2x2 price/positioning test can isolate price if the win is close.",
+     "cost_eur": 20000,
+     "weeks": 10
+    }
+   },
+   "justification": {
+    "learned": "Public sources show Embrace began as a Stanford design challenge for premature and low-birth-weight infants in settings without reliable incubators (embrace-ee-origin, company assertion). The B2B Embrace Nest launched in India in 2011 and is widely used (embrace-smg-launch). Private investors seek financial return, so unattractive markets are hard to justify (embrace-gsb-investors). A consumer product exists: Little Lotus swaddles sell on the company website, cut from $98 to $85 (embrace-cnbc-price). Embrace claims it may even reduce the risk of SIDS (embrace-her-sids, company assertion). No source shows actual individual purchases or demand for a home-warming product.",
+    "uncertain": "Whether individual buyers would pay for a consumer home-warming proposition and why is unknown: T1 (medical need, under $100) vs T2 (premium status). T2's status mechanism has no direct evidence; embrace-cnbc-price shows a premium product online, not status buying. Legal ability to make medical/SIDS claims for home use is unknown; no financial data available. No evidence shows purchase behaviour, so neither theory is supported by observed demand.",
+    "why_next": "A pre-order test separates T1 from T2 because each theory predicts a different bundle wins under real commitment: T1 predicts the $85 medical arm converts higher, T2 predicts the $120 premium arm converts higher. A \"both fail\" result points to no consumer extension, which changes the decision across all four open alternatives. It relies on T1, T2, the observed premium online channel (embrace-cnbc-price) and the India market presence (embrace-smg-launch)."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Public sources show Embrace began as a Stanford design challenge for premature and low-birth-weight infants in settings without reliable incubators (embrace-ee-origin, company assertion). The B2B Embrace Nest launched in India in 2011 and is widely used (embrace-smg-launch). Private investors seek financial return, so unattractive markets are hard to justify (embrace-gsb-investors). A consumer product exists: Little Lotus swaddles sell on the company website, cut from $98 to $85 (embrace-cnbc-price). Embrace claims it may even reduce the risk of SIDS (embrace-her-sids, company assertion). No source shows actual individual purchases or demand for a home-warming product.\", \"uncertain\": \"Whether individual buyers would pay for a consumer home-warming proposition and why is unknown: T1 (medical need, under $100) vs T2 (premium status). T2's status mechanism has no direct evidence; embrace-cnbc-price shows a premium product online, not status buying. Legal ability to make medical/SIDS claims for home use is unknown; no financial data available. No evidence shows purchase behaviour, so neither theory is supported by observed demand.\", \"why_next\": \"A pre-order test separates T1 from T2 because each theory predicts a different bundle wins under real commitment: T1 predicts the $85 medical arm converts higher, T2 predicts the $120 premium arm converts higher. A \\\"both fail\\\" result points to no consumer extension, which changes the decision across all four open alternatives. It relies on T1, T2, the observed premium online channel (embrace-cnbc-price) and the India market presence (embrace-smg-launch).\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Pre-order test of medical vs premium consumer warmer positioning\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: Expectant parents and parents of infants under six months in urban India (Bengaluru, Mumbai) who shop baby products online. Chosen because the Embrace Nest is widely used in India (embrace-smg-launch) and the company already sells online (embrace-cnbc-price). Treatment: Same product (Little Lotus-style warming swaddle) presented as a premium status item: 'NASA-inspired, design-led essential for modern families,' priced at $120 (about Rs 7,800), sold on a branded landing page with a refundable Rs 500 deposit. Control: Identical product presented as a medical device: 'clinically-inspired temperature regulation for premature and low-birth-weight babies; helps avoid temperature-linked SIDS,' priced at $85 (about Rs 5,500), same landing-page layout and deposit.\", \"sample\": \"Identical Facebook/Instagram ads to matched urban-India parent audiences, randomly split 50/50 to the two pages. Target 1,000 visitors per arm (2,000 total) over 8-10 weeks; exclude anyone who saw both pages.\", \"measure\": \"Share of visitors who complete a pre-order and pay a refundable Rs 500 (about $8) deposit within seven days. A paid deposit is real commitment, not stated intent.\", \"prediction_by_theory\": {\"T1\": \"Medical arm (control, $85) deposit conversion at least 8% and at least 4 percentage points above the premium arm (premium at most 4%), because price-sensitive parents with a medical need respond to safety framing and a low price.\", \"T2\": \"Premium arm (treatment, $120) deposit conversion at least 6% and at least equal to the medical arm, because status-seeking parents prefer premium price and design framing and are not driven by discount medical messaging.\"}, \"decision_rule\": \"Proceed with the medical proposition if control conversion is at least 8% and control minus treatment is at least 4 points. Proceed with the premium proposition if treatment conversion is at least 6% and treatment is at least equal to control. If both arms are below 5%, do not invest in a consumer proposition. Bundled price and positioning means a win shows the whole proposition, not price alone. Medical win: build a small prototype run and a hospital-partner pilot. Premium win: keep the existing Little Lotus direction and extend it to the use case through current online retail. Both below 5%: stop the consumer proposition and remain B2B. A follow-up 2x2 price/positioning test can isolate price if the win is close.\", \"cost_eur\": 20000, \"weeks\": 10}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Messaging Test: Medical vs Fashion Proposition",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase offer. Participants are randomly assigned to one of two messaging conditions: (A) medical positioning emphasizing safety, SIDS reduction, and low-cost access; (B) fashion positioning emphasizing design, status, and premium price. They are then asked: \"Would you …",
+     "sample": "400 parents of premature/low-birth-weight infants in low-resource settings (recruited via online panels). Randomly split 200 per condition.",
+     "measure": "Purchase intent (binary: would purchase) and stated primary reason (open-ended).",
+     "prediction_by_theory": {
+      "T1": "Condition A will show purchase intent ≥ 30% and primary reason \"safety\" or \"reducing SIDS risk\" among at least 60% of participants.",
+      "T2": "Condition B will show purchase intent ≥ 30% and primary reason \"style\" or \"family status\" among at least 60% of participants."
+     },
+     "decision_rule": "If condition A’s purchase intent ≥ 30% and its primary reason is \"safety\" or \"reducing SIDS risk\" for at least 60% of participants, proceed to develop a differentiated consumer proposition based on T1. If condition B’s purchase intent ≥ 30%",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the arms differ only in wording or message, with no product or price difference and no same-price control",
+   "quality_notes": [
+    "the arms differ only in wording or message, with no product or price difference and no same-price control"
+   ],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": false,
+   "review_note": "Temporal grounding violation: the method and learned summary rely on embrace-smg-launch, whose object is dated 2017, to establish that the Embrace Nest is 'widely used in India,' but the case is March 2016, so that source was not available/knowable at the case date.; The sample does not match the theories: T1 and T2 are about parents of premature and low-birth-weight infants in low-resource settings, but the test recruits general expectant parents and parents of infants under six months in urban India who shop online, so it does not test the theorized population.; The two arms bundle price and positioning ($120 premium vs $85 medical) with no same-price control or 2x2, so a winning arm cannot be attributed to the mechanism the theories differ on; the decision rule itself concedes the confound and defers isolation to a future test.; The commitment is a refundable Rs 500 (~$8) deposit for an $85-$120 product, which is close to a token deposit relative to the purchase decision being tested.; The control arm uses a medical/SIDS claim while the justification states the legal ability to make such claims for home use is unknown, making the proposed test's feasibility inconsistent with its own reasoning.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "Temporal grounding violation: the method and learned summary rely on embrace-smg-launch, whose object is dated 2017, to establish that the Embrace Nest is 'widely used in India,' but the case is March 2016, so that source was not available/knowable at the case date.",
+     "The sample does not match the theories: T1 and T2 are about parents of premature and low-birth-weight infants in low-resource settings, but the test recruits general expectant parents and parents of infants under six months in urban India who shop online, so it does not test the theorized population.",
+     "The two arms bundle price and positioning ($120 premium vs $85 medical) with no same-price control or 2x2, so a winning arm cannot be attributed to the mechanism the theories differ on; the decision rule itself concedes the confound and defers isolation to a future test.",
+     "The commitment is a refundable Rs 500 (~$8) deposit for an $85-$120 product, which is close to a token deposit relative to the purchase decision being tested.",
+     "The control arm uses a medical/SIDS claim while the justification states the legal ability to make such claims for home use is unknown, making the proposed test's feasibility inconsistent with its own reasoning."
+    ],
+    "teaches": "A decision-relevant pre-order test must sample the exact population in the theories, vary price and positioning so the result can be attributed, and cite only sources available at the case date.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 12,
+   "case": "cotral-new-evidence-looks",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Cotral Lab develop a differentiated consumer proposition for a specific use case, beyond its existing hearing-protection offering? What evidence would justify that investment?",
+   "student_turn": 37,
+   "student_run": "4d36017be67a144243f54b7db563d50a7f74e8cc20b9d932faf8991e20530368",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Professional musicians will adopt custom-moulded hearing protection if it is marketed as a performanceenhancing tool that preserves sound quality while blocking noise, because they value accurate sound and are willing to pay a premium for a product that does not compromise their craft.",
+    "T2": "Sleep aid users will adopt custom-moulded hearing protection if it is marketed as a medical-grade solution that reduces sleep disruption caused by background noise, because they seek a product that addresses a specific health concern and are willing to pay for a solution that improves sleep quality."
+   },
+   "sources_read": {
+    "bockstael-2015-looks": "2015-07 to 2015-08",
+    "ctl-3d": "unknown",
+    "ctl-channel": "2025 (exact date not shown)",
+    "ctl-deal": "2025 (exact date not shown)",
+    "ctl-filter": "2024-04-02 (last updated)",
+    "ctl-it1": "unknown",
+    "ctl-onsite": "unknown",
+    "minuendo-claim": "unknown (accessed 2026-11-01)"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Deposit test: musician vs sleep-use custom earplugs",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: Arm A: amateur and semi-professional musicians in France who perform or rehearse at least monthly. Arm B: adults in France who report frequent sleep disruption from partner snoring or neighbourhood noise. Both currently use or have tried earplugs. Treatment: Segment-matched differentiated landing page with a non-refundable €50 deposit offer: musicians see performance-enhancing custom earplugs that preserve sound quality while cutting harmful levels; sleep users see medical-grade custom sleep earplugs to reduce noise-driven sleep disruption. Control: The same landing page and the same €50 deposit offer with the current generic positioning, custom-moulded hearing protection for noise, shown to both segments.",
+     "sample": "Paid Facebook/Instagram ads in France target the two segments, with a 3-question screener to qualify them. 800 qualified respondents (400 musicians, 400 sleep users) are randomised 50/50 within each segment to treatment vs control.",
+     "measure": "Share of qualified visitors who complete a non-refundable €50 deposit toward the custom earplug (applied to the ~€180 price, refundable only if Cotral cannot schedule an impression) within 4 weeks.",
+     "prediction_by_theory": {
+      "T1": "Musicians shown the performance-enhancing positioning will deposit at a higher rate (≥8%) than their generic control (≤4%) and than sleep users shown the sleep positioning.",
+      "T2": "Sleep users shown the medical-grade sleep positioning will deposit at a higher rate (≥8%) than their generic control (≤4%) and than musicians shown the musician positioning."
+     },
+     "decision_rule": "Proceed with a segment only if its treatment arm deposits ≥8% AND beats its own control by ≥4 percentage points AND beats the rival segment's treatment arm by ≥4 points. If neither treatment arm reaches 8%, no expansion. Musician arm wins: pilot 30-50 musicians through an audiologist partner to validate full-price purchase and impression logistics. Sleep arm wins: same pilot for sleep users. Neither clears: do not build a consumer proposition; stay with B2B and revisit only if a consumer channel is found.",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "justification": {
+    "learned": "Cotral Lab is the world's No.1 custom-moulded hearing-protection maker (ctl-deal), uses 3D printing (ctl-3d), in-house filters (ctl-filter), on-site impressions (ctl-onsite), Bluetooth plugs (ctl-it1). Distribution is \"primarily through direct channels to end-user companies\" (ctl-channel); acquired by Groupe RG (ctl-deal), so individual-buyer reach looks B2B. bockstael-2015-looks found musician appreciation \"mainly depended on comfort and looks, while differences in sound quality were less noticeable\", undercutting T1. Minuendo sells adjustable musician earplugs (minuendo-claim). T1 and T2 rest on capability claims; no source shows an individual paid or committed.",
+    "uncertain": "Whether individual buyers would pay a premium or put down a deposit is unknown — no demand evidence found. T1 is weakened because bockstael-2015-looks suggests musicians prioritise comfort and looks over sound quality. T2 has no independent demand evidence. Also unclear whether Cotral's on-site B2B impression model suits individual consumers, and whether a €50 deposit on a ~€180 product clears the hurdle.",
+    "why_next": "A deposit-backed experiment is the cheapest way to learn whether a differentiated consumer proposition would pull real commitment, which no source shows. It separates T1 from T2 (and both from no expansion) because each theory predicts its own segment will place more non-refundable deposits on the differentiated offer than on the generic control and than the rival segment, so the winning segment plus the treatment-vs-control gap jointly decide whether and where to invest."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Cotral Lab is the world's No.1 custom-moulded hearing-protection maker (ctl-deal), uses 3D printing (ctl-3d), in-house filters (ctl-filter), on-site impressions (ctl-onsite), Bluetooth plugs (ctl-it1). Distribution is \\\"primarily through direct channels to end-user companies\\\" (ctl-channel); acquired by Groupe RG (ctl-deal), so individual-buyer reach looks B2B. bockstael-2015-looks found musician appreciation \\\"mainly depended on comfort and looks, while differences in sound quality were less noticeable\\\", undercutting T1. Minuendo sells adjustable musician earplugs (minuendo-claim). T1 and T2 rest on capability claims; no source shows an individual paid or committed.\", \"uncertain\": \"Whether individual buyers would pay a premium or put down a deposit is unknown — no demand evidence found. T1 is weakened because bockstael-2015-looks suggests musicians prioritise comfort and looks over sound quality. T2 has no independent demand evidence. Also unclear whether Cotral's on-site B2B impression model suits individual consumers, and whether a €50 deposit on a ~€180 product clears the hurdle.\", \"why_next\": \"A deposit-backed experiment is the cheapest way to learn whether a differentiated consumer proposition would pull real commitment, which no source shows. It separates T1 from T2 (and both from no expansion) because each theory predicts its own segment will place more non-refundable deposits on the differentiated offer than on the generic control and than the rival segment, so the winning segment plus the treatment-vs-control gap jointly decide whether and where to invest.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Deposit test: musician vs sleep-use custom earplugs\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: Arm A: amateur and semi-professional musicians in France who perform or rehearse at least monthly. Arm B: adults in France who report frequent sleep disruption from partner snoring or neighbourhood noise. Both currently use or have tried earplugs. Treatment: Segment-matched differentiated landing page with a non-refundable €50 deposit offer: musicians see performance-enhancing custom earplugs that preserve sound quality while cutting harmful levels; sleep users see medical-grade custom sleep earplugs to reduce noise-driven sleep disruption. Control: The same landing page and the same €50 deposit offer with the current generic positioning, custom-moulded hearing protection for noise, shown to both segments.\", \"sample\": \"Paid Facebook/Instagram ads in France target the two segments, with a 3-question screener to qualify them. 800 qualified respondents (400 musicians, 400 sleep users) are randomised 50/50 within each segment to treatment vs control.\", \"measure\": \"Share of qualified visitors who complete a non-refundable €50 deposit toward the custom earplug (applied to the ~€180 price, refundable only if Cotral cannot schedule an impression) within 4 weeks.\", \"prediction_by_theory\": {\"T1\": \"Musicians shown the performance-enhancing positioning will deposit at a higher rate (≥8%) than their generic control (≤4%) and than sleep users shown the sleep positioning.\", \"T2\": \"Sleep users shown the medical-grade sleep positioning will deposit at a higher rate (≥8%) than their generic control (≤4%) and than musicians shown the musician positioning.\"}, \"decision_rule\": \"Proceed with a segment only if its treatment arm deposits ≥8% AND beats its own control by ≥4 percentage points AND beats the rival segment's treatment arm by ≥4 points. If neither treatment arm reaches 8%, no expansion. Musician arm wins: pilot 30-50 musicians through an audiologist partner to validate full-price purchase and impression logistics. Sleep arm wins: same pilot for sleep users. Neither clears: do not build a consumer proposition; stay with B2B and revisit only if a consumer channel is found.\", \"cost_eur\": 20000, \"weeks\": 12}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Musician vs Sleep Aid Purchase Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized exposure to either a musician-focused proposition (sound-quality preservation) or a sleep-aid proposition (sleep-disruption reduction). Participants indicate willingness to purchase at a €X price point (e.g., €20 for musician, €25 for sleep aid).",
+     "sample": "400 adults recruited via panel, balanced between musicians and sleep aid users, stratified by age and gender to reflect target segments.",
+     "measure": "Purchase intent (binary: would buy) and willingness-to-pay (EUR).",
+     "prediction_by_theory": {
+      "T1": "Musicians exposed to the musician proposition will show higher purchase intent and willingness-to-pay than sleep aid exposure.",
+      "T2": "Sleep aid users exposed to the sleep aid proposition will show higher purchase intent and willingness-to-pay than musician exposure."
+     },
+     "decision_rule": "If the average willingness-to-pay for the musician proposition exceeds the average willingness-to-pay for the sleep aid proposition by ≥€5, proceed with musician-focused proposition. If the difference is <€5, proceed with sleep-aid focus. A",
+     "cost_eur": 18000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "0 of 1 tests discriminate: X1: predictions barely differ",
+   "quality_notes": [
+    "the arms differ only in wording or message, with no product or price difference and no same-price control"
+   ],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": true,
+   "review_note": "A valid demand test for a differentiated consumer proposition uses a non-refundable deposit as real commitment, includes a same-price generic control within each segment, makes the rival theories produce mutually exclusive threshold predictions, and ends in a bounded pilot rather than full development.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "A valid demand test for a differentiated consumer proposition uses a non-refundable deposit as real commitment, includes a same-price generic control within each segment, makes the rival theories produce mutually exclusive threshold predictions, and ends in a bounded pilot rather than full development.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 13,
+   "case": "reynolds-new-evidence-irrelevant",
+   "case_date": "1946",
+   "origin": "test step",
+   "question": "It is 1946. Should Reynolds Metals develop a differentiated consumer proposition for a specific use case, building on its aluminium foil rolling capacity? What evidence would justify that investment?",
+   "student_turn": 33,
+   "student_run": "4a7bda112eeb5e577f62fc4be0cd388afba279ecda48ccf5516258fd5ddf563a",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Consumers will adopt Reynolds aluminum foil for home cooking if they perceive it as a convenient, hygienic, and cost-effective alternative to paper or other foil, and if the company provides clear instructions and marketing that highlight its safety and durability.",
+    "T2": "Consumers will adopt Reynolds aluminum foil for outdoor activities (camping, hiking) if they perceive it as lightweight, durable, and safe for food storage, and if the company markets it as a reliable outdoor essential."
+   },
+   "sources_read": {
+    "reynolds-bend-glut": "2011-09-01",
+    "reynolds-bend-industrial": "2011-09-01",
+    "reynolds-fu-plants": "unknown (accessed 2026-11-03); compiled about 1997",
+    "reynolds-fu-postwar": "unknown (accessed 2026-11-03); compiled about 1997",
+    "reynolds-lem-packaging": "unknown (accessed 2026-11-03)",
+    "reynolds-ore-surplus": "2024-05-24 (last updated)",
+    "reynolds-rb-firstbox": "unknown (accessed 2026-11-03)",
+    "reynolds-sal-hurricane": "2025-04-30"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Mail-order use-case framing test: kitchen vs outdoor Reynolds Wrap",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: US households that cook or camp, reached by direct mail in 1946. Treatment: A 25-foot roll of Reynolds Wrap offered by mail packaged as 'Reynolds Wrap for the Kitchen,' with a recipe and food-storage instruction card, priced at $0.25 (1946 dollars) with a prepaid order form. Control: The identical 25-foot roll packaged as 'Reynolds Wrap for Camp and Trail,' with outdoor cooking and food-storage instructions, same $0.25 price and same prepaid order form.",
+     "sample": "Mail identical offers to 4,000 US households total, 2,000 per version, drawn from one rented, regionally balanced household list and randomized between the two versions so both use cases are tested on the same population.",
+     "measure": "Actual paid mail orders returned with payment per arm over 8 weeks, measured as the percentage of each 2,000-household arm that orders.",
+     "prediction_by_theory": {
+      "T1": "The kitchen-framed roll produces a higher paid-order rate than the outdoor-framed roll (e.g., 4% vs under 3%), because kitchen hygiene and convenience are the stronger purchase drivers.",
+      "T2": "The outdoor-framed roll produces a higher paid-order rate than the kitchen-framed roll (e.g., 4% vs under 3%), because lightweight, durable field food storage is the stronger purchase driver."
+     },
+     "decision_rule": "Pursue the kitchen proposition (T1) if the kitchen order rate is at least 3% and exceeds the outdoor rate by at least 1 percentage point. Pursue the outdoor proposition (T2) if the outdoor rate is at least 3% and exceeds the kitchen rate by at least 1 percentage point. Otherwise, do not expand to a differentiated consumer line. If T1 wins, run a paid regional grocery pilot of the kitchen foil. If T2 wins, run a small outdoor-retailer pilot. If neither clears the bar, stop consumer differentiation and continue existing B2B and generic foil sales.",
+     "cost_eur": 8000,
+     "weeks": 10
+    }
+   },
+   "justification": {
+    "learned": "Sources show Reynolds had foil-rolling and printed-packaging capability sold to B2B food/cigarette/candy makers (reynolds-lem-packaging), doubled capacity in 1946 by leasing/purchasing six government plants (reynolds-fu-plants), and shifted toward consumer goods after WWII (reynolds-fu-postwar). The first Reynolds Wrap consumer box was sold in 1946 and claimed to \"quickly become a staple in American kitchens\" (reynolds-rb-firstbox), but that company claim cannot establish why or how many bought. Real 1946 demand by use case is unknown. T1 and T2 remain open and weakly evidenced.",
+    "uncertain": "Whether a differentiated consumer proposition should be built around kitchen use (T1) or outdoor use (T2), and whether consumers will buy enough of either to justify a retail push. The only demand signal is a company assertion (reynolds-rb-firstbox), which does not prove consumer motivation, switching from paper or other foil, or purchase volume.",
+    "why_next": "A positioning test separates T1 from T2 because it measures which use-case framing produces real paid purchases of the same foil. If the kitchen framing outsells the outdoor framing, it supports T1's hygiene/convenience mechanism; if the outdoor framing outsells, it supports T2's lightweight/durable mechanism. If neither clears a minimum purchase bar, we stop consumer differentiation and stay with existing B2B and generic foil sales."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Sources show Reynolds had foil-rolling and printed-packaging capability sold to B2B food/cigarette/candy makers (reynolds-lem-packaging), doubled capacity in 1946 by leasing/purchasing six government plants (reynolds-fu-plants), and shifted toward consumer goods after WWII (reynolds-fu-postwar). The first Reynolds Wrap consumer box was sold in 1946 and claimed to \\\"quickly become a staple in American kitchens\\\" (reynolds-rb-firstbox), but that company claim cannot establish why or how many bought. Real 1946 demand by use case is unknown. T1 and T2 remain open and weakly evidenced.\", \"uncertain\": \"Whether a differentiated consumer proposition should be built around kitchen use (T1) or outdoor use (T2), and whether consumers will buy enough of either to justify a retail push. The only demand signal is a company assertion (reynolds-rb-firstbox), which does not prove consumer motivation, switching from paper or other foil, or purchase volume.\", \"why_next\": \"A positioning test separates T1 from T2 because it measures which use-case framing produces real paid purchases of the same foil. If the kitchen framing outsells the outdoor framing, it supports T1's hygiene/convenience mechanism; if the outdoor framing outsells, it supports T2's lightweight/durable mechanism. If neither clears a minimum purchase bar, we stop consumer differentiation and stay with existing B2B and generic foil sales.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Mail-order use-case framing test: kitchen vs outdoor Reynolds Wrap\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: US households that cook or camp, reached by direct mail in 1946. Treatment: A 25-foot roll of Reynolds Wrap offered by mail packaged as 'Reynolds Wrap for the Kitchen,' with a recipe and food-storage instruction card, priced at $0.25 (1946 dollars) with a prepaid order form. Control: The identical 25-foot roll packaged as 'Reynolds Wrap for Camp and Trail,' with outdoor cooking and food-storage instructions, same $0.25 price and same prepaid order form.\", \"sample\": \"Mail identical offers to 4,000 US households total, 2,000 per version, drawn from one rented, regionally balanced household list and randomized between the two versions so both use cases are tested on the same population.\", \"measure\": \"Actual paid mail orders returned with payment per arm over 8 weeks, measured as the percentage of each 2,000-household arm that orders.\", \"prediction_by_theory\": {\"T1\": \"The kitchen-framed roll produces a higher paid-order rate than the outdoor-framed roll (e.g., 4% vs under 3%), because kitchen hygiene and convenience are the stronger purchase drivers.\", \"T2\": \"The outdoor-framed roll produces a higher paid-order rate than the kitchen-framed roll (e.g., 4% vs under 3%), because lightweight, durable field food storage is the stronger purchase driver.\"}, \"decision_rule\": \"Pursue the kitchen proposition (T1) if the kitchen order rate is at least 3% and exceeds the outdoor rate by at least 1 percentage point. Pursue the outdoor proposition (T2) if the outdoor rate is at least 3% and exceeds the kitchen rate by at least 1 percentage point. Otherwise, do not expand to a differentiated consumer line. If T1 wins, run a paid regional grocery pilot of the kitchen foil. If T2 wins, run a small outdoor-retailer pilot. If neither clears the bar, stop consumer differentiation and continue existing B2B and generic foil sales.\", \"cost_eur\": 8000, \"weeks\": 10}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Foil Preference Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated purchase scenarios and product descriptions. Participants are randomly assigned to one of two groups. Group A sees a description of Reynolds aluminum foil marketed for home cooking (convenient, hygienic, cost-effective). Group B sees the same description but marketed for…",
+     "sample": "300 participants (150 per group), recruited via an online panel to match demographic distribution of U.S. households in 1946. Recruitment costs estimated at €1,500.",
+     "measure": "Purchase intent measured as a binary yes/no response to the question: \"Would you buy this foil for home cooking?\" and willingness to pay (WTP) in euros. Secondary measure: self-reported perception of foil characteristics (e.g., \"I would use",
+     "prediction_by_theory": {
+      "T1": "Group A will show at least 15% higher purchase intent than Group B, and WTP for Group A will be at least €2.50 per roll.",
+      "T2": "Group B will show at least 20% higher purchase intent than Group A, and WTP for Group B will be at least €4.00 per roll."
+     },
+     "decision_rule": "If Group A purchase intent exceeds Group B by at least 15 percentage points, proceed with a differentiated home‑cooking proposition. If Group B purchase intent exceeds Group A by at least 20 percentage points, proceed with a differentiated",
+     "cost_eur": 15000,
+     "weeks": 10
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "euros in a case set in 1946",
+   "quality_notes": [
+    "the arms differ only in wording or message, with no product or price difference and no same-price control"
+   ],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": false,
+   "review_note": "The two arms differ only in use-case framing/message of the identical product at the same price ($0.25), with no same-price control arm (e.g., plain/generic Reynolds Wrap with no kitchen or outdoor framing). It can therefore rank kitchen vs outdoor framing, but it cannot show whether a differentiated consumer proposition adds demand over an undifferentiated foil offer, which is the actual decision in the question. This matches the drop rule for framing-only arms without a same-price control.; The decision rule's fallback ('stop consumer differentiation and continue generic foil sales') is unsupported because no arm measures generic/undifferentiated demand.; The test uses euros (cost_eur: 8000) in a 1946 US case, a currency that did not exist at the time.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": false,
+    "problems": [
+     "The two arms differ only in use-case framing/message of the identical product at the same price ($0.25), with no same-price control arm (e.g., plain/generic Reynolds Wrap with no kitchen or outdoor framing). It can therefore rank kitchen vs outdoor framing, but it cannot show whether a differentiated consumer proposition adds demand over an undifferentiated foil offer, which is the actual decision in the question. This matches the drop rule for framing-only arms without a same-price control.",
+     "The decision rule's fallback ('stop consumer differentiation and continue generic foil sales') is unsupported because no arm measures generic/undifferentiated demand.",
+     "The test uses euros (cost_eur: 8000) in a 1946 US case, a currency that did not exist at the time."
+    ],
+    "teaches": "A valid experiment for 'should we build a differentiated use-case proposition' needs a no-differentiation baseline: e.g., identical 25-foot roll offered as plain/generic Reynolds Wrap at the same $0.25 price, alongside kitchen- and outdoor-framed arms. Without that same-price control, a framing-only comparison cannot establish that differentiation (as opposed to the product itself) drives purchase, and cannot support a 'stop differentiation' conclusion. Currency must also match the case period.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 14,
+   "case": "technogym-base",
+   "case_date": "present day",
+   "origin": "test step",
+   "question": "Should Technogym develop a differentiated proposition for home users, beyond its existing premium home equipment and apps, or keep its current consumer offer? What evidence would justify either choice?",
+   "student_turn": 28,
+   "student_run": "700974b2f21e8222a7ad913e81a41a5ad9ea1f38c3dc663271e5232f412bcdd4",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Home users will adopt a differentiated proposition if they perceive it as a premium lifestyle experience rather than just a functional product.",
+    "T2": "Home users will adopt a differentiated proposition if they experience a measurable health benefit that cannot be achieved with generic equipment, such as data-driven coaching or personalized feedback."
+   },
+   "sources_read": {
+    "technogym-500k-homes": "2025-03-26",
+    "technogym-athletech-b2b": "2025-03-26",
+    "technogym-channels": "2025-03-26",
+    "technogym-consumer-headwind": "2025-03-26",
+    "technogym-cw-price-subs": "2022-12-12",
+    "technogym-ggr-search-down": "unknown (covers 2022 to 2023 search data)",
+    "technogym-home-design": "unknown (accessed 2026-11-03)",
+    "technogym-peloton-2021-gyms": "2021-11-05"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Home proposition deposit test: lifestyle vs health framing vs current offer",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: 1,500 adults aged 30-60 in Italy and the UK with household income above 80,000 euros, actively considering a home gym purchase above 2,000 euros in the next six months and not already owning Technogym equipment. Treatment: Two concept landing pages for a new differentiated home proposition, identical in product photos, specs and price, each offering a 99 euro refundable reservation; the Lifestyle variant leads with Italian design, interior-designer consultation and status, while the Health variant leads with data-driven coaching and measurable health outcomes. Control: A landing page for Technogym's current premium home equipment offer, with functional equipment-led copy, the same product specs and price, and the same 99 euro refundable reservation.",
+     "sample": "Recruit via paid Meta/Instagram ads and fitness-community posts targeting the profile above; randomly assign 500 visitors per arm to one of the three pages, with the page copy as the only visible difference.",
+     "measure": "Primary: share of visitors who complete the 99 euro refundable reservation within 14 days (a real commitment, though weaker than an actual purchase). Secondary: maximum price each visitor states they would pay after viewing the page.",
+     "prediction_by_theory": {
+      "T1": "The Lifestyle variant has the highest reservation rate and beats the control by at least 3 percentage points, while the Health variant is no better than the control, because status and design drive the premium purchase.",
+      "T2": "The Health variant has the highest reservation rate and beats the control by at least 3 percentage points, while the Lifestyle variant is no better than the control, because measurable outcomes drive the premium purchase."
+     },
+     "decision_rule": "Pursue a differentiated proposition only if one treatment variant's reservation rate exceeds the control by at least 3 percentage points and that variant records at least 40 reservations; if both variants are within 3 points of, or below, the control, keep the current consumer offer. Lifestyle wins: prototype the differentiated offer around design/status and pilot it in two Technogym retail boutiques. Health wins: prototype around data-driven coaching and pilot it in two boutiques. Neither beats control: do not build a differentiated line, keep the current offer and investigate a lower-price/subscription model next.",
+     "cost_eur": 19000,
+     "weeks": 9
+    }
+   },
+   "justification": {
+    "learned": "Technogym already reaches individual buyers: 500,000 private homes plus 100,000 wellness centres (technogym-500k-homes); its Consumer segment grew +8% H1 then accelerated (technogym-consumer-headwind); Retail, Wholesale and Inside Sales all grew (technogym-channels). Independent evidence is cautious: Cycling Weekly wants a ~25% price cut and notes 'hefty monthly subscription bills' (technogym-cw-price-subs); 22 of 40 home-equipment search terms downtrend (technogym-ggr-search-down); Peloton's connected-fitness sales fell as gyms reopened (technogym-peloton-2021-gyms). Demand exists by the company's account, but no source shows demand for a further differentiated premium proposition.",
+    "uncertain": "Whether home users would pay for a differentiated proposition at all, and which mechanism drives it: T1 (status/design) rests only on a company design claim (technogym-home-design), and T2 (measurable health outcomes) is weakly evidenced by a review noting subscription cost rather than health motivation (technogym-cw-price-subs). The independent review's call for a ~25% price cut could mean price sensitivity dominates either premium framing, which would favour keeping the current offer.",
+    "why_next": "A deposit-based concept test separates T1 from T2 because each predicts a different framing wins (lifestyle vs health), and the control arm tests both against the current offer, so the result decides develop-vs-keep. If neither premium framing beats the control, the next step is to keep the current offer and investigate a lower-price/subscription model."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "the arms differ in framing or message"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Technogym already reaches individual buyers: 500,000 private homes plus 100,000 wellness centres (technogym-500k-homes); its Consumer segment grew +8% H1 then accelerated (technogym-consumer-headwind); Retail, Wholesale and Inside Sales all grew (technogym-channels). Independent evidence is cautious: Cycling Weekly wants a ~25% price cut and notes 'hefty monthly subscription bills' (technogym-cw-price-subs); 22 of 40 home-equipment search terms downtrend (technogym-ggr-search-down); Peloton's connected-fitness sales fell as gyms reopened (technogym-peloton-2021-gyms). Demand exists by the company's account, but no source shows demand for a further differentiated premium proposition.\", \"uncertain\": \"Whether home users would pay for a differentiated proposition at all, and which mechanism drives it: T1 (status/design) rests only on a company design claim (technogym-home-design), and T2 (measurable health outcomes) is weakly evidenced by a review noting subscription cost rather than health motivation (technogym-cw-price-subs). The independent review's call for a ~25% price cut could mean price sensitivity dominates either premium framing, which would favour keeping the current offer.\", \"why_next\": \"A deposit-based concept test separates T1 from T2 because each predicts a different framing wins (lifestyle vs health), and the control arm tests both against the current offer, so the result decides develop-vs-keep. If neither premium framing beats the control, the next step is to keep the current offer and investigate a lower-price/subscription model.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Home proposition deposit test: lifestyle vs health framing vs current offer\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: 1,500 adults aged 30-60 in Italy and the UK with household income above 80,000 euros, actively considering a home gym purchase above 2,000 euros in the next six months and not already owning Technogym equipment. Treatment: Two concept landing pages for a new differentiated home proposition, identical in product photos, specs and price, each offering a 99 euro refundable reservation; the Lifestyle variant leads with Italian design, interior-designer consultation and status, while the Health variant leads with data-driven coaching and measurable health outcomes. Control: A landing page for Technogym's current premium home equipment offer, with functional equipment-led copy, the same product specs and price, and the same 99 euro refundable reservation.\", \"sample\": \"Recruit via paid Meta/Instagram ads and fitness-community posts targeting the profile above; randomly assign 500 visitors per arm to one of the three pages, with the page copy as the only visible difference.\", \"measure\": \"Primary: share of visitors who complete the 99 euro refundable reservation within 14 days (a real commitment, though weaker than an actual purchase). Secondary: maximum price each visitor states they would pay after viewing the page.\", \"prediction_by_theory\": {\"T1\": \"The Lifestyle variant has the highest reservation rate and beats the control by at least 3 percentage points, while the Health variant is no better than the control, because status and design drive the premium purchase.\", \"T2\": \"The Health variant has the highest reservation rate and beats the control by at least 3 percentage points, while the Lifestyle variant is no better than the control, because measurable outcomes drive the premium purchase.\"}, \"decision_rule\": \"Pursue a differentiated proposition only if one treatment variant's reservation rate exceeds the control by at least 3 percentage points and that variant records at least 40 reservations; if both variants are within 3 points of, or below, the control, keep the current consumer offer. Lifestyle wins: prototype the differentiated offer around design/status and pilot it in two Technogym retail boutiques. Health wins: prototype around data-driven coaching and pilot it in two boutiques. Neither beats control: do not build a differentiated line, keep the current offer and investigate a lower-price/subscription model next.\", \"cost_eur\": 19000, \"weeks\": 9}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Lifestyle vs Health Messaging Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with simulated product descriptions and willingness-to-pay (WTP) questions.",
+     "sample": "500 home users recruited via fitness forums and social media, balanced for age, gender, and self-reported fitness level.",
+     "measure": "1) WTP premium (percentage points) for lifestyle vs health messaging. 2) Purchase intent (binary: would buy). 3) Actual purchase intent (binary) if offered a limited-time discount.",
+     "prediction_by_theory": {
+      "T1": "Lifestyle messaging will generate a WTP premium of at least 15 percentage points and higher purchase intent than health messaging.",
+      "T2": "Health messaging will generate a WTP premium of at least 15 percentage points and higher purchase intent than lifestyle messaging."
+     },
+     "decision_rule": "If lifestyle messaging yields a WTP premium of ≥15% and ≥5% higher purchase intent than health messaging, recommend developing a differentiated lifestyle proposition. If health messaging yields the same or higher premium and intent, proceed",
+     "cost_eur": 15000,
+     "weeks": 8
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the arms differ only in wording or message, with no product or price difference and no same-price control; 0 of 1 tests discriminate: X1: predictions barely differ",
+   "quality_notes": [
+    "the arms differ only in wording or message, with no product or price difference and no same-price control"
+   ],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": true,
+   "review_note": "A three-arm, deposit-backed landing-page test can separate two value-proposition theories when each theory predicts a different treatment beats a same-price current-offer control by a pre-specified margin, and the decision rule stays at a bounded prototype/pilot rather than a launch.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "A three-arm, deposit-backed landing-page test can separate two value-proposition theories when each theory predicts a different treatment beats a same-price current-offer control by a pre-specified margin, and the decision rule stays at a bounded prototype/pilot rather than a launch.",
+    "confidence": "high"
+   }
+  },
+  {
+   "n": 15,
+   "case": "flir-base",
+   "case_date": "2013",
+   "origin": "test step",
+   "question": "It is mid-2013. Should FLIR Systems develop a differentiated consumer proposition for a specific use case, building on its uncooled thermal imaging cores? What evidence would justify that investment?",
+   "student_turn": 36,
+   "student_run": "efad4e01b21ff75a4145e0cb03aaa46bcae5776d3f8dc570c3b860ddbfe8a5a3",
+   "skill": "experiment",
+   "theories": {
+    "T1": "Consumers will adopt thermal imaging devices if they perceive them as a safety or utility product for home use, because they value the ability to detect heat signatures for fire detection, home maintenance, or outdoor activities.",
+    "T2": "Consumers will adopt thermal imaging devices if they perceive them as a utility product for outdoor recreation and hunting, because they value the ability to detect heat signatures for tracking game, navigation, or safety."
+   },
+   "sources_read": {
+    "flir-ah-hunters": "2014-07-22",
+    "flir-eb-i3price": "2011-02-01",
+    "flir-imv-lepton": "2014-01",
+    "flir-imv-teich": "2014-01",
+    "flir-mb-pricefall": "2011-01-31",
+    "flir-mb-toolbox": "2011-01-31",
+    "flir-spk-service": "2007-10-26"
+   },
+   "call": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Paid reservation A/B test: home-safety vs outdoor thermal camera bundles",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Target customers: US adults aged 25-60 who own a home and also hunt or do outdoor recreation at least monthly, screened via a targeted online panel. Treatment: A landing page for 'FLIR Home Monitor' at $499: an uncooled-core thermal camera that attaches to a phone, plus a wall mount, continuous power, a high-temperature audible alarm, and an energy/water-leak audit guide, positioned as a home-safety/utility tool. Page template, price and deposit ask are identical to the control. Control: A landing page for 'FLIR Field Scout' at $499: the same uncooled-core thermal camera that attaches to a phone, plus weatherproof housing, 8-hour battery, handheld grip, rail mount and lanyard, positioned for spotting game and night navigation. Page template, price and deposit ask are identical to the treatment.",
+     "sample": "Recruit 800 participants (400 per arm) over three weeks from a US online panel, screened for home ownership and monthly hunting/outdoor recreation, then randomized to one landing page.",
+     "measure": "Share of participants who complete a $20 refundable deposit to reserve the $499 product within 14 days of seeing the page; deposits are refunded after the test.",
+     "prediction_by_theory": {
+      "T1": "The home-safety bundle has a deposit rate at least 3 percentage points higher than the outdoor bundle.",
+      "T2": "The outdoor bundle has a deposit rate at least 3 percentage points higher than the home-safety bundle."
+     },
+     "decision_rule": "The winning bundle must reach at least a 5% deposit rate, and beat the rival by at least 3 percentage points, to justify further investment. Below 5% or a margin under 3 points means no consumer launch now. If home-safety wins (at least 5% deposit rate and at least 3 points ahead), run a bounded 500-unit pilot with one home-improvement retail partner. If outdoor wins on the same criteria, run a bounded 500-unit pilot with one outdoor specialty retailer. If neither reaches 5% or the margin is under 3 points, do not expand to consumers now; continue the B2B/no-expansion route and re-test only if core cost falls or a partner shows demand evidence.",
+     "cost_eur": 18000,
+     "weeks": 8
+    }
+   },
+   "justification": {
+    "learned": "Pre-mid-2013 sources show FLIR had a low-cost prosumer camera, not a consumer line: the i3 launched Feb 2011 at US$1,195, \"the most affordable high-quality infrared camera\" for \"every electrician and engineer\" (flir-eb-i3price; flir-mb-toolbox). Prices had \"decreased continuously\" (flir-mb-pricefall). A 2007 report shows thermal imaging sold as a $150+ technician service, not a consumer purchase (flir-spk-service). No pre-mid-2013 source shows individual buyers purchasing for home safety or hunting, or a retail/DTC channel; demand and willingness to pay are unknown. 2014 sources excluded.",
+    "uncertain": "The open question is whether any consumer use case would produce enough real commitment to justify a consumer line, and which motivation is stronger: home safety/utility (T1) or outdoor/hunting (T2). No pre-2013 source shows consumer price elasticity at a $499-$1,195 price, repeat purchase, channel economics, or purchase frequency. Low core cost alone does not establish consumer pull.",
+    "why_next": "This paid-reservation test is worth the proposed €18,000/8-week cost because it can change the decision: it measures deposits, not stated interest, and separates T1 from T2 because the home bundle embodies continuous home monitoring while the outdoor bundle embodies field use, so each theory predicts the opposite bundle wins among dual-motivated homeowners who also recreate outdoors. The 5% minimum-demand and 3-point margin thresholds stop the project if neither use case clears the bar. Limitation: bundle features could drive the margin rather than pure motivation, so the winning result only funds a 500-unit pilot, not a full product line."
+   },
+   "decision_at_generation": "passed the mechanical checks",
+   "flags": [
+    "asks for a real commitment (deposit, pre-order, paid use)",
+    "rule leads straight to developing or launching"
+   ],
+   "teacher_reply_raw": "{\"learned\": \"Pre-mid-2013 sources show FLIR had a low-cost prosumer camera, not a consumer line: the i3 launched Feb 2011 at US$1,195, \\\"the most affordable high-quality infrared camera\\\" for \\\"every electrician and engineer\\\" (flir-eb-i3price; flir-mb-toolbox). Prices had \\\"decreased continuously\\\" (flir-mb-pricefall). A 2007 report shows thermal imaging sold as a $150+ technician service, not a consumer purchase (flir-spk-service). No pre-mid-2013 source shows individual buyers purchasing for home safety or hunting, or a retail/DTC channel; demand and willingness to pay are unknown. 2014 sources excluded.\", \"uncertain\": \"The open question is whether any consumer use case would produce enough real commitment to justify a consumer line, and which motivation is stronger: home safety/utility (T1) or outdoor/hunting (T2). No pre-2013 source shows consumer price elasticity at a $499-$1,195 price, repeat purchase, channel economics, or purchase frequency. Low core cost alone does not establish consumer pull.\", \"why_next\": \"This paid-reservation test is worth the proposed €18,000/8-week cost because it can change the decision: it measures deposits, not stated interest, and separates T1 from T2 because the home bundle embodies continuous home monitoring while the outdoor bundle embodies field use, so each theory predicts the opposite bundle wins among dual-motivated homeowners who also recreate outdoors. The 5% minimum-demand and 3-point margin thresholds stop the project if neither use case clears the bar. Limitation: bundle features could drive the margin rather than pure motivation, so the winning result only funds a 500-unit pilot, not a full product line.\", \"call\": {\"name\": \"propose_test\", \"arguments\": {\"name\": \"Paid reservation A/B test: home-safety vs outdoor thermal camera bundles\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Target customers: US adults aged 25-60 who own a home and also hunt or do outdoor recreation at least monthly, screened via a targeted online panel. Treatment: A landing page for 'FLIR Home Monitor' at $499: an uncooled-core thermal camera that attaches to a phone, plus a wall mount, continuous power, a high-temperature audible alarm, and an energy/water-leak audit guide, positioned as a home-safety/utility tool. Page template, price and deposit ask are identical to the control. Control: A landing page for 'FLIR Field Scout' at $499: the same uncooled-core thermal camera that attaches to a phone, plus weatherproof housing, 8-hour battery, handheld grip, rail mount and lanyard, positioned for spotting game and night navigation. Page template, price and deposit ask are identical to the treatment.\", \"sample\": \"Recruit 800 participants (400 per arm) over three weeks from a US online panel, screened for home ownership and monthly hunting/outdoor recreation, then randomized to one landing page.\", \"measure\": \"Share of participants who complete a $20 refundable deposit to reserve the $499 product within 14 days of seeing the page; deposits are refunded after the test.\", \"prediction_by_theory\": {\"T1\": \"The home-safety bundle has a deposit rate at least 3 percentage points higher than the outdoor bundle.\", \"T2\": \"The outdoor bundle has a deposit rate at least 3 percentage points higher than the home-safety bundle.\"}, \"decision_rule\": \"The winning bundle must reach at least a 5% deposit rate, and beat the rival by at least 3 percentage points, to justify further investment. Below 5% or a margin under 3 points means no consumer launch now. If home-safety wins (at least 5% deposit rate and at least 3 points ahead), run a bounded 500-unit pilot with one home-improvement retail partner. If outdoor wins on the same criteria, run a bounded 500-unit pilot with one outdoor specialty retailer. If neither reaches 5% or the margin is under 3 points, do not expand to consumers now; continue the B2B/no-expansion route and re-test only if core cost falls or a partner shows demand evidence.\", \"cost_eur\": 18000, \"weeks\": 8}}}",
+   "student_action": {
+    "name": "propose_test",
+    "arguments": {
+     "name": "Consumer Messaging Test",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online survey with randomized messaging and purchase intent measurement.",
+     "sample": "400 U.S. adults recruited via an online panel, balanced for age, gender, and geographic region.",
+     "measure": "Purchase intent (yes/no) and willingness to pay (EUR).",
+     "prediction_by_theory": {
+      "T1": "Safety messaging (fire detection, home maintenance) will generate higher purchase intent and willingness to pay than outdoor messaging.",
+      "T2": "Outdoor recreation messaging (hunting, navigation) will generate higher purchase intent and willingness to pay than safety messaging."
+     },
+     "decision_rule": "If purchase intent for safety messaging exceeds purchase intent for outdoor messaging by at least 10 percentage points, T1 is favoured. If outdoor messaging exceeds safety messaging by at least 10 percentage points, T2 is favoured. If the",
+     "cost_eur": 15000,
+     "weeks": 8
+    },
+    "accepted": true,
+    "category": null
+   },
+   "why_wrong": "the arms differ only in wording or message, with no product or price difference and no same-price control",
+   "quality_notes": [],
+   "composition": "experiment-structured-v1",
+   "shortened": true,
+   "keep": true,
+   "review_note": "A consumer-demand test for rival use-case theories (T1 home safety vs T2 outdoor/hunting) should replace survey-only stated preference with a real behavioural commitment, differentiate the arms via distinct product bundles at the same price, make each theory predict the opposite winner, set a minimum-demand and margin threshold, and cap the next step at a bounded 500-unit pilot rather than a product-line launch. It also correctly reads but explicitly excludes post-case-date (2014) sources from what was knowable in 2013.",
+   "reviewed_by": "deepseek-v4-pro (LLM reviewer)",
+   "reviewed_at": "2026-11-10T19:12:53+00:00",
+   "review_source": "llm",
+   "llm_review": {
+    "keep": true,
+    "problems": [],
+    "teaches": "A consumer-demand test for rival use-case theories (T1 home safety vs T2 outdoor/hunting) should replace survey-only stated preference with a real behavioural commitment, differentiate the arms via distinct product bundles at the same price, make each theory predict the opposite winner, set a minimum-demand and margin threshold, and cap the next step at a bounded 500-unit pilot rather than a product-line launch. It also correctly reads but explicitly excludes post-case-date (2014) sources from what was knowable in 2013.",
+    "confidence": "high"
+   }
+  }
+ ]
+}

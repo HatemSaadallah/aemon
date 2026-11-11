@@ -1,0 +1,2194 @@
+{
+ "summary": {
+  "verified": 425,
+  "not_found": 10,
+  "fetch_failed": 2
+ },
+ "results": [
+  {
+   "id": "siemenshalske-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "siemenshalske-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "skf-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "atlascopco-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lmericsson-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kone-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "wartsila-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-03",
+   "status": "not_found",
+   "detail": "page has 1007399 characters"
+  },
+  {
+   "id": "alfalaval-04",
+   "status": "not_found",
+   "detail": "page has 1007399 characters"
+  },
+  {
+   "id": "alfalaval-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "alfalaval-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "lincolnelectric-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bauschandlomb-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sulzer-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "yaskawa-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "shimadzu-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-05",
+   "status": "not_found",
+   "detail": "page has 471755 characters"
+  },
+  {
+   "id": "trumpf-06",
+   "status": "not_found",
+   "detail": "page has 471755 characters"
+  },
+  {
+   "id": "trumpf-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trumpf-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vaisala-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-05",
+   "status": "not_found",
+   "detail": "page has 325427 characters"
+  },
+  {
+   "id": "eppendorf-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "eppendorf-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "sartorius-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "getinge-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "elekta-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "ottobock-13",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "bbraun-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "terumo-12",
+   "status": "not_found",
+   "detail": "page has 66618 characters"
+  },
+  {
+   "id": "halton-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "halton-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-01",
+   "status": "verified",
+   "detail": "exact apart from punctuation"
+  },
+  {
+   "id": "phoenixcontact-02",
+   "status": "verified",
+   "detail": "exact apart from punctuation"
+  },
+  {
+   "id": "phoenixcontact-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-06",
+   "status": "verified",
+   "detail": "exact apart from punctuation"
+  },
+  {
+   "id": "phoenixcontact-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "phoenixcontact-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "boschrexroth-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-08",
+   "status": "fetch_failed",
+   "detail": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "nordson-09",
+   "status": "fetch_failed",
+   "detail": "HTTP Error 403: Forbidden"
+  },
+  {
+   "id": "nordson-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "nordson-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "esab-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "putzmeister-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "vermeer-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "valmont-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-06",
+   "status": "not_found",
+   "detail": "page has 1793407 characters"
+  },
+  {
+   "id": "kemira-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "kemira-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "outotec-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-04",
+   "status": "not_found",
+   "detail": "page has 154882 characters"
+  },
+  {
+   "id": "metso-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "metso-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-08",
+   "status": "not_found",
+   "detail": "page has 2541 characters"
+  },
+  {
+   "id": "hubbell-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hubbell-12",
+   "status": "not_found",
+   "detail": "page has 901103 characters"
+  },
+  {
+   "id": "victaulic-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "victaulic-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "trojantech-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "helmerscientific-12",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-01",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-02",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-03",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-04",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-05",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-06",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-07",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-08",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-09",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-10",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-11",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "calgoncarbon-12",
+   "status": "verified",
+   "detail": "exact"
+  }
+ ]
+}

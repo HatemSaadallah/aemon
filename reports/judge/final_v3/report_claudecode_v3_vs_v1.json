@@ -1,0 +1,99 @@
+{
+ "runs": 144,
+ "arms": [
+  "base",
+  "v1",
+  "v3"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "base": {
+     "mean": 0.554,
+     "n": 48
+    },
+    "v1": {
+     "mean": 1.181,
+     "n": 48
+    },
+    "v3": {
+     "mean": 1.058,
+     "n": 48
+    }
+   },
+   "by_arm_company": {
+    "base": {
+     "aqp": 0.652,
+     "epro": 0.479,
+     "rational": 0.662,
+     "simo": 0.424
+    },
+    "v1": {
+     "aqp": 1.509,
+     "epro": 0.979,
+     "rational": 1.001,
+     "simo": 1.236
+    },
+    "v3": {
+     "aqp": 1.052,
+     "epro": 1.117,
+     "rational": 0.887,
+     "simo": 1.177
+    }
+   },
+   "by_arm_dimension": {
+    "base": {
+     "assumptions_predictions": 0.917,
+     "causal_mechanism": 0.917,
+     "distinct_theories": 0.604,
+     "evidence_judgement": 0.208,
+     "experiment_design": 0.396,
+     "problem_framing": 1.0,
+     "recommendation": 0.083,
+     "revision": 0.167,
+     "seeking_challenge": 0.583
+    },
+    "v1": {
+     "assumptions_predictions": 1.646,
+     "causal_mechanism": 1.417,
+     "distinct_theories": 1.542,
+     "evidence_judgement": 0.917,
+     "experiment_design": 0.917,
+     "problem_framing": 1.625,
+     "recommendation": 0.604,
+     "revision": 0.861,
+     "seeking_challenge": 1.021
+    },
+    "v3": {
+     "assumptions_predictions": 1.375,
+     "causal_mechanism": 1.229,
+     "distinct_theories": 1.396,
+     "evidence_judgement": 0.396,
+     "experiment_design": 0.938,
+     "problem_framing": 1.479,
+     "recommendation": 0.771,
+     "revision": 1.083,
+     "seeking_challenge": 0.917
+    }
+   },
+   "difference": {
+    "arms": "v3 minus v1",
+    "pairs": 48,
+    "cases": 16,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     -0.123,
+     -0.281,
+     0.029
+    ],
+    "by_company": {
+     "aqp": -0.457,
+     "epro": 0.138,
+     "rational": -0.115,
+     "simo": -0.059
+    }
+   }
+  }
+ },
+ "missing": []
+}

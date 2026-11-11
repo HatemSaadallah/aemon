@@ -1,10 +1,12 @@
-# Model Card: Strategic Opportunity-Analysis Agent (Tiny Aya Fine-Tuned)
+# Model Card: Aemon, a Strategic Opportunity-Analysis Agent (Tiny Aya Fine-Tuned)
+
+*weigh what is known. test what is not.*
 
 Team Two-eyed Ravens | Lexsi AI Hackathon Track 3 (Agentic Fine-Tuning) | November 2026
 
 ## 1. Model Details
 
-* **Model Name:** Strategic Opportunity-Analysis Agent (Fine-Tuned Tiny Aya Global)
+* **Model Name:** Aemon, a Strategic Opportunity-Analysis Agent (Fine-Tuned Tiny Aya Global)
 * **Base Model:** [`CohereLabs/tiny-aya-global`](https://huggingface.co/CohereLabs/tiny-aya-global) (pinned commit `af89d21`)
 * **Base Architecture:** Compact multilingual autoregressive transformer
 * **Base Model License:** CC-BY-NC-4.0 (Non-Commercial)
@@ -29,39 +31,38 @@ Researchers, strategy analysts, and students studying AI agent workflows, scient
 
 ## 3. Out-of-Scope Use & Limitations
 
-* **Commercial Decision-Making:** This model must NOT be used to make actual capital allocation, corporate acquisition, product launch, or investment decisions without human expert validation and primary empirical data.
 * **Fabricated Evidence:** The model must not invent customer interviews, market size statistics, or test outcomes.
 * **Commercial Exploitation:** The base model is governed by CC-BY-NC-4.0; commercial use, resale, or commercial deployment is prohibited by the base model license.
 * **Real-World Business Impact:** Improved automated evaluation scores indicate better adherence to a scientific reasoning protocol; they do not prove that recommendations are commercially profitable or viable.
 
 ## 4. Training Procedure & Hyperparameters
 
-Training is executed via `src/strategy_agent/training/train.py` using AgentTune's distillation trainer (`agenttune.agentic.distill_trainer.create_distill_trainer`).
+Training is executed via `src/aemon/training/train.py` using AgentTune's distillation trainer (`agenttune.agentic.distill_trainer.create_distill_trainer`).
 
 ### LoRA Configuration
 * **Target Modules:** `all-linear` (all linear projection layers in attention and MLP blocks)
-* **LoRA Rank ($r$):** 16
-* **LoRA Alpha ($\alpha$):** 32
+* **LoRA rank (r):** 16
+* **LoRA alpha (α):** 32
 * **LoRA Dropout:** 0.05
 * **Task Type:** `CAUSAL_LM`
 
 ### Hyperparameters
 * **Precision:** `bfloat16`
 * **Optimizer:** AdamW
-* **Learning Rate:** $1\times 10^{-4}$
+* **Learning Rate:** 1 × 10⁻⁴
 * **Learning Rate Schedule:** Linear warmup over 5% of steps, cosine decay
 * **Per-Device Batch Size:** 1
 * **Gradient Accumulation Steps:** 4 (Effective batch size: 4)
 * **Epochs:** 2.0 (1,971 optimizer steps on 3,942 rows: 3,891 teacher rows from 158 investigations on 57 training companies, plus 51 correction rows)
 * **Max Sequence Length:** 8,192 tokens
-* **Loss Masking:** Supervised loss is computed strictly on target reply tokens (`labels_for()` in `src/strategy_agent/pipeline/rows.py`). Context tokens are assigned label `-100`. Rows exceeding 8,192 tokens are refused and logged, never truncated.
+* **Loss Masking:** Supervised loss is computed strictly on target reply tokens (`labels_for()` in `src/aemon/pipeline/rows.py`). Context tokens are assigned label `-100`. Rows exceeding 8,192 tokens are refused and logged, never truncated.
 
 ### Checkpoint Selection
-Validation is conducted per company across six held-out validation companies (`src/strategy_agent/pipeline/splits.py`: Hellberg, Neumann, Jotun, Tanita, Deere, ACR), capped at 40 evenly spaced rows per company. The retained checkpoint is the one with the lowest validation loss; in the final run that was the last checkpoint (step 1,971, validation loss 0.7125, down from 1.045 at the start).
+Validation is conducted per company across six held-out validation companies (`src/aemon/pipeline/splits.py`: Hellberg, Neumann, Jotun, Tanita, Deere, ACR), capped at 40 evenly spaced rows per company. The retained checkpoint is the one with the lowest validation loss; in the final run that was the last checkpoint (step 1,971, validation loss 0.7125, down from 1.045 at the start).
 
 ### Pre-Training and Conversion Gates
 1. **Overfit Gate (`--check 10 --require 8`):** Before launching the full training job, an overfit run on 10 demonstration rows must reproduce at least 8 target replies greedily; otherwise, the job aborts.
-2. **Adapter Conversion Gate v2 (`src/strategy_agent/evaluation/conversion_gate.py`):** the converted GGUF adapter is
+2. **Adapter Conversion Gate v2 (`src/aemon/evaluation/conversion_gate.py`):** the converted GGUF adapter is
    replayed against its PEFT original on the same token inputs. On every replayed point the adapter's effect must have
    cosine at least 0.99 with the PEFT effect over the full vocabulary and a probability-weighted residual at most 0.15,
    and the weight-file audit must find every factor pair equal to its expected BF16 cast. The final adapter passed
@@ -82,7 +83,7 @@ ran once.
    Codex `gpt-6-astra`), each qualified on 20 matched sound/flawed pairs, on nine dimensions scored 0 to 3: problem
    framing, causal mechanism, distinct theories, assumptions and predictions, evidence judgement, seeking challenge,
    experiment design, revision, recommendation. A dimension never reached counts 0. Packets carry no model name.
-2. **Mechanical checks and AuditKIT diagnostics:** finished, the executable checks in `src/strategy_agent/env/checks.py`,
+2. **Mechanical checks and AuditKIT diagnostics:** finished, the executable checks in `src/aemon/env/checks.py`,
    refused and repeated calls, tool validity, redundant calls and loop detection.
 3. **What-if evidence:** each held-out company has a case with no new evidence, one with irrelevant evidence, and a
    matched pair with a supporting and an undermining simulated result.
@@ -107,6 +108,18 @@ Higher at every company under both judges (mean of judges: Aquaporin +1.10, Simo
 Electrolux Professional +0.60) and for every kind of new evidence. AuditKIT replay mismatches: 0 in every run.
 Reports: `reports/judge/final/`.
 
+### Second frozen test (12 new companies, 24 cases, 3 attempts; `docs/test2_freeze.json`)
+| | Base, staged prompt | This adapter | Difference, paired, 95% case-cluster bootstrap |
+|---|---|---|---|
+| Claude | 0.48 | 0.89 | +0.41 [0.24, 0.57] |
+| Codex | 0.66 | 1.29 | +0.63 [0.43, 0.84] |
+| **Mean of the two judges** | **0.57** | **1.09** | **+0.52 [0.33, 0.70]** |
+| Finished investigations | 2 of 72 | 32 of 72 | |
+| Passed every mechanical check | 1 of 72 | 4 of 72 | |
+
+The adapter is higher for 10 of 12 companies on the mean of judges, which rank the runs alike (Spearman 0.95).
+Reports: `reports/judge/test2/`.
+
 ### Development (6 validation companies, 15 cases)
 Base 0.14 (compact prompt) and 0.43 (staged); earlier adapter 1.09; this adapter 1.29, mean of judges. Finished: 0, 0,
 6 and 7 of 15. Reports: `reports/judge/dev/`.
@@ -118,7 +131,61 @@ evidence, refused until the error limit). Finished runs miss checks mainly becau
 leans on company claims. On Aquaporin no run of either arm found the company's insolvency in its dossier, and every
 finished trained run recommends investing: treat its recommendations as practice output, not advice.
 
+### Evidence reliability audit (2026-11-10, `docs/RELIABILITY_REPORT.md`)
+The training data comes from the teacher, Command A+, and carries its weaknesses. The model reproduces some of them:
+- **Invented numbers:** 74% of the teacher recommendations it was trained on use a number found in no source. The
+  model does so in 21% (final test) and 31% (test set 2) of its finished recommendations.
+- **Evidence kinds:** they match the dossier's annotation in 38% of the teacher's weighings, and in 58% and 46% of the
+  model's. Encyclopedia, news and company-history text is often labelled `independent_study`. The annotation itself is
+  about 80% reliable on a blind relabelling.
+- **Hindsight in historical training cases:** 47% of teacher recommendations in historical cases cite a source
+  published after the case date. In a content sample, about half of those quotes reveal later outcomes. The frozen tests
+  are present-day cases, so their scores are unaffected.
+- **Lenient experiment check:** most tests that the check accepts fail stricter design screens on development.
+
+Three runtime fixes were tried on development without retraining. None measurably improved reliability, and none is
+part of this model's configuration:
+- a step-budget guard: quality +0.006;
+- an evidence-verification review before the final recommendation: 19 unsupported recommendations against 20;
+- a constrained, evidence-consistent position: half as many finishes, rejected.
+
+A corrective version 2 was not trained, because too few teacher corrections passed review. Better training data, from
+a stronger or human-corrected teacher for evidence judgement, is the open direction. It was not tested.
+
 ### What these results do not show
-Four companies support only a limited claim about generalisation; three attempts per case are not independent
-replications; the judges are LLMs; nothing here is about business outcomes. The scripted negative controls could not
-run on the held-out cases.
+
+- **Broad generalisation.** The final test covers four held-out companies (Aquaporin, Simonelli, RATIONAL, Electrolux
+  Professional), all business-to-business manufacturers asked the same family of question: whether to build a proposition
+  for individual buyers. Four companies support only a limited claim. Other industries, other kinds of strategic question,
+  and companies outside the dossier's style are untested. The four have since informed the failure diagnosis, so they no
+  longer count as unseen for any later claim.
+- **Independent replications.** Each case was run three times, but at temperature 0 (0.4 only on a retry after a refused
+  call), so the attempts are close to repeats. The effective sample is nearer 16 cases than 48 runs; the intervals
+  resample whole cases for that reason.
+- **Human expert judgement.** Quality was scored by two LLM judges (Claude and Codex), each qualified first on 20 matched
+  sound and flawed investigations. They agree closely (Spearman 0.94), but they can share biases, for example towards
+  structure or length, and no strategy expert has scored the runs.
+- **Good absolute quality.** The fine-tuned agent averages 1.48 on a 0 to 3 rubric. 20 of its 48 final-test runs ended
+  before a recommendation (11 after repeated refused calls, 9 at the turn limit, 8 of them rereading sources), and its
+  weakest dimensions remain the recommendation, revision after new evidence, experiment design and judging evidence.
+- **A comparison with stronger models on quality.** The comparison is with the same base model under its best prompt.
+  The teacher (Command A+) and closed models were not run on the final test for quality; Claude Opus appears only in the
+  cost comparison.
+- **Calibrated confidence.** Beliefs are the agent's own five-step verbal scale within one run, not probabilities. The
+  belief check tests direction only (undermining evidence should not raise the affected theory, supporting evidence should
+  not lower it), and Aemon's confidence score summarises the run's own judgement and the sources it weighed.
+- **Real-world sources.** Evaluation used a fixed, curated dossier (1,334 records with short excerpts) and simulated
+  what-if results written by the case authors. The open web was never used in evaluation; with live web search the
+  agent reads unchecked pages, and its behaviour may differ.
+- **Business outcomes.** No recommendation was checked against what a company later did, and no proposed test was run.
+  The results measure the quality of the investigation, not whether its advice would have paid off.
+- **Robustness of training.** One training run, one data set and one seed. Variance across training runs is not measured.
+  The training data has a known defect: constrained generation cut short text fields at 240 characters, so 132 of the 158
+  test-design targets have a decision rule that stops mid-sentence.
+- **Negative controls on the final test.** The scripted always-keep and always-revise policies could not run on the
+  held-out cases (they were written for the original earplug cases), so they are reported for development only.
+- **Aemon's settings.** The app adds a reread limit, help after refused steps, more allowed steps, draft
+  answers when a run stops early, memory, attachments and web search. None of these were part of the evaluated setup;
+  the reported numbers apply to the evaluated settings (45 turns, 4 refusals in a row).
+- **Exact reproduction from the public data.** The public dossier cuts every excerpt to one sentence of at most 25 words,
+  so runs on the published data read shorter excerpts than the originals and can differ.

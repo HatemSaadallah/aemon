@@ -1,0 +1,9 @@
+old	new	subject
+c5e87c3a5b4e87834c041b6e74ed22012dd75727	4f04113e6fff236dd1ad93b19d53a2f19ea87276	The agent is named Aemon: Weigh what is known. Test what is not.
+fe4da93ba23d6f141f467b71b02383a4e018d036	3c6df4616d9be30d723de118541eace45c3afa8e	Strategy Lab redesign: answer-first results with charts, follow-up questions, memory, mind map, PDF reports; article and README updated
+7a4a4ca94da83c630194d7f782ad68c6081fb018	314558394bfd4e1e579898d141d0a6fddbbb7686	Strategy Lab test fix
+cfc5d39cb0ba58457b39800d434f28dd54a4d2f1	cf0b8fb87ab8cf633ab9b158dea117f29232e460	Strategy Lab test updated for the final-test results view
+1d177d9ab0f6225a5a75eb87ef3e2be4f84700aa	27ab5c118c2f837bd4c3bbdb5c7323b2d0d830ef	README: the problem, how the agent works, diagrams, charts and screenshots
+e02c0adf2d66fb1be6a3e68651212bdf7faed4da	87ab854940681dbd703ff647bf4fd3a8d9cbba7a	README: results, how it works, how to run and reproduce
+94822c032ca3ac748c0eb7e0cb2e1c7a4a901ddd	79d70eea3920c948f11a23b50973d378087e34ca	Cost comparison against closed models, submission abstract
+dc7796fb690edf76efc356416308d343814c8c31	5e53803eb051cac3524e9a08cb455668c7aac515	Two-eyed Ravens, Lexsi Track 3: a strategy-investigation agent distilled into Tiny Aya Global with AgentTune, evaluated with AuditKIT and two blind judges

@@ -20,9 +20,9 @@ cd $L/code_$REVISION
 export PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 SOURCE=$([ -n "${FIXTURE:-}" ] && echo "--fixture-rows $FIXTURE" || echo "--rows $ROWS")
 # Real rows are validated on the companies in strategy/splits.py unless VALIDATION says otherwise; fixtures need none
-[ -z "${FIXTURE:-}" ] && VALIDATION=${VALIDATION:-$($L/env/bin/python -m strategy_agent.pipeline.splits)}
+[ -z "${FIXTURE:-}" ] && VALIDATION=${VALIDATION:-$($L/env/bin/python -m aemon.data.splits)}
 echo "start $(date +%T), code $REVISION, $(lquota 2>/dev/null | grep USED)"
-$L/env/bin/python -W ignore -m strategy_agent.training.train --model $L/models/tiny-aya-global $SOURCE --out $OUT --max-steps "${STEPS:-0}" --epochs "${EPOCHS:-3}" --save-steps "${SAVE:-25}" \
+$L/env/bin/python -W ignore -m aemon.training.train --model $L/models/tiny-aya-global $SOURCE --out $OUT --max-steps "${STEPS:-0}" --epochs "${EPOCHS:-3}" --save-steps "${SAVE:-25}" \
   --minutes "${MINUTES:-1370}" --check "${CHECK:-0}" --require "${REQUIRE:-0}" ${VALIDATION:+--validation-cases $VALIDATION} &
 PID=$!
 trap 'kill -USR1 $PID 2>/dev/null' USR1

@@ -8,8 +8,8 @@ import numpy as np
 import pytest
 import torch
 from safetensors.torch import save_file
-from strategy_agent.evaluation.conversion_diagnose import aligned_effect, first_difference, log_softmax, summarize, top_margin
-from strategy_agent.evaluation.conversion_tensor_audit import GGUF, audit, inventory, native_key
+from aemon.evaluation.conversion.diagnose import aligned_effect, first_difference, log_softmax, summarize, top_margin
+from aemon.evaluation.conversion.tensor_audit import GGUF, audit, inventory, native_key
 
 
 def string(s: Any) -> Any:
@@ -239,7 +239,7 @@ def test_actual_peft_all_linear_expansion_excludes_the_output_head() -> None:
 
 
 def test_unknown_or_ignored_activation_is_not_claimed_correct() -> None:
-    from strategy_agent.evaluation.conversion_diagnose import activation
+    from aemon.evaluation.conversion.diagnose import activation
 
     assert activation({}, 1)['status'] == 'unknown'
     assert activation({'lora': []}, 1)['status'] == 'mismatch'
@@ -248,7 +248,7 @@ def test_unknown_or_ignored_activation_is_not_claimed_correct() -> None:
 
 
 def test_factor_rounding_control_changes_only_values_and_restores_on_error() -> None:
-    from strategy_agent.evaluation.conversion_diagnose import rounded_factor_values
+    from aemon.evaluation.conversion.diagnose import rounded_factor_values
 
     class Toy(torch.nn.Module):
         def __init__(self) -> None:
@@ -273,7 +273,7 @@ def test_factor_rounding_control_changes_only_values_and_restores_on_error() -> 
 
 
 def test_hf_unset_beam_count_uses_real_global_default_without_mutating_config() -> None:
-    from strategy_agent.evaluation.conversion_diagnose import greedy_beam_count
+    from aemon.evaluation.conversion.diagnose import greedy_beam_count
     from transformers import GenerationConfig
 
     config = GenerationConfig(eos_token_id=3, bos_token_id=2, pad_token_id=0)
@@ -288,7 +288,7 @@ def test_hf_unset_beam_count_uses_real_global_default_without_mutating_config() 
 def test_replay_cli_preserves_full_failure_evidence(tmp_path: Any, monkeypatch: Any) -> None:
     import sys
 
-    from strategy_agent.evaluation import conversion_diagnose as module
+    from aemon.evaluation.conversion import diagnose as module
 
     output = str(tmp_path / 'unexecuted-fixture.json')
     values = ['fixture', 'replay']
@@ -311,7 +311,7 @@ def test_replay_cli_preserves_full_failure_evidence(tmp_path: Any, monkeypatch: 
 def test_explicit_greedy_overrides_inherited_sampling_and_records_requests(monkeypatch: Any) -> None:
     from transformers import GenerationConfig
 
-    from strategy_agent.evaluation import conversion_diagnose as module
+    from aemon.evaluation.conversion import diagnose as module
 
     inherited = GenerationConfig(num_beams=3, do_sample=True, temperature=0.7, top_k=40, top_p=0.9, repetition_penalty=1.2)
     effective = module.explicit_greedy_config(inherited)

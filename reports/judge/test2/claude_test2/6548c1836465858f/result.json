@@ -1,0 +1,169 @@
+{
+  "packet_id": "6548c1836465858f",
+  "packet_sha256": "cbf6ad02982fb42faea35f679385360d923855cad115ac8be3976bd9eda9d954",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\":\"6548c1836465858f\",\"dimensions\":{\"problem_framing\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A1\"],\"reason\":\"A1 separates the objective (evidence of demand, willingness to pay and value capture) from the suggested solution. It lists real alternatives: B2B expansion, no expansion, co-branding and licensing. It also flags consumer reach as unknown. It misses that a home product, CPR Anytime, already exists (laerdal-cpranytime-home) and does not frame the existing-product baseline. That keeps it from rung 3.\"},\"causal_mechanism\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\"],\"reason\":\"T1 states who changes behaviour (families), why (protecting family, medical necessity) and how value is captured (premium pricing, subscription, direct-to-consumer). The capture step leans on 'brand reputation' with consumers, which no source supports. The only brand evidence is professional-facing (laerdal-boilerplate). The full chain to value captured is asserted, not grounded.\"},\"distinct_theories\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"T1 and T2 share the same product, customer, channel and core premise: consumers buy home kits. They differ only in which message drives purchase. They are close to mirror-image rewordings. No rival questions whether consumer purchase demand exists. No rival considers an institutional or payer channel, even though the NICU donation source points to one.\"},\"assumptions_predictions\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"The predictions about framing effects on intent, willingness to pay and conversion are observable. A failed framing comparison would not put the decision-critical assumption in trouble: that consumers will buy at all. T2's assumptions contradict each other. It says consumers prioritise cost, and also that they will pay a premium (A10).\"},\"evidence_judgement\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A11\",\"A12\"],\"reason\":\"A11 counts the boilerplate as supporting T1. That quote explicitly concerns healthcare professionals, and A11 itself admits it does not address consumer demand. Labelling it 'supports' is a misreading. A12 correctly treats the product description as a company assertion. The verified observation laerdal-nicu-kits-donated is never assessed. It shows kits funded by a foundation and distributed by a hospital, which bears directly on channel and value capture.\"},\"seeking_challenge\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A13\"],\"reason\":\"A13 runs one search against T1, which returns the same three sources. The investigation does not report what those sources imply. It does not engage the NICU donation evidence, which challenges consumer purchase as the channel. There is no challenge to T2 and no search for competitors, despite A1 naming the competitive landscape.\"},\"experiment_design\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A14\"],\"reason\":\"The two-arm framing test targets the T1/T2 contrast. However, the decision rule only lets T1 win (a 10pp lead for medical framing). If convenience leads, the result falls into 'neither', so T2 cannot be supported. 'Across both segments' is incoherent for a two-arm design. The test measures stated intent after 10 seconds, among a sample pre-selected for CPR interest. It cannot inform whether the consumer investment is justified at all. The cost and sample are assumptions.\"},\"revision\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A16\"],\"reason\":\"A16 correctly identifies SYN-D as simulated and irrelevant (warehouse packing) and retains T1 with a reason. This is a proportionate, justified retention. It does not explicitly trace the implications for the recommendation, which keeps it from rung 3.\"},\"recommendation\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A15\",\"A17\"],\"reason\":\"A17 commits to investing and to a limited premium launch with T1 'likely'. No evidence of demand or willingness to pay supports that belief; A17's own uncertainty section concedes demand is unknown. The proposed test does not precede the investment decision. One reversal condition is backwards: it would 'reconsider the investment' if strong demand were found. The target customer is described as 'willing to invest', a hypothesis stated as fact.\"}},\"red_flags\":[{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A11\"],\"reason\":\"A professional-focused company boilerplate ('healthcare professionals') is treated as support for a consumer-demand theory.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A15\",\"A17\"],\"reason\":\"T1 is rated 'likely' and an investment with premium pricing is recommended. No source shows consumer demand, willingness to pay or consumer brand strength. The target customer's willingness to pay is stated as fact.\"},{\"kind\":\"non_discriminating_test\",\"event_ids\":[\"A14\"],\"reason\":\"The asymmetric decision rule cannot conclude in favour of T2. Both arms presuppose consumer purchase demand, so the test does not discriminate on the investment question.\"},{\"kind\":\"other\",\"event_ids\":[\"A11\",\"A12\",\"A13\"],\"reason\":\"The verified observation laerdal-nicu-kits-donated, which shows an institutional or donor channel, is never assessed despite being retrieved repeatedly.\"},{\"kind\":\"other\",\"event_ids\":[\"A10\"],\"reason\":\"T2's assumptions are internally inconsistent: consumers prioritise low cost yet will pay a premium.\"},{\"kind\":\"other\",\"event_ids\":[\"A17\"],\"reason\":\"A reversal condition is inverted: the plan would reconsider the investment if strong demand and willingness to pay were found.\"}],\"suitable_for_training\":false,\"screen_reason\":\"The episode is complete, but it contains a material unsupported inference. A professional-facing quote is treated as evidence for consumer demand, and an investment is recommended with no demand evidence. The proposed test's decision rule cannot support the rival theory. A key verified observation is ignored. The only sound element is the update handling.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 7065
+      },
+      "cache_creation_input_tokens": 7065,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 3668,
+      "output_tokens_details": {
+        "thinking_tokens": 1613
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.108701,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "2e18b55f32ad1dfad187cab0b099b90bfb4c12c9abf46073c48ce330798db990",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "6548c1836465858f",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (evidence of demand, willingness to pay and value capture) from the suggested solution. It lists real alternatives: B2B expansion, no expansion, co-branding and licensing. It also flags consumer reach as unknown. It misses that a home product, CPR Anytime, already exists (laerdal-cpranytime-home) and does not frame the existing-product baseline. That keeps it from rung 3."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "T1 states who changes behaviour (families), why (protecting family, medical necessity) and how value is captured (premium pricing, subscription, direct-to-consumer). The capture step leans on 'brand reputation' with consumers, which no source supports. The only brand evidence is professional-facing (laerdal-boilerplate). The full chain to value captured is asserted, not grounded."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 and T2 share the same product, customer, channel and core premise: consumers buy home kits. They differ only in which message drives purchase. They are close to mirror-image rewordings. No rival questions whether consumer purchase demand exists. No rival considers an institutional or payer channel, even though the NICU donation source points to one."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The predictions about framing effects on intent, willingness to pay and conversion are observable. A failed framing comparison would not put the decision-critical assumption in trouble: that consumers will buy at all. T2's assumptions contradict each other. It says consumers prioritise cost, and also that they will pay a premium (A10)."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A11",
+          "A12"
+        ],
+        "reason": "A11 counts the boilerplate as supporting T1. That quote explicitly concerns healthcare professionals, and A11 itself admits it does not address consumer demand. Labelling it 'supports' is a misreading. A12 correctly treats the product description as a company assertion. The verified observation laerdal-nicu-kits-donated is never assessed. It shows kits funded by a foundation and distributed by a hospital, which bears directly on channel and value capture."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A13"
+        ],
+        "reason": "A13 runs one search against T1, which returns the same three sources. The investigation does not report what those sources imply. It does not engage the NICU donation evidence, which challenges consumer purchase as the channel. There is no challenge to T2 and no search for competitors, despite A1 naming the competitive landscape."
+      },
+      "experiment_design": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A14"
+        ],
+        "reason": "The two-arm framing test targets the T1/T2 contrast. However, the decision rule only lets T1 win (a 10pp lead for medical framing). If convenience leads, the result falls into 'neither', so T2 cannot be supported. 'Across both segments' is incoherent for a two-arm design. The test measures stated intent after 10 seconds, among a sample pre-selected for CPR interest. It cannot inform whether the consumer investment is justified at all. The cost and sample are assumptions."
+      },
+      "revision": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "A16 correctly identifies SYN-D as simulated and irrelevant (warehouse packing) and retains T1 with a reason. This is a proportionate, justified retention. It does not explicitly trace the implications for the recommendation, which keeps it from rung 3."
+      },
+      "recommendation": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A15",
+          "A17"
+        ],
+        "reason": "A17 commits to investing and to a limited premium launch with T1 'likely'. No evidence of demand or willingness to pay supports that belief; A17's own uncertainty section concedes demand is unknown. The proposed test does not precede the investment decision. One reversal condition is backwards: it would 'reconsider the investment' if strong demand were found. The target customer is described as 'willing to invest', a hypothesis stated as fact."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "A professional-focused company boilerplate ('healthcare professionals') is treated as support for a consumer-demand theory."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A15",
+          "A17"
+        ],
+        "reason": "T1 is rated 'likely' and an investment with premium pricing is recommended. No source shows consumer demand, willingness to pay or consumer brand strength. The target customer's willingness to pay is stated as fact."
+      },
+      {
+        "kind": "non_discriminating_test",
+        "event_ids": [
+          "A14"
+        ],
+        "reason": "The asymmetric decision rule cannot conclude in favour of T2. Both arms presuppose consumer purchase demand, so the test does not discriminate on the investment question."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A11",
+          "A12",
+          "A13"
+        ],
+        "reason": "The verified observation laerdal-nicu-kits-donated, which shows an institutional or donor channel, is never assessed despite being retrieved repeatedly."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A10"
+        ],
+        "reason": "T2's assumptions are internally inconsistent: consumers prioritise low cost yet will pay a premium."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A17"
+        ],
+        "reason": "A reversal condition is inverted: the plan would reconsider the investment if strong demand and willingness to pay were found."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is complete, but it contains a material unsupported inference. A professional-facing quote is treated as evidence for consumer demand, and an investment is recommended with no demand evidence. The proposed test's decision rule cannot support the rival theory. A key verified observation is ignored. The only sound element is the update handling."
+  },
+  "seconds": 63.9
+}

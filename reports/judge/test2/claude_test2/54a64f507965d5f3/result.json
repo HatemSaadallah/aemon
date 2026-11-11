@@ -1,0 +1,143 @@
+{
+  "packet_id": "54a64f507965d5f3",
+  "packet_sha256": "b57b394f81588004dbb31671d089843be454729d144880d4c8c7376766123d32",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"54a64f507965d5f3\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A1\"], \"reason\": \"A1 separates the objective (whether public evidence justifies investing in a consumer proposition) from the suggested solution. It lists real alternatives, including no expansion, undifferentiated extension and a change of route to buyers. It also flags unknown reach to individual buyers and the lack of internal data. The \u20ac20,000 budget and 12-week timeline do not appear in the case. They are read here as planning assumptions, not observations. It does not reach 3: it misses that the framing premise ('beyond its existing commercial ice machines') may be false, since the sources found later (A2-A5) show Scotsman already sells consumer ice machines. That premise is never corrected.\"}, \"causal_mechanism\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No theory or mechanism was stated before the run stopped at the turn limit (A6).\"}, \"distinct_theories\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No theories were generated. The episode ended after framing and searches (A1-A6).\"}, \"assumptions_predictions\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No assumptions or predictions were stated before the stop (A6).\"}, \"evidence_judgement\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\"], \"reason\": \"Sources were retrieved (A2-A5) but never assessed. The run never reached the point of separating company claims, such as hoshizaki-profile, from verified observations, or stating what each source cannot establish.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\"], \"reason\": \"There was no favoured theory to search against. The four searches (A2-A5) are near-duplicate queries returning the same sources, not targeted disconfirmation. The run stopped (A6) before any challenge stage.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No test was proposed or declined before the turn limit (A6).\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions. No update was scheduled (scheduled_update false).\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"A6 explicitly records that the investigation stopped before a recommendation.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A6\"], \"reason\": \"The episode hit the turn limit after framing and four repetitive searches. It has no theories, evidence assessment, test or recommendation.\"}, {\"kind\": \"other\", \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\"], \"reason\": \"The search effort was spent on four near-identical queries returning the same three or four sources. This wasted the turn budget without broadening the evidence or seeking challenge.\"}], \"suitable_for_training\": false, \"screen_reason\": \"Rejected as incomplete: no recommendation or substantive reasoning stages were reached (A6). The reached framing stage is reasonable but cannot redeem an unfinished trajectory. Most applicable stages are not_reached and contribute zero to the all-case composite.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 3945
+      },
+      "cache_creation_input_tokens": 3945,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1917,
+      "output_tokens_details": {
+        "thinking_tokens": 708
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.058081,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "011838e2ce40ee0bc81e61b9af4c363ada5fcfc876804158bffb2c74140c75d1",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "54a64f507965d5f3",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether public evidence justifies investing in a consumer proposition) from the suggested solution. It lists real alternatives, including no expansion, undifferentiated extension and a change of route to buyers. It also flags unknown reach to individual buyers and the lack of internal data. The \u20ac20,000 budget and 12-week timeline do not appear in the case. They are read here as planning assumptions, not observations. It does not reach 3: it misses that the framing premise ('beyond its existing commercial ice machines') may be false, since the sources found later (A2-A5) show Scotsman already sells consumer ice machines. That premise is never corrected."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No theory or mechanism was stated before the run stopped at the turn limit (A6)."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No theories were generated. The episode ended after framing and searches (A1-A6)."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No assumptions or predictions were stated before the stop (A6)."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "reason": "Sources were retrieved (A2-A5) but never assessed. The run never reached the point of separating company claims, such as hoshizaki-profile, from verified observations, or stating what each source cannot establish."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "reason": "There was no favoured theory to search against. The four searches (A2-A5) are near-duplicate queries returning the same sources, not targeted disconfirmation. The run stopped (A6) before any challenge stage."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No test was proposed or declined before the turn limit (A6)."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions. No update was scheduled (scheduled_update false)."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "A6 explicitly records that the investigation stopped before a recommendation."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "The episode hit the turn limit after framing and four repetitive searches. It has no theories, evidence assessment, test or recommendation."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5"
+        ],
+        "reason": "The search effort was spent on four near-identical queries returning the same three or four sources. This wasted the turn budget without broadening the evidence or seeking challenge."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected as incomplete: no recommendation or substantive reasoning stages were reached (A6). The reached framing stage is reasonable but cannot redeem an unfinished trajectory. Most applicable stages are not_reached and contribute zero to the all-case composite."
+  },
+  "seconds": 18.376
+}

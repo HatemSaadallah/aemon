@@ -1,0 +1,12 @@
+final v3 {"episodes": 48, "finished": 37, "end_to_end_success": 3, "stop_reasons": {"turn limit": 4, "finished": 37, "repeated errors": 7}, "refused_calls": 230, "mean_calls": 31.729166666666668}
+{"packets": 135, "runs": 144, "runs_by_arm": {"base": 48, "v1": 48, "v3": 48}}
+{"runs": 144, "arms": ["base", "v1", "v3"], "missing": 0}
+{"runs": 144, "arms": ["base", "v1", "v3"], "missing": 0}
+{"runs": 144, "arms": ["base", "v1", "v3"], "missing": 0}
+final judged 12:04:24
+test2 v3 {"episodes": 72, "finished": 57, "end_to_end_success": 18, "stop_reasons": {"repeated errors": 13, "finished": 57, "turn limit": 2}, "refused_calls": 305, "mean_calls": 27.708333333333332}
+{"packets": 205, "runs": 216, "runs_by_arm": {"base": 72, "v1": 72, "v3": 72}}
+{"runs": 216, "arms": ["base", "v1", "v3"], "missing": 1}
+{"runs": 216, "arms": ["base", "v1", "v3"], "missing": 1}
+{"runs": 216, "arms": ["base", "v1", "v3"], "missing": 1}
+test2 judged 12:30:26

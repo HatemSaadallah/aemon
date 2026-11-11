@@ -1,0 +1,52 @@
+{
+ "cases": [
+  {
+   "company": "Kingspan Group plc",
+   "question": "Should Kingspan Group plc develop a differentiated consumer proposition for a specific use case, beyond its existing insulation and building envelope products for construction professionals? What evidence would justify that investment?",
+   "brief": "Kingspan Group plc makes insulated panels, rigid insulation boards and other building envelope products, with 278 manufacturing sites and a commercial presence in more than 80 countries. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "kingspan",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "kingspan-base",
+   "premise_records": [
+    "kingspan-ar2025-segment",
+    "kingspan-ar2024-rigid",
+    "kingspan-ar2025-footprint"
+   ],
+   "test_warranted": true
+  },
+  {
+   "company": "Ansell Limited",
+   "question": "Should Ansell Limited develop a differentiated consumer proposition for a specific use case, beyond its existing protective gloves and body protection for industrial and healthcare customers? What evidence would justify that investment?",
+   "brief": "Ansell Limited makes protective gloves and body protection, reporting through two segments, Industrial and Healthcare. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "ansell",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "ansell-base",
+   "premise_records": [
+    "ansell-investor-positioning",
+    "ansell-fy25-chemical-service",
+    "ansell-fy25-touchntuff"
+   ],
+   "test_warranted": true
+  },
+  {
+   "company": "Mettler-Toledo International Inc.",
+   "question": "Should Mettler-Toledo International Inc. develop a differentiated consumer proposition for a specific use case, beyond its existing precision instruments for laboratory, industrial and food retail customers? What evidence would justify that investment?",
+   "brief": "Mettler-Toledo International Inc. makes precision instruments, including balances and scales, for laboratory, industrial and food retailing applications, and sells more through its own direct sales force than through indirect channels. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "mettler",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "mettler-base",
+   "premise_records": [
+    "mettler-ir-overview",
+    "mettler-ar25-channels",
+    "mettler-profile-food-retail"
+   ],
+   "test_warranted": true
+  }
+ ]
+}

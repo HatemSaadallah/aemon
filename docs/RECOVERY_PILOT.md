@@ -13,7 +13,7 @@ its own states, because the teacher rarely enters them: about 7 rows recover fro
 
 1. **States.** Replay recorded student runs and keep the exact compact state shown at each turn that starts a loop: a
    call refused as a repeat, the third reread of one source, or a second refusal in a row. Training companies only:
-   never the six validation companies in `src/strategy_agent/pipeline/splits.py` or the frozen final test. Each state keeps its student run,
+   never the six validation companies in `src/aemon/pipeline/splits.py` or the frozen final test. Each state keeps its student run,
    model identity and turn index.
 2. **Corrections.** Command A+, the permitted teacher, gets that state under the teacher prompt and writes the next
    call. A correction is kept only if replaying it from the state is accepted by the tools, is not itself a repeat, and

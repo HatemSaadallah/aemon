@@ -1,0 +1,15 @@
+all arms ended 17:04:23
+v1 {"episodes": 45, "finished": 24, "end_to_end_success": 3, "stop_reasons": {"finished": 24, "repeated errors": 17, "turn limit": 4}, "refused_calls": 294, "mean_calls": 31.955555555555556}
+v3 {"episodes": 45, "finished": 19, "end_to_end_success": 1, "stop_reasons": {"repeated errors": 24, "finished": 19, "turn limit": 2}, "refused_calls": 278, "mean_calls": 26.511111111111113}
+v3_rescue {"episodes": 45, "finished": 33, "end_to_end_success": 3, "stop_reasons": {"repeated errors": 11, "finished": 33, "turn limit": 1}, "refused_calls": 277, "mean_calls": 30.933333333333334}
+v1_rescue {"episodes": 45, "finished": 26, "end_to_end_success": 5, "stop_reasons": {"repeated errors": 12, "finished": 26, "turn limit": 7}, "refused_calls": 347, "mean_calls": 35.4}
+dig_then_reason {"episodes": 45, "finished": 33, "end_to_end_success": 3, "stop_reasons": {"finished": 33, "repeated errors": 10, "turn limit": 2}, "refused_calls": 252, "mean_calls": 32.22222222222222}
+{"packets": 207, "runs": 225, "runs_by_arm": {"v1": 45, "v3": 45, "v3_rescue": 45, "v1_rescue": 45, "dig_then_reason": 45}}
+{"runs": 225, "arms": ["dig_then_reason", "v1", "v1_rescue", "v3", "v3_rescue"], "missing": 0}
+{"runs": 225, "arms": ["dig_then_reason", "v1", "v1_rescue", "v3", "v3_rescue"], "missing": 0}
+{"runs": 225, "arms": ["dig_then_reason", "v1", "v1_rescue", "v3", "v3_rescue"], "missing": 0}
+{"runs": 225, "arms": ["dig_then_reason", "v1", "v1_rescue", "v3", "v3_rescue"], "missing": 0}
+{"runs": 225, "arms": ["dig_then_reason", "v1", "v1_rescue", "v3", "v3_rescue"], "missing": 0}
+{"runs": 225, "arms": ["dig_then_reason", "v1", "v1_rescue", "v3", "v3_rescue"], "missing": 0}
+{"runs": 225, "arms": ["dig_then_reason", "v1", "v1_rescue", "v3", "v3_rescue"], "missing": 0}
+judged 17:34:53

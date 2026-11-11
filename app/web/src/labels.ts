@@ -29,7 +29,7 @@ export const STEPS: { label: string; stages: string[] }[] = [
 export const stepOf = (stage: unknown): number => Math.max(0, STEPS.findIndex((s) => s.stages.includes(text(stage))));
 export const KIND: Record<string, string> = {
   verified_observation: 'Independent source', company_claim: "Company's own claim", analyst_assumption: 'Assumption', proposed_hypothesis: 'Hypothesis',
-  synthetic: 'Simulated what-if', web_page: 'Web page (unchecked)',
+  synthetic: 'Simulated what-if', web_page: 'Web page (unchecked)', user_document: 'Your document',
 };
 export const kindOf = (cls: unknown): string => KIND[text(cls)] || text(cls);
 // Text the model's length limit stopped mid-sentence ends in an ellipsis, so it reads as cut, not as a typo
@@ -49,3 +49,10 @@ export function variant(id: string): string {
 }
 
 export const when = (seconds: number): string => new Date(seconds * 1000).toLocaleString();
+
+// Runs of the same question on the same case are one investigation run several times
+export const runKey = (e: { case: string; question: string }): string => `${e.case}|${text(e.question).replace(/ \(live web\)$/, '').trim().toLowerCase()}`;
+export const clock = (seconds: number | null | undefined): string => (seconds ? new Date(seconds * 1000).toLocaleString(undefined, { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) : '');
+
+// The person asked for a web search in their own words; the server applies the same rule
+export const asksOnline = (value: string): boolean => /\b(search|look|check|find|browse|google)\w*\b[^.?!]{0,40}\b(online|on the web|on the internet|the internet|web)\b|\b(search|look)\w* (it )?up online\b|\bonline (search|sources|research)\b/i.test(value);

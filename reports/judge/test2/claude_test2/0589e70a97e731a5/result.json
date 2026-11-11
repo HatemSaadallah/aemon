@@ -1,0 +1,181 @@
+{
+  "packet_id": "0589e70a97e731a5",
+  "packet_sha256": "e561b539b7d72ac2ef9ed7225de168faa688cd739ffd2980ae83ed6bfa3d4284",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"0589e70a97e731a5\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A1\"], \"reason\": \"A1 states the objective but adds constraints that contradict the question. The question asks about a consumer proposition, yet the constraints forbid 'No expansion into new markets', 'No redesign of existing products for consumer use' and 'No change in the company's current customer base'. A1 then lists 'Consumer-focused product redesign' as an alternative, which conflicts with those constraints. 'No expansion' and 'No expansion or redesign' are near-duplicates. These are obvious options only, with no clear separation of objective from solution. The 20,000 euro and 12 week budget is an assumption, not an observation.\"}, \"causal_mechanism\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\", \"A7\", \"A9\"], \"reason\": \"The best theory is T1 (A4). It names a benefit: cash from the sale reinvested in core markets. It does not explain which customers would change behaviour or why. No theory traces consumer behaviour for any use case. 'Higher-margin' and 'less profitable consumer segment' have no support in the dossier, so the dimension is capped at 1.\"}, \"distinct_theories\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\", \"A5\", \"A7\", \"A9\"], \"reason\": \"T3 (A7) and T4 (A9) copy T1 (A4) almost verbatim in mechanism, assumptions and predictions. T2 (A5) is the only nominal rival: consumer expansion in emerging markets such as Asia. It cites no source and describes what the company might be doing rather than answering whether a consumer proposition is justified. The set is effectively rewordings of one idea.\"}, \"assumptions_predictions\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\", \"A5\"], \"reason\": \"Assumptions and predictions are stated but vague, for example 'will see increased profitability in its core markets' and 'will focus more on innovation'. They have no timeframe or threshold. Several assumptions, such as 'The buyer ... will effectively manage the business', bear no relation to the consumer-proposition question. Failure of these predictions would not seriously threaten the theory about consumer investment.\"}, \"evidence_judgement\": {\"status\": \"scored\", \"score\": 0, \"event_ids\": [\"A6\", \"A8\", \"A10\", \"A9\"], \"reason\": \"A8 cites the Sexual Wellness sale as supporting T2 (consumer expansion). Divesting a consumer division points the other way, so this misreads the source. A9 relies on a 'transformation plan' that appears in no source excerpt. The 'Does not show' text is identical boilerplate in A6, A8 and A10 and does not state real limits of each source, such as date, place or fit to the customer group. No source is examined for what it says about consumer demand.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A11\"], \"reason\": \"The run stopped (A11) before any search directed against a favoured theory. Searches A2 and A3 were general information searches, not challenges.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A11\"], \"reason\": \"No test was proposed or declined before the context-limit stop at A11.\"}, \"revision\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A11\"], \"reason\": \"An update was scheduled but update_delivered is false, and the run stopped at A11.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A11\"], \"reason\": \"A11: 'The investigation stopped before a recommendation (context limit).'\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A11\"], \"reason\": \"The episode ended at the context limit with no recommendation.\"}, {\"kind\": \"misleading_quote\", \"event_ids\": [\"A8\"], \"reason\": \"The exact quote about selling the Sexual Wellness division is presented as support for T2 (expanding consumer products). This reverses the source's evident meaning.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A4\", \"A7\", \"A9\"], \"reason\": \"These theories claim the consumer segment was 'less profitable' and core markets are 'higher-margin', and predict increased market share. No source supports these claims. They are hypotheses stated as facts.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A5\"], \"reason\": \"T2 asserts rising consumer demand for protective equipment in Asia and possible consumer expansion, with no supporting source.\"}, {\"kind\": \"invented_observation\", \"event_ids\": [\"A9\"], \"reason\": \"T4 rests on 'the launch of a transformation plan', which appears in none of the supplied source excerpts.\"}, {\"kind\": \"other\", \"event_ids\": [\"A2\", \"A3\"], \"reason\": \"The searches report finding sources (ansell-fy25-household-exit, ansell-grocer-partnership) that are absent from the dossier's source list. Their content cannot be verified.\"}, {\"kind\": \"other\", \"event_ids\": [\"A1\"], \"reason\": \"The framing constraints forbid consumer redesign and any change in customer base. This contradicts both the case question and A1's own listed alternatives.\"}], \"suitable_for_training\": false, \"screen_reason\": \"Rejected. The episode is incomplete, with no recommendation (A11). It also contains critical errors: a misread quote used as support for the opposite theory (A8), an invented 'transformation plan' (A9), unsupported margin and profitability claims stated as fact (A4/A7/A9), and largely duplicate theories.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 5875
+      },
+      "cache_creation_input_tokens": 5875,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 3426,
+      "output_tokens_details": {
+        "thinking_tokens": 1505
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.097911,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "ebd88ec26147d22b1ab124493190326c980d08351079da4a437638513620bb8d",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "0589e70a97e731a5",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 states the objective but adds constraints that contradict the question. The question asks about a consumer proposition, yet the constraints forbid 'No expansion into new markets', 'No redesign of existing products for consumer use' and 'No change in the company's current customer base'. A1 then lists 'Consumer-focused product redesign' as an alternative, which conflicts with those constraints. 'No expansion' and 'No expansion or redesign' are near-duplicates. These are obvious options only, with no clear separation of objective from solution. The 20,000 euro and 12 week budget is an assumption, not an observation."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4",
+          "A7",
+          "A9"
+        ],
+        "reason": "The best theory is T1 (A4). It names a benefit: cash from the sale reinvested in core markets. It does not explain which customers would change behaviour or why. No theory traces consumer behaviour for any use case. 'Higher-margin' and 'less profitable consumer segment' have no support in the dossier, so the dimension is capped at 1."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4",
+          "A5",
+          "A7",
+          "A9"
+        ],
+        "reason": "T3 (A7) and T4 (A9) copy T1 (A4) almost verbatim in mechanism, assumptions and predictions. T2 (A5) is the only nominal rival: consumer expansion in emerging markets such as Asia. It cites no source and describes what the company might be doing rather than answering whether a consumer proposition is justified. The set is effectively rewordings of one idea."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4",
+          "A5"
+        ],
+        "reason": "Assumptions and predictions are stated but vague, for example 'will see increased profitability in its core markets' and 'will focus more on innovation'. They have no timeframe or threshold. Several assumptions, such as 'The buyer ... will effectively manage the business', bear no relation to the consumer-proposition question. Failure of these predictions would not seriously threaten the theory about consumer investment."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A6",
+          "A8",
+          "A10",
+          "A9"
+        ],
+        "reason": "A8 cites the Sexual Wellness sale as supporting T2 (consumer expansion). Divesting a consumer division points the other way, so this misreads the source. A9 relies on a 'transformation plan' that appears in no source excerpt. The 'Does not show' text is identical boilerplate in A6, A8 and A10 and does not state real limits of each source, such as date, place or fit to the customer group. No source is examined for what it says about consumer demand."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "The run stopped (A11) before any search directed against a favoured theory. Searches A2 and A3 were general information searches, not challenges."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "No test was proposed or declined before the context-limit stop at A11."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "An update was scheduled but update_delivered is false, and the run stopped at A11."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "A11: 'The investigation stopped before a recommendation (context limit).'"
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "The episode ended at the context limit with no recommendation."
+      },
+      {
+        "kind": "misleading_quote",
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "The exact quote about selling the Sexual Wellness division is presented as support for T2 (expanding consumer products). This reverses the source's evident meaning."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A4",
+          "A7",
+          "A9"
+        ],
+        "reason": "These theories claim the consumer segment was 'less profitable' and core markets are 'higher-margin', and predict increased market share. No source supports these claims. They are hypotheses stated as facts."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "T2 asserts rising consumer demand for protective equipment in Asia and possible consumer expansion, with no supporting source."
+      },
+      {
+        "kind": "invented_observation",
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "T4 rests on 'the launch of a transformation plan', which appears in none of the supplied source excerpts."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A2",
+          "A3"
+        ],
+        "reason": "The searches report finding sources (ansell-fy25-household-exit, ansell-grocer-partnership) that are absent from the dossier's source list. Their content cannot be verified."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The framing constraints forbid consumer redesign and any change in customer base. This contradicts both the case question and A1's own listed alternatives."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected. The episode is incomplete, with no recommendation (A11). It also contains critical errors: a misread quote used as support for the opposite theory (A8), an invented 'transformation plan' (A9), unsupported margin and profitability claims stated as fact (A4/A7/A9), and largely duplicate theories."
+  },
+  "seconds": 31.207
+}

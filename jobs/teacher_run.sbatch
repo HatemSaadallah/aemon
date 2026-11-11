@@ -33,7 +33,7 @@ nvidia-smi --query-gpu=memory.used,memory.total --format=csv,noheader
 cd $L/code
 export PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 export CODE_REVISION=$REVISION
-$L/env/bin/python -W ignore -m strategy_agent.agent.runner --url http://127.0.0.1:$PORT --prompt "${PROMPT:-staged}" --attempts "${ATTEMPTS:-1}" --temperature "${TEMPERATURE:-0}" --cases "$CASES" --context 12288 --max-tokens 520 --max-turns 45 \
+$L/env/bin/python -W ignore -m aemon.agent.run_investigations --url http://127.0.0.1:$PORT --prompt "${PROMPT:-staged}" --attempts "${ATTEMPTS:-1}" --temperature "${TEMPERATURE:-0}" --cases "$CASES" --context 12288 --max-tokens 520 --max-turns 45 \
   --model-label "aya-expanse-32b-Q4_K_M 3acdc28 code $REVISION" --weights-sha256 47eed19801ed865fabad06f7c0eb4b079b874281a8caac486f99300c7bf525f9 --output $OUT/$NAME.json > $OUT/$NAME.log 2>&1
 echo "run exit $? $(date +%T)"
 grep -E 'tokens per second|eval time' $OUT/$NAME.server.log | tail -2 | cut -c1-110 || true

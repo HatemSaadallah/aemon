@@ -1,0 +1,71 @@
+\section{Evaluation design}\label{sec:eval}
+
+\subsection{What is measured}
+The primary outcome is \emph{investigation quality} as judged blind against a frozen rubric of nine dimensions, each
+scored 0 to 3 (\cref{tab:rubric}). A judge gives the highest rung whose conditions are all met; an invented number,
+customer or company intention caps that dimension at 1. Dimensions the run never reached score 0; dimensions that do not
+apply (revision when no new evidence arrived) are excluded. An episode's score is the mean over its scored dimensions.
+
+\begin{table}[H]\centering\footnotesize
+\caption{The rubric (abridged). Scores 0 to 3.}\label{tab:rubric}
+\begin{tabularx}{\linewidth}{@{}l X X@{}}
+\toprule
+Dimension & 2 & 3\\
+\midrule
+Problem framing & separates the objective from the suggested solution & also finds an option or constraint a good analyst would not want missed, or corrects a false premise\\
+Causal mechanism & who changes behaviour and why & the full chain from behaviour change to value this manufacturer captures\\
+Distinct theories & rival explanations of the same question & rivals implying different products, customers or channels\\
+Assumptions and predictions & observable & observable, and the theory is in trouble if they fail\\
+Evidence judgement & separates company assertions, observations, studies and analogies & says what each key source cannot establish\\
+Seeking challenge & genuinely searches against its favourite & reports fairly what it found, including nothing\\
+Experiment design & separates at least two theories, or soundly declines & also feasible and decision-relevant\\
+Revision & a proportionate, evidence-linked response to the affected theory & also traces the implications without overreacting\\
+Recommendation & follows from the evidence, with stated uncertainty & commits to a next action and says what would reverse it\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Judges and their qualification}
+Two LLM judges score every packet: Claude (Opus 5.5, 8{,}000 output tokens, medium effort) and Codex (GPT-6-astra
+through its command-line tool, with shell, web, memory and repository access disabled). Before use, each was
+\emph{qualified} on 20 matched pairs of fictional investigations, one sound and one deliberately flawed in each pair,
+under a rule registered before it was computed: the sound version must score strictly higher in at least 17 of 20
+pairs, with ties and invalid outputs counted as failures, and at most 4 of 40 outputs invalid after one retry. Claude
+passed 20 of 20 at 8{,}000 tokens (19 of 20 at 3{,}000, with one truncated output, which led to the higher limit);
+Codex passed 20 of 20. A caveat: Codex wrote the qualification packets and their key.
+
+\subsection{Blinding}
+A packet shows the investigation as a reader would see it, with no arm, model, adapter, prompt or run name; refused
+calls are omitted and identical consecutive calls are shown once with a count. Packet ids are content hashes, the order
+is shuffled with a fixed seed (20261106), and the key linking packets to arms is kept outside the repository while
+judging.
+
+\subsection{The statistic}
+Let $q_{j,k}(c, a)$ be judge $j$'s score of arm $k$ on case $c$, attempt $a$. The paired difference for one
+case and attempt, averaged over the two judges, is
+\begin{equation}
+  d(c, a) = \frac{1}{2}\sum_{j=1}^{2}\bigl[q_{j,\text{trained}}(c, a) - q_{j,\text{base}}(c, a)\bigr],
+  \qquad \bar d = \frac{1}{|\mathcal{P}|}\sum_{(c,a)\in\mathcal{P}} d(c, a),
+\end{equation}
+over the set $\mathcal{P}$ of pairs both arms produced. The 95\% interval is a case-cluster percentile bootstrap
+\citep{efron1993bootstrap}: in each of $B = 4000$ resamples, cases (not runs) are drawn with replacement with all their
+attempts, $\bar d^{*}_b$ is recomputed, and the interval runs from the 101st to the 3{,}900th of the sorted resamples
+(seed 20261106). Resampling whole cases respects the fact that three attempts on one case are not independent.
+Agreement between judges is the Spearman correlation of episode scores.
+
+\subsection{Arms, selection and the freeze}
+The comparison is the same base model with and without the adapter, on the same cases, controller, settings and
+runtime. The base runs under its best prompt (the staged prompt, chosen on validation companies: it beat the compact
+prompt by $+0.30$ there); the fine-tuned model runs under the compact prompt its rows were built with. Model selection
+used only the six validation companies: the higher mean blind-judge score wins, completion breaks a tie.
+
+The final test was frozen before it ran: 16 held-out cases, 3 attempts each (attempts 0 to 2), both arms, 96 runs; the
+runner code, the job script, the llama.cpp build, context 12{,}288, 520 tokens per turn, 45 turns, 4 refusals in a row,
+temperature 0 with 0.4 only on a retry; the judges and their configuration; the statistic. Only infrastructure retries
+were allowed, never on model behaviour. It ran once, on 7 November 2026.
+
+\subsection{Mechanical audit}
+Every run is also replayed and scored with AuditKIT \citep{auditkit}: a recorded-mode evaluation of each episode, built
+from AgentTune event logs, with tool-call validity, redundant tool calls, loop detection and tool permission scorers, a
+full replay that must match the record, and a custom predicate for our guards. Every final-test run replayed with zero
+mismatches.

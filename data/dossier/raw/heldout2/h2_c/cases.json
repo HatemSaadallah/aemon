@@ -1,0 +1,51 @@
+{
+ "cases": [
+  {
+   "company": "Tennant Company",
+   "question": "Should Tennant Company develop a differentiated consumer proposition for a specific use case, beyond its existing professional floor-cleaning machines? What evidence would justify that investment?",
+   "brief": "Tennant Company makes floor scrubbers, sweepers and other surface-maintenance machines for industrial and commercial buildings, sold directly in 21 countries and through distributors in more than 100. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "tennant",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "tennant-base",
+   "premise_records": [
+    "tennant-ir-overview",
+    "tennant-10q-customers",
+    "tennant-10q-nonresidential"
+   ],
+   "test_warranted": true
+  },
+  {
+   "company": "Belimo Holding AG",
+   "question": "Should Belimo Holding AG develop a differentiated consumer proposition for a specific use case, beyond its existing HVAC actuators, valves and sensors for commercial buildings? What evidence would justify that investment?",
+   "brief": "Belimo Holding AG makes damper actuators, control valves, sensors and meters for building heating, ventilation and air conditioning, sold to HVAC equipment makers and through controls contractors and system integrators. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "belimo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "belimo-base",
+   "premise_records": [
+    "belimo-ar25-business",
+    "belimo-ar25-oem-integrators"
+   ],
+   "test_warranted": true
+  },
+  {
+   "company": "Laerdal Medical",
+   "question": "Should Laerdal Medical develop a differentiated consumer proposition for a specific use case, beyond its existing resuscitation and healthcare-simulation training products? What evidence would justify that investment?",
+   "brief": "Laerdal Medical makes CPR manikins, resuscitation-training and simulation products, mainly for healthcare professionals and training organisations, and is part of a Norwegian group with a presence in 27 countries. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "laerdal",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "laerdal-base",
+   "premise_records": [
+    "laerdal-boilerplate",
+    "laerdal-about-community",
+    "laerdal-cpranytime-home"
+   ],
+   "test_warranted": true
+  }
+ ]
+}

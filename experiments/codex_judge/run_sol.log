@@ -1,0 +1,14 @@
+{"t": "19:15:14", "set": "test2_v3", "round": 1, "start": true}
+{"t": "19:40:25", "set": "test2_v3", "round": 1, "returncode": 0, "valid": 205, "infra_failures": 0, "causes": {}}
+{"t": "19:40:26", "set": "test2_v3", "reported": "v3 vs v1"}
+{"t": "19:40:28", "set": "test2_v3", "reported": "v1 vs base"}
+{"t": "19:40:29", "set": "test2_v3", "reported": "v3 vs base"}
+{"t": "19:40:29", "set": "final_v3", "round": 1, "start": true}
+{"t": "19:53:52", "set": "final_v3", "round": 1, "returncode": 0, "valid": 94, "infra_failures": 41, "causes": {"usage_limit": 41}}
+{"t": "19:53:52", "set": "final_v3", "waiting_minutes": 60}
+{"t": "20:53:52", "set": "final_v3", "round": 2, "start": true}
+{"t": "20:55:00", "set": "final_v3", "round": 2, "returncode": 0, "valid": 94, "infra_failures": 41, "causes": {"usage_limit": 41}}
+{"t": "20:55:00", "set": "final_v3", "waiting_minutes": 60}
+{"t": "21:55:00", "set": "final_v3", "round": 3, "start": true}
+{"t": "21:56:02", "set": "final_v3", "round": 3, "returncode": 0, "valid": 94, "infra_failures": 41, "causes": {"usage_limit": 41}}
+{"t": "21:56:02", "set": "final_v3", "waiting_minutes": 60}

@@ -1,0 +1,144 @@
+{
+  "packet_id": "9abafc2fa1061d0c",
+  "packet_sha256": "d3ad5d7848fcde60bb4b863df5c8c31b065277cd853b37a76a4c23b7cef7909b",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "deca9c92f4540aaaeab53d14ae9d8f3916aed5ff60ff35058ded8521fdf21ace",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\n  \"packet_id\": \"9abafc2fa1061d0c\",\n  \"dimensions\": {\n    \"problem_framing\": {\n      \"status\": \"scored\",\n      \"score\": 1,\n      \"event_ids\": [\"A1\"],\n      \"reason\": \"A1 lists four alternatives, including licensing, and names regulatory feasibility and ACR's limited reach to individual buyers as constraints. However, the objective largely restates the case question. Alternatives 1 and 2 overlap, both covering a consumer version for marine recreational users. The frame never separates the underlying objective (value ACR could capture) from the suggested solution. A1 also states a specific budget and timeline (\u20ac20,000, 12 weeks) that do not appear in the supplied case or sources. Under the rubric, that untraceable number caps this dimension at 1.\"\n    },\n    \"causal_mechanism\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A7\"],\n      \"reason\": \"No theory or mechanism was stated before the run stopped at A7.\"\n    },\n    \"distinct_theories\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A7\"],\n      \"reason\": \"No theories were generated. A2 to A6 are searches only, then the run stopped at A7.\"\n    },\n    \"assumptions_predictions\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A7\"],\n      \"reason\": \"No assumptions or predictions were stated before the stop at A7.\"\n    },\n    \"evidence_judgement\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\"],\n      \"reason\": \"Sources were retrieved in A2 to A6 but never assessed. For example, the FCC waiver and PLB approvals in acr-fr-waiver and acr-gcn-three, and the company-claim status of acr-mr-origin, were not evaluated. The run stopped at A7.\"\n    },\n    \"seeking_challenge\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\"],\n      \"reason\": \"No favoured theory existed to challenge. The searches in A2 to A6 were near-duplicate exploratory queries that returned overlapping results, and the run stopped at A7 before any disconfirming search.\"\n    },\n    \"experiment_design\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A7\"],\n      \"reason\": \"No test was proposed or declined before the stop at A7.\"\n    },\n    \"revision\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A7\"],\n      \"reason\": \"Revision is applicable and an update was scheduled, but it was never delivered (update_delivered false), and the run stopped at A7.\"\n    },\n    \"recommendation\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A7\"],\n      \"reason\": \"A7 records that the investigation stopped before a recommendation, citing repeated errors.\"\n    }\n  },\n  \"red_flags\": [\n    {\n      \"kind\": \"incomplete\",\n      \"event_ids\": [\"A7\"],\n      \"reason\": \"The episode stopped before theories, tests, revision or a recommendation were produced.\"\n    },\n    {\n      \"kind\": \"other\",\n      \"event_ids\": [\"A1\"],\n      \"reason\": \"A1 asserts a specific test budget (\u20ac20,000) and timeline (12 weeks) that cannot be traced to the supplied case or sources. It is an untraceable numeric constraint.\"\n    }\n  ],\n  \"suitable_for_training\": false,\n  \"screen_reason\": \"The episode is incomplete: it stopped at A7 with no recommendation, and every stage after framing was not reached. Framing contains an untraceable budget figure. Incomplete episodes are rejected.\"\n}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4005
+      },
+      "cache_creation_input_tokens": 4005,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1999,
+      "output_tokens_details": {
+        "thinking_tokens": 685
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.060021,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "b3981d54e661262796b4fc77b1cd837837fd790143acf29896b062048b535b0a",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "9abafc2fa1061d0c",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 lists four alternatives, including licensing, and names regulatory feasibility and ACR's limited reach to individual buyers as constraints. However, the objective largely restates the case question. Alternatives 1 and 2 overlap, both covering a consumer version for marine recreational users. The frame never separates the underlying objective (value ACR could capture) from the suggested solution. A1 also states a specific budget and timeline (\u20ac20,000, 12 weeks) that do not appear in the supplied case or sources. Under the rubric, that untraceable number caps this dimension at 1."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No theory or mechanism was stated before the run stopped at A7."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No theories were generated. A2 to A6 are searches only, then the run stopped at A7."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No assumptions or predictions were stated before the stop at A7."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "reason": "Sources were retrieved in A2 to A6 but never assessed. For example, the FCC waiver and PLB approvals in acr-fr-waiver and acr-gcn-three, and the company-claim status of acr-mr-origin, were not evaluated. The run stopped at A7."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "reason": "No favoured theory existed to challenge. The searches in A2 to A6 were near-duplicate exploratory queries that returned overlapping results, and the run stopped at A7 before any disconfirming search."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No test was proposed or declined before the stop at A7."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "Revision is applicable and an update was scheduled, but it was never delivered (update_delivered false), and the run stopped at A7."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "A7 records that the investigation stopped before a recommendation, citing repeated errors."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "The episode stopped before theories, tests, revision or a recommendation were produced."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 asserts a specific test budget (\u20ac20,000) and timeline (12 weeks) that cannot be traced to the supplied case or sources. It is an untraceable numeric constraint."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete: it stopped at A7 with no recommendation, and every stage after framing was not reached. Framing contains an untraceable budget figure. Incomplete episodes are rejected."
+  },
+  "seconds": 17.594
+}

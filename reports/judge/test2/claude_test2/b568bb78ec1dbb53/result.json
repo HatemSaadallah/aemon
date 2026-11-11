@@ -1,0 +1,156 @@
+{
+  "packet_id": "b568bb78ec1dbb53",
+  "packet_sha256": "9e3435e3b87e469557eb0b004d6773a0194fbd44012a61e6a6a2cb3f24944a17",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\":\"b568bb78ec1dbb53\",\"dimensions\":{\"problem_framing\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A1\"],\"reason\":\"A1 separates the objective (whether a consumer proposition is justified by demand, willingness to pay and advantage) from any one solution. It lists real alternatives, including no expansion, a route-to-market change and small trades. It does not surface a missed constraint or correct a premise. It never notes that the Airthings sources describe another company, not Testo.\"},\"causal_mechanism\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A6\"],\"reason\":\"T1 names who changes behaviour (homeowners) and why (expected heating-cost savings). Value capture rests on undeveloped options: premium price, subscriptions and data licensing. There is no traced chain showing why Testo, rather than cheaper rivals, would capture the value.\"},\"distinct_theories\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A6\",\"A7\"],\"reason\":\"T1 (cost saving) and T2 (trust via endorsement) are rival explanations for adoption. Both imply the same product, customer and channel and differ mainly in messaging. Other use cases are left out, such as the damp and mould need in testo-uswitch-damp.\"},\"assumptions_predictions\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A6\",\"A7\"],\"reason\":\"Predictions are observable: survey percentages, pilot units and willingness to pay. The thresholds (>30%, >40%, 100 units, \u20ac15/month) are unexplained assumptions. Survey stated intent would not seriously threaten either theory if it failed. The T1 assumption that homeowners lack affordable tools is never checked against the free library loans in testo-suffolk-borrow.\"},\"evidence_judgement\":{\"status\":\"scored\",\"score\":0,\"event_ids\":[\"A8\",\"A9\",\"A15\"],\"reason\":\"Both verified observations are mislabelled 'independent_study' (A8, A9). A8 treats an Airthings segment result as bearing on Testo's T1. A15 then infers 'limited current consumer demand' from the 22% decline. The source attributes that decline to deliberate cuts in promotion and inventory and states that sell-through still grows, so this is a misreading. testo-uswitch-damp is never assessed.\"},\"seeking_challenge\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A10\",\"A11\"],\"reason\":\"A10 makes one search against T1 and returns the same three sources, but reports no findings and does not engage the Airthings decline as a possible contradiction. No search is made against T2 or against the recommendation to invest.\"},\"experiment_design\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A12\"],\"reason\":\"The proposal is feasible within budget and time (\u20ac18k, 10 weeks). The decision rule is incoherent: both versions share the same 30% threshold, so both theories could be 'supported' at once, and the referent of 'the difference is significant' is undefined. It measures stated intent, not demand. It cannot settle the go/no-go decision against the no-expansion alternative.\"},\"revision\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A14\"],\"reason\":\"A14 correctly treats SYN-D as simulated and irrelevant (label printer, packing errors) and justifiably retains T1. It does not explicitly state the implication for the recommendation.\"},\"recommendation\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A13\",\"A15\"],\"reason\":\"A15 recommends investing, 'supported by evidence of market demand and willingness to pay', yet every assessment was neutral and no willingness-to-pay evidence exists. It also concedes limited demand. A next action and reversal conditions are stated, but the position does not follow from the evidence.\"}},\"red_flags\":[{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A13\",\"A15\"],\"reason\":\"The claim of evidence of market demand and willingness to pay is unsupported by any source. A8 and A9 are both neutral.\"},{\"kind\":\"misleading_quote\",\"event_ids\":[\"A8\",\"A15\"],\"reason\":\"The 22% Airthings decline is clipped from its context of deliberate promotion and inventory cuts and of growing sell-through. It is then used as evidence of limited consumer demand, and implicitly as Testo's own segment.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A8\"],\"reason\":\"An Airthings consumer-segment result is applied to Testo's proposition, and the source class is mislabelled as independent_study.\"},{\"kind\":\"non_discriminating_test\",\"event_ids\":[\"A12\"],\"reason\":\"Identical 30% thresholds and an undefined significance comparison mean both theories can pass at once, so the decision rule does not cleanly separate T1 from T2.\"}],\"suitable_for_training\":false,\"screen_reason\":\"The episode is complete, but the recommendation asserts demand and willingness-to-pay evidence that no source supports. It also misreads the Airthings decline as weak demand and attributes it to Testo, and the test's decision rule cannot separate the rivals. Each is a critical error.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 6885
+      },
+      "cache_creation_input_tokens": 6885,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 3203,
+      "output_tokens_details": {
+        "thinking_tokens": 1489
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.098501,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "5bf51e096b73778a3f616fe3437cbcb2fe4ce3ca55f397900cf8d922cec53fe2",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "b568bb78ec1dbb53",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether a consumer proposition is justified by demand, willingness to pay and advantage) from any one solution. It lists real alternatives, including no expansion, a route-to-market change and small trades. It does not surface a missed constraint or correct a premise. It never notes that the Airthings sources describe another company, not Testo."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "T1 names who changes behaviour (homeowners) and why (expected heating-cost savings). Value capture rests on undeveloped options: premium price, subscriptions and data licensing. There is no traced chain showing why Testo, rather than cheaper rivals, would capture the value."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A6",
+          "A7"
+        ],
+        "reason": "T1 (cost saving) and T2 (trust via endorsement) are rival explanations for adoption. Both imply the same product, customer and channel and differ mainly in messaging. Other use cases are left out, such as the damp and mould need in testo-uswitch-damp."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A6",
+          "A7"
+        ],
+        "reason": "Predictions are observable: survey percentages, pilot units and willingness to pay. The thresholds (>30%, >40%, 100 units, \u20ac15/month) are unexplained assumptions. Survey stated intent would not seriously threaten either theory if it failed. The T1 assumption that homeowners lack affordable tools is never checked against the free library loans in testo-suffolk-borrow."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A8",
+          "A9",
+          "A15"
+        ],
+        "reason": "Both verified observations are mislabelled 'independent_study' (A8, A9). A8 treats an Airthings segment result as bearing on Testo's T1. A15 then infers 'limited current consumer demand' from the 22% decline. The source attributes that decline to deliberate cuts in promotion and inventory and states that sell-through still grows, so this is a misreading. testo-uswitch-damp is never assessed."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A10",
+          "A11"
+        ],
+        "reason": "A10 makes one search against T1 and returns the same three sources, but reports no findings and does not engage the Airthings decline as a possible contradiction. No search is made against T2 or against the recommendation to invest."
+      },
+      "experiment_design": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A12"
+        ],
+        "reason": "The proposal is feasible within budget and time (\u20ac18k, 10 weeks). The decision rule is incoherent: both versions share the same 30% threshold, so both theories could be 'supported' at once, and the referent of 'the difference is significant' is undefined. It measures stated intent, not demand. It cannot settle the go/no-go decision against the no-expansion alternative."
+      },
+      "revision": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A14"
+        ],
+        "reason": "A14 correctly treats SYN-D as simulated and irrelevant (label printer, packing errors) and justifiably retains T1. It does not explicitly state the implication for the recommendation."
+      },
+      "recommendation": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A13",
+          "A15"
+        ],
+        "reason": "A15 recommends investing, 'supported by evidence of market demand and willingness to pay', yet every assessment was neutral and no willingness-to-pay evidence exists. It also concedes limited demand. A next action and reversal conditions are stated, but the position does not follow from the evidence."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A13",
+          "A15"
+        ],
+        "reason": "The claim of evidence of market demand and willingness to pay is unsupported by any source. A8 and A9 are both neutral."
+      },
+      {
+        "kind": "misleading_quote",
+        "event_ids": [
+          "A8",
+          "A15"
+        ],
+        "reason": "The 22% Airthings decline is clipped from its context of deliberate promotion and inventory cuts and of growing sell-through. It is then used as evidence of limited consumer demand, and implicitly as Testo's own segment."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "An Airthings consumer-segment result is applied to Testo's proposition, and the source class is mislabelled as independent_study."
+      },
+      {
+        "kind": "non_discriminating_test",
+        "event_ids": [
+          "A12"
+        ],
+        "reason": "Identical 30% thresholds and an undefined significance comparison mean both theories can pass at once, so the decision rule does not cleanly separate T1 from T2."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is complete, but the recommendation asserts demand and willingness-to-pay evidence that no source supports. It also misreads the Airthings decline as weak demand and attributes it to Testo, and the test's decision rule cannot separate the rivals. Each is a critical error."
+  },
+  "seconds": 367.089
+}

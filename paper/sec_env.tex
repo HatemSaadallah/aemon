@@ -1,0 +1,125 @@
+\section{The investigation environment}\label{sec:env}
+
+\subsection{An investigation as a sequential decision problem}
+We model one investigation as a finite-horizon sequential decision problem. A \emph{case} $c$ fixes a company, a
+question, a brief, budgets and a dossier $D_c$ of public records the case may see. The state $s_t$ holds everything on
+record at step $t$: the frame (objective, constraints, alternatives), the sources read, the theories, the assessed
+quotes, any test or declined test, the stated position, revisions and the final answer. An action is one tool call
+$a_t = (\textit{name}, \textit{arguments})$. A guarded transition $\mathcal{T}$ either accepts the call and updates the
+state, or refuses it with a reason and leaves the state unchanged:
+\begin{equation}
+  (s_{t+1}, r_t) =
+  \begin{cases}
+    (\delta(s_t, a_t), \textit{result}) & \text{if every guard on } a_t \text{ holds in } s_t,\\
+    (s_t, \textit{refusal}(\textit{category}, \textit{reason})) & \text{otherwise.}
+  \end{cases}
+\end{equation}
+The agent never sees $s_t$ in full; it sees a compact observation $o_t = \phi(s_t)$ (\cref{sec:agent}). An episode ends
+when the agent finishes, after $E$ refusals in a row ($E=4$ as evaluated), at a turn limit ($T=45$), or when the context
+is full.
+
+\subsection{Tools}
+Staged runs expose twelve tools (\cref{tab:tools}). Each argument has an exact key set and length limits; a call with
+missing or extra keys is refused.
+
+\begin{table}[H]\centering\small
+\caption{The twelve tools, their arguments and what makes them refuse a call.}\label{tab:tools}
+\begin{tabularx}{\linewidth}{@{}>{\ttfamily}l X X@{}}
+\toprule
+\normalfont Tool & Arguments & Refused when (category)\\
+\midrule
+read\_brief & none & arguments given\\
+frame\_problem & objective; 1--6 constraints; 2--6 alternatives & already framed (repeat); brief not read (order)\\
+search\_evidence & query & no frame yet (order); no searches left, or the last one is reserved for the challenge (budget); same search again (repeat)\\
+read\_source & id & the id never came from a search (fabricated)\\
+add\_theory & claim, who benefits, why behaviour changes, how value is captured; assumptions; predictions & more than 5 theories (budget); identical claim (repeat)\\
+assess\_evidence & theory, source, direction, quote, evidence kind, what it does not show & source not read (unread\_evidence); quote not in the source (misquote); a simulated source used as support (synthetic\_as\_evidence); same theory--source pair (repeat)\\
+challenge\_theory & theory, query & unknown theory; budget; repeat\\
+propose\_test & name, $\ge2$ theories, method, sample, measure, one prediction per theory, decision rule, cost, weeks & over the test budget or time limit (budget); arguments\\
+decline\_test & reason & arguments\\
+state\_position & favoured theory, recommendation, one belief per theory & favoured theory never challenged (order)\\
+revise\_theory & theory, status (kept, revised, rejected), reason, new claim, evidence & cites unread evidence; a revised claim that does not change\\
+finish & recommendation, target customer, value proposition, favoured theory, next action, uncertainty, what would change it, evidence; beliefs & cites unread evidence; cites a simulated record (synthetic\_as\_evidence)\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Guards}
+\paragraph{Exact quotation.} An assessment's quote $q$ must appear in the source's excerpt $x$ after normalisation:
+\begin{equation}
+  \textit{valid}(q, x) \iff |q|_{\text{words}} \ge 3 \;\wedge\; |\nu(q)| \ge 15 \;\wedge\; \nu(q) \sqsubseteq \nu(x),
+\end{equation}
+where $\nu$ lowercases, collapses whitespace and maps curly quotes, dashes and non-breaking spaces to plain forms, and
+$\sqsubseteq$ is substring containment. Surrounding quotation marks are stripped first: half of the teacher's early
+refused quotes were exact words inside quotation marks.
+
+\paragraph{Distinct theories.} Two theories are near-duplicates when the Jaccard similarity of their processed word sets
+(claim plus why behaviour changes) reaches $\tau = 0.6$:
+\begin{equation}
+  J(A,B) = \frac{|A \cap B|}{|A \cup B|} \ge 0.6 .
+\end{equation}
+The tool refuses an identical claim; the executable check fails a run with any pair above the threshold.
+
+\paragraph{Simulated evidence.} A what-if record is written by the case authors and starts with ``SIMULATED''. It may be
+read and assessed as contradicting or neutral, and it may move a belief, but it may never support a theory or be cited
+in the recommendation.
+
+\subsection{The stage controller}
+A controller $\mathcal{C}$ maps the state to the current step and the tools open in it, $A(s_t)$, and adds a one-line
+instruction to every observation. \Cref{tab:stages} lists the steps and what moves each on. Decoding is constrained to
+$A(s_t)$, so a call to a closed tool cannot be produced at all.
+
+\begin{table}[H]\centering\small
+\caption{Steps of the stage controller.}\label{tab:stages}
+\begin{tabularx}{\linewidth}{@{}l X X@{}}
+\toprule
+Step & Open tools & Moves on when\\
+\midrule
+brief & read\_brief & the brief is read\\
+frame & frame\_problem & a frame exists\\
+evidence & search, read & 3 sources are read\\
+theories & add\_theory, search, read & at least 2 theories exist\\
+assessment & assess\_evidence, read, search, add\_theory & every theory has a weighed source\\
+challenge & challenge\_theory & one search against a theory\\
+challenge reading & read, challenge\_theory & what the challenge found has been read\\
+test & propose\_test, decline\_test, and the look-further tools & a test is proposed or declined\\
+position & state\_position, look-further tools & a position is stated (its favourite challenged)\\
+new evidence & read & the what-if is read (cases with a what-if)\\
+update & revise\_theory & a revision cites the what-if\\
+conclude & finish, revise\_theory, look-further tools & the investigation finishes\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Search}
+Search is deliberately plain. Terms are lower-case alphanumeric tokens with stop words removed and a crude plural
+stripped. A record's score for a query $Q$ is the summed inverse document frequency of the shared terms,
+\begin{equation}
+  \textit{score}(r, Q) = \sum_{w \in Q \cap r} \log\!\Bigl(1 + \frac{N}{n_w}\Bigr),
+\end{equation}
+with $N$ records and $n_w$ containing $w$; the top three are returned. Each case allows 8 searches, the last reserved
+for a challenge. Search knows nothing about theories, so finding evidence against a favourite is the agent's job.
+
+\subsection{Executable checks}
+Every finished or stopped run is checked mechanically. The checks include framing (at least three alternatives,
+including no expansion or a different route), distinct theories, causal form (no ``should'' in a claim), testable
+predictions, evidence use, evidence classes (no theory supported only by company claims or simulated results),
+evidence limits, disconfirmation (the favourite was challenged and what was found was read), experiment design
+(predictions that differ and a decision rule with a measurable threshold, or a decline where no test is warranted),
+revision on new evidence, the existing offering (premise records read), no invented numbers, no simulated evidence in
+the recommendation, a recommendation with a distinct next action and at least two sources, and at least 80\% of calls
+accepted. The checks are guards against mechanical mistakes, not a measure of strategic quality; that is what the
+judges are for (\cref{sec:eval}).
+
+\subsection{Cases and the dossier}
+The dossier holds 1{,}334 public records (935 independent observations, 399 company claims), each with source, URL, date
+and a short excerpt, every excerpt checked against its live source on the access date. Each case sees only its own
+company's records (and, for three original cases, a shared market set). There are 137 development cases on 64 companies:
+for every company a base case and a variant in which an irrelevant simulated result arrives mid-investigation, and for
+three companies also supporting and undermining what-ifs. Every case allows 8 searches, a test budget of 20{,}000 euros
+and 12 weeks, which the brief calls analyst assumptions. Eighteen cases (nine companies) are marked as not warranting a
+test, so declining is the right call there.
+
+The split is by company, never by row: 58 training companies (122 cases), 6 validation companies (15 cases, used for
+selection) and 4 test companies (16 cases: base, irrelevant, supporting and undermining for each of Aquaporin, Electrolux
+Professional, RATIONAL and Simonelli), held in a separate file that development runs never load.

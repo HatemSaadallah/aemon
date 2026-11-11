@@ -1,0 +1,165 @@
+{
+  "packet_id": "6933909ba20111ba",
+  "packet_sha256": "a6d5bb0b9e1a5bc52ea7688f4d2c2d2dd52c15bb9467c40a4b78ccb4a50b5e03",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"6933909ba20111ba\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A1\"], \"reason\": \"A1 separates the objective (whether public evidence justifies a consumer proposition) from the suggested solution. It lists real alternatives: B2B expansion, no expansion, retail partnership and licensing. It also sets constraints on consumer reach and value capture. It does not identify the constraint a good analyst would not want missed: the brand's fire-safety liability after Grenfell, which is present in the dossier.\"}, \"causal_mechanism\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"T2 (A10) explains who changes behaviour (energy-cost-sensitive homeowners), why they change (lower bills), and how value is captured (volume and margin). The chain is generic. It never traces how Kingspan would capture value through a real consumer channel. The dossier shows only a third-party online marketplace listing (kingspan-bq-marketplace). T1 (A9) treats the Kingspan brand as a fire-safety asset without addressing kingspan-grenfell-k15.\"}, \"distinct_theories\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"T1 and T2 use the same template: homeowners buy the same Kingspan insulation through the same unspecified channel, motivated by a different benefit. They differ only in messaging. There is no rival covering low consumer demand, professional-install dependence, or channel or partner models, so they are close to rewordings.\"}, \"assumptions_predictions\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"The predictions are observable: willingness to pay at least 15% or 10% more, and purchase intent by label. They are not strongly falsifying. The thresholds are arbitrary assumptions. The regional sales predictions confound building codes and heating costs with many other factors. Failure would not clearly put either theory in trouble.\"}, \"evidence_judgement\": {\"status\": \"scored\", \"score\": 0, \"event_ids\": [\"A11\", \"A12\", \"A14\", \"A15\"], \"reason\": \"A11 reads a finding that Kingspan 'knowingly created a false market' for K15 as support for a fire-safety consumer proposition, and dismisses it as 'Kingspan's marketing strategy'. That reverses the source's meaning. A12 and A14 count company financial reporting as support for homeowner energy-efficiency demand and mislabel both as independent_study. A14 copies an inaccurate 'does not show' clause about residential recovery. A15 counts a company DIY claim as support. Directly relevant sources are never assessed: kingspan-cotality-intent (6.3% plan to install), kingspan-est-rafters ('This isn't a DIY job'), and kingspan-bq-marketplace (online-only, third-party seller).\"}, \"seeking_challenge\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A13\"], \"reason\": \"A13 runs one search against T1 and retrieves sources, but never reports or assesses what it found. There is no search against T2 or against consumer demand in general. The contradicting evidence already retrieved in A4 (cotality-intent, est-rafters) is ignored.\"}, \"experiment_design\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A16\"], \"reason\": \"In principle the survey compares fire-safety and energy-efficiency claims. However, the measure is incoherent ('7-point scale (1-0)' for a maximum price). It confuses % with percentage points. The decision rule is self-contradictory: a difference under 5 points leads both to B2B or licensing and to a fire-safety launch. It also never tests the prior question of whether consumers will buy Kingspan at all. The cost and sample size are assumptions.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions, and no update was scheduled.\"}, \"recommendation\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A17\", \"A18\"], \"reason\": \"The recommendation takes a position: invest in a fire-safety consumer line and run a limited launch. That is unsupported. No evidence supports T1 being 'likely', and the dossier's Grenfell finding cuts against it. It recommends launching while the validating survey is still pending. The reversal condition is incoherent ('or if the difference is statistically significant'), and several fields are truncated.\"}}, \"red_flags\": [{\"kind\": \"misleading_quote\", \"event_ids\": [\"A11\"], \"reason\": \"An exact quote of the Grenfell report finding that Kingspan created a false market for K15 is presented as supporting a fire-safety premium theory. This reverses its evident meaning, since it signals a reputational liability on fire safety.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A11\", \"A12\", \"A14\", \"A17\", \"A18\"], \"reason\": \"Company financial and Grenfell reports are treated as support for homeowner purchase motives. T1 is rated 'likely' with no supporting evidence. The final recommendation asserts that 'safety-certified insulation provides compliance with fire codes' and a premium, stating hypotheses as fact.\"}, {\"kind\": \"other\", \"event_ids\": [\"A15\"], \"reason\": \"A marketing claim ('a great DIY project') is counted as support for demand. It is also contradicted by kingspan-est-rafters ('This isn't a DIY job'), which was retrieved but never assessed.\"}, {\"kind\": \"other\", \"event_ids\": [\"A4\", \"A13\"], \"reason\": \"Retrieved disconfirming evidence is ignored: 6.3% homeowner install intent, professional-only rafter installation, and an online-only third-party marketplace listing. Sources are also misclassified as independent_study (A11, A12, A14).\"}, {\"kind\": \"non_discriminating_test\", \"event_ids\": [\"A16\"], \"reason\": \"The measure scale is incoherent and the decision rule contradicts itself, mapping the same <5-point outcome to opposite actions. The results therefore cannot reliably separate the theories or drive the decision. The test also cannot detect absence of consumer demand.\"}], \"suitable_for_training\": false, \"screen_reason\": \"The episode completed, but it fails screening on several critical errors. It misreads the Grenfell source to support a fire-safety premium (A11), makes unsupported inferences from company financial reporting (A12, A14), treats a marketing claim as evidence (A15), and ignores retrieved contradictory evidence (A13). Its test has an incoherent, self-contradictory decision rule (A16), and it ends in an unsupported launch recommendation (A18). Any single one of these would disqualify it.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 7713
+      },
+      "cache_creation_input_tokens": 7713,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 4053,
+      "output_tokens_details": {
+        "thinking_tokens": 1752
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.119641,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "dfb8aed5a6bdf93c893e13b1088d51ffc97585bc5b8d6feb4f70a14c9aa2d69d",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "6933909ba20111ba",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether public evidence justifies a consumer proposition) from the suggested solution. It lists real alternatives: B2B expansion, no expansion, retail partnership and licensing. It also sets constraints on consumer reach and value capture. It does not identify the constraint a good analyst would not want missed: the brand's fire-safety liability after Grenfell, which is present in the dossier."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T2 (A10) explains who changes behaviour (energy-cost-sensitive homeowners), why they change (lower bills), and how value is captured (volume and margin). The chain is generic. It never traces how Kingspan would capture value through a real consumer channel. The dossier shows only a third-party online marketplace listing (kingspan-bq-marketplace). T1 (A9) treats the Kingspan brand as a fire-safety asset without addressing kingspan-grenfell-k15."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 and T2 use the same template: homeowners buy the same Kingspan insulation through the same unspecified channel, motivated by a different benefit. They differ only in messaging. There is no rival covering low consumer demand, professional-install dependence, or channel or partner models, so they are close to rewordings."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The predictions are observable: willingness to pay at least 15% or 10% more, and purchase intent by label. They are not strongly falsifying. The thresholds are arbitrary assumptions. The regional sales predictions confound building codes and heating costs with many other factors. Failure would not clearly put either theory in trouble."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14",
+          "A15"
+        ],
+        "reason": "A11 reads a finding that Kingspan 'knowingly created a false market' for K15 as support for a fire-safety consumer proposition, and dismisses it as 'Kingspan's marketing strategy'. That reverses the source's meaning. A12 and A14 count company financial reporting as support for homeowner energy-efficiency demand and mislabel both as independent_study. A14 copies an inaccurate 'does not show' clause about residential recovery. A15 counts a company DIY claim as support. Directly relevant sources are never assessed: kingspan-cotality-intent (6.3% plan to install), kingspan-est-rafters ('This isn't a DIY job'), and kingspan-bq-marketplace (online-only, third-party seller)."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A13"
+        ],
+        "reason": "A13 runs one search against T1 and retrieves sources, but never reports or assesses what it found. There is no search against T2 or against consumer demand in general. The contradicting evidence already retrieved in A4 (cotality-intent, est-rafters) is ignored."
+      },
+      "experiment_design": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "In principle the survey compares fire-safety and energy-efficiency claims. However, the measure is incoherent ('7-point scale (1-0)' for a maximum price). It confuses % with percentage points. The decision rule is self-contradictory: a difference under 5 points leads both to B2B or licensing and to a fire-safety launch. It also never tests the prior question of whether consumers will buy Kingspan at all. The cost and sample size are assumptions."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions, and no update was scheduled."
+      },
+      "recommendation": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A17",
+          "A18"
+        ],
+        "reason": "The recommendation takes a position: invest in a fire-safety consumer line and run a limited launch. That is unsupported. No evidence supports T1 being 'likely', and the dossier's Grenfell finding cuts against it. It recommends launching while the validating survey is still pending. The reversal condition is incoherent ('or if the difference is statistically significant'), and several fields are truncated."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "misleading_quote",
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "An exact quote of the Grenfell report finding that Kingspan created a false market for K15 is presented as supporting a fire-safety premium theory. This reverses its evident meaning, since it signals a reputational liability on fire safety."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14",
+          "A17",
+          "A18"
+        ],
+        "reason": "Company financial and Grenfell reports are treated as support for homeowner purchase motives. T1 is rated 'likely' with no supporting evidence. The final recommendation asserts that 'safety-certified insulation provides compliance with fire codes' and a premium, stating hypotheses as fact."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A15"
+        ],
+        "reason": "A marketing claim ('a great DIY project') is counted as support for demand. It is also contradicted by kingspan-est-rafters ('This isn't a DIY job'), which was retrieved but never assessed."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A4",
+          "A13"
+        ],
+        "reason": "Retrieved disconfirming evidence is ignored: 6.3% homeowner install intent, professional-only rafter installation, and an online-only third-party marketplace listing. Sources are also misclassified as independent_study (A11, A12, A14)."
+      },
+      {
+        "kind": "non_discriminating_test",
+        "event_ids": [
+          "A16"
+        ],
+        "reason": "The measure scale is incoherent and the decision rule contradicts itself, mapping the same <5-point outcome to opposite actions. The results therefore cannot reliably separate the theories or drive the decision. The test also cannot detect absence of consumer demand."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode completed, but it fails screening on several critical errors. It misreads the Grenfell source to support a fire-safety premium (A11), makes unsupported inferences from company financial reporting (A12, A14), treats a marketing claim as evidence (A15), and ignores retrieved contradictory evidence (A13). Its test has an incoherent, self-contradictory decision rule (A16), and it ends in an unsupported launch recommendation (A18). Any single one of these would disqualify it."
+  },
+  "seconds": 40.165
+}

@@ -1,0 +1,381 @@
+[
+ {
+  "n": 1,
+  "case": "arri-new-evidence-irrelevant",
+  "skill": "experiment",
+  "call": "propose_test",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "arms differ only in what is highlighted (message), no product or price difference",
+   "T2 is a superset of T1, so the test cannot separate distinct mechanisms",
+   "stated preference only",
+   "decision rule leads straight to developing a proposition",
+   "unsourced thresholds (EUR 400, 10 points)",
+   "why_next says EUR 20k/12 weeks while the design says EUR 18k/10 weeks",
+   "not better on substance than the student's passing test"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 2,
+  "case": "perrigo-base",
+  "skill": "classify",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "does not correct the student's mislabel; switches to a different source",
+   "why_next stretches a retailer-margin slide into evidence on convenience (T2) and premium positioning",
+   "neutral assessment teaches little"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "n": 3,
+  "case": "koppert-new-evidence-irrelevant",
+  "skill": "classify",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "switches to another source and repeats the same independent_study error (an extension-page description of shipping is market_fact, not research)",
+   "'supports' T1 overreaches: shipping beetles to gardeners says nothing about convenience or safety motives",
+   "why_next announces a third theory the call does not add"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 4,
+  "case": "cotral-new-evidence-favours-looks",
+  "skill": "unstick",
+  "call": "read_source",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "reasoning does not match the call: why_next says add a theory now, call reads a source",
+   "learned/uncertain debate process rules rather than evidence"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 5,
+  "case": "osram-base",
+  "skill": "unstick",
+  "call": "read_source",
+  "verdict": "borderline",
+  "teaches": "after a refused duplicate search, read an unread result instead",
+  "problems": [
+   "learned is confused (talks of read_brief and framing already done)",
+   "why_next names two sources for one call",
+   "state already includes a 2016 source in a 2015 case (not the teacher's doing, but unflagged)",
+   "near-duplicate of the other read-instead-of-search recoveries"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "n": 6,
+  "case": "arri-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed; teacher's revision is a near-verbatim rewording",
+   "near-duplicate of 7-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 7,
+  "case": "sma-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed; teacher's revision adds nothing",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 8,
+  "case": "intel-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed; only change is new_claim 'none' instead of restating the claim",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 9,
+  "case": "recaro-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed; trivial change to new_claim",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 10,
+  "case": "maglite-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed; teacher's revision is a near-verbatim rewording",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 11,
+  "case": "orasure-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed",
+   "broken justification: learned='revise_theory', uncertain='T1'",
+   "new_claim restates the claim while status is kept",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 12,
+  "case": "sigvaris-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed",
+   "broken justification: learned='revise_theory', uncertain='T1'",
+   "new_claim is '.'",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 13,
+  "case": "msa-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed; near-verbatim rewording",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 14,
+  "case": "illumina-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed; near-verbatim rewording",
+   "new_claim is empty string",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 15,
+  "case": "embrace-new-evidence-irrelevant",
+  "skill": "revise",
+  "call": "revise_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "student's call already passed; near-verbatim rewording",
+   "near-duplicate of 6-15"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 16,
+  "case": "technogym-new-evidence-irrelevant",
+  "skill": "classify",
+  "call": "assess_evidence",
+  "verdict": "borderline",
+  "teaches": "label a reviewer's own experience as customer_observation, not independent_study; downgrade support to neutral when the quote does not touch the mechanism",
+  "problems": [
+   "source looks like a magazine product review (cw), so customer_observation vs market_fact is arguable",
+   "near-duplicate of 27 (same kind of fix)"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "n": 17,
+  "case": "qdi-base",
+  "skill": "classify",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "FDA 510(k) clearance is regulation, not independent_study",
+  "problems": [
+   "source dated 2003-09-12 is after the early-2003 case date",
+   "'supports' T1 overreaches: a clearance for an infrared therapeutic heating lamp is not evidence that consumers see home photodynamic therapy as a medical necessity"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "n": 18,
+  "case": "grundens-base",
+  "skill": "classify",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "source dated 2021 used in a 2014 case; learned also cites a 2016 launch",
+   "learned calls the quote a 'non-company assertion' from a CEO interview, contradicting its own company_assertion label",
+   "'supports' overreaches: suitability claim does not show anglers value durability",
+   "does not fix the student's label on the original source"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 19,
+  "case": "moldex-new-evidence-looks",
+  "skill": "unstick",
+  "call": "read_source",
+  "verdict": "borderline",
+  "teaches": "after a refused duplicate search, read an unread source",
+  "problems": [
+   "learned lists uvx-sports as already read, contradicting the call",
+   "uvx-sports may not be about Moldex; relevance not argued",
+   "near-duplicate of the other read-instead-of-search recoveries"
+  ],
+  "confidence": "low"
+ },
+ {
+  "n": 20,
+  "case": "sigvaris-base",
+  "skill": "unstick",
+  "call": "read_source",
+  "verdict": "keep",
+  "teaches": "after a refused duplicate search, read an unread search result instead of searching again",
+  "problems": [
+   "uncertain is empty",
+   "near-duplicate of 5, 19, 21, 22 (kept as the cleanest)"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "n": 21,
+  "case": "danfoss-base",
+  "skill": "unstick",
+  "call": "read_source",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "reads danfoss-php-installer, dated 2017-07-19, in a late-2015 case",
+   "uncertain is empty",
+   "near-duplicate of 20"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "n": 22,
+  "case": "diatek-new-evidence-irrelevant",
+  "skill": "unstick",
+  "call": "read_source",
+  "verdict": "borderline",
+  "teaches": "after a refused duplicate search, read an unread source",
+  "problems": [
+   "date of diatek-patent-rival not shown; 1991 case risks anachronism",
+   "learned names a different refused query than the student's",
+   "near-duplicate of 20"
+  ],
+  "confidence": "low"
+ },
+ {
+  "n": 23,
+  "case": "resmed-base",
+  "skill": "unstick",
+  "call": "add_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "fabricated numbers: 30% intent, EUR 500k, 10% of 2M households, 70% engagement, ages 25-45",
+   "uses the S+ launch price from a 2014-10-07 source in a mid-2014 case",
+   "how_value_is_captured cut mid-text",
+   "learned cut mid-text",
+   "euros for a US company's US retail product"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 24,
+  "case": "carrier-new-evidence-irrelevant",
+  "skill": "unstick",
+  "call": "add_theory",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "unsupported historical claim: 1920s public-health campaigns and physician endorsements linking cooling to health, not in any source",
+   "invented 15% prediction",
+   "why_next does not match the student-flagged call pattern (quality note: says read, call adds theory)",
+   "learned treats a company page about 1928 as established fact"
+  ],
+  "confidence": "high"
+ },
+ {
+  "n": 25,
+  "case": "sealedair-new-evidence-irrelevant",
+  "skill": "experiment",
+  "call": "propose_test",
+  "verdict": "drop",
+  "teaches": "adds a product difference and a control instead of message-only arms",
+  "problems": [
+   "invented 20% baseline stated as fact",
+   "concept is confounded with segment, so it tests two separate markets, not competing theories",
+   "stated preference only",
+   "decision rule leads straight to developing a proposition",
+   "garbled measures ('1-0' scales)"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "n": 26,
+  "case": "danfoss-new-evidence-irrelevant",
+  "skill": "classify",
+  "call": "assess_evidence",
+  "verdict": "drop",
+  "teaches": "nothing new",
+  "problems": [
+   "does not fix the student's label on danfoss-prn-zones; switches to another source",
+   "Danfoss Eco product page (accessed 2026) likely postdates the late-2015 case",
+   "'supports' overreaches: the company's 'easy to use' claim does not show homeowners value convenience",
+   "learned says T1 was already assessed with the same source"
+  ],
+  "confidence": "medium"
+ },
+ {
+  "n": 27,
+  "case": "sigvaris-new-evidence-irrelevant",
+  "skill": "classify",
+  "call": "assess_evidence",
+  "verdict": "keep",
+  "teaches": "a customer's first-person review is customer_observation, not company_assertion, with a precise does_not_show",
+  "problems": [
+   "'supports' T1 is mild; the reviewer's own words suggest medical need as much as non-medical health benefit"
+  ],
+  "confidence": "medium"
+ }
+]

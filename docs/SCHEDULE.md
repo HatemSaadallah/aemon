@@ -13,7 +13,7 @@ Submission closes at 12:59 CET on November 15, and our target is November 14. Ea
 | Nov 3 to 6 | Teacher runs on the new training companies, two nodes, several attempts per case | 40 or more accepted investigations from 10 or more companies |
 | Nov 6 to 7 | Bounded pilot, with Hatem's go-ahead | Held-out-company loss falls, and on development cases C finishes at least 3 more of 15 than B, with no guard getting worse |
 | Nov 8 to 10 | Final evaluation of A, B and C on the frozen held-out suite, with blind judges | Run exactly as frozen. A result below the agreed size is reported as exploratory |
-| Nov 11 to 13 | Strategy Lab demo, clean public repository, model card, dataset card, article | Hatem's go-ahead before anything is published |
+| Nov 11 to 13 | Aemon demo, clean public repository, model card, dataset card, article | Hatem's go-ahead before anything is published |
 | Nov 14 | Submit | |
 
 If the teacher, overfit or pilot gate fails, the fallback is to report a careful negative result with the stage controller, baselines and evaluation, which is still a complete submission.

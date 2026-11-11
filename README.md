@@ -1,4 +1,9 @@
-# aemon
+# Aemon
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/figures/aemon-wordmark-dark.png">
+  <img alt="Aemon: weigh what is known. test what is not." src="docs/figures/aemon-wordmark.png" width="420">
+</picture>
 
 *weigh what is known. test what is not.*
 
@@ -122,6 +127,28 @@ Intervals resample whole cases. The two judges rank the investigations alike (Sp
 The largest gains are in distinct theories, problem framing and causal mechanism; recommendation, revision, evidence
 judgement and experiment design improve but remain the weakest.
 
+**Second frozen test: 12 more new companies.** There are 24 cases with 3 attempts each, 144 runs, frozen before any
+run.
+
+| | Base model (best prompt) | Fine-tuned | Difference, paired, 95% interval |
+|---|---|---|---|
+| Judge 1 (Claude) | 0.48 | 0.89 | +0.41 [0.24, 0.57] |
+| Judge 2 (Codex) | 0.66 | 1.29 | +0.63 [0.43, 0.84] |
+| **Mean of the two judges** | **0.57** | **1.09** | **+0.52 [0.33, 0.70]** |
+| Investigations finished | 2 of 72 | 32 of 72 | |
+
+The judges again rank the investigations alike (Spearman 0.95). The fine-tuned agent is higher for 10 of 12 companies;
+only 4 of its 72 runs pass every mechanical check. The gain is smaller than on the first test, on three times as many
+companies.
+
+**The clearest failure: Aquaporin.** Aquaporin's dossier records the withdrawal of its offering, its resolution to
+start insolvency proceedings and its bankruptcy order of 2 February 2026. No run of either model found it, and every
+finished run of the fine-tuned agent recommends investing. That is exactly the failure this project sets out to fix:
+a confident recommendation that misses counter-evidence. The blind judges still scored these runs well (Aquaporin has
+the largest gain, +1.10), because they judge the reasoning on the evidence a run saw, not what it failed to look for.
+The next step follows from it: look up the company's current position before building theories, and train on
+investigations that do. A recorded run: [docs/replays/trained_aqp-base_1.md](docs/replays/trained_aqp-base_1.md).
+
 **Scope.** Four companies support only a limited claim about generalisation, and three attempts per case are not
 independent replications. The judges are LLMs, and nothing here measures business outcomes. The fine-tuned agent's
 weakest dimensions remain the recommendation, revision, experiment design and evidence judgement; 20 of its 48 runs
@@ -133,17 +160,26 @@ about $0.03 at a median A100 rental price, against $0.25 measured for Claude Opu
 
 ## Components
 
-- **Environment** (`src/strategy_agent/env/`): twelve guarded tools over a dossier of 1,334 public records. Quotes must
+- **Environment** (`src/aemon/env/`): twelve guarded tools over a dossier of 1,334 public records. Quotes must
   match a source exactly, theories must give distinct causal explanations, and a simulated what-if result may change
   beliefs but cannot support a recommendation. A stage controller offers the tools of the current stage.
-- **Training data** (`src/strategy_agent/pipeline/`): teacher investigations replayed through the environment; only
+- **Training data** (`src/aemon/pipeline/`): teacher investigations replayed through the environment; only
   those that reproduce exactly and reach an accepted finish become rows. 3,891 rows from 158 investigations on 57
-  companies, plus 51 correction rows.
-- **Training** (`src/strategy_agent/training/train.py`): AgentTune's distillation trainer, LoRA rank 16 on all linear
+  companies, plus 51 correction rows (of 4,302 rows from 174 accepted investigations on 63 companies; the
+  other 411 rows, from 16 investigations on 6 validation companies, were held out).
+- **Training** (`src/aemon/training/train.py`): AgentTune's distillation trainer, LoRA rank 16 on all linear
   layers, two epochs, loss on the target tool call only.
-- **Evaluation** (`src/strategy_agent/evaluation/`, `reviews/judge_v1/`): AuditKIT replay and diagnostics on every run;
+- **Evaluation** (`src/aemon/evaluation/`, `src/aemon/evaluation/judging/judge_v1/`): AuditKIT replay and diagnostics on every run;
   blinded judge packets with the key kept apart; each judge qualified first on 20 matched sound and flawed
   investigations.
+
+## See an investigation without a GPU
+
+[docs/replays/](docs/replays/README.md) has six recorded runs from the frozen final test, rendered as pages you can
+read here on GitHub: every tool call, what the environment accepted or refused and why, the recommendation, and the
+blind judges' scores. They include a finished run for each company, the Aquaporin run above, a run that stops on
+refusals, and the untrained base model on the same case. They come straight from the saved reports
+(`reports/judge/final/`); `python scripts/release/replay_markdown.py` regenerates them, with no model or GPU.
 
 ## Run it
 
@@ -158,7 +194,7 @@ Serve the base model with the adapter (GGUF, llama.cpp), then run an investigati
 
 ```bash
 llama-server -m tiny-aya-global-bf16.gguf --lora tiny-aya-global-strategy-lora-bf16.gguf --port 8091 --jinja
-python -m strategy_agent.agent.runner --prompt compact --cases hellberg-base --output run.json
+python -m aemon.agent.run_investigations --prompt compact --cases hellberg-base --output run.json
 ./app/run.sh   # Aemon, at http://127.0.0.1:8000 (PDF reports need Chrome or Chromium)
 ```
 
@@ -169,11 +205,11 @@ The job scripts in `jobs/` run each stage on a Slurm cluster with A100 GPUs; set
 1. Teacher investigations: `jobs/command_a_plus.sbatch` (Command A+ Q4_K_M with llama.cpp).
 2. Rows and training: `NAME=final COMPACT=1 ROW_PROMPT=compact EPOCHS=2 SAVE=50 sbatch jobs/train_after_teacher.sbatch`.
 3. Conversion check: the GGUF adapter is replayed against the PEFT adapter (`jobs/diagnose_conversion.sbatch`,
-   `src/strategy_agent/evaluation/conversion_gate.py`).
+   `src/aemon/evaluation/conversion_gate.py`).
 4. Evaluation: `jobs/eval_adapter.sbatch` with `SPLIT=heldout ATTEMPTS=3`, once with the adapter (`PROMPT=compact`) and
    once without (`PROMPT=staged`).
-5. Judging: `python -m strategy_agent.evaluation.judge_packets`, `reviews/judge_v1/run_campaign.py`,
-   `python -m strategy_agent.evaluation.judge_report`. All reports are in `reports/judge/`.
+5. Judging: `python -m aemon.evaluation.judging.packets`, `src/aemon/evaluation/judging/judge_v1/run_campaign.py`,
+   `python -m aemon.evaluation.judging.report`. All reports are in `reports/judge/`.
 
 The dossier in this repository keeps each record's source, URL and date with a short quote (its first sentence, at
 most 25 words), so runs read shorter excerpts than the originals.

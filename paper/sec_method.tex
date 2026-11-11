@@ -1,0 +1,144 @@
+\section{The agent}\label{sec:agent}
+
+\begin{figure}[t]\centering
+\resizebox{0.92\linewidth}{!}{\input{fig_loop}}
+\caption{One step of an investigation. The policy reads a compact observation of the state, emits one tool call that
+decoding restricts to the open tools, and the guarded tools either update the state or refuse with a reason.}
+\label{fig:loop}
+\end{figure}
+
+\subsection{Policy and observation}
+The policy $\pi_\theta$ is Tiny Aya Global \citep{tinyaya} (3.349 billion parameters, 36 layers, hidden size 2{,}048)
+with a LoRA adapter. At each step it receives a fixed system prompt and one user message, the compact observation
+\begin{equation}
+  o_t = \phi(s_t) \oplus g(s_t) \oplus \textit{result}_{t-1},
+\end{equation}
+where $\phi$ serialises the state as it stands (the question, budgets, frame, unread search results, every source read
+with its excerpt, the theories, every assessment, the challenge, tests, position, revisions and the last twelve tried
+calls), $g$ is the controller's guidance (the step's instruction, its open tools and the searches left), and the last
+tool result is appended. Guidance is added to what the model is shown, never to the record, so every recorded episode
+replays exactly. The observation replaces a transcript: the model sees the state, not a history it could copy.
+
+\subsection{Constrained decoding}
+Each turn is decoded under a JSON schema $\Sigma(s_t)$ that admits exactly one call to a tool in $A(s_t)$, with
+identifiers drawn from those that exist (theory ids, sources read) and length limits per field. The schema guarantees a
+well-formed call; whether it is a \emph{good} call is the model's. As evaluated, short text fields were limited to 240
+characters, which we later found cut test designs mid-sentence (\cref{sec:diagnosis}); the limits were raised to 900
+for methods and decision rules and 500 for samples and measures afterwards.
+
+\subsection{Sampling and stopping}
+Decoding is greedy (temperature 0). Straight after a refused call the next attempt samples at temperature 0.4 with a
+seed that depends on the case, the attempt and the number of refusals in a row,
+\begin{equation}
+  \textit{seed} = \sum_{ch \in \textit{case id}} \textit{ord}(ch) + 1000\,\textit{attempt} + \textit{errors},
+\end{equation}
+so a retry is not a repeat of the refused call. A run stops after 4 refusals in a row or 45 turns, with a context of
+12{,}288 tokens and 520 tokens per turn.
+
+\begin{algo}{One investigation (the evaluated runner)}\label{alg:run}
+\kw{input:} case $c$, policy $\pi_\theta$, prompt $P$; \kw{limits:} $T=45$, $E=4$\\
+$s \gets s_0(c)$; $e \gets 0$; $o \gets$ ``A new investigation is ready. Call read\_brief.''\\
+\kw{for} $t = 1,\dots,T$ \kw{do}\\
+\hspace*{1.2em} $\tau \gets 0$ \kw{if} $e = 0$ \kw{else} $0.4$\\
+\hspace*{1.2em} $a \gets \textsc{Decode}(\pi_\theta, P, o;\ \Sigma(s), \tau, \textit{seed}(c, e))$ \hfill (schema-constrained)\\
+\hspace*{1.2em} $(s', r) \gets \mathcal{T}(s, a)$\\
+\hspace*{1.2em} \kw{if} $r$ is a refusal \kw{then} $e \gets e + 1$ \kw{else} $e \gets 0$; $s \gets s'$\\
+\hspace*{1.2em} \kw{if} $s$ is finished \kw{then return} $s$, ``finished''\\
+\hspace*{1.2em} \kw{if} $e \ge E$ \kw{then return} $s$, ``repeated errors''\\
+\hspace*{1.2em} $o \gets \phi(s) \oplus g(s) \oplus r$\\
+\kw{return} $s$, ``turn limit''
+\end{algo}
+
+\section{Training data from a teacher}\label{sec:data}
+
+\begin{figure}[t]\centering
+\resizebox{\linewidth}{!}{\input{fig_pipeline}}
+\caption{From dossier to evaluation. Only exact, accepted teacher investigations become rows; the trained adapter must
+pass the conversion gate before any evaluation; the final test runs once.}
+\label{fig:pipeline}
+\end{figure}
+
+\subsection{The teacher}
+The teacher is Command A+ \citep{commandaplus} (Apache 2.0), quantised to Q4\_K\_M and served with llama.cpp
+\citep{llamacpp} on a single A100, with the same tools, controller and checks as the student and a teacher prompt that
+adds rules for good practice. Claude was excluded as a teacher because its commercial terms bar using its outputs to
+train a competing model; Aya Expanse 32B was tried first and rejected for weak reasoning.
+
+\subsection{The replay filter}
+A teacher investigation becomes training data only if it is \emph{exactly reproducible} and \emph{accepted}: replaying
+its recorded turns through a fresh environment must reproduce every tool result and the recorded call sequence, and must
+reach an accepted finish. Its provenance must match the permitted teacher weights in an append-only manifest. Passing the
+executable checks is recorded but not required, because a teacher investigation can be instructive while failing a
+check; the checks are reported, and the judges score quality.
+
+\begin{algo}{Rows from teacher investigations}\label{alg:rows}
+\kw{for each} teacher episode $\epsilon = (c, \{(a_t, r_t)\}_{t\le T})$ \kw{do}\\
+\hspace*{1.2em} \kw{require} $\textit{hash}(\textit{weights}(\epsilon)) \in \textit{manifest}$ \kw{and} $\epsilon$ not excluded on review\\
+\hspace*{1.2em} $s \gets s_0(c)$\\
+\hspace*{1.2em} \kw{for} $t = 1,\dots,T$ \kw{do}\\
+\hspace*{2.4em} $(s', r') \gets \mathcal{T}(s, a_t)$; \kw{require} $r' = r_t$ \hfill (exact replay)\\
+\hspace*{2.4em} \kw{if} $a_t$ was accepted \kw{then} emit row $\bigl(x = P \oplus \phi(s) \oplus g(s) \oplus r_{t-1},\ y = a_t\bigr)$\\
+\hspace*{2.4em} $s \gets s'$\\
+\hspace*{1.2em} \kw{require} $s$ finished and the finish accepted; \kw{else} discard every row of $\epsilon$
+\end{algo}
+
+Refused calls never become targets. Each row is bound by hash to its teacher episode and weights. A row longer than
+8{,}192 tokens is refused, never truncated; the longest kept row is 6{,}011 tokens.
+
+\subsection{Counts}
+174 teacher investigations passed the filter, giving 4{,}302 rows. Training used the 3{,}891 rows from 158
+investigations on 57 training companies; the 411 rows on validation companies were kept for held-out loss only.
+
+\subsection{Correction rows}
+To teach recovery from loops, we harvested states from the student's own runs on training companies where a loop began
+(a refused repeat, a third read of one source, or two refusals in a row; at most three per run) and asked the teacher
+for the single best next call, preceded by what had been learned, what remained uncertain and why the call helps. A reply
+was kept only if it was valid JSON, did not repeat an earlier call, was accepted by the tools, named something from the
+state, and acted on what it named; in the test step it had to propose a test with distinct predictions and a numeric
+rule or decline with a reason. 80 replies were provisionally kept and 51 became rows (49 at the theories step, one
+assessment, one conclusion), 0.35\% of supervised tokens.
+
+\section{Training}\label{sec:training}
+
+\subsection{Objective}
+Each row is a context $x$ and a target call $y = (y_1,\dots,y_m)$. The student is trained by supervised distillation with
+the loss on the target tokens only:
+\begin{equation}
+  \mathcal{L}(\theta) = -\frac{1}{\sum_i m_i}\sum_{i}\sum_{j=1}^{m_i} \log \pi_\theta\bigl(y^{(i)}_j \mid x^{(i)}, y^{(i)}_{<j}\bigr),
+\end{equation}
+implemented by giving every context token the label $-100$; the context's tokens must be an exact prefix of the full
+row's tokens, or the build fails. This is sequence-level distillation from the teacher's chosen calls
+\citep{hinton2015distilling}.
+
+\subsection{Parameter-efficient adaptation}
+Every linear layer $W_0 \in \mathbb{R}^{d\times k}$ in attention and MLP blocks is adapted with a low-rank update
+\citep{hu2022lora},
+\begin{equation}
+  W = W_0 + \frac{\alpha}{r} B A, \qquad B \in \mathbb{R}^{d\times r},\; A \in \mathbb{R}^{r\times k},
+\end{equation}
+with rank $r = 16$, $\alpha = 32$ and dropout 0.05; $W_0$ is frozen. The adapter has 504 tensors (about 121 MB).
+
+\subsection{Procedure and settings}
+Training used AgentTune's distillation trainer \citep{agenttune} with a TRL supervised trainer \citep{trl} and PEFT
+\citep{peft}. Settings: 2 epochs; learning rate $1\times10^{-4}$ with 5\% linear warmup and cosine decay; batch size 1
+with gradient accumulation 4 (effective batch 4); maximum length 8{,}192 tokens; bf16; seed 7. On the 3{,}942 training
+rows (3{,}891 teacher rows and 51 corrections) this is $3942 \times 2 / 4 = 1{,}971$ optimiser steps. Validation loss is
+the unweighted mean over validation companies of up to 40 evenly spaced rows each, so no company dominates; the best
+checkpoint by validation loss is kept. An overfit gate runs first: 10 rows for 60 steps must be reproduced greedily in
+at least 8 of 10 cases, or training stops. Training ran on a 40 GB slice of an A100 on a university cluster. The final
+held-out loss was 0.7125, at the last checkpoint.
+
+\subsection{The conversion gate}
+The trained PEFT adapter is converted to GGUF for llama.cpp, and a conversion can silently change behaviour. Before any
+evaluation, the gate replays recorded points of real investigations and compares, over the full vocabulary of 262{,}144
+tokens, the converted adapter's effect on the next-token distribution with the PEFT adapter's effect,
+\begin{equation}
+  \Delta_{\text{PEFT}} = \log p_{\text{base+LoRA}} - \log p_{\text{base}}, \qquad
+  \Delta_{\text{GGUF}} = \log q_{\text{base+LoRA}} - \log q_{\text{base}},
+\end{equation}
+passing when the cosine similarity of the two effects is at least 0.99 and the probability-weighted residual RMS is at
+most 0.15 at every point, and a tensor audit confirms the factor pairs were cast as expected. Comparing \emph{effects}
+rather than absolute log-probabilities matters: the base model alone differs by up to 0.19 between the two backends, which
+made an earlier absolute-gap gate fail for reasons that had nothing to do with the adapter. The final adapter passed on
+11 points with minimum cosine 0.9990 and maximum residual 0.080; the file evaluated is byte-identical to the one gated
+(sha256 41794b57\ldots).

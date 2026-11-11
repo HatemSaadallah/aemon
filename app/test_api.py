@@ -1,4 +1,5 @@
-"""Strategy Lab API checks. Uses fixture runs in a temporary folder, and no model."""
+"""Aemon API checks. Uses fixture runs in a temporary folder, and no model."""
+import os
 import sys
 from pathlib import Path
 
@@ -6,10 +7,11 @@ import pytest
 from fastapi.testclient import TestClient
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
+os.environ['LEXSI_NO_RESUME'] = '1'  # never resume runs from a real database at import
 import server  # noqa: E402
-from strategy_agent.env.cases import load_cases  # noqa: E402
-from strategy_agent.agent.runner import record_of  # noqa: E402
-from strategy_agent.env.tools import Investigation  # noqa: E402
+from aemon.environment.cases import load_cases  # noqa: E402
+from aemon.agent.records import record_of
+from aemon.environment.tools import Investigation  # noqa: E402
 
 XSS = '<img src=x onerror=alert(1)>'
 
@@ -47,7 +49,7 @@ def test_model_text_in_a_report_is_escaped_and_its_numbers_come_from_the_record(
 
 
 def test_model_text_is_returned_as_data_and_the_page_never_builds_html():
-    sources = [(Path(__file__).parent / 'static' / 'app.js').read_text()] + [p.read_text() for p in (Path(__file__).parent / 'web' / 'src').rglob('*.ts*')]
+    sources = [p.read_text() for p in (Path(__file__).parent / 'web' / 'src').rglob('*.ts*')]
     assert not any(bad in source for source in sources for bad in ('innerHTML', 'insertAdjacentHTML', 'document.write', 'dangerouslySetInnerHTML'))
 
 
@@ -87,3 +89,10 @@ def test_the_page_runs_one_live_model_and_refuses_it_when_its_adapter_is_missing
     assert data['model']['available'] is (dict((m['id'], m) for m in server.MODELS)[server.LIVE_MODEL]['adapter'] is None)
     if not data['model']['available']:
         assert client.post('/api/try', json={'workspace': 'hellberg', 'case': 'hellberg-base'}).status_code == 409
+
+
+def test_the_numbers_and_suggestions_work_for_a_case_with_no_what_if(client):
+    import insights
+
+    record = dict(client.record, coverage={'shock': None})  # a base case records its what-if as None
+    assert insights.suggestions(record) and insights.metrics(record)['beliefs'] == []

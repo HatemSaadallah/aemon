@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\input{preamble}
+
+\title{\textbf{Aemon: Teaching a Small Model to Investigate Strategy Questions}\\[4pt]
+\large Agentic distillation of theory-driven decision making into a 3B open model,\\ with an executable environment and a frozen, blind evaluation}
+\author{Hatem Saadallah \and Nour Jennane}
+\date{November 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+\noindent Asked whether a manufacturer should take its technology to a new kind of customer, language models tend to
+produce consulting prose rather than an investigation. We teach a small open model, Tiny Aya Global (3.35B parameters),
+to carry out a theory-driven investigation (we call the resulting agent Aemon; \emph{weigh what is known, test what is not}): frame the decision, state rival causal theories, weigh quoted evidence for
+and against each, challenge its favourite, design a test with a decision rule or decline one, and revise on new
+evidence. The procedure follows the scientific approach to strategic decisions, which treats a theory as a restriction on
+beliefs and a decision as a choice between committing and experimenting. We build an executable environment with twelve
+guarded tools over 1{,}334 verified public records, a stage controller and executable checks; distil 3{,}891 tool-call
+rows from 158 replay-exact investigations by a Command A+ teacher into a LoRA adapter with AgentTune, plus 51 correction
+rows; verify the deployed GGUF adapter against the trained one; and evaluate on four companies never used for training
+or selection with two qualified, blinded LLM judges under a plan frozen before the run. The fine-tuned model scores 1.48
+against 0.65 for the base model under its best prompt on a nine-dimension 0--3 rubric, a paired difference of $+0.83$
+(95\% case-cluster bootstrap interval $[0.69, 0.97]$), higher for every company and every kind of new evidence, and
+finishes 28 of 48 investigations against 4, at about \$0.03 per investigation against \$0.25 for Claude Opus. A diagnosis
+traces the remaining failures (no declined tests, little directional new evidence, decision rules cut by a length cap)
+to gaps in the training data, and we report what environment changes and targeted examples did and did not fix.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\input{sec_intro}
+\input{sec_theory}
+\input{sec_env}
+\input{sec_method}
+\input{sec_eval}
+\input{sec_results}
+\input{sec_end}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\appendix
+\section{Reproducibility}\label{app:repro}
+\begin{itemize}
+  \item \textbf{Model.} Tiny Aya Global, revision af89d21; adapter sha256 740c4a9b\ldots; evaluated GGUF adapter sha256
+        41794b57\ldots, byte-identical across three conversions and to the file gated.
+  \item \textbf{Teacher.} Command A+ (05-2026), Q4\_K\_M GGUF in four parts, first part sha256 03cf0669\ldots; llama.cpp,
+        4 slots of 16{,}384 tokens, reasoning budget 512 from 4 November.
+  \item \textbf{Final test freeze.} Case digest dce26d4f\ldots; runner code d3aa608; job script 0377eae; llama.cpp
+        context 12{,}288, 520 tokens per turn, 45 turns, 4 refusals in a row; base prompt \texttt{staged}, fine-tuned
+        prompt \texttt{compact}; judge configuration judge-v1-two-backends-2; bootstrap 4{,}000 resamples, seed 20261106.
+  \item \textbf{Code and data.} The environment, pipeline, training and evaluation code and the job scripts are in the
+        public repository; the model, the redacted dossier, the cases, the training rows, every evaluation run, the
+        judge packets, both judges' scores and the reports are on Hugging Face, with a manifest of the sha256 of every
+        private original and its published copy. The public dossier cuts every excerpt to one sentence of at most 25
+        words.
+\end{itemize}
+\end{document}

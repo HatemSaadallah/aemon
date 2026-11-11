@@ -1,0 +1,40 @@
+{
+ "inputs": {
+  "corrective": "experiments/hosted_teacher/train_set/approved_rows.jsonl",
+  "corrective_sha256": "a44c0f3417d3e8ea51c6dd5de30e0a14c4ca9015983b770f514d986f595e2929",
+  "base": "rows/final.jsonl",
+  "base_sha256": "b963e777574936e506677bc048680be080ffccd08a3b8e7f13b54e5ed38b63c9"
+ },
+ "settings": {
+  "share": 0.2,
+  "corrective_epochs": 2,
+  "revise_cap": 0.1,
+  "seed": 7
+ },
+ "corrective_rows": 105,
+ "dropped": {
+  "duplicate": 1,
+  "revise over its cap": 3
+ },
+ "by_family": {
+  "numbers": 9,
+  "classify": 18,
+  "unstick": 56,
+  "revise": 10,
+  "experiment": 12
+ },
+ "by_call": {
+  "finish": 9,
+  "assess_evidence": 18,
+  "add_theory": 21,
+  "read_source": 35,
+  "revise_theory": 10,
+  "propose_test": 11,
+  "decline_test": 1
+ },
+ "replayed_base_rows": 1707,
+ "validation_rows": 411,
+ "training_presentations": 1917,
+ "corrective_share_of_target_chars": 0.2,
+ "output_sha256": "4e06896d642607a8ae2e58fa5180692fde5eefd9cf8ca83cdd1ab5d175213f70"
+}

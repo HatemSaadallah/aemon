@@ -1,0 +1,1026 @@
+{
+ "accessed": "2026-11-08",
+ "companies": [
+  {
+   "name": "Winterhalter Gastronom GmbH",
+   "slug": "winterhalter",
+   "records": [
+    {
+     "id": "winterhalter-only-warewashing",
+     "type": "company_claim",
+     "source_title": "About Us | Commercial Warewashing Specialists (Winterhalter UK)",
+     "url": "https://www.winterhalter.com/uk-en/about-us/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "We are the only company that solely concentrates on warewashing; machines, water treatment, chemicals, racks and service.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United Kingdom",
+     "population": "Winterhalter's commercial warewashing customers",
+     "does_not_establish": "It does not show whether Winterhalter has ever sold machines to private households or how a household offer would fit that focus.",
+     "bears_on": [
+      "current_offering",
+      "company_focus"
+     ]
+    },
+    {
+     "id": "winterhalter-uk-customers",
+     "type": "company_claim",
+     "source_title": "About Us | Commercial Warewashing Specialists (Winterhalter UK)",
+     "url": "https://www.winterhalter.com/uk-en/about-us/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "We work with many of the country’s leading pub, restaurant, hotel, supermarket, coffee shop and casual dining groups. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United Kingdom",
+     "population": "Foodservice and retail operators in the UK",
+     "does_not_establish": "It does not give customer counts or revenue shares, and says nothing about individual or household buyers.",
+     "bears_on": [
+      "current_customers",
+      "current_reach"
+     ]
+    },
+    {
+     "id": "winterhalter-distributors",
+     "type": "company_claim",
+     "source_title": "About Us | Commercial Warewashing Specialists (Winterhalter UK)",
+     "url": "https://www.winterhalter.com/uk-en/about-us/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "We have a network of high quality distributors around the country who supply the wider catering industry with our products. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United Kingdom",
+     "population": "Catering-industry buyers served via distributors and Winterhalter technicians",
+     "does_not_establish": "It does not show whether the distributor or service network could or would serve private homes.",
+     "bears_on": [
+      "channels",
+      "service_model"
+     ]
+    },
+    {
+     "id": "winterhalter-household-origin",
+     "type": "company_claim",
+     "source_title": "About Us | Commercial Warewashing Specialists (Winterhalter UK)",
+     "url": "https://www.winterhalter.com/uk-en/about-us/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "He started by salvaging scrap metal from the war, which he used to manufacture useful household items. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Germany",
+     "population": "Company history (founding period)",
+     "does_not_establish": "It shows household goods only in the founding period and says nothing about current household products or capabilities.",
+     "bears_on": [
+      "company_history",
+      "current_offering"
+     ]
+    },
+    {
+     "id": "winterhalter-uc-configurable",
+     "type": "company_claim",
+     "source_title": "The new UC Series Winterhalter undercounter warewasher – a masterpiece (press release)",
+     "url": "https://www.winterhalter.com/latest-news/press-details/the-new-uc-series-winterhalter-undercounter-warewasher-a-masterpiece/",
+     "source_date": "2018-10-01",
+     "excerpt": "The basic concept of the UC has proven itself over many years and has made the series extremely successful: one machine technology for four different …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Commercial buyers of undercounter warewashers",
+     "does_not_establish": "It does not give UC sales volumes or show that any UC configuration suits household installation, noise or price expectations.",
+     "bears_on": [
+      "current_offering",
+      "product_platform"
+     ]
+    },
+    {
+     "id": "winterhalter-uc-s-footprint",
+     "type": "company_claim",
+     "source_title": "Under the counter hygiene: the latest UC dishwasher from Winterhalter (Winterhalter UK news)",
+     "url": "https://www.winterhalter.com/uk-en/latest-news/news-details/under-the-counter-hygiene-the-latest-uc-dishwasher-from-winterhalter/",
+     "source_date": "2021-12-07",
+     "excerpt": "The UC is available in four different sizes, small, medium, large and extra-large, with the ultra-compact UC-S having a footprint of just 460mm wide by …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United Kingdom",
+     "population": "Commercial operators with limited space",
+     "does_not_establish": "It does not show that the UC-S fits standard domestic kitchen cabinetry, utilities or household budgets.",
+     "bears_on": [
+      "product_platform",
+      "product_fit"
+     ]
+    },
+    {
+     "id": "winterhalter-pay-per-wash",
+     "type": "company_claim",
+     "source_title": "PAY PER WASH: No investment. Zero risk. A next level solution by Winterhalter (press release)",
+     "url": "https://winterhalter.com/latest-news/press-details/pay-per-wash-no-investment-zero-risk-a-next-level-solution-by-winterhalter",
+     "source_date": "2017-10-09",
+     "excerpt": "Owners of start-ups can also rely on perfect wash results without having to make an initial investment.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Small and start-up commercial operators",
+     "does_not_establish": "It does not show uptake of the scheme or whether a pay-per-use model would appeal to households.",
+     "bears_on": [
+      "business_model",
+      "small_buyers"
+     ]
+    },
+    {
+     "id": "winterhalter-hmn-profile",
+     "type": "company_claim",
+     "source_title": "Winterhalter company profile (Hotel Management Network supplier directory)",
+     "url": "https://www.hotelmanagement-network.com/contractors/hotel-motel/winterhalter2/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "The food service industry, hotels, bakeries, butchers and industrial caterers trust in the high-end commercial warewashing solutions from Winterhalter. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Commercial warewashing customers",
+     "does_not_establish": "It is company-supplied directory copy and does not quantify customers by segment or mention households.",
+     "bears_on": [
+      "current_customers",
+      "current_offering"
+     ]
+    },
+    {
+     "id": "winterhalter-uc-glass-door",
+     "type": "company_claim",
+     "source_title": "Winterhalter company profile, press release list (Hotel Management Network supplier directory)",
+     "url": "https://www.hotelmanagement-network.com/contractors/hotel-motel/winterhalter2/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Winterhalter now offers the undercounter warewashers of the UC series with a glass door and blue interior lighting - a visual highlight for the bar …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Bars, lounges and clubs",
+     "does_not_establish": "It shows a design-led variant for visible bar settings but no sales data and no household use.",
+     "bears_on": [
+      "product_platform",
+      "use_case"
+     ]
+    },
+    {
+     "id": "winterhalter-fer-obituary",
+     "type": "verified_observation",
+     "source_title": "In Memoriam: Karl Winterhalter (Foodservice Equipment Reports)",
+     "url": "https://www.fermag.com/articles/1862-in-memoriam-karl-winterhalter/",
+     "source_date": "2012-01-24",
+     "excerpt": "Winterhalter established the Meckenbeuren, Germany, manufacturer in 1947, and turned a small family business into a worldwide distributor of warewashing technology. …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Germany / international",
+     "population": "Company history",
+     "does_not_establish": "It is a 2012 obituary and does not describe the company's current scale or any consumer activity.",
+     "bears_on": [
+      "company_history",
+      "current_offering"
+     ]
+    },
+    {
+     "id": "winterhalter-recs-ownership",
+     "type": "verified_observation",
+     "source_title": "Are Homeowners Really Using Their Dishwasher Less? Here's What We Found (Hunker)",
+     "url": "https://www.hunker.com/1957861/dishwasher-appliance-still-useful-homes/",
+     "source_date": "2025-09-03",
+     "excerpt": "The percentage of people surveyed in single-family detached units who said they didn't own or use a dishwasher at all dropped from nearly 25% in …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United States",
+     "population": "US households in single-family detached homes (EIA Residential Energy Consumption Survey, as reported)",
+     "does_not_establish": "It does not show any demand for premium or commercial-style home dishwashers, only general ownership and use.",
+     "bears_on": [
+      "consumer_market_size",
+      "household_adoption"
+     ]
+    },
+    {
+     "id": "winterhalter-eu-volumes",
+     "type": "verified_observation",
+     "source_title": "Europe Dishwasher Market (Global Market Insights)",
+     "url": "https://www.gminsights.com/industry-analysis/europe-dishwasher-market",
+     "source_date": "2026-08-01",
+     "excerpt": "APPLiA reported residential dishwasher volumes of 13.3 million units in both 2023 and 2024, indicating a stable unit market rather than a broad volume surge.",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Europe",
+     "population": "European residential dishwasher market",
+     "does_not_establish": "It does not show the size of any premium or fast-cycle niche, or what share a new entrant could take.",
+     "bears_on": [
+      "consumer_market_size",
+      "market_growth"
+     ]
+    },
+    {
+     "id": "winterhalter-eu-formats",
+     "type": "verified_observation",
+     "source_title": "Europe Dishwasher Market (Global Market Insights)",
+     "url": "https://www.gminsights.com/industry-analysis/europe-dishwasher-market",
+     "source_date": "2026-08-01",
+     "excerpt": "Built-in and slimline machines address permanent kitchen integration, while countertop and tabletop formats lower the space and installation barrier for smaller households.",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Europe",
+     "population": "European households buying dishwashers",
+     "does_not_establish": "It does not quantify demand for each format or show that a commercial maker could compete in them.",
+     "bears_on": [
+      "product_fit",
+      "use_case"
+     ]
+    },
+    {
+     "id": "winterhalter-eu-premium-restraint",
+     "type": "verified_observation",
+     "source_title": "Europe Dishwasher Market (Global Market Insights)",
+     "url": "https://www.gminsights.com/industry-analysis/europe-dishwasher-market",
+     "source_date": "2026-08-01",
+     "excerpt": "Premiumization is constrained when the purchase case depends on features that buyers cannot readily value at the point of sale.",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Europe",
+     "population": "European household dishwasher buyers",
+     "does_not_establish": "It is an analyst judgement, not a measured result, and does not test any specific premium proposition.",
+     "bears_on": [
+      "willingness_to_pay",
+      "counter_evidence"
+     ]
+    },
+    {
+     "id": "winterhalter-eu-ecodesign",
+     "type": "verified_observation",
+     "source_title": "Commission Regulation (EU) 2019/2022 laying down ecodesign requirements for household dishwashers (EUR-Lex)",
+     "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32019R2022",
+     "source_date": "2019-10-01",
+     "excerpt": "This Regulation establishes ecodesign requirements for the placing on the market or the putting into service of electric mains-operated household dishwashers, including built-in household dishwashers …",
+     "access_limitation": "none",
+     "kind": "regulatory",
+     "geography": "European Union",
+     "population": "Manufacturers placing household dishwashers on the EU market",
+     "does_not_establish": "It does not say how hard compliance would be for a commercial-machine design or what it would cost.",
+     "bears_on": [
+      "regulation",
+      "product_redesign"
+     ]
+    },
+    {
+     "id": "winterhalter-brakes-listing",
+     "type": "verified_observation",
+     "source_title": "Winterhalter UC-L Large Undercounter Dishwasher (Brakes Catering Equipment)",
+     "url": "https://www.brakesce.co.uk/catering-appliances/warewashing/dishwashers/undercounter-dishwashers/winterhalter-uc-l-large-undercounter-dishwasher/p/145573",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "The Dishwasher has three standard wash cycles that clean approximately 40/28/24 racks per hour, making this ideal for the busy kitchen.",
+     "access_limitation": "none",
+     "kind": "retail_listing",
+     "geography": "United Kingdom",
+     "population": "Commercial kitchen buyers using a catering-equipment retailer",
+     "does_not_establish": "It does not show whether any private buyers purchase this model, or its sales volume.",
+     "bears_on": [
+      "channels",
+      "product_fit"
+     ]
+    },
+    {
+     "id": "winterhalter-which-quickwash",
+     "type": "verified_observation",
+     "source_title": "Eco vs quick wash – which dishwasher program is cheapest and best? (Which?)",
+     "url": "https://www.which.co.uk/news/article/eco-vs-quick-wash-which-dishwasher-program-is-cheapest-and-best-akubJ2t3A6gi",
+     "source_date": "2026-01-19",
+     "excerpt": "The test revealed that quick wash cleaned less effectively than the main program (74% efficiency versus 83%).",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United Kingdom",
+     "population": "Three big-brand household dishwashers in a Which? 2024 snapshot test",
+     "does_not_establish": "It is a small test of three machines and does not show that households would pay for faster effective cleaning.",
+     "bears_on": [
+      "unmet_need",
+      "use_case"
+     ]
+    },
+    {
+     "id": "winterhalter-cycle-times",
+     "type": "verified_observation",
+     "source_title": "How long does a dishwasher cycle run? (Top Ten Reviews)",
+     "url": "https://www.toptenreviews.com/how-long-does-a-dishwasher-cycle-run",
+     "source_date": "2023-01-08",
+     "excerpt": "Most dishwasher cycles can last anywhere from 30 to 60 minutes for pre-wash or quick wash cycles, or between an hour and thirty minutes, and …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United States / United Kingdom",
+     "population": "Household dishwasher users",
+     "does_not_establish": "It gives typical cycle lengths but does not show that households want, or would pay for, much shorter cycles.",
+     "bears_on": [
+      "unmet_need",
+      "use_case"
+     ]
+    },
+    {
+     "id": "winterhalter-hoover-cycles",
+     "type": "verified_observation",
+     "source_title": "Dishwasher Cycle Times: How Long Do They Take? (Hoover UK blog)",
+     "url": "https://www.hoover-home.com/en_GB/blogs/news/dishwasher-cycle-times-how-long-do-they-take",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "With that being said, a normal wash cycle can last anywhere between 1 and 4 hours.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United Kingdom",
+     "population": "Household dishwasher users (content from a household-appliance maker)",
+     "does_not_establish": "It is a household-appliance maker's general guidance and does not measure consumer dissatisfaction with cycle times.",
+     "bears_on": [
+      "unmet_need",
+      "use_case"
+     ]
+    },
+    {
+     "id": "winterhalter-bonn-study",
+     "type": "verified_observation",
+     "source_title": "Geschirrspüler schonen die Umwelt (Universität Bonn press release)",
+     "url": "https://www.uni-bonn.de/de/universitaet/presse-kommunikation/presseservice/archiv-pressemitteilungen/2011/058-2011",
+     "source_date": "2011-02-24",
+     "excerpt": "Mit der Hand zu spülen, ist dennoch keine Alternative: Die Studie zeigt erstmals an in den Haushalten erhobenen Daten, dass Geschirrspüler in punkto Energie- und …",
+     "access_limitation": "none",
+     "kind": "academic",
+     "geography": "Europe",
+     "population": "European households in a University of Bonn field study (industry-funded)",
+     "does_not_establish": "It is a 2011 study on resource use and does not address premium or commercial-style machines or purchase intent.",
+     "bears_on": [
+      "household_adoption",
+      "context"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Franke Coffee Systems",
+   "slug": "frankecoffee",
+   "records": [
+    {
+     "id": "frankecoffee-about",
+     "type": "company_claim",
+     "source_title": "Franke press release: new A Line (About Franke Coffee Systems)",
+     "url": "https://www.franke.com/content/dam/franke/language-masters/en/coffee-systems/documents/press_releases/en/Franke_Press_Release_New_A_Line_20251017_en.pdf",
+     "source_date": "2025-10-17",
+     "excerpt": "Franke Coffee Systems, a division of the Franke Group, is a world-leading developer and manufacturer of professional coffee machines. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Business customers of Franke Coffee Systems",
+     "does_not_establish": "It does not give revenue for the coffee division or say whether any sales go to private households.",
+     "bears_on": [
+      "current_offering",
+      "company_size",
+      "channels"
+     ]
+    },
+    {
+     "id": "frankecoffee-group-profile",
+     "type": "company_claim",
+     "source_title": "Franke Group Profile 2026",
+     "url": "https://www.franke.com/content/dam/franke/language-masters/en/group/documents/Franke_Profile_2026.pdf.coredownload.pdf",
+     "source_date": "2026-05",
+     "excerpt": "Franke is a leading global supplier of products and services for residential kitchens, the foodservice and convenience store segments, and the professional coffee-making industry.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Franke Group businesses",
+     "does_not_establish": "It does not show how the residential-kitchen business and Coffee Systems share products, channels or decisions.",
+     "bears_on": [
+      "group_structure",
+      "current_reach"
+     ]
+    },
+    {
+     "id": "frankecoffee-home-machines",
+     "type": "company_claim",
+     "source_title": "Explore our coffee machines (Franke Home Solutions UK)",
+     "url": "https://www.franke.com/gb/en/home-solutions/products/coffee-machines.html",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Every Franke coffee machine comes equipped with an integrated and adjustable grinder, as well as the option of using pre-ground beans.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United Kingdom",
+     "population": "Household kitchen buyers of Franke Home Solutions products",
+     "does_not_establish": "It does not show who designs or makes these home machines, how many are sold, or whether Coffee Systems is involved.",
+     "bears_on": [
+      "existing_consumer_products",
+      "current_reach"
+     ]
+    },
+    {
+     "id": "frankecoffee-mythos-spec",
+     "type": "company_claim",
+     "source_title": "Mythos FMY 45 coffee machine, black (Franke Home Solutions UK product page)",
+     "url": "https://franke.com/gb/en/home-solutions/products/mythos/product-detail-page.html/131.0682.091.html",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Features include: Electronic Touch with White display, a Water Tank Capacity of: 1.8 Litres, a Coffee Beans drawer capacity of: 200g and space for 1 …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United Kingdom",
+     "population": "Household buyers of built-in kitchen appliances",
+     "does_not_establish": "It does not show sales, reviews or how this product compares with Franke's professional machines.",
+     "bears_on": [
+      "existing_consumer_products",
+      "product_fit"
+     ]
+    },
+    {
+     "id": "frankecoffee-a300-noncommercial",
+     "type": "company_claim",
+     "source_title": "Franke Coffee Systems unveils the A300 Fresh Brew (press release)",
+     "url": "https://www.franke.com/content/dam/franke/language-masters/en/coffee-systems/documents/press_releases_usa/en/20241002_Franke_Press_Release_A300%20Fresh%20Brew.pdf",
+     "source_date": "2024-10-02",
+     "excerpt": "Designed with the modern workplace and non-commercial segment in mind, the A300 Fresh Brew is the perfect solution for non-commercial spaces such as offices, hospitals, …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "North America",
+     "population": "Offices, hospitals, hotels and other non-commercial sites",
+     "does_not_establish": "It does not show any home use of the A300 or sales figures for the compact segment.",
+     "bears_on": [
+      "current_offering",
+      "adjacent_segments"
+     ]
+    },
+    {
+     "id": "frankecoffee-showroom",
+     "type": "company_claim",
+     "source_title": "Franke Coffee Systems Americas new showroom (press release)",
+     "url": "https://www.franke.com/content/dam/franke/us/en/coffee-systems/documents/showroom-pr/Press%20release_FrankeCoffeeSystems_NA_Showroom.pdf.coredownload.pdf",
+     "source_date": "2024-01-16",
+     "excerpt": "Franke Coffee Systems Americas welcomes coffee operators, distributors, and partners to its new showroom at the company’s headquarters in Smyrna, Tennessee.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United States",
+     "population": "Coffee operators, distributors and partners",
+     "does_not_establish": "It does not describe any channel to individual consumers.",
+     "bears_on": [
+      "channels",
+      "current_customers"
+     ]
+    },
+    {
+     "id": "frankecoffee-mytico",
+     "type": "company_claim",
+     "source_title": "Franke presents new product category BeyondTraditional and its first range, Mytico (press release)",
+     "url": "https://www.franke.com/content/dam/franke/language-masters/en/coffee-systems/documents/press_releases/en/Franke_Press_Release_BeyondTraditional_20230310_en.pdf",
+     "source_date": "2023-03-10",
+     "excerpt": "Franke Mytico creates the utmost flexibility for a broad range of uses and facilitates entry into new customer segments.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Professional coffee customers",
+     "does_not_establish": "It does not name the new customer segments or show results; it does not refer to households.",
+     "bears_on": [
+      "adjacent_segments",
+      "product_platform"
+     ]
+    },
+    {
+     "id": "frankecoffee-delonghi-premiumisation",
+     "type": "verified_observation",
+     "source_title": "La Marzocco and Eversys boost De'Longhi's full-year revenues (World Coffee Portal)",
+     "url": "https://www.worldcoffeeportal.com/news/la-marzocco-and-eversys-boost-delonghis-full-year-revenues/",
+     "source_date": "2025-01-31",
+     "excerpt": "In a press release, De’Longhi reported a positive performance across all regions, with sales in Europe particularly high following rising demand for professional fully automatic …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Europe / global",
+     "population": "De'Longhi Group customers, professional and household",
+     "does_not_establish": "It reports one competitor's results and does not show demand for a Franke-branded home product.",
+     "bears_on": [
+      "consumer_demand",
+      "competition"
+     ]
+    },
+    {
+     "id": "frankecoffee-delonghi-prosumer",
+     "type": "verified_observation",
+     "source_title": "La Marzocco and Eversys boost De'Longhi's full-year revenues (World Coffee Portal)",
+     "url": "https://www.worldcoffeeportal.com/news/la-marzocco-and-eversys-boost-delonghis-full-year-revenues/",
+     "source_date": "2025-01-31",
+     "excerpt": "The appliance manufacturer said its La Marzocco and Eversys business group continues to strengthen its brand position in the semi-automatic professional machine and at-home coffee …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "At-home coffee machine buyers of De'Longhi Group brands",
+     "does_not_establish": "It is a company statement reported by the press, without unit numbers for prosumer buyers.",
+     "bears_on": [
+      "consumer_demand",
+      "analog_moves"
+     ]
+    },
+    {
+     "id": "frankecoffee-linea-micra",
+     "type": "verified_observation",
+     "source_title": "La Marzocco launches the new Linea Micra (Comunicaffè International)",
+     "url": "https://comunicaffe.com/la-marzocco-launches-the-new-linea-micra",
+     "source_date": "2022-11-10",
+     "excerpt": "The Linea Micra is the first La Marzocco espresso machine designed for dedicated use in the home.",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Home espresso enthusiasts",
+     "does_not_establish": "It does not show how well the Linea Micra sold or whether it was profitable.",
+     "bears_on": [
+      "analog_moves",
+      "use_case"
+     ]
+    },
+    {
+     "id": "frankecoffee-nca-home-prep",
+     "type": "verified_observation",
+     "source_title": "More Americans Drink Coffee Each Day Than Any Other Beverage (National Coffee Association)",
+     "url": "https://ncausa.org/Newsroom/More-Americans-Drink-Coffee-Each-Day-Than-Any-Other-Beverage-Bottled-Water-Back-in-Second-Place",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "71% of past-day coffee drinkers had coffee prepared at home only in 2025 (compared to 63% in 2020), 16% had coffee prepared out of home …",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United States",
+     "population": "US adults who drank coffee in the past day (NCA National Coffee Data Trends, January 2025 fieldwork)",
+     "does_not_establish": "It does not show what equipment home drinkers would buy or at what price.",
+     "bears_on": [
+      "consumer_demand",
+      "use_case"
+     ]
+    },
+    {
+     "id": "frankecoffee-nca-equipment",
+     "type": "verified_observation",
+     "source_title": "More Americans Drink Coffee Each Day Than Any Other Beverage (National Coffee Association)",
+     "url": "https://ncausa.org/Newsroom/More-Americans-Drink-Coffee-Each-Day-Than-Any-Other-Beverage-Bottled-Water-Back-in-Second-Place",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "62% of American adults have a drip coffee maker at home (compared to 58% in 2020), 42% have a single-cup brewer (compared to 40% in …",
+     "access_limitation": "none",
+     "kind": "survey",
+     "geography": "United States",
+     "population": "US adults (NCA National Coffee Data Trends)",
+     "does_not_establish": "Ownership shares do not show willingness to pay for a premium machine or brand preference.",
+     "bears_on": [
+      "consumer_market_size",
+      "household_adoption"
+     ]
+    },
+    {
+     "id": "frankecoffee-breville-lelit",
+     "type": "verified_observation",
+     "source_title": "Breville to Acquire Italian Espresso Machine Maker Lelit for $124 Million (Daily Coffee News)",
+     "url": "https://dailycoffeenews.com/2022/03/11/breville-to-acquire-italian-espresso-machine-maker-lelit-for-124-million",
+     "source_date": "2022-03-11",
+     "excerpt": "Australia’s Breville Group has announced plans to acquire Italian prosumer espresso equipment company Lelit in a deal worth €113 million ($124 million USD) in cash …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Prosumer home espresso market",
+     "does_not_establish": "A deal price does not show the size or profitability of the prosumer segment.",
+     "bears_on": [
+      "consumer_market_size",
+      "competition"
+     ]
+    },
+    {
+     "id": "frankecoffee-mahlkonig-home",
+     "type": "verified_observation",
+     "source_title": "Mahlkönig Re-Entering the Home Market with X54 Allround Grinder (Daily Coffee News)",
+     "url": "https://dailycoffeenews.com/2021/05/06/mahlkonig-re-entering-the-home-market-with-x54-allround-grinder/",
+     "source_date": "2021-05-06",
+     "excerpt": "As its cylindrical body recalls the German manufacturer’s current lineup of commercial espresso grinders, the Allround has been explicitly designed as an all-around grinder for …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Home coffee enthusiasts",
+     "does_not_establish": "It shows a commercial maker entering the home segment but not how the product performed.",
+     "bears_on": [
+      "analog_moves",
+      "product_redesign"
+     ]
+    },
+    {
+     "id": "frankecoffee-mahlkonig-retired",
+     "type": "verified_observation",
+     "source_title": "Mahlkönig Re-Entering the Home Market with X54 Allround Grinder (Daily Coffee News)",
+     "url": "https://dailycoffeenews.com/2021/05/06/mahlkonig-re-entering-the-home-market-with-x54-allround-grinder/",
+     "source_date": "2021-05-06",
+     "excerpt": "In February of 2020 the company announced that its previous consumer-oriented machine with flat 54-millimeter burrs, the Mahlkönig Vario Home, would be retired from the …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Home coffee enthusiasts",
+     "does_not_establish": "It does not say why the earlier consumer product was retired or whether it lost money.",
+     "bears_on": [
+      "analog_moves",
+      "counter_evidence"
+     ]
+    },
+    {
+     "id": "frankecoffee-jura-markets",
+     "type": "verified_observation",
+     "source_title": "JURA CEO: coffee consumption has become a global phenomenon (swissinfo.ch)",
+     "url": "https://www.swissinfo.ch/eng/agribusiness/jura-ceo-coffee-consumption-has-become-a-global-phenomenon/91777053",
+     "source_date": "2026-07-25",
+     "excerpt": "The American market is currently the world’s second largest for fully-automatic coffee machines, yet it is only one-fifth the size of the German market for …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Germany / United States",
+     "population": "Buyers of JURA fully automatic coffee machines",
+     "does_not_establish": "It describes one competitor's market mix, not total market sizes or Franke's position.",
+     "bears_on": [
+      "consumer_market_size",
+      "geography"
+     ]
+    },
+    {
+     "id": "frankecoffee-jura-oem",
+     "type": "verified_observation",
+     "source_title": "JURA CEO: coffee consumption has become a global phenomenon (swissinfo.ch)",
+     "url": "https://www.swissinfo.ch/eng/agribusiness/jura-ceo-coffee-consumption-has-become-a-global-phenomenon/91777053",
+     "source_date": "2026-07-25",
+     "excerpt": "E.P.: All our machines are produced in Switzerland and Portugal by Eugster/Frismag, our long-term Swiss manufacturing partner.",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Switzerland / Portugal",
+     "population": "Household fully automatic coffee machine production",
+     "does_not_establish": "It does not show whether contract manufacturing would suit Franke or at what cost.",
+     "bears_on": [
+      "route_to_market",
+      "product_redesign"
+     ]
+    },
+    {
+     "id": "frankecoffee-ert-leader",
+     "type": "verified_observation",
+     "source_title": "De'Longhi redefines the high-end coffee market as bean-to-cup machine sales soar (ERT)",
+     "url": "https://ertonline.co.uk/indepth/delonghi-redefines-the-high-end-coffee-market-as-bean-to-cup-machine-sales-soar/",
+     "source_date": "2024-01-09",
+     "excerpt": "When it comes to market share, De’Longhi is the clear leader.",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global / United Kingdom",
+     "population": "Household coffee machine market",
+     "does_not_establish": "It gives no share figure and no information on the premium niche Franke might target.",
+     "bears_on": [
+      "competition",
+      "counter_evidence"
+     ]
+    },
+    {
+     "id": "frankecoffee-ert-growth",
+     "type": "verified_observation",
+     "source_title": "De'Longhi redefines the high-end coffee market as bean-to-cup machine sales soar (ERT)",
+     "url": "https://ertonline.co.uk/indepth/delonghi-redefines-the-high-end-coffee-market-as-bean-to-cup-machine-sales-soar/",
+     "source_date": "2024-01-09",
+     "excerpt": "“The bean-to-cup category is growing fast, as people appreciate the importance of the freshness of their beans.”",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "Global",
+     "population": "Household bean-to-cup buyers",
+     "does_not_establish": "It is a quote from a De'Longhi manager, not measured market data.",
+     "bears_on": [
+      "consumer_demand",
+      "market_growth"
+     ]
+    },
+    {
+     "id": "frankecoffee-philips-price",
+     "type": "verified_observation",
+     "source_title": "De'Longhi vs Philips bean-to-cup coffee machines (Ideal Home)",
+     "url": "https://www.idealhome.co.uk/all-rooms/coffee/delonghi-versus-philips-bean-to-cup-coffee-machines",
+     "source_date": "2025-07-16",
+     "excerpt": "Philips' cheapest bean-to-cup machine by comparison, the Series 2200 Fully Automatic, starts at just £269.99.",
+     "access_limitation": "none",
+     "kind": "retail_listing",
+     "geography": "United Kingdom",
+     "population": "UK household bean-to-cup buyers",
+     "does_not_establish": "It is an entry-price data point and does not show the price ceiling buyers accept at the premium end.",
+     "bears_on": [
+      "price_points",
+      "competition"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Hoshizaki Corporation",
+   "slug": "hoshizaki",
+   "records": [
+    {
+     "id": "hoshizaki-profile",
+     "type": "company_claim",
+     "source_title": "Corporate Profile (Hoshizaki Corporation)",
+     "url": "https://www.hoshizaki.co.jp/en/company/profile/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Research and development, manufacturing and sales of commercial kitchen appliances & equipment including Ice machines, Refrigerators and Dish Washers.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Japan / international",
+     "population": "Hoshizaki Group business description (as of December 31, 2024)",
+     "does_not_establish": "It does not show whether any Hoshizaki products are sold to households.",
+     "bears_on": [
+      "current_offering"
+     ]
+    },
+    {
+     "id": "hoshizaki-ice-uses",
+     "type": "company_claim",
+     "source_title": "Ice machines – Business Portfolio (Hoshizaki Corporation)",
+     "url": "https://www.hoshizaki.co.jp/en/business/lineup/ice.html",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "We have focused our development on ease-of-use and energy saving while also ensuring the superior ice making performance and durability required for commercial use. …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Commercial ice-machine users",
+     "does_not_establish": "It does not give sales by customer type or mention home users.",
+     "bears_on": [
+      "current_offering",
+      "current_customers"
+     ]
+    },
+    {
+     "id": "hoshizaki-direct-sales",
+     "type": "company_claim",
+     "source_title": "Hoshizaki Integrated Report 2025",
+     "url": "https://www.hoshizaki.co.jp/en/ir/library/pdf/integrated_report2025_e_a3.pdf",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Increasing productivity is the top priority for the Group’s domestic arm, which employs approximately 3,400 sales staff and 2,800 service staff (as of December 31, 2024) and considers direct sales, carried out through collaboration between our sales and service teams, its greatest competitive advantage.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Japan",
+     "population": "Hoshizaki's domestic business customers",
+     "does_not_establish": "It does not show whether the direct sales and service network can reach or serve households economically.",
+     "bears_on": [
+      "channels",
+      "service_model"
+     ]
+    },
+    {
+     "id": "hoshizaki-small-ice-makers",
+     "type": "company_claim",
+     "source_title": "Hoshizaki Integrated Report 2025",
+     "url": "https://www.hoshizaki.co.jp/en/ir/library/pdf/integrated_report2025_e_a3.pdf",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "In Southeast Asia, we will strengthen sales of commercial refrigerators through product enhancement and direct sales, and for ice makers, we will work to reduce costs and shorten delivery times by starting shipments from our Suzhou Factory in China, as well as create demand through the launch of small ice makers.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Southeast Asia",
+     "population": "Commercial customers in Southeast Asia",
+     "does_not_establish": "It does not say whether the small ice makers are aimed at households or give any volumes.",
+     "bears_on": [
+      "product_platform",
+      "adjacent_segments"
+     ]
+    },
+    {
+     "id": "hoshizaki-share-claim",
+     "type": "company_claim",
+     "source_title": "Hoshizaki Integrated Report 2025",
+     "url": "https://www.hoshizaki.co.jp/en/ir/library/pdf/integrated_report2025_e_a3.pdf",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "The competition in the ice maker business is limited, but the Group’s market share both in Japan and globally is top-class.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "Japan / global",
+     "population": "Commercial ice maker market",
+     "does_not_establish": "It is the company's own claim and gives no figures for the residential ice maker segment.",
+     "bears_on": [
+      "competition",
+      "company_position"
+     ]
+    },
+    {
+     "id": "hoshizaki-fy2025-outlook",
+     "type": "company_claim",
+     "source_title": "Hoshizaki FY2025 financial results presentation",
+     "url": "https://www.hoshizaki.co.jp/en/pdf/en260216-1.pdf",
+     "source_date": "2026-02",
+     "excerpt": "In overseas markets, Although the impact of macroeconomic trends and the competitive environment will remain severe, demand is expected to remain firm, particularly for key …",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "International",
+     "population": "Hoshizaki's overseas commercial customers",
+     "does_not_establish": "It is a company forecast and says nothing about consumer demand.",
+     "bears_on": [
+      "company_position",
+      "market_growth"
+     ]
+    },
+    {
+     "id": "hoshizaki-america-leader",
+     "type": "company_claim",
+     "source_title": "About Us (Hoshizaki America)",
+     "url": "https://www.hoshizakiamerica.com/about-us/",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "HOSHIZAKI is the world leader in the design and manufacturing of a wide range of ice and refrigeration products for the food service industry.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United States / western hemisphere",
+     "population": "Food service industry customers",
+     "does_not_establish": "It is a self-description and does not cover residential buyers or channels.",
+     "bears_on": [
+      "current_offering",
+      "current_customers"
+     ]
+    },
+    {
+     "id": "hoshizaki-gmi-residential",
+     "type": "verified_observation",
+     "source_title": "Ice Maker Market Size & Share (Global Market Insights)",
+     "url": "https://www.gminsights.com/industry-analysis/ice-maker-market",
+     "source_date": "2026-10-01",
+     "excerpt": "Residential generated USD 652 million in 2025 and is expected to grow at a 7.4% CAGR (2026–2035).",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Global",
+     "population": "Residential ice maker market",
+     "does_not_establish": "It is a market-research estimate with undisclosed method and does not show what a premium segment is worth.",
+     "bears_on": [
+      "consumer_market_size",
+      "market_growth"
+     ]
+    },
+    {
+     "id": "hoshizaki-gmi-share",
+     "type": "verified_observation",
+     "source_title": "Ice Maker Market Size & Share (Global Market Insights)",
+     "url": "https://www.gminsights.com/industry-analysis/ice-maker-market",
+     "source_date": "2026-10-01",
+     "excerpt": "Hoshizaki Corporation led with over 31.1% market share in 2025.",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Global",
+     "population": "Global ice maker market (all segments)",
+     "does_not_establish": "It does not split Hoshizaki's share between commercial and residential segments.",
+     "bears_on": [
+      "company_position",
+      "competition"
+     ]
+    },
+    {
+     "id": "hoshizaki-gmi-countertop",
+     "type": "verified_observation",
+     "source_title": "Ice Maker Market Size & Share (Global Market Insights)",
+     "url": "https://www.gminsights.com/industry-analysis/ice-maker-market",
+     "source_date": "2026-10-01",
+     "excerpt": "Commercial buyers are differentiating between high-output fleet equipment and compact point-of-service units, while residential consumers are entering the category through accessible countertop formats.",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Global",
+     "population": "Commercial and residential ice maker buyers",
+     "does_not_establish": "It does not quantify countertop demand or the price points at which consumers buy.",
+     "bears_on": [
+      "use_case",
+      "price_points"
+     ]
+    },
+    {
+     "id": "hoshizaki-imarc-foodservice",
+     "type": "verified_observation",
+     "source_title": "Ice Maker Market Size, Share, Trends and Forecast (IMARC Group)",
+     "url": "https://www.imarcgroup.com/ice-maker-market",
+     "source_date": "2026-10-13",
+     "excerpt": "Foodservice leads the market with around 43.5% of ice maker market share in 2025.",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Global",
+     "population": "Ice maker market by end-use sector",
+     "does_not_establish": "It does not give the residential share or its trend.",
+     "bears_on": [
+      "consumer_market_size",
+      "current_customers"
+     ]
+    },
+    {
+     "id": "hoshizaki-imarc-countertop",
+     "type": "verified_observation",
+     "source_title": "Ice Maker Market Size, Share, Trends and Forecast (IMARC Group)",
+     "url": "https://www.imarcgroup.com/ice-maker-market",
+     "source_date": "2026-10-13",
+     "excerpt": "Advancements in energy-efficient and compact ice makers, along with growing consumer interest in residential countertop models, further contribute to overall market growth.",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Global",
+     "population": "Residential countertop ice maker buyers",
+     "does_not_establish": "It asserts interest without stating how it was measured.",
+     "bears_on": [
+      "consumer_demand",
+      "use_case"
+     ]
+    },
+    {
+     "id": "hoshizaki-opal-crowdfunding",
+     "type": "verified_observation",
+     "source_title": "Amidst Blazing Temperatures, a \"Nugget Ice\" Machine Becomes a Crowdfunding Smash (Core77)",
+     "url": "https://www.core77.com/posts/39477/Amidst-Blazing-Temperatures-a-Nugget-Ice-Machine-Becomes-a-Crowdfunding-Smash",
+     "source_date": "2015-07-29",
+     "excerpt": "Yesterday, the Opal Nugget Ice Maker went live on IndieGogo, and the freaking thing raised $516,742 in about 24 hours, blowing way past its measly …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United States",
+     "population": "Crowdfunding backers of a home nugget-ice maker",
+     "does_not_establish": "First-day crowdfunding does not show sustained retail demand or margins.",
+     "bears_on": [
+      "consumer_demand",
+      "use_case"
+     ]
+    },
+    {
+     "id": "hoshizaki-opal-ge",
+     "type": "verified_observation",
+     "source_title": "First Nugget Ice Maker for Home Use Launches (GE press release)",
+     "url": "https://www.ge.com/news/press-releases/first-nugget-ice-maker-home-use-launches",
+     "source_date": "2015-07-22",
+     "excerpt": "In March of this year, FirstBuild challenged its community to design a residential ice maker that would appeal to nugget ice enthusiasts.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United States",
+     "population": "Nugget ice enthusiasts",
+     "does_not_establish": "It is another manufacturer's press release and does not measure the enthusiast segment.",
+     "bears_on": [
+      "analog_moves",
+      "use_case"
+     ]
+    },
+    {
+     "id": "hoshizaki-opal-price",
+     "type": "verified_observation",
+     "source_title": "We tried the Opal nugget ice maker (Reviewed)",
+     "url": "https://www.reviewed.com/refrigerators/features/we-tried-this-nugget-ice-maker-and-heres-what-happened",
+     "source_date": "2017-10-12",
+     "excerpt": "The Opal Nugget Ice Maker (MSRP $499) is charming, crazy, and awesome.",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United States",
+     "population": "Reviewers of a home nugget-ice maker",
+     "does_not_establish": "A single review does not show how many households would pay this price.",
+     "bears_on": [
+      "price_points",
+      "consumer_demand"
+     ]
+    },
+    {
+     "id": "hoshizaki-scotsman-category",
+     "type": "verified_observation",
+     "source_title": "Scotsman's Brilliance Nugget Ice Machines Bring The Original Chewable Ice Home (Scotsman Ice Systems press release)",
+     "url": "https://www.scotsman-ice.com/press-release/41",
+     "source_date": "2011-03-18",
+     "excerpt": "Scotsman created the 15-inch consumer ice machine category 40 years ago, and the Brilliance collection demonstrates continued innovation with more convenience, efficiency and reliability.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United States",
+     "population": "Residential undercounter ice machine buyers",
+     "does_not_establish": "It is a competitor's own claim and gives no sales or profitability for its consumer line.",
+     "bears_on": [
+      "analog_moves",
+      "competition"
+     ]
+    },
+    {
+     "id": "hoshizaki-scotsman-home",
+     "type": "verified_observation",
+     "source_title": "Scotsman's Brilliance Nugget Ice Machines Bring The Original Chewable Ice Home (Scotsman Ice Systems press release)",
+     "url": "https://www.scotsman-ice.com/press-release/41",
+     "source_date": "2011-03-18",
+     "excerpt": "For the first time, consumers can satisfy their cravings for this delicious ice in the convenience of their own homes.",
+     "access_limitation": "none",
+     "kind": "company_assertion",
+     "geography": "United States",
+     "population": "Consumers who want nugget ice at home",
+     "does_not_establish": "It is promotional copy and does not measure consumer demand.",
+     "bears_on": [
+      "use_case",
+      "analog_moves"
+     ]
+    },
+    {
+     "id": "hoshizaki-japan-fridge-icemakers",
+     "type": "verified_observation",
+     "source_title": "Japan Household Refrigerators and Freezers Market (Renub Research)",
+     "url": "https://www.renub.com/japan-household-refrigerators-and-freezers-market-p.php",
+     "source_date": "unknown (accessed 2026-11-08)",
+     "excerpt": "Modern Japanese consumers increasingly value features such as rapid cooling, humidity-controlled vegetable compartments, antibacterial interiors, automatic ice makers, and separate cooling zones for different food …",
+     "access_limitation": "none",
+     "kind": "market_data",
+     "geography": "Japan",
+     "population": "Japanese household refrigerator buyers",
+     "does_not_establish": "It does not measure how many households already have automatic ice making, or whether that removes demand for a separate machine.",
+     "bears_on": [
+      "counter_evidence",
+      "substitutes"
+     ]
+    },
+    {
+     "id": "hoshizaki-alliance-portfolio",
+     "type": "verified_observation",
+     "source_title": "Hoshizaki Alliance Group to acquire Structural Concepts (Vending Market Watch)",
+     "url": "https://www.vendingmarketwatch.com/management/news/55297624/structural-concepts-hoshizaki-alliance-group-to-acquire-structural-concepts",
+     "source_date": "2025-06-17",
+     "excerpt": "Hoshizaki Alliance is a group of independent companies that manufacture and market products for the food service industry, including ice machines, refrigerators, freezers, prep tables, …",
+     "access_limitation": "none",
+     "kind": "news_report",
+     "geography": "United States",
+     "population": "Hoshizaki's US foodservice businesses",
+     "does_not_establish": "It does not mention any consumer products or channels.",
+     "bears_on": [
+      "current_offering",
+      "group_structure"
+     ]
+    }
+   ]
+  }
+ ]
+}

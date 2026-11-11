@@ -9,7 +9,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from strategy_agent.common.constants.env import BELIEFS
+from aemon.common.constants.env import BELIEFS
 
 Json = dict[str, Any]
 
@@ -21,6 +21,7 @@ SOURCE_KIND = {
     'proposed_hypothesis': 'Hypothesis',
     'synthetic': 'Simulated what-if',
     'web_page': 'Web page (unchecked)',
+    'user_document': 'Your document',
 }
 STEP_GROUP = {  # the controller's stages, in the words a manager would use
     'brief': 'Understanding the question', 'frame': 'Understanding the question',
@@ -123,12 +124,48 @@ def checks(record: Json) -> Json:
     return {'passed': sum(bool(c['passed']) for c in evaluated), 'evaluated': len(evaluated)}
 
 
+CONFIDENCE_ACTION = {
+    'High': 'The evidence is consistent: check the quotes, then act.',
+    'Moderate': 'Reasonable to act on small, reversible steps.',
+    'Low': 'Treat it as a hypothesis: run the test before committing.',
+}
+CONFIDENCE_RULE = 'One point for each check passed: 5 is High, 3 or 4 Moderate, 0 to 2 Low.'
+
+
+def confidence(record: Json, belief_rows: list[Json], evidence_rows: list[Json]) -> Json | None:
+    """A score out of five for the recommendation, one point per plain check, from the run's own judgement and the
+    sources it weighed; the label follows the score. Nothing is estimated (DECISIONS, 2026-11-08)."""
+    if not record.get('final'):
+        return None
+    lead = next((b for b in belief_rows if b['favoured']), None)
+    belief = (lead['after'] or lead['before']) if lead else None
+    row = next((e for e in evidence_rows if lead and e['id'] == lead['id']), {})
+    weighed = row.get('supports', 0) + row.get('contradicts', 0) + row.get('neutral', 0)
+    checks = [
+        {'label': 'The leading explanation is judged likely or very likely', 'passed': belief in ('likely', 'very likely')},
+        {'label': 'It is judged very likely', 'passed': belief == 'very likely'},
+        {'label': f"At least 2 independent sources support it ({row.get('independent_supports', 0)})", 'passed': row.get('independent_supports', 0) >= 2},
+        {'label': f"No independent source contradicts it ({row.get('independent_contradicts', 0)})", 'passed': bool(lead) and row.get('independent_contradicts', 0) == 0},
+        {'label': f'At least 3 sources were weighed for it ({weighed})', 'passed': weighed >= 3},
+    ]
+    score = sum(c['passed'] for c in checks)
+    level = 'High' if score == 5 else 'Moderate' if score >= 3 else 'Low'
+    if (record.get('final') or {}).get('draft'):  # written after the investigation stopped early: never more than Low
+        level = 'Low'
+    draft = bool((record.get('final') or {}).get('draft'))
+    return {'level': level, 'score': score, 'out_of': 5, 'checks': checks, 'action': CONFIDENCE_ACTION[level], 'draft': draft,
+            'rule': CONFIDENCE_RULE + (' A draft written after the investigation stopped early is never more than Low.' if draft else ''),
+            'why': f'{score} of 5 checks passed.'}
+
+
 def metrics(record: Json, budget: float | None = None, max_weeks: float | None = None) -> Json:
+    rows, ev = beliefs(record), evidence(record)
     return {
+        'confidence': confidence(record, rows, ev),
         'finished': record.get('final') is not None,
-        'beliefs': beliefs(record),
+        'beliefs': rows,
         'scale': list(BELIEFS),
-        'evidence': evidence(record),
+        'evidence': ev,
         'sources': source_mix(record),
         'test': test_numbers(record, budget, max_weeks),
         'steps': steps(record),
@@ -150,6 +187,6 @@ def suggestions(record: Json) -> list[str]:
     elif record.get('test_declined'):
         out.append('Why was no test proposed?')
     out.append('Which evidence is the weakest?')
-    if (record.get('coverage') or {}).get('shock', {}).get('delivered'):
+    if ((record.get('coverage') or {}).get('shock') or {}).get('delivered'):  # None when the case has no what-if
         out.append('How did the new evidence change the picture?')
     return out[:4]

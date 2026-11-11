@@ -1,0 +1,179 @@
+{
+  "packet_id": "28d247fd41a387d9",
+  "packet_sha256": "fd095344c67172d5cb1d85c1b8df2a28b8d44f4a6e872d6bae7c3aa66f35da6d",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"28d247fd41a387d9\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A1\"], \"reason\": \"A1 restates the objective and lists obvious options. 'No expansion' appears twice in near-identical wording. The constraints contradict the question: 'No redesign of existing products for consumer use' and 'No change in the company's current customer base' rule out the consumer proposition being asked about, and the 'Consumer-focused product redesign' alternative breaks them. A1 also introduces a '20,000 euros and 12 weeks' test budget that is not in the case. A proposed budget is an assumption, but here it is presented as a fixed constraint with no source. The objective is not separated from the suggested solution in any useful way. An invented number caps this dimension at 1.\"}, \"causal_mechanism\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\", \"A5\", \"A7\", \"A9\"], \"reason\": \"The best theory (T1, A4) names a benefit: cash from the sale, streamlined operations and reallocation. However, it explains why Ansell sold its Sexual Wellness division, not whether a consumer proposition would change any customer's behaviour or how Ansell would capture value from one. The claim that the division was 'generating lower returns' is asserted without any source. Invented content caps this at 1.\"}, \"distinct_theories\": {\"status\": \"scored\", \"score\": 0, \"event_ids\": [\"A4\", \"A5\", \"A7\", \"A9\"], \"reason\": \"T1 to T4 are near-verbatim copies. They share the same who-benefits, value-capture, assumption and prediction text, and only the headline wording varies slightly. T2's mechanism text is garbled and truncated ('reallocate\\u0eb6'). No rival implies a different product, customer or channel, and none addresses the consumer-proposition question.\"}, \"assumptions_predictions\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\"], \"reason\": \"Assumptions and predictions are stated, for example 'significant increase in cash flow' and 'improved profitability and growth'. They are vague, have no thresholds or timeframe, and concern the divestiture rather than consumer demand. Failure of any of them would not threaten an answer to the actual question.\"}, \"evidence_judgement\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A2\", \"A3\", \"A6\", \"A8\", \"A10\"], \"reason\": \"A6 and A10 cite the ERJ core-focus quote accurately, and calling it a company assertion is reasonable because it reports what 'the company said'. A8 cites the sale announcement as support for T2's claim about motive, but the excerpt only shows that a binding sale agreement exists, not why. The 'Does not show' limits are boilerplate, describe the theory rather than the source, and never address date, place or fit with consumer customers. A2 and A3 report finding sources (ansell-fy25-household-exit, ansell-grocer-partnership) that are absent from the supplied dossier, and these were never assessed. The run only cites agreeing evidence.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A11\"], \"reason\": \"The searches in A2 and A3 were general information gathering, not searches against a favoured theory. The run stopped at A11 before any challenge stage, so this applicable stage was not reached. Not reached contributes zero to the all-case composite.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A11\"], \"reason\": \"No test was proposed or declined before the run stopped for context limits at A11.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions. No update was scheduled or delivered.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A11\"], \"reason\": \"A11 states that the investigation stopped before a recommendation.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A11\"], \"reason\": \"The episode ended at the context limit with no recommendation and no experiment stage.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A4\", \"A5\", \"A7\", \"A9\"], \"reason\": \"The theories state as fact that the Sexual Wellness division was 'generating lower returns' and was misaligned. No supplied source supports either claim; the core-focus excerpt states a growth objective, not comparative returns.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A8\"], \"reason\": \"The sale-announcement quote is used to support T2's claim about Ansell's motive. The excerpt shows only that a binding agreement exists, with its price and buyers, and says nothing about the reasons for the sale.\"}, {\"kind\": \"invented_observation\", \"event_ids\": [\"A1\"], \"reason\": \"A '20,000 euros and 12 weeks' budget, and constraints barring consumer redesign or customer-base change, are introduced as constraints without any basis in the case.\"}, {\"kind\": \"invented_observation\", \"event_ids\": [\"A2\", \"A3\"], \"reason\": \"The searches report sources (ansell-fy25-household-exit, ansell-grocer-partnership) that do not appear in the supplied dossier.\"}, {\"kind\": \"other\", \"event_ids\": [\"A4\", \"A5\", \"A7\", \"A9\"], \"reason\": \"Question drift: every theory explains a past divestiture rather than whether to build a consumer proposition. The theories are near-duplicates, and T2 contains garbled text.\"}], \"suitable_for_training\": false, \"screen_reason\": \"Reject. The episode is incomplete, with no experiment stage and no recommendation (A11). It also contains unsupported causal claims stated as fact (A4, A5, A7, A9), an assessment that uses a quote to support a motive it does not show (A8), invented constraints (A1), sources missing from the dossier (A2, A3), and duplicate theories that answer a different question.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 6006
+      },
+      "cache_creation_input_tokens": 6006,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 3116,
+      "output_tokens_details": {
+        "thinking_tokens": 1082
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.092366,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "96654fe6b608b55edd29a495d084e17dd09491f6207ddc07330a663e4ac11194",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "28d247fd41a387d9",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 restates the objective and lists obvious options. 'No expansion' appears twice in near-identical wording. The constraints contradict the question: 'No redesign of existing products for consumer use' and 'No change in the company's current customer base' rule out the consumer proposition being asked about, and the 'Consumer-focused product redesign' alternative breaks them. A1 also introduces a '20,000 euros and 12 weeks' test budget that is not in the case. A proposed budget is an assumption, but here it is presented as a fixed constraint with no source. The objective is not separated from the suggested solution in any useful way. An invented number caps this dimension at 1."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4",
+          "A5",
+          "A7",
+          "A9"
+        ],
+        "reason": "The best theory (T1, A4) names a benefit: cash from the sale, streamlined operations and reallocation. However, it explains why Ansell sold its Sexual Wellness division, not whether a consumer proposition would change any customer's behaviour or how Ansell would capture value from one. The claim that the division was 'generating lower returns' is asserted without any source. Invented content caps this at 1."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A4",
+          "A5",
+          "A7",
+          "A9"
+        ],
+        "reason": "T1 to T4 are near-verbatim copies. They share the same who-benefits, value-capture, assumption and prediction text, and only the headline wording varies slightly. T2's mechanism text is garbled and truncated ('reallocate\u0eb6'). No rival implies a different product, customer or channel, and none addresses the consumer-proposition question."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "Assumptions and predictions are stated, for example 'significant increase in cash flow' and 'improved profitability and growth'. They are vague, have no thresholds or timeframe, and concern the divestiture rather than consumer demand. Failure of any of them would not threaten an answer to the actual question."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A6",
+          "A8",
+          "A10"
+        ],
+        "reason": "A6 and A10 cite the ERJ core-focus quote accurately, and calling it a company assertion is reasonable because it reports what 'the company said'. A8 cites the sale announcement as support for T2's claim about motive, but the excerpt only shows that a binding sale agreement exists, not why. The 'Does not show' limits are boilerplate, describe the theory rather than the source, and never address date, place or fit with consumer customers. A2 and A3 report finding sources (ansell-fy25-household-exit, ansell-grocer-partnership) that are absent from the supplied dossier, and these were never assessed. The run only cites agreeing evidence."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A11"
+        ],
+        "reason": "The searches in A2 and A3 were general information gathering, not searches against a favoured theory. The run stopped at A11 before any challenge stage, so this applicable stage was not reached. Not reached contributes zero to the all-case composite."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "No test was proposed or declined before the run stopped for context limits at A11."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions. No update was scheduled or delivered."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "A11 states that the investigation stopped before a recommendation."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A11"
+        ],
+        "reason": "The episode ended at the context limit with no recommendation and no experiment stage."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A4",
+          "A5",
+          "A7",
+          "A9"
+        ],
+        "reason": "The theories state as fact that the Sexual Wellness division was 'generating lower returns' and was misaligned. No supplied source supports either claim; the core-focus excerpt states a growth objective, not comparative returns."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "The sale-announcement quote is used to support T2's claim about Ansell's motive. The excerpt shows only that a binding agreement exists, with its price and buyers, and says nothing about the reasons for the sale."
+      },
+      {
+        "kind": "invented_observation",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A '20,000 euros and 12 weeks' budget, and constraints barring consumer redesign or customer-base change, are introduced as constraints without any basis in the case."
+      },
+      {
+        "kind": "invented_observation",
+        "event_ids": [
+          "A2",
+          "A3"
+        ],
+        "reason": "The searches report sources (ansell-fy25-household-exit, ansell-grocer-partnership) that do not appear in the supplied dossier."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A4",
+          "A5",
+          "A7",
+          "A9"
+        ],
+        "reason": "Question drift: every theory explains a past divestiture rather than whether to build a consumer proposition. The theories are near-duplicates, and T2 contains garbled text."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Reject. The episode is incomplete, with no experiment stage and no recommendation (A11). It also contains unsupported causal claims stated as fact (A4, A5, A7, A9), an assessment that uses a quote to support a motive it does not show (A8), invented constraints (A1), sources missing from the dossier (A2, A3), and duplicate theories that answer a different question."
+  },
+  "seconds": 29.732
+}

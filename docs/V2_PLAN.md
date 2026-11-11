@@ -41,7 +41,7 @@ so a recorded run's opening calls replay unchanged up to the point where the var
 
 Provenance and replay are necessary, not sufficient (the teacher passed every check in 1 of 223 investigations).
 Each target must also pass a skill check fixed in code before any example is generated
-(`src/strategy_agent/pipeline/targeted.py`):
+(`src/aemon/pipeline/targeted.py`):
 - experiment: the experiment check passes (distinct predictions, measurable threshold), cost and weeks within the
   stated limits; a decline must name the binding constraint from the state;
 - revision: addresses an affected theory, changes nothing on irrelevant evidence, does not reject a theory the evidence

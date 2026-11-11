@@ -1,0 +1,142 @@
+{
+ "runs": 216,
+ "arms": [
+  "base",
+  "v1",
+  "v3"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "base": {
+     "mean": 0.494,
+     "n": 72
+    },
+    "v1": {
+     "mean": 0.86,
+     "n": 71
+    },
+    "v3": {
+     "mean": 1.217,
+     "n": 72
+    }
+   },
+   "by_arm_company": {
+    "base": {
+     "ansell": 0.463,
+     "belimo": 0.514,
+     "draeger": 0.593,
+     "frankecoffee": 0.667,
+     "hach": 0.509,
+     "hoshizaki": 0.472,
+     "kingspan": 0.317,
+     "laerdal": 0.648,
+     "mettler": 0.449,
+     "tennant": 0.306,
+     "testo": 0.632,
+     "winterhalter": 0.354
+    },
+    "v1": {
+     "ansell": 0.811,
+     "belimo": 0.725,
+     "draeger": 0.731,
+     "frankecoffee": 0.479,
+     "hach": 0.919,
+     "hoshizaki": 0.259,
+     "kingspan": 1.312,
+     "laerdal": 0.986,
+     "mettler": 1.35,
+     "tennant": 1.113,
+     "testo": 0.933,
+     "winterhalter": 0.694
+    },
+    "v3": {
+     "ansell": 1.231,
+     "belimo": 1.245,
+     "draeger": 1.505,
+     "frankecoffee": 1.111,
+     "hach": 1.426,
+     "hoshizaki": 1.174,
+     "kingspan": 1.449,
+     "laerdal": 1.106,
+     "mettler": 1.289,
+     "tennant": 1.023,
+     "testo": 1.204,
+     "winterhalter": 0.836
+    }
+   },
+   "by_arm_dimension": {
+    "base": {
+     "assumptions_predictions": 0.847,
+     "causal_mechanism": 0.806,
+     "distinct_theories": 0.444,
+     "evidence_judgement": 0.333,
+     "experiment_design": 0.222,
+     "problem_framing": 1.028,
+     "recommendation": 0.028,
+     "revision": 0.083,
+     "seeking_challenge": 0.431
+    },
+    "v1": {
+     "assumptions_predictions": 1.197,
+     "causal_mechanism": 1.028,
+     "distinct_theories": 0.873,
+     "evidence_judgement": 0.408,
+     "experiment_design": 0.507,
+     "problem_framing": 1.789,
+     "recommendation": 0.437,
+     "revision": 1.0,
+     "seeking_challenge": 0.606
+    },
+    "v3": {
+     "assumptions_predictions": 1.514,
+     "causal_mechanism": 1.514,
+     "distinct_theories": 1.472,
+     "evidence_judgement": 0.667,
+     "experiment_design": 0.889,
+     "problem_framing": 1.708,
+     "recommendation": 0.903,
+     "revision": 1.611,
+     "seeking_challenge": 0.889
+    }
+   },
+   "difference": {
+    "arms": "v3 minus base",
+    "pairs": 72,
+    "cases": 24,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.723,
+     0.633,
+     0.818
+    ],
+    "by_company": {
+     "ansell": 0.769,
+     "belimo": 0.731,
+     "draeger": 0.912,
+     "frankecoffee": 0.444,
+     "hach": 0.917,
+     "hoshizaki": 0.701,
+     "kingspan": 1.132,
+     "laerdal": 0.458,
+     "mettler": 0.84,
+     "tennant": 0.718,
+     "testo": 0.572,
+     "winterhalter": 0.481
+    }
+   }
+  }
+ },
+ "missing": [
+  {
+   "judge": "claudecode",
+   "packet_id": "00c5dd2f7f0beeea",
+   "arm": "v1",
+   "case": "ansell-base",
+   "error": {
+    "type": "JSONDecodeError",
+    "message": "Invalid control character at: line 1 column 3675 (char 3674)"
+   }
+  }
+ ]
+}

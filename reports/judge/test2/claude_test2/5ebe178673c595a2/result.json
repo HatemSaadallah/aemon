@@ -1,0 +1,135 @@
+{
+  "packet_id": "5ebe178673c595a2",
+  "packet_sha256": "5c23c6c6cfa1fbe36be6bf6f65635a8179a49cb90df0035416359462d009fce9",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"5ebe178673c595a2\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A1\"], \"reason\": \"A1 separates the objective (decide whether a consumer investment is justified by demand, willingness to pay and advantage) from the suggested solution. It lists real alternatives: an undifferentiated adjacent expansion, no expansion, and licensing or co-branding. It flags that current consumer reach is unknown and must be discovered. It does not reach 3 because it never corrects or engages the premise that consumer business would be new. The dossier shows Ansell exited retail household gloves (ansell-ar25-discontinued), sold the Marigold brand and its household business (ansell-erj-marigold-sale), and has a long FHCS partnership (ansell-grocer-partnership). These were found later in A2-A5 but never integrated. The \u20ac20,000 and 12-week budget is not traceable to the dossier and is treated here as a supplied task constraint, not evidence.\"}, \"causal_mechanism\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A7\"], \"reason\": \"No theory or mechanism was stated before the run stopped at the turn limit (A7).\"}, \"distinct_theories\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A7\"], \"reason\": \"No theories were articulated before termination (A7). The alternatives in A1 are options, not rival causal explanations.\"}, \"assumptions_predictions\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A7\"], \"reason\": \"No assumptions or falsifiable predictions were stated before termination (A7).\"}, \"evidence_judgement\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\"], \"reason\": \"Searches A2-A6 retrieved sources, but no assessment was made before termination (A7). Examples of unassessed content: the discontinued household gloves business, the Marigold sale, the FHCS partnership quote, and the Werkado household tester usage.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\"], \"reason\": \"No favoured theory existed, so searching against it could not occur. Searches A2-A6 were exploratory use-case queries. The run stopped (A7) before any challenge stage.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A7\"], \"reason\": \"No test was proposed or declined before termination (A7).\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"The packet excludes revision from applicable_dimensions, and scheduled_update is false.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A7\"], \"reason\": \"The investigation stopped before any recommendation (A7). This counts as zero in the all-case composite.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A7\"], \"reason\": \"The episode terminated at the turn limit with no theories, evidence assessment, test design or recommendation.\"}], \"suitable_for_training\": false, \"screen_reason\": \"Rejected as incomplete: A7 shows the run stopped before a recommendation. Only framing (A1) and five unassessed searches (A2-A6) were completed. No reasoning on mechanism, theories, evidence or recommendation exists to train on.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4040
+      },
+      "cache_creation_input_tokens": 4040,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1917,
+      "output_tokens_details": {
+        "thinking_tokens": 721
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.058556,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "fcd9b0073480e9a00ef07576757bdadce7d002577cd335f547bfc64118959cff",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "5ebe178673c595a2",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (decide whether a consumer investment is justified by demand, willingness to pay and advantage) from the suggested solution. It lists real alternatives: an undifferentiated adjacent expansion, no expansion, and licensing or co-branding. It flags that current consumer reach is unknown and must be discovered. It does not reach 3 because it never corrects or engages the premise that consumer business would be new. The dossier shows Ansell exited retail household gloves (ansell-ar25-discontinued), sold the Marigold brand and its household business (ansell-erj-marigold-sale), and has a long FHCS partnership (ansell-grocer-partnership). These were found later in A2-A5 but never integrated. The \u20ac20,000 and 12-week budget is not traceable to the dossier and is treated here as a supplied task constraint, not evidence."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No theory or mechanism was stated before the run stopped at the turn limit (A7)."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No theories were articulated before termination (A7). The alternatives in A1 are options, not rival causal explanations."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No assumptions or falsifiable predictions were stated before termination (A7)."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "reason": "Searches A2-A6 retrieved sources, but no assessment was made before termination (A7). Examples of unassessed content: the discontinued household gloves business, the Marigold sale, the FHCS partnership quote, and the Werkado household tester usage."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "reason": "No favoured theory existed, so searching against it could not occur. Searches A2-A6 were exploratory use-case queries. The run stopped (A7) before any challenge stage."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No test was proposed or declined before termination (A7)."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "The packet excludes revision from applicable_dimensions, and scheduled_update is false."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "The investigation stopped before any recommendation (A7). This counts as zero in the all-case composite."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "The episode terminated at the turn limit with no theories, evidence assessment, test design or recommendation."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected as incomplete: A7 shows the run stopped before a recommendation. Only framing (A1) and five unassessed searches (A2-A6) were completed. No reasoning on mechanism, theories, evidence or recommendation exists to train on."
+  },
+  "seconds": 18.556
+}

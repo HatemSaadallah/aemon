@@ -1,0 +1,137 @@
+{
+  "packet_id": "6a56794b3686fafe",
+  "packet_sha256": "0f4e05674088d0cce0920c27b926b518e624917dd56ba72a9048dc24fe59dd84",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"6a56794b3686fafe\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A1\"], \"reason\": \"A1 separates the objective from the suggested consumer proposition. It lists distinct alternatives: new B2B segments, no expansion, co-branding partners and technology licensing. It also flags that current consumer reach is unknown and must be discovered. It does not reach rung 3 because it misses a premise problem visible in the dossier. Laerdal already markets CPR Anytime as a home, self-paced kit (laerdal-cpranytime-home), so 'home CPR training for individuals' is not clearly beyond existing products. The framing never questions what would make a new proposition differentiated relative to that kit. The \u20ac20,000 and 12-week budget constraints are not in the supplied case text. They may come from the protocol, but they cannot be verified from this packet. They are framed as constraints, not findings, so no invented-observation flag is raised.\"}, \"causal_mechanism\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"No theory or mechanism was stated before the run stopped at A8.\"}, \"distinct_theories\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"No theories were generated before the run stopped. A1's alternatives are options, not rival explanations.\"}, \"assumptions_predictions\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"No assumptions or predictions were stated before the run stopped.\"}, \"evidence_judgement\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\", \"A8\"], \"reason\": \"Searches A2-A7 returned sources, but no assessment of any source was made before the run stopped. A6 and A7 list source IDs (laerdal-military, laerdal-aha-homes) that do not appear in the supplied dossier excerpts. They were never assessed, so they are not used.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\", \"A7\", \"A8\"], \"reason\": \"No favoured theory existed to challenge. Searches A2-A7 are near-duplicate queries about Laerdal's consumer market and demand, and none targets disconfirming evidence. The run stopped before any challenge stage.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"No test was proposed or declined before the run stopped.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions. No update was scheduled or delivered.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A8\"], \"reason\": \"A8 records that the investigation stopped before a recommendation because of repeated errors.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A8\"], \"reason\": \"The episode ended without a completed recommendation. It produced only framing and six largely redundant searches (A2-A7).\"}], \"suitable_for_training\": false, \"screen_reason\": \"The episode is incomplete: A8 stopped before theories, assessments, tests or a recommendation, and incomplete episodes are rejected. The only reached stage, framing (A1), is reasonable. Its all-case composite contribution is limited, because all unreached stages contribute zero.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4346
+      },
+      "cache_creation_input_tokens": 4346,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1843,
+      "output_tokens_details": {
+        "thinking_tokens": 628
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.058606,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "3d3d0d561665bbb15d56929fc4ab995034a67dcbfe57d4e38d502a5f630077cd",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "6a56794b3686fafe",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective from the suggested consumer proposition. It lists distinct alternatives: new B2B segments, no expansion, co-branding partners and technology licensing. It also flags that current consumer reach is unknown and must be discovered. It does not reach rung 3 because it misses a premise problem visible in the dossier. Laerdal already markets CPR Anytime as a home, self-paced kit (laerdal-cpranytime-home), so 'home CPR training for individuals' is not clearly beyond existing products. The framing never questions what would make a new proposition differentiated relative to that kit. The \u20ac20,000 and 12-week budget constraints are not in the supplied case text. They may come from the protocol, but they cannot be verified from this packet. They are framed as constraints, not findings, so no invented-observation flag is raised."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No theory or mechanism was stated before the run stopped at A8."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No theories were generated before the run stopped. A1's alternatives are options, not rival explanations."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No assumptions or predictions were stated before the run stopped."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8"
+        ],
+        "reason": "Searches A2-A7 returned sources, but no assessment of any source was made before the run stopped. A6 and A7 list source IDs (laerdal-military, laerdal-aha-homes) that do not appear in the supplied dossier excerpts. They were never assessed, so they are not used."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8"
+        ],
+        "reason": "No favoured theory existed to challenge. Searches A2-A7 are near-duplicate queries about Laerdal's consumer market and demand, and none targets disconfirming evidence. The run stopped before any challenge stage."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "No test was proposed or declined before the run stopped."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions. No update was scheduled or delivered."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "A8 records that the investigation stopped before a recommendation because of repeated errors."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "The episode ended without a completed recommendation. It produced only framing and six largely redundant searches (A2-A7)."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete: A8 stopped before theories, assessments, tests or a recommendation, and incomplete episodes are rejected. The only reached stage, framing (A1), is reasonable. Its all-case composite contribution is limited, because all unreached stages contribute zero."
+  },
+  "seconds": 16.22
+}

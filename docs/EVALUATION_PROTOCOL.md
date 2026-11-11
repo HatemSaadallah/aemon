@@ -1,8 +1,8 @@
-# Strategy agent evaluation protocol (draft)
+# Aemon evaluation protocol (draft)
 
 **Status:** Draft for Claude and Hatem to review. Not frozen; no confirmatory run or training-data generation is authorized by this document. Version 0.1, November 2, 2026.
 
-This protocol tests a strategic opportunity-analysis agent for manufacturers exploring consumer markets. It describes an evaluation of investigation quality under automated judging. It cannot establish that a recommendation is commercially correct or improves business outcomes.
+This protocol tests Aemon, a strategic opportunity-analysis agent for manufacturers exploring consumer markets. It describes an evaluation of investigation quality under automated judging. It cannot establish that a recommendation is commercially correct or improves business outcomes.
 
 ## 1. Question and claims
 

@@ -1,18 +1,17 @@
-# Strategy Lab
+# Aemon
 
 The local UI and backend for this project. It binds to `127.0.0.1` only.
 
 ```bash
 ./app/run_model.sh   # Tiny Aya on port 8091, with every trained adapter found in ~/.cache/lexsi/adapters
-./app/run.sh         # the Strategy Lab on http://127.0.0.1:8000
+./app/run.sh         # Aemon on http://127.0.0.1:8000
 ```
 
 ## Frontend
 
 React 18 with React Router and strict TypeScript, built by Vite, in `app/web`. FastAPI serves the build in
-`app/web/dist` when it exists and the older plain pages in `app/static` otherwise; the API is the same either way.
-`app/run.sh` builds it once if `dist` is missing and Node is installed (the user-space install in `~/.local/node`, or
-any `npm` on `PATH`). By hand:
+`app/web/dist`. `app/run.sh` builds it once if `dist` is missing; that needs Node (the user-space install in
+`~/.local/node`, or any `npm` on `PATH`). By hand:
 
 ```bash
 export PATH="$HOME/.local/node/bin:$PATH"
@@ -43,6 +42,6 @@ restart keeps everyone signed in. Five failed sign-ins for one name within a min
 - **How it works:** the stage controller as a diagram, drawn from `/api/workflow`: the stages in order, grouped, the tools each one opens, what moves the investigation on, the optional what-if branch, and the tools that stay open from the test onward. It is the same table a test checks against the controller, so it cannot drift from the code.
 - **The math:** the model of Camuffo, Gambardella and Pignataro (2024), equations 1 to 7 with their Luxottica numbers, a calculator that illustrates the framework with standard Bayesian updating (the agent computes no probabilities), how each concept maps to a stage and tool, and how the agent is assessed: its own five-point beliefs before and after each simulated what-if, checked for direction by `/api/beliefs`.
 - **Results:** the paired pilots. The same cases, controller, prompt and settings, and the only difference is the adapter. Each case shows how far each model got and why it stopped, and opens the full run as a tree (or as the step list). A pilot appears once both of its reports exist; add the next one to `PILOTS` in `server.py`. A run can be linked directly, such as `#/results/pilot2/trained/5` (old `#results/...` links still work).
-- **Training:** the live loss chart from `scripts/training_feed.py`, with the best held-out checkpoint marked.
+- **Training:** the live loss chart from `scripts/oneoff/training_feed.py`, with the best held-out checkpoint marked.
 
 These are development pilots on two companies, not a final test. Checks are guards against mechanical mistakes, not measures of strategy quality.

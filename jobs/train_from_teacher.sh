@@ -13,7 +13,7 @@ for f in "$@"; do scp -q -o BatchMode=yes -o ControlMaster=no -o ControlPath=$S 
 scp -q -o BatchMode=yes -o ControlMaster=no -o ControlPath=$S CLUSTER_ACCOUNT@CLUSTER_HOST:lexsi/runs/teacher/provenance.jsonl $LOCAL/provenance_cluster.jsonl
 mkdir -p reports/strategy/rows
 ROWS=reports/strategy/rows/$NAME.jsonl
-.venv/bin/python -W ignore -m strategy_agent.pipeline.rows --reports $(for f in "$@"; do echo $LOCAL/$f.json; done) --manifest $LOCAL/provenance_cluster.jsonl --output $ROWS
+.venv/bin/python -W ignore -m aemon.rows.build_rows --reports $(for f in "$@"; do echo $LOCAL/$f.json; done) --manifest $LOCAL/provenance_cluster.jsonl --output $ROWS
 [ -s $ROWS ] || { echo "no rows, so nothing submitted"; exit 1; }
 REV=$(git rev-parse --short HEAD)
 $SSH "mkdir -p ~/lexsi/code_$REV ~/lexsi/rows"

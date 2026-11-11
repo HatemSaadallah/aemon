@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom';
 import { App } from './App.tsx';
 import { Login } from './pages/Login.tsx';
 import './style.css';
+import './ui.css';
 
 // Old links were #results/pilot1/trained/3; the router reads #/results/pilot1/trained/3.
 // On load the address is rewritten before the router starts; later, location.replace fires the event the router follows.

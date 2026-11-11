@@ -154,7 +154,7 @@ export function Pairs({ rows }: { rows: [string, unknown][] }) {
 
 function Conclusion({ final }: { final: Final }) {
   const all: [string, unknown][] = [['Recommendation', final.recommendation], ['Next action', final.next_action], ['Favoured theory', final.favoured_theory], ['Customer', final.target_customer],
-    ['Proposition', final.value_proposition], ['Uncertainty', final.uncertainty]];
+    ['Proposition', final.value_proposition], ['Uncertainty', final.uncertainty], ['Where the company stands', final.company_position]];
   const rows = all.filter(([, v]) => v);
   return (
     <div className="card conclusion">

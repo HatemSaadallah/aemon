@@ -1,4 +1,4 @@
-"""The Strategy Lab's storage: one SQLite file for companies, accounts, sessions, history and saved runs.
+"""Aemon's storage: one SQLite file for companies, accounts, sessions, history and saved runs.
 
 An account is a member of one or more companies (memberships) and works in one company's workspace at a time; it never
 sees a company it is not a member of.
@@ -19,7 +19,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from strategy_agent.common.types import Json
+from aemon.common.types import Json
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS companies (id TEXT PRIMARY KEY, name TEXT NOT NULL, added REAL NOT NULL);
@@ -103,6 +103,13 @@ def _done(db: sqlite3.Connection, name: str) -> bool:
 
 def _migrate(db: sqlite3.Connection) -> None:
     """Import the plain files once. Rows that already exist are kept, and the files are left where they are."""
+    if not _done(db, 'history_resume'):  # the raw turns and run settings, so a run cut off by a restart can resume
+        columns = {row[1] for row in db.execute('PRAGMA table_info(history)')}
+        if 'turns' not in columns:
+            db.execute('ALTER TABLE history ADD COLUMN turns TEXT')
+        if 'run_settings' not in columns:
+            db.execute('ALTER TABLE history ADD COLUMN run_settings TEXT')
+        db.execute('INSERT INTO migrations VALUES (?, ?)', ('history_resume', time.time()))
     if not _done(db, 'history_pins_projects'):  # pinning and projects, added to existing history without touching it
         columns = {row[1] for row in db.execute('PRAGMA table_info(history)')}
         if 'pinned' not in columns:
@@ -224,8 +231,10 @@ _COLUMNS = {
     'record': 'record',
     'cached_at': 'cached_at',
     'project': 'project',
+    'turns': 'turns',
+    'run_settings': 'run_settings',
 }
-_JSON = ('summary', 'record')
+_JSON = ('summary', 'record', 'turns', 'run_settings')
 
 
 def _upsert(db: sqlite3.Connection, name: str, workspace: str, identifier: str, **fields: object) -> None:
@@ -260,8 +269,13 @@ def _entry(row: sqlite3.Row) -> dict[str, Any]:
         'project': row['project'] if 'project' in row.keys() else None,
     }
     for key in _JSON:
-        out[key] = json.loads(row[key]) if row[key] else None
+        out[key] = json.loads(row[key]) if key in row.keys() and row[key] else None
     return out
+
+
+def running() -> list[dict[str, Any]]:
+    """Every investigation still marked running, with its owner and workspace: after a restart, these resume."""
+    return [{**_entry(r), 'user': r['user'], 'workspace': r['workspace']} for r in _read("SELECT * FROM history WHERE status = 'running' ORDER BY COALESCE(started, 0)")]
 
 
 def history(name: str, workspace: str) -> list[dict[str, Any]]:

@@ -1,0 +1,202 @@
+[
+ {
+  "name": "Siemens & Halske",
+  "slug": "siemenshalske",
+  "why": "Telegraph and electrical instruments for railways and state posts; precision coils and dynamos later reached households."
+ },
+ {
+  "name": "SKF",
+  "slug": "skf",
+  "why": "Self-aligning ball bearings for machinery and vehicles; the same bearing technology went into bicycles and appliances."
+ },
+ {
+  "name": "Atlas Copco",
+  "slug": "atlascopco",
+  "why": "Pneumatic rock drills and compressors for mines and railway building; small compressors later for workshops and garages."
+ },
+ {
+  "name": "L.M. Ericsson",
+  "slug": "lmericsson",
+  "why": "Telephone sets and manual exchanges sold to national telecom operators; the handset design soon sat on desks everywhere."
+ },
+ {
+  "name": "Corning Glass Works",
+  "slug": "corningglass",
+  "why": "Television bulbs, laboratory glassware and PYREX for industry and labs; heat-resistant glass later moved into kitchenware."
+ },
+ {
+  "name": "Carl Zeiss Jena",
+  "slug": "zeissjena",
+  "why": "Microscopes and optical instruments for universities, hospitals and industry; lens know-how fed cameras and binoculars."
+ },
+ {
+  "name": "KONE",
+  "slug": "kone",
+  "why": "Electric elevators and hoists for building contractors and factories; compact hoisting gear later suited home lifts."
+ },
+ {
+  "name": "Wärtsilä",
+  "slug": "wartsila",
+  "why": "Diesel engines and ship machinery for shipowners, mills and power plants; compact engines later in boats and gensets."
+ },
+ {
+  "name": "Alfa Laval",
+  "slug": "alfalaval",
+  "why": "Cream separators and plate heat exchangers for dairies and process industry; separation and heat transfer moved to marine and homes."
+ },
+ {
+  "name": "Lincoln Electric",
+  "slug": "lincolnelectric",
+  "why": "Arc welders and electrodes for shipyards and fabricators; portable welders and motors later in farm and home workshops."
+ },
+ {
+  "name": "Bausch & Lomb",
+  "slug": "bauschandlomb",
+  "why": "Microscopes and ophthalmic lenses for laboratories and opticians; eyeglass and lens technology reached every household."
+ },
+ {
+  "name": "Sulzer",
+  "slug": "sulzer",
+  "why": "Textile machinery, pumps and diesel engines for mills and shipping; pump technology now in heating and water systems."
+ },
+ {
+  "name": "Yaskawa",
+  "slug": "yaskawa",
+  "why": "Electric motors and controls for mines and factories; inverter drive know-how later in appliances and service robots."
+ },
+ {
+  "name": "Shimadzu",
+  "slug": "shimadzu",
+  "why": "Physical and chemical instruments and X-ray apparatus for schools, hospitals and industry; measurement spread to clinical labs."
+ },
+ {
+  "name": "Trumpf",
+  "slug": "trumpf",
+  "why": "Laser cutting, welding and punching machines for sheet-metal fabricators and machine builders; laser sources now in marking and medical devices."
+ },
+ {
+  "name": "SICK AG",
+  "slug": "sickag",
+  "why": "Photoelectric and safety sensors for factory automation and logistics; the sensing principles underpin consumer robots and appliances."
+ },
+ {
+  "name": "Vaisala",
+  "slug": "vaisala",
+  "why": "Humidity, pressure and weather sensors for meteorology, pharma and industry; sensor modules also in HVAC and home weather stations."
+ },
+ {
+  "name": "Eppendorf",
+  "slug": "eppendorf",
+  "why": "Pipettes, centrifuges and bioreactors for life-science labs and pharma; precision liquid handling reaches clinical and home testing."
+ },
+ {
+  "name": "Sartorius",
+  "slug": "sartorius",
+  "why": "Laboratory balances, filters and single-use bioprocess bags for pharma and labs; weighing and membrane tech also in food and medical devices."
+ },
+ {
+  "name": "Getinge",
+  "slug": "getinge",
+  "why": "Sterilizers, washer-disinfectors and surgical tables for hospitals; disinfection tech also serves clinics, labs and dental practices."
+ },
+ {
+  "name": "Elekta",
+  "slug": "elekta",
+  "why": "Linear accelerators, gamma knives and radiosurgery systems for hospitals; dose planning software underpins precision cancer treatment."
+ },
+ {
+  "name": "Ottobock",
+  "slug": "ottobock",
+  "why": "Prosthetic limbs, orthoses and wheelchairs for clinics and rehab; biomechanical components also in sports and mobility aids."
+ },
+ {
+  "name": "B. Braun",
+  "slug": "bbraun",
+  "why": "Infusion pumps, surgical instruments and dialysis for hospitals; sterile disposables and wound care reach home and outpatient care."
+ },
+ {
+  "name": "Terumo",
+  "slug": "terumo",
+  "why": "Catheters, blood bags and oxygenators for hospitals and blood banks; needle and polymer tech also in home self-injection devices."
+ },
+ {
+  "name": "Halton",
+  "slug": "halton",
+  "why": "Commercial kitchen hoods, air distribution and indoor-climate systems for restaurants and buildings; airflow know-how also in residential ventilation."
+ },
+ {
+  "name": "Phoenix Contact",
+  "slug": "phoenixcontact",
+  "why": "Industrial connectors, terminal blocks and surge protection for machine builders and utilities; the parts also sit in EV chargers and building wiring."
+ },
+ {
+  "name": "Bosch Rexroth",
+  "slug": "boschrexroth",
+  "why": "Hydraulic pumps, valves and electric drives for machinery; compact hydraulics and controls also in agricultural and garden equipment."
+ },
+ {
+  "name": "Nordson",
+  "slug": "nordson",
+  "why": "Precision adhesive dispensers, coating systems and X-ray inspection for packaging and electronics; the dispensing tech reaches consumer assembly."
+ },
+ {
+  "name": "ESAB",
+  "slug": "esab",
+  "why": "Welding consumables and equipment for shipyards, pipelines and fabricators; inverter welders later sold to small workshops and hobbyists."
+ },
+ {
+  "name": "Putzmeister",
+  "slug": "putzmeister",
+  "why": "Concrete pumps and industrial pumps for construction, tunneling and mining; pumping principles also in sewer cleaning and small mixers."
+ },
+ {
+  "name": "Vermeer",
+  "slug": "vermeer",
+  "why": "Trenching, horizontal drilling and hay balers for contractors and farms; compact trenchers and chippers reach rental fleets and homeowners."
+ },
+ {
+  "name": "Valmont",
+  "slug": "valmont",
+  "why": "Center-pivot irrigation, poles and structures for farms and utilities; pivot and galvanizing tech also in residential irrigation."
+ },
+ {
+  "name": "Kemira",
+  "slug": "kemira",
+  "why": "Coagulants, biocides and pulp chemicals for drinking-water plants and mills; polymer know-how also in home water filters."
+ },
+ {
+  "name": "Outotec",
+  "slug": "outotec",
+  "why": "Minerals processing, smelting and roasting plants for mining companies; separation and thermal know-how also in recycling and battery materials."
+ },
+ {
+  "name": "Metso",
+  "slug": "metso",
+  "why": "Crushing, screening and slurry pumps for aggregates and mining; wear-part and pump designs also in recycling and small quarrying."
+ },
+ {
+  "name": "Hubbell",
+  "slug": "hubbell",
+  "why": "Electrical connectors, insulators and grid hardware for power companies; wiring devices later in commercial and residential buildings."
+ },
+ {
+  "name": "Victaulic",
+  "slug": "victaulic",
+  "why": "Grooved pipe couplings and fittings for contractors, fire protection and industry; the couplings also in HVAC and home plumbing retrofits."
+ },
+ {
+  "name": "Trojan Technologies",
+  "slug": "trojantech",
+  "why": "UV disinfection systems for municipal drinking water and wastewater; the UV lamps also in point-of-use and home water purifiers."
+ },
+ {
+  "name": "Helmer Scientific",
+  "slug": "helmerscientific",
+  "why": "Medical-grade refrigerators, blood bank freezers and thaw systems for hospitals and labs; controls also in pharmacy and clinic cold chain."
+ },
+ {
+  "name": "Calgon Carbon",
+  "slug": "calgoncarbon",
+  "why": "Activated carbon, UV and ion exchange for drinking water and air emission control; the carbon media also in home filters and purifiers."
+ }
+]

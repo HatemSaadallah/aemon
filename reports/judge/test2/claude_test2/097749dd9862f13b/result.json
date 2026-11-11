@@ -1,0 +1,168 @@
+{
+  "packet_id": "097749dd9862f13b",
+  "packet_sha256": "7638055df55967ebf06d6a35ae0c189f386114d5d677a4b6fcdde2d15dabc7f5",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\":\"097749dd9862f13b\",\"dimensions\":{\"problem_framing\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A1\"],\"reason\":\"A1 mostly restates the question and lists obvious options (no expansion, targeted, niche, diversification). It adds a constraint, 'No expansion of existing product lines or customer groups', which conflicts with the question's premise of going beyond existing products. It also offers home CPR training for individuals as a new option, although laerdal-cpranytime-home shows CPR Anytime already offers home learning. It neither catches nor corrects this false premise, and it does not clearly separate the objective from a suggested solution.\"},\"causal_mechanism\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A3\",\"A4\"],\"reason\":\"T1 names a benefit (convenience, home-based learning) and a generic 'who benefits'. Value capture is only 'selling the program ... increasing its market reach and revenue', with no traced chain to what this manufacturer captures. It also answers a different question: it explains an asserted 'success' of CPR Anytime rather than whether to build a new consumer proposition. 'Growing demand for home-based health education' rests on no dossier evidence.\"},\"distinct_theories\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A3\",\"A4\"],\"reason\":\"T2 (A4) rewords T1 (A3) and adds 'younger generations'. Its why-behaviour-changes text, value capture and predictions are word-for-word identical to T1. The two theories imply no different product, customer or channel.\"},\"assumptions_predictions\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A3\",\"A4\"],\"reason\":\"Assumptions are stated but vague ('growing demand', 'perceived as a valuable tool'). Predictions such as 'will continue to grow in popularity' and 'increased revenue' have no observable threshold and are shared by both theories. Their failure would not put either theory in trouble.\"},\"evidence_judgement\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A5\",\"A6\"],\"reason\":\"A5 and A6 cite the same company marketing sentence as support for both theories. The source is labelled a company assertion, but it is still treated as support for demand and success. The quoted words are exact, yet 'resulting in more people trained' is a promotional claim and does not establish demand, growth, success or revenue. The 'does not show' notes describe gaps in the theory, not what the source cannot establish, such as date, place or customer fit.\"},\"seeking_challenge\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A7\"],\"reason\":\"A7 runs a search against T1, but the query only restates T1. It lists source IDs (laerdal-nicu-kits-donated, laerdal-military) that do not appear in the supplied dossier. It reports no content or finding from any of them, so there is no fair account of what was or was not found.\"},\"experiment_design\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A8\"],\"reason\":\"The A8 test compares CPR Anytime with traditional training on 'survival rates' in a simulated emergency, a measure that a simulation cannot produce. The predictions assigned to T1 and T2 do not follow from their content: neither theory is about training efficacy, and T2 was about younger generations and health-at-home. The test therefore cannot separate the rivals, and it does not inform the consumer-proposition investment decision. Cost and sample size are assumptions, not results.\"},\"revision\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A9\"],\"reason\":\"An update was scheduled (scheduled_update true) but never delivered (update_delivered false), and the run stopped at A9. Revision is therefore not reached.\"},\"recommendation\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A9\"],\"reason\":\"A9 records that the investigation stopped before a recommendation because of repeated errors.\"}},\"red_flags\":[{\"kind\":\"incomplete\",\"event_ids\":[\"A9\"],\"reason\":\"The episode ended without a recommendation and without reaching the scheduled update.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A3\",\"A4\"],\"reason\":\"Both theories state as fact that CPR Anytime 'is successful' and that there is 'growing demand' or a 'growing trend'. No dossier source supports success, demand growth, revenue or an age-group effect.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A5\",\"A6\"],\"reason\":\"A marketing claim from the company's product page is treated as supporting evidence of demand and success for both theories. The quote is exact but does not support the inference drawn from it.\"},{\"kind\":\"invented_observation\",\"event_ids\":[\"A7\"],\"reason\":\"The challenge search reports finding sources (laerdal-nicu-kits-donated, laerdal-military) that do not exist in the supplied dossier.\"},{\"kind\":\"non_discriminating_test\",\"event_ids\":[\"A8\"],\"reason\":\"The proposed experiment measures training efficacy and 'survival rates' in a simulation. Neither theory makes a prediction about these, so the test cannot separate T1 from T2. The T2 prediction is fabricated and does not follow from T2.\"},{\"kind\":\"other\",\"event_ids\":[\"A1\"],\"reason\":\"The framing adds a constraint of 'no expansion of existing product lines or customer groups', which contradicts the question. It also proposes home CPR training as a new option despite CPR Anytime already covering home use, an uncorrected false premise.\"}],\"suitable_for_training\":false,\"screen_reason\":\"Rejected. The episode is incomplete: it stopped at A9 with no recommendation, and the scheduled update was never delivered. It also contains several critical errors: theories stated as facts without support (A3, A4), a marketing claim treated as evidence (A5, A6), source IDs not in the dossier (A7), and a proposed test that cannot separate the theories (A8).\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 5057
+      },
+      "cache_creation_input_tokens": 5057,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 2945,
+      "output_tokens_details": {
+        "thinking_tokens": 971
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.084201,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "b3c3ce35c26041b85e55052af4ed90d66e5c781ad129599360d96a2265f422a4",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "097749dd9862f13b",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 mostly restates the question and lists obvious options (no expansion, targeted, niche, diversification). It adds a constraint, 'No expansion of existing product lines or customer groups', which conflicts with the question's premise of going beyond existing products. It also offers home CPR training for individuals as a new option, although laerdal-cpranytime-home shows CPR Anytime already offers home learning. It neither catches nor corrects this false premise, and it does not clearly separate the objective from a suggested solution."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A3",
+          "A4"
+        ],
+        "reason": "T1 names a benefit (convenience, home-based learning) and a generic 'who benefits'. Value capture is only 'selling the program ... increasing its market reach and revenue', with no traced chain to what this manufacturer captures. It also answers a different question: it explains an asserted 'success' of CPR Anytime rather than whether to build a new consumer proposition. 'Growing demand for home-based health education' rests on no dossier evidence."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A3",
+          "A4"
+        ],
+        "reason": "T2 (A4) rewords T1 (A3) and adds 'younger generations'. Its why-behaviour-changes text, value capture and predictions are word-for-word identical to T1. The two theories imply no different product, customer or channel."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A3",
+          "A4"
+        ],
+        "reason": "Assumptions are stated but vague ('growing demand', 'perceived as a valuable tool'). Predictions such as 'will continue to grow in popularity' and 'increased revenue' have no observable threshold and are shared by both theories. Their failure would not put either theory in trouble."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A5",
+          "A6"
+        ],
+        "reason": "A5 and A6 cite the same company marketing sentence as support for both theories. The source is labelled a company assertion, but it is still treated as support for demand and success. The quoted words are exact, yet 'resulting in more people trained' is a promotional claim and does not establish demand, growth, success or revenue. The 'does not show' notes describe gaps in the theory, not what the source cannot establish, such as date, place or customer fit."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "A7 runs a search against T1, but the query only restates T1. It lists source IDs (laerdal-nicu-kits-donated, laerdal-military) that do not appear in the supplied dossier. It reports no content or finding from any of them, so there is no fair account of what was or was not found."
+      },
+      "experiment_design": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "The A8 test compares CPR Anytime with traditional training on 'survival rates' in a simulated emergency, a measure that a simulation cannot produce. The predictions assigned to T1 and T2 do not follow from their content: neither theory is about training efficacy, and T2 was about younger generations and health-at-home. The test therefore cannot separate the rivals, and it does not inform the consumer-proposition investment decision. Cost and sample size are assumptions, not results."
+      },
+      "revision": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "An update was scheduled (scheduled_update true) but never delivered (update_delivered false), and the run stopped at A9. Revision is therefore not reached."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "A9 records that the investigation stopped before a recommendation because of repeated errors."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "The episode ended without a recommendation and without reaching the scheduled update."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A3",
+          "A4"
+        ],
+        "reason": "Both theories state as fact that CPR Anytime 'is successful' and that there is 'growing demand' or a 'growing trend'. No dossier source supports success, demand growth, revenue or an age-group effect."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A5",
+          "A6"
+        ],
+        "reason": "A marketing claim from the company's product page is treated as supporting evidence of demand and success for both theories. The quote is exact but does not support the inference drawn from it."
+      },
+      {
+        "kind": "invented_observation",
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "The challenge search reports finding sources (laerdal-nicu-kits-donated, laerdal-military) that do not exist in the supplied dossier."
+      },
+      {
+        "kind": "non_discriminating_test",
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "The proposed experiment measures training efficacy and 'survival rates' in a simulation. Neither theory makes a prediction about these, so the test cannot separate T1 from T2. The T2 prediction is fabricated and does not follow from T2."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The framing adds a constraint of 'no expansion of existing product lines or customer groups', which contradicts the question. It also proposes home CPR training as a new option despite CPR Anytime already covering home use, an uncorrected false premise."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected. The episode is incomplete: it stopped at A9 with no recommendation, and the scheduled update was never delivered. It also contains several critical errors: theories stated as facts without support (A3, A4), a marketing claim treated as evidence (A5, A6), source IDs not in the dossier (A7), and a proposed test that cannot separate the theories (A8)."
+  },
+  "seconds": 26.308
+}

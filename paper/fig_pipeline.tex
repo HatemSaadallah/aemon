@@ -1,0 +1,14 @@
+\begin{tikzpicture}[node distance=5mm and 6mm, every node/.style={font=\small},
+  st/.style={draw=accent!70, rounded corners=3pt, fill=accent!6, align=center, minimum height=10mm, text width=27mm},
+  arr/.style={-{Stealth[length=2mm]}, thick, draw=black!60}]
+\node[st] (d) {Dossier \& cases\\1{,}334 records\\153 cases};
+\node[st, right=of d] (t) {Teacher rollouts\\Command A+\\same environment};
+\node[st, right=of t] (r) {Replay filter\\exact replay +\\accepted finish};
+\node[st, right=of r] (rows) {Rows: context $\to$\\one target call\\3{,}891 + 51};
+\node[st, below=9mm of rows] (sft) {AgentTune\\distillation (LoRA)};
+\node[st, left=of sft] (gate) {Conversion gate\\GGUF $\approx$ PEFT};
+\node[st, left=of gate] (dev) {Development\\6 companies};
+\node[st, left=of dev] (fin) {Frozen final test\\4 new companies\\run once};
+\draw[arr] (d) -- (t); \draw[arr] (t) -- (r); \draw[arr] (r) -- (rows); \draw[arr] (rows) -- (sft);
+\draw[arr] (sft) -- (gate); \draw[arr] (gate) -- (dev); \draw[arr] (dev) -- (fin);
+\end{tikzpicture}

@@ -1,5 +1,6 @@
 import { type FormEvent, useRef, useState } from 'react';
 import { errorText } from '../api.ts';
+import { Logo } from '../components/Logo.tsx';
 
 // Sign in, then go to Aemon. The session cookie is HttpOnly, so this page never sees it.
 export function Login() {
@@ -34,7 +35,9 @@ export function Login() {
   return (
     <main className="login-main">
       <form className="card login-card" noValidate onSubmit={(e) => { void submit(e); }}>
+        <Logo size={44} className="logo-mark big" />
         <h1>Aemon</h1>
+        <p className="tagline">weigh what is known. test what is not.</p>
         <p className="muted">Sign in to investigate a company with the agent.</p>
         <label htmlFor="name">Name</label>
         <input id="name" name="name" autoComplete="username" autoCapitalize="none" spellCheck={false} required maxLength={64} autoFocus

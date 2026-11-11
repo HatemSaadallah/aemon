@@ -1,4 +1,6 @@
-# Teaching a 3B model to investigate a strategy question: agentic distillation with AgentTune and AuditKIT
+# Aemon: teaching a 3B model to investigate a strategy question, with AgentTune and AuditKIT
+
+*weigh what is known. test what is not.*
 
 **Team Two-eyed Ravens** · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · November 2026
 
@@ -13,8 +15,9 @@
 
 Asked whether a manufacturer should take its technology into a new market, language models tend to produce
 consulting prose: lists of factors, confident market sizes with no source, and evidence collected only for the answer
-they started with. Strategy research describes a better habit (Camuffo, Gambardella and Pignataro, 2024, *A Scientific
-Approach to Entrepreneurial Decision Making*): frame the decision and its real alternatives; state rival causal
+they started with. Strategy research describes a better habit (Camuffo, Cordova, Gambardella and Spina, 2020, *A Scientific
+Approach to Entrepreneurial Decision Making*, Management Science; Camuffo, Gambardella and Pignataro, 2024,
+*Theory-driven strategic management decisions*, Strategy Science): frame the decision and its real alternatives; state rival causal
 theories of who would change their behaviour and why; derive predictions that tell the theories apart; look for
 evidence against the favoured theory; design a test with a decision rule when information is worth its cost; and
 revise when new evidence arrives.
@@ -33,7 +36,8 @@ or L) define four states, and the decision maker cares about P(H). A theory, "fa
 Bayesian network with one arrow plus an inequality on its conditional probabilities, θHY > θHN. Beliefs about the
 unknown parameters form a distribution μ; the theory allows only parameters in a set Θ, the null hypothesis
 (θHY = θHN) only Θ̃, and with prior ω on the theory its value is V = ω·VΘ + (1 − ω)·VΘ̃. With θHN = 0.5, θY = 0.8 and
-θHY uniform, the theory restricts θHY to (0.5, 1), raising the expected probability of high demand from 0.5 to 0.75:
+θHY uniform, the theory restricts θHY to (0.5, 1), whose mean is 0.75, so the expected probability of high demand
+rises from 0.5 to VΘ = 0.5 + 0.8 · (0.75 − 0.5) = 0.7:
 a theory raises belief by ruling parameter values out. An experiment updates μ, and the prior on the theory itself
 changes only when the evidence moves μ past a threshold, so a small surprise adjusts parameters and a large one shakes
 the theory. A rival theory has its own value Q, and with costly experiments committing is right once V is far enough
@@ -61,13 +65,13 @@ likely). The scale is a signal within one run, not a calibrated probability.
 
 ## 2. Hackathon repositories used
 
-**AgentTune** (`src/strategy_agent/training/train.py`, `training/masking_gate.py`)
+**AgentTune** (`src/aemon/training/train.py`, `training/masking_gate.py`)
 - `agenttune.agentic.distill_trainer.create_distill_trainer` builds the distillation trainer (TRL SFT with PEFT LoRA)
   from our rows; `agenttune.agentic.events` (`Event`, `EventLog`) records each investigation as an event log.
 - Loss is computed only on the target tool call; the context is masked. A masking gate checks this on real rows before
   any training run.
 
-**AuditKIT** (`src/strategy_agent/evaluation/audit.py`)
+**AuditKIT** (`src/aemon/evaluation/audit.py`)
 - `AgentEvalRunner`, `AgentCase`, `AgentEvalSpec` and `episode_from_eventlog` run every evaluation episode through
   AuditKIT; a `CustomPredicate` replays the full event log through our environment and requires every tool result to
   reproduce.
@@ -105,20 +109,24 @@ The two connect: the AgentTune event logs that produce training rows are the sam
 
 ## 5. Model artifacts
 
-To be released as a Hugging Face collection after review (the adapter is a derivative of Tiny Aya and inherits
-CC-BY-NC-4.0):
+Collection: [Aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326).
+Model: [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent)
+(a derivative of Tiny Aya, so CC-BY-NC-4.0):
 - the LoRA adapter (`adapter_model.safetensors`, `adapter_config.json`; sha256 740c4a9b…);
-- the converted GGUF adapter for llama.cpp (sha256 41794b57…), the exact file evaluated;
-- training and evaluation configurations, and the job scripts.
+- the converted GGUF adapter for llama.cpp (`tiny-aya-global-strategy-lora-bf16.gguf`, sha256 41794b57…), the exact
+  file evaluated on the final test;
+- the tokenizer, chat template and model card. Training and evaluation configurations and the job scripts are in the
+  code repository.
 
 ## 6. Data artifacts
 
-To be released as a Hugging Face collection after the rights check:
+Dataset: [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations)
+(in the same collection), with every third-party excerpt cut to one short quote:
 - the training rows and correction rows, each bound to its teacher episode and weights hash;
-- the cases and the dossier;
+- the 153 development cases, the 16 final-test cases and the dossier of 1,334 records;
 - evaluation transcripts for development and the final test, the blinded judge packets, both judges' outputs, the
   answer key, and every report;
-- the judge package (rubric, prompt, anchors, qualification set) and the qualification receipts.
+- `MANIFEST.json`, with the sha256 of each private original and of its published copy.
 
 ## 7. Experiments and findings
 
@@ -238,6 +246,58 @@ training data never showed:
   the error limit.
 - **Rereading.** Nine runs reach the turn limit; in eight of them the agent rereads the same few sources.
 
+### Second frozen test (12 new companies, 24 cases, 3 attempts, 144 runs, run once; `docs/test2_freeze.json`)
+A second test on companies never used for training, development or the diagnosis above. It was frozen before any run,
+under the same judges, rubric and rule.
+
+| | Base, staged prompt | Fine-tuned | Difference, paired, 95% case-cluster bootstrap |
+|---|---|---|---|
+| Claude | 0.48 | 0.89 | +0.41 [0.24, 0.57] |
+| Codex | 0.66 | 1.29 | +0.63 [0.43, 0.84] |
+| **Mean of the two judges** | **0.57** | **1.09** | **+0.52 [0.33, 0.70]** |
+| Finished investigations | 2 of 72 | 32 of 72 | |
+| Finished and passing every check | 1 | 4 | |
+
+- The fine-tuned agent is higher for 10 of 12 companies on the mean of judges. Franke Coffee (−0.05) and Hoshizaki
+  (−0.10) are slightly lower.
+- The gain is smaller than on the first test (+0.83 there on the mean of judges). The two judges rank the runs alike
+  (Spearman 0.95 over all 144).
+- The weakest dimensions are the same as before: the recommendation (0.03 → 0.44), experiment design (0.22 → 0.50) and
+  judging evidence (0.28 → 0.39).
+
+### A recovery controller does not fix the remaining failures (`docs/RECOVERY_REPORT.md`)
+We tested five controller-side recovery aids, on development cases only and with a pre-registered selection rule:
+- masking rereads;
+- progress notes;
+- step-budget awareness;
+- citation repair;
+- all four together.
+
+| | Recovery of stuck runs (28 checkpoints) | Full runs: finished (of 45) | Full runs: every check passed | Blind quality |
+|---|---|---|---|---|
+| As evaluated | 6 | 24 | 3 | 1.047 |
+| Step-budget awareness (selected) | 15 | 25 | 3 | 1.053 (+0.006 [−0.017, 0.031]) |
+
+The budget aid rescues stuck runs: 9 better, 0 worse. But most of those extra finishes fail a check, because they rush
+a templated test and carry its numbers into the claims. End to end it changes 8 of 45 runs and leaves quality
+unchanged. Most failed runs stop earlier, after four refusals in a row, where no late-stage aid acts. It is in the
+Aemon as an opt-in, labelled option. More finishes are not better investigations; the remaining failures need
+training, not a controller.
+
+### Limits of our own checks
+- **The mechanical experiment check is too lenient.** It accepts a test whose predictions differ and whose rule has a
+  threshold. On development, 8 of the 9 tests it accepts fail stricter design screens:
+  - 4 vary only the message;
+  - 3 go straight to building a product line;
+  - 1 is priced in euros in a 1993 case.
+
+  The frozen numbers above use the original check. Later comparisons also report the stricter `experiment_v2`, which
+  is development only.
+- **Evidence-kind labels are about 80% reliable.** A blind relabelling of 60 training records agreed with the
+  dossier's label on 45, and 5 more were defensible either way. It also found 3 likely errors, and 44 records with a
+  kind the tool cannot express. The frozen labels are unchanged. A guide and a proposed overlay are in
+  `docs/EVIDENCE_KIND_GUIDE.md`.
+
 ### What else we tested
 Specialist adapters per stage (proposed; the data per stage was too thin), a Socratic coach (proposed, not built), more teacher data
 versus the clearer state (inconclusive), and scripted always-keep and always-revise policies as negative controls on
@@ -264,6 +324,37 @@ and measured on fresh evaluation cases, since the four final-test companies have
 
 More teacher runs of the same kind would not address these gaps; more of these specific cases would. Before and after
 would be measured exactly as here: the same frozen judges and rule, on new held-out companies.
+
+**What we tried after the tests, and what it showed (10 November; `docs/RELIABILITY_REPORT.md`).**
+- **Corrective distillation.** We built teacher examples at states where version 1 itself went wrong: invented numbers,
+  experiment design, evidence kind, and recovery after refusals.
+  - Each was checked for provenance, exact replay and split, then reviewed against substantive criteria.
+  - Of 90 examples the mechanical checks accepted, an advisory review rated 3 strong, and spot checks confirmed its
+    reasons.
+  - The teacher (Command A+) makes the same errors it was meant to correct: it calls encyclopedia and news text
+    "independent study", relies on sources published after the case date, and designs tests that vary only the message.
+  - A structured format fixed its truncated test designs, but then it declined tests the cases warrant.
+  - We had fixed a threshold of 30 strong examples, including experiment design, before training. It was not met, so
+    no version 2 was trained.
+- **Auditing version 1's own data.** The same weaknesses are in the teacher data version 1 was trained on:
+  - 74% of the teacher's recommendations use a number from no source;
+  - 38% of its evidence kinds match the annotation;
+  - 47% of its recommendations in historical cases cite a source published after the case date, and about half of those
+    quotes reveal later outcomes.
+
+  The frozen tests are present-day cases, so their scores are unaffected.
+- **An evidence-verification layer, without retraining.** Before the final recommendation, the agent was shown what its
+  evidence did not support, and could revise or answer "insufficient evidence". On 45 paired development runs this gave
+  19 unsupported recommendations against 20, the same validated completion, and no abstention. The 3B model rewrote the
+  text but not the evidence behind it. Aemon shows these findings to the reader instead.
+- **Two more runtime attempts, both rejected under rules fixed in advance.**
+  - Constraining the favoured theory to those the agent's own weighings support collided with an existing guard and
+    halved the finishes.
+  - Novelty-first search doubled the sources the agent was shown, but it weighed fewer of them, found contradicting
+    evidence in the same 2 of 45 runs, and finished with every check cleared in 0 runs against 3.
+
+The lesson for distillation: a teacher's errors pass to the student, and they cannot be filtered out afterwards. A
+stronger or human-corrected teacher for evidence judgement is the next step, not more of the same data.
 
 ## 9. Team
 

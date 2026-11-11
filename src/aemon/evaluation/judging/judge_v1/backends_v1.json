@@ -1,0 +1,109 @@
+{
+  "version": "judge-v1-four-backends-4",
+  "evaluation_only": true,
+  "frozen_artifacts": "config_v1.json",
+  "qualification_rule": "unchanged config_v1 statistical thresholds, coverage, status and required flags",
+  "judges": {
+    "claude": {
+      "model": "claude-opus-5-5",
+      "max_tokens": 8000,
+      "effort": "medium",
+      "temperature": null,
+      "temperature_reason": "API rejects temperature",
+      "prices_usd_per_million": {
+        "input": 4,
+        "cache_write": 5,
+        "cache_read": 0.2,
+        "output": 20
+      },
+      "max_tokens_change": "3000 -> 8000 on 2026-11-07 before any development packet was scored: evaluation packets are longer than the qualification ones and the first five hit the limit; every qualification judgment finished under 3000 (largest 2728), so none of them would differ"
+    },
+    "codex": {
+      "model": "gpt-6-astra",
+      "cli_version": "codex-cli 0.166.0",
+      "binary": "/home/USER/.codex/packages/standalone/releases/0.166.0-x86_64-unknown-linux-musl/bin/codex",
+      "binary_sha256": "b8a11fedf24b2dfb59a70c9e52b030f9a508dcd49cd2dd0d41956f4c785156b8",
+      "temperature": null,
+      "temperature_reason": "not exposed by Codex CLI",
+      "max_output_tokens": null,
+      "output_limit_reason": "not exposed by CLI; timeout is not a token ceiling",
+      "timeout_seconds": 300,
+      "forbidden_repository": "/home/USER/Desktop/lexsi-ai-hackathon",
+      "settings": {
+        "features.shell_tool": false,
+        "features.unified_exec": false,
+        "features.shell_snapshot": false,
+        "features.apps": false,
+        "features.browser_use": false,
+        "features.multi_agent": false,
+        "features.memories": false,
+        "memories.use_memories": false,
+        "memories.generate_memories": false,
+        "web_search": "disabled",
+        "project_doc_max_bytes": 0,
+        "model_instructions_file": "/judge_prompt.txt",
+        "model_reasoning_effort": "medium"
+      }
+    },
+    "claudecode": {
+      "model": "claude-opus-5-5",
+      "effort": "medium",
+      "transport": "Claude Code CLI print mode (claude -p), subscription login, no API key",
+      "flags": [
+        "-p",
+        "--model",
+        "claude-opus-5-5",
+        "--effort",
+        "medium",
+        "--system-prompt-file",
+        "<judge_prompt_v1.txt>",
+        "--tools",
+        "",
+        "--strict-mcp-config",
+        "--setting-sources",
+        "",
+        "--no-session-persistence",
+        "--output-format",
+        "json",
+        "--exclude-dynamic-system-prompt-sections"
+      ],
+      "working_directory": "a fresh empty temporary directory per packet, outside the repository",
+      "environment": "ANTHROPIC_API_KEY and CLAUDE_API_KEY removed; DISABLE_AUTOUPDATER=1",
+      "temperature": null,
+      "temperature_reason": "not exposed by the CLI",
+      "max_output_tokens": null,
+      "output_limit_reason": "not exposed by the CLI (its default is far above the API judge's 8000)",
+      "timeout_seconds": 600,
+      "added": "2026-11-11, for the exploratory version 3 comparison; the claude and codex entries are unchanged, so their receipts still bind"
+    },
+    "codexsol": {
+      "model": "gpt-6-sol",
+      "cli_version": "codex-cli 0.166.0",
+      "binary": "/home/USER/.codex/packages/standalone/releases/0.166.0-x86_64-unknown-linux-musl/bin/codex",
+      "binary_sha256": "b8a11fedf24b2dfb59a70c9e52b030f9a508dcd49cd2dd0d41956f4c785156b8",
+      "temperature": null,
+      "temperature_reason": "not exposed by Codex CLI",
+      "max_output_tokens": null,
+      "output_limit_reason": "not exposed by CLI; timeout is not a token ceiling",
+      "timeout_seconds": 300,
+      "forbidden_repository": "/home/USER/Desktop/lexsi-ai-hackathon",
+      "settings": {
+        "features.shell_tool": false,
+        "features.unified_exec": false,
+        "features.shell_snapshot": false,
+        "features.apps": false,
+        "features.browser_use": false,
+        "features.multi_agent": false,
+        "features.memories": false,
+        "memories.use_memories": false,
+        "memories.generate_memories": false,
+        "web_search": "disabled",
+        "project_doc_max_bytes": 0,
+        "model_instructions_file": "/judge_prompt.txt",
+        "model_reasoning_effort": "medium"
+      },
+      "added": "2026-11-11 (Hatem: \"use sol\"): the same pinned CLI, sandbox and settings as codex, only the model differs; gpt-6-astra exhausts the ChatGPT Plus allowance after about 120 judgments. A different judge from codex: qualified separately, never mixed with codex scores. The claude, codex and claudecode entries are unchanged, so their receipts still bind"
+    }
+  },
+  "limitation": "Model IDs pinned; Codex JSONL does not return a resolved deployment model ID. Built-in CLI safety/environment scaffolding remains; no project/session/answer-key context is supplied."
+}

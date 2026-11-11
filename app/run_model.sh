@@ -6,9 +6,14 @@ B=$HOME/.cache/lexsi/llama-b12032
 M=$HOME/.cache/huggingface/hub/models--CohereLabs--tiny-aya-global-GGUF/snapshots/a602ea7eeec3a4ad6f77a1b8cf6a53512824922b/tiny-aya-global-q4_k_m.gguf
 A=$HOME/.cache/lexsi/adapters
 EXTRA=()
-for name in final_adapter.gguf first_adapter.gguf second_adapter.gguf; do
+for name in final_adapter.gguf first_adapter.gguf second_adapter.gguf v3_adapter.gguf; do
   [ -f "$A/$name" ] && EXTRA+=(--lora "$A/$name") && echo "with adapter $name"
 done
 [ ${#EXTRA[@]} -gt 0 ] && EXTRA+=(--lora-init-without-apply)
 # 12288 because the first adapter runs with full history; compact runs stay under about 6,000 tokens.
-cd $B && LD_LIBRARY_PATH=$B exec ./llama-server -m $M "${EXTRA[@]}" -ngl 99 -c 12288 --parallel 1 --jinja --reasoning-format none --host 127.0.0.1 --port 8091 --no-webui
+ARGS=(-m $M "${EXTRA[@]}" -ngl 99 -c 12288 --parallel 1 --jinja --reasoning-format none --host 127.0.0.1 --port 8091 --no-webui)
+if [ "$(uname)" = Darwin ]; then  # macOS: Homebrew's llama.cpp (brew install llama.cpp), on the Apple GPU through Metal
+  command -v llama-server >/dev/null || { echo "install llama.cpp first: brew install llama.cpp"; exit 1; }
+  exec llama-server "${ARGS[@]}"
+fi
+cd $B && LD_LIBRARY_PATH=$B exec ./llama-server "${ARGS[@]}"

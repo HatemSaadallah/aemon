@@ -1,0 +1,153 @@
+{
+  "packet_id": "f832c1635cbb55c2",
+  "packet_sha256": "b39015d57a7ff2eb714aefa463eaa939139ce4f28c86b9e0986cf7c7301d768d",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "deca9c92f4540aaaeab53d14ae9d8f3916aed5ff60ff35058ded8521fdf21ace",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"f832c1635cbb55c2\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A1\"], \"reason\": \"A1 separates the objective from the suggested solution and lists real alternatives: a differentiated proposition, a non-differentiated extension, no expansion, and licensing. It reaches rung 2 but not 3. It assumes a marine recreational use case without noting that the PLB excerpt (acr-fr-purpose) describes general-public use in a remote environment as a last resort. The \u20ac20,000 / 12-week budget is not in the dossier. It is treated here as a protocol assumption, not an observed fact.\"}, \"causal_mechanism\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A9\"], \"reason\": \"A9 names who benefits and how value is captured through premium direct sales. The behavioural driver is asserted without support: \\\"Recreational mariners currently lack affordable, reliable emergency communication tools.\\\" The phrase \\\"device that can be used by friends and family\\\" is not explained. No dossier source supports the claimed gap. In effect this names a benefit rather than tracing a supported chain.\"}, \"distinct_theories\": {\"status\": \"scored\", \"score\": 0, \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"A10 (T2) is nearly a verbatim copy of A9 (T1). It only appends \\\"and they trust ACR's reputation,\\\" which is already one of T1's listed assumptions. Same customer, product, channel and value capture. This is one theory, or copies.\"}, \"assumptions_predictions\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"The predictions are observable: survey purchase intent above $100, and regional sales correlating with boating activity. They are weakly threatening. \\\"Market share ... measurable within 12 months\\\" would hold almost regardless of the theory. The $100 threshold is a proposed assumption, not an observation. The assumptions do not say which failure would sink the theory.\"}, \"evidence_judgement\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A11\", \"A12\", \"A14\"], \"reason\": \"Each assessment states what the source does not show, such as demand or willingness to pay. However, A12 and A14 label acr-gcn-three and acr-gcn-alaska as \\\"independent_study\\\". The dossier classes them as verified observations; they are a news listing and an official's statement, not studies. A14 does not note that the Alaska rescues concern remote-environment PLB use since 1994, which may not fit marine recreational buyers. The place and customer-fit limits are missed. All sources are rated neutral, and none is used to inform the use-case choice.\"}, \"seeking_challenge\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A13\"], \"reason\": \"A13 runs one search against T1 and retrieves acr-fr-purpose, acr-fr-registration and acr-fr-rent. It never reports or assesses what these imply. acr-fr-purpose, which frames the PLB as a last-resort, remote-environment device for the general public, is a potentially relevant challenge to the marine framing and is left unexamined. The search was not followed through.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A15\"], \"reason\": \"The episode stopped at the turn limit (A15) before any test was proposed or declined.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions. scheduled_update is false.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A15\"], \"reason\": \"A15: \\\"The investigation stopped before a recommendation (turn limit).\\\"\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A15\"], \"reason\": \"No recommendation or experiment was produced. The run stopped at the turn limit.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"States as fact that recreational mariners \\\"currently lack affordable, reliable emergency communication tools\\\" and will pay a premium. No dossier source supports this. The sources concern PLB regulation, approvals and remote-area rescues.\"}, {\"kind\": \"other\", \"event_ids\": [\"A9\", \"A10\"], \"reason\": \"T2 duplicates T1, so no rival theories exist. The repeated near-identical searches (A4\u2013A8) add no new evidence.\"}, {\"kind\": \"other\", \"event_ids\": [\"A12\", \"A14\"], \"reason\": \"Misclassifies verified news observations as independent studies. This overstates their evidential type.\"}], \"suitable_for_training\": false, \"screen_reason\": \"The episode is incomplete: it stopped before experiment design and recommendation (A15). It also contains an unsupported factual assertion in the core mechanism (A9/A10) and duplicated theories (A10). Incomplete episodes are rejected.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 6200
+      },
+      "cache_creation_input_tokens": 6200,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 2886,
+      "output_tokens_details": {
+        "thinking_tokens": 1200
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.088736,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "ce5656eefb3699fe141d7ebc4d4206c82eb428c4f1797b90f57560064e05cc50",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "f832c1635cbb55c2",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective from the suggested solution and lists real alternatives: a differentiated proposition, a non-differentiated extension, no expansion, and licensing. It reaches rung 2 but not 3. It assumes a marine recreational use case without noting that the PLB excerpt (acr-fr-purpose) describes general-public use in a remote environment as a last resort. The \u20ac20,000 / 12-week budget is not in the dossier. It is treated here as a protocol assumption, not an observed fact."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "A9 names who benefits and how value is captured through premium direct sales. The behavioural driver is asserted without support: \"Recreational mariners currently lack affordable, reliable emergency communication tools.\" The phrase \"device that can be used by friends and family\" is not explained. No dossier source supports the claimed gap. In effect this names a benefit rather than tracing a supported chain."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "A10 (T2) is nearly a verbatim copy of A9 (T1). It only appends \"and they trust ACR's reputation,\" which is already one of T1's listed assumptions. Same customer, product, channel and value capture. This is one theory, or copies."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The predictions are observable: survey purchase intent above $100, and regional sales correlating with boating activity. They are weakly threatening. \"Market share ... measurable within 12 months\" would hold almost regardless of the theory. The $100 threshold is a proposed assumption, not an observation. The assumptions do not say which failure would sink the theory."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14"
+        ],
+        "reason": "Each assessment states what the source does not show, such as demand or willingness to pay. However, A12 and A14 label acr-gcn-three and acr-gcn-alaska as \"independent_study\". The dossier classes them as verified observations; they are a news listing and an official's statement, not studies. A14 does not note that the Alaska rescues concern remote-environment PLB use since 1994, which may not fit marine recreational buyers. The place and customer-fit limits are missed. All sources are rated neutral, and none is used to inform the use-case choice."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A13"
+        ],
+        "reason": "A13 runs one search against T1 and retrieves acr-fr-purpose, acr-fr-registration and acr-fr-rent. It never reports or assesses what these imply. acr-fr-purpose, which frames the PLB as a last-resort, remote-environment device for the general public, is a potentially relevant challenge to the marine framing and is left unexamined. The search was not followed through."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A15"
+        ],
+        "reason": "The episode stopped at the turn limit (A15) before any test was proposed or declined."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions. scheduled_update is false."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A15"
+        ],
+        "reason": "A15: \"The investigation stopped before a recommendation (turn limit).\""
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A15"
+        ],
+        "reason": "No recommendation or experiment was produced. The run stopped at the turn limit."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "States as fact that recreational mariners \"currently lack affordable, reliable emergency communication tools\" and will pay a premium. No dossier source supports this. The sources concern PLB regulation, approvals and remote-area rescues."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T2 duplicates T1, so no rival theories exist. The repeated near-identical searches (A4\u2013A8) add no new evidence."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A12",
+          "A14"
+        ],
+        "reason": "Misclassifies verified news observations as independent studies. This overstates their evidential type."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete: it stopped before experiment design and recommendation (A15). It also contains an unsupported factual assertion in the core mechanism (A9/A10) and duplicated theories (A10). Incomplete episodes are rejected."
+  },
+  "seconds": 28.76
+}

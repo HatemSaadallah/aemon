@@ -1,0 +1,180 @@
+{
+  "packet_id": "b129cd70c8f8049a",
+  "packet_sha256": "1de4ffa0ac7e06d1bab0bf806e5b35a5ec413a852e3d659288413bfbdf656dcd",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"b129cd70c8f8049a\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A1\"], \"reason\": \"A1 lists obvious options, and two of them ('No expansion' and 'No expansion or redesign') are near-duplicates. Its constraints ('No expansion into new markets or product lines', 'No redesign of existing products for consumer use', 'No change in the company's current customer base') rule out the consumer proposition the question asks about. The framing does not separate the objective from the suggested solution and corrects no premise. The 20,000 euro / 12 week budget appears in no source, so it is at most an assumption.\"}, \"causal_mechanism\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\", \"A7\", \"A5\"], \"reason\": \"The best theory, T1 in A4 (duplicated as T3 in A7), explains Ansell's own divestment rationale. It does not explain how any consumer group would change behaviour for a differentiated product. Its claims of 'higher-margin' core markets and a 'less profitable consumer segment' appear in no supplied source. It names a benefit (cash to reinvest) but traces no customer-to-value chain. The unsupported margin claims also cap this dimension at 1.\"}, \"distinct_theories\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\", \"A5\", \"A7\"], \"reason\": \"T3 in A7 copies T1 in A4 almost verbatim, including identical assumptions and predictions. T2 in A5 differs, but it speculates about company intent ('may be expanding its consumer product line') with no supporting source. Neither theory proposes a specific consumer use case, customer or channel. The set is effectively one idea plus an unsupported counter-guess about what Ansell is doing, not rival answers to whether a consumer proposition is justified.\"}, \"assumptions_predictions\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\", \"A5\", \"A7\"], \"reason\": \"Assumptions are stated but largely irrelevant to the question, e.g. 'The buyer ... will effectively manage the business'. Predictions are vague: 'increased profitability in its core markets', 'will focus more on innovation'. They give no observable threshold or timeframe whose failure would clearly damage the theory.\"}, \"evidence_judgement\": {\"status\": \"scored\", \"score\": 0, \"event_ids\": [\"A6\", \"A8\", \"A2\", \"A3\"], \"reason\": \"A8 cites the core-focus quote ('focus on core businesses selling to industrial and healthcare end markets') as supporting T2, a theory that Ansell is expanding into consumer markets. The source's words point the other way, so this is a misreading. The 'Does not show' text in A8 is copied unchanged from A6 and does not describe T2's actual gap. Neither assessment states date, place or fit to any consumer group. A2 and A3 report finding sources (ansell-fy25-household-exit, ansell-grocer-partnership) that the dossier does not contain, and these are never examined. The supplied segment and sale sources are not assessed.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A9\"], \"reason\": \"The searches in A2 and A3 were general fact-finding, not searches against a favoured theory. The run stopped at A9 before any challenge stage occurred.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A9\"], \"reason\": \"The run stopped at A9 (context limit) before any test was proposed or declined.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions, and no update was scheduled (scheduled_update false).\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A9\"], \"reason\": \"A9 states the investigation stopped before a recommendation. This contributes zero to the all-case composite.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A9\"], \"reason\": \"The episode ended at the context limit with no recommendation and no experiment design.\"}, {\"kind\": \"misleading_quote\", \"event_ids\": [\"A8\"], \"reason\": \"A quote stating focus on industrial and healthcare core businesses is presented as supporting a theory of consumer expansion. This reverses what the source says.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A4\", \"A7\"], \"reason\": \"These events assert 'higher-margin' core markets and a 'less profitable consumer segment' as the reasons for the Sexual Wellness sale. No supplied source states margins or profitability.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A5\"], \"reason\": \"T2 assumes rising demand for non-industrial PPE (home offices, gyms) and an expansion intent by Ansell. No supplied source supports either.\"}, {\"kind\": \"other\", \"event_ids\": [\"A7\"], \"reason\": \"T3 duplicates T1, inflating the apparent number of theories.\"}, {\"kind\": \"other\", \"event_ids\": [\"A1\"], \"reason\": \"The framing constraints exclude the very consumer proposition the question asks about. The budget figure appears in no source.\"}, {\"kind\": \"other\", \"event_ids\": [\"A2\", \"A3\"], \"reason\": \"Search results list sources absent from the dossier (ansell-fy25-household-exit, ansell-grocer-partnership). They were not used, but their provenance is unverifiable.\"}], \"suitable_for_training\": false, \"screen_reason\": \"Rejected. The episode is incomplete (A9, no recommendation). It also contains a source misreading in A8 that treats a core-focus statement as support for consumer expansion, unsupported margin and demand claims in A4, A5 and A7, and a duplicated theory in A7. Under this rubric, any one of these issues would justify rejection.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 5167
+      },
+      "cache_creation_input_tokens": 5167,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 3151,
+      "output_tokens_details": {
+        "thinking_tokens": 1142
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.088871,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "9ecb9429703d764801ef5e833e4b414d19cd3150953b655cb013cfef01768440",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "b129cd70c8f8049a",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 lists obvious options, and two of them ('No expansion' and 'No expansion or redesign') are near-duplicates. Its constraints ('No expansion into new markets or product lines', 'No redesign of existing products for consumer use', 'No change in the company's current customer base') rule out the consumer proposition the question asks about. The framing does not separate the objective from the suggested solution and corrects no premise. The 20,000 euro / 12 week budget appears in no source, so it is at most an assumption."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4",
+          "A7",
+          "A5"
+        ],
+        "reason": "The best theory, T1 in A4 (duplicated as T3 in A7), explains Ansell's own divestment rationale. It does not explain how any consumer group would change behaviour for a differentiated product. Its claims of 'higher-margin' core markets and a 'less profitable consumer segment' appear in no supplied source. It names a benefit (cash to reinvest) but traces no customer-to-value chain. The unsupported margin claims also cap this dimension at 1."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4",
+          "A5",
+          "A7"
+        ],
+        "reason": "T3 in A7 copies T1 in A4 almost verbatim, including identical assumptions and predictions. T2 in A5 differs, but it speculates about company intent ('may be expanding its consumer product line') with no supporting source. Neither theory proposes a specific consumer use case, customer or channel. The set is effectively one idea plus an unsupported counter-guess about what Ansell is doing, not rival answers to whether a consumer proposition is justified."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4",
+          "A5",
+          "A7"
+        ],
+        "reason": "Assumptions are stated but largely irrelevant to the question, e.g. 'The buyer ... will effectively manage the business'. Predictions are vague: 'increased profitability in its core markets', 'will focus more on innovation'. They give no observable threshold or timeframe whose failure would clearly damage the theory."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A6",
+          "A8",
+          "A2",
+          "A3"
+        ],
+        "reason": "A8 cites the core-focus quote ('focus on core businesses selling to industrial and healthcare end markets') as supporting T2, a theory that Ansell is expanding into consumer markets. The source's words point the other way, so this is a misreading. The 'Does not show' text in A8 is copied unchanged from A6 and does not describe T2's actual gap. Neither assessment states date, place or fit to any consumer group. A2 and A3 report finding sources (ansell-fy25-household-exit, ansell-grocer-partnership) that the dossier does not contain, and these are never examined. The supplied segment and sale sources are not assessed."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A9"
+        ],
+        "reason": "The searches in A2 and A3 were general fact-finding, not searches against a favoured theory. The run stopped at A9 before any challenge stage occurred."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "The run stopped at A9 (context limit) before any test was proposed or declined."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions, and no update was scheduled (scheduled_update false)."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "A9 states the investigation stopped before a recommendation. This contributes zero to the all-case composite."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A9"
+        ],
+        "reason": "The episode ended at the context limit with no recommendation and no experiment design."
+      },
+      {
+        "kind": "misleading_quote",
+        "event_ids": [
+          "A8"
+        ],
+        "reason": "A quote stating focus on industrial and healthcare core businesses is presented as supporting a theory of consumer expansion. This reverses what the source says."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A4",
+          "A7"
+        ],
+        "reason": "These events assert 'higher-margin' core markets and a 'less profitable consumer segment' as the reasons for the Sexual Wellness sale. No supplied source states margins or profitability."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A5"
+        ],
+        "reason": "T2 assumes rising demand for non-industrial PPE (home offices, gyms) and an expansion intent by Ansell. No supplied source supports either."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "T3 duplicates T1, inflating the apparent number of theories."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The framing constraints exclude the very consumer proposition the question asks about. The budget figure appears in no source."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A2",
+          "A3"
+        ],
+        "reason": "Search results list sources absent from the dossier (ansell-fy25-household-exit, ansell-grocer-partnership). They were not used, but their provenance is unverifiable."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected. The episode is incomplete (A9, no recommendation). It also contains a source misreading in A8 that treats a core-focus statement as support for consumer expansion, unsupported margin and demand claims in A4, A5 and A7, and a duplicated theory in A7. Under this rubric, any one of these issues would justify rejection."
+  },
+  "seconds": 29.58
+}

@@ -1,0 +1,83 @@
+{
+ "runs": 30,
+ "arms": [
+  "v1",
+  "v3"
+ ],
+ "judges": {
+  "claude": {
+   "by_arm": {
+    "v1": {
+     "mean": 1.049,
+     "n": 15
+    },
+    "v3": {
+     "mean": 0.832,
+     "n": 15
+    }
+   },
+   "by_arm_company": {
+    "v1": {
+     "acr": 0.618,
+     "deere": 0.951,
+     "hellberg": 1.456,
+     "jotun": 0.306,
+     "neumann": 1.188,
+     "tanita": 1.167
+    },
+    "v3": {
+     "acr": 0.556,
+     "deere": 1.069,
+     "hellberg": 0.45,
+     "jotun": 1.299,
+     "neumann": 0.785,
+     "tanita": 1.41
+    }
+   },
+   "by_arm_dimension": {
+    "v1": {
+     "assumptions_predictions": 1.6,
+     "causal_mechanism": 1.467,
+     "distinct_theories": 1.467,
+     "evidence_judgement": 0.667,
+     "experiment_design": 0.533,
+     "problem_framing": 1.6,
+     "recommendation": 0.467,
+     "revision": 0.667,
+     "seeking_challenge": 0.8
+    },
+    "v3": {
+     "assumptions_predictions": 1.067,
+     "causal_mechanism": 1.067,
+     "distinct_theories": 0.867,
+     "evidence_judgement": 0.4,
+     "experiment_design": 0.533,
+     "problem_framing": 1.667,
+     "recommendation": 0.467,
+     "revision": 0.778,
+     "seeking_challenge": 0.6
+    }
+   },
+   "difference": {
+    "arms": "v1 minus v3",
+    "pairs": 15,
+    "cases": 15,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.217,
+     -0.178,
+     0.633
+    ],
+    "by_company": {
+     "acr": 0.062,
+     "deere": -0.118,
+     "hellberg": 1.006,
+     "jotun": -0.993,
+     "neumann": 0.403,
+     "tanita": -0.243
+    }
+   }
+  }
+ },
+ "missing": []
+}

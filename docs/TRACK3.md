@@ -7,7 +7,7 @@ Sources: https://hackathon.lexsi.ai and https://hackathon.lexsi.ai/kickoff-slide
 - **AgentTune:** "A library for post-training agents for better tool calls, syntax, and efficiency to reduce redundant or incorrect tool calls and to improve reliability." https://agenttune.lexsi.ai/
 - **AuditKIT:** "An evaluation suite with a collection of benchmarks and metrics and diagnosis." https://auditkit.lexsi.ai/
 
-The slides say to use at least 2 repos as one connected system. The website exempts Track 3. We use both either way: `src/strategy_agent/training/train.py` trains through AgentTune's `create_distill_trainer`, and `src/strategy_agent/evaluation/audit.py` replays complete episodes into AuditKIT.
+The slides say to use at least 2 repos as one connected system. The website exempts Track 3. We use both either way: `src/aemon/training/train.py` trains through AgentTune's `create_distill_trainer`, and `src/aemon/evaluation/audit.py` replays complete episodes into AuditKIT.
 
 ## Problem statements
 

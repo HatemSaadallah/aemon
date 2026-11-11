@@ -1,0 +1,28 @@
+{"t": "14:29:45", "set": "test2", "round": 1, "start": true}
+{"t": "14:44:56", "set": "test2", "round": 1, "returncode": 0, "valid": 118, "infra_failures": 15, "causes": {"usage_limit": 15}}
+{"t": "14:44:56", "set": "test2", "waiting_minutes": 30}
+{"t": "14:45:14", "set": "test2", "round": 2, "start": true}
+{"t": "14:45:34", "set": "test2", "round": 2, "returncode": 1, "valid": 118, "infra_failures": 15, "causes": {"usage_limit": 15}}
+{"t": "14:45:34", "set": "test2", "waiting_minutes": 60}
+{"t": "14:46:06", "set": "test2", "round": 3, "start": true}
+{"t": "14:46:27", "set": "test2", "round": 3, "returncode": 0, "valid": 118, "infra_failures": 15, "causes": {"usage_limit": 15}}
+{"t": "14:46:27", "set": "test2", "waiting_minutes": 60}
+{"t": "15:46:27", "set": "test2", "round": 4, "start": true}
+{"t": "15:46:44", "set": "test2", "round": 4, "returncode": 0, "valid": 118, "infra_failures": 15, "causes": {"usage_limit": 15}}
+{"t": "15:46:44", "set": "test2", "waiting_minutes": 60}
+{"t": "16:46:44", "set": "test2", "round": 5, "start": true}
+{"t": "16:47:01", "set": "test2", "round": 5, "returncode": 0, "valid": 118, "infra_failures": 15, "causes": {"usage_limit": 15}}
+{"t": "16:47:01", "set": "test2", "waiting_minutes": 60}
+{"t": "17:47:01", "set": "test2", "round": 6, "start": true}
+{"t": "17:47:17", "set": "test2", "round": 6, "returncode": 0, "valid": 118, "infra_failures": 15, "causes": {"usage_limit": 15}}
+{"t": "17:47:17", "set": "test2", "waiting_minutes": 60}
+{"t": "18:47:17", "set": "test2", "round": 7, "start": true}
+{"t": "18:47:44", "set": "test2", "round": 7, "returncode": 0, "valid": 118, "infra_failures": 15, "causes": {"usage_limit": 15}}
+{"t": "18:47:44", "set": "test2", "waiting_minutes": 60}
+{"t": "18:53:10", "set": "test2", "round": 8, "start": true}
+{"t": "18:53:28", "set": "test2", "round": 8, "returncode": 0, "valid": 118, "infra_failures": 15, "causes": {"usage_limit": 15}}
+{"t": "18:53:28", "set": "test2", "waiting_minutes": 60}
+{"t": "19:03:42", "set": "test2", "round": 9, "start": true}
+{"t": "19:05:31", "set": "test2", "round": 9, "returncode": 0, "valid": 133, "infra_failures": 0, "causes": {}}
+{"t": "19:05:32", "set": "test2", "reported": "trained vs base"}
+{"t": "19:05:32", "set": "test2_v3", "round": 1, "start": true}

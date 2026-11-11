@@ -1,0 +1,16 @@
+{
+  "packet_id": "4c444d825fcf7abf",
+  "packet_sha256": "ff4f964b7bac743dd0f597f177e17edb773adfa9402d71937f2c48070802b12c",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "deca9c92f4540aaaeab53d14ae9d8f3916aed5ff60ff35058ded8521fdf21ace",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "error": {
+    "type": "ValueError",
+    "message": "judge ledger cap would be exceeded"
+  },
+  "seconds": 0.002
+}

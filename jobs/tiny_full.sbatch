@@ -40,5 +40,5 @@ cd $L/code_$REVISION
 export PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 CODE_REVISION=$REVISION
 WEIGHTS=$(sha256sum $G | cut -d' ' -f1)
 echo "weights $WEIGHTS"
-$L/env/bin/python -W ignore -m strategy_agent.agent.runner --url http://127.0.0.1:$PORT --prompt "${PROMPT:-staged}" --cases all --context 12288 --max-tokens 520 --max-turns 45 \
+$L/env/bin/python -W ignore -m aemon.agent.run_investigations --url http://127.0.0.1:$PORT --prompt "${PROMPT:-staged}" --cases all --context 12288 --max-tokens 520 --max-turns 45 \
   --model-label "tiny-aya-global bf16 af89d21 code $REVISION" --weights-sha256 $WEIGHTS --manifest $OUT/provenance.jsonl --output $OUT/$NAME.json > $OUT/$NAME.log 2>&1 && echo "run exit 0 $(date +%T)" || echo "run exit $? $(date +%T)"

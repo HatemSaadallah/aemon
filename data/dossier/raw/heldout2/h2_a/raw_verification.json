@@ -1,0 +1,313 @@
+{
+ "summary": {
+  "verified": 55,
+  "fetch_failed": 6
+ },
+ "results": [
+  {
+   "id": "draeger-fy2024-divisions",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-size-reach",
+   "status": "fetch_failed",
+   "detail": "The read operation timed out"
+  },
+  {
+   "id": "draeger-safety-customers",
+   "status": "fetch_failed",
+   "detail": "The read operation timed out"
+  },
+  {
+   "id": "draeger-channels",
+   "status": "fetch_failed",
+   "detail": "The read operation timed out"
+  },
+  {
+   "id": "draeger-companion-med",
+   "status": "fetch_failed",
+   "detail": "The read operation timed out"
+  },
+  {
+   "id": "draeger-alcotest4000-pitch",
+   "status": "fetch_failed",
+   "detail": "The read operation timed out"
+  },
+  {
+   "id": "draeger-ing-private-dev",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-ing-sales-scandinavia",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-ing-adac-objection",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-ing-price-pitch",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-autobild-price-gap",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-autobild-cheap-enough",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-autobild-low-entry",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-tcs-test",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-trendmedic-listing",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-safetygas-listing",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-france-fines",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-ipsos-co-alarm",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-bq-co-survey",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-wa-co-law",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-baltimore-co",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "draeger-bgr-amazon-co",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-revenue-2023",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-instrumentation-share",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-heating-trades",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-solutions-food",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-sales-model",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-size",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-smartprobes-technicians",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-hvacshop-homeowners",
+   "status": "fetch_failed",
+   "detail": "HTTP Error 429: Too Many Requests"
+  },
+  {
+   "id": "testo-warentest-co2-price",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-warentest-home-reliable",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-dhz-co2-demand",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-uswitch-damp",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-uswitch-dehumidifier",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-airthings-volume",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-airthings-decline",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-airthings-promo",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-suffolk-borrow",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-warentest-flir-price",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "testo-macwelt-flir-diy",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-about-facilities",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-veralto-customers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-veralto-scale",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-aquachek-homeowners",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-aquachek-ownership",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-distribution-consumers",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-aquachek-number-one",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-epa-responsibility",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-epa-scale",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-massinc-testing-gap",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-massinc-worry",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-massinc-presale",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-sfpuc-availability",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-sfpuc-reliability",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-sfpuc-evaluation",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-vt-lead-kits",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-pfas-kit-price",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-pfas-kit-volume",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-wi-reasons",
+   "status": "verified",
+   "detail": "exact"
+  },
+  {
+   "id": "hach-wi-never-tested",
+   "status": "verified",
+   "detail": "exact"
+  }
+ ]
+}

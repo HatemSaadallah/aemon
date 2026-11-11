@@ -2,7 +2,7 @@
 
 Selection is Hatem's: fill in **Keep?** (or the JSON's `keep`). The flags are keyword checks to help reading, not judgments. Each answer is shown whole; nothing below is truncated.
 
-Answers: 54 (53 valid replies, 1 request failures); kept by the gates: 5 (5 propose_test). Rejections, first failing check: 23 why_next does not say which theories the test separates; 6 the call does not act on what the justification names; 6 in the test stage only proposing a discriminating test or justifying declining one advances the investigation; 4 gate: learned stops at its length limit (700 characters), cut mid-text; 1 gate: a recovery from a refused finish must finish, citing real evidence; 1 refused by the tools: prediction_by_theory needs one prediction for each theory in the test; 1 gate: the predictions barely differ; 1 repeats an earlier call; 1 gate: sample stops at its length limit (500 characters), cut mid-text; 1 gate: method stops at its length limit (900 characters), cut mid-text; 1 the justification names nothing from the state; 1 refused by the tools: you already ran that search. Read its results, or search for something different; 1 gate: the cost per participant is not credible for the stated sample.
+Answers: 54 (53 valid replies, 1 request failures); kept by the gates: 2 (2 propose_test). Rejections, first failing check: 23 why_next does not say which theories the test separates; 6 the call does not act on what the justification names; 6 in the test stage only proposing a discriminating test or justifying declining one advances the investigation; 4 gate: learned stops at its length limit (700 characters), cut mid-text; 4 gate: the decision rule leads straight to developing a product, not to a bounded next step; 1 gate: a recovery from a refused finish must finish, citing real evidence; 1 refused by the tools: prediction_by_theory needs one prediction for each theory in the test; 1 gate: the arms differ only in wording or message, with no product or price difference and no same-price control; 1 repeats an earlier call; 1 gate: sample stops at its length limit (500 characters), cut mid-text; 1 gate: method stops at its length limit (900 characters), cut mid-text; 1 the justification names nothing from the state; 1 refused by the tools: you already ran that search. Read its results, or search for something different.
 
 ## 1. andis-new-evidence-irrelevant (present day, from the test step)
 
@@ -34,37 +34,7 @@ Answers: 54 (53 valid replies, 1 request failures); kept by the gates: 5 (5 prop
 
 **Keep? (Hatem):** 
 
-## 2. cree-base (2012, from the test step)
-
-**Question:** It is late 2012. Should Cree, Inc. develop a differentiated consumer proposition for a specific use case, building on its high-brightness LED chips and LED lighting technology? What evidence would justify that investment?
-
-- **T1:** Consumers will adopt LED bulbs if they are priced low enough to be competitive with incandescent bulbs, because price is the primary barrier to switching.
-- **T2:** Consumers will adopt LED bulbs if they perceive them as a premium product offering superior color quality and design, because they value aesthetic and functional differentiation.
-
-**Sources read (dossier date):** cree-abc-cheaper (2012-03-09), cree-bdn-embracing (2012-03-10), cree-fool-commercial (2010-08-18), cree-ledp-reason (2013-03-06), cree-mpr-online (2012-04-17), cree-pr-ecosmart (2010-08-17), cree-wiki-first (unknown (accessed 2026-11-03))
-
-**Test:** Price vs Premium Positioning Test. Online controlled experiment with refundable deposit pre‑order
-
-**Sample:** 400 participants recruited via a panel, balanced between two test groups (200 each)  
-**Measure:** Conversion rate to refundable deposit (acceptance to purchase) and final purchase rate after deposit is applied to a limited batch  
-**Cost:** €18000, 10 weeks; theories tested: T1, T2
-
-- **Predicts T1:** Higher deposit conversion in the low‑price group (price comparable to incandescent, e.g., $30) than in the premium—price group (e.g., $60).
-- **Predicts T2:** Higher deposit conversion in the premium—positioning group (high‑price $60 with color quality and design messaging) than in the low‑price group.
-
-**Decision rule:** If deposit conversion in the low‑price group is at least 10 percentage points higher than in the premium group, proceed to develop a low‑price consumer proposition. If the premium group conversion is at least 10 percentage points higher, develop a premium consumer proposition. If the difference is less than 10 points, conduct further qualitative research to explore other drivers.
-
-**Teacher, learned:** We have two competing theories about why consumers would adopt LED bulbs: T1 argues price is the primary barrier and low pricing drives adoption; T2 argues premium positioning based on superior color quality and design drives adoption. Existing evidence shows consumers are embracing LEDs and that Cree has introduced low‑priced bulbs under $50, but no direct evidence isolates price vs premium as the driver. The sources do not provide conclusive data on consumer preferences for color quality versus price. The test budget is €20,000 and the timeline is 12 weeks.
-
-**Teacher, uncertain:** It is unclear which driver—price or premium attributes—is more influential for consumer adoption of Cree’s LED bulbs. The evidence supports both theories indirectly but does not isolate the mechanism.
-
-**Teacher, why next:** A controlled test that varies price and premium messaging while measuring real purchase commitment can distinguish the theories. T1 predicts higher purchase intent/actual purchase when price is low, while T2 predicts higher purchase when premium attributes are highlighted, even at higher price. The test can be designed within the budget and timeline, using a small sample and a refundable deposit to capture real commitment.
-
-**Flags:** asks for a real commitment (deposit, pre-order, paid use); the arms differ in framing or message; rule leads straight to developing or launching
-
-**Keep? (Hatem):** 
-
-## 3. cotral-new-evidence-irrelevant (present day, from the test step)
+## 2. cotral-new-evidence-irrelevant (present day, from the test step)
 
 **Question:** Should Cotral Lab develop a differentiated consumer proposition for a specific use case, beyond its existing hearing-protection offering? What evidence would justify that investment?
 
@@ -91,65 +61,5 @@ Answers: 54 (53 valid replies, 1 request failures); kept by the gates: 5 (5 prop
 **Teacher, why next:** A low‑cost, 12‑week pilot can test real purchase intent by offering a refundable deposit for a limited run of custom‑moulded earplugs with segment‑specific marketing. This will distinguish the theories because T1 predicts higher deposit uptake when the product is framed for musicians, while T2 predicts the opposite for sleep‑aid framing. The result will guide whether to invest in a differentiated consumer proposition or stick with existing B2B focus.
 
 **Flags:** asks for a real commitment (deposit, pre-order, paid use); the arms differ in framing or message
-
-**Keep? (Hatem):** 
-
-## 4. embrace-new-evidence-irrelevant (2016, from the test step)
-
-**Question:** It is March 2016. Should Embrace Innovations develop a differentiated consumer proposition for a specific use case, building on its infant-warming technology? What evidence would justify that investment?
-
-- **T1:** Parents of premature and low-birth-weight infants in low-resource settings will adopt a home infant warmer if it is priced below $100 and marketed as a life-saving medical device that reduces the risk of SIDS.
-- **T2:** Parents of premature and low-birth-weight infants will adopt a home infant warmer if it is marketed as a fashion accessory and sold through trendy consumer channels, because they view infant care as a status symbol and are willing to pay a premium for design and brand.
-
-**Sources read (dossier date):** embrace-cnbc-price (2016-02-22), embrace-ee-origin (unknown (accessed 2026-11-02)), embrace-gsb-investors (2012), embrace-her-sids (2015-05-16), embrace-smg-launch (unknown (object made 2017; accessed 2026-11-02))
-
-**Test:** Dual‑Version Purchase Intent Test. Online survey with simulated purchase offer
-
-**Sample:** 500 parents of infants aged 0‑2 years, recruited from parenting forums and social media in the US and India (250 each). Stratify by household income and prior experience with premature/low‑birth‑weight infants.  
-**Measure:** Purchase intent: respondents choose between three options – (a) $80‑90 warmer marketed as "medical device reducing SIDS risk", (b) $120‑30 warmer marketed as "fashion infant accessory for stylish families", (c) neither. Also collect stated primary reason (safety vs style).  
-**Cost:** €15000, 10 weeks; theories tested: T1, T2
-
-- **Predicts T1:** At least 30% of respondents will select option (a) and cite safety/SIDS reduction as reason.
-- **Predicts T2:** At least 20% of respondents will select option (b) and cite style/status as reason.
-
-**Decision rule:** If → Option (a) selection ≥ 30% AND Option (b) selection ≤ 20% → proceed with T1‑aligned consumer proposition (low‑price medical). If → Option (b) selection ≥ 20% AND Option (a) selection ≤ 30% → proceed with T2‑aligned consumer proposition (premium fashion). If neither threshold met → decline consumer expansion and focus on B2B.
-
-**Teacher, learned:** From public sources up to March 2016, Embrace Innovations is known for a low‑cost infant warmer used in B2B settings (e.g., hospitals in India). There is no direct evidence of consumer sales of the warmer to individual parents, nor of demand for a differentiated consumer proposition. Pricing data exists for a different product (swaddles). The company’s origin and clinical validation support a medical‑need positioning, while no evidence shows a fashion‑or status‑driven demand.
-
-**Teacher, uncertain:** Two competing explanations for why parents might buy a home infant warmer: (1) as a life‑saving medical device priced affordably (T1), or (2) as a premium fashion/status accessory (T2). The evidence does not confirm either mechanism, nor the willingness to pay at different price points.
-
-**Teacher, why next:** A low‑cost test can reveal which mechanism drives purchase intent by offering two versions of the same product at different price points and with different messaging. This directly distinguishes T1 (expects higher intent for low‑price medical framing) from T2 (expects higher intent for higher‑price fashion framing). The test fits the €20k budget and 12‑week timeline, and provides actionable data to decide whether to pursue a consumer proposition, and if so, which positioning.
-
-**Flags:** stated preference only; the arms differ in framing or message
-
-**Keep? (Hatem):** 
-
-## 5. blackdecker-base (1977, from the test step)
-
-**Question:** It is 1977. Should Black & Decker develop a differentiated consumer proposition for a specific use case, building on its cordless motor and battery technology? What evidence would justify that investment?
-
-- **T1:** Consumers will adopt a differentiated cordless tool proposition if they perceive it as a convenient, single‑use solution that eliminates battery‑management hassle, because convenience drives purchase decisions.
-- **T2:** Consumers will adopt a differentiated cordless tool proposition if they perceive it as a premium, high‑performance product that signals expertise and status, because status and prestige drive purchase decisions.
-
-**Sources read (dossier date):** blackdecker-faq-predates (unknown (accessed 2026-11-03)), blackdecker-spinoff-motor (1981 (originally published)), blackdecker-uspto-apollo (2019-10-15), blackdecker-uspto-forget (2019-10-15), blackdecker-uspto-lessons (2019-10-15)
-
-**Test:** Convenience vs Prestige Cordless Tool Test. Controlled field test with two product mock-ups and a pre-order deposit.
-
-**Sample:** 200 individual consumers recruited from DIY and home improvement stores in three US regions (East, Midwest, West). Recruit via in-store flyers and brief screening survey to ensure they own at least one cordless tool.  
-**Measure:** Purchase intent measured by willingness to place a €50 deposit for a pre-order of the tool (non-refundable, convertible to final purchase). Secondary measures: self-reported importance of convenience vs status, and willingness to pay premium price.  
-**Cost:** €20000, 12 weeks; theories tested: T1, T2
-
-- **Predicts T1:** Deposit rate for the convenience-framed tool ("always charged, ready to use") will be at least 15 percentage points higher than for the prestige-framed tool ("high-performance, status symbol").
-- **Predicts T2:** Deposit rate for the prestige-framed tool will be at least 15 percentage points higher than for the convenience-framed tool.
-
-**Decision rule:** If the convenience version achieves a deposit rate >= 30% and significantly higher than the prestige version (p < 0.05), proceed to develop a differentiated convenience proposition for a specific use case (e.g., home DIY). If the prestige version achieves a deposit rate >= 30% and significantly higher than the convenience version, explore a premium positioning strategy. If neither reaches 30% or the difference is not significant, recommend no expansion of a differentiated consumer proposition and focus on existing B2B and consumer lines.
-
-**Teacher, learned:** From public sources we learned Black & Decker had cordless tools since 1961 and identified a consumer pain point: users often forget to recharge batteries, reducing convenience (B&D market research, 1977). This supports Theory T1 that convenience drives adoption. No evidence was found for status/prestige motivation (T2). The company already sells to individual buyers (consumer brand) but the extent of consumer market penetration in 1977 is unclear. The battery technology exists and is reliable enough for a differentiated use case. The alternatives include a differentiated proposition, broader market expansion, no expansion, changing distribution, or targeting professionals.
-
-**Teacher, uncertain:** The key uncertainty is whether consumers will pay a premium for convenience versus prestige. T1 is supported by evidence of a pain point that a differentiated "one-use" solution could solve. T2 lacks supporting evidence and no data shows status-driven purchase intent for tools. Without testing, we cannot determine which motivation dominates or if either would generate sufficient demand to justify the investment.
-
-**Teacher, why next:** A low-cost, short-duration test can directly compare purchase intent for a convenience-framed versus a prestige-framed cordless tool, using real monetary commitment (pre-order deposit) to capture consequential behavior. This will distinguish the two theories because T1 predicts higher intent for the convenience version, while T2 predicts higher intent for the prestige version. The test fits the €20,000 budget and 12-week timeline, and the result will inform whether to proceed with a differentiated consumer proposition, a broader expansion, or no expansion.
-
-**Flags:** asks for a real commitment (deposit, pre-order, paid use); the arms differ in framing or message; rule leads straight to developing or launching
 
 **Keep? (Hatem):** 

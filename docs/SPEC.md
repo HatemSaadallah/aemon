@@ -35,7 +35,7 @@ We were optimising a measurable failure, deriving payoff tables from business ru
 | Model harness: llama.cpp, enforced JSON, step guidance, crash-safe saving | **Reused** |
 | AuditKIT replay of complete episodes, strict call counting | **Reused** |
 | AgentTune path, GPU stack, token limits, loss-masking findings | **Reused** for training |
-| Decision Lab | **Replaced** by the Strategy Lab in `app/`. |
+| Decision Lab | **Replaced** by Aemon in `app/`. |
 | `schema_v2.py` planner, `benchmark_v2.py`, `parser_v2.py`, launch cases | **Removed** on November 3, 2026, with the rest of the launch-decision code. They remain in git history. |
 | Payoff-derivation target | **Dropped as the central target.** Possibly a supporting capability. |
 

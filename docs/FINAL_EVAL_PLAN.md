@@ -6,13 +6,13 @@ recorded in `docs/DECISIONS.md`; after the freeze, nothing changes.
 
 ## Order
 
-1. **Before training:** loss masking (`src/strategy_agent/training/masking_gate.py` and the prefix check in `strategy/rows.labels_for`),
-   split isolation (the freeze and split tests in `tests/test_strategy.py`), and row coverage (`src/strategy_agent/pipeline/row_coverage.py`:
+1. **Before training:** loss masking (`src/aemon/training/masking_gate.py` and the prefix check in `strategy/rows.labels_for`),
+   split isolation (the freeze and split tests in `tests/test_strategy.py`), and row coverage (`src/aemon/pipeline/row_coverage.py`:
    no length refusals, no target naming anything missing from its context). A failure stops the run.
 2. **Train once:** all accepted teacher investigations plus recovery corrections at about 20% of supervised tokens, as
    a target and not a requirement; the report gives the actual share by rows and tokens. Checkpoint chosen on the
-   company-balanced validation loss over the six companies in `src/strategy_agent/pipeline/splits.py`.
-3. **After training, before any evaluation:** the adapter conversion gate (`src/strategy_agent/evaluation/conversion_check.py`). A failure
+   company-balanced validation loss over the six companies in `src/aemon/pipeline/splits.py`.
+3. **After training, before any evaluation:** the adapter conversion gate (`src/aemon/evaluation/conversion_check.py`). A failure
    stops evaluation.
 4. **Development evaluation** on the six validation companies, every case.
 5. **Choices, from development results only,** recorded before the freeze (below).
@@ -36,15 +36,15 @@ The same in both campaigns:
 - **Blind quality judging** with Codex's frozen judge package (PR #24): the rubric's dimensions and the per-episode score,
   two judges that are neither the student nor the teacher, arm names removed, packet order randomised, anchors included.
   Completion and fewer loops alone cannot establish better investigation.
-- **Mechanical measures** from `src/strategy_agent/evaluation/progress.py`: finished, highest stage completed, refused and repeated calls per
-  run, sources read and used; plus the guards (`src/strategy_agent/env/checks.py`), reported as guards, not quality.
+- **Mechanical measures** from `src/aemon/evaluation/progress.py`: finished, highest stage completed, refused and repeated calls per
+  run, sources read and used; plus the guards (`src/aemon/env/checks.py`), reported as guards, not quality.
 - Negative controls: the scripted always-keep and always-revise policies on the same what-if packets.
 
 ## The final test campaign, defined now
 
 - **Cases:** every case in `cases_heldout.json` at the freeze (the four companies' base and irrelevant-evidence cases,
   plus Codex's supporting and undermining packets if PR #23 is merged and refrozen before the freeze, and not otherwise).
-- **Seeds:** three attempts per case and arm (attempts 0, 1 and 2: seed by case and attempt as in `src/strategy_agent/agent/runner.py`),
+- **Seeds:** three attempts per case and arm (attempts 0, 1 and 2: seed by case and attempt as in `src/aemon/agent/runner.py`),
   temperature 0, 0.4 only on a retry straight after a refused call, as in development.
 - **Budgets:** the case budgets in the dossier; 45 turns, 4 errors in a row, 520 tokens per turn, the same context.
 - **Infrastructure retries:** an episode is rerun with the same seed only if the harness or server failed (an HTTP error

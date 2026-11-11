@@ -1,0 +1,585 @@
+{
+ "note": "Held out for the final test. Development runs never load this file.",
+ "cases": [
+  {
+   "company": "Drägerwerk AG & Co. KGaA",
+   "question": "Should Drägerwerk AG & Co. KGaA develop a differentiated consumer proposition for a specific use case, beyond its existing medical and safety technology for hospitals, industry, fire services and police? What evidence would justify that investment?",
+   "brief": "Drägerwerk AG & Co. KGaA makes medical and safety technology, including gas detectors, respiratory protection and alcohol and drug testing devices, for hospitals, industry, fire services and police. It is a listed, family-run group organised in a medical and a safety division. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "draeger",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "draeger-base",
+   "premise_records": [
+    "draeger-fy2024-divisions"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Drägerwerk AG & Co. KGaA",
+   "question": "Should Drägerwerk AG & Co. KGaA develop a differentiated consumer proposition for a specific use case, beyond its existing medical and safety technology for hospitals, industry, fire services and police? What evidence would justify that investment?",
+   "brief": "Drägerwerk AG & Co. KGaA makes medical and safety technology, including gas detectors, respiratory protection and alcohol and drug testing devices, for hospitals, industry, fire services and police. It is a listed, family-run group organised in a medical and a safety division. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "draeger",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "draeger-new-evidence-irrelevant",
+   "premise_records": [
+    "draeger-fy2024-divisions"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Testo SE & Co. KGaA",
+   "question": "Should Testo SE & Co. KGaA develop a differentiated consumer proposition for a specific use case, beyond its existing portable and stationary measuring instruments for trades and industry? What evidence would justify that investment?",
+   "brief": "Testo SE & Co. KGaA makes portable and stationary measuring instruments, used mainly by heating, air-conditioning and refrigeration trades, food businesses and industry. It is a privately held group headquartered in the Black Forest with subsidiaries worldwide. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "testo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "testo-base",
+   "premise_records": [
+    "testo-heating-trades",
+    "testo-sales-model",
+    "testo-smartprobes-technicians"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Testo SE & Co. KGaA",
+   "question": "Should Testo SE & Co. KGaA develop a differentiated consumer proposition for a specific use case, beyond its existing portable and stationary measuring instruments for trades and industry? What evidence would justify that investment?",
+   "brief": "Testo SE & Co. KGaA makes portable and stationary measuring instruments, used mainly by heating, air-conditioning and refrigeration trades, food businesses and industry. It is a privately held group headquartered in the Black Forest with subsidiaries worldwide. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "testo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "testo-new-evidence-irrelevant",
+   "premise_records": [
+    "testo-heating-trades",
+    "testo-sales-model",
+    "testo-smartprobes-technicians"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Hach Company",
+   "question": "Should Hach Company develop a differentiated consumer proposition for a specific use case, beyond its existing water-quality analysis instruments for utilities and industry? What evidence would justify that investment?",
+   "brief": "Hach Company makes water-quality analysis instruments, reagents and software for municipal water utilities and industrial plants. It is a wholly owned subsidiary of the listed US group Veralto. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "hach",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "hach-base",
+   "premise_records": [
+    "hach-about-facilities",
+    "hach-veralto-customers"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Hach Company",
+   "question": "Should Hach Company develop a differentiated consumer proposition for a specific use case, beyond its existing water-quality analysis instruments for utilities and industry? What evidence would justify that investment?",
+   "brief": "Hach Company makes water-quality analysis instruments, reagents and software for municipal water utilities and industrial plants. It is a wholly owned subsidiary of the listed US group Veralto. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "hach",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "hach-new-evidence-irrelevant",
+   "premise_records": [
+    "hach-about-facilities",
+    "hach-veralto-customers"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Winterhalter Gastronom GmbH",
+   "question": "Should Winterhalter Gastronom GmbH develop a differentiated consumer proposition for a specific use case, beyond its existing commercial dishwashers and glasswashers? What evidence would justify that investment?",
+   "brief": "Winterhalter Gastronom GmbH makes commercial dishwashers and glasswashers, together with the water treatment, chemicals and racks that go with them. It is a family-owned company based in Meckenbeuren, Germany, that sells through its own branches and through distributors. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "winterhalter",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "winterhalter-base",
+   "premise_records": [
+    "winterhalter-hmn-profile",
+    "winterhalter-only-warewashing",
+    "winterhalter-distributors"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Winterhalter Gastronom GmbH",
+   "question": "Should Winterhalter Gastronom GmbH develop a differentiated consumer proposition for a specific use case, beyond its existing commercial dishwashers and glasswashers? What evidence would justify that investment?",
+   "brief": "Winterhalter Gastronom GmbH makes commercial dishwashers and glasswashers, together with the water treatment, chemicals and racks that go with them. It is a family-owned company based in Meckenbeuren, Germany, that sells through its own branches and through distributors. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "winterhalter",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "winterhalter-new-evidence-irrelevant",
+   "premise_records": [
+    "winterhalter-hmn-profile",
+    "winterhalter-only-warewashing",
+    "winterhalter-distributors"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Franke Coffee Systems",
+   "question": "Should Franke Coffee Systems develop a differentiated consumer proposition for a specific use case, beyond its existing professional coffee machines? What evidence would justify that investment?",
+   "brief": "Franke Coffee Systems makes professional fully automatic, semi-automatic and traditional coffee machines. It is a division of the Swiss Franke Group and sells through its own subsidiaries and a network of service and distribution partners. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "frankecoffee",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "frankecoffee-base",
+   "premise_records": [
+    "frankecoffee-about",
+    "frankecoffee-showroom",
+    "frankecoffee-a300-noncommercial"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Franke Coffee Systems",
+   "question": "Should Franke Coffee Systems develop a differentiated consumer proposition for a specific use case, beyond its existing professional coffee machines? What evidence would justify that investment?",
+   "brief": "Franke Coffee Systems makes professional fully automatic, semi-automatic and traditional coffee machines. It is a division of the Swiss Franke Group and sells through its own subsidiaries and a network of service and distribution partners. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "frankecoffee",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "frankecoffee-new-evidence-irrelevant",
+   "premise_records": [
+    "frankecoffee-about",
+    "frankecoffee-showroom",
+    "frankecoffee-a300-noncommercial"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Hoshizaki Corporation",
+   "question": "Should Hoshizaki Corporation develop a differentiated consumer proposition for a specific use case, beyond its existing commercial ice machines and kitchen equipment? What evidence would justify that investment?",
+   "brief": "Hoshizaki Corporation makes commercial ice machines, refrigerators, dishwashers and dispensers. It is a listed Japanese company that sells through its own direct sales and service network in Japan and through subsidiaries abroad. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "hoshizaki",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "hoshizaki-base",
+   "premise_records": [
+    "hoshizaki-profile",
+    "hoshizaki-ice-uses",
+    "hoshizaki-america-leader"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Hoshizaki Corporation",
+   "question": "Should Hoshizaki Corporation develop a differentiated consumer proposition for a specific use case, beyond its existing commercial ice machines and kitchen equipment? What evidence would justify that investment?",
+   "brief": "Hoshizaki Corporation makes commercial ice machines, refrigerators, dishwashers and dispensers. It is a listed Japanese company that sells through its own direct sales and service network in Japan and through subsidiaries abroad. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "hoshizaki",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "hoshizaki-new-evidence-irrelevant",
+   "premise_records": [
+    "hoshizaki-profile",
+    "hoshizaki-ice-uses",
+    "hoshizaki-america-leader"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Tennant Company",
+   "question": "Should Tennant Company develop a differentiated consumer proposition for a specific use case, beyond its existing professional floor-cleaning machines? What evidence would justify that investment?",
+   "brief": "Tennant Company makes floor scrubbers, sweepers and other surface-maintenance machines for industrial and commercial buildings, sold directly in 21 countries and through distributors in more than 100. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "tennant",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "tennant-base",
+   "premise_records": [
+    "tennant-ir-overview",
+    "tennant-10q-customers",
+    "tennant-10q-nonresidential"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Tennant Company",
+   "question": "Should Tennant Company develop a differentiated consumer proposition for a specific use case, beyond its existing professional floor-cleaning machines? What evidence would justify that investment?",
+   "brief": "Tennant Company makes floor scrubbers, sweepers and other surface-maintenance machines for industrial and commercial buildings, sold directly in 21 countries and through distributors in more than 100. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "tennant",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "tennant-new-evidence-irrelevant",
+   "premise_records": [
+    "tennant-ir-overview",
+    "tennant-10q-customers",
+    "tennant-10q-nonresidential"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Belimo Holding AG",
+   "question": "Should Belimo Holding AG develop a differentiated consumer proposition for a specific use case, beyond its existing HVAC actuators, valves and sensors for commercial buildings? What evidence would justify that investment?",
+   "brief": "Belimo Holding AG makes damper actuators, control valves, sensors and meters for building heating, ventilation and air conditioning, sold to HVAC equipment makers and through controls contractors and system integrators. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "belimo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "belimo-base",
+   "premise_records": [
+    "belimo-ar25-business",
+    "belimo-ar25-oem-integrators"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Belimo Holding AG",
+   "question": "Should Belimo Holding AG develop a differentiated consumer proposition for a specific use case, beyond its existing HVAC actuators, valves and sensors for commercial buildings? What evidence would justify that investment?",
+   "brief": "Belimo Holding AG makes damper actuators, control valves, sensors and meters for building heating, ventilation and air conditioning, sold to HVAC equipment makers and through controls contractors and system integrators. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "belimo",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "belimo-new-evidence-irrelevant",
+   "premise_records": [
+    "belimo-ar25-business",
+    "belimo-ar25-oem-integrators"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Laerdal Medical",
+   "question": "Should Laerdal Medical develop a differentiated consumer proposition for a specific use case, beyond its existing resuscitation and healthcare-simulation training products? What evidence would justify that investment?",
+   "brief": "Laerdal Medical makes CPR manikins, resuscitation-training and simulation products, mainly for healthcare professionals and training organisations, and is part of a Norwegian group with a presence in 27 countries. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "laerdal",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "laerdal-base",
+   "premise_records": [
+    "laerdal-boilerplate",
+    "laerdal-about-community",
+    "laerdal-cpranytime-home"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Laerdal Medical",
+   "question": "Should Laerdal Medical develop a differentiated consumer proposition for a specific use case, beyond its existing resuscitation and healthcare-simulation training products? What evidence would justify that investment?",
+   "brief": "Laerdal Medical makes CPR manikins, resuscitation-training and simulation products, mainly for healthcare professionals and training organisations, and is part of a Norwegian group with a presence in 27 countries. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "laerdal",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "laerdal-new-evidence-irrelevant",
+   "premise_records": [
+    "laerdal-boilerplate",
+    "laerdal-about-community",
+    "laerdal-cpranytime-home"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Kingspan Group plc",
+   "question": "Should Kingspan Group plc develop a differentiated consumer proposition for a specific use case, beyond its existing insulation and building envelope products for construction professionals? What evidence would justify that investment?",
+   "brief": "Kingspan Group plc makes insulated panels, rigid insulation boards and other building envelope products, with 278 manufacturing sites and a commercial presence in more than 80 countries. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "kingspan",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "kingspan-base",
+   "premise_records": [
+    "kingspan-ar2025-segment",
+    "kingspan-ar2024-rigid",
+    "kingspan-ar2025-footprint"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Kingspan Group plc",
+   "question": "Should Kingspan Group plc develop a differentiated consumer proposition for a specific use case, beyond its existing insulation and building envelope products for construction professionals? What evidence would justify that investment?",
+   "brief": "Kingspan Group plc makes insulated panels, rigid insulation boards and other building envelope products, with 278 manufacturing sites and a commercial presence in more than 80 countries. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "kingspan",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "kingspan-new-evidence-irrelevant",
+   "premise_records": [
+    "kingspan-ar2025-segment",
+    "kingspan-ar2024-rigid",
+    "kingspan-ar2025-footprint"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Ansell Limited",
+   "question": "Should Ansell Limited develop a differentiated consumer proposition for a specific use case, beyond its existing protective gloves and body protection for industrial and healthcare customers? What evidence would justify that investment?",
+   "brief": "Ansell Limited makes protective gloves and body protection, reporting through two segments, Industrial and Healthcare. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "ansell",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "ansell-base",
+   "premise_records": [
+    "ansell-investor-positioning",
+    "ansell-fy25-chemical-service",
+    "ansell-fy25-touchntuff"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Ansell Limited",
+   "question": "Should Ansell Limited develop a differentiated consumer proposition for a specific use case, beyond its existing protective gloves and body protection for industrial and healthcare customers? What evidence would justify that investment?",
+   "brief": "Ansell Limited makes protective gloves and body protection, reporting through two segments, Industrial and Healthcare. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "ansell",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "ansell-new-evidence-irrelevant",
+   "premise_records": [
+    "ansell-investor-positioning",
+    "ansell-fy25-chemical-service",
+    "ansell-fy25-touchntuff"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  },
+  {
+   "company": "Mettler-Toledo International Inc.",
+   "question": "Should Mettler-Toledo International Inc. develop a differentiated consumer proposition for a specific use case, beyond its existing precision instruments for laboratory, industrial and food retail customers? What evidence would justify that investment?",
+   "brief": "Mettler-Toledo International Inc. makes precision instruments, including balances and scales, for laboratory, industrial and food retailing applications, and sells more through its own direct sales force than through indirect channels. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "mettler",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "mettler-base",
+   "premise_records": [
+    "mettler-ir-overview",
+    "mettler-ar25-channels",
+    "mettler-profile-food-retail"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": []
+  },
+  {
+   "company": "Mettler-Toledo International Inc.",
+   "question": "Should Mettler-Toledo International Inc. develop a differentiated consumer proposition for a specific use case, beyond its existing precision instruments for laboratory, industrial and food retail customers? What evidence would justify that investment?",
+   "brief": "Mettler-Toledo International Inc. makes precision instruments, including balances and scales, for laboratory, industrial and food retailing applications, and sells more through its own direct sales force than through indirect channels. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "mettler",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "mettler-new-evidence-irrelevant",
+   "premise_records": [
+    "mettler-ir-overview",
+    "mettler-ar25-channels",
+    "mettler-profile-food-retail"
+   ],
+   "test_warranted": true,
+   "split": "heldout2",
+   "shared_scopes": [],
+   "shock": {
+    "record": {
+     "id": "SYN-D",
+     "type": "synthetic",
+     "title": "Simulated warehouse test",
+     "url": "n/a",
+     "date": "n/a",
+     "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+     "access_limitation": "synthetic"
+    },
+    "targets": [],
+    "direction": "irrelevant"
+   }
+  }
+ ]
+}

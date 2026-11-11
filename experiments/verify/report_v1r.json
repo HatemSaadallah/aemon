@@ -1,0 +1,44 @@
+{
+ "v1": {
+  "runs": 45,
+  "finished": 24,
+  "validated_completion": 3,
+  "stopped_repeated_errors": 17,
+  "repeat_query_refusals": 179,
+  "runs_with_contradicting_weighing": 2,
+  "disconfirmation (passed/reached)": "24/24",
+  "existing_offering (passed/reached)": "18/24",
+  "numbers_cited failures": 9,
+  "follows_evidence failures": 13,
+  "mean calls": 32.0,
+  "per run: surfaced / read / weighed / decision-relevant weighed": [
+   8.8,
+   6.9,
+   3.0,
+   1.3
+  ],
+  "hit relevance: mean share of top score": 0.806,
+  "hit relevance: share of hits below half the top score": 0.126
+ },
+ "v1_r": {
+  "runs": 45,
+  "finished": 22,
+  "validated_completion": 0,
+  "stopped_repeated_errors": 16,
+  "repeat_query_refusals": 161,
+  "runs_with_contradicting_weighing": 2,
+  "disconfirmation (passed/reached)": "22/22",
+  "existing_offering (passed/reached)": "15/22",
+  "numbers_cited failures": 10,
+  "follows_evidence failures": 0,
+  "mean calls": 30.3,
+  "per run: surfaced / read / weighed / decision-relevant weighed": [
+   17.4,
+   7.1,
+   2.2,
+   1.0
+  ],
+  "hit relevance: mean share of top score": 0.647,
+  "hit relevance: share of hits below half the top score": 0.281
+ }
+}

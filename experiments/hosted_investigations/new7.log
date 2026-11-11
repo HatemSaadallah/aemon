@@ -1,0 +1,164 @@
+{"case": "bauschandlomb-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 28, "passed": 15, "failed": ["testable_predictions", "evidence_classes"]}
+{"case": "kone-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 32, "passed": 15, "failed": ["evidence_kinds", "disconfirmation"]}
+{"case": "trumpf-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 27, "passed": 8, "failed": ["finished", "evidence_kinds"]}
+{"case": "getinge-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 29, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_classes"]}
+{"case": "terumo-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 25, "passed": 8, "failed": ["finished", "evidence_classes"]}
+{"case": "nordson-new-evidence-irrelevant", "attempt": 10, "stop": "repeated errors", "turns": 23, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_kinds"]}
+{"case": "valmont-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 30, "passed": 14, "failed": ["testable_predictions", "evidence_kinds", "no_invented_numbers"]}
+{"case": "victaulic-new-evidence-irrelevant", "attempt": 10, "stop": "finished", "turns": 27, "passed": 14, "failed": ["testable_predictions", "evidence_classes", "no_invented_numbers"]}
+{
+ "summary": {
+  "episodes": 8,
+  "finished": 4,
+  "end_to_end_success": 1,
+  "stop_reasons": {
+   "finished": 4,
+   "repeated errors": 4
+  },
+  "furthest_stage": {
+   "finish": 4,
+   "challenge_theory": 4
+  },
+  "checks": {
+   "finished": {
+    "passed": 4,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   },
+   "framing": {
+    "passed": 8,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   },
+   "theories": {
+    "passed": 8,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   },
+   "causal_form": {
+    "passed": 8,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   },
+   "testable_predictions": {
+    "passed": 3,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   },
+   "evidence_use": {
+    "passed": 8,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   },
+   "evidence_classes": {
+    "passed": 3,
+    "reached": 7,
+    "applied": 8,
+    "of_all": 8
+   },
+   "evidence_kinds": {
+    "passed": 4,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   },
+   "evidence_limits": {
+    "passed": 8,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   },
+   "disconfirmation": {
+    "passed": 3,
+    "reached": 4,
+    "applied": 8,
+    "of_all": 8
+   },
+   "experiment": {
+    "passed": 4,
+    "reached": 4,
+    "applied": 8,
+    "of_all": 8
+   },
+   "revision": {
+    "passed": 4,
+    "reached": 4,
+    "applied": 8,
+    "of_all": 8
+   },
+   "existing_offering": {
+    "passed": 4,
+    "reached": 4,
+    "applied": 8,
+    "of_all": 8
+   },
+   "no_invented_numbers": {
+    "passed": 2,
+    "reached": 4,
+    "applied": 8,
+    "of_all": 8
+   },
+   "simulated_not_used": {
+    "passed": 4,
+    "reached": 4,
+    "applied": 8,
+    "of_all": 8
+   },
+   "recommendation": {
+    "passed": 4,
+    "reached": 4,
+    "applied": 8,
+    "of_all": 8
+   },
+   "tool_use": {
+    "passed": 8,
+    "reached": 8,
+    "applied": 8,
+    "of_all": 8
+   }
+  },
+  "rejections": {
+   "misquote": 1
+  },
+  "shock_coverage": {
+   "cases": 8,
+   "delivered": 4,
+   "read": 4,
+   "held_affected_theory": 0,
+   "addressed_an_affected_theory": 0,
+   "bore_on_favoured": 0,
+   "cited_in_revision": 4,
+   "favoured_changed": 1
+  },
+  "supporting_evidence_attempted": 7,
+  "rejected_finishes": 0,
+  "harness_actions": 0,
+  "refused_calls": 1,
+  "recovered_after_refusal": 1,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 3061256,
+   "completion_tokens": 257088,
+   "seconds": 2235.193,
+   "usd": 0
+  },
+  "mean_calls": 22.75
+ },
+ "auditkit": {
+  "cases": 8,
+  "replay_mismatches": 0,
+  "guards_cleared": 1,
+  "guards_not_cleared": 7,
+  "other": 0,
+  "known_tool_names": 1.0,
+  "redundant_tool_calls": 0.0,
+  "no_looping": 1.0
+ }
+}
+{"spent_usd_estimate": 0.896}

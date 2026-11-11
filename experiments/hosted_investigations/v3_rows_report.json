@@ -1,0 +1,45 @@
+{
+ "reports": 17,
+ "episodes": 266,
+ "accepted": 154,
+ "rejections": [
+  [
+   "accepted",
+   154
+  ],
+  [
+   "replay did not reach an accepted finish",
+   112
+  ]
+ ],
+ "train_rows": 3611,
+ "validation_rows": 262,
+ "train_companies": 69,
+ "v1_action_share": {
+  "read_source": 0.275,
+  "search_evidence": 0.242,
+  "assess_evidence": 0.125,
+  "add_theory": 0.085,
+  "challenge_theory": 0.049,
+  "read_brief": 0.04,
+  "frame_problem": 0.04,
+  "propose_test": 0.04,
+  "state_position": 0.04,
+  "finish": 0.04,
+  "revise_theory": 0.022
+ },
+ "deepseek_action_share": {
+  "read_source": 0.318,
+  "assess_evidence": 0.15,
+  "search_evidence": 0.147,
+  "add_theory": 0.117,
+  "challenge_theory": 0.048,
+  "read_brief": 0.04,
+  "frame_problem": 0.04,
+  "propose_test": 0.04,
+  "state_position": 0.04,
+  "finish": 0.04,
+  "revise_theory": 0.02
+ },
+ "read_ratio": 1.16
+}

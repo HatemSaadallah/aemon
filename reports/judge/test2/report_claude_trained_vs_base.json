@@ -1,0 +1,101 @@
+{
+ "runs": 144,
+ "arms": [
+  "base",
+  "trained"
+ ],
+ "judges": {
+  "claude": {
+   "by_arm": {
+    "base": {
+     "mean": 0.482,
+     "n": 72
+    },
+    "trained": {
+     "mean": 0.887,
+     "n": 72
+    }
+   },
+   "by_arm_company": {
+    "base": {
+     "ansell": 0.465,
+     "belimo": 0.451,
+     "draeger": 0.553,
+     "frankecoffee": 0.648,
+     "hach": 0.491,
+     "hoshizaki": 0.451,
+     "kingspan": 0.338,
+     "laerdal": 0.648,
+     "mettler": 0.454,
+     "tennant": 0.306,
+     "testo": 0.611,
+     "winterhalter": 0.373
+    },
+    "trained": {
+     "ansell": 1.039,
+     "belimo": 0.722,
+     "draeger": 0.708,
+     "frankecoffee": 0.477,
+     "hach": 0.84,
+     "hoshizaki": 0.299,
+     "kingspan": 1.231,
+     "laerdal": 1.104,
+     "mettler": 1.449,
+     "tennant": 1.111,
+     "testo": 0.896,
+     "winterhalter": 0.771
+    }
+   },
+   "by_arm_dimension": {
+    "base": {
+     "assumptions_predictions": 0.847,
+     "causal_mechanism": 0.819,
+     "distinct_theories": 0.403,
+     "evidence_judgement": 0.278,
+     "experiment_design": 0.222,
+     "problem_framing": 1.028,
+     "recommendation": 0.028,
+     "revision": 0.111,
+     "seeking_challenge": 0.403
+    },
+    "trained": {
+     "assumptions_predictions": 1.222,
+     "causal_mechanism": 1.125,
+     "distinct_theories": 0.917,
+     "evidence_judgement": 0.389,
+     "experiment_design": 0.5,
+     "problem_framing": 1.875,
+     "recommendation": 0.444,
+     "revision": 1.0,
+     "seeking_challenge": 0.611
+    }
+   },
+   "difference": {
+    "arms": "trained minus base",
+    "pairs": 72,
+    "cases": 24,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.405,
+     0.24,
+     0.572
+    ],
+    "by_company": {
+     "ansell": 0.574,
+     "belimo": 0.271,
+     "draeger": 0.155,
+     "frankecoffee": -0.171,
+     "hach": 0.35,
+     "hoshizaki": -0.153,
+     "kingspan": 0.894,
+     "laerdal": 0.456,
+     "mettler": 0.995,
+     "tennant": 0.806,
+     "testo": 0.285,
+     "winterhalter": 0.398
+    }
+   }
+  }
+ },
+ "missing": []
+}

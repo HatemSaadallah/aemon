@@ -1,5 +1,6 @@
 """Sign-in, company workspaces and chat history. Temporary account and data folders, and a scripted stand-in model."""
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -8,6 +9,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+os.environ['LEXSI_NO_RESUME'] = '1'  # never resume runs from a real database at import
 import server  # noqa: E402
 import store  # noqa: E402
 import users  # noqa: E402
@@ -59,8 +61,8 @@ def test_every_page_and_api_route_needs_a_session(setup):
                 assert client.request(method, concrete).status_code == 401, (method, concrete)
     page = client.get('/', follow_redirects=False)
     assert page.status_code == 303 and page.headers['location'] == '/login'
-    assert client.get('/static/app.js', follow_redirects=False).status_code == 303
-    assert client.get('/login').status_code == 200 and client.get('/static/login.js').status_code == 200
+    assert client.get('/brand/x.png', follow_redirects=False).status_code == 303
+    assert client.get('/login').status_code == 200
 
 
 def test_a_wrong_password_or_unknown_name_is_refused(setup):
@@ -214,10 +216,8 @@ def test_memory_followups_mind_map_and_report(setup, monkeypatch):
     assert items[0]['answer'].startswith('The test would show') and items[0]['sources'] == []
     assert 'distributors' in stand_in_chat.seen[1]['content']
     assert other.post(f'/api/workspaces/jotun/history/{identifier}/followups', json={'question': 'Hi there'}).status_code == 404
-    # the mind map groups it under its project; the report is built from the same record
-    tree = client.get('/api/workspaces/jotun/mindmap').json()
-    assert [c['label'] for c in tree['children']] == ['Homeowners'] and tree['children'][0]['children'][0]['id'] == identifier
-    monkeypatch.setattr(server.pdf_report, 'pdf', lambda page: b'%PDF-' + page.encode()[:20])
+    # the report is built from the same record
+    monkeypatch.setattr(server.pdf_report, 'pdf', lambda page, company='': b'%PDF-' + page.encode()[:20])
     pdf = client.get(f'/api/workspaces/jotun/history/{identifier}/report.pdf')
     assert pdf.status_code == 200 and pdf.headers['content-type'] == 'application/pdf' and pdf.content.startswith(b'%PDF-')
     # deleting the investigation deletes its follow-ups; deleting the project deletes its notes
@@ -225,3 +225,183 @@ def test_memory_followups_mind_map_and_report(setup, monkeypatch):
     assert store.followups('ada', 'jotun', identifier) == []
     assert client.delete(f"/api/workspaces/jotun/projects/{project['id']}").status_code == 200
     assert client.get(f"/api/memory?workspace=jotun").json()['project'] == []
+
+
+def test_a_run_cut_off_by_a_restart_resumes_from_its_saved_turns(setup, monkeypatch):
+    monkeypatch.setattr(server, '_model_ready', lambda: True)
+    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['final_adapter.gguf'])
+    monkeypatch.setattr(server, 'chat', stand_in)
+    client = signed_in()
+    started = client.post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base', 'question': 'Should Jotun sell to homeowners?'})
+    identifier = started.json()['id']
+    for _ in range(100):
+        if client.get(f'/api/try/{identifier}').json()['status'] != 'running':
+            break
+        time.sleep(.05)
+    saved = next(e for e in store.history('ada', 'jotun') if e['id'] == identifier)
+    assert saved['run_settings']['question'] == 'Should Jotun sell to homeowners?' and len(saved['turns']) >= 2
+    # a restart in the middle: the run is still marked running with only its first turn saved, and the server forgets it
+    store.record('ada', 'jotun', identifier, status='running', turns=saved['turns'][:1])
+    monkeypatch.setattr(server, '_tries', {})
+    server._resume(wait=0)
+    again = next(e for e in store.history('ada', 'jotun') if e['id'] == identifier)
+    assert again['status'] == 'finished' and again['record']['resumed_after_turn'] == 1
+    assert len(again['record']['calls']) == len(saved['record']['calls']) and not any(c.get('prefix') for c in again['record']['calls'])
+    # a live web run cannot be replayed: it is marked interrupted, not left running
+    store.record('ada', 'jotun', identifier, status='running', run_settings={**saved['run_settings'], 'live': True})
+    server._resume(wait=0)
+    assert next(e for e in store.history('ada', 'jotun') if e['id'] == identifier)['status'] == 'interrupted'
+
+
+def test_depth_sets_the_search_budget_and_step_limit_and_survives_a_resume(setup, monkeypatch):
+    monkeypatch.setattr(server, '_model_ready', lambda: True)
+    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['final_adapter.gguf'])
+    monkeypatch.setattr(server, 'chat', stand_in)
+    client = signed_in()
+    assert client.post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base', 'depth': 'deep'}).status_code == 422
+    identifier = client.post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base', 'depth': 'quick'}).json()['id']
+    for _ in range(100):
+        if client.get(f'/api/try/{identifier}').json()['status'] != 'running':
+            break
+        time.sleep(.05)
+    saved = next(e for e in store.history('ada', 'jotun') if e['id'] == identifier)
+    assert saved['record']['depth'] == 'quick' and saved['run_settings']['depth'] == 'quick'
+    assert '"search_budget": 5' in json.dumps(saved['turns'][0]['tool_result'])
+    store.record('ada', 'jotun', identifier, status='running', turns=saved['turns'][:1])
+    monkeypatch.setattr(server, '_tries', {})
+    server._resume(wait=0)
+    assert next(e for e in store.history('ada', 'jotun') if e['id'] == identifier)['record']['depth'] == 'quick'
+
+
+def test_a_run_that_stopped_early_continues_from_where_it_stopped_with_help(setup, monkeypatch):
+    seen = []
+
+    def stuck(url, messages, seed, max_tokens, schema=None, temperature=0, lora=None):  # always repeats itself
+        seen.append(messages[-1]['content'])
+        return {'text': '{"name": "read_brief", "arguments": {}}'}
+
+    monkeypatch.setattr(server, '_model_ready', lambda: True)
+    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['final_adapter.gguf'])
+    monkeypatch.setattr(server, 'chat', stuck)
+    client = signed_in()
+    identifier = client.post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base'}).json()['id']
+
+    def wait():
+        for _ in range(100):
+            if client.get(f'/api/try/{identifier}').json()['status'] != 'running':
+                return
+            time.sleep(.05)
+
+    wait()
+    first = client.get(f'/api/workspaces/jotun/history/{identifier}').json()['record']
+    assert first['stop_reason'] == 'repeated errors' and any('"help"' in m for m in seen)  # stuck help after two refusals
+    assert client.post(f'/api/workspaces/jotun/history/{identifier}/continue').status_code == 200
+    wait()
+    again = client.get(f'/api/workspaces/jotun/history/{identifier}').json()['record']
+    assert again['continued_after_turn'] == len(first['calls']) and len(again['calls']) > len(first['calls']) and again['continues'] == 1
+    assert len([e for e in store.history('ada', 'jotun') if e['id'] == identifier]) == 1  # still one run
+
+
+def test_attached_files_and_links_become_sources_the_agent_can_search_read_and_quote(setup, monkeypatch):
+    import base64
+    import io
+    import zipfile
+
+    import attachments as attach
+
+    fact = 'Our pilot with 40 cycling clubs sold 1,200 zorblax earplugs in six weeks at full price.'
+    docx = io.BytesIO()
+    with zipfile.ZipFile(docx, 'w') as z:
+        z.writestr('word/document.xml', f'<w:document><w:body><w:p><w:r><w:t>{fact}</w:t></w:r></w:p></w:body></w:document>')
+    client = signed_in()
+    up = client.post('/api/workspaces/jotun/attachments', json={'name': 'pilot.docx', 'data_base64': base64.b64encode(docx.getvalue()).decode()})
+    assert up.status_code == 201 and up.json()['passages'] == 1
+    assert client.post('/api/workspaces/jotun/attachments', json={'name': 'x.exe', 'data_base64': 'AAAA'}).status_code == 422
+    monkeypatch.setattr('aemon.environment.live.LiveDossier._http', staticmethod(lambda url: '<title>Club survey</title><p>Most riders keep earplugs in for the whole ride. They want to hear traffic.</p>'))
+    link = client.post('/api/workspaces/jotun/attachments', json={'url': 'https://example.org/survey'})
+    assert link.status_code == 201 and link.json()['name'] == 'Club survey'
+    assert [a['name'] for a in client.get('/api/workspaces/jotun/attachments').json()['attachments']] == ['Club survey', 'pilot.docx']
+    assert signed_in('bob').post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base', 'attachments': [up.json()['id']]}).status_code == 404
+    assert attach.passages('Too short.') == [] and len(attach.passages(' '.join(['A full sentence here.'] * 60))) >= 2
+
+    turns = iter([
+        '{"name": "read_brief", "arguments": {}}',
+        '{"name": "frame_problem", "arguments": {"objective": "Decide", "constraints": ["budget"], "alternatives": ["enter", "do not enter"]}}',
+        '{"name": "search_evidence", "arguments": {"query": "zorblax earplugs cycling clubs pilot"}}',
+    ])
+    briefs = []
+
+    def scripted(url, messages, seed, max_tokens, schema=None, temperature=0, lora=None):
+        briefs.append(messages[-1]['content'])
+        try:
+            return {'text': next(turns)}
+        except StopIteration:  # read the first result it found, then repeat itself until the run stops
+            found = [line for line in briefs if '"results"' in line][-1]
+            first = json.loads(found.split('Latest tool result: ', 1)[1])['results'][0]['id']
+            return {'text': json.dumps({'name': 'read_source', 'arguments': {'id': first}})}
+
+    monkeypatch.setattr(server, '_model_ready', lambda: True)
+    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['final_adapter.gguf'])
+    monkeypatch.setattr(server, 'chat', scripted)
+    started = client.post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base', 'attachments': [up.json()['id']], 'context': 'We already sell to two bike shops.'})
+    identifier = started.json()['id']
+    for _ in range(100):
+        if client.get(f'/api/try/{identifier}').json()['status'] != 'running':
+            break
+        time.sleep(.05)
+    detail = client.get(f'/api/workspaces/jotun/history/{identifier}').json()
+    mine = [s for s in detail['record']['sources'].values() if s['class'] == 'user_document']
+    assert mine and mine[0]['excerpt'] == fact and mine[0]['title'].startswith('pilot.docx')
+    assert any('We already sell to two bike shops.' in b and 'pilot.docx' in b for b in briefs)
+    assert detail['settings']['context'] == 'We already sell to two bike shops.' and detail['settings']['attachments'][0]['name'] == 'pilot.docx'
+    assert store._read('SELECT key FROM run_cache') == []  # a run with the person's own material is never saved for reuse
+
+
+def test_asking_to_search_online_turns_web_search_on():
+    assert server.asks_online('Please search online for cyclist earplug prices')
+    assert server.asks_online('look it up on the web')
+    assert server.asks_online('Can you check the internet for competitors?')
+    assert not server.asks_online('Should Hellberg sell to cyclists?') and not server.asks_online('an online survey of riders')
+
+
+def test_a_run_that_stops_early_still_ends_with_a_draft_answer_that_can_be_continued(setup, monkeypatch):
+    def stuck_then_draft(url, messages, seed, max_tokens, schema=None, temperature=0, lora=None):
+        if schema and 'would_change_if' in schema.get('properties', {}) and 'call' not in schema.get('properties', {}):
+            return {'text': json.dumps({'recommendation': 'Run a small test before investing.', 'favoured_theory': 'none', 'next_action': 'Test with 50 buyers.',
+                                        'uncertainty': 'Demand is unknown.', 'would_change_if': ['A test shows no demand.'], 'evidence_ids': ['none']})}
+        return {'text': '{"name": "read_brief", "arguments": {}}'}
+
+    monkeypatch.setattr(server, '_model_ready', lambda: True)
+    monkeypatch.setattr(server, '_loaded_adapters', lambda: ['final_adapter.gguf'])
+    monkeypatch.setattr(server, 'chat', stuck_then_draft)
+    client = signed_in()
+    identifier = client.post('/api/try', json={'workspace': 'jotun', 'case': 'jotun-base'}).json()['id']
+    for _ in range(100):
+        if client.get(f'/api/try/{identifier}').json()['status'] != 'running':
+            break
+        time.sleep(.05)
+    detail = client.get(f'/api/workspaces/jotun/history/{identifier}').json()
+    final = detail['record']['final']
+    assert final['draft'] and final['recommendation'] == 'Run a small test before investing.' and final['evidence_ids'] == []
+    assert final['stopped_because'].startswith('it got stuck') and detail['record']['stop_reason'] == 'repeated errors'
+    entry = next(e for e in client.get('/api/workspaces/jotun/history').json()['entries'] if e['id'] == identifier)
+    assert entry['status'] == 'finished' and entry['summary']['draft'] and not entry['summary']['finished']
+    assert store._read('SELECT key FROM run_cache') == []  # a draft is never reused as a saved result
+    assert client.post(f'/api/workspaces/jotun/history/{identifier}/continue').status_code == 200
+
+
+def test_only_the_reviewer_reviews_and_the_decision_is_written_to_the_batch_file(setup, monkeypatch, tmp_path):
+    folder = tmp_path / 'reviews' / 'v2_round9'
+    folder.mkdir(parents=True)
+    (folder / 'b_kept_for_review.json').write_text(json.dumps({'counts': {}, 'examples': [{'n': 1, 'keep': None}, {'n': 2, 'keep': None}]}))
+    (folder / 'advisory_design.md').write_text('# advice')
+    monkeypatch.setattr(server, 'REVIEWS', tmp_path / 'reviews')
+    monkeypatch.setattr(server, 'REVIEWER', 'ada')
+    client, other = signed_in(), signed_in('bob')
+    assert other.get('/api/review').status_code == 404
+    assert client.get('/api/review').json()['batches'][0]['batch'] == 'v2_round9/b_kept_for_review'
+    assert client.patch('/api/review/v2_round9/b_kept_for_review/2', json={'keep': False, 'note': 'message-only test'}).status_code == 200
+    saved = json.loads((folder / 'b_kept_for_review.json').read_text())['examples'][1]
+    assert saved['keep'] is False and saved['review_note'] == 'message-only test' and saved['reviewed_by'] == 'ada'
+    assert client.get('/api/review/v2_round9/b_kept_for_review').json()['advisory'] == {'design': '# advice'}
+    assert other.patch('/api/review/v2_round9/b_kept_for_review/1', json={'keep': True}).status_code == 404

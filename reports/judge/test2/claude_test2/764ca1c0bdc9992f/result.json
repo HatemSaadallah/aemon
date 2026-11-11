@@ -1,0 +1,141 @@
+{
+  "packet_id": "764ca1c0bdc9992f",
+  "packet_sha256": "a792f107d33c90125ae670ad9a59b9d1e940020e3c75c4899553ca490f0f17d2",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"764ca1c0bdc9992f\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 2, \"event_ids\": [\"A1\"], \"reason\": \"A1 separates the objective from the suggested solution. It frames the question as whether evidence of demand, willingness to pay and competitive advantage justifies a consumer proposition, rather than assuming one should be built. It lists four alternatives, including no expansion and partnering or licensing, and records relevant constraints: public sources only, a \u20ac20,000 / 12-week test budget, and unknown reach to individual buyers. It does not correct a false premise. It also does not surface a non-obvious option or constraint beyond the standard set, so it does not reach rung 3.\"}, \"causal_mechanism\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No theory or behavioural mechanism was stated before the run stopped at A6.\"}, \"distinct_theories\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No theories were proposed before the stop at A6.\"}, \"assumptions_predictions\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No assumptions or predictions were stated before the stop at A6.\"}, \"evidence_judgement\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\"], \"reason\": \"Searches A2-A5 returned sources, but none was assessed before the stop at A6. Examples are the A300 company claim, the De'Longhi premiumisation observation and the Mahlk\u00f6nig Vario Home retirement.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\", \"A5\", \"A6\"], \"reason\": \"There was no favoured theory to challenge. Searches A2-A5 were exploratory and overlapping, not searches against a hypothesis, before the stop at A6.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"No test was proposed or declined before the stop at A6.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions, and no update was scheduled (scheduled_update false).\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"A6 states the investigation stopped before a recommendation because of repeated errors.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A6\"], \"reason\": \"The episode ended with repeated errors and no completed recommendation. Theory, evidence, test and recommendation stages were never reached.\"}, {\"kind\": \"other\", \"event_ids\": [\"A3\", \"A4\"], \"reason\": \"These searches list source IDs that are absent from the packet's supplied sources: frankecoffee-linea-micra, frankecoffee-home-machines, frankecoffee-mythos-spec and frankecoffee-about. Their contents cannot be verified. No claims were drawn from them, so this is noted for traceability only, not as an invented observation.\"}], \"suitable_for_training\": false, \"screen_reason\": \"Rejected: the episode is incomplete (A6), stopping after framing and searches with no theories, evidence assessment, test or recommendation. Framing (A1) is reasonable, but incomplete episodes must be rejected. Unreached stages contribute zero to the all-case composite.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 3843
+      },
+      "cache_creation_input_tokens": 3843,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1718,
+      "output_tokens_details": {
+        "thinking_tokens": 512
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.053591,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "dec9c8869fe117e0ae3d2de3c9f1c76225c448a0a0e8a9e1a09f9d528c4de6c3",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "764ca1c0bdc9992f",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective from the suggested solution. It frames the question as whether evidence of demand, willingness to pay and competitive advantage justifies a consumer proposition, rather than assuming one should be built. It lists four alternatives, including no expansion and partnering or licensing, and records relevant constraints: public sources only, a \u20ac20,000 / 12-week test budget, and unknown reach to individual buyers. It does not correct a false premise. It also does not surface a non-obvious option or constraint beyond the standard set, so it does not reach rung 3."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No theory or behavioural mechanism was stated before the run stopped at A6."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No theories were proposed before the stop at A6."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No assumptions or predictions were stated before the stop at A6."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "reason": "Searches A2-A5 returned sources, but none was assessed before the stop at A6. Examples are the A300 company claim, the De'Longhi premiumisation observation and the Mahlk\u00f6nig Vario Home retirement."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "reason": "There was no favoured theory to challenge. Searches A2-A5 were exploratory and overlapping, not searches against a hypothesis, before the stop at A6."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "No test was proposed or declined before the stop at A6."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions, and no update was scheduled (scheduled_update false)."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "A6 states the investigation stopped before a recommendation because of repeated errors."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "The episode ended with repeated errors and no completed recommendation. Theory, evidence, test and recommendation stages were never reached."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A3",
+          "A4"
+        ],
+        "reason": "These searches list source IDs that are absent from the packet's supplied sources: frankecoffee-linea-micra, frankecoffee-home-machines, frankecoffee-mythos-spec and frankecoffee-about. Their contents cannot be verified. No claims were drawn from them, so this is noted for traceability only, not as an invented observation."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Rejected: the episode is incomplete (A6), stopping after framing and searches with no theories, evidence assessment, test or recommendation. Framing (A1) is reasonable, but incomplete episodes must be rejected. Unreached stages contribute zero to the all-case composite."
+  },
+  "seconds": 15.784
+}

@@ -1,0 +1,52 @@
+{
+ "cases": [
+  {
+   "company": "Winterhalter Gastronom GmbH",
+   "question": "Should Winterhalter Gastronom GmbH develop a differentiated consumer proposition for a specific use case, beyond its existing commercial dishwashers and glasswashers? What evidence would justify that investment?",
+   "brief": "Winterhalter Gastronom GmbH makes commercial dishwashers and glasswashers, together with the water treatment, chemicals and racks that go with them. It is a family-owned company based in Meckenbeuren, Germany, that sells through its own branches and through distributors. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "winterhalter",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "winterhalter-base",
+   "premise_records": [
+    "winterhalter-hmn-profile",
+    "winterhalter-only-warewashing",
+    "winterhalter-distributors"
+   ],
+   "test_warranted": true
+  },
+  {
+   "company": "Franke Coffee Systems",
+   "question": "Should Franke Coffee Systems develop a differentiated consumer proposition for a specific use case, beyond its existing professional coffee machines? What evidence would justify that investment?",
+   "brief": "Franke Coffee Systems makes professional fully automatic, semi-automatic and traditional coffee machines. It is a division of the Swiss Franke Group and sells through its own subsidiaries and a network of service and distribution partners. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "frankecoffee",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "frankecoffee-base",
+   "premise_records": [
+    "frankecoffee-about",
+    "frankecoffee-showroom",
+    "frankecoffee-a300-noncommercial"
+   ],
+   "test_warranted": true
+  },
+  {
+   "company": "Hoshizaki Corporation",
+   "question": "Should Hoshizaki Corporation develop a differentiated consumer proposition for a specific use case, beyond its existing commercial ice machines and kitchen equipment? What evidence would justify that investment?",
+   "brief": "Hoshizaki Corporation makes commercial ice machines, refrigerators, dishwashers and dispensers. It is a listed Japanese company that sells through its own direct sales and service network in Japan and through subsidiaries abroad. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+   "scope": "hoshizaki",
+   "search_budget": 8,
+   "test_budget": 20000,
+   "max_test_weeks": 12,
+   "id": "hoshizaki-base",
+   "premise_records": [
+    "hoshizaki-profile",
+    "hoshizaki-ice-uses",
+    "hoshizaki-america-leader"
+   ],
+   "test_warranted": true
+  }
+ ]
+}

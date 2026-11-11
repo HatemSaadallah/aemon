@@ -10,14 +10,19 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'src'))
-from strategy_agent.evaluation.audit import ReplayMismatch, audit, replay, to_eventlog  # noqa: E402
-from strategy_agent.env.checks import guards_cleared, run_checks  # noqa: E402
-from strategy_agent.pipeline.provenance import TEACHER_WEIGHTS, episode_id, record_provenance, training_source  # noqa: E402
-from strategy_agent.agent.claude_backend import BudgetExceeded, Claude, cost, spent
-from strategy_agent.env.dossier import Dossier, Record, normalise  # noqa: E402
-from strategy_agent.agent.runner import PROMPTS, TOOL_SCHEMA, guidance, next_step, parse_call, play, record_of, schema_for, summary  # noqa: E402
-from strategy_agent.env.stages import current_stage  # noqa: E402
-from strategy_agent.env.tools import TOOL_SIGNATURES, Case, Investigation  # noqa: E402
+from aemon.evaluation.diagnostics.audit import ReplayMismatch, audit, replay, to_eventlog  # noqa: E402
+from aemon.environment.checks import guards_cleared, run_checks  # noqa: E402
+from aemon.rows.provenance import TEACHER_WEIGHTS, episode_id, record_provenance, training_source  # noqa: E402
+from aemon.agent.backends.claude_control import BudgetExceeded, Claude, cost, spent
+from aemon.environment.dossier import Dossier, Record, normalise  # noqa: E402
+from aemon.agent.backends.llama_client import parse_call
+from aemon.agent.loop import play
+from aemon.agent.records import record_of, summary
+from aemon.agent.state_view import guidance, next_step
+from aemon.agent.tool_schemas import TOOL_SCHEMA, schema_for
+from aemon.common.constants.prompts import PROMPTS
+from aemon.environment.stages import current_stage  # noqa: E402
+from aemon.environment.tools import TOOL_SIGNATURES, Case, Investigation  # noqa: E402
 from auditkit.agent_eval import episode_from_eventlog  # noqa: E402
 
 URL = 'https://example.invalid/fixture'
@@ -1122,7 +1127,7 @@ def test_rejecting_everything_on_one_result_fails():
 
 
 def test_the_ids_and_titles_of_new_evidence_do_not_give_the_direction_away():
-    from strategy_agent.env.cases import load_cases
+    from aemon.environment.cases import load_cases
     shocks = [c.shock for c in load_cases() if c.shock]
     assert {c.shock_direction for c in load_cases() if c.shock} == {'undermines', 'supports', 'irrelevant'}
     assert not any(word in f'{s.id} {s.title}'.lower() for s in shocks for word in ('favour', 'support', 'undermin', 'against', 'irrelevant'))
@@ -1138,7 +1143,7 @@ def test_a_recovery_is_counted_and_the_harness_repairs_nothing():
 
 
 def test_the_protocol_id_ignores_the_model_and_tracks_everything_else():
-    from strategy_agent.agent.runner import protocol_of
+    from aemon.agent.records import protocol_of
     base = protocol_of('prompt', {'max_tokens': 520})
     assert base == protocol_of('prompt', {'max_tokens': 520})
     assert protocol_of('other', {'max_tokens': 520})['id'] != base['id'] and protocol_of('prompt', {'max_tokens': 400})['id'] != base['id']
@@ -1146,7 +1151,7 @@ def test_the_protocol_id_ignores_the_model_and_tracks_everything_else():
 
 
 def test_two_runs_on_different_cases_never_look_matched():
-    from strategy_agent.agent.runner import matched, suite_of
+    from aemon.agent.records import matched, suite_of
     a, b = make_case(), make_case(SHOCK)
     assert suite_of([a], 1)['id'] != suite_of([b], 1)['id'] != suite_of([a, b], 1)['id']
     assert suite_of([a, b], 1)['id'] != suite_of([b, a], 1)['id'] and suite_of([a], 1)['id'] != suite_of([a], 2)['id']
@@ -1155,14 +1160,14 @@ def test_two_runs_on_different_cases_never_look_matched():
 
 
 def test_the_model_identity_comes_from_what_was_served():
-    from strategy_agent.agent.runner import model_of
+    from aemon.agent.records import model_of
     props = {'build_info': 'b12032-dde879bc4', 'chat_template': 'x', 'model_path': '/m/a.gguf'}
     a, b = model_of('llama', 'same label', 'hash-a', props), model_of('llama', 'same label', 'hash-b', props)
     assert a['id'] != b['id'] and a['file'] == 'a.gguf' and a['build'] == 'b12032-dde879bc4'
 
 
 def test_diagnostics_are_reported_without_gating():
-    from strategy_agent.env.checks import DIAGNOSTIC
+    from aemon.environment.checks import DIAGNOSTIC
     run = completed()
     checks = run_checks(run)
     for name in DIAGNOSTIC:
@@ -1179,7 +1184,7 @@ def test_a_descriptive_must_is_no_longer_advice():
 
 
 def test_the_teacher_prompt_is_general_and_keeps_the_same_tools():
-    from strategy_agent.agent.runner import STRUCTURED
+    from aemon.common.constants.prompts import STRUCTURED
     teacher = PROMPTS['teacher']
     assert 'teacher' in STRUCTURED and teacher.startswith(PROMPTS['staged'])
     assert not any(name in teacher for name in ('Moldex', 'Cotral', 'Hellberg', 'hearing', 'earplug', 'SYN-'))
@@ -1316,7 +1321,7 @@ def test_a_compact_run_shows_state_and_not_a_transcript():
 
 
 def test_the_compact_state_lists_refused_calls_and_quotable_excerpts():
-    from strategy_agent.agent.runner import state_of
+    from aemon.agent.state_view import state_of
     run = to_stage(staged_run(), 'assessment')
     run.call('add_theory', GOOD_THEORIES[0])
     text = state_of(run, {'error': 'x'})
@@ -1324,14 +1329,14 @@ def test_the_compact_state_lists_refused_calls_and_quotable_excerpts():
 
 
 def test_the_state_copies_the_record_and_interprets_nothing():
-    from strategy_agent.agent.runner import state_of
+    from aemon.agent.state_view import state_of
     run = to_stage(staged_run(SHOCK), 'update')
     text = state_of(run, {})
     assert 'SYN-1' in text and 'undermin' not in text.lower()
 
 
 def test_a_thinking_block_is_kept_and_the_call_after_it_still_parses():
-    from strategy_agent.common.model_client import split_thinking
+    from aemon.agent.backends.llama_client import split_thinking
     call, thinking = split_thinking('<|START_THINKING|>I should read the brief.<|END_THINKING|>{"name": "read_brief", "arguments": {}}')
     assert parse_call(call, True)[0]['name'] == 'read_brief' and thinking == 'I should read the brief.'
     assert split_thinking('{"name": "read_brief"}') == ('{"name": "read_brief"}', None)
@@ -1358,7 +1363,7 @@ def scripted_teacher(case, manifest, backend='llama', weights=AYA_WEIGHTS):
 
 
 def build_from(tmp_path, record, case, **kwargs):
-    from strategy_agent.pipeline import rows as rows_module
+    from aemon.rows import build_rows as rows_module
     path = tmp_path / 'report.json'
     path.write_text(json.dumps({'protocol': {'id': 'p'}, 'records': [record]}))
     original = rows_module.load_cases
@@ -1425,7 +1430,7 @@ def test_compact_rows_hold_the_state_and_not_a_transcript(tmp_path):
 
 
 def test_loss_falls_on_the_target_reply_only():
-    from strategy_agent.pipeline.rows import labels_for
+    from aemon.rows.build_rows import labels_for
 
     class Words:
         def apply_chat_template(self, messages, tokenize=False, add_generation_prompt=False):
@@ -1469,7 +1474,7 @@ def test_a_stream_that_replays_but_never_finishes_is_refused(tmp_path):
 
 
 def test_rows_record_their_stage():
-    from strategy_agent.pipeline.rows import transcript
+    from aemon.rows.build_rows import transcript
     case = make_case(SHOCK)
     run = to_stage(Investigation(case, staged=True), 'conclude')
     finish(run)
@@ -1479,7 +1484,7 @@ def test_rows_record_their_stage():
 
 
 def test_a_tokenizer_whose_context_is_not_a_prefix_is_refused():
-    from strategy_agent.pipeline.rows import labels_for
+    from aemon.rows.build_rows import labels_for
 
     class Shifting:
         def apply_chat_template(self, messages, tokenize=False, add_generation_prompt=False):
@@ -1493,7 +1498,7 @@ def test_a_tokenizer_whose_context_is_not_a_prefix_is_refused():
 
 
 def test_the_final_test_is_frozen():
-    from strategy_agent.pipeline.freeze import FROZEN, digest
+    from aemon.data.freeze import FROZEN, digest
 
     dossier = json.loads((Path(__file__).resolve().parents[1] / 'data/dossier/evidence.json').read_text())
     if dossier.get('redacted'):
@@ -1502,8 +1507,8 @@ def test_the_final_test_is_frozen():
 
 
 def test_development_never_sees_the_final_test():
-    from strategy_agent.env.cases import load_cases
-    from strategy_agent.pipeline.freeze import held_out
+    from aemon.environment.cases import load_cases
+    from aemon.data.freeze import held_out
     cases, scopes, records = held_out()
     development = load_cases()
     assert not {c.id for c in development} & {c['id'] for c in cases}
@@ -1513,8 +1518,8 @@ def test_development_never_sees_the_final_test():
 
 
 def test_the_search_held_for_a_challenge_is_not_offered_as_free():
-    from strategy_agent.env.cases import load_cases
-    from strategy_agent.agent.runner import searches
+    from aemon.environment.cases import load_cases
+    from aemon.agent.state_view import searches
     case = next(c for c in load_cases() if c.id == 'moldex-base')
     run = Investigation(case, staged=True)
     run.searches = ['q'] * (case.search_budget - 1)
@@ -1524,7 +1529,7 @@ def test_the_search_held_for_a_challenge_is_not_offered_as_free():
 
 
 def test_a_route_applies_one_adapter_per_stage_and_switches_the_rest_off():
-    from strategy_agent.agent.runner import lora_route
+    from aemon.agent.adapter_routing import lora_route
     route = lora_route('default=0,test=1')
     assert route('theories') == [{'id': 0, 'scale': 1.0}, {'id': 1, 'scale': 0.0}]
     assert route('test') == [{'id': 0, 'scale': 0.0}, {'id': 1, 'scale': 1.0}]
@@ -1536,8 +1541,8 @@ def test_a_route_applies_one_adapter_per_stage_and_switches_the_rest_off():
 
 
 def test_play_tells_the_backend_which_adapters_each_stage_uses():
-    from strategy_agent.env.cases import load_cases
-    from strategy_agent.agent.runner import lora_route
+    from aemon.environment.cases import load_cases
+    from aemon.agent.adapter_routing import lora_route
     case = next(c for c in load_cases() if c.id == 'moldex-base')
     seen = []
     def respond(messages, seed, max_tokens, schema, temperature, lora=None):
@@ -1547,8 +1552,26 @@ def test_play_tells_the_backend_which_adapters_each_stage_uses():
     assert seen and all(s == [{'id': 0, 'scale': 1.0}, {'id': 1, 'scale': 0.0}] for s in seen)
 
 
+def test_a_stuck_run_hands_its_next_turns_to_the_other_adapter_until_a_call_is_accepted():
+    from aemon.environment.cases import load_cases
+    from aemon.agent.adapter_routing import lora_route
+    route = lora_route('default=1,stuck=0')
+    assert route('evidence', 1) == [{'id': 0, 'scale': 0.0}, {'id': 1, 'scale': 1.0}]
+    assert route('evidence', 2) == [{'id': 0, 'scale': 1.0}, {'id': 1, 'scale': 0.0}]
+    assert lora_route('default=1,stuck=0,stuck_after=3')('evidence', 2)[1]['scale'] == 1.0
+    case = next(c for c in load_cases() if c.id == 'moldex-base')
+    replies = iter(['{"name": "frame_problem", "arguments": {}}'] * 3 + ['{"name": "read_brief", "arguments": {}}'] * 3)
+    used = []
+    def respond(messages, seed, max_tokens, schema, temperature, lora=None):
+        used.append(next(i for i, a in enumerate(lora) if a['scale']))
+        return {'text': next(replies)}
+    run, info = play(case, respond, PROMPTS['compact'], 5, 4, 100, True, TOOL_SCHEMA, compact=True, route=route)
+    # three refusals (framing before the brief), then the brief is accepted: turns 3 and 4 go to the other adapter
+    assert used == [1, 1, 0, 0, 1] and [t['adapters'] for t in info['turns']] == [[1], [1], [0], [0], [1]]
+
+
 def test_adapter_settings_reach_the_server_in_its_own_form():
-    from strategy_agent.common.model_client import lora_body
+    from aemon.agent.backends.llama_client import lora_body
     assert lora_body(0) == [{'id': 0, 'scale': 0.0}]
     assert lora_body([{'id': 0, 'scale': 0.0}, {'id': 1, 'scale': 1.0}]) == [{'id': 0, 'scale': 0.0}, {'id': 1, 'scale': 1.0}]
     with pytest.raises(ValueError):
@@ -1556,7 +1579,7 @@ def test_adapter_settings_reach_the_server_in_its_own_form():
 
 
 def test_an_exact_quote_in_quotation_marks_counts_only_when_the_episode_says_so():
-    from strategy_agent.env.cases import load_cases
+    from aemon.environment.cases import load_cases
     case = next(c for c in load_cases() if c.id == 'moldex-base')
     source = next(iter(case.dossier.records.values()))
     words = ' '.join(source.excerpt.split()[:8])
@@ -1572,10 +1595,10 @@ def test_an_exact_quote_in_quotation_marks_counts_only_when_the_episode_says_so(
 
 
 def test_the_workflow_diagram_matches_the_controller():
-    from strategy_agent.env.cases import load_cases
-    from strategy_agent.evaluation.fixed_policies import scripted
-    from strategy_agent.env.stages import WORKFLOW, current_stage
-    from strategy_agent.env.tools import Investigation
+    from aemon.environment.cases import load_cases
+    from aemon.evaluation.diagnostics.fixed_policies import scripted
+    from aemon.environment.stages import WORKFLOW, current_stage
+    from aemon.environment.tools import Investigation
     declared = {w['stage']: tuple(w['tools']) for w in WORKFLOW}
     seen = {}
     for case in load_cases():
@@ -1594,8 +1617,8 @@ def test_the_workflow_diagram_matches_the_controller():
 
 
 def test_a_search_the_budget_would_refuse_is_not_offered():
-    from strategy_agent.env.cases import load_cases
-    from strategy_agent.agent.runner import schema_for
+    from aemon.environment.cases import load_cases
+    from aemon.agent.tool_schemas import schema_for
     case = next(c for c in load_cases() if c.id == 'moldex-base')
     run = Investigation(case, staged=True)
     run.call('read_brief', {})
@@ -1608,8 +1631,8 @@ def test_a_search_the_budget_would_refuse_is_not_offered():
 
 
 def test_the_compact_state_shows_a_refused_call_so_it_is_not_repeated():
-    from strategy_agent.env.cases import load_cases
-    from strategy_agent.agent.runner import state_of
+    from aemon.environment.cases import load_cases
+    from aemon.agent.state_view import state_of
     case = next(c for c in load_cases() if c.id == 'moldex-base')
     run = Investigation(case, staged=True)
     run.call('read_brief', {})
@@ -1620,9 +1643,9 @@ def test_the_compact_state_shows_a_refused_call_so_it_is_not_repeated():
 
 
 def test_validation_companies_are_development_companies_and_never_the_final_test():
-    from strategy_agent.env.cases import load_cases
-    from strategy_agent.pipeline.freeze import held_out
-    from strategy_agent.pipeline.splits import VALIDATION_COMPANIES, is_validation
+    from aemon.environment.cases import load_cases
+    from aemon.data.freeze import held_out
+    from aemon.data.splits import VALIDATION_COMPANIES, is_validation
     development = load_cases()
     scopes = {c.id.split('-')[0] for c in development}
     assert set(VALIDATION_COMPANIES) <= scopes
@@ -1632,7 +1655,7 @@ def test_validation_companies_are_development_companies_and_never_the_final_test
 
 
 def test_validation_is_capped_per_company_and_averaged_over_companies():
-    import strategy_agent.training.train as train_pilot
+    import aemon.training.train as train_pilot
     rows = [{'case': f'{c}-base', 'n': i} for c, k in (('neumann', 100), ('jotun', 10)) for i in range(k)]
     capped = train_pilot.cap_per_company(rows, 40)
     assert sum(r['case'].startswith('neumann') for r in capped) == 40 and sum(r['case'].startswith('jotun') for r in capped) == 10
@@ -1652,7 +1675,7 @@ def test_validation_is_capped_per_company_and_averaged_over_companies():
 
 
 def test_progress_counts_completed_stages_repeats_and_used_sources():
-    from strategy_agent.evaluation.progress import progress
+    from aemon.evaluation.diagnostics.progress import progress
     record = {'final': None, 'calls': [
         {'name': 'read_brief', 'arguments': {}, 'stage': 'brief', 'accepted': True, 'result': {}},
         {'name': 'frame_problem', 'arguments': {}, 'stage': 'frame', 'accepted': True, 'result': {}},
@@ -1666,13 +1689,13 @@ def test_progress_counts_completed_stages_repeats_and_used_sources():
 
 
 def _pilot2_states():
-    from strategy_agent.pipeline.corrections import states
+    from aemon.teacher.corrections import states
     return states([str(Path(__file__).resolve().parent.parent / 'reports/strategy/pilot2/second_adapter.json')])
 
 
 def test_correction_states_come_from_training_companies_one_per_loop():
-    from strategy_agent.pipeline.corrections import MAX_PER_RUN
-    from strategy_agent.pipeline.splits import is_validation
+    from aemon.teacher.corrections import MAX_PER_RUN
+    from aemon.data.splits import is_validation
     found = _pilot2_states()
     assert found and not any(is_validation(s['case']) for s in found)
     per_run = {}
@@ -1683,7 +1706,7 @@ def test_correction_states_come_from_training_companies_one_per_loop():
 
 def test_a_correction_is_kept_only_if_it_works_and_names_what_it_acts_on(tmp_path):
     import re
-    from strategy_agent.pipeline.corrections import PROTOCOL, _digest, judge, rows
+    from aemon.teacher.corrections import PROTOCOL, _digest, judge, rows
     state = _pilot2_states()[0]
     unread = json.loads('[' + re.search(r'"unread_results": \[([^\]]*)\]', state['context'][1]['content']).group(1) + ']')
     good = {'learned': f'{unread[0]} is unread', 'uncertain': 'consumer reach', 'why_next': f'read {unread[0]}', 'call': {'name': 'read_source', 'arguments': {'id': unread[0]}}}
@@ -1704,7 +1727,54 @@ def test_a_correction_is_kept_only_if_it_works_and_names_what_it_acts_on(tmp_pat
 
 def test_extra_rows_are_kept_under_their_token_share():
     import subprocess
-    script = Path(__file__).resolve().parent.parent / 'src' / 'strategy_agent' / 'training' / 'train.py'
+    script = Path(__file__).resolve().parent.parent / 'src' / 'aemon' / 'training' / 'train.py'
     text = script.read_text()
     assert "--extra-token-share" in text and "'supervised_by_source'" in text and "'extra_share'" in text
 
+
+
+def test_the_status_check_comes_after_framing_finds_aquaporins_insolvency_and_must_be_weighed():
+    from aemon.environment.cases import load_cases
+    from aemon.environment.stages import current_stage
+    from aemon.agent.tool_schemas import schema_for
+    case = next(c for c in load_cases(split='heldout') if c.id == 'aqp-base')
+    off = Investigation(case, staged=True)
+    assert 'error' in off.call('company_status', {})  # off by default: frozen runs see no new tool
+    run = Investigation(case, staged=True, status_check=True)
+    run.call('read_brief', {})
+    run.call('frame_problem', {'objective': 'decide', 'constraints': ['cash'], 'alternatives': ['enter', 'do nothing']})
+    assert current_stage(run).name == 'status' and [t['properties']['name']['const'] for t in schema_for(run)['anyOf']] == ['company_status']
+    status = run.call('company_status', {})
+    ids = [r['id'] for r in status['results']]
+    assert ids[0] == 'aqp-trustee-appointed' and {'aqp-insolvency-2026', 'aqp-strategic-review-failed'} & set(ids)
+    assert 'error' in run.call('company_status', {})
+    assert current_stage(run).name == 'status_reading'
+    assert schema_for(run)['anyOf'][0]['properties']['arguments']['properties']['id'] == {'enum': sorted(ids)}
+    run.call('read_source', {'id': ids[0]})
+    assert current_stage(run).name == 'evidence'
+    for other_status in ids[1:]:  # status sources never meet the evidence minimum, so market evidence is still gathered
+        run.call('read_source', {'id': other_status})
+    assert current_stage(run).name == 'evidence' and 'You have read 0 of' in current_stage(run).instruction
+    assert all(i not in ids for i in (schema_for(run)['anyOf'][-1]['properties']['arguments']['properties'].get('id', {}).get('enum') or []))
+    other = next(r.id for r in case.dossier.search('consumer water filter') if r.id not in ids)
+    run.surfaced.add(other); run.read.add(other)
+    run.theories['T1'] = {'claim': 'x'}
+    run.final = None
+    run.staged = False  # the finish rule alone, without beliefs or the stage gate
+    args = {'recommendation': 'invest', 'target_customer': 'x', 'value_proposition': 'x', 'favoured_theory': 'T1', 'next_action': 'x',
+            'uncertainty': 'x', 'would_change_if': ['x'], 'evidence_ids': [other]}
+    refused = run.call('finish', args)  # the status check asks finish to say where the company stands
+    assert 'error' in refused and 'company_position' in refused['error']
+    position = 'Aquaporin filed for bankruptcy in February 2026, so it cannot fund a consumer launch.'
+    assert run.call('finish', {**args, 'company_position': position}) == {'finished': True}
+    assert run.final['company_position'] == position
+
+
+def test_status_check_runs_record_the_setting_and_list_the_tool_in_the_prompt():
+    from aemon.agent.state_view import with_status
+    from aemon.environment.cases import load_cases
+    assert 'company_status {}' in with_status(PROMPTS['compact']) and 'company_status' not in PROMPTS['compact']
+    case = next(c for c in load_cases(split='heldout') if c.id == 'aqp-base')
+    replies = iter(['{"name": "read_brief", "arguments": {}}', '{"name": "frame_problem", "arguments": {"objective": "decide", "constraints": ["cash"], "alternatives": ["enter", "do nothing"]}}', '{"name": "company_status", "arguments": {}}'])
+    run, info = play(case, lambda *a, **k: {'text': next(replies)}, with_status(PROMPTS['compact']), 3, 4, 100, True, TOOL_SCHEMA, staged=True, compact=True, status_check=True)
+    assert run.status_ids and record_of(run, info)['settings']['status_check'] is True

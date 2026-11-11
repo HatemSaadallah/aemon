@@ -1,0 +1,35 @@
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,multirow,longtable,array}
+\usepackage{enumitem}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,fit,calc,backgrounds}
+\usepackage{tcolorbox}
+\usepackage{caption,subcaption}
+\usepackage{float}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=MidnightBlue]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\rhead{\small Strategy investigation by a distilled small agent}\lhead{\small Saadallah \& Jennane}\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlist{itemsep=2pt,topsep=4pt}
+\definecolor{accent}{HTML}{2F5BD3}
+\definecolor{support}{HTML}{0F7B6C}
+\definecolor{against}{HTML}{C2410C}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+% A small algorithm box (the algorithm packages are not installed)
+\newcounter{algo}
+\newenvironment{algo}[1]{\refstepcounter{algo}\begin{tcolorbox}[colback=white,colframe=accent!70,boxrule=0.6pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,
+  title={\textbf{Algorithm \thealgo.} #1},fonttitle=\small,coltitle=white,colbacktitle=accent!85]\small}{\end{tcolorbox}}
+\newcommand{\kw}[1]{\textbf{#1}}
+\newcommand{\Tool}[1]{\texttt{#1}}
+\newcommand{\E}{\mathbb{E}}
+\setlength{\emergencystretch}{3em}

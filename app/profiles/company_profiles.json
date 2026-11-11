@@ -1,0 +1,1281 @@
+{
+ "version": "profiles-v1",
+ "note": "UI-only company profiles. Every fact cites records from the company's own dossier; nothing here is used by the agent or its evaluation. Curated 2026-11-10 from the dossier by an AI assistant and reviewed mechanically (every citation exists) and by spot checks; a current-website market-share claim was removed from the 1993 Tanita profile.",
+ "companies": {
+  "hellberg": {
+   "display_name": "Hellberg Safety",
+   "legal_name": "Hellberg Safety AB",
+   "tagline": "Makes hearing and face protection as a brand within Hultafors Group.",
+   "industry": {
+    "text": "Personal protective equipment (hearing and head protection)",
+    "sources": [
+     "hlb-junior",
+     "hlb-tech",
+     "hlb-head"
+    ]
+   },
+   "headquarters": {
+    "text": "Stenkullen, Sweden",
+    "sources": [
+     "hlb-owner"
+    ]
+   },
+   "founded": {
+    "text": "1962",
+    "sources": [
+     "hlb-owner"
+    ]
+   },
+   "parent": {
+    "text": "Hultafors Group, owned by Investment AB Latour",
+    "sources": [
+     "hlb-head",
+     "hlb-pro",
+     "hlb-owner"
+    ]
+   },
+   "website": {
+    "text": "hellbergsafety.com",
+    "sources": [
+     "hlb-junior",
+     "hlb-retail",
+     "hlb-tech"
+    ]
+   },
+   "case_context": {
+    "set_in": "present day",
+    "note": null
+   },
+   "about": [
+    {
+     "text": "Hellberg Safety was founded in Sweden in 1962. At its acquisition by Latour in 2018, the acquirer described its own R&D, production, assembly and warehouse operations at the Stenkullen headquarters, presence in 50 markets, net sales of SEK 66 m in 2017 and around 20 employees.",
+     "sources": [
+      "hlb-owner"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "The range includes passive hearing protectors and, since the early 2010s, electronic models in the Secure range with FM radio and active listening; the first Hellberg Bluetooth hearing protectors were introduced by 2014.",
+     "sources": [
+      "hlb-junior",
+      "hlb-tech"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "Hellberg Junior is a hearing protector designed for children, which the company positions for school and hobby activities, concerts, lawn mowing and sporting events.",
+     "sources": [
+      "hlb-junior"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "Product listings show the Junior children's hearing protector on sale at Swedish retailers Bauhaus and Kjell & Company.",
+     "sources": [
+      "hlb-bauhaus",
+      "hlb-kjell"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Hultafors Group describes Hellberg as aiming to provide users with \"Peace of Mind\" and as positioning itself to become one of the top three head protection brands in Europe; the group states a focus on professionals.",
+     "sources": [
+      "hlb-head",
+      "hlb-pro"
+     ],
+     "basis": "company"
+    }
+   ],
+   "products": [
+    {
+     "name": "Passive hearing protection",
+     "description": "Passive hearing protectors, including the Junior headband model designed for children.",
+     "customers": "Children, for school and hobby activities, concerts, lawn mowing and sporting events",
+     "sources": [
+      "hlb-junior",
+      "hlb-bauhaus"
+     ]
+    },
+    {
+     "name": "Electronic hearing protection",
+     "description": "Electronic models in the Secure range with FM radio and active listening, plus Bluetooth hearing protectors introduced by 2014.",
+     "customers": null,
+     "sources": [
+      "hlb-tech"
+     ]
+    }
+   ],
+   "customers": [
+    {
+     "text": "Children (Junior hearing protector)",
+     "sources": [
+      "hlb-junior",
+      "hlb-bauhaus"
+     ]
+    },
+    {
+     "text": "Professionals (Hultafors Group's stated focus)",
+     "sources": [
+      "hlb-pro"
+     ]
+    }
+   ],
+   "markets": [
+    {
+     "text": "Presence in 50 markets, as stated at the 2018 acquisition",
+     "sources": [
+      "hlb-owner"
+     ]
+    },
+    {
+     "text": "Sold through stores and online shops worldwide, with a store locator on the company site",
+     "sources": [
+      "hlb-retail"
+     ]
+    },
+    {
+     "text": "Sweden: Junior hearing protector listed by Bauhaus and Kjell & Company",
+     "sources": [
+      "hlb-bauhaus",
+      "hlb-kjell"
+     ]
+    }
+   ],
+   "timeline": [
+    {
+     "date": "1962",
+     "event": "Company founded in Sweden.",
+     "sources": [
+      "hlb-owner"
+     ]
+    },
+    {
+     "date": "2014",
+     "event": "First Hellberg Bluetooth hearing protectors introduced.",
+     "sources": [
+      "hlb-tech"
+     ]
+    },
+    {
+     "date": "2018-07-06",
+     "event": "Investment AB Latour announces the acquisition of Hellberg Safety AB.",
+     "sources": [
+      "hlb-owner"
+     ]
+    }
+   ],
+   "positioning": [
+    {
+     "text": "Hultafors Group states that Hellberg is positioning itself to become one of the top three head protection brands in Europe.",
+     "sources": [
+      "hlb-head"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "A 2021 qualitative study identified a lack of prompts to use earplugs and poor availability of earplugs as intervention targets in noisy recreational settings.",
+     "sources": [
+      "loughran-2021-availability"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "A 2015 study of musician earplugs found that users' appreciation depended mainly on comfort and looks, while differences in sound quality were less noticeable.",
+     "sources": [
+      "bockstael-2015-looks"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "The American Academy of Pediatrics notes that infants and young children cannot remove themselves from noisy situations and must rely on adults to do so.",
+     "sources": [
+      "aap-2023-children"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "A 2026 sleep study found that earplugs mitigated nearly all effects of intermittent environmental noise on sleep, but started failing at the highest level tested (65 dBA).",
+     "sources": [
+      "basner-2026-sleep"
+     ],
+     "basis": "independent"
+    }
+   ],
+   "context_companies": [
+    {
+     "name": "JSP Limited",
+     "relation_in_records": "UK company incorporated on 11 February 1964; states UK-based R&D and three UK production facilities, and sells the Sonis range of ear defenders.",
+     "sources": [
+      "jsp-reg",
+      "jsp-mfg",
+      "jsp-sonis"
+     ]
+    },
+    {
+     "name": "uvex group",
+     "relation_in_records": "Group whose occupational safety business accounts for over 80 per cent of turnover; also sells sports and leisure products; its SwedSafe plant in Tyringe, Sweden makes earplugs for industrial and consumer markets, under own brand and private label. The founding families kept a significant minority stake after a 2025 private-equity acquisition.",
+     "sources": [
+      "uvx-safety",
+      "uvx-sports",
+      "uvx-plant",
+      "uvx-consumer",
+      "uvx-pl",
+      "uvx-warburg"
+     ]
+    },
+    {
+     "name": "Sordin AB",
+     "relation_in_records": "Swedish hearing-protection maker with manufacturing sites in Värnamo and Vikmanshyttan; introduced the X2 series for hunters and shooting enthusiasts in 2025; sells through a global network of authorised distributors and partners.",
+     "sources": [
+      "sdn-2019",
+      "sdn-sites",
+      "sdn-x2",
+      "sdn-retail"
+     ]
+    },
+    {
+     "name": "Protective Industrial Products (PIP)",
+     "relation_in_records": "Portfolio company of Odyssey Investment Partners that completed the purchase of Honeywell's PPE business, including the Howard Leight brand, in May 2025; Howard Leight sells sport earmuffs.",
+     "sources": [
+      "pip-odyssey",
+      "pip-deal",
+      "pip-howard",
+      "pip-impact"
+     ]
+    },
+    {
+     "name": "3M Company",
+     "relation_in_records": "Its Personal Safety business covers respiratory, hearing, eye and fall protection; its WorkTunes Connect Bluetooth hearing protector was sold online and at home centers, hardware and mass retailers (2017); it agreed a $6.0 billion settlement over Combat Arms earplugs.",
+     "sources": [
+      "mmm-seg",
+      "mmm-ps",
+      "mmm-wt",
+      "mmm-cae",
+      "3m-2024-liability"
+     ]
+    },
+    {
+     "name": "Elacin International B.V.",
+     "relation_in_records": "Hearing-protection company acquired with Intersafe by Lyreco; states it is in over 3,000 hearing care stores and serves both companies and private customers, including sleep earplugs.",
+     "sources": [
+      "ela-lyreco",
+      "ela-2020",
+      "ela-stores",
+      "ela-private",
+      "ela-sleep"
+     ]
+    },
+    {
+     "name": "ISOtunes (Haven Technologies)",
+     "relation_in_records": "US maker of electronic hearing protection, founded in 2016 and headquartered in Carmel, Indiana; sells online and targets industrial use.",
+     "sources": [
+      "iso-founded",
+      "iso-hq",
+      "iso-d2c",
+      "iso-ind"
+     ]
+    },
+    {
+     "name": "Radians, Inc.",
+     "relation_in_records": "US PPE manufacturer making foam earplugs at its Memphis headquarters, sold through authorised distributors in industrial and retail packaging; lists outdoor enthusiasts, hunters and DIY users among its users.",
+     "sources": [
+      "rad-foam",
+      "rad-pack",
+      "rad-about",
+      "rad-sport",
+      "rad-diy"
+     ]
+    },
+    {
+     "name": "Silenta Group Oy",
+     "relation_in_records": "Finnish manufacturer of hearing protection for industry, defence forces and leisure, including children's hearing protection and Moomin earmuffs (2020).",
+     "sources": [
+      "sil-core",
+      "sil-plant",
+      "sil-owner",
+      "sil-moomin"
+     ]
+    },
+    {
+     "name": "Hörluchs Hearing GmbH & Co. KG",
+     "relation_in_records": "Owner-managed family business from Hersbruck making custom hearing protection for the trades, industry and leisure, plus earmolds, hearing aids and in-ear headphones for musicians and gamers.",
+     "sources": [
+      "hlu-family",
+      "hlu-leisure",
+      "hlu-mfg",
+      "hlu-inears",
+      "hlu-customers"
+     ]
+    },
+    {
+     "name": "Haspro sp. z o.o.",
+     "relation_in_records": "Polish hearing-protector producer sold in major Polish pharmacy chains, drugstores and safety shops; offers sleep earplugs and custom earplugs made from ear impressions.",
+     "sources": [
+      "hsp-producer",
+      "hsp-pharmacy",
+      "hsp-drug",
+      "hsp-cats",
+      "hsp-custom"
+     ]
+    },
+    {
+     "name": "Loop",
+     "relation_in_records": "Earplug start-up selling direct to consumers entirely online; refocused in 2020 on people with sleep problems, home workers and noise-sensitive people, and sells the Loop Dream sleep earplug.",
+     "sources": [
+      "forbes-be-2024-loop-d2c",
+      "forbes-be-2024-loop-other-customers",
+      "loop-dream-claim",
+      "cnbc-2023-loop-pivot"
+     ]
+    },
+    {
+     "name": "Eargasm",
+     "relation_in_records": "Sells high-fidelity earplugs rated 16 dB NRR.",
+     "sources": [
+      "eargasm-claim"
+     ]
+    },
+    {
+     "name": "Minuendo",
+     "relation_in_records": "Sells adjustable high-fidelity earplugs for musicians.",
+     "sources": [
+      "minuendo-claim"
+     ]
+    },
+    {
+     "name": "Mack's",
+     "relation_in_records": "Sells soft foam earplugs (Dreamgirl).",
+     "sources": [
+      "macks-claim"
+     ]
+    },
+    {
+     "name": "Etymotic",
+     "relation_in_records": "Makes the ER20XS high-fidelity earplug, rated 13 dB NRR.",
+     "sources": [
+      "etymotic-er20xs"
+     ]
+    },
+    {
+     "name": "Apple",
+     "relation_in_records": "Offers a Hearing Protection feature on AirPods Pro 2 and 3 that, in some countries, can limit media to 82 dBA and meet EN 352 requirements.",
+     "sources": [
+      "apple-en352"
+     ]
+    }
+   ],
+   "banner": {
+    "file": "/brand/hellberg/banner.svg",
+    "source_url": "",
+    "author": "Aemon",
+    "licence": "Illustration made for Aemon",
+    "licence_url": null,
+    "trademark": false,
+    "retrieved": "2026-11-10",
+    "illustrative": "Illustration of hearing protection in general; not a Hellberg image"
+   }
+  },
+  "neumann": {
+   "display_name": "Neumann",
+   "legal_name": "Georg Neumann GmbH",
+   "tagline": "Makes studio microphones, studio monitors, headphones and audio interfaces as part of the Sennheiser group.",
+   "industry": {
+    "text": "Professional audio equipment",
+    "sources": [
+     "neumann-mt48-range",
+     "neumann-sos-no-cheap-models"
+    ]
+   },
+   "headquarters": null,
+   "founded": null,
+   "parent": {
+    "text": "Sennheiser group",
+    "sources": [
+     "neumann-sennheiser-exit"
+    ]
+   },
+   "website": {
+    "text": "neumann.com",
+    "sources": [
+     "neumann-heritage",
+     "neumann-webshop"
+    ]
+   },
+   "case_context": {
+    "set_in": "present day",
+    "note": null
+   },
+   "about": [
+    {
+     "text": "Neumann states that few recordings, whether classical, rock or pop, television or radio, do not feature at least one Neumann microphone.",
+     "sources": [
+      "neumann-heritage"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "With its first audio interface, the MT 48, the company states it now offers the technologies to capture audio from sound recording to sound reproduction.",
+     "sources": [
+      "neumann-mt48-range"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "Sound On Sound (2010) reported that Neumann had not built cheaper models in the Far East, and that its TLM range includes affordable microphones aimed at the project-studio market as well as professional studio and broadcast use.",
+     "sources": [
+      "neumann-sos-no-cheap-models"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Neumann sells microphones, headphones, the MA 1 Multichannel Extension and accessories directly on its website, and runs the Neumann Home Studio Academy, a tutorial site with an associated YouTube channel.",
+     "sources": [
+      "neumann-webshop",
+      "neumann-academy"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "After Sennheiser sold its consumer electronics business to Sonova in 2021, Sennheiser said it would focus entirely on pro audio, business communications and the Neumann brand.",
+     "sources": [
+      "neumann-sennheiser-exit"
+     ],
+     "basis": "independent"
+    }
+   ],
+   "products": [
+    {
+     "name": "Studio microphones",
+     "description": "Large-diaphragm condenser microphones, including the TLM 102, the company's most affordable model, designed and manufactured in Germany.",
+     "customers": "Home and project studios as well as professional studio and broadcast users",
+     "sources": [
+      "neumann-tlm102-affordable",
+      "neumann-tlm102-smallest-studio",
+      "neumann-sos-no-cheap-models",
+      "neumann-musicradar-upgrade"
+     ]
+    },
+    {
+     "name": "Audio interfaces",
+     "description": "The MT 48, Neumann's first audio interface.",
+     "customers": null,
+     "sources": [
+      "neumann-mt48-range"
+     ]
+    },
+    {
+     "name": "Headphones",
+     "description": "Headphones sold directly on the Neumann website alongside microphones and accessories.",
+     "customers": null,
+     "sources": [
+      "neumann-webshop"
+     ]
+    }
+   ],
+   "customers": [
+    {
+     "text": "Recording, television and radio production",
+     "sources": [
+      "neumann-heritage"
+     ]
+    },
+    {
+     "text": "Project and home studio owners",
+     "sources": [
+      "neumann-sos-no-cheap-models",
+      "neumann-musicradar-upgrade",
+      "neumann-tlm102-smallest-studio"
+     ]
+    },
+    {
+     "text": "Individual creators working outside major studios",
+     "sources": [
+      "neumann-feedback-creators",
+      "neumann-academy"
+     ]
+    }
+   ],
+   "markets": [
+    {
+     "text": "Direct online sales on the Neumann website",
+     "sources": [
+      "neumann-webshop"
+     ]
+    },
+    {
+     "text": "Third-party retailers, including zZounds and Thomann UK",
+     "sources": [
+      "neumann-zzounds-price",
+      "neumann-thomann-logo"
+     ]
+    }
+   ],
+   "timeline": [
+    {
+     "date": "2010-01",
+     "event": "Sound On Sound reviews the TLM 102, noting Neumann had not moved cheaper production to the Far East.",
+     "sources": [
+      "neumann-sos-no-cheap-models"
+     ]
+    },
+    {
+     "date": "2021-05-10",
+     "event": "Sennheiser sells its consumer electronics business to Sonova and refocuses on pro audio, business communications and the Neumann brand.",
+     "sources": [
+      "neumann-sennheiser-exit"
+     ]
+    }
+   ],
+   "positioning": [
+    {
+     "text": "Futuresource data reported in 2019 that the home studio segment was responsible for more than half of total studio vertical revenue.",
+     "sources": [
+      "neumann-futuresource-2018"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "A 2024 Futuresource survey reported that the home-studio content-creation equipment market had to re-stabilise from pandemic levels, with reduced consumer spending pressuring revenues in 2022 and 2023.",
+     "sources": [
+      "neumann-futuresource-restabilise"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "The same survey saw opportunities for higher-end purchases by established music and video creators, and at the lower end among less experienced users, particularly in ease of use, despite pressure from consumer and e-commerce brands.",
+     "sources": [
+      "neumann-futuresource-high-end"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Sound On Sound (2010) noted that the TLM 102 does not compete with the budget microphones that had flooded the market, while not being unduly expensive for a Neumann.",
+     "sources": [
+      "neumann-sos-budget-flood"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "MusicRadar (2021) described the TLM 102 as suited to the committed home studio owner upgrading from starter gear to pro-level equipment.",
+     "sources": [
+      "neumann-musicradar-upgrade"
+     ],
+     "basis": "independent"
+    }
+   ],
+   "context_companies": [],
+   "logo": {
+    "file": "/brand/neumann/logo.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Neumann_GmbH_Audio_Logo.svg",
+    "author": "Georg Neumann GmbH",
+    "licence": "Public domain",
+    "licence_url": null,
+    "trademark": true,
+    "retrieved": "2026-11-10"
+   },
+   "banner": {
+    "file": "/brand/neumann/banner.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Neumann_U87_Condenser_Microphone_-_Studio_A,_In_Your_Ear_Studios.jpg",
+    "author": "Will Fisher from Richmond, VA, United States",
+    "licence": "CC BY-SA 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "trademark": false,
+    "retrieved": "2026-11-10"
+   }
+  },
+  "jotun": {
+   "display_name": "Jotun",
+   "legal_name": "Jotun A/S",
+   "tagline": "Makes decorative paints and marine, protective and powder coatings.",
+   "industry": {
+    "text": "Paints and coatings",
+    "sources": [
+     "jotun-wiki-overview"
+    ]
+   },
+   "headquarters": {
+    "text": "Norway",
+    "sources": [
+     "jotun-wiki-overview"
+    ]
+   },
+   "founded": null,
+   "parent": null,
+   "website": {
+    "text": "jotun.com",
+    "sources": [
+     "jotun-ar23-multicolor",
+     "jotun-ar23-seasonal"
+    ]
+   },
+   "case_context": {
+    "set_in": "mid-2024",
+    "note": "Sources dated after mid-2024 describe later events and were not available at the case date."
+   },
+   "about": [
+    {
+     "text": "Jotun is a Norwegian multinational paint and coatings company dealing mainly in decorative paints and performance coatings (marine, protective and powder coatings).",
+     "sources": [
+      "jotun-wiki-overview"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Its Marine Coatings business serves the new-build, dry-dock, tank and cargo holds, and sea-stock markets, and also provides coatings for mega-yachts and leisure yachts.",
+     "sources": [
+      "jotun-pci-yachts"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Jotun Decorative supplies coatings for commercial buildings, public buildings and homes, serving professional and DIY customers directly and through a network of Jotun Multicolor Centers. In 2023 Decorative Paints accounted for 37% of sales and Powder Coatings for 7%.",
+     "sources": [
+      "jotun-pci-diy",
+      "jotun-pci-share"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "The company reports more than 10 000 Multicolor machines worldwide, and attributes the seasonality of its cash flow especially to sales of exterior decorative paints in Scandinavia.",
+     "sources": [
+      "jotun-ar23-multicolor",
+      "jotun-ar23-seasonal"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "In its Q2 2024 update, Jotun reported double-digit underlying sales growth year to date in Marine, Protective and Powder, with Decorative sales growing at a more modest pace.",
+     "sources": [
+      "jotun-q2-2024-modest"
+     ],
+     "basis": "company"
+    }
+   ],
+   "products": [
+    {
+     "name": "Marine coatings",
+     "description": "Coatings for ship new-builds, dry-docking, tanks, cargo holds and sea-stock, and for mega-yachts and leisure yachts.",
+     "customers": "New-build, dry-dock and sea-stock markets; yacht owners",
+     "sources": [
+      "jotun-pci-yachts"
+     ]
+    },
+    {
+     "name": "Antifouling",
+     "description": "Antifouling range sold on the brand's website with direct purchase by individuals (2017 partnership article).",
+     "customers": "Individual boat owners",
+     "sources": [
+      "jotun-boatnews-direct"
+     ]
+    },
+    {
+     "name": "Decorative paints",
+     "description": "Coatings for commercial buildings, public buildings and homes, supplied directly and through Jotun Multicolor Centers.",
+     "customers": "Professional and DIY customers",
+     "sources": [
+      "jotun-pci-diy",
+      "jotun-ar23-multicolor"
+     ]
+    },
+    {
+     "name": "Exterior wood paints and stains",
+     "description": "Includes Drygolin Optimal, described by a Norwegian builders' merchant as Norway's best-selling paint, and Demidekk Ultimate, included in Folksam's exterior paint test.",
+     "customers": null,
+     "sources": [
+      "jotun-byggern-optimal",
+      "jotun-folksam-demidekk"
+     ]
+    },
+    {
+     "name": "Protective coatings",
+     "description": "Performance coatings segment reported alongside Marine and Powder.",
+     "customers": null,
+     "sources": [
+      "jotun-wiki-overview",
+      "jotun-q2-2024-modest"
+     ]
+    },
+    {
+     "name": "Powder coatings",
+     "description": "Performance coatings segment, 7% of sales in 2023.",
+     "customers": null,
+     "sources": [
+      "jotun-wiki-overview",
+      "jotun-pci-share"
+     ]
+    }
+   ],
+   "customers": [
+    {
+     "text": "Marine new-build, dry-dock and sea-stock markets",
+     "sources": [
+      "jotun-pci-yachts"
+     ]
+    },
+    {
+     "text": "Mega-yacht and leisure-yacht owners",
+     "sources": [
+      "jotun-pci-yachts"
+     ]
+    },
+    {
+     "text": "Professional and DIY decorative-paint customers",
+     "sources": [
+      "jotun-pci-diy"
+     ]
+    },
+    {
+     "text": "Individual boat owners buying antifouling online",
+     "sources": [
+      "jotun-boatnews-direct"
+     ]
+    }
+   ],
+   "markets": [
+    {
+     "text": "Decorative paints sold directly and through Jotun Multicolor Centers; more than 10 000 Multicolor machines worldwide",
+     "sources": [
+      "jotun-pci-diy",
+      "jotun-ar23-multicolor"
+     ]
+    },
+    {
+     "text": "Scandinavia: exterior decorative paint sales drive cash-flow seasonality; decorative demand was weak in Q4 2023 and soft in Q1 2024",
+     "sources": [
+      "jotun-ar23-seasonal",
+      "jotun-q4-2023-wesca",
+      "jotun-q1-2024-soft"
+     ]
+    },
+    {
+     "text": "Norway: Drygolin Optimal sold through the builders' merchant Byggern",
+     "sources": [
+      "jotun-byggern-optimal"
+     ]
+    },
+    {
+     "text": "Antifouling range available for direct purchase on the brand's website (2017)",
+     "sources": [
+      "jotun-boatnews-direct"
+     ]
+    }
+   ],
+   "timeline": [
+    {
+     "date": "2017-04-22",
+     "event": "Partnership article reports the antifouling range is available on the brand's website for direct purchase by individuals.",
+     "sources": [
+      "jotun-boatnews-direct"
+     ]
+    },
+    {
+     "date": "2018-05-09",
+     "event": "Dinside reports Folksam's exterior paint test, which included Jotun Demidekk Ultimate.",
+     "sources": [
+      "jotun-folksam-demidekk"
+     ]
+    },
+    {
+     "date": "2023",
+     "event": "Decorative Paints accounted for 37% of sales and Powder Coatings for 7%.",
+     "sources": [
+      "jotun-pci-share"
+     ]
+    },
+    {
+     "date": "2024-02-08",
+     "event": "Q4 2023 update attributes lower WESCA sales mainly to continued weakness in Scandinavian decorative paints.",
+     "sources": [
+      "jotun-q4-2023-wesca"
+     ]
+    },
+    {
+     "date": "2024-05-03",
+     "event": "Q1 2024 update reports soft Scandinavian decorative demand, citing higher interest rates and strong pandemic-era sales.",
+     "sources": [
+      "jotun-q1-2024-soft"
+     ]
+    },
+    {
+     "date": "2024-07-09",
+     "event": "PCI Magazine lists Jotun as No. 10 in its 2024 Global Top 10.",
+     "sources": [
+      "jotun-pci-diy"
+     ]
+    },
+    {
+     "date": "2024-07-15",
+     "event": "Q2 2024 update reports double-digit underlying growth in Marine, Protective and Powder, and more modest growth in Decorative.",
+     "sources": [
+      "jotun-q2-2024-modest"
+     ]
+    }
+   ],
+   "positioning": [
+    {
+     "text": "Jotun reported that demand for decorative paints in Scandinavia continued to be soft due to higher interest rates affecting real estate and consumer demand, and strong sales during the pandemic years.",
+     "sources": [
+      "jotun-q1-2024-soft"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "A 2016 study of leisure boats found that 21% of boat owners did not know what type of paint their boats were coated with.",
+     "sources": [
+      "jotun-pmc-unknown"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "The same study found that 14% of boat owners admitted using paints not allowed in the area studied.",
+     "sources": [
+      "jotun-pmc-illegal"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Folksam's 2018 exterior paint test concluded that good paint products can be produced at a reasonable price.",
+     "sources": [
+      "jotun-folksam-cheap"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "On a Norwegian homeowners' forum (2012), one user said they would not risk an unfamiliar exterior paint without good independent tests, while another said they had used Jotun products for years.",
+     "sources": [
+      "jotun-forum-tests",
+      "jotun-forum-loyal"
+     ],
+     "basis": "independent"
+    }
+   ],
+   "context_companies": [],
+   "logo": {
+    "file": "/brand/jotun/logo.svg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jotun_logo.svg",
+    "author": "Jotun",
+    "licence": "Public domain",
+    "licence_url": null,
+    "trademark": true,
+    "retrieved": "2026-11-10"
+   },
+   "banner": {
+    "file": "/brand/jotun/banner.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jotun_headquarters.jpg",
+    "author": "Larsmikkelsen",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "trademark": false,
+    "retrieved": "2026-11-10"
+   }
+  },
+  "tanita": {
+   "display_name": "Tanita",
+   "legal_name": "Tanita Corporation",
+   "tagline": "Tokyo maker of weighing instruments, including bathroom and commercial scales, and of body-fat analysers using bioelectrical impedance.",
+   "industry": {
+    "text": "Weighing instruments and body composition analysers",
+    "sources": [
+     "tanita-en-share",
+     "tanita-dic-origin"
+    ]
+   },
+   "headquarters": null,
+   "founded": null,
+   "parent": null,
+   "website": {
+    "text": "tanita.co.jp",
+    "sources": [
+     "tanita-hist-1959",
+     "tanita-hist-1979",
+     "tanita-en-share"
+    ]
+   },
+   "case_context": {
+    "set_in": "1993",
+    "note": "Sources dated after 1993 describe later events and were not available at the case date."
+   },
+   "about": [
+    {
+     "text": "According to its company history, Tanita obtained a scale manufacturing licence and began producing health meters (bathroom scales) in 1959, and reached 10 million health meters in 1979.",
+     "sources": [
+      "tanita-hist-1959",
+      "tanita-hist-1979"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "Japanese Wikipedia states that Tanita was the first company in Japan to make and sell household scales, which it named \"health meters\", and that it formerly worked mainly as an OEM contract manufacturer with few own-brand products.",
+     "sources": [
+      "tanita-jawp-first",
+      "tanita-jawp-oem"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Tanita states that, based on medical evidence linking excess body fat to heart disease, diabetes and certain cancers, it introduced the world's first integrated body composition analyzer/scale to professional markets in 1992.",
+     "sources": [
+      "tanita-dic-origin"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "US patent US5415176A (priority 1991-11-29, granted 1995-05-16) describes a body-fat apparatus that measures the impedance between a patient's feet together with height and weight.",
+     "sources": [
+      "tanita-pat-abstract"
+     ],
+     "basis": "independent"
+    }
+   ],
+   "products": [
+    {
+     "name": "Bathroom scales (health meters)",
+     "description": "Household scales, produced since 1959.",
+     "customers": "Households",
+     "sources": [
+      "tanita-hist-1959",
+      "tanita-jawp-first"
+     ]
+    },
+    {
+     "name": "Body composition analyzer/scale",
+     "description": "Integrated body composition analyzer and scale, introduced to professional markets in 1992.",
+     "customers": "Professional markets",
+     "sources": [
+      "tanita-dic-origin"
+     ]
+    },
+    {
+     "name": "Precision electronic scales",
+     "description": "Electronic scales, the category in which the company claims almost half of its domestic market.",
+     "customers": null,
+     "sources": [
+      "tanita-en-share"
+     ]
+    }
+   ],
+   "customers": [
+    {
+     "text": "Households (bathroom scales)",
+     "sources": [
+      "tanita-jawp-first",
+      "tanita-ht-household"
+     ]
+    },
+    {
+     "text": "Professional markets (body composition analyzer)",
+     "sources": [
+      "tanita-dic-origin"
+     ]
+    },
+    {
+     "text": "OEM clients, historically",
+     "sources": [
+      "tanita-jawp-oem"
+     ]
+    }
+   ],
+   "markets": [
+    {
+     "text": "United States, through Tanita Corp. of America",
+     "sources": [
+      "tanita-dic-origin"
+     ]
+    }
+   ],
+   "timeline": [
+    {
+     "date": "1959",
+     "event": "Obtains a scale manufacturing licence and begins producing health meters.",
+     "sources": [
+      "tanita-hist-1959"
+     ]
+    },
+    {
+     "date": "1979",
+     "event": "Reaches 10 million health meters.",
+     "sources": [
+      "tanita-hist-1979"
+     ]
+    },
+    {
+     "date": "1991-11-29",
+     "event": "Priority date of US patent US5415176A for a foot-to-foot body-fat measuring apparatus.",
+     "sources": [
+      "tanita-pat-abstract"
+     ]
+    },
+    {
+     "date": "1992",
+     "event": "Introduces an integrated body composition analyzer/scale to professional markets.",
+     "sources": [
+      "tanita-dic-origin"
+     ]
+    },
+    {
+     "date": "1995-05-16",
+     "event": "US patent US5415176A granted.",
+     "sources": [
+      "tanita-pat-abstract"
+     ]
+    },
+    {
+     "date": "2000-02",
+     "event": "British Journal of Nutrition publishes an evaluation of the Tanita body-fat analyser against a four-compartment model.",
+     "sources": [
+      "tanita-pm-jebb"
+     ]
+    },
+    {
+     "date": "2009-02",
+     "event": "A study advises against using the Tanita TBF-310 with the manufacturer's equations for individual overweight and obese children.",
+     "sources": [
+      "tanita-pm-radley"
+     ]
+    }
+   ],
+   "positioning": [
+    {
+     "text": "A 1985 study described bioelectrical impedance as safe, noninvasive and rapid, requiring little operator skill, while recommending further validation in subjects with abnormal body composition.",
+     "sources": [
+      "tanita-pm-lukaski1985"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "A 1990 study of athletes indicated the need for controlled measurement conditions to obtain valid body composition estimates by bioelectrical impedance.",
+     "sources": [
+      "tanita-pm-lukaski1990"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "The body-fat patent notes that a body's impedance varies with date, time and body condition before measurement, which can make inferred body fat inaccurate.",
+     "sources": [
+      "tanita-pat-variation"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Japan's National Nutrition Survey showed the prevalence of preobese men rising from 14.5% in 1976-80 to 20.5% in 1991-95 (published 2002).",
+     "sources": [
+      "tanita-pm-yoshiike"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Current US rules exempt body composition analyzers not intended to diagnose or treat a medical condition from premarket notification (text amended 2019).",
+     "sources": [
+      "tanita-cfr-exempt"
+     ],
+     "basis": "independent"
+    }
+   ],
+   "context_companies": [],
+   "banner": {
+    "file": "/brand/tanita/banner.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tanita_analog_bathroom_scale_THA-528.jpg",
+    "author": "Qurren",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "trademark": false,
+    "retrieved": "2026-11-10"
+   }
+  },
+  "deere": {
+   "display_name": "John Deere",
+   "legal_name": "Deere & Company",
+   "tagline": "Illinois maker of farm tractors, combines and industrial equipment sold through a network of independent dealers.",
+   "industry": {
+    "text": "Farm tractors and equipment",
+    "sources": [
+     "deere-wiki-4010"
+    ]
+   },
+   "headquarters": null,
+   "founded": null,
+   "parent": null,
+   "website": null,
+   "case_context": {
+    "set_in": "mid-1962",
+    "note": "Sources dated after 1962 describe later events and were not available at the case date."
+   },
+   "about": [
+    {
+     "text": "Deere sells through independent retail dealers; according to Wikipedia, Charles Deere began introducing marketing centers and independent dealers in 1869 to extend sales nationwide.",
+     "sources": [
+      "deere-wiki-dealers"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Of the \"10\" series tractors introduced in 1960, the 4010 was the most popular, with more than 58,000 units sold from 1960 to 1963.",
+     "sources": [
+      "deere-wiki-4010"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Deere entered outdoor power equipment late; before it offered lawn and garden tractors, many John Deere dealers sold other brands of them.",
+     "sources": [
+      "deere-ctf-late",
+      "deere-ctf-dealers"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Recollections of Deere staff describe a prototype lawn and garden tractor built at the Horicon plant in 1959, a feasibility study for an 'estate tractor' at the Industrial Equipment Works, and purchases of competing lawn and garden tractors for evaluation.",
+     "sources": [
+      "deere-ctf-1959",
+      "deere-ctf-estate",
+      "deere-ctf-competitive"
+     ],
+     "basis": "company"
+    },
+    {
+     "text": "Production of the company's first lawn and garden tractor, the 110, began at Horicon in 1963 with 1000 units (after the case date).",
+     "sources": [
+      "deere-gbn-1000"
+     ],
+     "basis": "company"
+    }
+   ],
+   "products": [
+    {
+     "name": "Farm tractors",
+     "description": "Tractors including the \"10\" series introduced in 1960, of which the 4010 was the most popular.",
+     "customers": null,
+     "sources": [
+      "deere-wiki-4010"
+     ]
+    },
+    {
+     "name": "Lawn and garden tractors",
+     "description": "Consumer tractors, starting with the 110 model built at Horicon from 1963 (after the case date).",
+     "customers": "Consumer market",
+     "sources": [
+      "deere-gbn-1000",
+      "deere-green-venture",
+      "deere-tractordata-serials"
+     ]
+    },
+    {
+     "name": "Lawn and garden attachments",
+     "description": "Attachments such as mowers and snow blowers sold with the lawn and garden tractors (after the case date).",
+     "customers": "Consumer market",
+     "sources": [
+      "deere-green-venture"
+     ]
+    }
+   ],
+   "customers": [
+    {
+     "text": "Consumer market for lawn and garden tractors (after the case date)",
+     "sources": [
+      "deere-green-venture"
+     ]
+    }
+   ],
+   "markets": [
+    {
+     "text": "United States, nationwide through marketing centers and independent retail dealers",
+     "sources": [
+      "deere-wiki-dealers"
+     ]
+    }
+   ],
+   "timeline": [
+    {
+     "date": "1869",
+     "event": "Charles Deere begins introducing marketing centers and independent retail dealers.",
+     "sources": [
+      "deere-wiki-dealers"
+     ]
+    },
+    {
+     "date": "1959",
+     "event": "Prototype lawn and garden tractor built at the Horicon plant, according to a former draftsman.",
+     "sources": [
+      "deere-ctf-1959"
+     ]
+    },
+    {
+     "date": "1960",
+     "event": "\"10\" series tractors introduced, including the 4010.",
+     "sources": [
+      "deere-wiki-4010"
+     ]
+    },
+    {
+     "date": "1963",
+     "event": "Production of the first lawn and garden tractor, the 110, begins at Horicon with 1000 units.",
+     "sources": [
+      "deere-gbn-1000"
+     ]
+    },
+    {
+     "date": "1984",
+     "event": "Millionth John Deere lawn tractor, a 318 model, produced at Horicon.",
+     "sources": [
+      "deere-gbn-millionth"
+     ]
+    },
+    {
+     "date": "2010-05-09",
+     "event": "John Deere reaches five million lawn tractors.",
+     "sources": [
+      "deere-gbn-1000"
+     ]
+    }
+   ],
+   "positioning": [
+    {
+     "text": "A lawn and garden tractor history notes that John Deere entered the outdoor power arena late in the game.",
+     "sources": [
+      "deere-ctf-late"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "International Harvester introduced the Cub Cadet in 1961, and Wheel Horse, Bolens and Simplicity were described as dominant players before John Deere entered.",
+     "sources": [
+      "deere-ctf-rivals"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Demand for garden tractors was rapidly increasing as households with small gardens found them inexpensive, practical for a variety of chores and economical to maintain.",
+     "sources": [
+      "deere-wheelhorse-demand"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "By 1960, US homeownership topped 60 percent, driven by the post-war economic boom, favourable tax laws and easier mortgage financing.",
+     "sources": [
+      "deere-census-1960"
+     ],
+     "basis": "independent"
+    },
+    {
+     "text": "Deere's development work found that a hydrostatic drive for variable ground speed had advantages but was cost prohibitive to be competitive in the marketplace.",
+     "sources": [
+      "deere-ctf-hydro"
+     ],
+     "basis": "company"
+    }
+   ],
+   "context_companies": [],
+   "banner": {
+    "file": "/brand/deere/banner.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:John_Deere_World_Headquarters_04.jpg",
+    "author": "dwhartwig",
+    "licence": "CC BY 2.0",
+    "licence_url": "https://creativecommons.org/licenses/by/2.0",
+    "trademark": false,
+    "retrieved": "2026-11-10"
+   }
+  }
+ },
+ "assets_note": "Logos and banners are from Wikimedia Commons, kept only when the licence allows reuse (public domain, CC0, CC BY, CC BY-SA); each records its source, author, licence and retrieval date and is credited on the page. Logos marked trademark are shown only to identify the company. No asset implies endorsement."
+}

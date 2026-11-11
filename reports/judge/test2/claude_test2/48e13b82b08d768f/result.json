@@ -1,0 +1,130 @@
+{
+  "packet_id": "48e13b82b08d768f",
+  "packet_sha256": "ea6c4d79dc5f54a8f5af23512b768f383b6600de723cffb29d3869d6eff7d54f",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\n  \"packet_id\": \"48e13b82b08d768f\",\n  \"dimensions\": {\n    \"problem_framing\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A1\"],\n      \"reason\": \"A1 sets the objective (decide whether to invest, based on evidence of demand, willingness to pay and advantage) apart from any particular product. It lists real alternatives: no expansion, a route-to-market change for existing products, and a differentiated offer for small trades within B2B. It does not correct a premise or surface a non-obvious constraint well enough for a 3. The \u20ac20,000 budget and 12-week window do not appear in the case packet. They may come from an unseen brief, so they are noted but not treated as observations.\"\n    },\n    \"causal_mechanism\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A6\"],\n      \"reason\": \"T1 in A6 names who changes behaviour (homeowners wanting lower heating bills) and why (trust in professional-grade accuracy over generic tools). It gestures at value capture through premium direct or retail sales and subscription analysis. The chain to value Testo actually captures is asserted rather than traced: there is no reasoning on price premium versus cheap tools, channel economics or the subscription rationale. That falls short of 3.\"\n    },\n    \"distinct_theories\": {\n      \"status\": \"scored\",\n      \"score\": 0,\n      \"event_ids\": [\"A6\"],\n      \"reason\": \"The theories stage was reached in A6 and produced only one theory, T1, with no rival explanation. The run stopped at A10 without adding any.\"\n    },\n    \"assumptions_predictions\": {\n      \"status\": \"scored\",\n      \"score\": 2,\n      \"event_ids\": [\"A6\"],\n      \"reason\": \"The predictions in A6 are observable: purchase intent for Testo versus a generic low-cost instrument, and survey reasons for the choice. They fall short of 3. Some assumptions are vague ('basic understanding of energy efficiency concepts'). It is also not stated that failure would undermine T1; for example, the effect of price on purchase intent is unaddressed.\"\n    },\n    \"evidence_judgement\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A2\", \"A3\", \"A10\"],\n      \"reason\": \"Sources were retrieved (A2\u2013A5, A7\u2013A9) but no assessment event occurred before the run stopped at A10. No source was evaluated. This includes the Airthings excerpts, which concern Airthings rather than Testo despite their ids.\"\n    },\n    \"seeking_challenge\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A7\", \"A8\", \"A9\", \"A10\"],\n      \"reason\": \"The searches after the theory (A7\u2013A9) are near-duplicate topical queries returning the same sources, not deliberate searches against T1. No challenge step was completed before A10.\"\n    },\n    \"experiment_design\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A10\"],\n      \"reason\": \"No test was proposed or declined before the run stopped at A10.\"\n    },\n    \"revision\": {\n      \"status\": \"not_applicable\",\n      \"score\": null,\n      \"event_ids\": [],\n      \"reason\": \"Revision is excluded from packet.applicable_dimensions, and no update was scheduled or delivered.\"\n    },\n    \"recommendation\": {\n      \"status\": \"not_reached\",\n      \"score\": null,\n      \"event_ids\": [\"A10\"],\n      \"reason\": \"A10 states the investigation stopped before a recommendation because of repeated errors.\"\n    }\n  },\n  \"red_flags\": [\n    {\n      \"kind\": \"incomplete\",\n      \"event_ids\": [\"A10\"],\n      \"reason\": \"The episode ended after repeated errors with no evidence assessment, test design or recommendation.\"\n    }\n  ],\n  \"suitable_for_training\": false,\n  \"screen_reason\": \"The episode is incomplete (A10). It stopped before evidence assessment, challenge, experiment design and recommendation. Only one theory was produced (A6), and A7\u2013A9 are repetitive non-adversarial searches. Incomplete episodes are rejected regardless of the partial quality of framing (A1) and T1 (A6).\"\n}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4818
+      },
+      "cache_creation_input_tokens": 4818,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 2496,
+      "output_tokens_details": {
+        "thinking_tokens": 1078
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.074026,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "2c05dcb0cef5c4cabfb579f7efef53112f4a89048534d3737c7a75fbc5ae1687",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "48e13b82b08d768f",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 sets the objective (decide whether to invest, based on evidence of demand, willingness to pay and advantage) apart from any particular product. It lists real alternatives: no expansion, a route-to-market change for existing products, and a differentiated offer for small trades within B2B. It does not correct a premise or surface a non-obvious constraint well enough for a 3. The \u20ac20,000 budget and 12-week window do not appear in the case packet. They may come from an unseen brief, so they are noted but not treated as observations."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "T1 in A6 names who changes behaviour (homeowners wanting lower heating bills) and why (trust in professional-grade accuracy over generic tools). It gestures at value capture through premium direct or retail sales and subscription analysis. The chain to value Testo actually captures is asserted rather than traced: there is no reasoning on price premium versus cheap tools, channel economics or the subscription rationale. That falls short of 3."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "The theories stage was reached in A6 and produced only one theory, T1, with no rival explanation. The run stopped at A10 without adding any."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "The predictions in A6 are observable: purchase intent for Testo versus a generic low-cost instrument, and survey reasons for the choice. They fall short of 3. Some assumptions are vague ('basic understanding of energy efficiency concepts'). It is also not stated that failure would undermine T1; for example, the effect of price on purchase intent is unaddressed."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A10"
+        ],
+        "reason": "Sources were retrieved (A2\u2013A5, A7\u2013A9) but no assessment event occurred before the run stopped at A10. No source was evaluated. This includes the Airthings excerpts, which concern Airthings rather than Testo despite their ids."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7",
+          "A8",
+          "A9",
+          "A10"
+        ],
+        "reason": "The searches after the theory (A7\u2013A9) are near-duplicate topical queries returning the same sources, not deliberate searches against T1. No challenge step was completed before A10."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A10"
+        ],
+        "reason": "No test was proposed or declined before the run stopped at A10."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions, and no update was scheduled or delivered."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A10"
+        ],
+        "reason": "A10 states the investigation stopped before a recommendation because of repeated errors."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A10"
+        ],
+        "reason": "The episode ended after repeated errors with no evidence assessment, test design or recommendation."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete (A10). It stopped before evidence assessment, challenge, experiment design and recommendation. Only one theory was produced (A6), and A7\u2013A9 are repetitive non-adversarial searches. Incomplete episodes are rejected regardless of the partial quality of framing (A1) and T1 (A6)."
+  },
+  "seconds": 24.994
+}

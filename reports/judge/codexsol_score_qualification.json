@@ -1,0 +1,289 @@
+{
+ "judge": "codexsol",
+ "rule": "docs/DECISIONS.md 2026-11-06: evaluation-scoring qualification",
+ "status": "qualified_for_scoring",
+ "clusters": 20,
+ "sound_scores_higher": 20,
+ "needed": 17,
+ "invalid_after_retry": 0,
+ "max_invalid": 4,
+ "retried": 0,
+ "manifest_version": "judge-v1-four-backends-4",
+ "instrument_sha256": "cca85a72d85a56580d7ef657c1262274ed4404823ec9fa3d01657d8b220c1581",
+ "judge_config_sha256": "ca661b41ecf5f481f52bcc0330913f3b3f6d2791fdc7607e8768cb8ab7642ddc",
+ "judge_config": {
+  "model": "gpt-6-sol",
+  "cli_version": "codex-cli 0.166.0",
+  "binary": "/home/USER/.codex/packages/standalone/releases/0.166.0-x86_64-unknown-linux-musl/bin/codex",
+  "binary_sha256": "b8a11fedf24b2dfb59a70c9e52b030f9a508dcd49cd2dd0d41956f4c785156b8",
+  "temperature": null,
+  "temperature_reason": "not exposed by Codex CLI",
+  "max_output_tokens": null,
+  "output_limit_reason": "not exposed by CLI; timeout is not a token ceiling",
+  "timeout_seconds": 300,
+  "forbidden_repository": "/home/USER/Desktop/lexsi-ai-hackathon",
+  "settings": {
+   "features.shell_tool": false,
+   "features.unified_exec": false,
+   "features.shell_snapshot": false,
+   "features.apps": false,
+   "features.browser_use": false,
+   "features.multi_agent": false,
+   "features.memories": false,
+   "memories.use_memories": false,
+   "memories.generate_memories": false,
+   "web_search": "disabled",
+   "project_doc_max_bytes": 0,
+   "model_instructions_file": "/judge_prompt.txt",
+   "model_reasoning_effort": "medium"
+  },
+  "added": "2026-11-11 (Hatem: \"use sol\"): the same pinned CLI, sandbox and settings as codex, only the model differs; gpt-6-astra exhausts the ChatGPT Plus allowance after about 120 judgments. A different judge from codex: qualified separately, never mixed with codex scores. The claude, codex and claudecode entries are unchanged, so their receipts still bind"
+ },
+ "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+ "packets_sha256": "665d8056d55b3480a7c42339ba3f1bc13d0df41c50c196581a37a0a2fc990bd1",
+ "per_cluster": [
+  {
+   "cluster": "q01",
+   "sound": 2.875,
+   "flawed": 2.625,
+   "ordered": true
+  },
+  {
+   "cluster": "q02",
+   "sound": 2.875,
+   "flawed": 2.625,
+   "ordered": true
+  },
+  {
+   "cluster": "q03",
+   "sound": 2.75,
+   "flawed": 2.375,
+   "ordered": true
+  },
+  {
+   "cluster": "q04",
+   "sound": 2.875,
+   "flawed": 1.3333333333333333,
+   "ordered": true
+  },
+  {
+   "cluster": "q05",
+   "sound": 2.875,
+   "flawed": 2.625,
+   "ordered": true
+  },
+  {
+   "cluster": "q06",
+   "sound": 2.75,
+   "flawed": 2.625,
+   "ordered": true
+  },
+  {
+   "cluster": "q07",
+   "sound": 2.875,
+   "flawed": 2.375,
+   "ordered": true
+  },
+  {
+   "cluster": "q08",
+   "sound": 2.75,
+   "flawed": 1.3333333333333333,
+   "ordered": true
+  },
+  {
+   "cluster": "q09",
+   "sound": 2.75,
+   "flawed": 2.375,
+   "ordered": true
+  },
+  {
+   "cluster": "q10",
+   "sound": 2.875,
+   "flawed": 2.5,
+   "ordered": true
+  },
+  {
+   "cluster": "q11",
+   "sound": 2.75,
+   "flawed": 2.5,
+   "ordered": true
+  },
+  {
+   "cluster": "q12",
+   "sound": 2.75,
+   "flawed": 1.3333333333333333,
+   "ordered": true
+  },
+  {
+   "cluster": "q13",
+   "sound": 2.75,
+   "flawed": 2.5,
+   "ordered": true
+  },
+  {
+   "cluster": "q14",
+   "sound": 2.875,
+   "flawed": 2.5,
+   "ordered": true
+  },
+  {
+   "cluster": "q15",
+   "sound": 2.875,
+   "flawed": 2.5,
+   "ordered": true
+  },
+  {
+   "cluster": "q16",
+   "sound": 2.75,
+   "flawed": 1.3333333333333333,
+   "ordered": true
+  },
+  {
+   "cluster": "q17",
+   "sound": 2.875,
+   "flawed": 2.5,
+   "ordered": true
+  },
+  {
+   "cluster": "q18",
+   "sound": 2.75,
+   "flawed": 2.5,
+   "ordered": true
+  },
+  {
+   "cluster": "q19",
+   "sound": 2.75,
+   "flawed": 2.5,
+   "ordered": true
+  },
+  {
+   "cluster": "q20",
+   "sound": 2.75,
+   "flawed": 1.3333333333333333,
+   "ordered": true
+  }
+ ],
+ "attempts": {
+  "dceb298d728e6400": {
+   "first": "valid"
+  },
+  "086bb89d35290ccf": {
+   "first": "valid"
+  },
+  "5ca2499e9322f1d1": {
+   "first": "valid"
+  },
+  "5974b8bc1e48ef9a": {
+   "first": "valid"
+  },
+  "547313b46d55a050": {
+   "first": "valid"
+  },
+  "e8ecbb3ad5d192ba": {
+   "first": "valid"
+  },
+  "cdaaebb9a8e008dd": {
+   "first": "valid"
+  },
+  "e532e54f793c4653": {
+   "first": "valid"
+  },
+  "afb82cd4a323f028": {
+   "first": "valid"
+  },
+  "5c263bab0daa6426": {
+   "first": "valid"
+  },
+  "cfb533048475e411": {
+   "first": "valid"
+  },
+  "fd3dd4bf556b1979": {
+   "first": "valid"
+  },
+  "698b6ea865e8d5c7": {
+   "first": "valid"
+  },
+  "302633257d136db2": {
+   "first": "valid"
+  },
+  "e62c0225bfc52537": {
+   "first": "valid"
+  },
+  "70319c9595d72d11": {
+   "first": "valid"
+  },
+  "1dcd99140212ef30": {
+   "first": "valid"
+  },
+  "38d4e601f4110415": {
+   "first": "valid"
+  },
+  "5184236e286fea12": {
+   "first": "valid"
+  },
+  "d4b439df7e247970": {
+   "first": "valid"
+  },
+  "905b97e65b2c040a": {
+   "first": "valid"
+  },
+  "2b1cf2228f75aa00": {
+   "first": "valid"
+  },
+  "dda00f5fd58be10c": {
+   "first": "valid"
+  },
+  "98f75c4ab626299a": {
+   "first": "valid"
+  },
+  "1aeb2448f74c5d55": {
+   "first": "valid"
+  },
+  "6607bb986081b736": {
+   "first": "valid"
+  },
+  "d284c919aa8626e8": {
+   "first": "valid"
+  },
+  "9af4d673c076c946": {
+   "first": "valid"
+  },
+  "70bbf245c325bec2": {
+   "first": "valid"
+  },
+  "147d64334d09c0a6": {
+   "first": "valid"
+  },
+  "0e3184f1b3aa2234": {
+   "first": "valid"
+  },
+  "390cc11106e44499": {
+   "first": "valid"
+  },
+  "5dea66b6a78ac23e": {
+   "first": "valid"
+  },
+  "271cc46d13f007e6": {
+   "first": "valid"
+  },
+  "4ad06106624594e9": {
+   "first": "valid"
+  },
+  "913048ff4ddfd9da": {
+   "first": "valid"
+  },
+  "a6d915eadf1afca1": {
+   "first": "valid"
+  },
+  "aa82b7f3356d9ca5": {
+   "first": "valid"
+  },
+  "9319af467672f93d": {
+   "first": "valid"
+  },
+  "15638507b71e3997": {
+   "first": "valid"
+  }
+ },
+ "evaluation_only": true
+}

@@ -1,0 +1,3 @@
+{"balance_usd_before": 9.94, "budget_usd": 0.8, "model": "deepseek-api deepseek-flash DeepSeek-V4.1-Flash-1017"}
+{"by_family": {"experiment": {"answers": 14, "refused": 14}}, "top_rejections": {"experiment": [["gate: the decline gives no reason testing is not worth it (no effect on the decision, already settled, worth less than acting, or over the stated limits)", 3], ["request failed: RuntimeError", 2], ["still over the length limit after one shortening: learned", 2], ["still over the length limit after one shortening: reason", 2], ["gate: the arms differ only in wording or message, with no product or price difference and no same-price control", 1]]}}
+{"spent_usd_estimate": 0.0761, "balance_usd_after": 8.42}

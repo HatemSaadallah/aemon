@@ -778,3 +778,690 @@ refused only by the old 600-character tool limit. After the offline re-check, 5 
 knew only "It is [early/mid-/late] YEAR" and missed 16 dated cases ("It is March 2016", "It is March 1991", "It is
 spring 2021"); it now reads them, and the re-check was run with it (the kept set did not change). The five are in
 `reviews/v2_round2/targeted3_kept_for_review.md` for Hatem's decision.
+
+## 2026-11-08: development comparison of the environment fixes (recorded before the runs end)
+
+Version 1 (the final adapter, compact prompt) on the 15 development cases, 3 attempts each (45 runs per configuration),
+code 1303fca / 9c30e1a, one GPU job per configuration:
+- **as evaluated** (747625): 45 turns, 4 refusals in a row, no reread limit, no source dates, no stuck help;
+- **fixed** (747626): 60 turns, reread limit 2, source dates in the state, stuck help after two refusals in a row;
+- **fixed + weigh 3** (747636): the same, and each theory needs 3 weighed sources (or as many as were read) before
+  the investigation moves on.
+Measured mechanically on every run: finished, stop reasons, refused calls, sources weighed per theory, and the
+confidence score out of five. Rule, fixed now: a configuration replaces the one before it in the Strategy Lab if it
+finishes more runs and does not lower the mean confidence score; ties keep the simpler one. These are environment
+changes, reported apart from any model change, and never applied to the reported final test. Blind judging of the
+winner against "as evaluated" is optional and would use the frozen judge configuration.
+Confidence on the final test's 28 finished runs, under the score out of five: 24 at 2/5, 2 at 3/5, 2 at 4/5 (no High).
+
+## 2026-11-08: version 2, third teacher round (recorded before running)
+
+After three advisory reviews found template answers in the second round (none of its 5 kept answers sound):
+- **Instructions** (EXPERIMENT_ASK, third revision): test arms must differ in the product, its price or how it is sold,
+  with the presentation otherwise the same (a message-only test needs a same-price control); the currency and methods of
+  the case's time; each source shows its date (source dates in the state), only sources dated on or before the case,
+  named by id; both theories kept credible; every outcome of the rule leads to a bounded next step.
+- **Checks** (screens, so kept answers are still inspected): message-only arms with no product or price difference and
+  no control; a rule that jumps to developing a product line with no bounded step; euros before 1999. On the second
+  round's 5 kept answers they refuse Cree, Embrace and Black & Decker.
+- **New skill, weigh**: the 81 states where version 1 left the weighing step after at most one source per theory with
+  three or more real sources read, replayed with min_assessed 3 so the state asks for more; the teacher weighs one more
+  source (assess_evidence, a read source, no repeat).
+- **States**: 170 from version 1's runs on training companies (48 companies): 53 test design, 35 rereading, 81 weigh,
+  1 recovery; all with source dates.
+- **Sampling**: 2 answers per state at temperature 0.7; the code checks keep the first that passes, so at most one row
+  per state; every answer is hashed into the manifest.
+- **Server**: Command A+ Q4_K_M, 2 slots of 12,288 tokens (so the model fits on the GPU instead of offloading to the
+  CPU, the cause of the earlier 1.5 tokens per second), prompt version teacher-v3.
+Rows train only after Hatem's review. Cut-off as agreed: without about 60 approved examples by 11 November, version 2
+stops and version 1 stays the submission.
+Hatem's review of the second round (2026-11-08): of the 6 answers still passing every check, kept Superior and
+Technogym; dropped Andis, Cotral, ARRI and Hilti. Two reasons in the pasted notes were corrected beside them (the
+600-character refusal was the environment bug since fixed). The screens then had three holes, now closed: a single
+price for the whole test counted as a price difference; "develop ... propositions" in the plural slipped past; and a
+"pilot launch" of a product line or sub-brand counted as bounded. With them closed the screens agree with all six of
+Hatem's decisions; they were tuned on these six, so this is a consistency check, not evidence that they generalise.
+The third round's answers are re-checked offline with these screens before review.
+Result (2026-11-08, 45 development runs each, rebuilt offline from the saved episodes because the job's AuditKIT step
+failed on the new stuck_help setting; replay now passes the environment only the settings it takes):
+- as evaluated (747625): 24 finished, 17 repeated refusals, 4 turn limit; 294 refused calls (245 repeats, 35 misquotes);
+  mean confidence 2.21 of 5.
+- fixed (747626): 23 finished, 22 repeated refusals, 0 turn limit; 350 refused calls (334 repeats, 7 misquotes); mean
+  confidence 2.17.
+Under the rule, "fixed" does not replace "as evaluated": it finishes one fewer run and does not raise confidence. The
+reread limit turned rereading loops into refused calls, which end runs after 4 in a row, and stuck help did not rescue
+enough of them. Misquotes fell from 35 to 7 (source dates in the state are the likely cause; not separately tested).
+A fourth configuration, recorded before it runs: **dates + help** (60 turns, source dates, stuck help, no reread limit),
+same 45 runs and rule, code b021891.
+
+## 2026-11-08: test set 2, frozen before any run
+
+Why: the final test's four companies support only a limited claim and have since informed the diagnosis, so a new claim
+needs new companies (Hatem: "we need more data").
+- **Companies (12)**, researched from public sources by four research agents and admitted only through our verifier
+  (each quote found word for word on its live page): Ansell, Belimo, Drägerwerk, Franke Coffee Systems, Hach, Hoshizaki,
+  Kingspan, Laerdal Medical, Mettler-Toledo, Tennant, Testo, Winterhalter. 221 verified records (14 dropped: 10 pages
+  unreachable or blocking, 4 quotes not found). Each company: a base case and an irrelevant-what-if case, 24 cases;
+  supporting and undermining what-ifs were not written for them. All marked test warranted. Premise records filtered to
+  verified ones; Dräger's three missing premise records are replaced by its one verified company record.
+- **Separation**: `data/dossier/cases_heldout2.json`, split `heldout2`; development and the final test cannot see its
+  evidence (tests/test_test2_freeze.py); frozen digest 4db90205... in `docs/test2_freeze.json`. The final test's digest
+  is unchanged (dce26d4f...).
+- **Arms**: base (Tiny Aya bf16, staged prompt, no adapter) and version 1 (the final adapter, GGUF 41794b57..., compact
+  prompt), exactly the final test's settings: context 12,288, 520 tokens per turn, 45 turns, 4 refusals in a row,
+  temperature 0 with 0.4 only on a retry; 3 attempts; 144 runs. A version 2 adapter may be added as a third arm only if
+  it is adopted on development by 11 November under its own rule, run with the same settings, and before any per-case
+  look at test set 2; no failure analysis of test set 2 happens until every arm has run.
+- **Judging**: the frozen judge package and configuration (judge-v1-two-backends-2). Claude now; Codex from 11 November
+  (unavailable until then). Primary result: version 1 minus base, mean of the two judges, paired by case and attempt,
+  95% case-cluster bootstrap (4,000 resamples, seed 20261106). A Claude-only result may be reported earlier, labelled as
+  such. Also: each judge, each company, base against irrelevant what-if, finished counts and the mechanical measures.
+- **Reporting**: both test sets side by side, test set 2 never pooled into the frozen final-test result.
+Deviations, 2026-11-08 evening: the third teacher round's first job (747708) failed before any answer (the server,
+without the rebuild flag, crashed with a CUDA error on its first requests; 0 of 340 requests answered). It was
+resubmitted (747857) with the llama.cpp rebuild and 1 slot of 12,288 tokens instead of 2, because 2 slots still did not
+fit on the GPU; instructions, states, checks and sampling are unchanged. The "dates + help" development job (747811)
+was cancelled to free the GPUs for test set 2 (747855 version 1, 747856 base) and will be resubmitted unchanged.
+Result of the third configuration (747636, 45 runs, rebuilt offline from the saved episodes): **fixed + weigh 3**
+finished 25 (19 repeated refusals, 1 context limit), weighed 4.69 sources per run (3.29 as evaluated), mean confidence
+3.12 of 5 (22 runs at 3, 3 at 4, none at 2). Under the rule it replaces "as evaluated" in the Strategy Lab: it finishes
+more and raises confidence. Caveats: one more finished run of 45 is within noise, and part of the confidence rise is
+built in, since one of the five checks counts three weighed sources, which the setting now requires. The Strategy Lab
+now runs with source dates, the reread limit, stuck help and three weighed sources per theory. The frozen final test and
+test set 2 keep the evaluated settings.
+
+## 2026-11-10 01:40: test set 2, Claude-only result (frozen protocol unchanged; Codex from 11 November)
+
+Claude judged all 133 packets (144 runs, 72 per arm) under the frozen judge-v1 package. Labelled Claude-only; the
+primary result (mean of both judges) waits for Codex. Never pooled with the final test.
+
+| | base (staged prompt) | version 1 (final adapter) | version 1 minus base, paired, 95% case-cluster bootstrap |
+|---|---|---|---|
+| Claude | 0.48 | 0.89 | **+0.41 [0.24, 0.57]**, 72 pairs, 24 cases |
+
+10 of 12 companies positive (Mettler +1.00, Kingspan +0.89, Tennant +0.81, Ansell +0.57 … Dräger +0.16); Franke Coffee
+−0.17 and Hoshizaki −0.15. By dimension (version 1 against base): problem framing 1.88 vs 1.03, revision 1.00 vs 0.11,
+distinct theories 0.92 vs 0.40, recommendation 0.44 vs 0.03, experiment design 0.50 vs 0.22, evidence judgement 0.39
+vs 0.28. Mechanical: finished 32 vs 2 of 72; passing every check 4 vs 1. The effect is smaller than on the final test
+(Claude +0.64 [0.51, 0.77]) and evidence judgement and experiment design stay low, the weaknesses the corrective
+families target.
+Infrastructure: the Mac's network dropped during the first pass (108 connection errors, 1 timeout, 3 refused by the
+ledger cap because of the held reservations); as for the final test, those attempts were archived
+(`reports/judge/test2/claude_test2_archived_infra/`) and only they were judged again, never a valid judgment; two
+later timeouts were retried once. The unbilled reservations of the 108 connection errors were released in the ledger
+with a note. Actual cost $11.44 (approved about $10).
+
+## 2026-11-10 03:55: corrective pilot 1 result, instructions changed for pilot 2
+Pilot 1 (job 750511, code 1e00c09, 51 states from training companies): 15 kept, all 15 rebuild from the manifest and
+today's replay. Per family kept/asked: numbers 0/10, experiment 1/10, classify 2/10, unstick 2/10, simulated 0/1,
+revise 10/10. Main causes: 11 of 30 numbers/experiment/classify answers made a different call than the state is about
+(mostly read_source); 11 answers named no id from the state; 4 finishes cited sources read but never assessed; 3 tests
+again varied only the message. Two of the 5 non-revise kept answers are weak on inspection (cotral unstick: why_next
+says add a theory, the call reads a source; arri experiment: a message survey), so review stays necessary.
+Changes (5b8f271), gates unchanged: the teacher is offered only the tools of the decision the family is about (finish;
+propose_test/decline_test; assess_evidence), every family is told to write exact ids and act on one it names, the
+finish instruction says only assessed sources count and no numbers in a next action without a proposed test. Pilot 2
+(job 750894): 32 states not used in pilot 1, 8 each of numbers, experiment, classify, unstick; revise is dropped from
+pilots because the student already passes its gate (22/22). The full batch waits for pilot 2.
+
+## 2026-11-10 11:05: corrective pilots 2 and 3, export for review
+Pilot 2 (750894, 5b8f271, 32 states): 9 kept (unstick 6/8, classify 3/8, numbers 0/8 with 6 citing unassessed
+sources, experiment 0/8). Pilot 3 (751211, 528dc19, 24 states): 7 kept (numbers 4/8, experiment 1/8, classify 2/8).
+Pilot 3 numbers rejections are real invented figures (a "$25" price floor, ages 25-55); experiment rejections are
+mostly fields cut at the length limit (4 of 7). Classify stays low because the evidence-kind annotation is inconsistent
+for press articles (the same kind of trade article is market_fact in one case, customer_observation in another), so a
+correct reading can fail; the check and annotations are frozen and unchanged, noted for a later audit. The
+review exporter now re-judges corrective answers by their own family gate (it had used the round-3 gate). 31 kept
+answers from 107, all passing provenance, replay and split, are on the Review page (reviews/v2_round4). Nothing trains.
+
+## 2026-11-10 19:30 UTC: a hosted teacher (DeepSeek) for the corrective families, and an LLM reviewer (registered before any result)
+Why: the V2 stop decision (V2_CORRECTIVE_PLAN section 10) is a finding about the teacher. Command A+ made the student's
+own errors (evidence kinds, dates, message-only tests) and could not write a sound experiment design in two attempts.
+Hatem asked to try a stronger teacher, and to build on version 1 rather than start again.
+
+**Teacher.** DeepSeek V4.1-Flash (API model `deepseek-flash`, DeepSeek-V4.1-Flash-1017). The weights are MIT, and
+DeepSeek's Open Platform terms allow using outputs to train other models, distillation included (copy of the terms in
+`docs/terms/`). Called through `pipeline/hosted_teacher.py`, a separate entry point. The corrective pipeline's states,
+families, instructions and gates are unchanged (`pipeline/corrective.py` at this commit). The evaluated runner, the
+Strategy Lab and the Command A+ jobs are unchanged.
+
+Differences from the llama.cpp teacher, fixed now:
+- Strict tool calling replaces the JSON-schema grammar. The reply is checked against the original schema, and up to
+  two repair turns name the exact limits broken. A reply that still breaks them is refused, as a reply cut off by the
+  grammar was.
+- Thinking mode is on (the API default), with up to 16,000 tokens. The API takes no seed, so a rerun is not
+  bit-identical; every reply is hashed into the manifest as before.
+- Every request is logged with its model, fingerprint, usage and cost.
+
+**States.** `experiments/v2_corrective/all_states_v3.json`: 244 states from version 1's runs on training companies
+(unstick 69, experiment 53, classify 53, numbers 46, revise 22, simulated 1). One answer each. No development,
+final-test or test-set-2 company, as before.
+
+**Reviewer (Hatem's decision, replacing the human Keep/Drop review).** DeepSeek V4-Pro (`deepseek-v4-pro`,
+DeepSeek-V4-Pro-0813). It is a different model from the teacher, and it reviews the exported examples with a written
+rubric (`pipeline/hosted_review.py`, built from the earlier human reviews and section 9's criteria).
+
+Qualification rule, fixed now:
+- Before it reviews anything, it reviews the 6 examples Hatem decided (2 Keep, 4 Drop).
+- It qualifies only if it agrees on at least 5 of 6 and keeps both of Hatem's Keeps.
+- If it fails, the examples go to human review as before.
+- Claude's advisory verdicts are not used, because Claude's output never decides training data.
+
+How its decisions are recorded and checked:
+- They are written as `review_source: llm`.
+- A human decision is never overwritten.
+- The model card and paper will say that the examples were selected by an LLM reviewer.
+- A human spot check of 10 randomly chosen LLM keeps is recommended before training. If Hatem drops more than 2 of
+  the 10, the LLM review is not used.
+
+**What follows, unchanged from V2_CORRECTIVE_PLAN:**
+- the threshold of section 9: at least 30 keeps in at least 3 families, with experiment design among them;
+- the training mix of section 7, continuing version 1's adapter;
+- the screen of section 8;
+- the adoption rule of section 6.
+
+The training job's approval file is created only by a human. Neither test set is used.
+
+**Budget.** At most $10 of DeepSeek credit for this round. Each process stops at its own cap (`HOSTED_BUDGET_USD`).
+
+**Later, not registered here.** About 200 new full investigations by the same teacher on training companies, if this
+round shows the teacher is better. That will be registered before it runs.
+
+## 2026-11-10 18:35 UTC: reviewer qualification result, and no human review (Hatem's decision, before any batch is reviewed)
+Qualification (`experiments/hosted_teacher/reviewer_qualification.json`): DeepSeek V4-Pro agreed with Hatem on 4 of 6.
+It dropped all 4 of his Drops, for the same reasons he gave, and also dropped both of his Keeps:
+- Superior: the arms mix proposition with price (€45 against €55) and have no same-price control;
+- Technogym: the variants differ in positioning only.
+
+It is therefore **not qualified** under the rule registered above (at least 5 of 6, with both Keeps kept). Its errors
+on this sample are all in one direction, dropping rather than keeping.
+
+Hatem's decision: no manual review. The unqualified V4-Pro reviewer is used as a strict filter, unchanged:
+- only examples it keeps can train;
+- the rubric is not edited after seeing the qualification, and there is no human spot check;
+- this replaces the human review and spot check registered above.
+
+Disclosure, in the model card and paper: the corrective examples were selected by gates plus an LLM reviewer that
+failed its qualification against human decisions, because it was stricter. The rest of the plan is unchanged: section
+9's threshold, section 7's mix, section 8's screen and section 6's adoption rule. The training job's approval file is
+created on Hatem's explicit instruction.
+
+## 2026-11-10 18:30 UTC: a second hosted teacher, DeepSeek V4-Pro, on the same 244 states (Hatem's decision, before any result)
+The same entry point, states, instructions, gates, repair turns and reviewer as the V4.1-Flash round, with
+`HOSTED_MODEL=deepseek-v4-pro` (DeepSeek-V4-Pro-0813). It runs until the credit runs out. States not answered for
+lack of credit are reported as such and never filled in.
+
+The reviewer stays V4-Pro with the rubric unchanged, so both teachers are filtered alike. For the Pro answers this is a
+model reviewing its own model's answers; that is disclosed. Comparison: on identical states, the share kept by the
+gates and then by the reviewer, per family, for Command A+ (pilots 1-4, regated by today's gates), V4.1-Flash and
+V4-Pro. Where both DeepSeek answers to one state are kept, the Pro answer is used (the stronger model, fixed now).
+
+## 2026-11-10 18:55 UTC: a second shortening turn for experiment answers refused only for length (before it runs)
+Flash's experiment family: 0 of 53 kept, and 20 of them were refused only because a field was still over its limit
+after experiment_design's single shortening turn. Pro's experiment family shows the same pattern so far.
+
+The change (`hosted_teacher.py reshorten`):
+- Applies only to answers refused with "still over the length limit after one shortening".
+- The same conversation gets one more turn with the exact counts (experiment_design.shorten_note), so the shortened
+  text is still the teacher's own.
+- That reply goes through the same compose, limits and family gate as before. Every reply is hashed into the manifest.
+- Every other refusal stands. No answer is rewritten by code.
+- For both teachers. The answers kept this way go through the export checks and the same reviewer.
+
+## 2026-11-10 19:05 UTC: the experiment family is judged by the reviewer, not by the keyword screens (before it runs)
+The keyword design screens refuse sound designs. Example: Pro's Sealed Air answer, a same-price test of poppable
+against pop-less wrap (a real product attribute), refused as "differs only in wording". Nour's plan already noted that
+these screens have errors of their own (V2_CORRECTIVE_PLAN section 6).
+
+**What changes, for the experiment family only** (`pipeline/hosted_experiment.py`):
+- These screens no longer decide: targeted.gate_mechanism, gate_test and gate_decline.
+- An answer goes to the unchanged DeepSeek V4-Pro reviewer if it passes the mechanical checks:
+  - the call is accepted and grounded;
+  - no field is cut off or over its limit;
+  - it stays inside the case's period and currency, and cites no later source;
+  - it proposes or declines as the case's own `test_warranted` says;
+  - it is from a training case;
+  - its replies are in the manifest, and its composition rebuilds.
+- The reviewer's rubric already drops message-only tests without a same-price control, non-discriminating predictions,
+  jumps to a launch, trivial commitments and declines that contradict themselves.
+
+**Which answers:** Flash's and Pro's experiment answers. Where a state has a second-shortening answer, that one is used.
+
+**What stays the same:**
+- Every other family keeps its gate.
+- The evaluation's `experiment_v2` measure (V2_CORRECTIVE_PLAN section 6) still uses the screen, unchanged and the
+  same for both arms.
+
+## 2026-11-10 19:15 UTC: the DeepSeek round's result, the threshold met, and v2 training (Hatem's instruction to train on top of v1)
+On the 244 states, the DeepSeek V4-Pro reviewer kept (Command A+'s 27 gate-passed pilot answers, reviewed alike: 4):
+
+| Teacher | Main families | Experiment | Total |
+|---|---|---|---|
+| V4.1-Flash | 67 | 4, of 10 passing the mechanical checks | 71 |
+| V4-Pro | 78 | 8, of 15 passing the mechanical checks | 86 |
+
+Both teachers often declined tests the case warrants: Flash 18 times, Pro 19.
+
+**Training rows:** where both DeepSeek teachers have a kept answer for the same state, Pro's is used (48 Flash keeps
+superseded). This gives 109 approved rows, all rebuilt exactly from the manifests.
+
+**Continuation set** (`scripts/v2_training_set.py`, unchanged):
+- 105 corrective rows (numbers 9, classify 18, unstick 56, revise 10, experiment 12; 1 duplicate dropped, revise
+  capped), each presented twice;
+- 1,707 of version 1's own rows;
+- 411 validation rows;
+- a corrective share of 0.20; output sha256 4e06896d.
+
+**Threshold (section 9):** met. At least 30 keeps: 105. At least 3 families: 5. Experiment design among them: 12.
+
+**Training:** `jobs/train_v2_corrective.sbatch` unchanged. It continues version 1's adapter, one epoch, learning rate
+2.5e-5, seed 7. The approval file is created on Hatem's instruction ("train on top of command A+"). Then the section 8
+screen and the section 6 adoption rule. Version 1 stays the submission unless v2 passes them.
+Jobs (2026-11-10, code 6c9b182):
+- v2 training: 752833.
+- Section 8 screen: 752835 for V1, 752836 for V2, the latter after 752833 succeeds.
+- Both screen arms: the 15 development cases, one attempt, the compact prompt, the as-evaluated controller,
+  SKIP_BASE=1 and DIAGNOSTIC=1 as for the final test.
+Infrastructure retry (2026-11-10 19:25 UTC): screen arm 752835 failed before any episode because the code copy lacked
+`data/dossier`. I had shipped only src, jobs and scripts. The case files of the same revision were added, and V1 was
+resubmitted unchanged as screen_v1b. 752836 (V2) reads the same copy.
+
+## 2026-11-10 22:40 UTC: v2 screen result, stopped under section 8; version 1 stays
+Training 752833 completed: 480 steps, loss 0.61. Screen, 15 development cases, one attempt, the same code and settings:
+
+| | V1 (752848) | V2 (752836) |
+|---|---|---|
+| Finished | 7 | 0 |
+| Valid completion | 1 | 0 |
+| Turn limit | 4 | 10 |
+| Repeated refusals | 4 | 5 |
+| Refused calls | 128 | 146 |
+| read_source | 156 | 299 |
+| Rereads | 64 | 186 |
+| assess_evidence | 91 | 40 |
+| propose_test | 8 | 0 |
+| finish | 12 | 0 |
+
+Section 8, condition 2 fails: V2 has 7 fewer finishes, against at most 2 allowed. **Stop: V1 stays.** The screen is the
+reported result. It was not judged, because the rule does not need quality to decide this, and judging would cost
+money without changing the decision.
+
+Likely cause (post hoc):
+- The corrective set was dominated by unstick (56 of 105), whose kept answers are mostly read_source.
+- Each row was presented twice at 20% of the target tokens.
+- So the continuation taught rereading over weighing and finishing.
+
+Single-step corrections skew the action distribution in a way whole investigations do not. Any further DeepSeek data
+should be whole investigations, or corrections balanced by action, registered before it runs.
+
+## 2026-11-10 22:55 UTC: whole investigations by DeepSeek V4-Pro (Hatem's decision, registered before any run)
+Why: single-step corrections skewed the action mix (V2's screen). Whole investigations carry the procedure's own mix.
+
+**Teacher and runner:**
+- DeepSeek V4-Pro (`deepseek-v4-pro`) through `pipeline/hosted_investigations.py`, which points the unchanged runner's
+  chat at the hosted client.
+- Teacher prompt, tools, stages and guards as for the Command A+ investigations: context 16,384, 2,000 tokens per
+  turn, 45 turns, temperature 0 (the API takes no seed).
+- The strict-schema conversion now also handles a tool with no arguments (placeholder) and a map keyed by ids (a list
+  of key/value pairs, turned back before the original schema is checked).
+
+**Cases:** the 111 training cases of version 1's rows (57 companies, no development company), at attempt 10, then 11,
+and so on, so the seeds and labels differ from earlier runs. 16 investigations at a time.
+
+**Budget:** Hatem's rule is to keep $5. The client reads the real balance every minute and refuses new requests below
+$5 (`HOSTED_MIN_BALANCE=5`). An investigation cut off by the floor is recorded as a harness failure and never used.
+The balance was $31.51 before the pilot.
+
+**Pilot first:** 2 investigations, to check the pipeline and measure the cost per investigation.
+
+**Rows** (registered now, applied after generation):
+- The standard pipeline (`pipeline/rows.py`): replay-exact episodes, the same filters as version 1's rows.
+- The hosted label's hash is added to `TEACHER_WEIGHTS` for this teacher only.
+- Before any training:
+  - the share of each action in the new rows is reported against version 1's;
+  - a mix whose read_source share is more than 1.5 times version 1's is not trained.
+
+**Training:** continue version 1 once, not twice. The new rows are at most 30% of target characters, with the rest
+from version 1's rows. Then the section 8 screen and the section 6 rule, as for the first v2. Version 1 stays unless
+the new adapter passes them.
+
+## 2026-11-10 23:05 UTC: validation mixes both teachers (Hatem's request, before any DeepSeek investigation row exists)
+The trainer's held-out loss currently uses only Command A+ rows from the six development companies.
+
+The change:
+- The DeepSeek investigations of six training companies are held out for validation only and never trained on:
+  diatek, illumina, perrigo, resmed, sensirion and sievi. They were drawn with `random.Random(20261110)` from the 57
+  companies in version 1's rows.
+- Validation is then the development companies' Command A+ rows plus these companies' DeepSeek rows.
+- Held-out loss is reported per teacher, so it shows whether the adapter fits each teacher's investigations, not only
+  Command A+'s.
+- Those six companies' Command A+ rows stay in training as before, so version 1's own data is unchanged.
+
+## 2026-11-10 23:10 UTC: a universal held-out loss, and teacher-free selection (Hatem's request, before any DeepSeek investigation row exists)
+A loss on one teacher's held-out text measures imitation of that teacher, not quality for a human reader. So:
+
+1. **Monitoring.** The trainer's held-out loss is reported as one universal number: the mean of the Command A+ and
+   DeepSeek validation losses, weighted equally, so neither teacher's style dominates. The per-teacher losses are
+   reported beside it as diagnostics only. No loss selects or rejects an adapter.
+2. **Selection** stays teacher-free, as in V2_CORRECTIVE_PLAN sections 6 and 8. An adapter is judged only by what it
+   does on development cases:
+   - the environment's checks: finished, valid completion, no invented numbers, `experiment_v2`;
+   - the blind score on the frozen nine-dimension rubric, written for a human reader, from the qualified judge with
+     the adapter hidden.
+   No teacher text is involved.
+
+## 2026-11-10 23:30 UTC: new training cases written by DeepSeek from verified public sources (Hatem: "generate more cases")
+Claude may not author training data, and a case's question and brief are in every training row. So new training cases
+are written by DeepSeek V4.1-Flash (`pipeline/hosted_cases.py`), whose terms allow training other models on its outputs.
+
+**Steps:**
+- DeepSeek proposes manufacturers absent from every dossier file, and from the same groups.
+- Web searches (ddgs) return pages, fetched as the verifier fetches them.
+- DeepSeek copies 8 to 12 exact quotes, with their metadata, and writes one or two sentences on what the company makes
+  and for whom.
+
+**What a case can contain:**
+- The verifier admits only quotes found word for word on their live page, as for every dossier record.
+- A company with fewer than 4 verified records is dropped.
+- The question and the rest of the brief are the existing template, word for word.
+- `add_cases --split training` adds the base case and its irrelevant-what-if variant.
+
+**Excluded from every test:** these companies are training only, and neither frozen test set changes.
+
+**Cancelled:** the third pass of investigations, so the leftover credit can write these cases. Their own Pro
+investigations need more credit, kept above the $5 floor.
+Implementation (2026-11-10 23:20 UTC), `training/train.py`:
+- `--validation-rows` adds the held-out DeepSeek rows.
+- Each validation row is grouped by teacher and company (`ds_` prefix for DeepSeek).
+- `eval_loss` is then the universal loss, the mean of the two teachers' company-balanced means. It is logged with
+  `eval_teacher_commanda_loss` and `eval_teacher_deepseek_loss`.
+- The trainer's existing best-checkpoint choice within a run uses this universal loss. Adopting the adapter still
+  depends only on the teacher-free screen.
+- The split check compares case and teacher, so the Command A+ rows of the six companies stay in training.
+- Without DeepSeek rows, behaviour is exactly as before (version 1 reproducible).
+
+## 2026-11-10 23:25 UTC: all the data from both teachers (Hatem's decision, before any row is built)
+Asked how much DeepSeek data to mix in, Hatem chose: "use all the data that is available from both". This replaces the
+registered cap of DeepSeek at most 30% of target characters.
+
+**The continuation:**
+- every row of version 1's set (`rows/final.jsonl`; the six development companies held out for validation, as before);
+- every replay-exact row of the DeepSeek V4-Pro investigations, except the six validation companies' DeepSeek rows,
+  which validate only;
+- one pass, continuing version 1's adapter, learning rate 2.5e-5, warmup 10%, seed 7;
+- universal validation loss, as registered.
+
+**Unchanged:**
+- The action-mix check: the mix is not trained if its read_source share exceeds 1.5 times version 1's.
+- The section 8 screen and the section 6 adoption rule.
+
+**Compute:** about 7,500 to 8,000 rows. A full A100 (7g.80gb), a 12-hour limit, and checkpoints every 25 steps so a
+stopped job resumes. Job script: `jobs/train_v3.sbatch`.
+
+## 2026-11-11 00:05 UTC: generation ended, version 3 training submitted
+**Investigations:** 288 DeepSeek V4-Pro investigations (216 on the old training cases, 70 on the new cases, 2 in the
+pilot), 154 of them finished. Hatem stopped the run at that point ("ok enough").
+
+**Rows** (`experiments/hosted_investigations/v3_rows_report.json`):
+- 154 investigations accepted: every finished one replays exactly; 112 never reached an accepted finish;
+- 3,611 training rows from 69 companies, and 262 DeepSeek validation rows;
+- read_source share 1.16 times version 1's, inside the 1.5 limit;
+- training rows sha256 a4845f4c, the same locally and on the cluster.
+
+**Jobs:** training 753357 (full A100, code 1d725b1); screen arms 753358 (V1) and 753360 (V3, after training).
+
+**Deviation:** the $5 balance floor was overshot by $0.48 (the balance ended at $4.52). Each process read the balance
+only once a minute, and requests already in flight kept billing. The client now reads it every 20 seconds and stops
+new work $1.50 above the floor.
+
+## 2026-11-11 09:30 UTC: version 3 screen result, stopped under section 8; version 1 stays
+Training 753357 completed: 1,876 steps in 4.7 h. Best checkpoint 1876; universal held-out loss 0.913 (Command A+
+0.717, DeepSeek 1.110).
+
+Screen: the 15 development cases, one attempt, code 1d725b1. V1 is 753358, V3 is 753360.
+
+| | V1 | V3 |
+|---|---|---|
+| Finished | 7 | 7 |
+| Valid completion | 2 | 1 |
+| Repeated refusals | 6 | 8 |
+| Turn limit | 2 | 0 |
+| Refused calls | 125 | 68 |
+| Mean calls | 35.0 | 23.6 |
+| Finished runs failing no_invented_numbers | 2 | 1 |
+| Finished runs failing evidence_classes | 1 | 5 |
+
+Of V3's refusals just before it stopped, 24 of 32 were a repeated search ("you already ran that search").
+
+Blind Claude judging (judge-v1 unchanged; 29 packets, all valid; run `claude_screen3`): V1 1.049, V3 0.832. V1 minus V3
+is +0.217 [−0.178, 0.633] over 15 pairs. By company: Hellberg +1.01, Neumann +0.40, ACR +0.06, Deere −0.12, Tanita
+−0.24, Jotun −0.99.
+
+**Decision:**
+- Condition 1 is met: fewer finished runs fail no_invented_numbers.
+- Condition 2 fails: blind quality V3 − V1 = −0.22, below the allowed −0.10.
+- **Stop. V1 stays the submission.** V3 is reported as a development result.
+- No test-set-2 arm is run for it (its rule needed adoption on development by 11 November).
+
+**Likely cause (post hoc):**
+- The DeepSeek investigations had almost no refused calls, so V3 learned their direct style but not recovery; it
+  repeats a refused search until the four-refusal stop.
+- Its theories are also thinner: distinct theories 0.87 against 1.47.
+
+**Infrastructure** (no judgment lost or repeated):
+- The first judging attempt was refused by the run cap.
+- The second was refused by the ledger, because its output folder name `claude` reused the final test's run purpose.
+- Both archived; the valid run is `claude_screen3`.
+
+## 2026-11-11: version 3 on both test sets, exploratory only (Hatem: "run v3 anyways and we include it in the paper")
+
+Decided after version 1's results on both test sets were known, and after version 3 failed its development screen
+(entry 09:30 UTC above). So these runs **select nothing**: version 1 stays the submission and its frozen results are
+unchanged; the version 3 numbers are reported in the paper as a labelled exploratory comparison only.
+- Arms: version 3 only (`runs/v3/adapter`, conversion gate passed on its screen: worst gap added 0.072), compact prompt,
+  `SKIP_BASE=1`, `ATTEMPTS=3`, every setting as version 1's run on each set: final test with runner code d3aa608, split
+  heldout, the 16 cases (48 runs); test set 2 with runner code 2e9cbbd, split heldout2, the 24 cases (72 runs). Context
+  12,288, 520 tokens per turn, 45 turns, 4 refusals in a row, temperature 0 (0.4 only on a retry).
+- Judging: the same frozen judge package and configuration (judge-v1-two-backends-2), Claude first, within the $60
+  ledger cap (final test first, test set 2 if the cap allows); Codex later if available. Version 3's packets are judged
+  alone and compared with version 1's existing judgments of the same cases and attempts; Claude-only results are
+  labelled as such.
+- **Judge change (Hatem: "you can use claude code for judging instead of the api"), before any version 3 output was
+  judged:** a third backend, `claudecode` (the same model claude-opus-5-5, the same frozen judge prompt as its system
+  prompt, effort medium, through Claude Code print mode on the subscription login; no tools, MCP servers, settings or
+  sessions, an empty folder outside the repository). Added to `reviews/judge_v1/backends_v1.json` as version
+  judge-v1-three-backends-3; the claude and codex entries are unchanged, so their receipts still bind. Qualified under
+  the same scoring rule on the same 40 packets (`reports/judge/claudecode_score_qualification.json`: sound above flawed
+  in 19 of 20 clusters, 17 needed; 1 invalid, 4 allowed). Because it is a different instrument from the API judge,
+  base, version 1 and version 3 are all rejudged together, blind and shuffled, on each test set, and only those
+  same-judge numbers compare the arms (version 1 minus base under this judge also checks it against the API judge's
+  +0.64 on the final test). No API spend.
+
+## 2026-11-11: repositories renamed to aemon; history rewritten without the Claude co-author line
+
+Hatem: "rename the repo to aemon ... both public and private, and dont include claude in the contributors". The public
+repository is now https://github.com/HatemSaadallah/aemon (was lexsi-strategy-agent) and the private one
+https://github.com/HatemSaadallah/aemon-dev (was lexsi-ai-hackathon); GitHub redirects the old URLs. Every commit
+message on every branch and tag of both was rewritten to drop the "Co-Authored-By: Claude" line (and any "Generated
+with Claude Code" line), then force-pushed. **File contents are unchanged; only commit IDs changed.** Earlier entries,
+reports and run records cite the old IDs (for example the final test's runner code d3aa608, now 2fb09e7, and test set
+2's 2e9cbbd, now 7e08754): `docs/history/commit_map_private.tsv` and `commit_map_public.tsv` map every old ID to its new
+one. The old histories are kept as bundles outside the repository. Tags v1-freeze, v1-final-test and v1-test2 point
+at the rewritten commits. Nour's clone needs `git fetch && git reset --hard origin/main` (or a fresh clone).
+- **Result (exploratory; selects nothing):** base, version 1 and version 3 rejudged together, blind, by the Claude Code
+  judge. Its version 1 minus base agrees with the API Claude judge's (final test +0.63 [0.48, 0.77] against +0.64;
+  test set 2 +0.36 [0.19, 0.54] against +0.41), so the instrument change does not move the scale.
+
+  | | base | version 1 | version 3 | version 3 minus version 1 | finished (v1 / v3) | every check passed (v1 / v3) |
+  |---|---|---|---|---|---|---|
+  | Final test (4 companies, 48 runs per arm) | 0.55 | 1.18 | 1.06 | -0.12 [-0.28, 0.03] | 28 / 37 | 1 / 3 |
+  | Test set 2 (12 companies, 72 runs per arm) | 0.49 | 0.86 | 1.22 | **+0.36 [0.21, 0.51]** | 32 / 57 | 4 / 18 |
+
+  On test set 2 version 3 is higher for 10 of 12 companies (Mettler -0.06 and Tennant -0.09 the exceptions) and on 8
+  of 9 dimensions (not framing), and it makes half the refused calls (305 against 584). On the final test the gap is
+  Aquaporin (-0.46); the other three companies are within 0.14. No version 3 run found Aquaporin's insolvency either;
+  all 9 finished runs recommend investing. One version 1 packet on test set 2 (ansell-base) was judge-invalid and is
+  reported missing. Reading: the development screen (6 companies, one attempt, 15 runs per arm) said version 3 was
+  worse; the larger test set 2 says it is clearly better, and the final test cannot tell them apart. The screen was
+  too small to decide. These numbers come after both test sets were used for version 1 and must be reported as an
+  exploratory comparison; under the frozen plan version 1 remains the submission.
+
+## 2026-11-11: adapter switching mid-run, development only (Hatem: "i like the idea of switching the adapter mid run ... do that and test it")
+
+Fixed before any run. One llama.cpp server holds both gated adapters (version 1 as id 0, sha256 41794b57...; version 3
+as id 1, ea919380...), and `runner --lora-route` picks the adapter for each turn from the stage and from the count of
+refusals in a row the runner already keeps (new `stuck=ID`, `stuck_after=N`, default 2; it never sees a judge or the
+case). Job `jobs/eval_switch.sbatch`; every arm on the same two-adapter server, compact prompt, 45 turns, 4 refusals in
+a row, temperature 0 (0.4 on a retry), the 15 development cases on the 6 validation companies, **3 attempts** (45 runs
+per arm; the 1-attempt screen was too small).
+- `v1`: default=0. `v3`: default=1 (the single adapters, rerun on this server so every arm matches).
+- `v3_rescue`: default=1,stuck=0 (version 3; a stuck turn goes to version 1).
+- `v1_rescue`: default=0,stuck=1 (version 1; a stuck turn goes to version 3).
+- `dig_then_reason`: default=1,brief=0,frame=0,evidence=0 (version 1 gathers evidence, version 3 does the rest).
+Judging: the Claude Code judge (claudecode receipt), all five arms in one blind shuffled packet set. Reported: each
+switching arm minus v1 and minus v3, paired, case-cluster bootstrap; finished runs; refusals; how often each adapter
+wrote a turn. These are development numbers: they can choose a routing rule to test, never a submission. A claim
+needs a test on companies neither test set used.
+
+## 2026-11-11: company status check (Aquaporin), and a teacher run with it (Hatem: "yes do it, also ... run the teacher particularly for this")
+
+Diagnosis, before any change: across all 144 Aquaporin final-test runs (base, version 1, version 3) the insolvency
+records never appeared in a search result; every query was about the market question. Plain queries ("Aquaporin
+company", "Aquaporin news 2026", "Aquaporin risks") return them in the top three. So the agent never looks at the
+company's own position, and neither did the teacher it learned from.
+- **Environment, opt-in `status_check`** (recorded in each episode's settings; episodes without it replay unchanged):
+  a tool `company_status {}` returns the company's three most relevant records for one fixed query (its name plus
+  words for a change of position: results, insolvency, bankruptcy, acquisition, profit warning, restructuring,
+  funding, ...), dated ones first, newest first; it uses no search. Stages `status` (only company_status open) and
+  `status_reading` (read one of its results) come right after framing. `finish` must cite a status source it read.
+- **Aquaporin diagnostic** (labelled: Aquaporin is a test company, so this shows whether the fix works on the known
+  failure and is no test result): version 1 and version 3 with the status check on the 4 Aquaporin cases, 3 attempts.
+  Measured mechanically: runs that read an insolvency record, runs that cite it in finish, finished runs, and runs
+  whose recommendation still says to invest without naming the insolvency.
+- **Harm check, development:** version 1 and version 3 with the status check on the 15 development cases, 3 attempts,
+  on the two-adapter server, compared with the `v1` and `v3` arms of the switching test (same server, cases, attempts),
+  judged blind by the Claude Code judge.
+- **Teacher (Command A+, through the same environment, status check on):** the 93 base cases of the training companies
+  (the 6 validation companies and all test companies excluded); first the 17 whose status results carry a change of
+  position (portwest, zarges, masimo, arri, nilfisk, tupper, microban, orasure, illumina, stihl, maglite, sma, osram,
+  martek, perrigo, searle, lmericsson) at temperature 0 and again at 0.4, then the other 76. Rows only from episodes
+  that replay exactly and finish accepted, as before. No Claude output is used.
+Fix, 17:30, before the teacher run started (job 754912 held, then cancelled and resubmitted): with the status check,
+the status sources counted toward the evidence stage's minimum of 3 sources read, so runs read the status results,
+went to the theories stage with no market search, and looped on repeated searches (v1 Aquaporin: 117 repeat refusals in
+12 runs; development: 1 of 15 and 0 of 12 finished before the jobs were stopped). Status sources now do not count
+toward that minimum and are not offered as evidence-stage reads. Runs without the status check are unchanged. The
+Aquaporin diagnostic above ran before this fix and is rerun with it; the development check is rerun too.
+
+## 2026-11-11: adapter switching, development result (Claude Code judge, 207 of 207 packets valid, 45 pairs each)
+
+Mean score (0 to 3) and finished runs of 45: v1 1.06 (24), v3 0.86 (19), v3_rescue 1.17 (33), v1_rescue 1.20 (26),
+dig_then_reason 1.24 (33). Paired, 95% case-cluster bootstrap: dig_then_reason minus v1 +0.17 [0.02, 0.35], minus v3
++0.38 [0.13, 0.62]; v1_rescue minus v1 +0.13 [0.03, 0.24]; v3_rescue minus v1 +0.10 [-0.15, 0.38], minus v3 +0.31
+[0.08, 0.54]; v3 minus v1 -0.20 [-0.53, 0.11]. In v3_rescue, version 1 wrote 102 of 1,392 turns (7%) and stepped in on
+37 of 45 runs. Development numbers on 6 companies: they choose dig_then_reason (version 1 for the brief, frame and
+evidence stages, version 3 after) as the routing rule to test on companies neither test set used; they are no test
+result, and version 1 stays the submission.
+Second fix, 17:55, before the teacher started (755028 held, then cancelled and resubmitted): on the development
+companies, `finish` was refused for not citing a status source, because the fixed query's words matched other
+companies' records (for Hellberg, 3M's annual report and sales), which a run reasonably does not cite; runs ended on
+repeated refusals. On Aquaporin the same rule was met by appending the bankruptcy record's id without a word about it.
+Now: status results keep only records that name the company (falling back to the best matches if none does), and
+`finish` takes a required `company_position` text instead (the company's current position and how it bears on the
+recommendation), which the grammar always lets the model write. The two status-check runs on the earlier rule were
+stopped; the diagnostics are rerun on this one (status3_*).
+
+## 2026-11-11: CuratorKIT row curation and an Unsloth smoke test, for version 4 only (Hatem: "yes")
+
+- **CuratorKIT** (`aemon.rows.curate`, `CURATE=1` in `jobs/train_after_teacher.sbatch`): CuratorKIT decides which rows
+  to keep and never rewrites one (kept rows are the original lines). Exact deduplication on (state, target call),
+  since CuratorKIT's default key (instruction + output) on the target alone would merge one call made in different
+  states; MinHash off, because consecutive turns of one investigation share most of their state; its secrets gate on
+  with the hex-entropy detector off (7 false positives on hashes in v1's rows). On v1's rows: 4,302 -> 3,958, all 344
+  dropped rows exact duplicates (172 the identical first read_brief). Applies to version 4's rows only; v1 and v3 are
+  unchanged.
+- **Unsloth** (`--unsloth`, `jobs/unsloth_smoke.sbatch`): Unsloth 2026.11.3 needs transformers <= 5.17, TRL 1.15 and
+  torch 2.14.1 against the project's 5.22.1, 1.7.1 and 2.11, so it runs in its own environment. Smoke test: the same
+  50 rows, LoRA, seed and 12 steps, trained through AgentTune both ways; compared on loss per step, seconds, peak
+  memory and GGUF conversion. Version 4 trains with Unsloth only if its losses track the current trainer's and its
+  adapter converts and passes the conversion gate; otherwise it trains as v1 did. Either way the software stack is
+  recorded with the adapter, since a different stack is a difference between v4 and v1 beyond the data.
+Unsloth smoke result (job 755202, 2026-11-11 18:56; Unsloth 2026.11.3 with torch 2.11, transformers 5.17, TRL 1.7.1 and
+AgentTune and AuditKIT at the lock file's commits): the same 50 rows, LoRA, seed and 12 steps. Losses track the current
+trainer to within 0.007 at every step (first 1.2156 against 1.2145, last 0.8944 against 0.8907); both adapters convert
+to GGUF (60,491,936 bytes each). Unsloth took 155 s against 71 s and peaked at 8.1 GB against 11.6 GB: no speed gain here
+(xformers did not load for this torch build, so plain attention; Unsloth's gradient checkpointing; compile time weighs
+on 12 steps). Under the rule above, version 4 trains with the current trainer, on the same stack as versions 1 and 3.
+
+## 2026-11-11: test set 2 result with both judges (frozen campaign, 12 held-out companies)
+
+Codex judged all 133 packets validly (118 before its account's usage limit, 15 after the reset at about 19:00; the
+failed attempts are archived, no valid judgment was redone). Both judges scored all 144 runs.
+
+| | base (staged prompt) | trained (version 1) | trained minus base, paired, 95% case-cluster bootstrap |
+|---|---|---|---|
+| Claude | 0.48 | 0.89 | +0.41 [0.24, 0.57] |
+| Codex | 0.66 | 1.29 | +0.63 [0.43, 0.84] |
+| **mean of judges (primary)** | **0.57** | **1.09** | **+0.52 [0.33, 0.70]**, 72 pairs, 24 cases |
+
+Agreement: Spearman 0.95 over 144 episodes, mean absolute difference 0.30. By company (mean of judges): kingspan
++1.09, mettler +1.10, tennant +1.05, ansell +0.67, laerdal +0.64, hach +0.55, winterhalter +0.50, belimo +0.30, testo
++0.29, draeger +0.19, frankecoffee -0.05, hoshizaki -0.10: higher for 10 of 12.
+
+## 2026-11-11: a second Codex judge on gpt-6-sol, for the exploratory version 3 comparison (Hatem: "use sol")
+
+The frozen Codex judge (gpt-6-astra) exhausts the ChatGPT Plus allowance after about 120 judgments, so the 340 version
+3 judgments would take about a day of resets. A new backend `codexsol` (judge-v1-four-backends-4): gpt-6-sol through
+the same pinned CLI 0.166.0, sandbox, prompt and settings (reasoning effort medium); only the model differs. Qualified
+under the same scoring rule on the same 40 packets (`reports/judge/codexsol_score_qualification.json`: sound above
+flawed in 20 of 20 clusters, 0 invalid, no retry). It is a different judge from `codex`: the final test and test set 2
+keep their Claude and gpt-6-astra results; codexsol scores base, version 1 and version 3 together on both version 3
+packet sets, and its scores are reported beside the Claude Code judge's, never mixed with gpt-6-astra's. The 50 or so
+gpt-6-astra judgments already made on the test set 2 version 3 packets are kept and not used.
+
+## 2026-11-11: dig then reason with the status check: the app default, and its test (Hatem: "make it the default in the app. combine it with the status check and test it properly")
+
+Fixed before any run of the combination. **The system:** one server holds versions 1 and 3; version 1 writes the
+brief, frame, status, status-reading and evidence stages, version 3 every later stage (route
+`default=1,brief=0,frame=0,status=0,status_reading=0,evidence=0`), with the status check on (final rule of 17:55).
+- **Development first** (15 cases, 3 attempts, the two-adapter server): the combination, compared with the judged
+  arms of the switching test (v1, v3, dig_then_reason without the status check). A check that the combination runs,
+  not a selection: the rule and the status design are already fixed.
+- **Test: test set 2** (12 companies, 24 cases, 3 attempts, 72 runs per arm). No fresh held-out companies exist and
+  building a third set takes about a day, so test set 2 is used, with this stated: the routing rule was chosen on
+  development only and the status check was designed on development and Aquaporin (final test), so nothing in the
+  system was selected on test set 2; but test set 2 has been run before (v1, base, v3), and we know v3 scores higher
+  than v1 there. Arms run now: `combined` (the system) and `dig` (the route without the status check, to separate the
+  two changes). Compared with the frozen base, v1 and v3 runs of the same cases and attempts.
+  Primary: combined minus v1, paired, mean of the Claude Code and gpt-6-sol judges, 95% case-cluster bootstrap, all
+  five arms judged together blind. Also: combined minus v3, combined minus dig, finished runs, refusals.
+- **Final test, secondary and labelled:** the same two arms on the 16 cases; Aquaporin informed the status check, so
+  its numbers there are a diagnostic of the fix (reads the insolvency records, what it recommends), not a test.
+- Whatever the result, version 1's frozen results stand; the paper reports this as a system built after them.
+
+## 2026-11-11: teacher run stopped; Unsloth fair-test result
+
+- **Teacher run with the status check stopped before it produced data** (Hatem, 19:25: "no need for the new data
+  generation with the teacher. stop it and let's start finalizing stuff"). Jobs 755231 (40 GB worker, still downloading
+  the model) and 755090 cancelled. No version 4 is trained for the submission; the status check is evaluated at run
+  time with versions 1 and 3.
+- **Unsloth, 60 steps on 240 rows, same LoRA and seed (job 755239):** median seconds per step after step 10: current
+  trainer 5.87; Unsloth 4.50 with its offloading checkpointing and 4.50 with standard checkpointing (23% faster).
+  Peak memory 11.6 GB against 8.1 and 8.9. Losses agree to within 0.003 at the steps compared. The 12-step test above
+  was dominated by start-up. A future training run can use it; none is planned before the submission.
+
+## 2026-11-11 (22:30): version 3 on test set 2 with the gpt-6-sol judge; combined-system runs finished, judging started
+
+- **Version 3 on test set 2, two judges (exploratory; base, v1 and v3 judged together blind, 72 runs per arm).**
+  Claude Code judge: base 0.49, v1 0.86, v3 1.22. gpt-6-sol: base 0.63, v1 1.27, v3 1.74. Mean of judges: base 0.56,
+  v1 1.06, v3 1.48; v3 minus v1 +0.42 [0.24, 0.60] (71 pairs, 24 cases), v3 minus base +0.92 [0.82, 1.02], v1 minus
+  base +0.49 [0.29, 0.69]. Judges: Spearman 0.93 on 215 runs, mean absolute difference 0.36. v3 is higher than v1 at
+  10 of 12 companies (mettler -0.10, tennant -0.07). Reports: `reports/judge/test2_v3/report_claudecode_codexsol_*.json`.
+  Sol on the final-test v3 packets stands at 94 of 135 (usage limit); it continues hourly.
+- **Combined system, runs done** (jobs 755268, 755269, 755270, 755289, 755347, revision 64975a1). Finished runs, before
+  any judging: test set 2 combined 37 of 72, dig 43 of 72; final test combined 27 of 48, dig 27 of 48; development
+  combined 20 of 45. Every combined run called the status check (72, 48 and 45). Aquaporin (diagnostic, 12 runs per
+  arm): combined finished 5, 3 "do not invest" and 2 "invest"; dig finished 8, 7 "invest" and 1 "do not invest".
+- **Judging as planned:** `reports/judge/system_test2` (342 packets from 360 runs) and `reports/judge/system_final`
+  (231 from 240): base, v1, v3, combined and dig together, blind, keys outside the repository until both judges end.
+  Claude Code judge first, then gpt-6-sol through `experiments/codex_judge/run.py system_test2 system_final`.

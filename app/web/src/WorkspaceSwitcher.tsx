@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Icon } from './components/Icon.tsx';
 import { shortCompany } from './labels.ts';
 import type { Workspace } from './types.ts';
@@ -19,7 +20,7 @@ export function WorkspaceSwitcher({ spaces, current, onChoose }: { spaces: Works
   }, [open]);
   if (!active) return null;
   const mark = (w: Workspace) => <span className="ws-mark" aria-hidden="true">{shortCompany(w.company).charAt(0)}</span>;
-  if (spaces.length === 1) return <span className="ws-current single">{mark(active)}{shortCompany(active.company)}</span>;
+  if (spaces.length === 1) return <Link to="/companies" className="ws-current single">{mark(active)}{shortCompany(active.company)}</Link>;
   return (
     <div className="ws-switcher" ref={box}>
       <button type="button" className="ws-current" aria-haspopup="listbox" aria-expanded={open} onClick={() => setOpen(!open)}>
@@ -35,6 +36,7 @@ export function WorkspaceSwitcher({ spaces, current, onChoose }: { spaces: Works
               </button>
             </li>
           ))}
+          <li className="ws-menu-foot"><Link to="/companies" onClick={() => setOpen(false)}><Icon name="list" size={14} /> Browse all companies</Link></li>
         </ul>
       ) : null}
     </div>

@@ -1,0 +1,152 @@
+{
+  "packet_id": "f7c235a746447ed3",
+  "packet_sha256": "cbc34f53aaa8655affda7460143223dba62e07859fb5f6811c424d514386ea52",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"f7c235a746447ed3\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A1\"], \"reason\": \"A1 lists three obvious alternatives: no expansion, limited and full differentiation. The objective is garbled: it says the existing products are 'for individual buyers', but the case says they serve construction professionals. One constraint, 'No expansion of existing product lines or customer groups', contradicts the question being asked. A1 does correctly label the budget and time limit as analyst assumptions. It does not separate the objective from the suggested solution, and it does not identify an existing direct or homeowner channel, even though kingspan-direct-2011 and kingspan-homeowner-hub appear in A2's results.\"}, \"causal_mechanism\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\"], \"reason\": \"T1 names a benefit (sales and market share) and gives a generic driver: homeowners are increasingly aware of savings. It never says what specific use case or proposition would make homeowners choose Kingspan over the trade channel. It also never explains how a consumer proposition would capture value beyond existing sales. The opening claim, 'already widely adopted by individual home owners in Ireland', is stated as fact without support.\"}, \"distinct_theories\": {\"status\": \"scored\", \"score\": 0, \"event_ids\": [\"A4\"], \"reason\": \"Only one theory (T1) was produced. There are no rival explanations.\"}, \"assumptions_predictions\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A4\"], \"reason\": \"Assumptions and predictions are stated but vague. Examples are 'Irish market is open to new products' and 'Increased sales... Improved brand awareness'. No observable threshold, comparison or failure condition is given that would put T1 in trouble.\"}, \"evidence_judgement\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A5\", \"A6\"], \"reason\": \"Searches returned sources, but the run stopped (A6) before any source was assessed, classified or limited. Some returned IDs (kingspan-ie-applications, kingspan-homeowner-diy) are not in the supplied dossier.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A5\", \"A6\"], \"reason\": \"A5 searches for independent adoption studies, but no results were reported or weighed before the stop at A6. No search against T1 was completed.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"The run stopped before any test was proposed or declined.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions. No update was scheduled (scheduled_update false).\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A6\"], \"reason\": \"A6: 'The investigation stopped before a recommendation (repeated errors).'\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A6\"], \"reason\": \"The episode ended with repeated errors and no recommendation. Evidence assessment, challenge and experiment design were never reached.\"}, {\"kind\": \"unsupported_inference\", \"event_ids\": [\"A4\"], \"reason\": \"T1 asserts as fact that Kingspan's products are 'already widely adopted by individual home owners in Ireland'. No supplied source supports this. kingspan-direct-2011 only shows that UK mainland delivery ordering exists. kingspan-homeowner-hub is a company claim of advice content, not adoption. kingspan-rte-residential mentions only a 'prospect of some pickup in residential activity'. This is a hypothesis stated as fact.\"}, {\"kind\": \"other\", \"event_ids\": [\"A1\"], \"reason\": \"The framing misstates the question: it describes existing products as 'for individual buyers'. It also imposes a constraint, 'No expansion of existing product lines or customer groups', that contradicts the decision under study.\"}, {\"kind\": \"other\", \"event_ids\": [\"A2\", \"A3\", \"A5\"], \"reason\": \"Searches cite source IDs (kingspan-ie-applications, kingspan-homeowner-diy) that are absent from the supplied dossier, so their content cannot be verified.\"}], \"suitable_for_training\": false, \"screen_reason\": \"Reject. The episode is incomplete: it stopped at A6 with no recommendation, and incomplete episodes are excluded. It also contains a material unsupported inference in A4 (widespread Irish homeowner adoption stated as fact) and a self-contradictory framing in A1. Only one theory was produced, and evidence assessment, challenge, experiment design and recommendation were not reached. These are reached-stage scores from an automated instrument, not a judgement of commercial correctness.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4121
+      },
+      "cache_creation_input_tokens": 4121,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 2465,
+      "output_tokens_details": {
+        "thinking_tokens": 813
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.069921,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "6f64d87470d1f6fb74d0490f02a4391de8c206f4b9f09721724f62f31a2de069",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "f7c235a746447ed3",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 lists three obvious alternatives: no expansion, limited and full differentiation. The objective is garbled: it says the existing products are 'for individual buyers', but the case says they serve construction professionals. One constraint, 'No expansion of existing product lines or customer groups', contradicts the question being asked. A1 does correctly label the budget and time limit as analyst assumptions. It does not separate the objective from the suggested solution, and it does not identify an existing direct or homeowner channel, even though kingspan-direct-2011 and kingspan-homeowner-hub appear in A2's results."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "T1 names a benefit (sales and market share) and gives a generic driver: homeowners are increasingly aware of savings. It never says what specific use case or proposition would make homeowners choose Kingspan over the trade channel. It also never explains how a consumer proposition would capture value beyond existing sales. The opening claim, 'already widely adopted by individual home owners in Ireland', is stated as fact without support."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 0,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "Only one theory (T1) was produced. There are no rival explanations."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "Assumptions and predictions are stated but vague. Examples are 'Irish market is open to new products' and 'Increased sales... Improved brand awareness'. No observable threshold, comparison or failure condition is given that would put T1 in trouble."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A5",
+          "A6"
+        ],
+        "reason": "Searches returned sources, but the run stopped (A6) before any source was assessed, classified or limited. Some returned IDs (kingspan-ie-applications, kingspan-homeowner-diy) are not in the supplied dossier."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A5",
+          "A6"
+        ],
+        "reason": "A5 searches for independent adoption studies, but no results were reported or weighed before the stop at A6. No search against T1 was completed."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "The run stopped before any test was proposed or declined."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions. No update was scheduled (scheduled_update false)."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "A6: 'The investigation stopped before a recommendation (repeated errors).'"
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A6"
+        ],
+        "reason": "The episode ended with repeated errors and no recommendation. Evidence assessment, challenge and experiment design were never reached."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "T1 asserts as fact that Kingspan's products are 'already widely adopted by individual home owners in Ireland'. No supplied source supports this. kingspan-direct-2011 only shows that UK mainland delivery ordering exists. kingspan-homeowner-hub is a company claim of advice content, not adoption. kingspan-rte-residential mentions only a 'prospect of some pickup in residential activity'. This is a hypothesis stated as fact."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The framing misstates the question: it describes existing products as 'for individual buyers'. It also imposes a constraint, 'No expansion of existing product lines or customer groups', that contradicts the decision under study."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A2",
+          "A3",
+          "A5"
+        ],
+        "reason": "Searches cite source IDs (kingspan-ie-applications, kingspan-homeowner-diy) that are absent from the supplied dossier, so their content cannot be verified."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "Reject. The episode is incomplete: it stopped at A6 with no recommendation, and incomplete episodes are excluded. It also contains a material unsupported inference in A4 (widespread Irish homeowner adoption stated as fact) and a self-contradictory framing in A1. Only one theory was produced, and evidence assessment, challenge, experiment design and recommendation were not reached. These are reached-stage scores from an automated instrument, not a judgement of commercial correctness."
+  },
+  "seconds": 21.431
+}

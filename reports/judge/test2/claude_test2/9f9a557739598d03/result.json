@@ -1,0 +1,136 @@
+{
+  "packet_id": "9f9a557739598d03",
+  "packet_sha256": "88fc662851e9305c547af736f0e86e1c1e2d22a2c4c7a2504e316a50819ed2fe",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\": \"9f9a557739598d03\", \"dimensions\": {\"problem_framing\": {\"status\": \"scored\", \"score\": 1, \"event_ids\": [\"A1\"], \"reason\": \"A1 lists three obvious options: no expansion, limited differentiation and full differentiation. It correctly labels the 20,000 euro budget and 12-week limit as analyst assumptions. However, the objective misstates the premise: it says the existing products are 'for individual buyers', but the case says they are for construction professionals. It also sets the constraint 'No expansion of existing product lines or customer groups', which contradicts the question it is framing, since that question is about reaching consumers. It does not separate the objective from a suggested solution, and it corrects no false premise. It also ignores the direct-ordering channel later surfaced in A2/A3 (kingspan-direct-2011: 'Buyers can access the website and order products with delivery to any mainland UK address').\"}, \"causal_mechanism\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A4\"], \"reason\": \"No theory or mechanism was stated before the run stopped at A4 after repeated errors.\"}, \"distinct_theories\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A4\"], \"reason\": \"No theories were generated before termination at A4.\"}, \"assumptions_predictions\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A4\"], \"reason\": \"No theory-linked assumptions or predictions were reached before A4.\"}, \"evidence_judgement\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\"], \"reason\": \"Searches A2 and A3 returned source IDs but no assessment of any source followed. kingspan-homeowner-hub and kingspan-ie-applications appear only as search hits and have no excerpts in the dossier. kingspan-rte-residential concerns divisional outlook and a possible pickup in residential activity, not consumer demand. None of this was evaluated before A4.\"}, \"seeking_challenge\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A2\", \"A3\", \"A4\"], \"reason\": \"A2 and A3 are neutral fact-finding searches. No favoured theory existed to search against before the stop at A4.\"}, \"experiment_design\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A4\"], \"reason\": \"No test was proposed or declined before termination.\"}, \"revision\": {\"status\": \"not_applicable\", \"score\": null, \"event_ids\": [], \"reason\": \"Revision is excluded from packet.applicable_dimensions, with scheduled_update false and update_delivered false.\"}, \"recommendation\": {\"status\": \"not_reached\", \"score\": null, \"event_ids\": [\"A4\"], \"reason\": \"A4: 'The investigation stopped before a recommendation (repeated errors).' Under the all-case composite this contributes zero.\"}}, \"red_flags\": [{\"kind\": \"incomplete\", \"event_ids\": [\"A4\"], \"reason\": \"The episode terminated after repeated errors with no theories, tests or recommendation.\"}, {\"kind\": \"other\", \"event_ids\": [\"A1\"], \"reason\": \"The framing misstates the case premise by describing the existing products as for individual buyers rather than construction professionals. It also imposes a 'no expansion of ... customer groups' constraint that contradicts the question under investigation.\"}], \"suitable_for_training\": false, \"screen_reason\": \"The episode is incomplete: it stopped at A4 before any theory, evidence assessment, test or recommendation. The one reached stage (A1) contains a misstated premise and a self-contradictory constraint. Incomplete episodes must be rejected.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 3495
+      },
+      "cache_creation_input_tokens": 3495,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 1671,
+      "output_tokens_details": {
+        "thinking_tokens": 440
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.050911,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "8057377788433c9b5dd1738d563d0c751a3d6829e891fd49825bc9d5db4b1217",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "9f9a557739598d03",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 lists three obvious options: no expansion, limited differentiation and full differentiation. It correctly labels the 20,000 euro budget and 12-week limit as analyst assumptions. However, the objective misstates the premise: it says the existing products are 'for individual buyers', but the case says they are for construction professionals. It also sets the constraint 'No expansion of existing product lines or customer groups', which contradicts the question it is framing, since that question is about reaching consumers. It does not separate the objective from a suggested solution, and it corrects no false premise. It also ignores the direct-ordering channel later surfaced in A2/A3 (kingspan-direct-2011: 'Buyers can access the website and order products with delivery to any mainland UK address')."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "No theory or mechanism was stated before the run stopped at A4 after repeated errors."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "No theories were generated before termination at A4."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "No theory-linked assumptions or predictions were reached before A4."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4"
+        ],
+        "reason": "Searches A2 and A3 returned source IDs but no assessment of any source followed. kingspan-homeowner-hub and kingspan-ie-applications appear only as search hits and have no excerpts in the dossier. kingspan-rte-residential concerns divisional outlook and a possible pickup in residential activity, not consumer demand. None of this was evaluated before A4."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4"
+        ],
+        "reason": "A2 and A3 are neutral fact-finding searches. No favoured theory existed to search against before the stop at A4."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "No test was proposed or declined before termination."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions, with scheduled_update false and update_delivered false."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "A4: 'The investigation stopped before a recommendation (repeated errors).' Under the all-case composite this contributes zero."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A4"
+        ],
+        "reason": "The episode terminated after repeated errors with no theories, tests or recommendation."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The framing misstates the case premise by describing the existing products as for individual buyers rather than construction professionals. It also imposes a 'no expansion of ... customer groups' constraint that contradicts the question under investigation."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete: it stopped at A4 before any theory, evidence assessment, test or recommendation. The one reached stage (A1) contains a misstated premise and a self-contradictory constraint. Incomplete episodes must be rejected."
+  },
+  "seconds": 14.599
+}

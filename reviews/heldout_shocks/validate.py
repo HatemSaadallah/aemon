@@ -3,9 +3,9 @@ from pathlib import Path
 from types import SimpleNamespace
 parser=argparse.ArgumentParser();parser.add_argument('--candidate',type=Path,required=True);parser.add_argument('--output',type=Path);parser.add_argument('--repo',type=Path,default=Path.cwd());parser.add_argument('--baseline-revision',default='0311430');args=parser.parse_args()
 ROOT=args.repo.resolve();sys.path.insert(0,str(ROOT/"src"))
-import strategy_agent.env.cases as cases_module
-from strategy_agent.env.checks import _affected
-from strategy_agent.env.tools import Investigation
+import aemon.environment.cases as cases_module
+from aemon.environment.checks import _affected
+from aemon.environment.tools import Investigation
 PATH=args.candidate
 data=json.loads(PATH.read_text());original=json.loads(subprocess.check_output(['git','show',args.baseline_revision+':strategy/dossier/cases_heldout.json'],cwd=ROOT,text=True))
 checks={}

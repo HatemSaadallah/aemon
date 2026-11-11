@@ -1,0 +1,66 @@
+\section{Introduction}\label{sec:intro}
+
+Ask a language model whether a manufacturer should take its technology to a new kind of customer, say whether a maker
+of professional laundry machines should build something for households, and it will usually answer with consulting
+prose: a list of factors, a confident market size with no source, and evidence collected only for the answer it started
+with. Good strategy work looks different. It frames the decision and its real alternatives, including doing nothing;
+it states rival theories of \emph{who} would change their behaviour and \emph{why}; it derives predictions that tell
+those theories apart; it weighs quoted evidence for and against each and looks hardest for evidence against its
+favourite; when information is worth its cost it proposes a test with a decision rule fixed in advance; and it revises
+when new evidence arrives \citep{camuffo2020scientific,camuffo2024theory}.
+
+This paper asks whether that procedure can be \emph{taught} to a small open model that runs on a single GPU, by
+distilling the tool-using investigations of a much larger model inside an environment that enforces the procedure's
+form. Our answer is a qualified yes. On a frozen test of four companies never used for training or selection, the
+fine-tuned 3.35-billion-parameter student (Tiny Aya Global with a LoRA adapter) scores 1.48 on a blind nine-dimension
+rubric against 0.65 for the same base model under its best prompt, a paired difference of $+0.83$ with a 95\%
+case-cluster bootstrap interval of $[0.69, 0.97]$, and it finishes 28 of 48 investigations against 4. An investigation
+costs about \$0.03 of rented GPU time, against \$0.25 measured for Claude Opus on the same task.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+  \item \textbf{An executable investigation environment} (\cref{sec:env}): twelve guarded tools over a dossier of
+        1{,}334 verified public records, a stage controller that offers only the tools of the current step, and
+        executable checks. Quotes must match a source word for word, theories must give distinct causal explanations, and
+        a simulated what-if result may change a belief but can never support a recommendation about real demand.
+  \item \textbf{A distillation pipeline with provenance} (\cref{sec:data,sec:training}): a Command A+ teacher runs the
+        same environment; only investigations that replay exactly and reach an accepted finish become training rows,
+        each bound by hash to its teacher episode and weights; training uses AgentTune's distillation trainer with loss
+        on the target tool call only, followed by a conversion gate that checks the deployed GGUF adapter against the
+        trained one.
+  \item \textbf{A pre-registered evaluation} (\cref{sec:eval,sec:results}): a held-out company split, two LLM judges
+        each qualified on matched sound and flawed investigations, blinded packets with the key kept apart, a statistic
+        and rule fixed before the run, and a final test run exactly once.
+  \item \textbf{An honest diagnosis and iteration} (\cref{sec:diagnosis,sec:iteration}): where the agent still fails,
+        why the training data explains it, and what environment changes and targeted teacher examples did and did not
+        fix.
+  \item \textbf{A usable product} (\cref{sec:app}): Aemon, which runs the agent locally for people who are
+        not analysts, with answer-first results, charts counted from the record, follow-up questions grounded in the
+        investigation's sources, memory, attachments and PDF reports.
+\end{enumerate}
+All code, the model and a redacted copy of the data are public.\footnote{Model:
+\url{https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent}; data:
+\url{https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations}.}
+
+\section{Related work}\label{sec:related}
+\paragraph{Tool-using language agents.} Interleaving reasoning with actions \citep{yao2023react} and teaching models to
+call tools \citep{schick2023toolformer} made language agents practical. Fine-tuning small models on agent trajectories
+from stronger models improves their tool use \citep{chen2023fireact,zeng2023agenttuning}. Our setting differs in that the
+task has no single correct answer: quality lies in the \emph{process} (framing, rival theories, evidence handling,
+experiment design, revision), so the environment must enforce form and the evaluation must judge substance.
+
+\paragraph{Distillation.} Knowledge distillation trains a small student on a larger teacher's outputs
+\citep{hinton2015distilling}. We distil at the level of tool calls: each training row is the context the teacher saw and
+the one call it made, with the loss on that call only, and with parameter-efficient adapters \citep{hu2022lora,peft}
+trained through AgentTune \citep{agenttune} on TRL \citep{trl}.
+
+\paragraph{Structured generation.} Constraining decoding to a schema guarantees well-formed calls
+\citep{willard2023outlines}. We constrain each turn to the tools open at the current step and to identifiers that exist,
+which removes a class of failures; we also found a cost, a length cap that cut fields mid-sentence (\cref{sec:diagnosis}).
+
+\paragraph{LLM judges.} Strong models are useful but imperfect judges \citep{zheng2023judging}. We qualify each judge on
+matched sound and flawed investigations before using it, blind every packet, and report both judges and their agreement.
+
+\paragraph{Strategy as science.} \citet{camuffo2020scientific} found in a randomised trial with start-ups that founders
+taught to treat decisions as theory-driven experiments made better decisions; \citet{camuffo2024theory} formalise a
+theory as a restriction on beliefs. We take their procedure as the target behaviour (\cref{sec:theory}).

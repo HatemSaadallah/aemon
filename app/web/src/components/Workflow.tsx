@@ -147,7 +147,7 @@ export function WorkflowCanvas({ record, question, selected, onSelect, header }:
         )) : null}
         <Link />
         {running ? (
-          <div className="wf-card ghost"><span className="wf-icon"><span className="dots"><span /><span /><span /></span></span><span className="wf-text"><span className="wf-title">{record ? 'Thinking about the next step' : 'Starting the investigation'}</span><span className="wf-sub">Each call is checked by the harness before it runs</span></span></div>
+          <div className="wf-card ghost"><span className="wf-icon"><span className="dots"><span /><span /><span /></span></span><span className="wf-text"><span className="wf-title">{record ? 'Thinking about the next step' : 'Starting the investigation'}</span><span className="wf-sub">Each step is checked before it counts</span></span></div>
         ) : record?.final ? (
           <div className="wf-card outcome good"><span className="wf-icon"><Icon name="spark" size={18} /></span><span className="wf-text"><span className="wf-kicker">Outcome · Recommendation</span><span className="wf-title">{text(record.final.recommendation)}</span>{record.final.next_action ? <span className="wf-sub">Next: {text(record.final.next_action)}</span> : null}</span></div>
         ) : (

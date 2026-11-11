@@ -1,0 +1,83 @@
+{
+ "reviewer": "deepseek-v4-pro",
+ "examples": 6,
+ "agree": 4,
+ "human_keeps_kept": 0,
+ "qualified": false,
+ "rows": [
+  {
+   "case": "andis-new-evidence-irrelevant",
+   "human": false,
+   "llm": false,
+   "problems": [
+    "Decision rule jumps straight to 'recommend developing' a premium or convenience at-home proposition from one survey/deposit experiment, rather than a bounded next step such as refining the concept or running a validated pilot.",
+    "The €5 refundable deposit is a token commitment for a haircutting kit, and the follow-up only asks intent to keep the deposit, so the test is effectively survey-only stated preference (choice + WTP + intent) without real purchase behavior.",
+    "The arms are described mainly as premium-branded vs convenience-branded kits, i.e., positioning/branding differences, with no same-price control or current at-home-line control, so the design cannot separate proposition value from framing.",
+    "Prediction thresholds do not match the decision rule: T1/T2 predict WTP gaps of 20%/15%, but the rule triggers at +10%, meaning the rule could recommend development on results that neither theory predicted.",
+    "The sample is U.S. adults but costs and deposit are in euros (€4,500, €5, €20,000), and the justification asserts '42% market growth' without tying it to any named source read."
+   ],
+   "error": null
+  },
+  {
+   "case": "cotral-new-evidence-irrelevant",
+   "human": false,
+   "llm": false,
+   "problems": [
+    "The test arms differ only in framing/message of the same product at the same price, with no same-price control arm (e.g., a neutral, unframed custom-moulded earplug offer). It can therefore measure which label performs better, but cannot show whether a differentiated consumer proposition itself drives adoption versus the existing offering.",
+    "The decision rule says 'proceed to develop differentiated propositions' for one or both segments on a 30% deposit threshold, which jumps to developing a proposition rather than a bounded next step.",
+    "The decision rule gates on absolute deposit rates (≥30% for matched framing) rather than on the theory-discriminating comparison described in the measure (framed vs opposite framing), so the test's stated discrimination does not actually drive the decision.",
+    "A refundable €50 deposit is a soft commitment signal for a €150 purchase; refundability weakens the behavioral evidence the test claims to produce."
+   ],
+   "error": null
+  },
+  {
+   "case": "arri-base",
+   "human": false,
+   "llm": false,
+   "problems": [
+    "The proposed test is survey-only stated preference: WTP, 7-point purchase intent, and recommendation Likert, with no behaviour, commitment, or revealed choice.",
+    "The arms differ only in framing/message of the same product (status vs necessity copy) and there is no same-price control arm, so it cannot cleanly separate status from price effects.",
+    "The decision rule jumps from a survey result directly to 'adopt T1 and recommend a differentiated premium creator proposition' or 'adopt T2 and recommend a competitively priced creator offering', which is a proposition-level go decision rather than a bounded next step.",
+    "The T1/T2 predictions partially overlap around the inconclusive zone and rely on self-reported WTP differences that would not support committing to a product proposition."
+   ],
+   "error": null
+  },
+  {
+   "case": "superior-new-evidence-irrelevant",
+   "human": true,
+   "llm": false,
+   "problems": [
+    "The two arms confound proposition with price: safety is priced at €45 and lifestyle at €55, with different absolute WTP targets (≥€45 vs ≥€55). There is no same-price control, so a WTP difference cannot be attributed cleanly to T1 vs T2, and the asymmetric thresholds bias toward the cheaper safety version.",
+    "The decision rule relies on stated WTP only and ignores the actual-purchase conversion it claims to track. The predictions mention 'conversion rate ≥ 15%' but the decision rule never uses it, so the behavioural measure does not drive the decision.",
+    "The reasoning says the test uses a 'real commitment (deposit) to capture consequential behavior rather than stated intent,' but the €20 deposit is refundable if the participant declines, and the consequential conversion data is not in the decision rule — contradicting why_next.",
+    "Prices are stated in euros for a Canadian work-glove maker (US/Canadian market), which is not grounded in any cited source or stated target market."
+   ],
+   "error": null
+  },
+  {
+   "case": "hilti-new-evidence-irrelevant",
+   "human": false,
+   "llm": false,
+   "problems": [
+    "Predictions do not discriminate: T1 and T2 both predict the Hilti premium arm will outperform the low-cost arm; T2 only claims a smaller gap, but T1 specifies no gap magnitude, so the result cannot adjudicate between the theories.",
+    "Decision rule jumps to launching: a landing-page intent/deposit result is treated as sufficient to proceed to a pilot launch of a consumer-focused product line/sub-brand, rather than a bounded next step.",
+    "Commitment is trivial and the measure is mostly stated preference: a €20 refundable deposit against a €199 tool is a token deposit, so the outcome is effectively a Likert/intent survey rather than real behaviour.",
+    "The two arms confound brand and price (Hilti at €199 vs generic at €99) with no same-price control, so any observed difference cannot be attributed to brand versus price."
+   ],
+   "error": null
+  },
+  {
+   "case": "technogym-new-evidence-irrelevant",
+   "human": true,
+   "llm": false,
+   "problems": [
+    "The two arms appear to be the same product differentiated only by positioning/messaging ('design-focused' vs 'health-focused'), with no same-price or current-offer control arm. This cannot test whether either variant beats Technogym's existing consumer offer or whether a differentiated proposition should be developed at all.",
+    "The decision rule jumps straight to 'adopt a lifestyle-centric differentiated proposition' or 'adopt a health-outcome-centric proposition' from a small mock-up test, rather than a bounded next step such as further validation or a limited pilot.",
+    "The commitment is trivial for the decision: a €50 refundable deposit is a token amount for premium fitness equipment, so deposit conversion is a weak proxy for real purchase intent.",
+    "Without a current-offer/neutral control, the relative thresholds (15pp vs 20pp) are arbitrary and the rule could lead to adopting a proposition even if both prototypes underperform the status quo."
+   ],
+   "error": null
+  }
+ ],
+ "spent_usd_estimate": 0.0526
+}

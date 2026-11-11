@@ -1,0 +1,186 @@
+fc270cb954a2 A repeated errors False 15
+fc270cb954a2 B repeated errors False 4
+fc270cb954a2 C repeated errors False 6
+fc270cb954a2 D repeated errors False 15
+fc270cb954a2 E repeated errors False 15
+fc270cb954a2 F repeated errors False 4
+1e8e670e008d A finished True 19
+1e8e670e008d B finished True 13
+1e8e670e008d C finished True 19
+1e8e670e008d D finished True 19
+1e8e670e008d E finished True 19
+1e8e670e008d F repeated errors True 16
+8cd710c1d788 A finished True 1
+8cd710c1d788 B finished True 1
+8cd710c1d788 C finished True 1
+8cd710c1d788 D finished True 1
+8cd710c1d788 E finished True 1
+8cd710c1d788 F finished True 1
+058229335737 A repeated errors False 4
+058229335737 B repeated errors False 4
+058229335737 C repeated errors False 6
+058229335737 D repeated errors False 4
+058229335737 E repeated errors False 4
+058229335737 F repeated errors False 4
+7bbf6c85a335 A turn limit False 4
+7bbf6c85a335 B turn limit False 4
+7bbf6c85a335 C repeated errors False 4
+7bbf6c85a335 D finished True 3
+7bbf6c85a335 E turn limit False 4
+7bbf6c85a335 F finished True 3
+ddd7446e810b A turn limit False 20
+ddd7446e810b B finished True 7
+ddd7446e810b C finished True 10
+ddd7446e810b D finished True 17
+ddd7446e810b E turn limit False 20
+ddd7446e810b F finished True 8
+c5ca861c286c A repeated errors False 4
+c5ca861c286c B repeated errors False 4
+c5ca861c286c C repeated errors False 4
+c5ca861c286c D repeated errors False 4
+c5ca861c286c E repeated errors False 4
+c5ca861c286c F repeated errors False 4
+6c3e6252b224 A finished True 6
+6c3e6252b224 B finished True 6
+6c3e6252b224 C repeated errors False 4
+6c3e6252b224 D finished True 6
+6c3e6252b224 E finished True 6
+6c3e6252b224 F repeated errors False 4
+fec26875e49f A repeated errors False 4
+fec26875e49f B repeated errors False 4
+fec26875e49f C repeated errors False 4
+fec26875e49f D repeated errors False 4
+fec26875e49f E repeated errors False 4
+fec26875e49f F repeated errors False 4
+c179816d7af0 A turn limit False 2
+c179816d7af0 B turn limit True 2
+c179816d7af0 C turn limit False 2
+c179816d7af0 D turn limit True 2
+c179816d7af0 E turn limit False 2
+c179816d7af0 F turn limit True 2
+1bf66800d6d1 A turn limit False 17
+1bf66800d6d1 B finished True 6
+1bf66800d6d1 C turn limit False 17
+1bf66800d6d1 D finished True 14
+1bf66800d6d1 E turn limit False 17
+1bf66800d6d1 F finished True 13
+b09f5d32ac7d A turn limit False 3
+b09f5d32ac7d B turn limit False 3
+b09f5d32ac7d C turn limit False 3
+b09f5d32ac7d D turn limit True 3
+b09f5d32ac7d E turn limit False 3
+b09f5d32ac7d F turn limit True 3
+af00af23d36c A turn limit False 5
+af00af23d36c B turn limit False 5
+af00af23d36c C turn limit False 5
+af00af23d36c D finished True 3
+af00af23d36c E turn limit False 5
+af00af23d36c F finished True 3
+2ffe3d150bd5 A turn limit False 16
+2ffe3d150bd5 B repeated errors False 4
+2ffe3d150bd5 C turn limit True 16
+2ffe3d150bd5 D finished True 13
+2ffe3d150bd5 E turn limit False 16
+2ffe3d150bd5 F finished True 7
+acf259d9d221 A turn limit False 2
+acf259d9d221 B turn limit False 2
+acf259d9d221 C turn limit False 2
+acf259d9d221 D turn limit True 2
+acf259d9d221 E turn limit False 2
+acf259d9d221 F turn limit True 2
+c55cc0fed99f A turn limit True 28
+c55cc0fed99f B repeated errors False 12
+c55cc0fed99f C turn limit False 28
+c55cc0fed99f D finished True 25
+c55cc0fed99f E turn limit True 28
+c55cc0fed99f F finished True 25
+fb2648708730 A turn limit False 39
+fb2648708730 B repeated errors True 15
+fb2648708730 C turn limit False 39
+fb2648708730 D turn limit False 39
+fb2648708730 E turn limit False 39
+fb2648708730 F repeated errors False 12
+a5ada7385b7c A turn limit True 39
+a5ada7385b7c B repeated errors True 27
+a5ada7385b7c C turn limit False 39
+a5ada7385b7c D finished True 36
+a5ada7385b7c E turn limit True 39
+a5ada7385b7c F repeated errors True 26
+afa74779c407 A repeated errors False 6
+afa74779c407 B repeated errors False 6
+afa74779c407 C turn limit False 24
+afa74779c407 D repeated errors False 6
+afa74779c407 E repeated errors False 6
+afa74779c407 F repeated errors False 16
+98c3863b255f A turn limit False 39
+98c3863b255f B repeated errors True 16
+98c3863b255f C turn limit False 39
+98c3863b255f D turn limit False 39
+98c3863b255f E turn limit False 39
+98c3863b255f F finished True 23
+3c630cfbb386 A turn limit False 25
+3c630cfbb386 B repeated errors False 4
+3c630cfbb386 C turn limit False 25
+3c630cfbb386 D turn limit False 25
+3c630cfbb386 E turn limit False 25
+3c630cfbb386 F repeated errors True 11
+60b3a6150d5f A turn limit False 34
+60b3a6150d5f B repeated errors False 14
+60b3a6150d5f C turn limit False 34
+60b3a6150d5f D turn limit False 34
+60b3a6150d5f E turn limit False 34
+60b3a6150d5f F repeated errors False 8
+1cf1950e0963 A repeated errors False 8
+1cf1950e0963 B repeated errors False 6
+1cf1950e0963 C turn limit True 33
+1cf1950e0963 D repeated errors False 8
+1cf1950e0963 E repeated errors False 8
+1cf1950e0963 F repeated errors False 7
+1be62b10fe6e A turn limit True 33
+1be62b10fe6e B repeated errors False 9
+1be62b10fe6e C turn limit False 33
+1be62b10fe6e D finished True 30
+1be62b10fe6e E turn limit True 33
+1be62b10fe6e F finished True 21
+1466398d8e20 A turn limit False 24
+1466398d8e20 B finished True 20
+1466398d8e20 C turn limit False 24
+1466398d8e20 D turn limit False 24
+1466398d8e20 E turn limit False 24
+1466398d8e20 F finished True 20
+981551fc5124 A turn limit False 20
+981551fc5124 B finished True 11
+981551fc5124 C turn limit False 20
+981551fc5124 D turn limit True 20
+981551fc5124 E turn limit False 20
+981551fc5124 F finished True 17
+b5c066d3dbd0 A turn limit False 13
+b5c066d3dbd0 B repeated errors False 4
+b5c066d3dbd0 C turn limit False 13
+b5c066d3dbd0 D turn limit False 13
+b5c066d3dbd0 E turn limit False 13
+b5c066d3dbd0 F repeated errors False 4
+342fa85dcad7 A repeated errors False 8
+342fa85dcad7 B repeated errors False 8
+342fa85dcad7 C repeated errors False 4
+342fa85dcad7 D repeated errors False 8
+342fa85dcad7 E repeated errors False 8
+342fa85dcad7 F repeated errors False 4
+e2a9f7f00ac3 A repeated errors False 4
+e2a9f7f00ac3 B repeated errors False 4
+e2a9f7f00ac3 C repeated errors False 4
+e2a9f7f00ac3 D repeated errors False 4
+e2a9f7f00ac3 E finished True 1
+e2a9f7f00ac3 F finished True 1
+c27160ef410c A repeated errors False 4
+c27160ef410c B repeated errors False 4
+c27160ef410c C repeated errors False 4
+c27160ef410c D repeated errors False 4
+c27160ef410c E finished True 1
+c27160ef410c F finished True 1
+58367cdd01f3 A repeated errors False 4
+58367cdd01f3 B repeated errors False 4
+58367cdd01f3 C repeated errors False 4
+58367cdd01f3 D repeated errors False 4
+58367cdd01f3 E finished True 1
+58367cdd01f3 F finished True 1

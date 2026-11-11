@@ -1,0 +1,16 @@
+{
+  "packet_id": "d60ebf05bb8f1dd1",
+  "packet_sha256": "f6765597da174a80a73ebbe7d47839afac9851ed270ef12e9708461711fb1a5b",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "deca9c92f4540aaaeab53d14ae9d8f3916aed5ff60ff35058ded8521fdf21ace",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "error": {
+    "type": "ModuleNotFoundError",
+    "message": "No module named 'anthropic'"
+  },
+  "seconds": 0.0
+}

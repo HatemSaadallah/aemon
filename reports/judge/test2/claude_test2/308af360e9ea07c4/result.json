@@ -1,0 +1,149 @@
+{
+  "packet_id": "308af360e9ea07c4",
+  "packet_sha256": "af4c13e6046c3c6951e293f18d2cf8c467f2d5cd150296c6a97c216661031eea",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "dd622a9d0bd146b4f0cc32fb1b524815ddbc1bbee3d2bcb466ef67a0bfd38106",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\":\"308af360e9ea07c4\",\"dimensions\":{\"problem_framing\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A1\"],\"reason\":\"A1 separates the objective (whether public evidence justifies investment) from the suggested solution. It lists rivals to a consumer proposition: B2B portfolio extension, no expansion, a route-to-market change and a different commercial segment. It also requires a demand, willingness-to-pay or route-to-market test and attention to the B2B model. It does not reach 3. No constraint is found that a good analyst would not want missed, such as Belimo's existing 2015 residential product line (belimo-achr-residential-2015). Alternative 5 also muddles 'residential building owners' into the commercial segment. The \u20ac20,000 / 12-week budget is an unlabelled framing assumption, not an observed fact. It is acceptable as a test constraint but should be read as assumed.\"},\"causal_mechanism\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A7\"],\"reason\":\"The episode stopped at A7 after framing and searches (A1\u2013A6). No theory or mechanism was stated.\"},\"distinct_theories\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A7\"],\"reason\":\"No theories were articulated before the stop at A7. The alternatives in A1 are options, not explanatory theories.\"},\"assumptions_predictions\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A7\"],\"reason\":\"No theory-linked assumptions or predictions were stated before A7.\"},\"evidence_judgement\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A2\",\"A3\",\"A4\",\"A5\",\"A6\",\"A7\"],\"reason\":\"A2\u2013A6 only list retrieved source IDs. No source was assessed. For example, the episode never notes that belimo-airthings-consumer-decline describes Airthings' consumer revenues and that belimo-danfoss-ally is Danfoss marketing copy, neither about Belimo demand. It stopped at A7.\"},\"seeking_challenge\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A3\",\"A4\",\"A5\",\"A6\",\"A7\"],\"reason\":\"No favoured theory existed to challenge. A3\u2013A6 are near-duplicate demand searches returning the same sources, and the run halted at A7 before any challenge stage.\"},\"experiment_design\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A1\",\"A7\"],\"reason\":\"A1 states only a budget constraint. No test was proposed or declined before the stop at A7.\"},\"revision\":{\"status\":\"not_applicable\",\"score\":null,\"event_ids\":[],\"reason\":\"Revision is excluded from packet.applicable_dimensions. scheduled_update and update_delivered are both false.\"},\"recommendation\":{\"status\":\"not_reached\",\"score\":null,\"event_ids\":[\"A7\"],\"reason\":\"A7 records that the investigation stopped before a recommendation because of repeated errors.\"}},\"red_flags\":[{\"kind\":\"incomplete\",\"event_ids\":[\"A7\"],\"reason\":\"The episode terminated with repeated errors and has no completed recommendation. Theories, evidence assessment, tests and recommendation stages were never reached.\"},{\"kind\":\"other\",\"event_ids\":[\"A3\"],\"reason\":\"A3 reports retrieving 'belimo-airthings-q2-sentiment', which is absent from the supplied dossier. The provenance of this search result cannot be verified, though no claim was built on it.\"},{\"kind\":\"other\",\"event_ids\":[\"A1\"],\"reason\":\"The \u20ac20,000 budget and 12-week timeline are presented as constraints without being marked as assumptions. They are not observed in any source, though they were not used as evidence.\"}],\"suitable_for_training\":false,\"screen_reason\":\"The episode is incomplete (A7: stopped before a recommendation due to repeated errors). Only framing (A1) and repetitive searches (A2\u2013A6) occurred. Incomplete episodes are rejected regardless of reached-stage quality. Unreached applicable stages contribute zero to the all-case composite.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 4436
+      },
+      "cache_creation_input_tokens": 4436,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 2117,
+      "output_tokens_details": {
+        "thinking_tokens": 757
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.064536,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "de2549549e6d6e4a87e25823c23183ac697e901fa2b909bc7e32962896c988db",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "308af360e9ea07c4",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether public evidence justifies investment) from the suggested solution. It lists rivals to a consumer proposition: B2B portfolio extension, no expansion, a route-to-market change and a different commercial segment. It also requires a demand, willingness-to-pay or route-to-market test and attention to the B2B model. It does not reach 3. No constraint is found that a good analyst would not want missed, such as Belimo's existing 2015 residential product line (belimo-achr-residential-2015). Alternative 5 also muddles 'residential building owners' into the commercial segment. The \u20ac20,000 / 12-week budget is an unlabelled framing assumption, not an observed fact. It is acceptable as a test constraint but should be read as assumed."
+      },
+      "causal_mechanism": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "The episode stopped at A7 after framing and searches (A1\u2013A6). No theory or mechanism was stated."
+      },
+      "distinct_theories": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No theories were articulated before the stop at A7. The alternatives in A1 are options, not explanatory theories."
+      },
+      "assumptions_predictions": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "No theory-linked assumptions or predictions were stated before A7."
+      },
+      "evidence_judgement": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "reason": "A2\u2013A6 only list retrieved source IDs. No source was assessed. For example, the episode never notes that belimo-airthings-consumer-decline describes Airthings' consumer revenues and that belimo-danfoss-ally is Danfoss marketing copy, neither about Belimo demand. It stopped at A7."
+      },
+      "seeking_challenge": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7"
+        ],
+        "reason": "No favoured theory existed to challenge. A3\u2013A6 are near-duplicate demand searches returning the same sources, and the run halted at A7 before any challenge stage."
+      },
+      "experiment_design": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A1",
+          "A7"
+        ],
+        "reason": "A1 states only a budget constraint. No test was proposed or declined before the stop at A7."
+      },
+      "revision": {
+        "status": "not_applicable",
+        "score": null,
+        "event_ids": [],
+        "reason": "Revision is excluded from packet.applicable_dimensions. scheduled_update and update_delivered are both false."
+      },
+      "recommendation": {
+        "status": "not_reached",
+        "score": null,
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "A7 records that the investigation stopped before a recommendation because of repeated errors."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "incomplete",
+        "event_ids": [
+          "A7"
+        ],
+        "reason": "The episode terminated with repeated errors and has no completed recommendation. Theories, evidence assessment, tests and recommendation stages were never reached."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A3"
+        ],
+        "reason": "A3 reports retrieving 'belimo-airthings-q2-sentiment', which is absent from the supplied dossier. The provenance of this search result cannot be verified, though no claim was built on it."
+      },
+      {
+        "kind": "other",
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "The \u20ac20,000 budget and 12-week timeline are presented as constraints without being marked as assumptions. They are not observed in any source, though they were not used as evidence."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is incomplete (A7: stopped before a recommendation due to repeated errors). Only framing (A1) and repetitive searches (A2\u2013A6) occurred. Incomplete episodes are rejected regardless of reached-stage quality. Unreached applicable stages contribute zero to the all-case composite."
+  },
+  "seconds": 19.883
+}

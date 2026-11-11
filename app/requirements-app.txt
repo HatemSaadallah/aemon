@@ -1,0 +1,16 @@
+# Only what Aemon needs to run (no training, no CUDA), for macOS or any machine without a GPU stack.
+# Install: uv venv .venv --python 3.12 && uv pip install --python .venv/bin/python -r app/requirements-app.txt
+fastapi==0.162.0
+uvicorn==0.54.0
+pydantic==2.14.2
+starlette==1.10.0
+python-multipart==0.0.33
+orjson==3.13.0
+email-validator==2.3.0
+ddgs==9.16.1          # live web search (optional toggle)
+primp==2.0.1
+websocket-client==1.9.2   # PDF reports with page numbers
+pdfminer.six==20251230    # reading PDF attachments when pdftotext is missing
+jsonschema==4.26.0        # the agent package imports these at start-up
+tenacity==9.2.1
+python-dotenv==1.2.4

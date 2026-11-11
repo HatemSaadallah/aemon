@@ -1,0 +1,16 @@
+{"judge": "codex", "packet": "1f89b257a82cb71f", "valid": false}
+{"judge": "codex", "packet": "061fc7d97152ae35", "valid": false}
+{"judge": "codex", "packet": "f6f10f8ddb0fe86c", "valid": false}
+{"judge": "codex", "packet": "e57a7c62996d13f5", "valid": false}
+{"judge": "codex", "packet": "b129cd70c8f8049a", "valid": false}
+{"judge": "codex", "packet": "499ceb54c2becdbd", "valid": false}
+{"judge": "codex", "packet": "f7c235a746447ed3", "valid": false}
+{"judge": "codex", "packet": "e0b0ce641fb43e84", "valid": false}
+{"judge": "codex", "packet": "6374a4f43fce1bcf", "valid": false}
+{"judge": "codex", "packet": "a659aedf342f23b9", "valid": false}
+{"judge": "codex", "packet": "00c5dd2f7f0beeea", "valid": false}
+{"judge": "codex", "packet": "48e13b82b08d768f", "valid": false}
+{"judge": "codex", "packet": "1e0d7d5585bfca2d", "valid": false}
+{"judge": "codex", "packet": "7336d2964efe71fa", "valid": false}
+{"judge": "codex", "packet": "2faa2c10f035d8d6", "valid": false}
+{"predictions": "/home/USER/lexsi-backup/judge_results/test2/codex_test2/predictions.jsonl", "diagnostic_only": false}

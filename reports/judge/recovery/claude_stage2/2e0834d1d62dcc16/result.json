@@ -1,0 +1,168 @@
+{
+  "packet_id": "2e0834d1d62dcc16",
+  "packet_sha256": "10117413d80c518c4218cc3cdbff321132fcf74da4fe7be48bdf3018f31ca00f",
+  "instrument_sha256": "956833a4da4b9c4673191c1c761d3841889196c5cb9aa54c7944395fb0486059",
+  "packets_sha256": "deca9c92f4540aaaeab53d14ae9d8f3916aed5ff60ff35058ded8521fdf21ace",
+  "prompt_sha256": "3991e053cafa31176de600e0230e8b8eac69ed8e6679e6164c3e40429c7721d5",
+  "judge": "claude",
+  "model": "claude-opus-5-5",
+  "evaluation_only": true,
+  "attempt": 1,
+  "response": {
+    "text": "{\"packet_id\":\"2e0834d1d62dcc16\",\"dimensions\":{\"problem_framing\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A1\"],\"reason\":\"A1 separates the objective (whether public evidence justifies investment) from the suggested solution. It lists real alternatives: no expansion, undifferentiated expansion, route-to-market change and redesign. It also names constraints, including current reach to individual buyers. The budget and timeline are stated as constraints, not observations. It does not correct a premise or surface a non-obvious constraint. For example, the dossier suggests Hellberg already sells a consumer-facing product (hlb-junior), so 'beyond its existing hearing-protection offering' deserved scrutiny.\"},\"causal_mechanism\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"T1 in A9 states who changes behaviour (consumers who see protection as a lifestyle or status item), why (design and comfort) and how value is captured (premium pricing, specialty or direct-to-consumer channels, repeat purchase). The chain is explicitly hypothetical, which is allowed. It never establishes how this manufacturer, with B2B channels, would reach or capture consumer buyers, so the full chain to value captured by this manufacturer is not traced.\"},\"distinct_theories\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"T1 (lifestyle accessory) and T2 (medical or health necessity) are genuine rival explanations of the same question, with different channels (specialty or direct-to-consumer versus medical supply). However, both assume latent demand exists and differ mainly in framing. No rival tests whether a differentiated proposition fails because of non-consideration or music-quality concerns, as raised by long-2024-nonusers. The set is not developed into clearly different products and customers.\"},\"assumptions_predictions\":{\"status\":\"scored\",\"score\":2,\"event_ids\":[\"A9\",\"A10\"],\"reason\":\"The predictions are observable: a willingness-to-pay premium of at least 20% or 15%, higher purchase intent, higher repeat purchase. The thresholds are unexplained assumptions. Failure of stated willingness-to-pay or purchase intent would not seriously threaten either theory, since stated willingness-to-pay is weak evidence of the mechanism. It is not clear that the theory 'would be in trouble' if these failed.\"},\"evidence_judgement\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A11\",\"A12\",\"A14\",\"A15\",\"A16\"],\"reason\":\"Company assertions are labelled as such, and A11 fairly states that hlb-head shows no consumer perception. However, A12 asserts that the Junior product description 'indicates a medical necessity for children', which the excerpt does not say. A14 marks bogoch-2005-appearance as supporting T2. Its own limit then says it does not show medical necessity, and it misreads the source: the source refers to respondents' lack of concern about appearance, not products 'perceived as non-apparent'. That finding bears on appearance, which is more relevant to T1, but it is never assessed against T1. crutzen-2021-celebrate-safe is found but never assessed. A15 ignores the music-quality concern relevant to the use case. No assessment addresses date, place or fit to the customer group.\"},\"seeking_challenge\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A13\",\"A14\",\"A15\"],\"reason\":\"A13 searches against T1, but every result is then assessed only against T2 (A14, A15). Nothing is reported about what the challenge search found or failed to find for T1. The search was done, but its findings are not fairly reported against the favoured theory.\"},\"experiment_design\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A17\"],\"reason\":\"The proposed test is affordable and within the timeline. However, the 'medical' frame ('Meeting legal safety standards') does not operationalise T2's medical-necessity mechanism. The method is called choice-based conjoint but asks a single direct willingness-to-pay question. The decision rule is garbled ('lifestyle \u2265 \u00d71.2 \u2013 medical \u2264 \u00d70.8') and truncated ('the recommendation is to \u201c'). A frame difference cannot show whether any differentiated consumer proposition is viable at all, so the test cannot properly separate the theories or inform the investment decision.\"},\"revision\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A19\",\"A20\"],\"reason\":\"A19 contradicts itself. It is labelled 'T1 kept', yet says T1 'is not supported' and replaces the claim with T2's wording. It also stretches simulated wear-frequency evidence to cover T1's willingness-to-pay and purchase predictions. A20 then repeats the pre-update recommendation unchanged, with T1 still 'likely'. The update is noted but the response is not sound.\"},\"recommendation\":{\"status\":\"scored\",\"score\":1,\"event_ids\":[\"A18\",\"A20\"],\"reason\":\"A20 commits to a limited launch while also calling for the test first. It rates T1 'likely' even though every T1 assessment was neutral (A11) and the update found T1 unsupported (A19). It assumes an 'existing Hellberg ... distribution network' reaches consumers, which no source shows. It adds musicians as a target without basis and borrows 'peace of mind' from a head-protection company claim. Reversal conditions are given but partly truncated and illogical: higher-than-expected pilot sales would shift the recommendation toward medical messaging. The position is not supported by the evidence.\"}},\"red_flags\":[{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A12\"],\"reason\":\"Claims that hlb-junior 'indicates a medical necessity'. The excerpt describes school, hobby, concert and mowing uses only.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A14\"],\"reason\":\"Labels bogoch-2005-appearance as supporting T2 while admitting it does not show medical necessity. It also recasts respondents' lack of concern about appearance as products 'perceived as non-apparent'.\"},{\"kind\":\"unsupported_inference\",\"event_ids\":[\"A18\",\"A20\"],\"reason\":\"Favours T1 as 'likely' and recommends a launch through an existing consumer distribution network with no supporting source. All T1 assessments were neutral, and the update called T1 unsupported.\"},{\"kind\":\"non_discriminating_test\",\"event_ids\":[\"A17\"],\"reason\":\"The 'medical' frame tests legal-standards messaging, not T2's mechanism. The decision rule is garbled and truncated. A stated willingness-to-pay difference between frames cannot establish whether either proposition justifies investment.\"},{\"kind\":\"unsound_revision\",\"event_ids\":[\"A19\",\"A20\"],\"reason\":\"The update is labelled 'T1 kept' but declares T1 unsupported and swaps in T2's claim. It stretches simulated wear-frequency evidence beyond T1's actual predictions. The final recommendation then ignores the update entirely.\"}],\"suitable_for_training\":false,\"screen_reason\":\"The episode is complete but contains material unsupported inferences (A12, A14, A18/A20), a non-discriminating and truncated test (A17), and an internally contradictory update that the recommendation ignores (A19, A20). Any one of these is a critical error. Scores reflect automated evaluation only, not commercial correctness.\"}",
+    "usage": {
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 0,
+        "ephemeral_5m_input_tokens": 7986
+      },
+      "cache_creation_input_tokens": 7986,
+      "cache_read_input_tokens": 0,
+      "inference_geo": "global",
+      "input_tokens": 4,
+      "output_tokens": 4510,
+      "output_tokens_details": {
+        "thinking_tokens": 2029
+      },
+      "server_tool_use": null,
+      "service_tier": "standard",
+      "speed": "standard"
+    },
+    "usd": 0.130146,
+    "requested_model": "claude-opus-5-5",
+    "resolved_model": "claude-opus-5-5",
+    "raw_response_sha256": "139e8957bffc014594e6b818ce2ee61dd31f0f7e36291719a58ec8371fbbe47a",
+    "max_tokens": 8000,
+    "temperature": null,
+    "temperature_reason": "model API rejects sampling parameters"
+  },
+  "judgment": {
+    "packet_id": "2e0834d1d62dcc16",
+    "dimensions": {
+      "problem_framing": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A1"
+        ],
+        "reason": "A1 separates the objective (whether public evidence justifies investment) from the suggested solution. It lists real alternatives: no expansion, undifferentiated expansion, route-to-market change and redesign. It also names constraints, including current reach to individual buyers. The budget and timeline are stated as constraints, not observations. It does not correct a premise or surface a non-obvious constraint. For example, the dossier suggests Hellberg already sells a consumer-facing product (hlb-junior), so 'beyond its existing hearing-protection offering' deserved scrutiny."
+      },
+      "causal_mechanism": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 in A9 states who changes behaviour (consumers who see protection as a lifestyle or status item), why (design and comfort) and how value is captured (premium pricing, specialty or direct-to-consumer channels, repeat purchase). The chain is explicitly hypothetical, which is allowed. It never establishes how this manufacturer, with B2B channels, would reach or capture consumer buyers, so the full chain to value captured by this manufacturer is not traced."
+      },
+      "distinct_theories": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "T1 (lifestyle accessory) and T2 (medical or health necessity) are genuine rival explanations of the same question, with different channels (specialty or direct-to-consumer versus medical supply). However, both assume latent demand exists and differ mainly in framing. No rival tests whether a differentiated proposition fails because of non-consideration or music-quality concerns, as raised by long-2024-nonusers. The set is not developed into clearly different products and customers."
+      },
+      "assumptions_predictions": {
+        "status": "scored",
+        "score": 2,
+        "event_ids": [
+          "A9",
+          "A10"
+        ],
+        "reason": "The predictions are observable: a willingness-to-pay premium of at least 20% or 15%, higher purchase intent, higher repeat purchase. The thresholds are unexplained assumptions. Failure of stated willingness-to-pay or purchase intent would not seriously threaten either theory, since stated willingness-to-pay is weak evidence of the mechanism. It is not clear that the theory 'would be in trouble' if these failed."
+      },
+      "evidence_judgement": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A11",
+          "A12",
+          "A14",
+          "A15",
+          "A16"
+        ],
+        "reason": "Company assertions are labelled as such, and A11 fairly states that hlb-head shows no consumer perception. However, A12 asserts that the Junior product description 'indicates a medical necessity for children', which the excerpt does not say. A14 marks bogoch-2005-appearance as supporting T2. Its own limit then says it does not show medical necessity, and it misreads the source: the source refers to respondents' lack of concern about appearance, not products 'perceived as non-apparent'. That finding bears on appearance, which is more relevant to T1, but it is never assessed against T1. crutzen-2021-celebrate-safe is found but never assessed. A15 ignores the music-quality concern relevant to the use case. No assessment addresses date, place or fit to the customer group."
+      },
+      "seeking_challenge": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A13",
+          "A14",
+          "A15"
+        ],
+        "reason": "A13 searches against T1, but every result is then assessed only against T2 (A14, A15). Nothing is reported about what the challenge search found or failed to find for T1. The search was done, but its findings are not fairly reported against the favoured theory."
+      },
+      "experiment_design": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A17"
+        ],
+        "reason": "The proposed test is affordable and within the timeline. However, the 'medical' frame ('Meeting legal safety standards') does not operationalise T2's medical-necessity mechanism. The method is called choice-based conjoint but asks a single direct willingness-to-pay question. The decision rule is garbled ('lifestyle \u2265 \u00d71.2 \u2013 medical \u2264 \u00d70.8') and truncated ('the recommendation is to \u201c'). A frame difference cannot show whether any differentiated consumer proposition is viable at all, so the test cannot properly separate the theories or inform the investment decision."
+      },
+      "revision": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A19",
+          "A20"
+        ],
+        "reason": "A19 contradicts itself. It is labelled 'T1 kept', yet says T1 'is not supported' and replaces the claim with T2's wording. It also stretches simulated wear-frequency evidence to cover T1's willingness-to-pay and purchase predictions. A20 then repeats the pre-update recommendation unchanged, with T1 still 'likely'. The update is noted but the response is not sound."
+      },
+      "recommendation": {
+        "status": "scored",
+        "score": 1,
+        "event_ids": [
+          "A18",
+          "A20"
+        ],
+        "reason": "A20 commits to a limited launch while also calling for the test first. It rates T1 'likely' even though every T1 assessment was neutral (A11) and the update found T1 unsupported (A19). It assumes an 'existing Hellberg ... distribution network' reaches consumers, which no source shows. It adds musicians as a target without basis and borrows 'peace of mind' from a head-protection company claim. Reversal conditions are given but partly truncated and illogical: higher-than-expected pilot sales would shift the recommendation toward medical messaging. The position is not supported by the evidence."
+      }
+    },
+    "red_flags": [
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A12"
+        ],
+        "reason": "Claims that hlb-junior 'indicates a medical necessity'. The excerpt describes school, hobby, concert and mowing uses only."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A14"
+        ],
+        "reason": "Labels bogoch-2005-appearance as supporting T2 while admitting it does not show medical necessity. It also recasts respondents' lack of concern about appearance as products 'perceived as non-apparent'."
+      },
+      {
+        "kind": "unsupported_inference",
+        "event_ids": [
+          "A18",
+          "A20"
+        ],
+        "reason": "Favours T1 as 'likely' and recommends a launch through an existing consumer distribution network with no supporting source. All T1 assessments were neutral, and the update called T1 unsupported."
+      },
+      {
+        "kind": "non_discriminating_test",
+        "event_ids": [
+          "A17"
+        ],
+        "reason": "The 'medical' frame tests legal-standards messaging, not T2's mechanism. The decision rule is garbled and truncated. A stated willingness-to-pay difference between frames cannot establish whether either proposition justifies investment."
+      },
+      {
+        "kind": "unsound_revision",
+        "event_ids": [
+          "A19",
+          "A20"
+        ],
+        "reason": "The update is labelled 'T1 kept' but declares T1 unsupported and swaps in T2's claim. It stretches simulated wear-frequency evidence beyond T1's actual predictions. The final recommendation then ignores the update entirely."
+      }
+    ],
+    "suitable_for_training": false,
+    "screen_reason": "The episode is complete but contains material unsupported inferences (A12, A14, A18/A20), a non-discriminating and truncated test (A17), and an internally contradictory update that the recommendation ignores (A19, A20). Any one of these is a critical error. Scores reflect automated evaluation only, not commercial correctness."
+  },
+  "seconds": 42.255
+}

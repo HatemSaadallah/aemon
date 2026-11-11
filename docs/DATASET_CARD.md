@@ -1,4 +1,4 @@
-# Dataset Card: Strategic Opportunity-Analysis Demonstrations
+# Dataset Card: Strategic Opportunity-Analysis Demonstrations (training data for Aemon)
 
 Team Two-eyed Ravens | Lexsi AI Hackathon Track 3 (Agentic Fine-Tuning) | November 2026
 
@@ -18,7 +18,7 @@ Every row in the training dataset is distilled from a permitted, open-weights te
 
 ## 2. What a Row Is
 
-Each row represents an individual supervised decision turn (`src/strategy_agent/pipeline/rows.py`). 
+Each row represents an individual supervised decision turn (`src/aemon/pipeline/rows.py`). 
 
 ### Structure
 A row consists of:
@@ -45,10 +45,10 @@ A row consists of:
 ### Context Formatting & Compact Representation
 Two representations exist in the codebase:
 1. **Full History**: Concatenates previous assistant turns and verbatim tool outputs. In initial experiments (`reports/strategy/pilot1/`), full history caused severe context bloat (over 8,192 tokens), dropping up to 68% of conclude stage rows.
-2. **Compact State (`compact=True`)**: Replaces historical message turns with a structured JSON snapshot (`state_of()` in `src/strategy_agent/agent/runner.py`). The compact state mechanically tracks current budgets, the problem frame, unread results, sources read, formulated theories, completed assessments, disconfirmation searches, proposed tests, declared positions, and revisions, alongside the latest tool output. All late-stage rows fit comfortably under 6,000 tokens (median conclude length: 4,674 tokens).
+2. **Compact State (`compact=True`)**: Replaces historical message turns with a structured JSON snapshot (`state_of()` in `src/aemon/agent/runner.py`). The compact state mechanically tracks current budgets, the problem frame, unread results, sources read, formulated theories, completed assessments, disconfirmation searches, proposed tests, declared positions, and revisions, alongside the latest tool output. All late-stage rows fit comfortably under 6,000 tokens (median conclude length: 4,674 tokens).
 
 ### Target Reply & Loss Masking
-The target is the teacher's exact JSON tool call. In `src/strategy_agent/pipeline/rows.py:labels_for()`, loss is placed strictly on the tokens of the target reply:
+The target is the teacher's exact JSON tool call. In `src/aemon/pipeline/rows.py:labels_for()`, loss is placed strictly on the tokens of the target reply:
 * All prompt and context tokens receive label `-100`.
 * The tokenizer verifies that the context token sequence forms an exact prefix of the complete prompt-plus-target sequence; any mismatch raises an immediate error.
 * Rows exceeding the 8,192-token context limit raise an `Overlength` exception and are logged by stage. They are never truncated, ensuring that late-stage decision steps are not silently clipped.
@@ -61,10 +61,10 @@ Demonstrations are generated exclusively by **Command A+**, an open-weights mode
 * **Revision:** `a26ba921242484b5e1a8ac8519169fe7421c3ab3`
 * **File Stem:** `command-a-plus-05-2026-Q4_K_M`
 * **License:** Apache 2.0 (confirmed eligible for Lexsi Track 3)
-* **Weights Checksum (Part 1 SHA-256):** `03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f` (registered in `src/strategy_agent/pipeline/provenance.py:TEACHER_WEIGHTS`)
+* **Weights Checksum (Part 1 SHA-256):** `03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f` (registered in `src/aemon/pipeline/provenance.py:TEACHER_WEIGHTS`)
 
 ### Teacher Runtime and Prompting
-The teacher runs under `llama-server` with a 16,384-token context window (`jobs/command_a_plus.sbatch`). It operates under a stricter prompt than the student (`TEACHER` in `src/strategy_agent/agent/runner.py`), which requires:
+The teacher runs under `llama-server` with a 16,384-token context window (`jobs/command_a_plus.sbatch`). It operates under a stricter prompt than the student (`TEACHER` in `src/aemon/agent/runner.py`), which requires:
 * Naming causal mechanisms rather than marketing tactics.
 * Generating measurable predictions that separate competing theories, explicitly barring generic business metrics (sales, revenue, profit, brand awareness).
 * Classifying evidence directions objectively (forbidding `supports` if the excerpt only describes company capabilities rather than customer demand).
@@ -74,17 +74,17 @@ The teacher runs under `llama-server` with a 16,384-token context window (`jobs/
 
 To prevent training data contamination and ensure repeatability:
 1. **Append-Only Manifest (`runs/teacher/provenance.jsonl`):**
-   Every completed teacher episode is recorded with its unique episode hash (`episode_id()` in `src/strategy_agent/pipeline/provenance.py`), computed from the exact turn stream, the case digest, and the protocol ID.
+   Every completed teacher episode is recorded with its unique episode hash (`episode_id()` in `src/aemon/pipeline/provenance.py`), computed from the exact turn stream, the case digest, and the protocol ID.
 2. **Deterministic Tool Replay:**
-   `src/strategy_agent/pipeline/rows.py` passes every recorded call sequence through the authoritative simulation environment (`src/strategy_agent/env/tools.py:Investigation`). Replay must consume every recorded turn, reproduce all tool outputs identically, and terminate at an accepted finish. If a call was refused or produced an error, that turn is flagged and excluded from the training target set.
+   `src/aemon/pipeline/rows.py` passes every recorded call sequence through the authoritative simulation environment (`src/aemon/env/tools.py:Investigation`). Replay must consume every recorded turn, reproduce all tool outputs identically, and terminate at an accepted finish. If a call was refused or produced an error, that turn is flagged and excluded from the training target set.
 3. **Strict Source Validation (`training_source()`):**
    Before a row is compiled, the manifest verifies that the episode was produced by a backend matching the verified SHA-256 hash in `TEACHER_WEIGHTS`.
 4. **Exclusion of Anthropic / Claude Data:**
-   Under Section D.4 of Anthropic's Commercial Terms, outputs from Claude services may not be used to train competing models. In this repository, Claude is used solely as a workflow baseline and blind evaluation judge. Claude outputs are barred by code from entering the provenance manifest or training row builders (`src/strategy_agent/pipeline/provenance.py`).
+   Under Section D.4 of Anthropic's Commercial Terms, outputs from Claude services may not be used to train competing models. In this repository, Claude is used solely as a workflow baseline and blind evaluation judge. Claude outputs are barred by code from entering the provenance manifest or training row builders (`src/aemon/pipeline/provenance.py`).
 
 ## 5. Company and Case Splits
 
-Splits are strictly partitioned by **company/cluster**, never by individual row or turn (`src/strategy_agent/pipeline/splits.py`), because turns within the same investigation share evidence and context.
+Splits are strictly partitioned by **company/cluster**, never by individual row or turn (`src/aemon/pipeline/splits.py`), because turns within the same investigation share evidence and context.
 
 ```
 Total Population: 68 Manufacturing Companies
@@ -97,7 +97,7 @@ Total Population: 68 Manufacturing Companies
 
 ### The Splits
 * **58 Training Companies:** Sourced from diverse industrial sectors (hearing protection, respiratory gear, specialty chemicals, professional tools, agricultural systems, commercial lighting, medical instruments).
-* **6 Validation Companies (`src/strategy_agent/pipeline/splits.py`):** Held out during training and used for checkpoint selection (unweighted company-balanced loss) and development evaluations. Covers 6 distinct industries and historical eras, including one case where no test is warranted (`jotun`).
+* **6 Validation Companies (`src/aemon/pipeline/splits.py`):** Held out during training and used for checkpoint selection (unweighted company-balanced loss) and development evaluations. Covers 6 distinct industries and historical eras, including one case where no test is warranted (`jotun`).
 * **4 Frozen Final-Test Companies (`docs/final_test_freeze.json`):** 
   * Aquaporin A/S (`aqp`)
   * Electrolux Professional Group (`epro`)
@@ -125,14 +125,26 @@ As detailed in `docs/RECOVERY_PILOT.md`, student models trained solely on succes
 To teach recovery:
 1. **Harvesting Failure States:** Student trajectories from training companies are parsed for states where loops begin (a refused repeat call, a third reread of one source, or two consecutive refusals).
 2. **Teacher Recovery Generation:** The state is passed to Command A+ under the `correction-v1` protocol. The teacher must provide an accepted, non-repetitive tool action advancing the stage.
-3. **Token Capping:** Recovery rows are verified through the manifest and mixed into the training pool up to a maximum share of 20% of supervised target tokens (`src/strategy_agent/training/train.py:--extra-token-share`).
+3. **Token Capping:** Recovery rows are verified through the manifest and mixed into the training pool up to a maximum share of 20% of supervised target tokens (`src/aemon/training/train.py:--extra-token-share`).
 
 ## 8. Known Limitations
 
-1. **Hindsight Bias in Historical Cases:** Certain public cases (e.g., OXO Good Grips, Tupperware, Gore-Tex) possess well-known historical outcomes. While the agent is restricted to public records available at the relevant historical or current juncture, pretraining exposure cannot be entirely ruled out.
+1. **Hindsight in Historical Cases (corrected 2026-11-10):** Certain public cases (e.g., OXO Good Grips, Tupperware, Gore-Tex) have well-known historical outcomes, and pretraining exposure cannot be ruled out. An earlier version of this card said the agent is restricted to records available at the relevant historical juncture. That is not true of the training dossiers:
+   - 247 of 807 records attached to historical training cases (31%) are published after the year the case is set in;
+   - the agent is not shown dates by default;
+   - 74 of the 158 teacher investigations used for training cite at least one such source in their recommendation.
+
+   Many of these later publications only describe earlier events, but some reveal outcomes. The audit, with a content review, is in `reports/v1_audit/`. The frozen test cases (final test, test set 2) are all present-day and are not affected.
 2. **Corporate Claims vs. True Demand:** 399 records are company claims. The environment guards against resting a theory solely on company assertions, but desk research cannot substitute for direct customer interviews.
 3. **Translation and Regional Excerpts:** Several European industrial firms (e.g., Jotun, Sievi, Cotral Lab, Simonelli) have source records translated from Norwegian, Finnish, French, or Italian, which may introduce minor stylistic variations.
 4. **Analyst Assumptions:** Search budgets, test costs, and timeline limits are stylized analyst parameters designed to force prioritization, not audited corporate balance sheet figures.
+5. **Teacher errors in the rows (audit 2026-11-10, `docs/RELIABILITY_REPORT.md`):** the rows are the teacher's decisions and carry its errors.
+   - **Invented numbers:** 74% of the teacher's final recommendations used for training contain a number found in no source read.
+   - **Evidence kinds:** they match the dossier annotation in 38% of its weighings, and `independent_study` is often given to encyclopedia, news and company-history text.
+   - **Support:** in a blind content sample of 60 weighings, 33 support the theory as stated, 20 partly and 7 not.
+
+   The replay and guard checks verify that every row is a valid, accepted call. They do not verify that its content is correct.
+6. **Evidence-kind annotation:** a blind relabelling of 60 training records agreed with the annotation on 45, with 5 more defensible. It found 3 likely errors, and 44 records use kinds the tool cannot express. The annotation is unchanged. A guide and a proposed overlay are in the code repository (`docs/EVIDENCE_KIND_GUIDE.md`).
 
 ## 9. Dataset Statistics
 
@@ -140,8 +152,8 @@ To teach recovery:
 |---|---|---|
 | Total Manufacturing Companies | 68 (64 dev + 4 frozen test) | `cases.json`, `cases_heldout.json` |
 | Development Companies | 64 | `data/dossier/cases.json` |
-| Training Companies | 58 | `src/strategy_agent/pipeline/splits.py` |
-| Validation Companies | 6 | `src/strategy_agent/pipeline/splits.py` |
+| Training Companies | 58 | `src/aemon/pipeline/splits.py` |
+| Validation Companies | 6 | `src/aemon/pipeline/splits.py` |
 | Frozen Held-out Test Companies | 4 | `docs/final_test_freeze.json` |
 | Total Development Evidence Records | 1,334 (935 verified, 399 claims) | `data/dossier/evidence.json` |
 | Held-out Evidence Records | 76 | `data/dossier/cases_heldout.json` |

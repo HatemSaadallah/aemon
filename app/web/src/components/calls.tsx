@@ -29,6 +29,7 @@ export function describe(call: Call, record: RunRecord): ReactNode[] {
   switch (call.name) {
     case 'read_brief': return ['Read the question and the budget'];
     case 'frame_problem': return ['Defined the decision', <p key="o">{text(a.objective)}</p>];
+    case 'company_status': return ["Checked the company's latest news", Array.isArray(r.results) ? <p key="r" className="muted">{r.results.length ? `Found ${(r.results as { title?: unknown }[]).map((x) => text(x.title)).join('; ')}` : 'Found nothing about the company itself'}</p> : null];
     case 'search_evidence': return [`Searched for “${text(a.query)}”`, Array.isArray(r.results) ? <p key="r" className="muted">{r.results.length ? `Found ${(r.results as { title?: unknown }[]).map((x) => text(x.title)).join('; ')}` : 'Found nothing'}</p> : null];
     case 'challenge_theory': return [`Stress-tested ${text(a.theory_id)}: searched for evidence against it, “${text(a.query)}”`];
     case 'read_source': return [<span key="s">Read <SourceTitle record={record} id={a.id} /></span>];
@@ -50,6 +51,7 @@ export function gist(call: Call, record: RunRecord): string {
   switch (call.name) {
     case 'read_brief': return 'the company, the question and the budgets';
     case 'frame_problem': return text(a.objective);
+    case 'company_status': return `the company's latest news${found}`;
     case 'search_evidence': return `“${text(a.query)}”${found}`;
     case 'challenge_theory': return `against ${text(a.theory_id)}: “${text(a.query)}”${found}`;
     case 'read_source': { const source = record.sources?.[str(a.id)]; return source ? text(source.title) : text(a.id); }
@@ -82,12 +84,24 @@ export const plural = (n: number, word: string): string => `${n} ${n === 1 ? wor
 
 // One plain line for the live activity feed while an investigation runs.
 export function activity(call: Call, record: RunRecord): string {
-  if (!call.accepted) return 'Not accepted by the checker; it changed nothing and is trying again';
+  return plainIds(activityLine(call, record));
+}
+const ATTEMPT: Record<string, string> = {
+  read_brief: 'Read the question', frame_problem: 'Define the decision', company_status: "Check the company's status", search_evidence: 'Search', challenge_theory: 'Stress-test an explanation',
+  read_source: 'Read a source', add_theory: 'Add an explanation', assess_evidence: 'Weigh a source', propose_test: 'Propose a test',
+  decline_test: 'Decline a test', state_position: 'Form a view', revise_theory: 'Update an explanation', finish: 'Finish with a recommendation',
+};
+const attempted = (call: Call): string => ATTEMPT[call.name] ?? 'Take a step';
+const plainIds = (line: string): string => line.replace(/\bT(\d+)\b/g, 'explanation $1');
+
+function activityLine(call: Call, record: RunRecord): string {
+  if (!call.accepted) return `Tried to ${attempted(call).toLowerCase()}: not accepted, so it changed nothing.`;
   const a = obj(call.arguments);
   const kind: Record<string, string> = { verified_observation: 'independent', company_claim: "company's own claim", synthetic: 'simulated what-if', web_page: 'web page' };
   switch (call.name) {
     case 'read_brief': return 'Read the question and the budget';
     case 'frame_problem': return 'Defined the decision and its alternatives';
+    case 'company_status': return "Checked the company's latest news";
     case 'search_evidence': return `Searched for “${text(a.query)}”`;
     case 'challenge_theory': return `Looked for evidence against ${text(a.theory_id)}`;
     case 'read_source': { const s = record.sources?.[str(a.id)]; return s ? `Read “${text(s.title)}” (${kind[s.class] ?? s.class})` : 'Read a source'; }
