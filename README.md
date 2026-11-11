@@ -177,10 +177,13 @@ Model: [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/Ha
 
 Dataset: [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations)
 (in the same collection):
-- the training rows and correction rows, each bound to its teacher episode and weights hash;
-- the 153 development cases, the 16 final-test cases and the dossier of 1,334 records;
-- evaluation transcripts for development and the final test, the blinded judge packets, both judges' outputs, the
-  answer key, and every report;
+- the training rows: 4,302 from the Command A+ teacher, 51 correction rows, and 3,611 (plus 262 for validation) from
+  the DeepSeek V4-Pro teacher, each bound to its teacher episode;
+- the dossier in full (1,958 records, byte-identical to the one in this repository) and every case: 207 development,
+  16 final-test and 24 second-test cases, with both freeze files;
+- the second teacher's investigations (transcripts, provenance, request logs);
+- evaluation runs, blinded judge packets, judge outputs and reports for every campaign: development, both frozen
+  tests, version 3, adapter switching and the combined system;
 - `MANIFEST.json`, with the sha256 of each private original and of its published copy.
 
 ## 7. Experiments and findings
