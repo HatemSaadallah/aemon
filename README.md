@@ -1,6 +1,6 @@
-# Aemon: a strategy-investigation agent
+# aemon
 
-*Weigh what is known. Test what is not.*
+*weigh what is known. test what is not.*
 
 Aemon is Tiny Aya Global fine-tuned on teacher investigations to investigate strategy questions the way a careful analyst would. The name is a nod to Maester Aemon, a counsellor known for sound judgement in unusual situations.
 
