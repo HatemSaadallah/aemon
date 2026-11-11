@@ -57,7 +57,7 @@ export function App() {
       <header className="top">
         <div className="brand">
           <span className="logo" aria-hidden="true">S</span>
-          <h1>Strategy Lab</h1>
+          <h1>Aemon</h1>
           {spaces && spaces.length ? <WorkspaceSwitcher spaces={spaces} current={ws} onChoose={(id) => { setWs(id); storeWorkspace(id); }} /> : null}
         </div>
         <nav className="tabs" aria-label="Sections">

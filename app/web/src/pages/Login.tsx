@@ -1,7 +1,7 @@
 import { type FormEvent, useRef, useState } from 'react';
 import { errorText } from '../api.ts';
 
-// Sign in, then go to the Strategy Lab. The session cookie is HttpOnly, so this page never sees it.
+// Sign in, then go to Aemon. The session cookie is HttpOnly, so this page never sees it.
 export function Login() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -34,7 +34,7 @@ export function Login() {
   return (
     <main className="login-main">
       <form className="card login-card" noValidate onSubmit={(e) => { void submit(e); }}>
-        <h1>Strategy Lab</h1>
+        <h1>Aemon</h1>
         <p className="muted">Sign in to investigate a company with the agent.</p>
         <label htmlFor="name">Name</label>
         <input id="name" name="name" autoComplete="username" autoCapitalize="none" spellCheck={false} required maxLength={64} autoFocus

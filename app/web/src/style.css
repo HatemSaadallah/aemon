@@ -615,7 +615,7 @@ button.ws-current:hover { border-color: var(--accent); }
 .live-toggle input { margin-top: 3px; }
 .live-toggle strong { color: var(--text, inherit); }
 
-/* ========== Strategy Lab, redesigned for non-technical readers (docs/DESIGN_RESEARCH.md) ========== */
+/* ========== Aemon, redesigned for non-technical readers (docs/DESIGN_RESEARCH.md) ========== */
 body { font-size: 15px; -webkit-font-smoothing: antialiased; }
 .small { font-size: 13px; }
 .muted { color: var(--muted); }

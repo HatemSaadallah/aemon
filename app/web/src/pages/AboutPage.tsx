@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-// Who we are: the two people behind Strategy Lab. Photos live in app/web/public/assets/team/ (served from /assets/team/);
+// Who we are: the two people behind Aemon. Photos live in app/web/public/assets/team/ (served from /assets/team/);
 // until a photo is there, the initials are shown.
 
 const PEOPLE = [
@@ -17,7 +17,7 @@ export function AboutPage() {
   return (
     <div className="page">
       <p className="eyebrow">Who we are</p>
-      <h1>The team behind Strategy Lab</h1>
+      <h1>The team behind Aemon</h1>
       <p className="lead">We are two AI researchers studying for a Master's in Artificial Intelligence. We build AI assistants that approach a business decision the way a careful strategist does: by comparing possible explanations, weighing evidence for and against each, and proposing a small test before a big commitment.</p>
       <div className="people">
         {PEOPLE.map((p) => (
@@ -28,7 +28,7 @@ export function AboutPage() {
         ))}
       </div>
       <h2>What we are building</h2>
-      <p>Strategy Lab runs a small open model on your own computer. It learned from more than 150 investigations by a much larger model, carried out under strict rules: every quote must match a real source, each explanation must say why customers would change what they do, and simulated what-if results can never count as evidence of real demand.</p>
+      <p>Aemon runs a small open model on your own computer. It learned from more than 150 investigations by a much larger model, carried out under strict rules: every quote must match a real source, each explanation must say why customers would change what they do, and simulated what-if results can never count as evidence of real demand.</p>
       <p>Our aim is an assistant that a manager can trust because they can check it: every claim points to the source it came from.</p>
     </div>
   );

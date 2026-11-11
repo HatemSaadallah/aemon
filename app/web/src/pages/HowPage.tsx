@@ -17,7 +17,7 @@ export function HowPage(_props: { onError?: (error: unknown) => void }) {
     <div className="page">
       <p className="eyebrow">How it works</p>
       <h1>Seven steps from question to recommendation</h1>
-      <p className="lead">Strategy Lab follows the habits of good strategy work: compare explanations, test them against evidence, and run a small test before a big commitment.</p>
+      <p className="lead">Aemon follows the habits of good strategy work: compare explanations, test them against evidence, and run a small test before a big commitment.</p>
       <ol className="how-steps">
         {STEPS.map((s, i) => <li key={s.label}><span className="dot">{i + 1}</span><div><h3>{s.label}</h3><p>{WHAT[i]}</p></div></li>)}
       </ol>

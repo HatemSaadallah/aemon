@@ -1,4 +1,8 @@
-# Strategy-investigation agent: Tiny Aya Global fine-tuned on teacher investigations
+# Aemon: a strategy-investigation agent
+
+*Weigh what is known. Test what is not.*
+
+Aemon is Tiny Aya Global fine-tuned on teacher investigations to investigate strategy questions the way a careful analyst would. The name is a nod to Maester Aemon, a counsellor known for sound judgement in unusual situations.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/quality-dark.png">
@@ -55,13 +59,13 @@ Every call goes through a guarded tool. A stage controller offers only the tools
 that breaks a rule (a misquoted source, a repeated search, a recommendation resting on simulated evidence) is refused
 with the reason, so the agent can correct itself.
 
-The included Strategy Lab runs the agent locally for people who are not analysts: the recommendation comes first, with
+The included Aemon runs the agent locally for people who are not analysts: the recommendation comes first, with
 how sure it is, then charts counted from the investigation (how likely each explanation was judged, the sources for and
 against each, the mix of independent sources and company claims, the test's cost against its budget), every source with
 its quote, and a full step-by-step trace. Follow-up questions are answered from the investigation's own sources, notes
 can be remembered per company or project, every report downloads as a PDF, and a mind map shows all investigations.
 
-<img alt="A finished investigation in the Strategy Lab: the recommendation, its confidence, the next step and key numbers" src="docs/figures/app-investigation.png" width="860">
+<img alt="A finished investigation in Aemon: the recommendation, its confidence, the next step and key numbers" src="docs/figures/app-investigation.png" width="860">
 
 ## How it was trained and evaluated
 
@@ -155,7 +159,7 @@ Serve the base model with the adapter (GGUF, llama.cpp), then run an investigati
 ```bash
 llama-server -m tiny-aya-global-bf16.gguf --lora tiny-aya-global-strategy-lora-bf16.gguf --port 8091 --jinja
 python -m strategy_agent.agent.runner --prompt compact --cases hellberg-base --output run.json
-./app/run.sh   # the Strategy Lab, at http://127.0.0.1:8000 (PDF reports need Chrome or Chromium)
+./app/run.sh   # Aemon, at http://127.0.0.1:8000 (PDF reports need Chrome or Chromium)
 ```
 
 ## Reproduce

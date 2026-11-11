@@ -101,7 +101,7 @@ export function TryPage({ workspace: w, onError, onMemory }: { workspace: Worksp
         else {
           await loadHistory(); await refresh();
           if (d.record) await loadDetail(id).catch(() => {});
-          if (d.status === 'finished' && !document.hasFocus()) document.title = '✓ Done · Strategy Lab';
+          if (d.status === 'finished' && !document.hasFocus()) document.title = '✓ Done · Aemon';
         }
       } catch (error: unknown) {
         await loadHistory().catch(() => {});
@@ -118,7 +118,7 @@ export function TryPage({ workspace: w, onError, onMemory }: { workspace: Worksp
     const timer = window.setTimeout(() => { refresh().catch(onError); }, 5000);
     return () => window.clearTimeout(timer);
   }, [elsewhere, refresh, onError, data]);
-  useEffect(() => { const reset = (): void => { document.title = 'Strategy Lab'; }; window.addEventListener('focus', reset); return () => window.removeEventListener('focus', reset); }, []);
+  useEffect(() => { const reset = (): void => { document.title = 'Aemon'; }; window.addEventListener('focus', reset); return () => window.removeEventListener('focus', reset); }, []);
 
   const start = async (ask: Ask, fresh = false): Promise<void> => {
     const question = text(ask.question).trim();
