@@ -71,7 +71,7 @@ likely). The scale is a signal within one run, not a calibrated probability.
 - Loss is computed only on the target tool call; the context is masked. A masking gate checks this on real rows before
   any training run.
 
-**AuditKIT** (`src/aemon/evaluation/audit.py`)
+**AuditKIT** (`src/aemon/evaluation/diagnostics/audit.py`)
 - `AgentEvalRunner`, `AgentCase`, `AgentEvalSpec` and `episode_from_eventlog` run every evaluation episode through
   AuditKIT; a `CustomPredicate` replays the full event log through our environment and requires every tool result to
   reproduce.
