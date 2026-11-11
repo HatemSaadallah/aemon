@@ -40,6 +40,10 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
   evaluation run.
 - **What was measured.** Two frozen, run-once tests on 16 unseen companies, scored blind by two LLM judges that first
   had to rank sound investigations above flawed ones.
+- **The best system so far uses two adapters.** "Dig then reason" lets version 1 gather the evidence and a second
+  adapter, trained with a second teacher, do the reasoning. It is clearly better than version 1 on the second test
+  (1.43 against 1.07, +0.36 [0.22, 0.51]) and on development, and level with it on the first test. It was built after
+  the frozen results, so we report it as a later system, not as the headline.
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured.
 - **What does not work yet.** About 4 in 10 runs stop before a recommendation, and almost none pass every mechanical
@@ -277,6 +281,9 @@ Prices: Anthropic list prices as of October 2026; GPU prices from aggregator sna
 gpu-cost.pages.dev, June 2026), which change often.
 
 ### What still fails, and why (`docs/FINAL_TEST_DIAGNOSIS.md`)
+*This is the diagnosis of version 1 on the first frozen test, written on 8 November right after it. What we did about
+each failure since then is noted in italics.*
+
 Only 1 of 48 trained runs passes every mechanical check (all-checks success was also rare in the teacher's training
 data, 1 of 223, on other cases), and 20 of 48 stop before a recommendation. One check is itself flawed: five of six predictions-overlap
 failures involved contrasting predictions that the checker incorrectly treated as identical. This does not establish
@@ -285,12 +292,14 @@ training data never showed:
 - **Never declining a test.** No training example declines one. The labels need care: for Aquaporin, declining
   follows from its insolvency and bankruptcy, recorded in the dossier, yet **no run of either arm found those records**
   and every finished trained run recommends investing. For RATIONAL the no-test label is the case author's judgement
-  and is contestable.
+  and is contestable. *Since then: the company status check below makes every run read those records.*
 - **Little what-if evidence that matters.** Only 8 of 205 teacher investigations had supporting or undermining
-  results; the student handles irrelevant evidence correctly and revises the wrong theory on Aquaporin's pair.
+  results; the student handles irrelevant evidence correctly and revises the wrong theory on Aquaporin's pair. *Still
+  open: it needs new training examples.*
 - **Simulated-only finishes.** Eight runs try to finish citing only the simulated result, are refused, and repeat until
-  the error limit.
-- **Rereading.** Nine runs reach the turn limit; in eight of them the agent rereads the same few sources.
+  the error limit. *Still open.*
+- **Rereading.** Nine runs reach the turn limit; in eight of them the agent rereads the same few sources. *Since
+  then: the app refuses a third read of one source; the evaluated setup is unchanged.*
 
 ### Second frozen test (12 new companies, 24 cases, 3 attempts, 144 runs, run once; `docs/test2_freeze.json`)
 A second test on companies never used for training, development or the diagnosis above. It was frozen before any run,
@@ -379,9 +388,9 @@ was selected on test set 2, but that set had been run before.
   runs per arm, 231 packets, Claude Code judge only so far, the second judge pending): version 1 1.18, dig then reason
   1.13, version 3 1.06, combined 1.03, base 0.54. No trained arm is distinguishable from version 1 there (combined
   −0.15 [−0.32, 0.01], dig −0.06 [−0.23, 0.12], version 3 −0.12 [−0.27, 0.02]), and most of each gap is Aquaporin.
-- **Reading across both sets:** version 1 is the evaluated model and nothing built after it is shown to beat it on
-  both. Dig then reason is the most consistent of the later systems (clearly higher on test set 2, level on the final
-  test); the status check fixes what it was built for and costs finished runs.
+- **Reading across both sets:** dig then reason is the best system we have: clearly higher than version 1 on test set
+  2 and on development, and level with it on the final test. Version 1 remains the frozen, evaluated model, and no
+  later system beats it on the final test. The status check fixes what it was built for and costs finished runs.
 
 ### A recovery controller does not fix the remaining failures
 We tested five controller-side recovery aids on development cases under a pre-registered rule (masking rereads,
