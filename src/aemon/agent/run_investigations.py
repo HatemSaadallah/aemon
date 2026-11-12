@@ -65,12 +65,12 @@ def main() -> None:
     parser.add_argument('--run-cap-usd', type=float, default=5.0, help='claude backend only')
     args = parser.parse_args()
     recovery_features = tuple(f for f in args.recovery.split(',') if f)
-    # Experimental features never run on the final test. On test set 2 only the loop guards adopted on development
-    # and the budget guard with them (DECISIONS 2026-11-12 05:20 and 06:40) may run, labelled exploratory (that set has
-    # been run before).
+    # Experimental features run on development only. On test set 2 and the final test only the loop guards adopted on
+    # development and the budget guard with them (DECISIONS 2026-11-12 05:20, 06:40 and 16:30) may run, labelled
+    # exploratory (both sets have been run before; the final test's frozen result stands).
     adopted = {'no_repeats', 'quote_menu', 'resample_repeats', 'budget'}
-    if recovery_features and args.split != 'development' and not (args.split == 'heldout2' and set(recovery_features) <= adopted):
-        parser.error('recovery features are experimental: development only, except the adopted loop guards on test set 2')
+    if recovery_features and args.split != 'development' and not (args.split in ('heldout', 'heldout2') and set(recovery_features) <= adopted):
+        parser.error('recovery features are experimental: development only, except the adopted loop guards on test set 2 and the final test')
     if args.backend == 'claude':
         respond = Claude(f'control {args.prompt}', args.run_cap_usd, args.effort)
         model, runtime = CLAUDE_MODEL, f'Anthropic API, effort {args.effort}, no seed or temperature, so runs do not repeat exactly'

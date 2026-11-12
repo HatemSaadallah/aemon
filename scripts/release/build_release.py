@@ -159,6 +159,8 @@ def main() -> None:
         'loop_guards_test2': {f'test2/{n}': n for n in ('plain.json', 'guarded.json', 'guarded_budget.json', 'key.jsonl', 'claudecode_predictions.jsonl',
                               'codexsol_predictions.jsonl', 'report_both_guarded_vs_plain.json', 'report_both_guarded_budget_vs_plain.json',
                               'report_both_guarded_budget_vs_guarded.json')} | {'test2/packets.jsonl': 'judge_packets.jsonl'},
+        'loop_guards_final': {f'final/{n}': n for n in ('plain.json', 'guarded_budget.json', 'key.jsonl', 'claudecode_predictions.jsonl',
+                              'codexsol_predictions.jsonl', 'report_both_guarded_budget_vs_plain.json')} | {'final/packets.jsonl': 'judge_packets.jsonl'},
         'loop_guards_test2_fix': {f'test2_fix/{n}': n for n in ('plain.json', 'guarded_budget.json', 'guarded_budget_fix.json', 'key.jsonl',
                                   'claudecode_predictions.jsonl', 'codexsol_predictions.jsonl', 'report_both_guarded_budget_fix_vs_plain.json',
                                   'report_both_guarded_budget_fix_vs_guarded_budget.json')} | {'test2_fix/packets.jsonl': 'judge_packets.jsonl'},

@@ -67,11 +67,12 @@ equal) and 49 of 72 runs (`reports/judge/*/paired_counts.json`, mean of two judg
   version 1 on the second test (1.43 against 1.07, +0.36 [0.22, 0.51]) and on development, and level with it on the
   first test (1.44 against 1.45, both judges); version 3 alone scores 1.48 on the second test. All of this came after the frozen results, so
   version 1 is the result we stand behind.
-- **Decoding-time loop guards: more runs finish, and both judges score them higher.** Masking repeats, picking quotes
+- **Decoding-time loop guards: more runs finish on every set, and quality rises.** Masking repeats, picking quotes
   from the source and a step-budget guard took dig then reason from 28 to 45 of 45 finished development runs (+0.19
-  [0.10, 0.30], both blind judges), and on test set 2 from 43 to 69 of 72 (+0.21 [0.09, 0.33], above zero for each
-  judge alone; +0.16 before a bug in the quote picker was fixed). Built after every frozen result, so exploratory; now the app default
-  ([Loop guards](#loop-guards-more-runs-finish-and-both-judges-score-them-higher-on-development-and-test-set-2-exploratory)).
+  [0.10, 0.30], both blind judges), on test set 2 from 43 to 69 of 72 (+0.21 [0.09, 0.33], above zero for each
+  judge alone; +0.16 before a bug in the quote picker was fixed), and on the final test from 27 to 45 of 48, where the
+  quality gain is smaller and not clearly above zero (+0.12 [0.00, 0.25]; mostly one company). Built after every frozen
+  result, so exploratory; now the app default ([Loop guards](#loop-guards-on-development-test-set-2-and-the-final-test-exploratory)).
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured.
 - **What does not work yet.** As evaluated, about 4 in 10 runs stop before a recommendation (the loop guards address
@@ -445,7 +446,7 @@ was selected on test set 2, but that set had been run before.
   on development, level with it on the final test (both judges), and not higher than version 3 alone on test set 2 (1.43 against
   1.48). The status check fixes what it was built for and costs finished runs.
 
-### Loop guards: more runs finish, and both judges score them higher, on development and test set 2 (exploratory)
+### Loop guards on development, test set 2 and the final test (exploratory)
 The last thing we built, after every frozen result. In the final-test runs of dig then reason, 233 of 274 refused
 calls were the model repeating itself: the same search again (130) or weighing a source it had already weighed for that
 theory (103). Four refusals in a row end a run, so these loops were most of the unfinished runs. Three guards act only
@@ -497,7 +498,26 @@ ones kept their judgments):
   (Claude Code +0.16 [0.05, 0.28], gpt-6-sol +0.26 [0.12, 0.40]); against the run before the fix, +0.05 [0.00, 0.13],
   all of it Belimo. The first result stays in the table; test set 2 has now also been used to find a bug, so both
   are exploratory.
-- Experiment folder: [experiments/loop_guards/](experiments/loop_guards/) (the rerun is in `test2_fix/`).
+
+**The final test** (exploratory: its frozen result stands; registered before the run,
+[DECISIONS](docs/DECISIONS.md), 12 November 16:30). The guards + budget arm with the fixed quote picker, 16 cases × 3
+attempts, judged blind by both judges with the final-test dig-then-reason run as evaluated (same route, settings and
+seeds):
+
+| Arm (48 runs each) | Finished | Refused calls per run | Finished with no invented number | Experiment check passed | Mean of judges | Claude Code | gpt-6-sol |
+|---|---|---|---|---|---|---|---|
+| Dig then reason, as evaluated | 27 | 5.7 | 25 | 9 | 1.44 | 1.13 | 1.76 |
+| + loop guards + budget guard | **45** | 2.9 | 37 | 11 | **1.56** | 1.21 | 1.91 |
+
+- **Guards + budget minus as evaluated: +0.12 [0.00, 0.25]**: the interval reaches zero. Claude Code +0.08 [−0.01,
+  0.19], gpt-6-sol +0.16 [0.01, 0.33].
+- Most of it is one company (SIMO +0.39); AQP, EPRO and RATIONAL are within ±0.04. Finishing a run is not by itself
+  better analysis: 18 more runs finish here, for a much smaller gain in judged quality than on the other two sets.
+- Judge agreement on these runs is low (Spearman 0.42).
+- Across the three sets, the guards finish more runs every time, cut refused calls by about half, and never score lower
+  on average; the quality gain is clear on development and test set 2 and uncertain on the final test.
+- Experiment folder: [experiments/loop_guards/](experiments/loop_guards/) (the test set 2 rerun is in `test2_fix/`,
+  the final test in `final/`).
 
 ### A recovery controller does not fix the remaining failures
 We tested five controller-side recovery aids on development cases under a pre-registered rule (masking rereads,

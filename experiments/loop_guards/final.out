@@ -1,0 +1,6 @@
+job ended 17:29:35
+guarded_budget {"episodes": 48, "finished": 45, "end_to_end_success": 5, "stop_reasons": {"finished": 45, "repeated errors": 3}, "refused_calls": 141, "mean_calls": 37.416666666666664}
+{"packets": 96, "runs": 96, "runs_by_arm": {"plain": 48, "guarded_budget": 48}}
+{"packets": 96, "new": 48}
+sol round 1: 48 of 48 judged
+judged 17:45:19

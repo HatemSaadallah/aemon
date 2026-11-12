@@ -1,0 +1,176 @@
+{
+ "runs": 96,
+ "arms": [
+  "guarded_budget",
+  "plain"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "plain": {
+     "mean": 1.126,
+     "n": 48
+    },
+    "guarded_budget": {
+     "mean": 1.208,
+     "n": 48
+    }
+   },
+   "by_arm_company": {
+    "plain": {
+     "aqp": 1.179,
+     "epro": 1.256,
+     "rational": 1.201,
+     "simo": 0.869
+    },
+    "guarded_budget": {
+     "aqp": 1.168,
+     "epro": 1.293,
+     "rational": 1.235,
+     "simo": 1.135
+    }
+   },
+   "by_arm_dimension": {
+    "plain": {
+     "assumptions_predictions": 1.708,
+     "causal_mechanism": 1.479,
+     "distinct_theories": 1.646,
+     "evidence_judgement": 0.604,
+     "experiment_design": 0.708,
+     "problem_framing": 1.688,
+     "recommendation": 0.583,
+     "revision": 0.75,
+     "seeking_challenge": 0.854
+    },
+    "guarded_budget": {
+     "assumptions_predictions": 1.5,
+     "causal_mechanism": 1.312,
+     "distinct_theories": 1.646,
+     "evidence_judgement": 0.458,
+     "experiment_design": 1.125,
+     "problem_framing": 1.562,
+     "recommendation": 0.938,
+     "revision": 1.417,
+     "seeking_challenge": 0.979
+    }
+   },
+   "difference": {
+    "arms": "guarded_budget minus plain",
+    "pairs": 48,
+    "cases": 16,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.081,
+     -0.011,
+     0.185
+    ],
+    "by_company": {
+     "aqp": -0.012,
+     "epro": 0.037,
+     "rational": 0.034,
+     "simo": 0.266
+    }
+   }
+  },
+  "codexsol": {
+   "by_arm": {
+    "plain": {
+     "mean": 1.756,
+     "n": 48
+    },
+    "guarded_budget": {
+     "mean": 1.912,
+     "n": 48
+    }
+   },
+   "by_arm_company": {
+    "plain": {
+     "aqp": 1.888,
+     "epro": 1.796,
+     "rational": 1.942,
+     "simo": 1.397
+    },
+    "guarded_budget": {
+     "aqp": 1.971,
+     "epro": 1.788,
+     "rational": 1.981,
+     "simo": 1.907
+    }
+   },
+   "by_arm_dimension": {
+    "plain": {
+     "assumptions_predictions": 2.646,
+     "causal_mechanism": 2.562,
+     "distinct_theories": 2.812,
+     "evidence_judgement": 0.917,
+     "experiment_design": 0.896,
+     "problem_framing": 2.312,
+     "recommendation": 0.729,
+     "revision": 1.139,
+     "seeking_challenge": 1.583
+    },
+    "guarded_budget": {
+     "assumptions_predictions": 2.5,
+     "causal_mechanism": 2.542,
+     "distinct_theories": 2.938,
+     "evidence_judgement": 0.958,
+     "experiment_design": 1.312,
+     "problem_framing": 2.417,
+     "recommendation": 1.083,
+     "revision": 1.722,
+     "seeking_challenge": 1.688
+    }
+   },
+   "difference": {
+    "arms": "guarded_budget minus plain",
+    "pairs": 48,
+    "cases": 16,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.156,
+     0.007,
+     0.334
+    ],
+    "by_company": {
+     "aqp": 0.083,
+     "epro": -0.008,
+     "rational": 0.039,
+     "simo": 0.51
+    }
+   }
+  }
+ },
+ "missing": [],
+ "agreement": {
+  "judges": [
+   "claudecode",
+   "codexsol"
+  ],
+  "episodes_scored_by_both": 96,
+  "spearman_episode_scores": 0.421,
+  "mean_absolute_difference": 0.667
+ },
+ "mean_of_judges": {
+  "by_arm": {
+   "guarded_budget": 1.56,
+   "plain": 1.441
+  },
+  "difference": {
+   "arms": "guarded_budget minus plain",
+   "pairs": 48,
+   "cases": 16,
+   "unpaired_runs": 0,
+   "mean_and_95_interval": [
+    0.119,
+    -0.0,
+    0.249
+   ],
+   "by_company": {
+    "aqp": 0.036,
+    "epro": 0.014,
+    "rational": 0.036,
+    "simo": 0.388
+   }
+  }
+ }
+}

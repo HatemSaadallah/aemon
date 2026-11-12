@@ -68,6 +68,7 @@ This release replaces the one of 2026-11-08. That release cut every third-party 
 | `evaluation/system_final/` | The same system, and dig then reason without the status check, on the final test, judged blind together with base, version 1 and version 3: the two new runs, 231 packets, the key, both judges' outputs and the reports |
 | `evaluation/loop_guards_dev/` | Loop guards (exploratory), development: dig then reason as evaluated, with the three guards, and with the guards plus the budget guard (45 runs each), 135 packets in two files (the third arm was judged later), the key, both judges' outputs and the reports |
 | `evaluation/loop_guards_test2/` | Loop guards (exploratory), test set 2: the same three arms (72 runs each), 144 packets, the key (216 runs), both judges' outputs and the reports |
+| `evaluation/loop_guards_final/` | Loop guards (exploratory), final test: dig then reason as evaluated and with the guards + budget guard (48 runs each), 96 packets, the key, both judges' outputs and the report |
 | `evaluation/loop_guards_test2_fix/` | Loop guards, test set 2, corrected rerun of the guards + budget arm after the quote-picker fix (72 runs), with the as-evaluated arm and the run before the fix: 140 packets, the key (216 runs), both judges' outputs and the reports |
 | `evaluation/status_check/` | Seven runs of the company status check (Aquaporin diagnostics and development), version 1 and version 3 |
 | `evaluation/judge_qualification/` | The qualification results of each judge |
@@ -246,7 +247,7 @@ Every count below is taken from the published files.
 | Recovery Correction Rows (`correction-v1`) | 51 (18 companies) | `training/correction_rows.jsonl` |
 | Recorded / Accepted DeepSeek V4-Pro Investigations | 266 / 154 | `teacher_investigations/deepseek_v4_pro/`, `training/v3_rows_report.json` |
 | Version 3 DeepSeek Rows | 3,611 training (69 companies) + 262 validation (5 companies) | `training/v3_deepseek_*.jsonl` |
-| Judge Packets | dev 56, final 87, test2 133, final_v3 135, test2_v3 205, screen3 29, switch 207, system_test2 342, system_final 231, loop_guards_dev 135, loop_guards_test2 144, loop_guards_test2_fix 140 | `evaluation/*/judge_packets.jsonl` |
+| Judge Packets | dev 56, final 87, test2 133, final_v3 135, test2_v3 205, screen3 29, switch 207, system_test2 342, system_final 231, loop_guards_dev 135, loop_guards_test2 144, loop_guards_test2_fix 140, loop_guards_final 96 | `evaluation/*/judge_packets.jsonl` |
 
 ## 10. Evaluation Files and Results
 
@@ -262,6 +263,7 @@ Quality is a blind rubric of nine dimensions scored 0 to 3. Each number below is
 | Final test, combined system and dig then reason vs version 1, exploratory (`system_final/`) | Claude Code, Codex (gpt-6-sol) | base 0.605, version 1 1.452, dig then reason 1.441, version 3 1.351, combined 1.320 | dig then reason −0.011 [−0.199, 0.181], combined −0.133 [−0.317, 0.052], 48 pairs each |
 | Development, loop guards, exploratory (`loop_guards_dev/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.423, guards 1.515, guards + budget 1.616 | guards + budget +0.194 [0.097, 0.302], 45 pairs |
 | Test set 2, loop guards, exploratory (`loop_guards_test2/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.427, guards 1.584, guards + budget 1.589 | guards + budget +0.162 [0.049, 0.272], guards +0.157 [0.045, 0.266], 72 pairs each |
+| Final test, loop guards, exploratory (`loop_guards_final/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.441, guards + budget 1.560 | +0.119 [−0.000, 0.249], 48 pairs |
 | Test set 2, loop guards, corrected rerun, exploratory (`loop_guards_test2_fix/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.427, guards + budget 1.589, guards + budget with the quote fix 1.638 | fixed minus as evaluated +0.211 [0.088, 0.334]; fixed minus before the fix +0.049 [0.000, 0.129], 72 pairs each |
 | Adapter switching, development (`switch/`) | Claude Code only | version 1 1.065, version 3 0.863, dig then reason 1.239 | dig then reason minus version 1: +0.173 [0.018, 0.346], 45 pairs |
 
