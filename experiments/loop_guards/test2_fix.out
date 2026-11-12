@@ -1,0 +1,6 @@
+job ended 13:12:58
+fix {"episodes": 72, "finished": 69, "end_to_end_success": 16, "stop_reasons": {"finished": 69, "turn limit": 2, "repeated errors": 1}, "refused_calls": 231, "mean_calls": 38.81944444444444}
+{"packets": 140, "runs": 216, "runs_by_arm": {"plain": 72, "guarded_budget": 72, "guarded_budget_fix": 72}}
+{"packets": 140, "new": 6}
+sol round 1: 6 of 6 judged
+judged 13:15:44

@@ -1635,7 +1635,7 @@ jobs 756273 (guards) and 756274 (guards + budget), code 731c3c5. One version 4 t
 to free the slot; its unfinished batch is requeued by the driver. Packets identical to ones already judged keep their
 judgments; the rest are judged by both judges. The rules of 02:50 and 06:40 apply unchanged.
 
-## 2026-11-12 10:50: loop guards on test set 2, both judges (exploratory)
+## 2026-11-12 10:35: loop guards on test set 2, both judges (exploratory)
 
 Jobs 756273 and 756274 finished (cluster, bf16, 24 cases × 3 attempts). Of the 144 packets, 71 were byte-identical to
 packets of system_test2 already judged and keep those judgments; the 73 new ones were judged blind by both judges,
@@ -1652,3 +1652,41 @@ same commands (`experiments/loop_guards/test2/report_both_*.json`).
 Reading: the development result holds on test set 2 for the guards; the budget guard's development gain does not
 reappear (few guarded runs reach the turn limit here). Exploratory, since the set had been run before and the guards
 were built after every frozen result. Version 1 stays the headline result; the app default is unchanged (guards + budget).
+
+## 2026-11-12 11:35: quote-menu bug fixed; guards + budget rerun on test set 2 (registered before the run)
+
+Reading the unfinished guarded runs of test set 2: all 6 Belimo runs of each guarded arm stopped at the assessment
+stage on four `arguments` refusals in a row ("quote at least 3 words and 15 characters"). The quote menu offered every
+excerpt sentence of 12 to 420 characters, so a dateline ('DANBURY, Conn.', 2 words, 14 characters) was on the menu,
+the model picked it, and the environment refused it each time. This is a bug in the guard, not a model failure: the
+menu was meant to hold only quotes the environment accepts. No development run was affected (0 such refusals in the
+90 guarded development runs); on test set 2, 24 refusals in 6 runs per arm, every one of those runs stopped by it.
+
+**Fix** (`agent/recovery.sentences`): the menu holds only sentences the environment accepts (at least 3 words and
+MIN_QUOTE characters once normalised, at most 420). Nothing else changes.
+
+**Run.** The guards + budget arm (the app default) again on test set 2 with the fix, same route, settings, seeds,
+cases and attempts (cluster, bf16); runs whose menus did not change are expected to reproduce byte for byte and keep
+their judgments; the rest are judged blind by both judges together with the existing plain arm. Reported as a corrected
+rerun next to the 10:35 result, which stays in the record unchanged; labelled exploratory (test set 2 has now been used
+to find this bug). Nothing is adopted or dropped on this result: the guards stay the app default either way.
+A second pattern, not fixed: 2 Testo runs per arm loop between a repeated search (redrawn) and an accepted re-read of
+a source until the turn limit; a reread mask was tested on 9 November and did not raise quality, so it is left alone.
+
+## 2026-11-12 13:18: corrected guards + budget rerun on test set 2, result (exploratory)
+
+Job 756932 (code 4573c82), as registered at 11:35. 66 of 72 runs reproduced the earlier guards + budget arm call for
+call and kept their judgments; the 6 that changed are exactly the Belimo runs, all of which stopped on the dateline
+before and all of which finish now. The 6 new packets were judged blind by both judges (140 packets, none missing).
+
+| Arm (72 runs) | Finished | Refused/run | No invented number | Experiment check | Mean of judges | Claude Code | gpt-6-sol |
+|---|---|---|---|---|---|---|---|
+| As evaluated | 43 | 6.1 | 34 | 14 | 1.427 | 1.158 | 1.696 |
+| Guards + budget (10:35) | 63 | 3.5 | 50 | 26 | 1.589 | 1.282 | 1.896 |
+| Guards + budget, quote fix | 69 | 3.2 | 55 | 28 | 1.638 | 1.322 | 1.954 |
+
+- Fixed minus as evaluated: +0.211 [0.088, 0.334] (Claude Code +0.164 [0.054, 0.279], gpt-6-sol +0.259 [0.115, 0.402]).
+- Fixed minus before the fix: +0.049 [0.000, 0.129]; by company, Belimo +0.59 and every other company 0.
+- Judge agreement over the 216 runs: Spearman 0.588, mean absolute difference 0.594.
+- Reported next to the 10:35 result, which stays unchanged. Exploratory. Nothing adopted or dropped: the guards (with
+  the fixed quote menu) were already the app default. Files: experiments/loop_guards/test2_fix/.

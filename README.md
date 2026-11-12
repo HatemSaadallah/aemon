@@ -69,8 +69,8 @@ equal) and 49 of 72 runs (`reports/judge/*/paired_counts.json`, mean of two judg
   version 1 is the result we stand behind.
 - **Decoding-time loop guards: more runs finish, and both judges score them higher.** Masking repeats, picking quotes
   from the source and a step-budget guard took dig then reason from 28 to 45 of 45 finished development runs (+0.19
-  [0.10, 0.30], both blind judges), and on test set 2 from 43 to 63 of 72 (+0.16 [0.05, 0.27], above zero for each
-  judge alone). Built after every frozen result, so exploratory; now the app default
+  [0.10, 0.30], both blind judges), and on test set 2 from 43 to 69 of 72 (+0.21 [0.09, 0.33], above zero for each
+  judge alone; +0.16 before a bug in the quote picker was fixed). Built after every frozen result, so exploratory; now the app default
   ([Loop guards](#loop-guards-more-runs-finish-and-both-judges-score-them-higher-on-development-and-test-set-2-exploratory)).
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured.
@@ -480,7 +480,8 @@ ones kept their judgments):
 |---|---|---|---|---|---|---|---|
 | Dig then reason, as evaluated | 43 | 6.1 | 34 | 14 | 1.43 | 1.16 | 1.70 |
 | + loop guards | 62 | 3.5 | 53 | 29 | 1.58 | 1.28 | 1.89 |
-| + loop guards + budget guard | **63** | 3.5 | 50 | 26 | **1.59** | 1.28 | 1.90 |
+| + loop guards + budget guard | 63 | 3.5 | 50 | 26 | 1.59 | 1.28 | 1.90 |
+| + loop guards + budget guard, quote picker fixed (rerun) | **69** | 3.2 | 55 | 28 | **1.64** | 1.32 | 1.95 |
 
 - **Guards + budget minus as evaluated: +0.16 [0.05, 0.27]** (Claude Code +0.12 [0.02, 0.22], gpt-6-sol +0.20
   [0.07, 0.33]); the guards alone: +0.16 [0.05, 0.27]. The gain is in the late stages that stalled runs never reached
@@ -488,7 +489,15 @@ ones kept their judgments):
 - The budget guard adds nothing here (+0.006 [−0.010, 0.022]): few guarded runs on test set 2 reached the turn limit.
 - Not everywhere: both judges score Testo lower with the guards (−0.32), Kingspan is level, and judge agreement on these
   runs is lower than on the final test (Spearman 0.65).
-- Experiment folder: [experiments/loop_guards/](experiments/loop_guards/).
+- **A bug in the quote picker, found in these runs and fixed.** All 6 Belimo runs of each guarded arm stopped: the
+  picker offered a dateline ('DANBURY, Conn.') that the environment's quote rule refuses, and the model chose it four
+  times in a row. The picker now offers only quotes the environment accepts. We registered a rerun of the guards +
+  budget arm before running it ([DECISIONS](docs/DECISIONS.md), 12 November 11:35): 66 of 72 runs reproduced call for
+  call, and the 6 Belimo runs all finished. **Corrected guards + budget minus as evaluated: +0.21 [0.09, 0.33]**
+  (Claude Code +0.16 [0.05, 0.28], gpt-6-sol +0.26 [0.12, 0.40]); against the run before the fix, +0.05 [0.00, 0.13],
+  all of it Belimo. The first result stays in the table; test set 2 has now also been used to find a bug, so both
+  are exploratory.
+- Experiment folder: [experiments/loop_guards/](experiments/loop_guards/) (the rerun is in `test2_fix/`).
 
 ### A recovery controller does not fix the remaining failures
 We tested five controller-side recovery aids on development cases under a pre-registered rule (masking rereads,

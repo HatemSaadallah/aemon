@@ -217,7 +217,11 @@ Difference [95\% interval] & $+0.19$ [0.10, 0.30] & $+0.16$ [0.05, 0.27]\\
 \end{center}
 
 The gain holds for each judge alone on both sets. On test set 2 the budget aid adds nothing over the three guards
-($+0.006$ [$-0.010$, 0.022]), and one company (Testo) scores lower with the guards under both judges. Unlike the
+($+0.006$ [$-0.010$, 0.022]), and one company (Testo) scores lower with the guards under both judges. These runs
+also exposed a bug in the quote guard: it offered a dateline that the environment's quote rule refuses, which stopped
+all six Belimo runs of each guarded arm. With the guard restricted to accepted quotes, a rerun registered beforehand
+reproduced 66 of 72 runs call for call and finished the other six: 69 of 72 runs finished, quality 1.64, $+0.21$
+[0.09, 0.33] against dig then reason as evaluated (each judge alone above zero). Unlike the
 advice-style aids of Section~\ref{sec:negative}, these guards remove the failing action from what the model can
 produce, rather than telling the model about it.
 

@@ -146,6 +146,27 @@ def main() -> None:
         if (d / 'key.jsonl').exists():
             publish(d / 'key.jsonl', f'evaluation/{split}/key.jsonl')
 
+    # Loop guards (exploratory, after every frozen result): development screen (three arms, the third judged later, so two
+    # packet files) and test set 2, both judged by both judges; packets identical to ones already judged kept their judgments
+    lg = REPO / 'experiments/loop_guards'
+    LOOP_GUARDS = {
+        'loop_guards_dev': {'plain.json': 'plain.json', 'guarded.json': 'guarded.json', 'guarded_budget.json': 'guarded_budget.json',
+                            'packets.jsonl': 'judge_packets.jsonl', 'arm3/packets.jsonl': 'judge_packets_arm3.jsonl', 'key.jsonl': 'key.jsonl',
+                            'arm3/claudecode_predictions_all.jsonl': 'claudecode_predictions.jsonl', 'arm3/codexsol_predictions_all.jsonl': 'codexsol_predictions.jsonl',
+                            'report_claudecode_codexsol_guarded_vs_plain.json': 'report_both_guarded_vs_plain.json',
+                            'arm3/report_both_guarded_budget_vs_plain.json': 'report_both_guarded_budget_vs_plain.json',
+                            'arm3/report_both_guarded_budget_vs_guarded.json': 'report_both_guarded_budget_vs_guarded.json'},
+        'loop_guards_test2': {f'test2/{n}': n for n in ('plain.json', 'guarded.json', 'guarded_budget.json', 'key.jsonl', 'claudecode_predictions.jsonl',
+                              'codexsol_predictions.jsonl', 'report_both_guarded_vs_plain.json', 'report_both_guarded_budget_vs_plain.json',
+                              'report_both_guarded_budget_vs_guarded.json')} | {'test2/packets.jsonl': 'judge_packets.jsonl'},
+        'loop_guards_test2_fix': {f'test2_fix/{n}': n for n in ('plain.json', 'guarded_budget.json', 'guarded_budget_fix.json', 'key.jsonl',
+                                  'claudecode_predictions.jsonl', 'codexsol_predictions.jsonl', 'report_both_guarded_budget_fix_vs_plain.json',
+                                  'report_both_guarded_budget_fix_vs_guarded_budget.json')} | {'test2_fix/packets.jsonl': 'judge_packets.jsonl'},
+    }
+    for split, files in LOOP_GUARDS.items():
+        for rel, name in files.items():
+            publish(lg / rel, f'evaluation/{split}/{name}')
+
     # Status-check runs (the company status check, with and without each adapter)
     for f in sorted((REPO / 'reports/status_check').glob('*.json')):
         publish(f, f'evaluation/status_check/{f.name}')

@@ -21,6 +21,8 @@ import copy
 import re
 from typing import Any
 
+from aemon.common.constants.env import MIN_QUOTE
+from aemon.environment.dossier import normalise
 from aemon.environment.stages import current_stage
 
 FEATURES = ('mask_rereads', 'progress', 'budget', 'citations', 'no_repeats', 'quote_menu', 'resample_repeats')
@@ -176,7 +178,9 @@ def budget_note(run: Any) -> str:
 def sentences(text: str, limit: int = 420) -> list[str]:
     """The source's sentences, each an exact substring of its excerpt, for the quote menu."""
     parts = [p.strip() for p in re.split(r'(?<=[.!?;])\s+|\n+', text) if p.strip()]
-    return sorted({p for p in parts if 12 <= len(p) <= limit})
+    # only quotes the environment accepts (tools._assess: at least 3 words and MIN_QUOTE characters once normalised);
+    # the first version offered datelines such as 'DANBURY, Conn.', refused every time (test set 2, Belimo)
+    return sorted({p for p in parts if len(normalise(p)) >= MIN_QUOTE and len(p.split()) >= 3 and len(p) <= limit})
 
 
 def assess_variants(run: Any, arguments: dict) -> list[dict] | None:
