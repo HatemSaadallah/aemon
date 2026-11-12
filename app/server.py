@@ -221,9 +221,14 @@ DIG_STAGES = ('brief', 'frame', 'status', 'status_reading', 'evidence')
 # The company status check is off by default (DECISIONS 2026-11-12): on both test sets dig then reason scored higher
 # without it (1.43 against 1.28, and 1.13 against 1.03). STATUS_CHECK=1 turns it on.
 STATUS_CHECK = os.environ.get('STATUS_CHECK') == '1'
+# Loop guards (DECISIONS 2026-11-12 02:50, adopted 05:20 on development: 33 of 45 finished against 28, refused calls per
+# run 3.1 against 5.2, blind quality +0.04 [-0.08, 0.15]): no re-assessing a pair already assessed, quotes picked from
+# the source's sentences, and an exact repeat drawn again before it counts. On for the default system; LOOP_GUARDS=0 turns them off.
+# With the budget guard as well (DECISIONS 06:40: 45 of 45 finished, +0.19 [0.10, 0.30] over plain, both judges).
+LOOP_GUARDS = () if os.environ.get('LOOP_GUARDS') == '0' else ('no_repeats', 'quote_menu', 'resample_repeats', 'budget')
 MODELS = (
-    {'id': 'system', 'label': 'aemon: version 1 gathers the evidence, version 3 reasons' + (', with a company status check' if STATUS_CHECK else '') + ' (4-bit base)',
-     'adapter': 'final_adapter.gguf', 'reasoner': 'v3_adapter.gguf', 'status_check': STATUS_CHECK, 'prompt': 'compact'},
+    {'id': 'system', 'label': 'aemon: version 1 gathers the evidence, version 3 reasons' + (', with a company status check' if STATUS_CHECK else '') + (', loop guards on' if LOOP_GUARDS else '') + ' (4-bit base)',
+     'adapter': 'final_adapter.gguf', 'reasoner': 'v3_adapter.gguf', 'status_check': STATUS_CHECK, 'prompt': 'compact', 'loop_guards': bool(LOOP_GUARDS)},
     {'id': 'final', 'label': 'Fine-tuned Tiny Aya (final adapter; 4-bit base, the reported results used full precision)', 'adapter': 'final_adapter.gguf', 'prompt': 'compact'},
     {'id': 'untrained', 'label': 'Untrained Tiny Aya', 'adapter': None, 'prompt': 'staged'},
     {'id': 'second', 'label': 'Trained Tiny Aya, second adapter', 'adapter': 'second_adapter.gguf', 'prompt': 'compact'},
@@ -563,7 +568,7 @@ def _run_attempt(identifier: str, case: Case, model: Json, loaded: list[str], pr
             stuck_help=STUCK_HELP,
             source_dates=SOURCE_DATES,
             min_assessed=MIN_ASSESSED,
-            recovery_features=RECOVERY_BUDGET if entry.get('budget_guard') else (),
+            recovery_features=tuple(dict.fromkeys((LOOP_GUARDS if model.get('loop_guards') else ()) + (RECOVERY_BUDGET if entry.get('budget_guard') else ()))),
             attempt=entry.get('continues', 0),  # a continued run samples afresh rather than repeating the stuck turns
         )
         entry['record'] = finished_record(run, info)

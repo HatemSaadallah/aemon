@@ -1,0 +1,10 @@
+jobs ended 10:10:12
+guarded {"episodes": 72, "finished": 62, "end_to_end_success": 17, "stop_reasons": {"finished": 62, "turn limit": 4, "repeated errors": 6}, "refused_calls": 251, "mean_calls": 37.93055555555556}
+guarded_budget {"episodes": 72, "finished": 63, "end_to_end_success": 14, "stop_reasons": {"finished": 63, "turn limit": 2, "repeated errors": 7}, "refused_calls": 255, "mean_calls": 37.708333333333336}
+{"packets": 144, "runs": 216, "runs_by_arm": {"plain": 72, "guarded": 72, "guarded_budget": 72}}
+{"packets": 144, "new": 73}
+sol round 1: 73 predictions, 0
+0 without a judgment
+experiments/loop_guards/test2_cluster.sh: line 42: [: 0
+0: integer expression expected
+judged 10:36:17 (reports written by hand: the round loop's count check failed)

@@ -1586,3 +1586,69 @@ base 0.61, version 1 1.45, dig then reason 1.44, version 3 1.35, combined 1.32.
 the final test. Version 1 stays the headline model; dig then reason stays the app default as the most consistent later
 system (above version 1 on test set 2 and development, level on the final test). The keys of system_test2 and
 system_final (and screen3) are now published, since every judge has finished.
+
+## 2026-11-12 05:10: loop guards, a third arm (registered after the guarded runs, before any judging result)
+
+Mechanical result of the screen (not yet judged): plain 28 of 45 finished, 17 stopped on repeated refusals, 234
+refused calls; guarded 33 of 45 finished, none stopped on refusals, 12 hit the turn limit, 139 refused calls (every
+one a repeat that was redrawn). In the 12 turn-limit runs the refusal loop became an assessment loop: with repeats
+masked, the model weighs every source for every theory ("neutral"), 8 of them at the test step, until 45 turns.
+The budget guard of the recovery study (`budget`: exploration withdrawn when turns left <= what the step still needs
++ 3) targets exactly this (stage 1: 6 of 6 test-step dead ends rescued). **Third arm:** guarded + budget, the same
+cases, seeds and server, judged blind against the other two together. The registered rule (02:50) is applied to
+guarded vs plain as written; guarded + budget is judged against plain under the same three conditions, labelled as
+selected after seeing the guarded runs.
+
+## 2026-11-12 05:20: loop guards adopted (development screen, Claude Code judge, blind)
+
+guarded minus plain: **+0.036 [−0.083, 0.151]**, 45 pairs, 15 cases (plain 1.129, guarded 1.166); higher at 5 of 6
+companies (ACR +0.23, Tanita +0.23, Jotun +0.23, Neumann +0.17, Deere +0.07), lower at Hellberg (−0.27). Finished 33
+against 28; refused calls per run 3.1 against 5.2; finished runs with no invented number 20 of 33 against 13 of 28.
+All three registered conditions hold, so **the loop guards are adopted**: on for the app's default system (LOOP_GUARDS=0
+turns them off), and run on test set 2 as registered, labelled exploratory, plain and guarded on the same laptop server
+with the same seeds, judged blind together. The runner now accepts exactly these three features on test set 2 and
+still refuses every experimental feature on the final test. Version 1 stays the headline result.
+
+## 2026-11-12 06:40: guards + budget, development, both judges: adopted
+
+The third arm (registered 05:10) finished **45 of 45** runs (plain 28, guarded 33), refused calls per run 3.1 (plain
+5.2), finished runs with no invented number 26 (plain 13), experiment check passed 17 (plain 12). Judged blind by both
+judges: 23 of its 45 packets are byte-identical to packets already judged (the budget guard never acted in those runs),
+so they keep those judgments and the 22 new packets were judged by both judges (none missing); the three arms are
+reported from the merged key and predictions.
+- guards + budget minus plain: **+0.194 [0.097, 0.302]** (Claude Code +0.135 [0.056, 0.219], Sol +0.252
+  [0.131, 0.393]); higher or level at all six companies (Hellberg +0.01).
+- guards + budget minus guards: +0.102 [0.031, 0.178]. Plain 1.42, guards 1.52, guards + budget 1.62 (mean of judges).
+- The two-judge result for guarded vs plain: +0.092 [−0.052, 0.238] (Sol +0.148, Claude Code +0.036).
+All three conditions hold against plain, so **guards + budget is adopted**: it becomes the app default (LOOP_GUARDS=0
+turns all four off) and runs on test set 2 as a third arm, labelled exploratory and as selected after seeing the
+guarded runs. The 9 November study found the budget guard alone did not raise quality on version 1 (+0.006); with the
+loop guards and the v3 reasoner it does here, on development. Version 1 stays the headline result.
+
+## 2026-11-12 07:10: loop guards on test set 2 moved to the cluster
+
+At 06:50 the laptop ran out of memory and its model server was stopped mid-run: the plain test set 2 arm had 26 of
+72 runs, 46 failed in the harness (kept as `experiments/loop_guards/test2/laptop_aborted_*`, not used). The test set 2
+run moved to the cluster, the evaluated bf16 runtime: the plain arm is the existing dig-then-reason run of test set 2
+(`system_test2_dig`, the same route, settings and seeds, already judged by both judges), and the two guard arms are
+jobs 756273 (guards) and 756274 (guards + budget), code 731c3c5. One version 4 teacher worker (756018) was cancelled
+to free the slot; its unfinished batch is requeued by the driver. Packets identical to ones already judged keep their
+judgments; the rest are judged by both judges. The rules of 02:50 and 06:40 apply unchanged.
+
+## 2026-11-12 10:50: loop guards on test set 2, both judges (exploratory)
+
+Jobs 756273 and 756274 finished (cluster, bf16, 24 cases × 3 attempts). Of the 144 packets, 71 were byte-identical to
+packets of system_test2 already judged and keep those judgments; the 73 new ones were judged blind by both judges,
+none missing. The pipeline's Sol retry check miscounted (a `grep -c || echo 0` printed two zeros) and started an
+unneeded hour-long wait after Sol had judged all 73, so it was stopped and the reports were written by hand with the
+same commands (`experiments/loop_guards/test2/report_both_*.json`).
+- Finished: plain 43, guards 62, guards + budget 63 of 72. Refused calls per run 6.1, 3.5, 3.5. Finished with no
+  invented number 34, 53, 50. Experiment check passed 14, 29, 26.
+- Mean of judges: plain 1.427, guards 1.584, guards + budget 1.589.
+- guards + budget minus plain: **+0.162 [0.049, 0.272]** (Claude Code +0.124 [0.023, 0.223], Sol +0.200
+  [0.069, 0.329]). guards minus plain: +0.157 [0.045, 0.266] (Claude Code +0.119, Sol +0.194). guards + budget minus
+  guards: +0.006 [−0.010, 0.022].
+- Lower at Testo for both judges (−0.317, mean of judges), level at Kingspan; judge agreement Spearman 0.65.
+Reading: the development result holds on test set 2 for the guards; the budget guard's development gain does not
+reappear (few guarded runs reach the turn limit here). Exploratory, since the set had been run before and the guards
+were built after every frozen result. Version 1 stays the headline result; the app default is unchanged (guards + budget).

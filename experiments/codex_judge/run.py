@@ -33,12 +33,17 @@ SETS = [
     # the combined system (DECISIONS 2026-11-11): base, v1, v3, combined and dig judged together blind
     ('system_test2', 'reports/judge/system_test2', RESULTS / f'system_test2/{JUDGE}_system_test2', [('combined', 'v1'), ('combined', 'v3'), ('combined', 'dig'), ('dig', 'v1'), ('combined', 'base')]),
     ('system_final', 'reports/judge/system_final', RESULTS / f'system_final/{JUDGE}_system_final', [('combined', 'v1'), ('combined', 'v3'), ('combined', 'dig'), ('dig', 'v1'), ('combined', 'base')]),
+    # loop guards (DECISIONS 2026-11-12): the development screen, and test set 2 (exploratory)
+    ('loop_guards', 'experiments/loop_guards', RESULTS / f'loop_guards/{JUDGE}_loop_guards', [('guarded', 'plain')]),
+    ('loop_guards_test2', 'experiments/loop_guards/test2', RESULTS / f'loop_guards_test2/{JUDGE}_loop_guards_test2', [('guarded', 'plain')]),
 ]
 CLAUDE = {'test2': ('claude', 'reports/judge/test2/claude_test2/predictions.jsonl'),
           'test2_v3': ('claudecode', 'reports/judge/test2_v3/claudecode_predictions.jsonl'),
           'final_v3': ('claudecode', 'reports/judge/final_v3/claudecode_predictions.jsonl'),
           'system_test2': ('claudecode', 'reports/judge/system_test2/claudecode_predictions.jsonl'),
-          'system_final': ('claudecode', 'reports/judge/system_final/claudecode_predictions.jsonl')}
+          'system_final': ('claudecode', 'reports/judge/system_final/claudecode_predictions.jsonl'),
+          'loop_guards': ('claudecode', 'experiments/loop_guards/claudecode_predictions.jsonl'),
+          'loop_guards_test2': ('claudecode', 'experiments/loop_guards/test2/claudecode_predictions.jsonl')}
 
 
 def log(**k) -> None:

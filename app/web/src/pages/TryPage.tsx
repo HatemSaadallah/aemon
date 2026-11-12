@@ -263,7 +263,7 @@ export function TryPage({ workspace: w, onError, onMemory, running = [] }: { wor
               <button type="button" role="radio" aria-checked={!guard} disabled={blocked} onClick={() => setGuard(false)}>Off</button>
               <button type="button" role="radio" aria-checked={guard} disabled={blocked} onClick={() => setGuard(true)}>On <span className="chip warn tiny">Experimental</span></button>
             </div>
-            <span className="opt-help">When the steps left barely cover what the investigation still needs, the agent is told and stops exploring. Tested on development cases only: one more finished run in 45.</span>
+            <span className="opt-help">When the steps left barely cover what the investigation still needs, the agent is told and stops exploring. Always on in the default aemon system, together with the loop guards (no repeated assessments, quotes picked from the source, repeats redrawn): on development cases they finished 45 of 45 runs against 28, and both blind judges scored them higher. This switch adds the budget guard to the other models.</span>
           </div>
           <div className="opt">
             <span className="opt-label">Memory and project</span>

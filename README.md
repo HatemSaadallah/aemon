@@ -67,10 +67,15 @@ equal) and 49 of 72 runs (`reports/judge/*/paired_counts.json`, mean of two judg
   version 1 on the second test (1.43 against 1.07, +0.36 [0.22, 0.51]) and on development, and level with it on the
   first test (1.44 against 1.45, both judges); version 3 alone scores 1.48 on the second test. All of this came after the frozen results, so
   version 1 is the result we stand behind.
+- **Decoding-time loop guards: more runs finish, and both judges score them higher.** Masking repeats, picking quotes
+  from the source and a step-budget guard took dig then reason from 28 to 45 of 45 finished development runs (+0.19
+  [0.10, 0.30], both blind judges), and on test set 2 from 43 to 63 of 72 (+0.16 [0.05, 0.27], above zero for each
+  judge alone). Built after every frozen result, so exploratory; now the app default
+  ([Loop guards](#loop-guards-more-runs-finish-and-both-judges-score-them-higher-on-development-and-test-set-2-exploratory)).
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured.
-- **What does not work yet.** About 4 in 10 runs stop before a recommendation, and almost none pass every mechanical
-  check. Section 7 says why, and what we tried after the tests (a second teacher, adapter switching, a status check),
+- **What does not work yet.** As evaluated, about 4 in 10 runs stop before a recommendation (the loop guards address
+  this on development), and almost none pass every mechanical check. Section 7 says why, and what we tried after the tests (a second teacher, adapter switching, a status check),
   including what failed.
 
 The agent is Tiny Aya Global fine-tuned on a teacher's investigations to work through a strategy question the way a
@@ -440,12 +445,59 @@ was selected on test set 2, but that set had been run before.
   on development, level with it on the final test (both judges), and not higher than version 3 alone on test set 2 (1.43 against
   1.48). The status check fixes what it was built for and costs finished runs.
 
+### Loop guards: more runs finish, and both judges score them higher, on development and test set 2 (exploratory)
+The last thing we built, after every frozen result. In the final-test runs of dig then reason, 233 of 274 refused
+calls were the model repeating itself: the same search again (130) or weighing a source it had already weighed for that
+theory (103). Four refusals in a row end a run, so these loops were most of the unfinished runs. Three guards act only
+on decoding, with no retraining and no guard of the environment changed (`agent/recovery.py`, `agent/loop.py`):
+- **no repeats**: the tool schema offers, per theory, only the sources not yet weighed for it;
+- **quote menu**: a quote is chosen from the source's own sentences, so it cannot be misquoted;
+- **redraw repeats**: a call refused as an exact repeat changed nothing, so the same state is sampled again (at most
+  3 times) before the refusal counts. Every refused draw stays in the record and in the refusal count.
+
+With the repeats gone, 12 runs fell into a new loop (weighing every source "neutral" instead of proposing a test), so a
+third arm added the step-budget guard from our earlier recovery study. Development screen, dig then reason on the
+laptop runtime, 15 cases × 3 attempts per arm, same seeds, judged blind by both judges; each rule registered in
+[docs/DECISIONS.md](docs/DECISIONS.md) before its result:
+
+| Arm (45 runs each) | Finished | Refused calls per run | Finished with no invented number | Mean of judges | Claude Code | gpt-6-sol |
+|---|---|---|---|---|---|---|
+| Dig then reason, as evaluated | 28 | 5.2 | 13 | 1.42 | 1.13 | 1.72 |
+| + loop guards | 33 | 3.1 | 20 | 1.52 | 1.17 | 1.86 |
+| + loop guards + budget guard | **45** | 3.1 | **26** | **1.62** | 1.27 | 1.97 |
+
+- **Guards + budget minus as evaluated: +0.19 [0.10, 0.30]**, and above zero for each judge alone (Claude Code
+  +0.14 [0.06, 0.22], gpt-6-sol +0.25 [0.13, 0.39]); higher or level at all six companies.
+- It is now the app's default. On version 1 alone the budget guard did not change quality (next section); with the
+  loop guards and the version 3 reasoner it does, on development.
+
+**Test set 2** (exploratory: the set had been run before), on the cluster's bf16 runtime, 24 cases × 3 attempts. The
+plain arm is the existing dig-then-reason run of test set 2 (same route, settings and seeds); the two guarded arms
+were run once each, and all three were judged together blind by both judges (packets identical to already-judged
+ones kept their judgments):
+
+| Arm (72 runs each) | Finished | Refused calls per run | Finished with no invented number | Experiment check passed | Mean of judges | Claude Code | gpt-6-sol |
+|---|---|---|---|---|---|---|---|
+| Dig then reason, as evaluated | 43 | 6.1 | 34 | 14 | 1.43 | 1.16 | 1.70 |
+| + loop guards | 62 | 3.5 | 53 | 29 | 1.58 | 1.28 | 1.89 |
+| + loop guards + budget guard | **63** | 3.5 | 50 | 26 | **1.59** | 1.28 | 1.90 |
+
+- **Guards + budget minus as evaluated: +0.16 [0.05, 0.27]** (Claude Code +0.12 [0.02, 0.22], gpt-6-sol +0.20
+  [0.07, 0.33]); the guards alone: +0.16 [0.05, 0.27]. The gain is in the late stages that stalled runs never reached
+  (experiment design, recommendation, revision).
+- The budget guard adds nothing here (+0.006 [−0.010, 0.022]): few guarded runs on test set 2 reached the turn limit.
+- Not everywhere: both judges score Testo lower with the guards (−0.32), Kingspan is level, and judge agreement on these
+  runs is lower than on the final test (Spearman 0.65).
+- Experiment folder: [experiments/loop_guards/](experiments/loop_guards/).
+
 ### A recovery controller does not fix the remaining failures
 We tested five controller-side recovery aids on development cases under a pre-registered rule (masking rereads,
 progress notes, step-budget awareness, citation repair, and all four). The best, step-budget awareness, rescued 15 of
 28 stuck runs against 6, but end to end it changed 8 of 45 runs and left blind quality unchanged (+0.006
 [−0.017, 0.031]): the extra finishes rush a templated test. More finishes are not better investigations; the
 remaining failures need training, not a controller. Full report: [docs/RECOVERY_REPORT.md](docs/RECOVERY_REPORT.md).
+That was version 1 alone; combined with the loop guards and the version 3 reasoner, the same budget guard is part of
+the arm that finished every development run and scored higher (previous section).
 
 ### Limits of our own checks
 - **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter

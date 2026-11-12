@@ -195,6 +195,32 @@ On test set 2 dig then reason is clearly above version~1 ($+0.36$ [0.22, 0.51]);
 ($-0.01$ [$-0.20$, 0.18]), and version~3 alone is not distinguishable from version~1 either ($-0.10$ [$-0.27$, 0.05]).
 Version~1 remains the evaluated model; dig then reason is the most consistent later system and is the demo's default.
 
+\paragraph{Loop guards.} Most refused calls in the final-test runs of dig then reason were repeats (233 of 274: the
+same search again, or a source already weighed for that theory), and four refusals in a row end a run. Three guards act
+only at decoding, with no retraining and no environment check changed: the assessment tool offers, per theory, only
+sources not yet weighed; a quote is chosen from the source's own sentences; and a call refused as an exact repeat is
+sampled again (at most three times, every refused draw kept in the record). With the step-budget aid of
+Section~\ref{sec:negative} added, judged blind by both judges against dig then reason as evaluated (exploratory, built
+after every frozen result):
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+ & Development (45 runs) & Test set 2 (72 runs)\\
+\midrule
+Finished runs, as evaluated $\rightarrow$ guarded & 28 $\rightarrow$ 45 & 43 $\rightarrow$ 63\\
+Refused calls per run & 5.2 $\rightarrow$ 3.1 & 6.1 $\rightarrow$ 3.5\\
+Quality, as evaluated $\rightarrow$ guarded & 1.42 $\rightarrow$ 1.62 & 1.43 $\rightarrow$ 1.59\\
+Difference [95\% interval] & $+0.19$ [0.10, 0.30] & $+0.16$ [0.05, 0.27]\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The gain holds for each judge alone on both sets. On test set 2 the budget aid adds nothing over the three guards
+($+0.006$ [$-0.010$, 0.022]), and one company (Testo) scores lower with the guards under both judges. Unlike the
+advice-style aids of Section~\ref{sec:negative}, these guards remove the failing action from what the model can
+produce, rather than telling the model about it.
+
 \section{What did not fix the remaining failures}\label{sec:negative}
 After both tests we tried, on the development cases only, to repair version 1's remaining failures:
 \begin{itemize}

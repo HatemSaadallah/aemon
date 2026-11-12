@@ -6,7 +6,7 @@
 #SBATCH --gres=gpu:4g.40gb:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=48G
-#SBATCH --time=03:00:00
+#SBATCH --time=06:00:00
 #SBATCH --output=%x-%j.out
 # Development only (DECISIONS 2026-11-11, adapter switching): one server holds both converted, gated adapters, version 1
 # as id 0 and version 3 as id 1, and ROUTE decides which one writes each turn (runner --lora-route), for example

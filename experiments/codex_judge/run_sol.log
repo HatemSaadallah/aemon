@@ -65,3 +65,7 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 {"t": "04:00:24", "set": "system_final", "reported": "dig vs v1"}
 {"t": "04:00:26", "set": "system_final", "reported": "combined vs base"}
 {"t": "04:00:26", "done": true}
+{"t": "05:21:26", "set": "loop_guards", "round": 1, "start": true}
+{"t": "05:34:28", "set": "loop_guards", "round": 1, "returncode": 0, "valid": 90, "infra_failures": 0, "causes": {}}
+{"t": "05:34:29", "set": "loop_guards", "reported": "guarded vs plain"}
+{"t": "05:34:29", "done": true}

@@ -1,0 +1,6 @@
+start 02:51:50
+plain {"episodes": 45, "finished": 28, "end_to_end_success": 4, "stop_reasons": {"finished": 28, "repeated errors": 17}, "refused_calls": 234, "mean_calls": 29.177777777777777}
+guarded {"episodes": 45, "finished": 33, "end_to_end_success": 2, "stop_reasons": {"turn limit": 12, "finished": 33}, "refused_calls": 139, "mean_calls": 40.2}
+{"packets": 90, "runs": 90, "runs_by_arm": {"plain": 45, "guarded": 45}}
+{"runs": 90, "arms": ["guarded", "plain"], "missing": 0}
+judged 05:19:31

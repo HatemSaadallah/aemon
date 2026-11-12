@@ -1,0 +1,292 @@
+{
+ "runs": 216,
+ "arms": [
+  "guarded",
+  "guarded_budget",
+  "plain"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "plain": {
+     "mean": 1.158,
+     "n": 72
+    },
+    "guarded": {
+     "mean": 1.278,
+     "n": 72
+    },
+    "guarded_budget": {
+     "mean": 1.282,
+     "n": 72
+    }
+   },
+   "by_arm_company": {
+    "plain": {
+     "ansell": 0.972,
+     "belimo": 0.928,
+     "draeger": 1.0,
+     "frankecoffee": 1.039,
+     "hach": 0.782,
+     "hoshizaki": 1.088,
+     "kingspan": 1.426,
+     "laerdal": 1.463,
+     "mettler": 1.449,
+     "tennant": 1.213,
+     "testo": 1.199,
+     "winterhalter": 1.34
+    },
+    "guarded": {
+     "ansell": 1.366,
+     "belimo": 0.884,
+     "draeger": 1.368,
+     "frankecoffee": 1.347,
+     "hach": 1.292,
+     "hoshizaki": 1.31,
+     "kingspan": 1.275,
+     "laerdal": 1.468,
+     "mettler": 1.41,
+     "tennant": 1.287,
+     "testo": 0.961,
+     "winterhalter": 1.363
+    },
+    "guarded_budget": {
+     "ansell": 1.366,
+     "belimo": 0.884,
+     "draeger": 1.368,
+     "frankecoffee": 1.326,
+     "hach": 1.292,
+     "hoshizaki": 1.31,
+     "kingspan": 1.35,
+     "laerdal": 1.468,
+     "mettler": 1.417,
+     "tennant": 1.306,
+     "testo": 0.961,
+     "winterhalter": 1.343
+    }
+   },
+   "by_arm_dimension": {
+    "plain": {
+     "assumptions_predictions": 1.75,
+     "causal_mechanism": 1.528,
+     "distinct_theories": 1.361,
+     "evidence_judgement": 0.583,
+     "experiment_design": 0.708,
+     "problem_framing": 1.847,
+     "recommendation": 0.639,
+     "revision": 1.333,
+     "seeking_challenge": 0.778
+    },
+    "guarded": {
+     "assumptions_predictions": 1.75,
+     "causal_mechanism": 1.653,
+     "distinct_theories": 1.458,
+     "evidence_judgement": 0.528,
+     "experiment_design": 1.042,
+     "problem_framing": 1.819,
+     "recommendation": 0.875,
+     "revision": 1.667,
+     "seeking_challenge": 0.917
+    },
+    "guarded_budget": {
+     "assumptions_predictions": 1.764,
+     "causal_mechanism": 1.681,
+     "distinct_theories": 1.444,
+     "evidence_judgement": 0.556,
+     "experiment_design": 0.958,
+     "problem_framing": 1.833,
+     "recommendation": 0.889,
+     "revision": 1.722,
+     "seeking_challenge": 0.931
+    }
+   },
+   "difference": {
+    "arms": "guarded_budget minus plain",
+    "pairs": 72,
+    "cases": 24,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.124,
+     0.023,
+     0.223
+    ],
+    "by_company": {
+     "ansell": 0.394,
+     "belimo": -0.044,
+     "draeger": 0.368,
+     "frankecoffee": 0.287,
+     "hach": 0.509,
+     "hoshizaki": 0.222,
+     "kingspan": -0.076,
+     "laerdal": 0.005,
+     "mettler": -0.032,
+     "tennant": 0.093,
+     "testo": -0.238,
+     "winterhalter": 0.002
+    }
+   }
+  },
+  "codexsol": {
+   "by_arm": {
+    "plain": {
+     "mean": 1.696,
+     "n": 72
+    },
+    "guarded": {
+     "mean": 1.89,
+     "n": 72
+    },
+    "guarded_budget": {
+     "mean": 1.896,
+     "n": 72
+    }
+   },
+   "by_arm_company": {
+    "plain": {
+     "ansell": 1.657,
+     "belimo": 1.296,
+     "draeger": 1.407,
+     "frankecoffee": 1.509,
+     "hach": 1.079,
+     "hoshizaki": 1.778,
+     "kingspan": 1.938,
+     "laerdal": 2.062,
+     "mettler": 2.095,
+     "tennant": 1.843,
+     "testo": 1.738,
+     "winterhalter": 1.947
+    },
+    "guarded": {
+     "ansell": 2.134,
+     "belimo": 1.359,
+     "draeger": 2.025,
+     "frankecoffee": 1.898,
+     "hach": 1.694,
+     "hoshizaki": 1.919,
+     "kingspan": 1.944,
+     "laerdal": 2.123,
+     "mettler": 2.181,
+     "tennant": 2.042,
+     "testo": 1.343,
+     "winterhalter": 2.014
+    },
+    "guarded_budget": {
+     "ansell": 2.134,
+     "belimo": 1.359,
+     "draeger": 2.025,
+     "frankecoffee": 1.981,
+     "hach": 1.694,
+     "hoshizaki": 1.919,
+     "kingspan": 2.0,
+     "laerdal": 2.123,
+     "mettler": 2.181,
+     "tennant": 1.938,
+     "testo": 1.343,
+     "winterhalter": 2.056
+    }
+   },
+   "by_arm_dimension": {
+    "plain": {
+     "assumptions_predictions": 2.5,
+     "causal_mechanism": 2.556,
+     "distinct_theories": 2.056,
+     "evidence_judgement": 0.792,
+     "experiment_design": 0.847,
+     "problem_framing": 2.764,
+     "recommendation": 0.667,
+     "revision": 1.583,
+     "seeking_challenge": 1.444
+    },
+    "guarded": {
+     "assumptions_predictions": 2.583,
+     "causal_mechanism": 2.681,
+     "distinct_theories": 2.292,
+     "evidence_judgement": 0.917,
+     "experiment_design": 1.069,
+     "problem_framing": 2.931,
+     "recommendation": 0.944,
+     "revision": 2.111,
+     "seeking_challenge": 1.569
+    },
+    "guarded_budget": {
+     "assumptions_predictions": 2.611,
+     "causal_mechanism": 2.611,
+     "distinct_theories": 2.264,
+     "evidence_judgement": 0.931,
+     "experiment_design": 1.111,
+     "problem_framing": 2.903,
+     "recommendation": 1.014,
+     "revision": 2.167,
+     "seeking_challenge": 1.569
+    }
+   },
+   "difference": {
+    "arms": "guarded_budget minus plain",
+    "pairs": 72,
+    "cases": 24,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.2,
+     0.069,
+     0.329
+    ],
+    "by_company": {
+     "ansell": 0.477,
+     "belimo": 0.062,
+     "draeger": 0.618,
+     "frankecoffee": 0.472,
+     "hach": 0.616,
+     "hoshizaki": 0.141,
+     "kingspan": 0.062,
+     "laerdal": 0.06,
+     "mettler": 0.086,
+     "tennant": 0.095,
+     "testo": -0.396,
+     "winterhalter": 0.109
+    }
+   }
+  }
+ },
+ "missing": [],
+ "agreement": {
+  "judges": [
+   "claudecode",
+   "codexsol"
+  ],
+  "episodes_scored_by_both": 216,
+  "spearman_episode_scores": 0.65,
+  "mean_absolute_difference": 0.588
+ },
+ "mean_of_judges": {
+  "by_arm": {
+   "guarded": 1.584,
+   "guarded_budget": 1.589,
+   "plain": 1.427
+  },
+  "difference": {
+   "arms": "guarded_budget minus plain",
+   "pairs": 72,
+   "cases": 24,
+   "unpaired_runs": 0,
+   "mean_and_95_interval": [
+    0.162,
+    0.049,
+    0.272
+   ],
+   "by_company": {
+    "ansell": 0.435,
+    "belimo": 0.009,
+    "draeger": 0.493,
+    "frankecoffee": 0.38,
+    "hach": 0.562,
+    "hoshizaki": 0.182,
+    "kingspan": -0.007,
+    "laerdal": 0.032,
+    "mettler": 0.027,
+    "tennant": 0.094,
+    "testo": -0.317,
+    "winterhalter": 0.056
+   }
+  }
+ }
+}
