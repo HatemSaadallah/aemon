@@ -1,0 +1,207 @@
+{"case": "moldex-new-evidence-comfort", "attempt": 0, "stop": "finished", "turns": 26, "passed": 13, "failed": ["disconfirmation", "experiment"]}
+{"case": "cotral-new-evidence-looks", "attempt": 0, "stop": "finished", "turns": 34, "passed": 13, "failed": ["evidence_classes", "evidence_kinds"]}
+{"case": "superior-base", "attempt": 0, "stop": "finished", "turns": 25, "passed": 12, "failed": ["experiment", "existing_offering"]}
+{"case": "portwest-base", "attempt": 0, "stop": "repeated errors", "turns": 22, "passed": 2, "failed": ["finished"]}
+{"case": "festool-base", "attempt": 0, "stop": "finished", "turns": 29, "passed": 13, "failed": ["evidence_kinds", "tool_use"]}
+{"case": "3m-base", "attempt": 0, "stop": "repeated errors", "turns": 28, "passed": 6, "failed": ["finished", "evidence_classes", "evidence_kinds", "tool_use"]}
+{"case": "embrace-base", "attempt": 0, "stop": "finished", "turns": 26, "passed": 12, "failed": ["testable_predictions", "evidence_classes", "existing_offering"]}
+{"case": "sigvaris-base", "attempt": 0, "stop": "finished", "turns": 27, "passed": 11, "failed": ["testable_predictions", "evidence_classes", "evidence_kinds", "experiment"]}
+{"case": "technogym-base", "attempt": 0, "stop": "finished", "turns": 40, "passed": 15, "failed": []}
+{"case": "nalgene-base", "attempt": 0, "stop": "turn limit", "turns": 45, "passed": 7, "failed": ["finished", "evidence_kinds", "tool_use"]}
+{"case": "koppert-base", "attempt": 0, "stop": "finished", "turns": 25, "passed": 13, "failed": ["evidence_kinds", "experiment"]}
+{"case": "sealedair-base", "attempt": 0, "stop": "repeated errors", "turns": 33, "passed": 8, "failed": ["finished", "tool_use"]}
+{"case": "blackdecker-base", "attempt": 0, "stop": "turn limit", "turns": 45, "passed": 6, "failed": ["finished", "testable_predictions", "evidence_kinds", "tool_use"]}
+{"case": "diatek-base", "attempt": 0, "stop": "repeated errors", "turns": 34, "passed": 8, "failed": ["finished", "tool_use"]}
+{"case": "trdc-base", "attempt": 0, "stop": "finished", "turns": 26, "passed": 11, "failed": ["evidence_kinds", "disconfirmation", "experiment", "no_invented_numbers"]}
+{"case": "gore-base", "attempt": 0, "stop": "finished", "turns": 34, "passed": 11, "failed": ["testable_predictions", "evidence_kinds", "experiment", "no_invented_numbers"]}
+{"case": "microban-base", "attempt": 0, "stop": "finished", "turns": 26, "passed": 12, "failed": ["evidence_classes", "evidence_kinds", "experiment"]}
+{"case": "leitz-base", "attempt": 0, "stop": "finished", "turns": 27, "passed": 14, "failed": ["evidence_kinds"]}
+{"case": "qdi-base", "attempt": 0, "stop": "turn limit", "turns": 45, "passed": 1, "failed": ["finished", "tool_use"]}
+{"case": "illumina-base", "attempt": 0, "stop": "finished", "turns": 30, "passed": 13, "failed": ["evidence_classes", "evidence_kinds"]}
+{"case": "recaro-base", "attempt": 0, "stop": "turn limit", "turns": 45, "passed": 7, "failed": ["finished", "evidence_kinds", "tool_use"]}
+{"case": "stihl-base", "attempt": 0, "stop": "turn limit", "turns": 45, "passed": 7, "failed": ["finished", "evidence_kinds", "tool_use"]}
+{"case": "intel-base", "attempt": 0, "stop": "turn limit", "turns": 45, "passed": 7, "failed": ["finished", "theories", "evidence_kinds"]}
+{"case": "sensirion-base", "attempt": 0, "stop": "finished", "turns": 30, "passed": 12, "failed": ["evidence_classes", "experiment", "no_invented_numbers"]}
+{"case": "cree-base", "attempt": 0, "stop": "finished", "turns": 32, "passed": 14, "failed": ["evidence_kinds"]}
+{"case": "a123-base", "attempt": 0, "stop": "repeated errors", "turns": 12, "passed": 1, "failed": ["finished", "tool_use"]}
+{"case": "carrier-base", "attempt": 0, "stop": "repeated errors", "turns": 36, "passed": 5, "failed": ["finished", "testable_predictions", "evidence_classes", "evidence_kinds", "tool_use"]}
+{"case": "reynolds-base", "attempt": 0, "stop": "finished", "turns": 29, "passed": 13, "failed": ["evidence_classes", "evidence_kinds"]}
+{"case": "probi-base", "attempt": 0, "stop": "finished", "turns": 28, "passed": 14, "failed": ["testable_predictions"]}
+{"case": "perrigo-base", "attempt": 0, "stop": "finished", "turns": 39, "passed": 12, "failed": ["experiment", "no_invented_numbers", "tool_use"]}
+{"case": "skf-base", "attempt": 0, "stop": "repeated errors", "turns": 14, "passed": 1, "failed": ["finished", "tool_use"]}
+{"case": "lmericsson-base", "attempt": 0, "stop": "finished", "turns": 21, "passed": 12, "failed": ["evidence_kinds", "experiment"]}
+{"case": "wartsila-base", "attempt": 0, "stop": "finished", "turns": 26, "passed": 12, "failed": ["experiment", "no_invented_numbers"]}
+{"case": "lincolnelectric-base", "attempt": 0, "stop": "finished", "turns": 29, "passed": 11, "failed": ["theories", "evidence_classes", "evidence_kinds", "experiment"]}
+{"case": "sulzer-base", "attempt": 0, "stop": "finished", "turns": 27, "passed": 12, "failed": ["evidence_kinds", "no_invented_numbers"]}
+{"case": "shimadzu-base", "attempt": 0, "stop": "finished", "turns": 31, "passed": 13, "failed": ["experiment"]}
+{"case": "vaisala-base", "attempt": 0, "stop": "repeated errors", "turns": 35, "passed": 7, "failed": ["finished", "evidence_kinds", "tool_use"]}
+{"case": "sartorius-base", "attempt": 0, "stop": "finished", "turns": 27, "passed": 14, "failed": ["evidence_classes"]}
+{"case": "elekta-base", "attempt": 0, "stop": "finished", "turns": 24, "passed": 13, "failed": ["no_invented_numbers"]}
+{"case": "bbraun-base", "attempt": 0, "stop": "finished", "turns": 24, "passed": 12, "failed": ["experiment", "existing_offering"]}
+{"case": "halton-base", "attempt": 0, "stop": "finished", "turns": 27, "passed": 14, "failed": []}
+{"case": "boschrexroth-base", "attempt": 0, "stop": "finished", "turns": 28, "passed": 11, "failed": ["evidence_classes", "evidence_kinds", "existing_offering", "no_invented_numbers"]}
+{"case": "esab-base", "attempt": 0, "stop": "finished", "turns": 28, "passed": 14, "failed": []}
+{"case": "vermeer-base", "attempt": 0, "stop": "finished", "turns": 29, "passed": 12, "failed": ["evidence_classes", "evidence_kinds", "no_invented_numbers"]}
+{"case": "kemira-base", "attempt": 0, "stop": "finished", "turns": 24, "passed": 13, "failed": ["tool_use"]}
+{"case": "hubbell-base", "attempt": 0, "stop": "finished", "turns": 24, "passed": 13, "failed": ["evidence_kinds"]}
+{"case": "trojantech-base", "attempt": 0, "stop": "finished", "turns": 29, "passed": 14, "failed": ["no_invented_numbers"]}
+{"case": "calgoncarbon-base", "attempt": 0, "stop": "finished", "turns": 28, "passed": 13, "failed": ["evidence_classes", "evidence_kinds"]}
+{
+ "summary": {
+  "episodes": 48,
+  "finished": 34,
+  "end_to_end_success": 11,
+  "stop_reasons": {
+   "finished": 34,
+   "repeated errors": 8,
+   "turn limit": 6
+  },
+  "furthest_stage": {
+   "finish": 34,
+   "read_source": 4,
+   "challenge_theory": 7,
+   "assess_evidence": 3
+  },
+  "checks": {
+   "finished": {
+    "passed": 34,
+    "reached": 48,
+    "applied": 48,
+    "of_all": 48
+   },
+   "framing": {
+    "passed": 48,
+    "reached": 48,
+    "applied": 48,
+    "of_all": 48
+   },
+   "theories": {
+    "passed": 42,
+    "reached": 44,
+    "applied": 48,
+    "of_all": 48
+   },
+   "causal_form": {
+    "passed": 44,
+    "reached": 44,
+    "applied": 48,
+    "of_all": 48
+   },
+   "testable_predictions": {
+    "passed": 38,
+    "reached": 44,
+    "applied": 48,
+    "of_all": 48
+   },
+   "evidence_use": {
+    "passed": 44,
+    "reached": 44,
+    "applied": 48,
+    "of_all": 48
+   },
+   "evidence_classes": {
+    "passed": 18,
+    "reached": 32,
+    "applied": 48,
+    "of_all": 48
+   },
+   "evidence_kinds": {
+    "passed": 18,
+    "reached": 44,
+    "applied": 48,
+    "of_all": 48
+   },
+   "evidence_limits": {
+    "passed": 44,
+    "reached": 44,
+    "applied": 48,
+    "of_all": 48
+   },
+   "disconfirmation": {
+    "passed": 32,
+    "reached": 34,
+    "applied": 48,
+    "of_all": 48
+   },
+   "experiment": {
+    "passed": 20,
+    "reached": 34,
+    "applied": 48,
+    "of_all": 48
+   },
+   "revision": {
+    "passed": 0,
+    "reached": 0,
+    "applied": 2,
+    "of_all": 48
+   },
+   "existing_offering": {
+    "passed": 29,
+    "reached": 33,
+    "applied": 46,
+    "of_all": 48
+   },
+   "no_invented_numbers": {
+    "passed": 24,
+    "reached": 34,
+    "applied": 48,
+    "of_all": 48
+   },
+   "simulated_not_used": {
+    "passed": 2,
+    "reached": 2,
+    "applied": 2,
+    "of_all": 48
+   },
+   "recommendation": {
+    "passed": 34,
+    "reached": 34,
+    "applied": 48,
+    "of_all": 48
+   },
+   "tool_use": {
+    "passed": 33,
+    "reached": 48,
+    "applied": 48,
+    "of_all": 48
+   }
+  },
+  "rejections": {
+   "repeat": 208,
+   "misquote": 63
+  },
+  "shock_coverage": {
+   "cases": 2,
+   "delivered": 2,
+   "read": 2,
+   "held_affected_theory": 0,
+   "addressed_an_affected_theory": 0,
+   "bore_on_favoured": 0,
+   "cited_in_revision": 2,
+   "favoured_changed": 1
+  },
+  "supporting_evidence_attempted": 32,
+  "rejected_finishes": 0,
+  "harness_actions": 0,
+  "refused_calls": 271,
+  "recovered_after_refusal": 64,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 4705739,
+   "completion_tokens": 127265,
+   "seconds": 2641.694,
+   "usd": 0
+  },
+  "mean_calls": 30.0625
+ },
+ "auditkit": {
+  "cases": 48,
+  "replay_mismatches": 0,
+  "guards_cleared": 11,
+  "guards_not_cleared": 37,
+  "other": 0,
+  "known_tool_names": 1.0,
+  "redundant_tool_calls": 0.19639548878140844,
+  "no_looping": 0.08333333333333333
+ }
+}

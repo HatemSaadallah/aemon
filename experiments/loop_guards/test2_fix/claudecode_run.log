@@ -1,0 +1,7 @@
+{"judge": "claudecode", "packet": "578776739d825235", "valid": true}
+{"judge": "claudecode", "packet": "c720524f1fbe2ec2", "valid": true}
+{"judge": "claudecode", "packet": "88a6a44d7fdaf0a3", "valid": true}
+{"judge": "claudecode", "packet": "e5883dcc92809c35", "valid": true}
+{"judge": "claudecode", "packet": "223bd85b799a0e2d", "valid": true}
+{"judge": "claudecode", "packet": "dcfe10d8b94aa986", "valid": true}
+{"predictions": "/home/USER/lexsi-backup/judge_results/loop_guards_test2_fix/claudecode/predictions.jsonl", "diagnostic_only": false}

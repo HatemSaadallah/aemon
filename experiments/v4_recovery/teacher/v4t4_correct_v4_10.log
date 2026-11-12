@@ -1,0 +1,35 @@
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/CLUSTER_ACCOUNT/lexsi/code_cd3b8c2/src/aemon/teacher/corrections.py", line 314, in <module>
+    main()
+  File "/home/CLUSTER_ACCOUNT/lexsi/code_cd3b8c2/src/aemon/teacher/corrections.py", line 295, in main
+    out = ask(
+          ^^^^
+  File "/home/CLUSTER_ACCOUNT/lexsi/code_cd3b8c2/src/aemon/teacher/corrections.py", line 237, in ask
+    return list(pool.map(one, enumerate(state_items)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CLUSTER_ACCOUNT/lexsi/env/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CLUSTER_ACCOUNT/lexsi/env/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/CLUSTER_ACCOUNT/lexsi/env/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/CLUSTER_ACCOUNT/lexsi/env/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/home/CLUSTER_ACCOUNT/lexsi/env/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/CLUSTER_ACCOUNT/lexsi/code_cd3b8c2/src/aemon/teacher/corrections.py", line 224, in one
+    append_entry(entry, manifest)
+  File "/home/CLUSTER_ACCOUNT/lexsi/code_cd3b8c2/src/aemon/rows/provenance.py", line 86, in append_entry
+    with open(path, 'a') as log:
+         ^^^^^^^^^^^^^^^
+OSError: [Errno 122] Disk quota exceeded

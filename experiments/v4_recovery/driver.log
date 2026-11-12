@@ -1,0 +1,101 @@
+2026-11-12 01:29:50 driver start, code cd3b8c2
+2026-11-12 01:29:52 code cd3b8c2 copied to /home/CLUSTER_ACCOUNT/lexsi/code_cd3b8c2
+192 training cases from 93 companies; none from a validation, final-test or test-set-2 company
+2026-11-12 01:29:54 harvest 1 submitted as job 755884 (48 cases)
+2026-11-12 01:30:26 harvest 2 submitted as job 755886 (48 cases)
+2026-11-12 01:31:05 harvest 3 submitted as job 755888 (48 cases)
+2026-11-12 01:31:37 harvest 4 submitted as job 755893 (48 cases)
+2026-11-12 02:12:14 harvest 1: {"episodes": 48, "finished": 31, "stop_reasons": {"finished": 31, "repeated errors": 15, "turn limit": 2}, "refused_calls": 232}
+2026-11-12 02:27:17 harvest 2: {"episodes": 48, "finished": 25, "stop_reasons": {"finished": 25, "turn limit": 5, "repeated errors": 18}, "refused_calls": 303}
+2026-11-12 02:57:23 harvest 3: {"episodes": 48, "finished": 34, "stop_reasons": {"finished": 34, "repeated errors": 8, "turn limit": 6}, "refused_calls": 271}
+2026-11-12 03:17:28 harvest 4: {"episodes": 48, "finished": 30, "stop_reasons": {"finished": 30, "repeated errors": 14, "turn limit": 4}, "refused_calls": 280}
+2026-11-12 03:17:28 harvest done: 4 reports
+2026-11-12 03:17:29 states: {"states": 455, "cases": 190} {'theories': 298, 'test': 130, 'assessment': 23, 'challenge': 2, 'position': 2}
+2026-11-12 03:17:32 queue: 23 batches of up to 20 states in /home/CLUSTER_ACCOUNT/lexsi/queue/recovery_v4.txt
+2026-11-12 03:17:36 teacher worker v4t1 submitted as job 756005 (40 GB slice); 23 batches queued
+2026-11-12 03:27:39 teacher worker v4t2 submitted as job 756018 (40 GB slice); 23 batches queued
+2026-11-12 03:27:39 teacher: 756005 command-a-plus-40 RUNNING gnode03; 23 queued, 23 batches without output
+2026-11-12 03:37:40 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 23 queued, 23 batches without output
+2026-11-12 03:47:42 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 23 queued, 23 batches without output
+2026-11-12 03:57:44 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 23 queued, 23 batches without output
+2026-11-12 04:07:44 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 23 queued, 23 batches without output
+2026-11-12 04:17:46 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 22 queued, 23 batches without output
+2026-11-12 04:27:46 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 21 queued, 23 batches without output
+2026-11-12 04:37:47 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 21 queued, 23 batches without output
+2026-11-12 04:47:48 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 21 queued, 23 batches without output
+2026-11-12 04:57:49 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 21 queued, 23 batches without output
+2026-11-12 05:07:50 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 21 queued, 23 batches without output
+2026-11-12 05:17:56 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 21 queued, 23 batches without output
+2026-11-12 05:27:58 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 21 queued, 23 batches without output
+2026-11-12 05:37:58 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 20 queued, 22 batches without output
+2026-11-12 05:47:59 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 20 queued, 22 batches without output
+2026-11-12 05:58:00 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 19 queued, 21 batches without output
+2026-11-12 06:08:01 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 19 queued, 21 batches without output
+2026-11-12 06:18:02 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 19 queued, 21 batches without output
+2026-11-12 06:28:03 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 19 queued, 21 batches without output
+2026-11-12 06:38:04 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 19 queued, 21 batches without output
+2026-11-12 06:48:05 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 18 queued, 20 batches without output
+2026-11-12 06:58:07 teacher: 756005 command-a-plus-40 RUNNING gnode03;756018 command-a-plus-40 RUNNING gnode01; 18 queued, 20 batches without output
+2026-11-12 06:59:11 loop-guards test set 2: cancelled teacher worker 756018 to free a slot for jobs 756273/756274; its unfinished batch is requeued by the driver at the end
+2026-11-12 07:08:10 teacher worker v4t3 submitted as job 756289 (40 GB slice); 18 batches queued
+2026-11-12 07:08:10 teacher: 756005 command-a-plus-40 RUNNING gnode03; 18 queued, 20 batches without output
+2026-11-12 07:18:11 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 18 queued, 20 batches without output
+2026-11-12 07:28:12 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 18 queued, 20 batches without output
+2026-11-12 07:38:13 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 18 queued, 20 batches without output
+2026-11-12 07:48:14 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 07:58:15 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 08:08:27 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 08:18:27 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 08:28:28 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 08:38:29 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 08:48:36 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 08:58:37 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 09:08:38 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 17 queued, 19 batches without output
+2026-11-12 09:18:39 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 16 queued, 18 batches without output
+2026-11-12 09:28:40 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 16 queued, 18 batches without output
+2026-11-12 09:38:41 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 16 queued, 18 batches without output
+2026-11-12 09:48:42 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 16 queued, 18 batches without output
+2026-11-12 09:58:42 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 16 queued, 18 batches without output
+2026-11-12 10:08:43 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 16 queued, 18 batches without output
+2026-11-12 10:18:44 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 16 queued, 18 batches without output
+2026-11-12 10:28:45 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 15 queued, 18 batches without output
+2026-11-12 10:38:47 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 15 queued, 18 batches without output
+2026-11-12 10:48:48 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 15 queued, 18 batches without output
+2026-11-12 10:58:49 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 14 queued, 17 batches without output
+2026-11-12 11:08:49 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 14 queued, 17 batches without output
+2026-11-12 11:18:50 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 14 queued, 17 batches without output
+2026-11-12 11:28:51 teacher: 756005 command-a-plus-40 RUNNING gnode03;756289 command-a-plus-40 RUNNING gnode01; 14 queued, 17 batches without output
+2026-11-12 11:37:14 manual: teacher worker 756289 cancelled to run the corrected guards + budget arm on test set 2 (DECISIONS 11:35); its batch is requeued by the driver
+2026-11-12 11:38:55 teacher worker v4t4 submitted as job 756937 (40 GB slice); 14 batches queued
+2026-11-12 11:38:55 teacher: 756005 command-a-plus-40 RUNNING gnode03; 14 queued, 17 batches without output
+2026-11-12 11:49:36 manual: driver stopped (SSH master lost at about 11:45 and the login node now closes new connections; restart with the same command once the master is back)
+2026-11-12 11:52:49 driver start, code cd3b8c2
+2026-11-12 11:52:49 harvest done: 4 reports
+2026-11-12 11:52:53 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 14 queued, 17 batches without output
+2026-11-12 12:02:54 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 14 queued, 17 batches without output
+2026-11-12 12:12:54 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 14 queued, 17 batches without output
+2026-11-12 12:22:56 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 14 queued, 17 batches without output
+2026-11-12 12:32:57 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 14 queued, 17 batches without output
+2026-11-12 12:42:58 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 14 queued, 17 batches without output
+2026-11-12 12:52:59 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 13 queued, 16 batches without output
+2026-11-12 13:03:00 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 PENDING (QOSMaxJobsPerUserLimit); 13 queued, 16 batches without output
+2026-11-12 13:13:01 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 RUNNING gnode01; 13 queued, 16 batches without output
+2026-11-12 13:23:02 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 RUNNING gnode01; 13 queued, 16 batches without output
+2026-11-12 13:57:55 laptop restarted 13:56; master reopened directly; driver restarted
+2026-11-12 13:57:55 driver start, code cd3b8c2
+2026-11-12 13:57:55 harvest done: 4 reports
+2026-11-12 13:57:56 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 RUNNING gnode01; 12 queued, 16 batches without output
+2026-11-12 14:07:57 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 RUNNING gnode01; 12 queued, 16 batches without output
+2026-11-12 14:17:58 teacher: 756005 command-a-plus-40 RUNNING gnode03;756937 command-a-plus-40 RUNNING gnode01; 12 queued, 16 batches without output
+2026-11-12 14:28:01 teacher worker v4t5 submitted as job 757527 (40 GB slice); 12 batches queued
+2026-11-12 14:42:03 teacher worker v4t6 submitted as job 757581 (40 GB slice); 12 batches queued
+2026-11-12 14:42:03 teacher: 757527 command-a-plus-40 RUNNING gnode01; 12 queued, 16 batches without output
+2026-11-12 14:52:04 teacher: 757527 command-a-plus-40 RUNNING gnode01;757581 command-a-plus-40 RUNNING gnode03; 12 queued, 16 batches without output
+2026-11-12 15:02:06 teacher: 757527 command-a-plus-40 RUNNING gnode01;757581 command-a-plus-40 RUNNING gnode03; 12 queued, 16 batches without output
+2026-11-12 15:12:08 teacher: 757527 command-a-plus-40 RUNNING gnode01;757581 command-a-plus-40 RUNNING gnode03; 12 queued, 16 batches without output
+2026-11-12 15:22:16 teacher worker v4t7 submitted as job 757709 (40 GB slice); 12 batches queued
+2026-11-12 15:32:20 teacher worker v4t8 submitted as job 757766 (40 GB slice); 12 batches queued
+2026-11-12 15:32:20 teacher: 757709 command-a-plus-40 RUNNING gnode03; 12 queued, 16 batches without output
+2026-11-12 15:42:21 teacher: 757709 command-a-plus-40 RUNNING gnode03;757766 command-a-plus-40 RUNNING gnode01; 12 queued, 16 batches without output
+2026-11-12 15:52:22 teacher: 757709 command-a-plus-40 RUNNING gnode03;757766 command-a-plus-40 RUNNING gnode01; 12 queued, 16 batches without output
+2026-11-12 16:02:11 v4 stopped at Hatem's request: driver, cut-off and follow-up stopped, teacher jobs 757709 757766 cancelled
