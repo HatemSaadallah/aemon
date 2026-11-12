@@ -1,0 +1,21 @@
+{
+ "compare": "trained minus base",
+ "judges": [
+  "claude",
+  "codex"
+ ],
+ "runs": {
+  "n": 72,
+  "better": 49,
+  "worse": 22,
+  "tied": 1,
+  "sign_test_p": 0.00182
+ },
+ "cases": {
+  "n": 24,
+  "better": 20,
+  "worse": 3,
+  "tied": 1,
+  "sign_test_p": 0.000488
+ }
+}

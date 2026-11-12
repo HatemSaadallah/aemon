@@ -20,7 +20,7 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 | Dataset | [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) |
 | Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) |
 | Paper | [docs/PAPER.pdf](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf) |
-| Recorded investigations | [docs/replays/](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/README.md), readable here with no GPU |
+| Every test run, browsable | [first test](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/final/README.md) (96 runs) and [second test](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/test2/README.md) (144 runs), base and fine-tuned side by side, no GPU needed |
 | Every decision, dated | [docs/DECISIONS.md](https://github.com/HatemSaadallah/aemon/blob/main/docs/DECISIONS.md) |
 
 | **+0.83** | **+0.52** | **28 of 48** | **$0.03** | **30×** |
@@ -30,6 +30,18 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 ![Blind quality score on the final test: base model 0.65, fine-tuned 1.48 (mean of two judges)](https://raw.githubusercontent.com/HatemSaadallah/aemon/main/docs/figures/quality-light.png)
 
 ![The reasoning map of one investigation: question, rival hypotheses, the evidence weighed for each, the challenge, the proposed test and the recommendation](https://raw.githubusercontent.com/HatemSaadallah/aemon/main/docs/figures/ui/redesign/after/map.png)
+
+**A judge's 60-second view**
+1. Open the [first test's run gallery](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/final/README.md): every case, base and fine-tuned side by side, with
+   how each run ended and its blind scores.
+2. Click the filter "fine-tuned finished, base did not" (25 of 48 pairs) and open any pair.
+3. Read one fine-tuned investigation end to end, for example [Simonelli](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/trained_simo-base_1.md): every
+   tool call, what the environment refused and why, and the recommendation.
+4. Then the filter "fine-tuned scored lower than base" (3 of 47 pairs), and section 7 for what still fails.
+
+**Paired, case by case.** On the first test the fine-tuned agent scored higher than the base model on all **16 of 16
+cases** and in 44 of 47 paired runs (exact sign test, p = 2.5e-10); on the second test on 20 of 24 cases (3 lower, 1
+equal) and 49 of 72 runs (`reports/judge/*/paired_counts.json`, mean of two judges).
 
 **In brief**
 - **What it is.** A 3.35B-parameter open model that investigates a strategy question step by step inside an
@@ -45,9 +57,9 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
   both judges: the agent now reaches a conclusion by a sound route far more often, and the conclusion itself is still
   weak.
 - **A later two-adapter system is the most consistent thing we built afterwards.** "Dig then reason" lets version 1
-  gather the evidence and a second adapter, trained with a second teacher, do the reasoning. It is clearly above
+  gather the evidence and another adapter, version 3, trained with a second teacher, do the reasoning. It is clearly above
   version 1 on the second test (1.43 against 1.07, +0.36 [0.22, 0.51]) and on development, and level with it on the
-  first test; the second adapter alone scores 1.48 on the second test. All of this came after the frozen results, so
+  first test (1.44 against 1.45, both judges); version 3 alone scores 1.48 on the second test. All of this came after the frozen results, so
   version 1 is the result we stand behind.
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured.
@@ -233,7 +245,7 @@ trained arm. The two adapters were not distinguishable (+0.20, interval −0.09 
   Electrolux Professional +0.60), and every kind of new evidence (no new evidence +0.84, irrelevant +0.87, supporting
   +0.86, undermining +0.76).
 - The judges agree on the ordering (Spearman 0.94 over 95 runs scored by both).
-- The largest gains are in distinct theories, framing, causal mechanism and revising on new evidence; the weakest
+- The largest gains are in distinct theories, framing, causal mechanism, and assumptions and predictions; the weakest
   dimensions for the trained agent remain the recommendation, revision, experiment design and judging evidence.
 
 ![Blind quality score on the final test, base model and fine-tuned, per judge](https://raw.githubusercontent.com/HatemSaadallah/aemon/main/docs/figures/quality-light.png)
@@ -299,14 +311,14 @@ failures involved contrasting predictions that the checker incorrectly treated a
 that the experiments were otherwise sound. The frozen numbers are reported as computed. Several failures trace to behaviour the
 training data never showed:
 - **Never declining a test.** No training example declines one. The labels need care: for Aquaporin, declining
-  follows from its insolvency and bankruptcy, recorded in the dossier, yet **no run of either arm found those records**
+  follows from its insolvency and bankruptcy, recorded in the dossier, yet **no run of either arm read those records**
   and every finished trained run recommends investing. For RATIONAL the no-test label is the case author's judgement
   and is contestable. *Since then: the company status check below makes every run read those records.*
 - **Little what-if evidence that matters.** Only 8 of 205 teacher investigations had supporting or undermining
   results; the student handles irrelevant evidence correctly and revises the wrong theory on Aquaporin's pair. *Still
   open: it needs new training examples.*
-- **Simulated-only finishes.** Eight runs try to finish citing only the simulated result, are refused, and repeat until
-  the error limit. *Still open.*
+- **Simulated-only finishes.** Eight runs try to finish citing only the simulated result and are refused; seven repeat
+  it until the error limit, and one reaches the turn limit. *Still open.*
 - **Rereading.** Nine runs reach the turn limit; in eight of them the agent rereads the same few sources. *Since
   then: the app refuses a third read of one source; the evaluated setup is unchanged.*
 
@@ -330,7 +342,7 @@ under the same judges, rubric and rule.
   judging evidence (0.28 → 0.39).
 
 ### Version 3: a second teacher (exploratory; version 1 stays the evaluated model)
-After both tests we trained a third adapter by continuing version 1 on everything from both teachers: version 1's rows
+After both tests we trained another adapter, version 3, by continuing version 1 on everything from both teachers: version 1's rows
 plus 3,611 rows from 144 replay-exact DeepSeek V4-Pro investigations on 69 companies (10 more, on the validation
 companies, give 262 validation rows). On its development screen it
 did not pass the adoption rule fixed in advance (blind quality 0.83 against version 1's 1.05), so it was not adopted.
@@ -344,7 +356,8 @@ blind by two judges qualified for this purpose (Claude Code and Codex on `gpt-6-
 
 - The two test sets disagree: version 3 is clearly higher on test set 2 and not distinguishable from version 1 on the
   final test, where most of the gap is one company (Aquaporin, −0.41).
-- Version 3 makes fewer calls and far fewer refused ones, but it learned the second teacher's direct style without
+- Version 3 makes fewer calls and, on test set 2, far fewer refused ones (305 against 584; 230 against 242 on the
+  final test), but it learned the second teacher's direct style without
   its recovery: when a call is refused it repeats it. Its theories are also thinner.
 - Because these runs were decided after version 1's results were known, they select nothing.
 
@@ -365,11 +378,12 @@ Dig then reason was higher than both single adapters on development (+0.17 [0.02
 [0.13, 0.62] over version 3), so it was the rule taken to a test.
 
 ### A company status check (the Aquaporin failure)
-On the final test no run of either arm found Aquaporin's insolvency records, 0 of 144, and every finished trained run
-recommended investing. We added one step after framing: a fixed search for the company's own current position
+On the first frozen test no run of either arm read Aquaporin's insolvency records (0 of 24 Aquaporin runs; the base
+runs were shown the announcement's title in search results), and every finished trained run recommended investing. We added one step after framing: a fixed search for the company's own current position
 (records that name the company, newest first), and a required `company_position` text in the final answer. With it
 every run reads those records. On Aquaporin, version 3 with the check finished 3 of 12 runs and all three said "do not
-commit"; without it, it finished 9 of 12 and all nine said "invest". The check costs finished runs: on development,
+commit"; without it, it finished 9 of 12 and all nine said "invest", although 4 of those 12 runs had read the insolvency
+announcement. The check costs finished runs: on development,
 version 1 finished 14 of 45 with it against 24 without. These Aquaporin numbers are a diagnostic of the fix, not a
 test, because that company informed the design.
 
@@ -394,13 +408,24 @@ was selected on test set 2, but that set had been run before.
   alone (1.43 against 1.48), so on this set the switching adds nothing over version 3.
 - The status check costs about 0.15 (combined minus dig −0.15 [−0.35, 0.06]) and six finished runs.
 - The two judges rank the runs alike (Spearman 0.90 over 360 runs).
-- **On the final test the picture reverses** (secondary and labelled, since Aquaporin informed the status check; 48
-  runs per arm, 231 packets, Claude Code judge only so far, the second judge pending): version 1 1.18, dig then reason
-  1.13, version 3 1.06, combined 1.03, base 0.54. No trained arm is distinguishable from version 1 there (combined
-  −0.15 [−0.32, 0.01], dig −0.06 [−0.23, 0.12], version 3 −0.12 [−0.27, 0.02]), and most of each gap is Aquaporin.
+- **On the final test the gain disappears** (secondary and labelled, since Aquaporin informed the status check; 48
+  runs per arm, 231 packets, both judges, none missing; Spearman 0.82 between them):
+
+  | Arm (48 runs each) | Mean of judges | Claude Code | gpt-6-sol |
+  |---|---|---|---|
+  | Base, staged prompt | 0.61 | 0.54 | 0.67 |
+  | Version 1 | 1.45 | 1.18 | 1.72 |
+  | Dig then reason | 1.44 | 1.13 | 1.76 |
+  | Version 3 | 1.35 | 1.06 | 1.64 |
+  | Combined system | 1.32 | 1.03 | 1.61 |
+
+  No later arm is distinguishable from version 1 there: dig then reason −0.01 [−0.20, 0.18], version 3 −0.10
+  [−0.27, 0.05], combined −0.13 [−0.32, 0.05]. Every trained arm stays far above the base (version 1 +0.85
+  [0.68, 1.00] in this re-judging, dig then reason +0.84 [0.69, 0.96], combined +0.71 [0.53, 0.91]). Aquaporin is the
+  largest part of the gaps for version 3 (−0.40) and combined (−0.51).
 - **Reading across both sets:** version 1 is the frozen, evaluated model, and no later system beats it on the final
   test. Dig then reason is the most consistent of the later systems: clearly higher than version 1 on test set 2 and
-  on development, level with it on the final test, and not higher than version 3 alone on test set 2 (1.43 against
+  on development, level with it on the final test (both judges), and not higher than version 3 alone on test set 2 (1.43 against
   1.48). The status check fixes what it was built for and costs finished runs.
 
 ### A recovery controller does not fix the remaining failures
@@ -413,7 +438,8 @@ remaining failures need training, not a controller. Full report: [docs/RECOVERY_
 ### Limits of our own checks
 - **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter
   design screens. The frozen numbers use the original check; later comparisons also report a stricter one.
-- **Evidence-kind labels are about 80% reliable**, by a blind relabelling of 60 training records.
+- **Evidence-kind labels are 75% exact, 83% counting defensible alternatives**, by a blind relabelling of 60
+  training records.
 
 Details: [docs/RELIABILITY_REPORT.md](https://github.com/HatemSaadallah/aemon/blob/main/docs/RELIABILITY_REPORT.md) and
 [docs/EVIDENCE_KIND_GUIDE.md](https://github.com/HatemSaadallah/aemon/blob/main/docs/EVIDENCE_KIND_GUIDE.md).
@@ -426,7 +452,8 @@ the development cases (they could not run on the held-out cases, which we report
 Tooling, tested for a later training run that was not made: **Unsloth** (the same rows, LoRA and seed through
 AgentTune's trainer, 60 steps: 23% faster per step, 8.1 GB peak memory against 11.6, losses within 0.003) and
 **CuratorKIT** row curation (above). A further teacher run with the status check was started and stopped before it
-produced data, so no version 4 exists. Runs, metrics and adapters are tracked in MLflow (`ops/mlflow/`).
+produced data. A version 4, recovery training for the reasoner, is registered in `docs/DECISIONS.md` (12 November)
+  and in progress; it is not part of any result here. Runs, metrics and adapters are tracked in MLflow (`ops/mlflow/`).
 
 ### Lessons
 - The controller, the guards and replay made the teacher's data trustworthy, and the same machinery made every
@@ -462,8 +489,10 @@ would be measured exactly as here: the same frozen judges and rule, on new held-
   - The teacher (Command A+) makes the same errors it was meant to correct: it calls encyclopedia and news text
     "independent study", relies on sources published after the case date, and designs tests that vary only the message.
   - A structured format fixed its truncated test designs, but then it declined tests the cases warrant.
-  - We had fixed a threshold of 30 strong examples, including experiment design, before training. It was not met, so
-    no version 2 was trained.
+  - We had fixed a threshold of 30 strong examples, including experiment design, before training. Command A+ did not
+    meet it. A hosted teacher (DeepSeek V4-Pro, with V4.1-Flash) then did (105 corrective rows), so version 2 was
+    trained on top of version 1; on its development screen it finished 0 of 15 runs against version 1's 7, and it was
+    stopped there.
 - **Auditing version 1's own data.** The same weaknesses are in the teacher data version 1 was trained on:
   - 74% of the teacher's recommendations use a number from no source;
   - 38% of its evidence kinds match the annotation;
@@ -477,7 +506,7 @@ would be measured exactly as here: the same frozen judges and rule, on new held-
   text but not the evidence behind it. The app shows these findings to the reader instead.
 - **Two more runtime attempts, both rejected under rules fixed in advance.**
   - Constraining the favoured theory to those the agent's own weighings support collided with an existing guard and
-    halved the finishes.
+    cut finishes from 24 to 14.
   - Novelty-first search doubled the sources the agent was shown, but it weighed fewer of them, found contradicting
     evidence in the same 2 of 45 runs, and finished with every check cleared in 0 runs against 3.
 

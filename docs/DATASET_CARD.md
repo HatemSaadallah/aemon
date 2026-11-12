@@ -62,10 +62,10 @@ This release replaces the one of 2026-11-08. That release cut every third-party 
 | `evaluation/dev/`, `evaluation/final/` | As in the first release: development runs (6 companies) and the final test (16 cases × 3 attempts × 2 arms), with judge packets, the key, both judges' outputs and the reports |
 | `evaluation/test2/` | Test set 2, version 1 against the base model: 24 cases × 3 attempts × 2 arms, 133 judge packets, the key, both judges' outputs and the reports |
 | `evaluation/final_v3/`, `evaluation/test2_v3/` | Version 3 on both test sets (exploratory): its runs, the packets of base, version 1 and version 3 judged together (135 and 205), the keys, the outputs of the two later judges (`claudecode`, `codexsol`) and the reports |
-| `evaluation/screen3/` | Version 3's development screen against version 1: both runs, 29 packets and the report |
+| `evaluation/screen3/` | Version 3's development screen against version 1: both runs, 29 packets, the key and the report |
 | `evaluation/switch/` | Adapter switching within a run, development only: 5 arms × 15 cases × 3 attempts, 207 packets, the key, one judge's outputs and the reports |
-| `evaluation/system_test2/` | The combined system (dig then reason, with the company status check) on test set 2 and on development: the runs, 342 packets, both judges' outputs and the reports. Its answer key is not in this release |
-| `evaluation/system_final/` | The same system on the final test: the two runs and 231 packets only. Judging was still in progress on 2026-11-11, so no judge output, key or report is published for it |
+| `evaluation/system_test2/` | The combined system (dig then reason, with the company status check) on test set 2 and on development: the runs, 342 packets, the key, both judges' outputs and the reports |
+| `evaluation/system_final/` | The same system, and dig then reason without the status check, on the final test, judged blind together with base, version 1 and version 3: the two new runs, 231 packets, the key, both judges' outputs and the reports |
 | `evaluation/status_check/` | Seven runs of the company status check (Aquaporin diagnostics and development), version 1 and version 3 |
 | `evaluation/judge_qualification/` | The qualification results of each judge |
 | `MANIFEST.json` | Every published file with the file it was made from, and the sha256 of that original and of the published copy |
@@ -219,7 +219,7 @@ To teach recovery:
    The replay and guard checks verify that every row is a valid, accepted call. They do not verify that its content is correct.
 6. **Evidence-kind annotation:** a blind relabelling of 60 training records agreed with the annotation on 45, with 5 more defensible. It found 3 likely errors, and 44 records use kinds the tool cannot express. The annotation is unchanged. A guide and a proposed overlay are in the code repository (`docs/EVIDENCE_KIND_GUIDE.md`).
 
-7. **Unfinished and partial campaigns:** `evaluation/system_final/` has runs and packets but no judgments yet, and `evaluation/system_test2/` and `evaluation/screen3/` are published without an answer key, so their packets cannot be matched to arms from this dataset alone (the reports give the per-arm results).
+7. **Campaigns:** every judging campaign in this release is finished and published with its answer key, so every packet can be matched to its arm.
 8. **Version 3 is exploratory:** it was run on both test sets after version 1's results were known and after it failed its development screen. Its numbers select nothing.
 
 ## 9. Dataset Statistics
@@ -256,6 +256,7 @@ Quality is a blind rubric of nine dimensions scored 0 to 3. Each number below is
 | Final test, version 3 vs version 1, exploratory (`final_v3/`) | Claude Code, Codex (gpt-6-sol) | base 0.620, version 1 1.461, version 3 1.334 | -0.127 [-0.305, 0.041], 48 pairs |
 | Test set 2, version 3 vs version 1, exploratory (`test2_v3/`) | Claude Code, Codex (gpt-6-sol) | base 0.562, version 1 1.058, version 3 1.479 | +0.421 [0.244, 0.601], 71 pairs |
 | Test set 2, combined system vs version 1 (`system_test2/`) | Claude Code, Codex (gpt-6-sol) | combined 1.282, dig then reason 1.427, version 1 1.065, version 3 1.477 | +0.217 [-0.001, 0.458], 72 pairs: the primary comparison is not met |
+| Final test, combined system and dig then reason vs version 1, exploratory (`system_final/`) | Claude Code, Codex (gpt-6-sol) | base 0.605, version 1 1.452, dig then reason 1.441, version 3 1.351, combined 1.320 | dig then reason −0.011 [−0.199, 0.181], combined −0.133 [−0.317, 0.052], 48 pairs each |
 | Adapter switching, development (`switch/`) | Claude Code only | version 1 1.065, version 3 0.863, dig then reason 1.239 | dig then reason minus version 1: +0.173 [0.018, 0.346], 45 pairs |
 
 Investigations finished: final test 4 of 48 (base), 28 of 48 (version 1), 37 of 48 (version 3); test set 2: 2 of 72 (base), 32 of 72 (version 1), 57 of 72 (version 3).

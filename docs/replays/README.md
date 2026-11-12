@@ -11,4 +11,11 @@ Six runs from the frozen final test (four companies the model never saw), readab
 | [Electrolux Professional: a run that stops after four refusals in a row](trained_epro-base_0.md) | Aemon | repeated errors | 1.19 |
 | [Electrolux Professional: the untrained base model, for contrast](base_epro-base_1.md) | base | repeated errors | 0.50 |
 
-Regenerate with `python scripts/release/replay_markdown.py`. All 96 final-test runs are in `reports/judge/final/final_test_*.json`.
+## Every run
+
+Every run of both frozen tests, base and fine-tuned side by side, with filters (fine-tuned finished and base did not, fine-tuned scored lower, both stopped):
+
+- [Frozen final test (four unseen companies)](final/README.md): 96 runs; finished 4 base, 28 fine-tuned; mean of judges 0.65 base, 1.48 fine-tuned.
+- [Second frozen test (twelve more unseen companies)](test2/README.md): 144 runs; finished 2 base, 32 fine-tuned; mean of judges 0.57 base, 1.09 fine-tuned.
+
+Regenerate with `python scripts/release/replay_markdown.py`. The runner reports are `reports/judge/final/final_test_*.json` and `reports/judge/test2/test2_*.json`.

@@ -51,3 +51,17 @@ json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 {"t": "00:27:09", "set": "system_final", "round": 2, "start": true}
 {"t": "00:31:14", "set": "system_final", "round": 2, "returncode": 0, "valid": 68, "infra_failures": 163, "causes": {"usage_limit": 163}}
 {"t": "00:31:14", "set": "system_final", "waiting_minutes": 60}
+{"t": "01:31:14", "set": "system_final", "round": 3, "start": true}
+{"t": "01:35:04", "set": "system_final", "round": 3, "returncode": 0, "valid": 68, "infra_failures": 163, "causes": {"usage_limit": 163}}
+{"t": "01:35:04", "set": "system_final", "waiting_minutes": 60}
+{"t": "02:35:04", "set": "system_final", "round": 4, "start": true}
+{"t": "02:38:54", "set": "system_final", "round": 4, "returncode": 0, "valid": 68, "infra_failures": 163, "causes": {"usage_limit": 163}}
+{"t": "02:38:54", "set": "system_final", "waiting_minutes": 60}
+{"t": "03:38:54", "set": "system_final", "round": 5, "start": true}
+{"t": "04:00:18", "set": "system_final", "round": 5, "returncode": 0, "valid": 231, "infra_failures": 0, "causes": {}}
+{"t": "04:00:20", "set": "system_final", "reported": "combined vs v1"}
+{"t": "04:00:21", "set": "system_final", "reported": "combined vs v3"}
+{"t": "04:00:23", "set": "system_final", "reported": "combined vs dig"}
+{"t": "04:00:24", "set": "system_final", "reported": "dig vs v1"}
+{"t": "04:00:26", "set": "system_final", "reported": "combined vs base"}
+{"t": "04:00:26", "done": true}

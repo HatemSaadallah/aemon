@@ -45,7 +45,7 @@ CAMPAIGNS: dict[str, dict[str, Any]] = {
     'screen3': {'finished': True},
     'switch': {'finished': True},
     'system_test2': {'finished': True},
-    'system_final': {'finished': False},  # judging in progress on 2026-11-11: no predictions, no key
+    'system_final': {'finished': True},  # both judges finished 2026-11-12 04:00
 }
 HOSTED = 'experiments/hosted_investigations'
 

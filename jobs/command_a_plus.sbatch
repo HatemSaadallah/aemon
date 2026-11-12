@@ -85,11 +85,12 @@ print(json.dumps({'attempted': len(d), 'valid_responses': len(valid), 'accepted'
 PYT
     return $RC
   fi
-  if [[ $1 == correct* ]]; then  # a correction batch: $2 is a states file, one teacher turn per state (strategy/correct.py)
+  if [[ $1 == correct* ]]; then  # a correction batch: $2 is a states file, one teacher turn per state (aemon.teacher.corrections). The batch
+    # fails its check if under MIN_KEPT of it is kept (default 0.25) or half its requests failed; MIN_KEPT=0 lets low acceptance pass (version 4)
     $L/env/bin/python -W ignore -m aemon.teacher.corrections ask --states "$2" --url $URL --workers $W --server-settings "{\"reasoning_budget\": ${THINK:-1024}, \"context_per_slot\": ${CONTEXT:-16384}, \"slots\": $W, \"prompt_version\": \"${PROMPT_VERSION:-teacher-v1}\"}" --weights-sha256 03cf0669f0a6f338a064f264b7c54df1bb882d16860ea513727b199c1ff05b8f \
       --manifest $OUT/provenance.jsonl --output $OUT/${P}_$1.json > $OUT/${P}_$1.log 2>&1 || true
     echo "stage $P $1 ended $(date +%T): $(tail -1 $OUT/${P}_$1.log | cut -c1-200)"
-    $L/env/bin/python -c "import json,sys; d=json.load(open('$OUT/${P}_$1.json')); k=sum(bool(x.get('kept')) for x in d); print(k, 'of', len(d), 'kept'); sys.exit(0 if d and k * 4 >= len(d) else 1)" || { echo "stage $P $1 failed its check"; return 1; }
+    $L/env/bin/python -c "import json,sys; d=json.load(open('$OUT/${P}_$1.json')); k=sum(bool(x.get('kept')) for x in d); f=sum(str(x.get('decision', '')).startswith('request failed') for x in d); print(k, 'of', len(d), 'kept,', f, 'request failures'); sys.exit(0 if d and k >= ${MIN_KEPT:-0.25} * len(d) and 2 * f < len(d) else 1)" || { echo "stage $P $1 failed its check"; return 1; }
     return 0
   fi
   $L/env/bin/python -W ignore -m aemon.agent.run_investigations --url $URL --prompt "${PROMPT:-teacher}" --attempts 1 --first-attempt $3 --workers $W --temperature $4 \

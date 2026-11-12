@@ -1506,3 +1506,83 @@ judges: 1.43 against 1.28; final test, Claude Code judge: 1.13 against 1.03), an
 (clearly above version 1 on development and test set 2, level on the final test). The app's default `system` model
 therefore runs version 1 for the brief, frame and evidence stages and version 3 after, with the status check off;
 `STATUS_CHECK=1` turns it on. Applied locally and on the hosted demo. Version 1 remains the evaluated model.
+
+## 2026-11-12 01:10: version 4, recovery distillation for the reasoner (Hatem: "explore distilling more data ... make the model reason better"; registered before any run)
+
+Why: version 3 reasons better than version 1 when it gets there, but it learned the second teacher's direct style
+without recovery: when a call is refused it repeats it (24 of 32 final refusals on its screen were a repeated search),
+and about 4 in 10 runs of every trained system stop before a recommendation. Recovery is mechanically checkable, so a
+free teacher (Command A+ on the cluster; no paid API, no Claude or Codex output as data) can supply it.
+
+1. **Harvest** (training companies only; no validation, final-test or test-set-2 company): the deployed system, dig
+   then reason without the status check (version 1 for brief, frame and evidence, version 3 after), on the training
+   cases, one attempt, the evaluated settings (compact prompt, 45 turns, 4 refusals in a row).
+2. **States and corrections** (`aemon.teacher.corrections`, protocol correction-v1, unchanged): the states that start
+   a loop (a repeat refused, a third read, a second refusal in a row) in the stages version 3 writes; Command A+
+   answers each; a correction is kept only if it replays as accepted, repeats nothing and names what it acts on.
+3. **Version 4**: version 3 continued on its own DeepSeek rows plus the kept corrections (corrections at most 20% of
+   rows), one pass, the v3 learning rate and seed. Conversion gate v2 as for every adapter.
+4. **Development screen**: dig then reason with version 3 against dig then reason with version 4 as the reasoner, the
+   15 development cases, 3 attempts, one server holding both, judged together blind by the Claude Code judge.
+   **Adopted as the reasoner** only if all three hold: blind quality not lower (v4 minus v3 point estimate >= 0),
+   refused calls per run lower, finished runs not fewer. Otherwise version 3 stays.
+5. If adopted: test set 2 and the final test, labelled exploratory (both sets have been run before), both judges
+   where the Codex limit allows. Version 1 stays the frozen, headline model whatever happens.
+
+## 2026-11-12 02:00: corrections to earlier entries, found by a number audit (the entries above are left as written)
+
+- The 11 November status-check entry says "all 144 Aquaporin final-test runs"; it is 36 (12 base, 12 v1, 12 v3). The
+  insolvency announcement did appear in search results (in all 12 base runs) but no run of the first test opened it,
+  and version 3 read it in 4 of 12 runs and still recommended investing. "Never appeared in a search result" and "no
+  version 3 run found" are wrong; "no v1 or base run read it" is right.
+- The 11 November 00:05 entry's 288 DeepSeek investigations: 266 ran, 154 finished, 112 did not, and 22 more were
+  harness errors (the 288).
+- Version 2 was trained (job 752833) and stopped at its screen; the reliability report predates that round.
+- Several 10 November entries are out of time order in this file; their timestamps are right.
+
+## 2026-11-12 02:10: version 4 timing cut-off (registered before any correction exists)
+
+The teacher step may take 10 to 25 hours on the free slices. To leave time for the screen before the deadline,
+version 4 trains on the corrections kept by **13 November 14:00 CET**, whatever their number (batches unfinished then
+are left out and named). If fewer than 50 are kept by then, version 4 is not trained and the plan is reported as not
+completed.
+
+## 2026-11-12 02:50: loop guards at decoding time (registered before any screen run)
+
+**Why.** In the final-test runs of the default (dig then reason), 233 of 274 refused calls are repeats (130 repeated
+searches, 103 re-assessments of a pair already assessed) and 33 are misquotes; for the combined system 213 of 322
+are repeats and 94 misquotes. A run stops after 4 refusals in a row, so these loops are what "repeated errors" means.
+The final-test numbers were read only to find the failure; nothing below is run on either frozen test set.
+
+**What (development only, `--recovery`, off as evaluated; `agent/recovery.py`, `agent/loop.py`):**
+- `no_repeats`: assess_evidence offers, per theory, only the sources not yet assessed for that theory.
+- `quote_menu`: assess_evidence's quote is one of the sentences of the chosen source, so it cannot be misquoted.
+- `resample_repeats`: a call the environment refuses as an exact repeat changed nothing, so the same state is drawn
+  again (temperature 0.8, new seed), at most 3 times, before the refusal counts toward the stop. Every refused draw stays
+  in the record, marked `redrawn`, and in the refused-call count.
+No guard, stage rule, budget or stop is changed. A replay of the 45 development dig-then-reason runs found that
+withdrawing the search tool after a repeated search would also have blocked 42 accepted calls, so that variant was
+dropped before any live run.
+
+**Screen.** Laptop GPU (the 4-bit base, the app's runtime), both arms on the same server: dig then reason as it is
+against dig then reason with all three guards, the 15 development cases of the switching screen, 3 attempts, judged
+together blind by the Claude Code judge (Sol as well if its limit allows). **Adopted as the app default** only if all
+hold: finished runs more, refused calls per run lower, blind quality not lower (guarded minus plain point estimate >= 0).
+If adopted, it is run on test set 2 labelled exploratory (that set has been run before). Version 1 stays the frozen,
+headline result whatever happens.
+
+## 2026-11-12 04:05: combined system and dig then reason on the final test, both judges
+
+The second judge (Codex, gpt-6-sol) finished the 231 final-test packets at 04:00 (five rounds across usage limits; no
+packet missing). Mean of the two judges, 48 runs per arm, case-cluster bootstrap, Spearman 0.82 between the judges:
+base 0.61, version 1 1.45, dig then reason 1.44, version 3 1.35, combined 1.32.
+- dig then reason minus version 1: −0.01 [−0.20, 0.18]; combined minus version 1: −0.13 [−0.32, 0.05];
+  version 3 minus version 1: −0.10 [−0.27, 0.05]; dig then reason minus version 3: +0.09 [−0.10, 0.27].
+- Every trained arm stays far above the base: version 1 +0.85 [0.68, 1.00] (this re-judging; the frozen result is
+  +0.83 [0.69, 0.97]), dig then reason +0.84 [0.69, 0.96], combined +0.71 [0.53, 0.91].
+- Per judge: Claude Code ranks version 1 first (1.18 against dig 1.13), Sol ranks dig first (1.76 against 1.72).
+
+**Decision:** the one-judge reading of 23:45 stands with both judges: no later arm is distinguishable from version 1 on
+the final test. Version 1 stays the headline model; dig then reason stays the app default as the most consistent later
+system (above version 1 on test set 2 and development, level on the final test). The keys of system_test2 and
+system_final (and screen3) are now published, since every judge has finished.

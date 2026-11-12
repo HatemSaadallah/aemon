@@ -17,11 +17,13 @@ still happens on the record, and termination rules are unchanged.
 
 from __future__ import annotations
 
+import copy
+import re
 from typing import Any
 
 from aemon.environment.stages import current_stage
 
-FEATURES = ('mask_rereads', 'progress', 'budget', 'citations')
+FEATURES = ('mask_rereads', 'progress', 'budget', 'citations', 'no_repeats', 'quote_menu', 'resample_repeats')
 NO_PROGRESS_LIMIT = 3  # calls in a row without progress before the recovery note
 BUDGET_MARGIN = 3  # spare turns kept above the minimum before exploration is withdrawn
 EXPLORATORY = ('search_evidence', 'challenge_theory', 'add_theory', 'read_source', 'assess_evidence')
@@ -169,3 +171,36 @@ def budget_note(run: Any) -> str:
     return (f'Turns left: {run.turns_left}. At least {min_actions(run)} accepted steps are still required to finish '
             f'({REQUIREMENT.get(current_stage(run).name, "")} first). Further searches and rereads are withdrawn. If the evidence '
             'is insufficient, say so in your recommendation and uncertainty rather than guessing.')
+
+
+def sentences(text: str, limit: int = 420) -> list[str]:
+    """The source's sentences, each an exact substring of its excerpt, for the quote menu."""
+    parts = [p.strip() for p in re.split(r'(?<=[.!?;])\s+|\n+', text) if p.strip()]
+    return sorted({p for p in parts if 12 <= len(p) <= limit})
+
+
+def assess_variants(run: Any, arguments: dict) -> list[dict] | None:
+    """no_repeats: one argument schema per theory, offering only the sources not yet assessed for it.
+    quote_menu: one per (theory, source), whose quote is one of that source's sentences. None when neither is on."""
+    features = getattr(run, 'recovery', frozenset())
+    if not ({'no_repeats', 'quote_menu'} & features):
+        return None
+    done = {(a['theory_id'], a['evidence_id']) for a in run.assessments}
+    variants = []
+    for t in sorted(run.theories):
+        ids = sorted(i for i in run.read if 'no_repeats' not in features or (t, i) not in done)
+        if not ids:
+            continue
+        if 'quote_menu' in features:
+            for i in ids:
+                menu = sentences(run._source(i).excerpt)
+                if not menu:
+                    continue
+                v = copy.deepcopy(arguments)
+                v['properties'].update(theory_id={'const': t}, evidence_id={'const': i}, quote={'enum': menu})
+                variants.append(v)
+        else:
+            v = copy.deepcopy(arguments)
+            v['properties'].update(theory_id={'const': t}, evidence_id={'enum': ids})
+            variants.append(v)
+    return variants

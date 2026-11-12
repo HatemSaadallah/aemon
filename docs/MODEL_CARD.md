@@ -138,7 +138,7 @@ Base 0.14 (compact prompt) and 0.43 (staged); earlier adapter 1.09; this adapter
 20 of 48 trained runs stop before a recommendation (rereading to the turn limit; finishes citing only simulated
 evidence, refused until the error limit). Finished runs miss checks mainly because the model never declines a test
 (no training example declines one), mishandles supporting and undermining what-if evidence (rare in training), and
-leans on company claims. On Aquaporin no run of either arm found the company's insolvency in its dossier, and every
+leans on company claims. On Aquaporin no run of either arm read the company's insolvency records in its dossier, and every
 finished trained run recommends investing: treat its recommendations as practice output, not advice.
 
 ### Evidence reliability audit (2026-11-10, `docs/RELIABILITY_REPORT.md`)
@@ -159,7 +159,9 @@ part of this model's configuration:
 - an evidence-verification review before the final recommendation: 19 unsupported recommendations against 20;
 - a constrained, evidence-consistent position: half as many finishes, rejected.
 
-A corrective version 2 was not trained, because too few teacher corrections passed review. Better training data, from
+Corrective distillation from this teacher did not reach the registered threshold of reviewed examples. A version 2
+trained on a second teacher's corrections (DeepSeek) finished 0 of 15 development screen runs against this model's 7
+and was stopped. Better training data, from
 a stronger or human-corrected teacher for evidence judgement, is the open direction. It was not tested.
 
 ### What these results do not show
@@ -197,8 +199,8 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
 - **Aemon's settings.** The app adds a reread limit, help after refused steps, more allowed steps, draft
   answers when a run stops early, memory, attachments and web search. None of these were part of the evaluated setup;
   the reported numbers apply to the evaluated settings (45 turns, 4 refusals in a row).
-- **Exact reproduction from the public data.** The public dossier cuts every excerpt to one sentence of at most 25 words,
-  so runs on the published data read shorter excerpts than the originals and can differ.
+- **Exact reproduction from the public data.** Since 11 November the public dossier is byte-identical to the one the
+  evaluated runs read (the release of 8 November had cut excerpts to one short quote).
 
 ## Exploratory: the version 3 adapter (`exploratory/v3_adapter.gguf`)
 
@@ -207,4 +209,4 @@ replay-exact investigations). It did **not** pass its development adoption rule 
 published so the two-adapter system described in the write-up ("dig then reason": this card's adapter gathers the
 evidence, version 3 reasons) can be run by others. File: GGUF for llama.cpp, sha256 `ea919380…e1443`, the conversion
 the exploratory runs used. Blind scores, mean of two judges (Claude Code and Codex `gpt-6-sol`), base / version 1 /
-version 3: test set 2 0.56 / 1.06 / 1.48; final test 0.62 / 1.46 / 1.33. Same licence as the base model, CC-BY-NC-4.0.
+version 3: test set 2 0.56 / 1.06 / 1.48; final test 0.62 / 1.46 / 1.33. Dig then reason, mean of the same two judges: test set 2 1.43 (version 1 1.07); final test 1.44 (version 1 1.45, −0.01 [−0.20, 0.18]), so it is level with this adapter on the final test. Same licence as the base model, CC-BY-NC-4.0.

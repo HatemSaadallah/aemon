@@ -35,7 +35,7 @@ for i in $(seq 1 120); do curl -sf http://127.0.0.1:$PORT/health > /dev/null && 
 curl -s http://127.0.0.1:$PORT/lora-adapters; echo
 cd $L/code_$REVISION
 PYTHONDONTWRITEBYTECODE=1 HF_HUB_OFFLINE=1 CODE_REVISION=$REVISION $L/env/bin/python -W ignore -m aemon.agent.run_investigations --url http://127.0.0.1:$PORT --prompt compact --cases "$CASES" --split ${SPLIT:-development} ${STATUS_CHECK:+--status-check} \
-  --context 12288 --max-tokens 520 --max-turns 45 --attempts ${ATTEMPTS:-3} --lora-route "$ROUTE" --model-label "tiny-aya-global bf16 af89d21 route $ROUTE" --weights-sha256 $WEIGHTS \
+  --context 12288 --max-tokens 520 --max-turns 45 --attempts ${ATTEMPTS:-3} --lora-route "$ROUTE" ${RECOVERY:+--recovery $RECOVERY} --model-label "tiny-aya-global bf16 af89d21 route $ROUTE" --weights-sha256 $WEIGHTS \
   --manifest $OUT/provenance.jsonl --output $OUT/${NAME}.json > $OUT/${NAME}.log 2>&1
 $L/env/bin/python -c "import json; s=json.load(open('$OUT/${NAME}.json'))['summary']; print('$NAME', json.dumps({k: s[k] for k in ('episodes', 'finished', 'end_to_end_success', 'stop_reasons', 'refused_calls', 'mean_calls')}))"
 echo "done $(date +%T)"

@@ -38,4 +38,4 @@
 {"judge": "claudecode", "packet": "aa82b7f3356d9ca5", "valid": true}
 {"judge": "claudecode", "packet": "9319af467672f93d", "valid": false}
 {"judge": "claudecode", "packet": "15638507b71e3997", "valid": false}
-/home/hatem/lexsi-backup/judge_results/qualification/claudecode_qual/predictions.jsonl
+/home/USER/lexsi-backup/judge_results/qualification/claudecode_qual/predictions.jsonl

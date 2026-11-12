@@ -21,7 +21,7 @@ REPO = Path(__file__).resolve().parents[2]
 DROP = ('papers/', 'sources/', 'docs/PUBLIC_README.md', 'SUMMARY.md', 'TODO.md')  # internal working notes stay private too  # the source papers and their extracted text are the publishers', not ours
 # Personal and internal identifiers, replaced by placeholders in the public copy (named in the README)
 SCRUB = {'CLUSTER_ACCOUNT': 'CLUSTER_ACCOUNT', 'CLUSTER_HOST': 'CLUSTER_HOST', '/home/USER': '/home/USER', '/home/USER': '/home/USER'}
-TEXT = {'.sha256', '.jinja', '.py', '.md', '.json', '.jsonl', '.txt', '.ts', '.tsx', '.js', '.css', '.html', '.sh', '.sbatch', '.toml', '.cfg', '.yml', '.yaml', '.csv', '.log'}
+TEXT = {'.sha256', '.jinja', '.py', '.md', '.json', '.jsonl', '.txt', '.ts', '.tsx', '.js', '.css', '.html', '.sh', '.sbatch', '.toml', '.cfg', '.yml', '.yaml', '.csv', '.log', '.out', '.err', '.tex', '.bib', '.R'}
 
 
 def main() -> None:
@@ -51,7 +51,7 @@ def main() -> None:
             shutil.copy2(src, dst)
     # The public README is its own document: results and how to run them, without the internal working notes
     (out / 'README.md').write_text((REPO / 'docs/PUBLIC_README.md').read_text())
-    text_files = [p for p in out.rglob('*') if p.is_file() and p.suffix in TEXT]
+    text_files = [p for p in out.rglob('*') if p.is_file()]  # every file, so a type missing from TEXT is caught
     unscrubbed = sum(p.read_text(errors='ignore').count(k) for p in text_files for k in SCRUB)
     print(json.dumps({'files': len(files) - dropped, 'dropped': dropped, 'redacted_files': changed, 'excerpts': 'as they are', 'identifiers_left': unscrubbed}))
 

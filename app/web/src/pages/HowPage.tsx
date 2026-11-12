@@ -140,7 +140,7 @@ export function HowPage({ workspace: w }: { workspace?: Workspace | null }) {
           <div className="panel pad res warnish">
             <span className="kicker">Reliability audit</span>
             <ul className="res-list">
-              <li><b>21–46%</b> of V1's finished recommendations use a number found in no source it read, depending on the test set.</li>
+              <li><b>21% and 31%</b> of V1’s finished recommendations on the two test sets (46% on development) use a number found in no source it read.</li>
               <li>Evidence types are often wrong: “independent study” is applied to news and company text.</li>
               <li>Only 1 of 27 proposed development tests passed the stricter design checks.</li>
               <li>Finishing is not the same as being right: only 1 of 48 final-test runs passed every mechanical check.</li>

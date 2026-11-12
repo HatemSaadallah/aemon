@@ -99,8 +99,8 @@ of cost, not quality: Opus was not run on the final test.
 
 \paragraph{Unfinished runs.} 20 of the fine-tuned model's 48 final-test runs ended before a recommendation. Nine reached
 the turn limit, eight of them rereading the same few sources (19 to 30 reads of 4 to 10 sources). Eleven stopped after
-repeated refusals, eight of them finish calls that cited only the simulated what-if, which the rules forbid, and the rest
-repeated searches and assessments.
+repeated refusals, seven of them finish calls that cited only the simulated what-if, which the rules forbid (an eighth
+such run reached the turn limit), and the rest repeated searches and assessments.
 
 \paragraph{Finished runs.} Of the 28 finished runs, the experiment check fails in 23. In 17 of them the case says no test
 is warranted, so the right call was to decline, but the model proposed a test; in 6 the check read the predictions as
@@ -171,6 +171,30 @@ paired difference of $+0.52$ [0.33, 0.70] with a case-cluster bootstrap (Claude 
 companies, and it finishes 32 of 72 investigations against 2 of 72. The gain is smaller than on the first test
 ($+0.83$ there).
 
+\subsection{Later systems: a second adapter and adapter switching}
+Two systems were built after the frozen results and are labelled exploratory. Version~3 continues version~1 on rows
+from a second teacher (DeepSeek V4-Pro, 3,611 rows from 144 replay-exact investigations). \emph{Dig then reason} uses
+one server holding both adapters: version~1 writes the brief, framing and evidence-gathering turns, version~3 every
+later turn. Both were judged blind together with the base model and version~1 by the same two judges (mean of the two;
+case-cluster bootstrap):
+
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Arm & Test set 2 (72 runs) & Final test (48 runs)\\
+\midrule
+Base, staged prompt & 0.56 & 0.61\\
+Version 1 & 1.07 & 1.45\\
+Version 3 & 1.48 & 1.35\\
+Dig then reason & 1.43 & 1.44\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+On test set 2 dig then reason is clearly above version~1 ($+0.36$ [0.22, 0.51]); on the final test it is level with it
+($-0.01$ [$-0.20$, 0.18]), and version~3 alone is not distinguishable from version~1 either ($-0.10$ [$-0.27$, 0.05]).
+Version~1 remains the evaluated model; dig then reason is the most consistent later system and is the demo's default.
+
 \section{What did not fix the remaining failures}\label{sec:negative}
 After both tests we tried, on the development cases only, to repair version 1's remaining failures:
 \begin{itemize}
@@ -215,8 +239,8 @@ An audit of the 158 teacher investigations that trained version 1 found the teac
   \item 74\% of its recommendations use a number from no source;
   \item 38\% of its evidence kinds match the annotation, with \texttt{independent\_study} often given to encyclopedia,
         news and company-history text;
-  \item in historical cases, 47\% of its recommendations cite a source published after the case date, and in a blind
-        content sample about half of those quotes reveal later outcomes.
+  \item in 74 of its 109 historical cases (68\%; 47\% of all 158 investigations) the recommendation cites a source
+        published after the case date, and in a blind content sample about half of those quotes reveal later outcomes.
 \end{itemize}
 Version 1 reproduces the first two: invented numbers in 21\% and 31\% of its finished recommendations on the two test
 sets, and kinds matching in 58\% and 46\%. The frozen test cases are present-day, so the dating problem cannot affect
@@ -229,7 +253,9 @@ replay, split and family gates. Of 90 answers the gates accepted, an advisory su
 spot checks confirmed its reasons: later-dated sources, wrong kinds, overstated support, and tests that varied only
 the message. A structured format fixed the teacher's truncated test designs, but then it declined tests the cases
 warrant. We had fixed a threshold of 30 strong examples across three families, including experiment design, before
-training. It was not met, so no version 2 was trained.
+training. Command A+ did not meet it. A hosted teacher (DeepSeek V4-Pro, with V4.1-Flash) then met it with 105
+corrective rows, and version 2 was trained on top of version 1; on its development screen it finished 0 of 15 runs
+against version 1's 7, and it was stopped.
 
 \textbf{What this does and does not show.} It shows that filtering cannot remove errors the teacher makes
 systematically, and that the student inherits them. It does not show that better training data would fail. A stronger

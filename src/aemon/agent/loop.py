@@ -111,6 +111,28 @@ def play(
         before_state = recovery.signature(run)
         calls_before = len(run.calls)
         result = run.call(call['name'], call['arguments']) if call is not None else {'error': problem}
+        redraws = 0
+        # resample_repeats (experimental, development only): a call the environment refused as an exact repeat changed
+        # nothing, so the same state is drawn again (temperature 0.8, new seed) up to 3 times before the refusal counts.
+        # Every refused draw stays in run.calls, marked redrawn, so refusal counts are unchanged.
+        while 'resample_repeats' in run.recovery and 'error' in result and len(run.calls) > calls_before and run.calls[-1].get('category') == 'repeat' and redraws < 3:
+            run.calls[-1]['redrawn'] = True
+            redraws += 1
+            try:
+                again = respond(messages[:-1], seed + 7919 * redraws, max_tokens, schema_for(run, reasoned) if staged else schema, 0.8, **extra)
+            except urllib.error.HTTPError:
+                break
+            again.pop('raw', None)
+            if route:
+                again['adapters'] = reply.get('adapters')
+            again['redraw_of'] = reply['text']
+            reply = again
+            turns[-1] = reply
+            messages[-1] = {'role': 'assistant', 'content': reply['text']}
+            call, problem = parse_call(reply['text'], schema is not None or staged)
+            result = run.call(call['name'], call['arguments']) if call is not None else {'error': problem}
+        if redraws:
+            reply['redraws'] = redraws
         errors = errors + 1 if 'error' in result else 0
         still = 0 if recovery.signature(run) != before_state else still + 1
         reply['tool_result'] = result

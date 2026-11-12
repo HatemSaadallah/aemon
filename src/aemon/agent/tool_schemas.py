@@ -146,6 +146,12 @@ def _narrow(name: str, run: Investigation) -> Json | None:
         if not read:
             return None
         fields['evidence_id'] = _only(read)
+        variants = recovery.assess_variants(run, tool['properties']['arguments'])
+        if variants is not None:  # experimental (development only): never offer a pair already assessed, or a misquote
+            if not variants:
+                return None
+            tool['properties']['arguments'] = {'anyOf': variants} if len(variants) > 1 else variants[0]
+            return tool
     if name == 'revise_theory':
         fields['evidence_ids']['items'] = _only(read)
     if name == 'propose_test':
