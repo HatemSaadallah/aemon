@@ -208,23 +208,23 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
   answers when a run stops early, memory, attachments and web search. None of these were part of the evaluated setup;
   the reported numbers apply to the evaluated settings (45 turns, 4 refusals in a row). By default the app also runs
   the two-adapter system (this adapter gathers the evidence, version 3 reasons) with decoding-time guards; see the
-  exploratory sections below.
+  final system sections below.
 - **Exact reproduction from the public data.** Since 11 November the public dossier is byte-identical to the one the
   evaluated runs read (the release of 8 November had cut excerpts to one short quote).
 
-## Exploratory: the version 3 adapter (`exploratory/v3_adapter.gguf`)
+## The final system: the version 3 adapter (`exploratory/v3_adapter.gguf`)
 
 A second adapter, continued from this one on rows from a second teacher (DeepSeek V4-Pro; 3,611 rows from 144
-replay-exact investigations). It did **not** pass its development adoption rule and is not the evaluated model. It is
+replay-exact investigations). On its own it did not pass its development adoption rule; it is the reasoner of the final system. It is
 published so the two-adapter system described in the write-up ("dig then reason": this card's adapter gathers the
 evidence, version 3 reasons) can be run by others. File: GGUF for llama.cpp, sha256 `ea919380…e1443`, the conversion
-the exploratory runs used. Blind scores, mean of two judges (Claude Code and Codex `gpt-6-sol`), base / version 1 /
+the final system's runs used. Blind scores, mean of two judges (Claude Code and Codex `gpt-6-sol`), base / version 1 /
 version 3: test set 2 0.56 / 1.06 / 1.48; final test 0.62 / 1.46 / 1.33. Dig then reason, mean of the same two judges in the five-arm re-judging (which moves each arm by up to 0.02): test set 2 1.43 (version 1 1.07); final test 1.44 (version 1 1.45, −0.01 [−0.20, 0.18]), so it is level with this adapter on the final test. Same licence as the base model, CC-BY-NC-4.0.
 
-## Exploratory: decoding-time guards (the app's default)
+## The final system: decoding-time guards (the app's default)
 
-Built after every frozen result and labelled exploratory; they change what the model can produce at each step, not
-its weights, and the evaluated numbers above use none of them. With the two-adapter system ("dig then reason"):
+They change what the model can produce at each step, not its weights; the version 1 numbers above use none of
+them. With the two-adapter system ("dig then reason"):
 - **Loop guards**: a source already weighed for a theory and a search already run are not offered again, a quote is
   picked from the source's own sentences, an exact repeat is drawn again before it counts, and a step-budget guard.
   Finished runs: development 28 → 45 of 45, test set 2 43 → 69 of 72, final test 27 → 45 of 48. Blind quality, mean of

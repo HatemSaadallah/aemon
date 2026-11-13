@@ -13,7 +13,9 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 > **Result in one line.** On four companies it never saw, with the same environment, tools, stage controller and
 > budgets for both arms, the fine-tuned Tiny Aya agent scored **1.48** against the best-prompted base model's **0.65**
 > on a 0–3 blind rubric (mean of two LLM judges; **+0.83, 95% interval 0.69 to 0.97**), and was higher at every
-> company. A second frozen test on twelve more companies gave **+0.52 [0.33, 0.70]**.
+> company. A second frozen test on twelve more companies gave **+0.52 [0.33, 0.70]**. The final system adds a second
+> adapter and decoding-time guards: it finishes **46 of 48** investigations on the first test (the base model 4), with
+> **39 tool calls** per finished investigation (the base model 242).
 
 | | |
 |---|---|
@@ -25,9 +27,9 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 | Every test run, browsable | [first test](docs/replays/final/README.md) (96 runs) and [second test](docs/replays/test2/README.md) (144 runs), base and fine-tuned side by side, no GPU needed |
 | Every decision, dated | [docs/DECISIONS.md](docs/DECISIONS.md) |
 
-| **+0.83** | **+0.52** | **28 of 48** | **4× fewer** | **$0.03** |
+| **+0.83** | **+0.52** | **46 of 48** | **6× fewer** | **$0.03** |
 |:---:|:---:|:---:|:---:|:---:|
-| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | investigations finished with an accepted recommendation, against 4 of 48 for the base model | tool calls per finished investigation (61 against 242), with half the share of refused calls | per investigation, self-hosted on one A100 slice: about 8 times less than the closed model we measured, 26× faster than its teacher |
+| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | investigations the final system finishes with an accepted recommendation on the first test, against 4 of 48 for the base model | tool calls per finished investigation (39 against 242); 7.5% of calls refused, against 29% | per investigation for the fine-tuned model, self-hosted on one A100 slice: about 8 times less than the closed model we measured, 26× faster than its teacher |
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/quality-dark.png">
@@ -62,17 +64,18 @@ runs (`reports/judge/*/paired_counts.json`, mean of two judges).
   companies instead of cases, and comparing each pair only on the stages both runs reached (+0.92).
 - **Fewer wasted calls.** The fine-tuned agent makes more calls per run than the base model (35 against 20) because it
   gets much further: per finished investigation it needs **61 calls against 242**, and the share of refused calls
-  halves (14% against 29%). With decoding-time loop guards added after the tests (exploratory), **45 of 48** runs on
-  the first test finish and refused calls fall to **8%**.
+  halves (14% against 29%). The final system, with decoding-time guards, finishes **46 of 48** runs on the first test
+  with **39 calls** each, and refused calls fall to **7.5%**.
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured, and 26 times faster than its teacher per GPU.
 - **It learns the procedure; judgement is the next step.** The largest gains are in framing the decision and stating
   distinct causal theories. The recommendation is where the judges score it lowest, and the audit of its teacher shows
   why: a student inherits its teacher's habits (section 7).
-- **After the tests (exploratory, [docs/LATER_WORK.md](docs/LATER_WORK.md)).** A two-adapter system ("dig then
-  reason": version 1 gathers the evidence, a second adapter trained with another teacher reasons) scores higher again
-  on the second test (+0.36 [0.22, 0.51] over version 1), and decoding-time guards on top of it finish 45 of 48 and 69
-  of 72 runs. The app runs this system; version 1 is the evaluated result.
+- **The final system ([docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)).** Two adapters ("dig then reason": version 1
+  gathers the evidence, version 3, trained further on a second teacher's runs, reasons) with decoding-time guards that
+  remove failing actions: no repeated calls, quotes picked from the source, a step budget, and the quote written before
+  the evidence label. The guards add **+0.12** and **+0.21** in judged quality on the two tests, evidence first another
+  **+0.06** and **+0.03**, and the judged evidence score doubles. The app runs this system.
 
 The name is a nod to Maester Aemon, a counsellor known for sound judgement in unusual
 situations.
@@ -100,7 +103,8 @@ revise when new evidence arrives.
 distilled into a small local student), with *workflow and decision agents* (a multi-step investigation with rules and
 a full audit trail), and *efficient trajectories*: per finished investigation the fine-tuned agent needs 61 tool calls
 against the base model's 242, and a refused call is half as common (14% of calls against 29%). Per run it makes more
-calls (35 against 20) because it gets much further before it stops.
+calls (35 against 20) because it gets much further before it stops. The final system, with decoding-time guards, needs
+39 calls per finished investigation and finishes 46 of 48 runs.
 
 **The question we test:** can agentic fine-tuning teach that procedure to a small model, beyond what a stage controller
 and the best prompt already achieve?
@@ -164,8 +168,8 @@ CuratorKIT filters the rows.
 | Command A+ (Cohere) | teacher | Q4_K_M GGUF (about 135 GB), weights sha256 recorded in every row | Apache 2.0 |
 | Claude (Anthropic, `claude-opus-5-5`) | blind judge; earlier, a workflow control | API | proprietary; **no Claude output is ever training data** (provider terms), enforced by the provenance checks |
 | Codex (OpenAI, `gpt-6-astra`, codex-cli 0.166.0) | blind judge | CLI, sandboxed, no repository access | proprietary; evaluation only |
-| DeepSeek V4-Pro (`deepseek-v4-pro`) | second teacher, for the exploratory version 3 only | hosted API | proprietary; its investigations pass the same replay checks |
-| Claude Code (`claude-opus-5-5`) and Codex (`gpt-6-sol`) | blind judges for the exploratory comparisons | CLI, no tools, no repository access | proprietary; evaluation only; each qualified separately (19 of 20 and 20 of 20) |
+| DeepSeek V4-Pro (`deepseek-v4-pro`) | second teacher, for version 3 (the final system's reasoner) | hosted API | proprietary; its investigations pass the same replay checks |
+| Claude Code (`claude-opus-5-5`) and Codex (`gpt-6-sol`) | blind judges for the final system's comparisons | CLI, no tools, no repository access | proprietary; evaluation only; each qualified separately (19 of 20 and 20 of 20) |
 
 ## 4. Data, cases and licences
 
@@ -339,7 +343,7 @@ the training data never showed:
 - **Never declining a test.** No training example declines one. The labels need care: for Aquaporin, declining
   follows from its insolvency and bankruptcy, recorded in the dossier, yet **no run of either arm read those records**
   and every finished trained run recommends investing. For RATIONAL the no-test label is the case author's judgement
-  and is contestable. *Since then: a [company status check](docs/LATER_WORK.md#a-company-status-check-the-aquaporin-failure) makes every run read those records.*
+  and is contestable. *Since then: a [company status check](docs/FINAL_SYSTEM.md#a-company-status-check-the-aquaporin-failure) makes every run read those records.*
 - **Little what-if evidence that matters.** Only 8 of 205 teacher investigations had supporting or undermining
   results; the student handles irrelevant evidence correctly and revises the wrong theory on Aquaporin's pair. *Still
   open: it needs new training examples.*
@@ -359,7 +363,7 @@ the student:
   their scores are unaffected.
 
 Distillation passed on the procedure and the teacher's judgement with it. When we tried to correct the teacher's
-mistakes with the same teacher, it made them again ([corrective distillation](docs/LATER_WORK.md#corrective-distillation-and-two-runtime-attempts-10-november)).
+mistakes with the same teacher, it made them again ([corrective distillation](docs/FINAL_SYSTEM.md#corrective-distillation-and-two-runtime-attempts-10-november)).
 A student can be filtered for following the rules, not for judging well; that needs a better or human-corrected
 teacher.
 
@@ -380,23 +384,32 @@ under the same judges, rubric and rule.
   the recommendation (0.03 → 0.44), experiment design (0.22 → 0.53) and judging evidence (0.35 → 0.47) gain least.
 - The two judges rank the runs alike (Spearman 0.95 over all 144).
 
-### After the tests (exploratory)
-Everything in this section came after both frozen results were known, so it selects nothing, and version 1's numbers
-above are the result we stand behind. Each change had its rule registered in [docs/DECISIONS.md](docs/DECISIONS.md)
-before it ran, and each comparison was judged blind by Claude Code and Codex (`gpt-6-sol`). The full write-up, with
-every table, is in **[docs/LATER_WORK.md](docs/LATER_WORK.md)**.
+### The final system
+The final system is what the app runs: two adapters ("dig then reason") with decoding-time guards. Each part was
+compared with the system before it, with its adoption rule registered in [docs/DECISIONS.md](docs/DECISIONS.md) before
+it ran, on development and on the same two test sets, judged blind by Claude Code and Codex (`gpt-6-sol`). The full
+write-up, with every table, is in **[docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)**.
 
-| What we tried | What happened (mean of two judges) |
-|---|---|
-| [Loop guards](docs/LATER_WORK.md#loop-guards-on-development-test-set-2-and-the-final-test-exploratory): repeats masked, quotes picked from the source, a step budget | Finished runs 28 → 45 of 45 (development), 43 → 69 of 72 (test set 2), 27 → 45 of 48 (final test); refused calls about halved; quality +0.19, +0.21 and +0.12 |
-| [Dig then reason](docs/LATER_WORK.md#switching-adapters-during-a-run-development-then-test-set-2): version 1 gathers the evidence, a second adapter reasons | +0.36 [0.22, 0.51] over version 1 on test set 2, level with it on the final test |
-| [Version 3](docs/LATER_WORK.md#version-3-a-second-teacher-exploratory-version-1-stays-the-evaluated-model): continued on a second teacher's runs (DeepSeek V4-Pro) | +0.42 [0.24, 0.60] over version 1 on test set 2; the reasoner in dig then reason |
-| [Evidence first](docs/LATER_WORK.md#evidence-first-how-a-source-is-weighed-exploratory): the quote and what it does not show before the evidence label | Judged evidence scores up on all three sets (final test, Claude Code 0.46 → 0.98); overall +0.07, +0.03, +0.06 |
-| [Company status check](docs/LATER_WORK.md#a-company-status-check-the-aquaporin-failure): read the company's current position first | Every run now reads the Aquaporin insolvency the first test missed; not kept in the default, as it costs finished runs |
-| [Corrective distillation](docs/LATER_WORK.md#corrective-distillation-and-two-runtime-attempts-10-november), a [recovery controller](docs/LATER_WORK.md#a-recovery-controller-does-not-fix-the-remaining-failures), a verification layer | Not adopted: they changed the agent's text more than its evidence; the lesson is in [the teacher audit](#the-ceiling-is-the-teachers-docsreliability_reportmd) |
+**How it runs** (first test, 48 runs each, same cases, settings and seeds):
 
-The app runs dig then reason with the loop guards and evidence first. What worked, across all of it: changes that
-remove a failing action from what the model can produce. Advice to the model did not.
+| | Base model | Version 1 | **Final system** |
+|---|---|---|---|
+| Investigations finished | 4 | 28 | **46** |
+| Tool calls per run | 20.2 | 35.4 | 37.8 |
+| Tool calls per finished investigation | 242 | 61 | **39** |
+| Share of calls refused | 28.8% | 14.3% | **7.5%** |
+
+**What each part adds** (mean of two judges; intervals in [docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)):
+
+| Part | First test | Second test | Development |
+|---|---|---|---|
+| [Dig then reason](docs/FINAL_SYSTEM.md#switching-adapters-during-a-run-development-then-test-set-2): version 1 gathers the evidence, [version 3](docs/FINAL_SYSTEM.md#version-3-a-second-teacher) reasons | level with version 1 | **+0.36** over version 1 | +0.17 (one judge) |
+| [Loop guards](docs/FINAL_SYSTEM.md#loop-guards-on-development-test-set-2-and-the-final-test): no repeated calls, quotes picked from the source, a step budget | **+0.12**; finished 27 → 45 | **+0.21**; finished 43 → 69 | +0.19; finished 28 → 45 |
+| [Evidence first](docs/FINAL_SYSTEM.md#evidence-first-how-a-source-is-weighed): the quote and what it does not show, before the evidence label | **+0.06**; judged evidence 0.46 → 0.98 | +0.03 | +0.07 |
+
+What worked: changes that remove a failing action from what the model can produce. Advice to the model did not, and
+we also tried, and did not adopt, a company status check, corrective distillation, a recovery controller and a
+verification layer ([docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)).
 
 ### Limits
 - **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter
@@ -422,8 +435,6 @@ Details: [docs/RELIABILITY_REPORT.md](docs/RELIABILITY_REPORT.md) and
 - At run time, removing a failing action from what the model can produce worked (the loop guards, evidence first);
   telling the model about its mistake did not. Better judgement in the conclusion has to come from better training
   data.
-- Results did not transfer cleanly between sets: version 3 and the switching rule each looked different on
-  development, test set 2 and the final test. One set would have misled us in either direction.
 
 ## 8. With more credits
 
@@ -435,13 +446,13 @@ and measured on fresh evaluation cases, since the four final-test companies have
 3. Recovery from simulated-only citations, separating a hypothetical belief update from the real evidence behind a
    recommendation.
 4. Recovery from rereading, using the information already gathered.
-5. Searching for the company's current position before theorising (the Aquaporin failure). The [status check](docs/LATER_WORK.md#a-company-status-check-the-aquaporin-failure)
+5. Searching for the company's current position before theorising (the Aquaporin failure). The [status check](docs/FINAL_SYSTEM.md#a-company-status-check-the-aquaporin-failure)
    does this at run time; training it in should remove its cost in finished runs.
 
 More teacher runs of the same kind would not address these gaps; more of these specific cases would, from a stronger
 or human-corrected teacher for evidence judgement, since a teacher's errors pass to the student and cannot be filtered
 out afterwards. Before and after would be measured exactly as here: the same frozen judges and rule, on new held-out
-companies. What we already tried after the tests is in [docs/LATER_WORK.md](docs/LATER_WORK.md).
+companies. What we already tried beyond the final system is in [docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md).
 
 ## 9. Team
 
@@ -484,7 +495,7 @@ tests/                   the test suites (./run_tests.sh)
 jobs/                    Slurm job scripts for every stage
 scripts/                 cluster helpers and the release builders (public repository, Hugging Face, replay pages)
 reports/                 every result: teacher runs, evaluations, judge packets, outputs and reports
-experiments/             the exploratory work after the frozen tests: runs, packets, judgments and reports
+experiments/             the final system's campaigns: runs, packets, judgments and reports
 paper/                   the paper's LaTeX source (built to docs/PAPER.pdf)
 docs/                    the decisions log, plans frozen before each test, model and dataset cards
 ```

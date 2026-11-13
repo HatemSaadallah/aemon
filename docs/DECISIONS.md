@@ -1898,11 +1898,11 @@ Nothing was rerun or rejudged, and the registered numbers are unchanged.
   asked for Codex scoring instead, which would add a third model's view, not a human anchor, so none was run and the
   limit is stated.
 - **Scope.** One question template; stated as a limit.
-- **Length.** Everything after the second test moved to `docs/LATER_WORK.md` (README 59 KB → 44 KB), with a summary
+- **Length.** Everything after the second test moved to `docs/FINAL_SYSTEM.md` (README 59 KB → 44 KB), with a summary
   table in its place; the teacher audit (74% of its recommendations use a number from no source) moved next to the
   result.
 - **Presentation, after a second review** (Hatem: "this is a hackathon not a scientific research"): the README now
   leads with what the agent is for (an auditable first pass, run locally), and with efficiency (61 calls per finished
   investigation against 242; refused calls 14% of calls against 29%; 8% with the loop guards). Detailed intervals for
-  the later systems, per-company losses and the Simonelli critique live in `docs/LATER_WORK.md`, the paper and this log
+  the later systems, per-company losses and the Simonelli critique live in `docs/FINAL_SYSTEM.md`, the paper and this log
   rather than in the README's summary. No number was changed or removed from the repository.

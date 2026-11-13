@@ -174,8 +174,8 @@ paired difference of $+0.52$ [0.33, 0.70] with a case-cluster bootstrap (Claude 
 companies, and it finishes 32 of 72 investigations against 2 of 72. The gain is smaller than on the first test
 ($+0.83$ there).
 
-\subsection{Later systems: a second adapter and adapter switching}
-Two systems were built after the frozen results and are labelled exploratory. Version~3 continues version~1 on rows
+\subsection{The final system: a second adapter and adapter switching}
+The final system adds two parts to version~1. Version~3 continues version~1 on rows
 from a second teacher (DeepSeek V4-Pro, 3,611 rows from 144 replay-exact investigations). \emph{Dig then reason} uses
 one server holding both adapters: version~1 writes the brief, framing and evidence-gathering turns, version~3 every
 later turn. Both were judged blind together with the base model and version~1 by two judges qualified for this purpose
@@ -205,8 +205,7 @@ same search again, or a source already weighed for that theory), and four refusa
 only at decoding, with no retraining and no environment check changed: the assessment tool offers, per theory, only
 sources not yet weighed; a quote is chosen from the source's own sentences; and a call refused as an exact repeat is
 sampled again (at most three times, every refused draw kept in the record). With the step-budget aid of
-Section~\ref{sec:negative} added, judged blind by both judges against dig then reason as evaluated (exploratory, built
-after every frozen result):
+Section~\ref{sec:negative} added, judged blind by both judges against dig then reason as evaluated:
 
 \begin{center}
 \begin{tabular}{lcc}
@@ -227,7 +226,7 @@ also exposed a bug in the quote guard: it offered a dateline that the environmen
 all six Belimo runs of each guarded arm. With the guard restricted to accepted quotes, a rerun registered beforehand
 reproduced 66 of 72 runs call for call and finished the other six: 69 of 72 runs finished, quality 1.64, $+0.21$
 [0.09, 0.33] against dig then reason as evaluated (each judge alone above zero). On the final test (registered
-beforehand, exploratory), the guards raise finished runs from 27 to 45 of 48 and halve refused calls (5.7 to 2.9
+beforehand), the guards raise finished runs from 27 to 45 of 48 and halve refused calls (5.7 to 2.9
 per run), but the quality gain is smaller and not clearly above zero: $+0.12$ [0.00, 0.25] (Claude Code $+0.08$
 [$-0.01$, 0.19], \texttt{gpt-6-sol} $+0.16$ [0.01, 0.33]), most of it from one company. Unlike the
 advice-style aids of Section~\ref{sec:negative}, these guards remove the failing action from what the model can

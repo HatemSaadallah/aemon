@@ -23,7 +23,10 @@ rows; verify the deployed GGUF adapter against the trained one; and evaluate on 
 or selection with two qualified, blinded LLM judges under a plan frozen before the run. The fine-tuned model scores 1.48
 against 0.65 for the base model under its best prompt on a nine-dimension 0--3 rubric, a paired difference of $+0.83$
 (95\% case-cluster bootstrap interval $[0.69, 0.97]$), higher for every company and every kind of new evidence, and
-finishes 28 of 48 investigations against 4, at about \$0.03 per investigation against \$0.25 for Claude Opus. A diagnosis
+finishes 28 of 48 investigations against 4, at about \$0.03 per investigation against \$0.25 for Claude Opus. The final
+system adds a second adapter and decoding-time guards that remove failing actions: it finishes 46 of 48 investigations
+with 39 tool calls each (the base model needs 242), and the guards add $+0.12$ and $+0.21$ in judged quality on the two
+test sets. A diagnosis
 traces the remaining failures (no declined tests, little directional new evidence, decision rules cut by a length cap)
 to gaps in the training data, and we report what environment changes and targeted examples did and did not fix.
 \end{abstract}

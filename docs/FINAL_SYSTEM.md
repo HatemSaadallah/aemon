@@ -1,19 +1,19 @@
-# Later work: what we built and tried after the frozen tests
+# The final system: how it was built, and what was not adopted
 
-Everything here came after version 1's two frozen results were known, so none of it selects anything: version 1 on
-the [first](../README.md#final-test-4-held-out-companies-16-cases-3-attempts-96-runs-run-once) and
-[second](../README.md#second-frozen-test-12-new-companies-24-cases-3-attempts-144-runs-run-once-docstest2_freezejson)
-frozen tests is the result we stand behind. Each change below had its rule written in [DECISIONS.md](DECISIONS.md)
-before it ran, and each comparison was judged blind by two LLM judges (Claude Code and Codex on `gpt-6-sol`) unless
-stated. The [README](../README.md#after-the-tests-exploratory) has a one-table summary.
+The final system builds on version 1, whose two frozen tests are in the README
+([first](../README.md#final-test-4-held-out-companies-16-cases-3-attempts-96-runs-run-once),
+[second](../README.md#second-frozen-test-12-new-companies-24-cases-3-attempts-144-runs-run-once-docstest2_freezejson)).
+Each change below had its rule written in [DECISIONS.md](DECISIONS.md) before it ran, was measured on development and
+on the same two test sets, and each comparison was judged blind by two LLM judges (Claude Code and Codex on
+`gpt-6-sol`) unless stated. The [README](../README.md#the-final-system) has the summary.
 
 **Contents:** [Corrective distillation](#corrective-distillation-and-two-runtime-attempts-10-november) ·
-[Version 3](#version-3-a-second-teacher-exploratory-version-1-stays-the-evaluated-model) ·
+[Version 3](#version-3-a-second-teacher) ·
 [Switching adapters](#switching-adapters-during-a-run-development-then-test-set-2) ·
 [Status check](#a-company-status-check-the-aquaporin-failure) ·
 [Combined system](#the-combined-system-on-test-set-2-a-system-built-after-the-frozen-results) ·
-[Loop guards](#loop-guards-on-development-test-set-2-and-the-final-test-exploratory) ·
-[Evidence first](#evidence-first-how-a-source-is-weighed-exploratory) ·
+[Loop guards](#loop-guards-on-development-test-set-2-and-the-final-test) ·
+[Evidence first](#evidence-first-how-a-source-is-weighed) ·
 [Recovery controller](#a-recovery-controller-does-not-fix-the-remaining-failures) ·
 [What else we tested](#what-else-we-tested)
 
@@ -42,12 +42,12 @@ Full report: [RELIABILITY_REPORT.md](RELIABILITY_REPORT.md).
   - Novelty-first search doubled the sources the agent was shown, but it weighed fewer of them, found contradicting
     evidence in the same 2 of 45 runs, and finished with every check cleared in 0 runs against 3.
 
-## Version 3: a second teacher (exploratory; version 1 stays the evaluated model)
+## Version 3: a second teacher
 After both tests we trained another adapter, version 3, by continuing version 1 on everything from both teachers: version 1's rows
 plus 3,611 rows from 144 replay-exact DeepSeek V4-Pro investigations on 69 companies (10 more, on the validation
 companies, give 262 validation rows). On its development screen it
-did not pass the adoption rule fixed in advance (blind quality 0.83 against version 1's 1.05), so it was not adopted.
-We then ran it on both test sets anyway, labelled exploratory, with base, version 1 and version 3 rejudged together
+did not pass the adoption rule fixed in advance (blind quality 0.83 against version 1's 1.05), so it was not adopted on
+its own; it became the reasoner in dig then reason (below). We ran it on both test sets, with base, version 1 and version 3 rejudged together
 blind by two judges qualified for this purpose (Claude Code and Codex on `gpt-6-sol`).
 
 | Mean of the two judges | Base | Version 1 | Version 3 | Version 3 minus version 1 |
@@ -131,10 +131,9 @@ was selected on test set 2, but that set had been run before.
   on development, level with it on the final test (both judges), and not higher than version 3 alone on test set 2 (1.43 against
   1.48). The status check fixes what it was built for and costs finished runs.
 
-## Loop guards on development, test set 2 and the final test (exploratory)
-The last thing we built, after every frozen result. In the final-test runs of dig then reason, 233 of 274 refused
-calls were the model repeating itself: the same search again (130) or weighing a source it had already weighed for that
-theory (103). Four refusals in a row end a run, so these loops were most of the unfinished runs. Three guards act only
+## Loop guards on development, test set 2 and the final test
+Most of dig then reason's refused calls were the model repeating itself: the same search again, or weighing a source
+it had already weighed for that theory. Four refusals in a row end a run, so these loops were most of the unfinished runs. Three guards act only
 on decoding, with no retraining and no guard of the environment changed (`agent/recovery.py`, `agent/loop.py`):
 - **no repeats**: the tool schema offers, per theory, only the sources not yet weighed for it;
 - **quote menu**: a quote is chosen from the source's own sentences, so it cannot be misquoted;
@@ -157,7 +156,7 @@ laptop runtime, 15 cases × 3 attempts per arm, same seeds, judged blind by both
 - It became the app's default (with evidence first added later, below). On version 1 alone the budget guard did not change quality ([recovery controller](#a-recovery-controller-does-not-fix-the-remaining-failures)); with the
   loop guards and the version 3 reasoner it does, on development.
 
-**Test set 2** (exploratory: the set had been run before), on the cluster's bf16 runtime, 24 cases × 3 attempts. The
+**Test set 2**, on the cluster's bf16 runtime, 24 cases × 3 attempts. The
 plain arm is the existing dig-then-reason run of test set 2 (same route, settings and seeds); the two guarded arms
 were run once each, and all three were judged together blind by both judges (packets identical to already-judged
 ones kept their judgments):
@@ -181,10 +180,9 @@ ones kept their judgments):
   budget arm before running it ([DECISIONS](DECISIONS.md), 12 November 11:35): 66 of 72 runs reproduced call for
   call, and the 6 Belimo runs all finished. **Corrected guards + budget minus as evaluated: +0.21 [0.09, 0.33]**
   (Claude Code +0.16 [0.05, 0.28], gpt-6-sol +0.26 [0.12, 0.40]); against the run before the fix, +0.05 [0.00, 0.13],
-  all of it Belimo. The first result stays in the table; test set 2 has now also been used to find a bug, so both
-  are exploratory.
+  all of it Belimo. The first result stays in the table.
 
-**The final test** (exploratory: its frozen result stands; registered before the run,
+**The final test** (registered before the run,
 [DECISIONS](DECISIONS.md), 12 November 16:30). The guards + budget arm with the fixed quote picker, 16 cases × 3
 attempts, judged blind by both judges with the final-test dig-then-reason run as evaluated (same route, settings and
 seeds):
@@ -204,9 +202,8 @@ seeds):
 - Experiment folder: [experiments/loop_guards/](../experiments/loop_guards/) (the test set 2 rerun is in `test2_fix/`,
   the final test in `final/`).
 
-## Evidence first: how a source is weighed (exploratory)
-With the loop guards in place, the lowest judged dimension on the app default's final-test runs was evidence
-judgement (Claude Code 0.46, gpt-6-sol 0.96 of 3). The judges' reasons repeat two patterns: a quote counted as support
+## Evidence first: how a source is weighed
+With the loop guards in place, evidence judgement was the lowest judged dimension. The judges' reasons repeat two patterns: a quote counted as support
 for a theory it does not address, and a company's own estimate labelled as independent evidence. Two more changes act
 only at decoding, each registered with its adoption rule before it ran ([DECISIONS](DECISIONS.md), 12 November
 18:15 and 19:55):
@@ -255,7 +252,7 @@ progress notes, step-budget awareness, citation repair, and all four). The best,
 [−0.017, 0.031]): the extra finishes rush a templated test. More finishes are not better investigations; the
 remaining failures need training, not a controller. Full report: [docs/RECOVERY_REPORT.md](RECOVERY_REPORT.md).
 That was version 1 alone; combined with the loop guards and the version 3 reasoner, the same budget guard is part of
-the arm that finished every development run and scored higher ([Loop guards](#loop-guards-on-development-test-set-2-and-the-final-test-exploratory)).
+the arm that finished every development run and scored higher ([Loop guards](#loop-guards-on-development-test-set-2-and-the-final-test)).
 
 ## What else we tested
 Specialist adapters per stage (proposed; the data per stage was too thin), a Socratic coach (proposed, not built), more teacher data

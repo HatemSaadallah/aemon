@@ -61,17 +61,17 @@ This release replaces the one of 2026-11-08. That release cut every third-party 
 | `teacher_investigations/deepseek_v4_pro/` | The 17 DeepSeek V4-Pro runs as recorded: transcripts (`*.episodes.jsonl`: 266 investigations, 154 of them finished, and 22 harness errors), the provenance manifests (266 entries), the per-request usage logs and the runner reports |
 | `evaluation/dev/`, `evaluation/final/` | As in the first release: development runs (6 companies) and the final test (16 cases × 3 attempts × 2 arms), with judge packets, the key, both judges' outputs and the reports |
 | `evaluation/test2/` | Test set 2, version 1 against the base model: 24 cases × 3 attempts × 2 arms, 133 judge packets, the key, both judges' outputs and the reports |
-| `evaluation/final_v3/`, `evaluation/test2_v3/` | Version 3 on both test sets (exploratory): its runs, the packets of base, version 1 and version 3 judged together (135 and 205), the keys, the outputs of the two later judges (`claudecode`, `codexsol`) and the reports |
+| `evaluation/final_v3/`, `evaluation/test2_v3/` | Version 3 on both test sets: its runs, the packets of base, version 1 and version 3 judged together (135 and 205), the keys, the outputs of the two later judges (`claudecode`, `codexsol`) and the reports |
 | `evaluation/screen3/` | Version 3's development screen against version 1: both runs, 29 packets, the key and the report |
 | `evaluation/switch/` | Adapter switching within a run, development only: 5 arms × 15 cases × 3 attempts, 207 packets, the key, one judge's outputs and the reports |
 | `evaluation/system_test2/` | The combined system (dig then reason, with the company status check) on test set 2 and on development: the runs, 342 packets, the key, both judges' outputs and the reports |
 | `evaluation/system_final/` | The same system, and dig then reason without the status check, on the final test, judged blind together with base, version 1 and version 3: the two new runs, 231 packets, the key, both judges' outputs and the reports |
-| `evaluation/loop_guards_dev/` | Loop guards (exploratory), development: dig then reason as evaluated, with the three guards, and with the guards plus the budget guard (45 runs each), 135 packets in two files (the third arm was judged later), the key, both judges' outputs and the reports |
-| `evaluation/loop_guards_test2/` | Loop guards (exploratory), test set 2: the same three arms (72 runs each), 144 packets, the key (216 runs), both judges' outputs and the reports |
-| `evaluation/loop_guards_final/` | Loop guards (exploratory), final test: dig then reason as evaluated and with the guards + budget guard (48 runs each), 96 packets, the key, both judges' outputs and the report |
+| `evaluation/loop_guards_dev/` | Loop guards, development: dig then reason as evaluated, with the three guards, and with the guards plus the budget guard (45 runs each), 135 packets in two files (the third arm was judged later), the key, both judges' outputs and the reports |
+| `evaluation/loop_guards_test2/` | Loop guards, test set 2: the same three arms (72 runs each), 144 packets, the key (216 runs), both judges' outputs and the reports |
+| `evaluation/loop_guards_final/` | Loop guards, final test: dig then reason as evaluated and with the guards + budget guard (48 runs each), 96 packets, the key, both judges' outputs and the report |
 | `evaluation/loop_guards_test2_fix/` | Loop guards, test set 2, corrected rerun of the guards + budget arm after the quote-picker fix (72 runs), with the as-evaluated arm and the run before the fix: 140 packets, the key (216 runs), both judges' outputs and the reports |
-| `evaluation/grounded_dev/` | Grounded beliefs (exploratory), development screen: the app default and the same with grounded beliefs (45 runs each), 90 packets, the key, both judges' outputs and the report |
-| `evaluation/evidence_first_dev/` | Evidence first (exploratory), development screen: four arms (app default, + grounded beliefs, + evidence first, both; 45 runs each), 180 packets, the key, both judges' outputs and the reports |
+| `evaluation/grounded_dev/` | Grounded beliefs, development screen: the app default and the same with grounded beliefs (45 runs each), 90 packets, the key, both judges' outputs and the report |
+| `evaluation/evidence_first_dev/` | Evidence first, development screen: four arms (app default, + grounded beliefs, + evidence first, both; 45 runs each), 180 packets, the key, both judges' outputs and the reports |
 | `evaluation/evidence_first_test2/`, `evaluation/evidence_first_final/` | Evidence first with grounded beliefs against the app default on test set 2 (72 runs each) and the final test (48 runs each): the runs, the packets (125 and 96), the keys, both judges' outputs and the reports |
 | `evaluation/status_check/` | Seven runs of the company status check (Aquaporin diagnostics and development), version 1 and version 3 |
 | `evaluation/judge_qualification/` | The qualification results of each judge |
@@ -141,7 +141,7 @@ The rows added for version 3 of the adapter (`training/v3_deepseek_rows.jsonl`, 
 * 25 of the 69 companies have no version 1 rows. Their cases were written by DeepSeek V4.1-Flash from public pages, and each quote was admitted only when found word for word on its live page, as for every dossier record.
 * The transcripts, provenance manifests and request logs are in `teacher_investigations/deepseek_v4_pro/`.
 
-Version 3 continues version 1's adapter on every row of both teachers. It failed its development screen, so **version 1 stays the submitted model** and the version 3 results in `evaluation/` are exploratory.
+Version 3 continues version 1's adapter on every row of both teachers. It failed its development screen, so on its own it was not adopted; it is the reasoner in the final system ("dig then reason"), and its results are in `evaluation/`.
 
 ## 4. Provenance and Replay Verification
 
@@ -227,7 +227,7 @@ To teach recovery:
 6. **Evidence-kind annotation:** a blind relabelling of 60 training records agreed with the annotation on 45, with 5 more defensible. It found 3 likely errors, and 44 records use kinds the tool cannot express. The annotation is unchanged. A guide and a proposed overlay are in the code repository (`docs/EVIDENCE_KIND_GUIDE.md`).
 
 7. **Campaigns:** every judging campaign in this release is finished and published with its answer key, so every packet can be matched to its arm.
-8. **Version 3 is exploratory:** it was run on both test sets after version 1's results were known and after it failed its development screen. Its numbers select nothing.
+8. **Version 3 alone failed its development screen:** it was run on both test sets after version 1, and is used as the final system's reasoner.
 
 ## 9. Dataset Statistics
 
@@ -260,18 +260,18 @@ Quality is a blind rubric of nine dimensions scored 0 to 3. Each number below is
 |---|---|---|---|
 | Final test, version 1 vs base (`final/`) | Claude, Codex | base 0.647, version 1 1.484 | +0.832 [0.689, 0.965], 47 pairs, 16 cases |
 | Test set 2, version 1 vs base (`test2/`) | Claude, Codex | base 0.572, version 1 1.090 | +0.518 [0.334, 0.703], 72 pairs, 24 cases |
-| Final test, version 3 vs version 1, exploratory (`final_v3/`) | Claude Code, Codex (gpt-6-sol) | base 0.620, version 1 1.461, version 3 1.334 | -0.127 [-0.305, 0.041], 48 pairs |
-| Test set 2, version 3 vs version 1, exploratory (`test2_v3/`) | Claude Code, Codex (gpt-6-sol) | base 0.562, version 1 1.058, version 3 1.479 | +0.421 [0.244, 0.601], 71 pairs |
+| Final test, version 3 vs version 1 (`final_v3/`) | Claude Code, Codex (gpt-6-sol) | base 0.620, version 1 1.461, version 3 1.334 | -0.127 [-0.305, 0.041], 48 pairs |
+| Test set 2, version 3 vs version 1 (`test2_v3/`) | Claude Code, Codex (gpt-6-sol) | base 0.562, version 1 1.058, version 3 1.479 | +0.421 [0.244, 0.601], 71 pairs |
 | Test set 2, combined system vs version 1 (`system_test2/`) | Claude Code, Codex (gpt-6-sol) | combined 1.282, dig then reason 1.427, version 1 1.065, version 3 1.477 | +0.217 [-0.001, 0.458], 72 pairs: the primary comparison is not met |
-| Final test, combined system and dig then reason vs version 1, exploratory (`system_final/`) | Claude Code, Codex (gpt-6-sol) | base 0.605, version 1 1.452, dig then reason 1.441, version 3 1.351, combined 1.320 | dig then reason −0.011 [−0.199, 0.181], combined −0.133 [−0.317, 0.052], 48 pairs each |
-| Development, loop guards, exploratory (`loop_guards_dev/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.423, guards 1.515, guards + budget 1.616 | guards + budget +0.194 [0.097, 0.302], 45 pairs |
-| Test set 2, loop guards, exploratory (`loop_guards_test2/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.427, guards 1.584, guards + budget 1.589 | guards + budget +0.162 [0.049, 0.272], guards +0.157 [0.045, 0.266], 72 pairs each |
-| Final test, loop guards, exploratory (`loop_guards_final/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.441, guards + budget 1.560 | +0.119 [−0.000, 0.249], 48 pairs |
-| Test set 2, loop guards, corrected rerun, exploratory (`loop_guards_test2_fix/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.427, guards + budget 1.589, guards + budget with the quote fix 1.638 | fixed minus as evaluated +0.211 [0.088, 0.334]; fixed minus before the fix +0.049 [0.000, 0.129], 72 pairs each |
-| Development, grounded beliefs, exploratory (`grounded_dev/`) | Claude Code, Codex (gpt-6-sol) | app default 1.565, + grounded beliefs 1.554 | −0.011 [−0.046, 0.026], 45 pairs |
-| Development, evidence first, exploratory (`evidence_first_dev/`) | Claude Code, Codex (gpt-6-sol) | app default 1.565, + grounded beliefs 1.554, + evidence first 1.625, both 1.631 | both minus app default +0.066 [0.028, 0.107]; evidence first alone +0.060 [0.029, 0.091], 45 pairs each |
-| Test set 2, evidence first, exploratory (`evidence_first_test2/`) | Claude Code, Codex (gpt-6-sol) | app default 1.638, evidence first 1.667 | +0.029 [−0.003, 0.061], 72 pairs |
-| Final test, evidence first, exploratory (`evidence_first_final/`) | Claude Code, Codex (gpt-6-sol) | app default 1.560, evidence first 1.621 | +0.061 [0.004, 0.113], 48 pairs |
+| Final test, combined system and dig then reason vs version 1 (`system_final/`) | Claude Code, Codex (gpt-6-sol) | base 0.605, version 1 1.452, dig then reason 1.441, version 3 1.351, combined 1.320 | dig then reason −0.011 [−0.199, 0.181], combined −0.133 [−0.317, 0.052], 48 pairs each |
+| Development, loop guards (`loop_guards_dev/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.423, guards 1.515, guards + budget 1.616 | guards + budget +0.194 [0.097, 0.302], 45 pairs |
+| Test set 2, loop guards (`loop_guards_test2/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.427, guards 1.584, guards + budget 1.589 | guards + budget +0.162 [0.049, 0.272], guards +0.157 [0.045, 0.266], 72 pairs each |
+| Final test, loop guards (`loop_guards_final/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.441, guards + budget 1.560 | +0.119 [−0.000, 0.249], 48 pairs |
+| Test set 2, loop guards, corrected rerun (`loop_guards_test2_fix/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.427, guards + budget 1.589, guards + budget with the quote fix 1.638 | fixed minus as evaluated +0.211 [0.088, 0.334]; fixed minus before the fix +0.049 [0.000, 0.129], 72 pairs each |
+| Development, grounded beliefs (`grounded_dev/`) | Claude Code, Codex (gpt-6-sol) | app default 1.565, + grounded beliefs 1.554 | −0.011 [−0.046, 0.026], 45 pairs |
+| Development, evidence first (`evidence_first_dev/`) | Claude Code, Codex (gpt-6-sol) | app default 1.565, + grounded beliefs 1.554, + evidence first 1.625, both 1.631 | both minus app default +0.066 [0.028, 0.107]; evidence first alone +0.060 [0.029, 0.091], 45 pairs each |
+| Test set 2, evidence first (`evidence_first_test2/`) | Claude Code, Codex (gpt-6-sol) | app default 1.638, evidence first 1.667 | +0.029 [−0.003, 0.061], 72 pairs |
+| Final test, evidence first (`evidence_first_final/`) | Claude Code, Codex (gpt-6-sol) | app default 1.560, evidence first 1.621 | +0.061 [0.004, 0.113], 48 pairs |
 | Adapter switching, development (`switch/`) | Claude Code only | version 1 1.065, version 3 0.863, dig then reason 1.239 | dig then reason minus version 1: +0.173 [0.018, 0.346], 45 pairs |
 
 Investigations finished: final test 4 of 48 (base), 28 of 48 (version 1), 37 of 48 (version 3); test set 2: 2 of 72 (base), 32 of 72 (version 1), 57 of 72 (version 3).
