@@ -21,6 +21,13 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 > instead is a small open-weights model (CC-BY-NC 4.0, non-commercial) that runs offline, with the case data kept on
 > the machine.
 
+## 🎬 Watch the Demo
+
+[![Watch the aemon Demo](https://img.youtube.com/vi/Uow3miSSIIY/hqdefault.jpg)](https://youtu.be/Uow3miSSIIY)
+
+The video shows aemon at work: its agentic investigations, the interactive reasoning map, and the AI research behind
+them. Click the thumbnail to watch it on YouTube.
+
 | | |
 |---|---|
 | **Live demo** | **[huggingface.co/spaces/HatemSaadallah/aemon](https://huggingface.co/spaces/HatemSaadallah/aemon)** (pick any username to sign in, no password; it runs the final system on two CPU cores and sleeps when idle, so the first page takes a moment; finished investigations open at once, a new one takes a while, and it runs one at a time for everyone) |
