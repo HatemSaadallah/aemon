@@ -92,7 +92,7 @@ the two statements. The base model stated no such pair.
 A fine-tuned investigation reads about 121{,}700 prompt tokens and writes about 2{,}900, in 66 seconds on one A100 slice
 (54 investigations per GPU hour). At the October 2026 median rental price of \$1.76 per hour that is \$0.032 per
 investigation (\$0.016 at the lowest price, \$0.068 at a hyperscaler's). A measured control of Claude Opus 5.5 on the same
-task cost \$0.248 per investigation, and the same token counts at Opus list prices would cost \$0.544. The comparison is
+task, run earlier on the first harness and the original cases (15 investigations), cost \$0.248 per investigation, and the same token counts at Opus list prices would cost \$0.544. The comparison is
 of cost, not quality: Opus was not run on the final test.
 
 \section{Diagnosis: what still fails, and why}\label{sec:diagnosis}
@@ -121,7 +121,7 @@ flaw). Evidence classes fail in 13 and evidence kinds in 11.
 \end{itemize}
 
 \paragraph{Teacher and student fail differently.} The student fails the experiment check far more often than the
-teacher (82\% against 39\%), and evidence classes more (46\% against 27\%); it fails invented numbers (21\% against 70\%)
+teacher (82\% against 39\%), and evidence classes more (46\% against 27\%); it fails invented numbers (21\% against 70\% of the 223 finished teacher runs)
 and evidence kinds (39\% against 83\%) less. The case distributions differ, so this is not a matched comparison, but it
 suggests the student learned the teacher's form better than some of its judgement.
 
@@ -137,10 +137,10 @@ runs and does not lower the mean confidence score (\cref{sec:app}).
 \caption{Environment configurations on development (45 runs each).}\label{tab:env}
 \begin{tabular}{@{}lrrrrr@{}}
 \toprule
-Configuration & Finished & Repeated refusals & Turn limit & Misquotes & Confidence\\
+Configuration & Finished & Refusal stops & Turn limit & Misquotes & Confidence\\
 \midrule
 As evaluated & 24 & 17 & 4 & 35 & 2.21\\
-Reread limit, source dates, stuck help, 60 turns & 23 & 22 & 0 & 7 & 2.17\\
+Reread limit, dates, help, 60 turns & 23 & 22 & 0 & 7 & 2.17\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -148,8 +148,10 @@ Reread limit, source dates, stuck help, 60 turns & 23 & 22 & 0 & 7 & 2.17\\
 Refusing a third read of the same source removed the turn-limit loops but turned them into refused calls, which end a run
 after four in a row, and help after two refusals did not rescue enough of them, so the configuration was not adopted.
 Misquotes fell from 35 to 7; showing each source's date in the state is the likely cause, though it was not tested
-separately. A configuration with source dates and stuck help but no reread limit, and one requiring three weighed sources
-per theory, were registered and are running at the time of writing.
+separately. Two more were registered. One requiring three weighed sources per theory finished 25 of 45 with confidence
+3.12 and replaced the evaluated settings in the Strategy Lab, partly by construction, since one of the five confidence
+checks counts three weighed sources; one with source dates and stuck help but no reread limit was cancelled to free the
+GPUs for test set 2 and not rerun. The frozen tests keep the evaluated settings.
 
 \subsection{Targeted teacher examples}
 We then tried to fix the data gaps directly with targeted examples: states harvested from the student's own runs at the
@@ -160,7 +162,7 @@ arms that differed only in a message, rival theories the answer itself called un
 developing a product line, and facts attributed to a case's year from later sources. The gates were tightened (complete
 fields, no message-only arms without a control, a bounded next step, the currency and sources of the case's time) and,
 after the human review, agree with all six of the reviewer's decisions on the second round; of those six answers, two were
-kept. A third round, and later targeted corrective examples, are reported in Section~\ref{sec:negative}.
+kept. The later rounds, as corrective distillation, are reported in Section~\ref{sec:negative}.
 
 \subsection{A second test set}
 Because the four final-test companies have informed the diagnosis, a new claim needed new companies. A second held-out
@@ -175,8 +177,9 @@ companies, and it finishes 32 of 72 investigations against 2 of 72. The gain is 
 Two systems were built after the frozen results and are labelled exploratory. Version~3 continues version~1 on rows
 from a second teacher (DeepSeek V4-Pro, 3,611 rows from 144 replay-exact investigations). \emph{Dig then reason} uses
 one server holding both adapters: version~1 writes the brief, framing and evidence-gathering turns, version~3 every
-later turn. Both were judged blind together with the base model and version~1 by the same two judges (mean of the two;
-case-cluster bootstrap):
+later turn. Both were judged blind together with the base model and version~1 by two judges qualified for this purpose
+(Claude Code and Codex on \texttt{gpt-6-sol}; mean of the two; case-cluster bootstrap), in the five-arm re-judging that
+also holds the combined system, which moves each arm by up to 0.02 against the three-arm re-judging:
 
 \begin{center}
 \begin{tabular}{lcc}
@@ -193,7 +196,8 @@ Dig then reason & 1.43 & 1.44\\
 
 On test set 2 dig then reason is clearly above version~1 ($+0.36$ [0.22, 0.51]); on the final test it is level with it
 ($-0.01$ [$-0.20$, 0.18]), and version~3 alone is not distinguishable from version~1 either ($-0.10$ [$-0.27$, 0.05]).
-Version~1 remains the evaluated model; dig then reason is the most consistent later system and is the demo's default.
+Version~1 remains the evaluated model; dig then reason is the most consistent later system and, with the loop guards
+below, the app's default.
 
 \paragraph{Loop guards.} Most refused calls in the final-test runs of dig then reason were repeats (233 of 274: the
 same search again, or a source already weighed for that theory), and four refusals in a row end a run. Three guards act
@@ -223,10 +227,44 @@ all six Belimo runs of each guarded arm. With the guard restricted to accepted q
 reproduced 66 of 72 runs call for call and finished the other six: 69 of 72 runs finished, quality 1.64, $+0.21$
 [0.09, 0.33] against dig then reason as evaluated (each judge alone above zero). On the final test (registered
 beforehand, exploratory), the guards raise finished runs from 27 to 45 of 48 and halve refused calls (5.7 to 2.9
-per run), but the quality gain is smaller and not clearly above zero: $+0.12$ [0.00, 0.25] (Claude $+0.08$
-[$-0.01$, 0.19], Codex $+0.16$ [0.01, 0.33]), most of it from one company. Unlike the
+per run), but the quality gain is smaller and not clearly above zero: $+0.12$ [0.00, 0.25] (Claude Code $+0.08$
+[$-0.01$, 0.19], \texttt{gpt-6-sol} $+0.16$ [0.01, 0.33]), most of it from one company. Unlike the
 advice-style aids of Section~\ref{sec:negative}, these guards remove the failing action from what the model can
 produce, rather than telling the model about it.
+
+\paragraph{Evidence first.} With the guards in place, evidence judgement was the lowest judged dimension on the final
+test (Claude Code 0.46, \texttt{gpt-6-sol} 0.96 of 3). The judges' reasons were quotes counted as support for a theory they do not
+address, and company estimates labelled as independent evidence. Two more decoding-time changes were registered with
+adoption rules before they ran. \emph{Evidence first} orders the assessment so that the quote and what it does not
+show come before the evidence kind and the direction (llama.cpp keeps the schema's property order in its grammar), and
+offers only \texttt{company\_assertion} for a source the environment marks as a company claim. \emph{Grounded beliefs}
+allows a `likely' belief only for a theory that a real source the run weighed supports. On development, grounded
+beliefs changed the conclusions as designed (fewer unearned strong beliefs, ten recommendations to test first) but not
+their scores ($-0.01$ [$-0.05$, 0.03]). Evidence first passed its rule, and the arm with both was run once on each test
+set against the guarded default, judged blind by both judges (quality: default $\rightarrow$ evidence first, mean of
+judges, with the paired difference and 95\% interval; the dimensions as Claude Code/\texttt{gpt-6-sol}):
+
+\begin{center}
+\small\begin{tabular}{@{}lccc@{}}
+\toprule
+ & Development (45) & Test set 2 (72) & Final test (48)\\
+\midrule
+Quality & 1.56 $\rightarrow$ 1.63 & 1.64 $\rightarrow$ 1.67 & 1.56 $\rightarrow$ 1.62\\
+Difference & $+0.07$ [0.03, 0.11] & $+0.03$ [$-0.00$, 0.06] & $+0.06$ [0.00, 0.11]\\
+Evidence judgement & 0.62/1.07 $\rightarrow$ 0.91/1.20 & 0.56/1.06 $\rightarrow$ 0.82/1.21 & 0.46/0.96 $\rightarrow$ 0.98/1.31\\
+Recommendation & 1.05/1.07 $\rightarrow$ 1.05/1.16 & 1.03/1.16 $\rightarrow$ 1.12/1.18 & 1.00/1.16 $\rightarrow$ 1.04/1.17\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The gain is small on every set and sits in evidence judgement; the recommendation barely moves, so the weakness of
+the conclusion remains. Finished runs are 43 and 43, 69 and 65, 45 and 46. On test set 2 five runs that had finished
+stopped (three ran out of room in the final answer, one did not challenge its favoured theory, one reached the turn
+limit) and one that had stopped finished; the same refusals also occur without the change. The
+mechanical numbers check fails more often (on test set 2 in 32 runs against 14), but runs with a number found nowhere,
+not even in the run's own test design, do not increase (9 to 8, 7 to 7, 3 to 2): the extra failures are recommendations
+that restate the run's own test thresholds. Under a rule fixed before the second judge scored test set 2, this is now
+part of the app's default.
 
 \section{What did not fix the remaining failures}\label{sec:negative}
 After both tests we tried, on the development cases only, to repair version 1's remaining failures:
@@ -269,7 +307,7 @@ change behaviour, but they interact with the environment's other guards.
 \subsection{Training data: the teacher's errors are in the student}
 An audit of the 158 teacher investigations that trained version 1 found the teacher's own weaknesses:
 \begin{itemize}
-  \item 74\% of its recommendations use a number from no source;
+  \item 74\% of these 158 recommendations use a number from no source;
   \item 38\% of its evidence kinds match the annotation, with \texttt{independent\_study} often given to encyclopedia,
         news and company-history text;
   \item in 74 of its 109 historical cases (68\%; 47\% of all 158 investigations) the recommendation cites a source

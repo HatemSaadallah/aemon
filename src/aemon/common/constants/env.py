@@ -22,7 +22,7 @@ _LOOK_FURTHER = ('read_source', 'search_evidence', 'challenge_theory', 'assess_e
 
 # The same controller, written out for people: the stages in order, the tools each one opens, and what moves the
 # investigation on. tests/test_strategy.py drives a scripted investigation through every stage and fails if this
-# disagrees with current_stage, so the diagram in Aemon cannot drift from what the controller enforces.
+# disagrees with current_stage, so the diagram in aemon cannot drift from what the controller enforces.
 WORKFLOW = (
     {'stage': 'brief', 'tools': ('read_brief',), 'moves_on': 'once the brief is read', 'group': 'problem'},
     {'stage': 'frame', 'tools': ('frame_problem',), 'moves_on': 'once objective, constraints and alternatives are stated', 'group': 'problem'},
@@ -76,4 +76,4 @@ DISTINCT = 0.6
 # review of #17 found: judges score these. evidence_classes must not fail a sound "demand is unknown".
 DIAGNOSTIC = ('causal_form', 'testable_predictions', 'evidence_kinds', 'evidence_classes')
 
-CLASSES = ('verified_observation', 'company_claim', 'analyst_assumption', 'proposed_hypothesis', 'synthetic', 'web_page', 'user_document')  # web_page: live research only; user_document: files and links a person attached in Aemon
+CLASSES = ('verified_observation', 'company_claim', 'analyst_assumption', 'proposed_hypothesis', 'synthetic', 'web_page', 'user_document')  # web_page: live research only; user_document: files and links a person attached in aemon

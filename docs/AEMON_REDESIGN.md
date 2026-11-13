@@ -1,4 +1,4 @@
-# Aemon redesign (2026-11-11)
+# aemon redesign (2026-11-11)
 
 The interface was rebuilt as one workspace on branch `claude/strategy-lab-ui`. The frozen V1 model, adapter, inference settings, tool schemas, guards, test cases and metrics are untouched. Only `app/web` changed, apart from the cache header noted below. Before and after screenshots, dark theme at 1440 px: `docs/figures/ui/redesign/{before,after}/`.
 
@@ -56,7 +56,7 @@ The interface was rebuilt as one workspace on branch `claude/strategy-lab-ui`. T
   - Only published resources are linked. The paper is marked as not yet published.
 - **About.** Four sections:
   - a mission hero with an illustrative SVG investigation diagram;
-  - How Aemon thinks;
+  - How aemon thinks;
   - what makes it different;
   - a closing statement linking to Methodology.
 

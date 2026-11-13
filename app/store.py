@@ -1,4 +1,4 @@
-"""Aemon's storage: one SQLite file for companies, accounts, sessions, history and saved runs.
+"""aemon's storage: one SQLite file for companies, accounts, sessions, history and saved runs.
 
 An account is a member of one or more companies (memberships) and works in one company's workspace at a time; it never
 sees a company it is not a member of.

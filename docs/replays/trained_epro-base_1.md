@@ -2,7 +2,7 @@
 
 *Electrolux Professional: a finished investigation.*
 
-- **Model:** Aemon (Tiny Aya Global + adapter, version 1)
+- **Model:** aemon (Tiny Aya Global + adapter, version 1)
 - **How it ended:** finished after 31 tool calls
 - **Blind judge score (0 to 3):** 1.62 (mean of judges; claude 1.25, codex 2.00)
 

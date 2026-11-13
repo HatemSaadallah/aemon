@@ -1,6 +1,6 @@
-"""Aemon accounts. Kept outside the repository, with salted scrypt hashes and never a plain password.
+"""aemon accounts. Kept outside the repository, with salted scrypt hashes and never a plain password.
 
-Accounts live in Aemon's SQLite database (app/store.py), which imports an older ~/.config/lexsi/users.json once.
+Accounts live in aemon's SQLite database (app/store.py), which imports an older ~/.config/lexsi/users.json once.
 An account is a member of one or more companies and works in one company's workspace at a time. No default account
 exists: create one with
 
@@ -11,7 +11,7 @@ exists: create one with
     python app/users.py list                  (accounts and their companies)
     python app/users.py companies             (the companies an account can join)
 
-Companies are filled from the dossier when Aemon starts.
+Companies are filled from the dossier when aemon starts.
 """
 
 import getpass
@@ -39,7 +39,7 @@ def add(name: str, password: str, company: str) -> None:
     if len(password) < MIN_PASSWORD:
         raise ValueError(f'a password needs at least {MIN_PASSWORD} characters')
     if company not in {c['id'] for c in store.companies()}:
-        raise ValueError(f'no company {company}; start Aemon once, then see: python app/users.py companies')
+        raise ValueError(f'no company {company}; start aemon once, then see: python app/users.py companies')
     salt = secrets.token_hex(16)
     store.put_user(name, salt, _hash(password, salt))
     store.join(name, company)
@@ -63,7 +63,7 @@ def main(argv: list[str]) -> None:
     if command == 'list' and not rest:
         print('\n'.join(f'{a["name"]}: {", ".join(a["companies"]) or "no company"}' for a in store.accounts()) or 'no users yet')
     elif command == 'companies' and not rest:
-        print('\n'.join(f'{c["id"]}: {c["name"]}' for c in store.companies()) or 'no companies yet: start Aemon once')
+        print('\n'.join(f'{c["id"]}: {c["name"]}' for c in store.companies()) or 'no companies yet: start aemon once')
     elif command == 'remove' and len(rest) == 1:
         remove(rest[0])
         print(f'removed {rest[0]}')

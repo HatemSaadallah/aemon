@@ -1,0 +1,10 @@
+jobs ended 21:04:30
+C {"episodes": 45, "finished": 43, "end_to_end_success": 4, "stop_reasons": {"finished": 43, "repeated errors": 2}, "refused_calls": 150, "mean_calls": 41.22222222222222}
+D {"episodes": 45, "finished": 43, "end_to_end_success": 2, "stop_reasons": {"finished": 43, "repeated errors": 2}, "refused_calls": 149, "mean_calls": 41.422222222222224}
+{"packets": 180, "runs": 180, "runs_by_arm": {"A": 45, "B": 45, "C": 45, "D": 45}}
+{"judge": "claudecode", "packets": 180, "reused": 90, "new": 90}
+claude done 21:38:13
+{"judge": "codexsol", "packets": 180, "reused": 90, "new": 90}
+{"judge": "codexsol", "packets": 180, "reused": 90, "new": 90}
+sol round 1: 90 of 90 judged 21:52:28
+judged 21:52:30

@@ -70,7 +70,7 @@ export function HowPage({ workspace: w }: { workspace?: Workspace | null }) {
       <header className="pg-head">
         <div>
           <span className="kicker accent">Methodology</span>
-          <h1 className="pg-title">How Aemon investigates</h1>
+          <h1 className="pg-title">How aemon investigates</h1>
           <p className="pg-sub">Seven stages, the habits of careful strategy work: frame the decision, compare explanations, weigh evidence for and against, challenge the favourite, and test before a big commitment.</p>
         </div>
       </header>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Icon } from '../components/Icon.tsx';
 import { Reveal } from './AboutPage.tsx';
 
-// Who we are: the two people behind Aemon, and nothing else. Photos live in app/web/public/assets/team/: their own
+// Who we are: the two people behind aemon, and nothing else. Photos live in app/web/public/assets/team/: their own
 // photos, cut out and set on one shared backdrop. A missing photo falls back to a branded initials portrait. Only
 // verified profile links are shown.
 
@@ -28,7 +28,7 @@ export function TeamPage() {
       <Reveal as="header" className="tm-head">
         <span className="ab-eyebrow">Who we are</span>
         <h1 className="display tm-h1">Curious minds. Careful methods.</h1>
-        <p className="ab-lede">Aemon is built by two Master's students in Artificial Intelligence, interested in making sophisticated research methods more accessible to real business decisions.</p>
+        <p className="ab-lede">aemon is built by two Master's students in Artificial Intelligence, interested in making sophisticated research methods more accessible to real business decisions.</p>
       </Reveal>
       <Reveal className="tm-people">
         {PEOPLE.map((p, i) => (

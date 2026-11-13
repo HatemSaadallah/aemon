@@ -18,7 +18,7 @@ REPO = Path(__file__).resolve().parents[2]
 KEEP = ('app/', 'src/aemon/', 'data/dossier/')
 DROP = ('app/test_', 'app/run.sh', 'app/run_model.sh', 'data/dossier/raw/')
 # Personal and internal identifiers never go into a public copy (the same list as build_public_repo.py)
-SCRUB = {'CLUSTER_ACCOUNT': 'CLUSTER_ACCOUNT', 'CLUSTER_HOST': 'CLUSTER_HOST', '/home/USER': '/home/USER', '/home/USER': '/home/USER'}
+SCRUB = {'CLUSTER_ACCOUNT': 'CLUSTER_ACCOUNT', 'CLUSTER_ACCOUNT_2': 'CLUSTER_ACCOUNT_2', 'CLUSTER_HOST': 'CLUSTER_HOST', '/home/USER': '/home/USER', '/home/USER': '/home/USER'}
 TEXT = {'.py', '.md', '.json', '.jsonl', '.txt', '.ts', '.tsx', '.js', '.css', '.html', '.sh', '.toml', '.jinja'}
 ADAPTERS = {  # the gated conversions the evaluations ran (jobs/eval_switch.sbatch)
     'final_adapter.gguf': '41794b5756b9e0f87c58dd14e451756d15c897d595886dee9921181298fdb9d1',

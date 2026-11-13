@@ -1,9 +1,9 @@
-"""When an investigation stops early, Aemon still gives an answer: a draft recommendation written from what
+"""When an investigation stops early, aemon still gives an answer: a draft recommendation written from what
 the investigation found, marked as a draft, with the reason it stopped and its confidence capped at Low.
 
 The draft is written by the local model (adapters off, as for follow-ups) from the investigation's own record, and
 may cite only real sources the investigation read. If even that fails, the interim position or the explanations
-stand in, so the page always has something to show. Aemon only: the evaluated runs never use it.
+stand in, so the page always has something to show. aemon only: the evaluated runs never use it.
 """
 
 from __future__ import annotations

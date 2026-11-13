@@ -26,7 +26,7 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 | Every test run, browsable | [first test](docs/replays/final/README.md) (96 runs) and [second test](docs/replays/test2/README.md) (144 runs), base and fine-tuned side by side, no GPU needed |
 | Every decision, dated | [docs/DECISIONS.md](docs/DECISIONS.md) |
 
-| **+0.83** | **+0.52** | **28 of 48** | **$0.03** | **30×** |
+| **+0.83** | **+0.52** | **28 of 48** | **$0.03** | **26×** |
 |:---:|:---:|:---:|:---:|:---:|
 | blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | investigations finished with an accepted recommendation, against 4 of 48 for the base model | per investigation, self-hosted on one A100 slice: about 8 times less than the closed model we measured | faster than its teacher per GPU |
 
@@ -64,19 +64,26 @@ equal) and 49 of 72 runs (`reports/judge/*/paired_counts.json`, mean of two judg
   weak.
 - **A later two-adapter system is the most consistent thing we built afterwards.** "Dig then reason" lets version 1
   gather the evidence and another adapter, version 3, trained with a second teacher, do the reasoning. It is clearly above
-  version 1 on the second test (1.43 against 1.07, +0.36 [0.22, 0.51]) and on development, and level with it on the
+  version 1 on the second test (1.43 against 1.07, +0.36 [0.22, 0.51]), higher on development (+0.17 [0.02, 0.35],
+  Claude Code judge only), and level with it on the
   first test (1.44 against 1.45, both judges); version 3 alone scores 1.48 on the second test. All of this came after the frozen results, so
   version 1 is the result we stand behind.
-- **Decoding-time loop guards: more runs finish on every set, and quality rises.** Masking repeats, picking quotes
+- **Decoding-time loop guards: more runs finish on every set; quality rises on two of the three.** Masking repeats, picking quotes
   from the source and a step-budget guard took dig then reason from 28 to 45 of 45 finished development runs (+0.19
   [0.10, 0.30], both blind judges), on test set 2 from 43 to 69 of 72 (+0.21 [0.09, 0.33], above zero for each
   judge alone; +0.16 before a bug in the quote picker was fixed), and on the final test from 27 to 45 of 48, where the
   quality gain is smaller and not clearly above zero (+0.12 [0.00, 0.25]; mostly one company). Built after every frozen
   result, so exploratory; now the app default ([Loop guards](#loop-guards-on-development-test-set-2-and-the-final-test-exploratory)).
+- **Evidence first: better judgement of evidence, not yet of the conclusion.** Asking for the quote and what it does
+  not show before the evidence kind raised the judges' evidence-judgement scores on all three sets (final test, Claude
+  Code 0.46 → 0.98) and overall quality a little (+0.07, +0.03 and +0.06 over the loop guards; the test set 2 interval
+  touches zero), at 4 fewer finished runs on test set 2; the recommendation scores barely moved. Also exploratory, and
+  part of the app default ([Evidence first](#evidence-first-how-a-source-is-weighed-exploratory)).
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured.
-- **What does not work yet.** As evaluated, about 4 in 10 runs stop before a recommendation (the loop guards address
-  this on development), and almost none pass every mechanical check. Section 7 says why, and what we tried after the tests (a second teacher, adapter switching, a status check),
+- **What does not work yet.** As evaluated, version 1 stops before a recommendation in 20 of 48 runs on the first test
+  and 40 of 72 on the second (the loop guards, with dig then reason, bring this down to 3 of 48 and 3 of 72), and almost
+  none pass every mechanical check. Section 7 says why, and what we tried after the tests (a second teacher, adapter switching, a status check),
   including what failed.
 
 The agent is Tiny Aya Global fine-tuned on a teacher's investigations to work through a strategy question the way a
@@ -186,7 +193,8 @@ CuratorKIT filters the rows.
 - **Splits by company**: for version 1, 58 training companies, 6 validation companies (Hellberg, Neumann, Jotun, Tanita, Deere, ACR)
   for the development choices, and 4 final-test companies (Aquaporin, Electrolux Professional, RATIONAL, Simonelli),
   frozen by digest (`docs/final_test_freeze.json`, dce26d4f…) before any model ran on them.
-- **Training data**: 174 accepted teacher investigations, giving 4,302 rows; training used the 3,891 rows from 158
+- **Training data**: 174 accepted teacher investigations, giving 4,302 rows (other teacher totals below count different
+  sets: 223 is every finished teacher investigation, 205 those on training companies); training used the 3,891 rows from 158
   investigations on 57 training companies, plus 51 correction rows (a teacher showing a valid next step from a state
   where the student had looped). The 411 validation rows were kept out.
 - **Second test set**: 24 cases on 12 further companies, frozen by digest (`docs/test2_freeze.json`) before any run.
@@ -311,8 +319,9 @@ Measured on the final test, one investigation by the fine-tuned agent reads abou
   task; the case for self-hosting against it rests on running offline and keeping the case data local, not on price.
 - The closed models are not quality-matched: Claude finished all 15 control investigations on the earlier harness,
   against the fine-tuned agent's 28 of 48 here.
-- The teacher shows the other side of distillation: Command A+ took about 2 hours 10 minutes per batch of four on the
-  same kind of slice (about 1.8 investigations an hour), so the student runs roughly **30 times faster** per GPU.
+- The teacher shows the other side of distillation: Command A+ took 5,188 seconds for 3 investigations on a full A100
+  (80 GB), about 29 minutes each (`reports/strategy/teacher/cap_b.json`), so the student, on a smaller 40 GB slice, runs
+  roughly **26 times faster**.
 - Not measured: running several investigations at once on one GPU, which llama.cpp supports and would lower the
   self-hosted cost further.
 
@@ -356,8 +365,8 @@ under the same judges, rubric and rule.
   (−0.10) are slightly lower.
 - The gain is smaller than on the first test (+0.83 there on the mean of judges). The two judges rank the runs alike
   (Spearman 0.95 over all 144).
-- The weakest dimensions are the same as before: the recommendation (0.03 → 0.44), experiment design (0.22 → 0.50) and
-  judging evidence (0.28 → 0.39).
+- The weakest dimensions are the same as before: the recommendation (0.03 → 0.44), experiment design (0.22 → 0.53) and
+  judging evidence (0.35 → 0.47).
 
 ### Version 3: a second teacher (exploratory; version 1 stays the evaluated model)
 After both tests we trained another adapter, version 3, by continuing version 1 on everything from both teachers: version 1's rows
@@ -372,6 +381,8 @@ blind by two judges qualified for this purpose (Claude Code and Codex on `gpt-6-
 | Test set 2 (72 runs per arm) | 0.56 | 1.06 | 1.48 | +0.42 [0.24, 0.60] |
 | Final test (48 runs per arm) | 0.62 | 1.46 | 1.33 | −0.13 [−0.31, 0.04] |
 
+- (These final-test numbers come from the re-judging with base, version 1 and version 3; the combined-system section
+  below re-judged five arms together, which moves each arm by up to 0.02.)
 - The two test sets disagree: version 3 is clearly higher on test set 2 and not distinguishable from version 1 on the
   final test, where most of the gap is one company (Aquaporin, −0.41).
 - Version 3 makes fewer calls and, on test set 2, far fewer refused ones (305 against 584; 230 against 242 on the
@@ -469,7 +480,7 @@ laptop runtime, 15 cases × 3 attempts per arm, same seeds, judged blind by both
 
 - **Guards + budget minus as evaluated: +0.19 [0.10, 0.30]**, and above zero for each judge alone (Claude Code
   +0.14 [0.06, 0.22], gpt-6-sol +0.25 [0.13, 0.39]); higher or level at all six companies.
-- It is now the app's default. On version 1 alone the budget guard did not change quality (next section); with the
+- It became the app's default (with evidence first added later, below). On version 1 alone the budget guard did not change quality ([recovery controller](#a-recovery-controller-does-not-fix-the-remaining-failures)); with the
   loop guards and the version 3 reasoner it does, on development.
 
 **Test set 2** (exploratory: the set had been run before), on the cluster's bf16 runtime, 24 cases × 3 attempts. The
@@ -519,6 +530,50 @@ seeds):
 - Experiment folder: [experiments/loop_guards/](experiments/loop_guards/) (the test set 2 rerun is in `test2_fix/`,
   the final test in `final/`).
 
+### Evidence first: how a source is weighed (exploratory)
+With the loop guards in place, the lowest judged dimension on the app default's final-test runs was evidence
+judgement (Claude Code 0.46, gpt-6-sol 0.96 of 3). The judges' reasons repeat two patterns: a quote counted as support
+for a theory it does not address, and a company's own estimate labelled as independent evidence. Two more changes act
+only at decoding, each registered with its adoption rule before it ran ([DECISIONS](docs/DECISIONS.md), 12 November
+18:15 and 19:55):
+- **evidence first**: when weighing a source, the model writes the quote and what the quote does not show before it
+  picks the evidence kind and the direction (llama.cpp keeps the schema's field order in its grammar), and for a source
+  the environment marks as a company claim the only kind offered is a company assertion;
+- **grounded beliefs**: the conclusion can rate a theory 'likely' or 'very likely' only if a real source the run
+  weighed supports it, and the run's own weighings per theory are shown at the position, update and conclude steps.
+
+On development (15 cases × 3, four arms side by side, both judges), grounded beliefs alone changed the conclusions as
+designed (a strong belief in 33 of 44 finished runs against 40 of 43; 10 recommendations to test first, none before)
+but not the scores (−0.01 [−0.05, 0.03]), so it was not taken forward on its own. Evidence first passed its rule with
+and without grounded beliefs, and the arm with both was run once on each test set against the app default (same route, settings
+and seeds, judged blind together):
+
+| Set | Mean of judges, app default → evidence first | Difference | Claude Code | gpt-6-sol | Evidence judgement (Claude Code / gpt-6-sol) | Recommendation (Claude Code / gpt-6-sol) | Finished | Runs with a number found nowhere (failing the check) |
+|---|---|---|---|---|---|---|---|---|
+| Development (45 runs per arm) | 1.56 → 1.63 | **+0.07 [0.03, 0.11]** | +0.05 [0.01, 0.09] | +0.08 [0.02, 0.14] | 0.62 → 0.91 / 1.07 → 1.20 | 1.05 → 1.05 / 1.07 → 1.16 | 43 → 43 | 9 → 8 (13 → 20) |
+| Test set 2 (72 runs per arm) | 1.64 → 1.67 | **+0.03 [−0.00, 0.06]** | +0.02 [−0.01, 0.06] | +0.04 [−0.01, 0.09] | 0.56 → 0.82 / 1.06 → 1.21 | 1.03 → 1.12 / 1.16 → 1.18 | 69 → 65 | 7 → 7 (14 → 32) |
+| Final test (48 runs per arm) | 1.56 → 1.62 | **+0.06 [0.00, 0.11]** | +0.10 [0.02, 0.17] | +0.03 [−0.05, 0.10] | 0.46 → 0.98 / 0.96 → 1.31 | 1.00 → 1.04 / 1.16 → 1.17 | 45 → 46 | 3 → 2 (8 → 16) |
+
+- **Higher on all three sets, by a little.** Mean of judges +0.07 [0.03, 0.11] on development, +0.03 [−0.00, 0.06]
+  on test set 2 and +0.06 [0.00, 0.11] on the final test; higher at 6 of 6, 9 of 12 and 4 of 4 companies. Each gain is
+  smaller than the loop guards' on the same set, and on test set 2 the interval touches zero.
+- **It improves the judgement of evidence, not the conclusion.** Evidence judgement rises for both judges on every set
+  (Claude Code 0.46 → 0.98 on the final test); the recommendation moves by 0.00 to 0.09. The conclusion is still the
+  weakest part of an investigation.
+- **Four fewer runs finish on test set 2** (65 of 72 against 69). Five runs stop that finished with the guards alone:
+  three run out of room in the final answer (a 'would change if' text over its 300-character limit, or a finish cut
+  off by the per-turn token limit), one does not challenge its favoured theory before stating it, one reaches the turn
+  limit; one run that had stopped now finishes. The same refusals occur without evidence first; no guard prevents them.
+- **Now the app default**, under a rule registered before the second judge scored test set 2 (mean-of-judges
+  difference at least 0; [DECISIONS](docs/DECISIONS.md), 13 November 00:10).
+- **The numbers check fails more often, and the extra failures are the check's.** Splitting each failure by where its
+  numbers come from: runs with a number found nowhere, not even in the run's own test design, do not rise on any set
+  (last column). The extra failures are recommendations that restate the run's own test thresholds ("run X; if
+  purchase intent reaches 35%…"), which the check reads as claims because they sit in the recommendation. The check
+  is unchanged and both counts are reported.
+- Experiment folder: [experiments/grounded/](experiments/grounded/) (`screen2/` the development screen, `test2/` and
+  `final/` the two test sets); the table comes from `scripts/release/evidence_first_table.py`.
+
 ### A recovery controller does not fix the remaining failures
 We tested five controller-side recovery aids on development cases under a pre-registered rule (masking rereads,
 progress notes, step-budget awareness, citation repair, and all four). The best, step-budget awareness, rescued 15 of
@@ -526,7 +581,7 @@ progress notes, step-budget awareness, citation repair, and all four). The best,
 [−0.017, 0.031]): the extra finishes rush a templated test. More finishes are not better investigations; the
 remaining failures need training, not a controller. Full report: [docs/RECOVERY_REPORT.md](docs/RECOVERY_REPORT.md).
 That was version 1 alone; combined with the loop guards and the version 3 reasoner, the same budget guard is part of
-the arm that finished every development run and scored higher (previous section).
+the arm that finished every development run and scored higher ([Loop guards](#loop-guards-on-development-test-set-2-and-the-final-test-exploratory)).
 
 ### Limits of our own checks
 - **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter
@@ -545,8 +600,10 @@ the development cases (they could not run on the held-out cases, which we report
 Tooling, tested for a later training run that was not made: **Unsloth** (the same rows, LoRA and seed through
 AgentTune's trainer, 60 steps: 23% faster per step, 8.1 GB peak memory against 11.6, losses within 0.003) and
 **CuratorKIT** row curation (above). A further teacher run with the status check was started and stopped before it
-produced data. A version 4, recovery training for the reasoner, is registered in `docs/DECISIONS.md` (12 November)
-  and in progress; it is not part of any result here. Runs, metrics and adapters are tracked in MLflow (`ops/mlflow/`).
+produced data. A version 4, recovery training for the reasoner from a free teacher (Command A+ on the cluster), was
+registered and then stopped (`docs/DECISIONS.md`, 12 November 16:30): the loop guards had already removed the failure it
+targeted, and one day of teacher time gave 30 usable corrections, too few to move a 45-run screen. No version 4 was
+trained. Runs, metrics and adapters are tracked in MLflow (`ops/mlflow/`).
 
 ### Lessons
 - The controller, the guards and replay made the teacher's data trustworthy, and the same machinery made every
@@ -554,6 +611,9 @@ produced data. A version 4, recovery training for the reasoner, is registered in
 - Measuring with two qualified blind judges, a frozen plan and a one-shot test kept us from reading noise: several
   development differences that looked real were not.
 - Most remaining failures are gaps in the training data, not in the amount of it.
+- Guards that remove a failing action from what the model can produce worked; advice to the model did not. They
+  help the procedure most: steering how evidence is weighed lifted the judged evidence scores on every set, and the
+  conclusion barely moved, so judgement is the part training still has to supply.
 - Results did not transfer cleanly between sets: version 3 and the switching rule each looked different on
   development, test set 2 and the final test. One set would have misled us in either direction.
 
@@ -633,19 +693,28 @@ src/aemon/teacher/       teacher investigations (Command A+ locally, DeepSeek V4
 src/aemon/rows/          row building, provenance, coverage checks, CuratorKIT curation
 src/aemon/training/      AgentTune distillation training, the masking gate
 src/aemon/evaluation/    AuditKIT replay and diagnostics, the conversion gate, blind judging
+data/dossier/            the public-source dossier the agent searches and quotes
 app/                     the interface (FastAPI and React)
+deploy/                  the hosted demo (Modal) and the Hugging Face pages
+ops/                     MLflow tracking of runs, metrics and adapters
+tests/                   the test suites (./run_tests.sh)
 jobs/                    Slurm job scripts for every stage
+scripts/                 cluster helpers and the release builders (public repository, Hugging Face, replay pages)
 reports/                 every result: teacher runs, evaluations, judge packets, outputs and reports
-docs/                    the paper, the decisions log, plans frozen before each test, model and dataset cards
+experiments/             the exploratory work after the frozen tests: runs, packets, judgments and reports
+paper/                   the paper's LaTeX source (built to docs/PAPER.pdf)
+docs/                    the decisions log, plans frozen before each test, model and dataset cards
 ```
 
 ## See an investigation without a GPU
 
-[docs/replays/](docs/replays/README.md) has six recorded runs from the frozen final test, rendered as pages you can
-read here on GitHub: every tool call, what the environment accepted or refused and why, the recommendation, and the
-blind judges' scores. They include a finished run for each company, the Aquaporin run above, a run that stops on
-refusals, and the untrained base model on the same case. They come straight from the saved reports
-(`reports/judge/final/`); `python scripts/release/replay_markdown.py` regenerates them, with no model or GPU.
+[docs/replays/](docs/replays/README.md) renders every run of both frozen tests as pages you can read here on GitHub
+(96 runs of the first test, 144 of the second), base and fine-tuned side by side, with filters: every tool call, what
+the environment accepted or refused and why, the recommendation, and the blind judges' scores. Six are picked out at
+the top: a finished run for each company of the first test, the Aquaporin run that misses the insolvency, a run that
+stops on refusals, and the untrained base model on the same case. They come straight from the saved reports
+(`reports/judge/final/`, `reports/judge/test2/`); `python scripts/release/replay_markdown.py` regenerates them, with
+no model or GPU.
 
 ## Run it
 

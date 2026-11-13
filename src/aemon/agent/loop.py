@@ -68,7 +68,7 @@ def play(
     messages = [{'role': 'system', 'content': system}, {'role': 'user', 'content': 'A new investigation is ready. Call read_brief.'}]
     turns, errors, stop = [], errors_at_start, 'turn limit'  # errors counts in a row, so one mistake does not end a run; a resumed checkpoint keeps its count
     still = 0  # calls in a row without progress (recovery controller only)
-    run.model_turns = turns  # the raw turns so far, readable from on_turn (Aemon saves them to resume a run)
+    run.model_turns = turns  # the raw turns so far, readable from on_turn (aemon saves them to resume a run)
 
     def shown_to_model(result: Json) -> Json:
         return {**result, **guidance(run)} if staged else dict(result, next=next_step(run)) if guided else result
@@ -164,6 +164,8 @@ def play(
                     shown['recovery'] = recovery.recovery_note(run, [c for c in run.calls if not c.get('prefix')][-still:], upcoming)
             if 'budget' in run.recovery and recovery.tight(run):
                 shown['budget'] = recovery.budget_note(run)
+            if 'grounded_beliefs' in run.recovery and current_stage(run).name in recovery.LEDGER_STAGES:
+                shown['evidence_ledger'] = recovery.ledger(run)
         messages = advance(messages, shown)
     else:
         if stop_when and stop_when(run):

@@ -70,6 +70,9 @@ This release replaces the one of 2026-11-08. That release cut every third-party 
 | `evaluation/loop_guards_test2/` | Loop guards (exploratory), test set 2: the same three arms (72 runs each), 144 packets, the key (216 runs), both judges' outputs and the reports |
 | `evaluation/loop_guards_final/` | Loop guards (exploratory), final test: dig then reason as evaluated and with the guards + budget guard (48 runs each), 96 packets, the key, both judges' outputs and the report |
 | `evaluation/loop_guards_test2_fix/` | Loop guards, test set 2, corrected rerun of the guards + budget arm after the quote-picker fix (72 runs), with the as-evaluated arm and the run before the fix: 140 packets, the key (216 runs), both judges' outputs and the reports |
+| `evaluation/grounded_dev/` | Grounded beliefs (exploratory), development screen: the app default and the same with grounded beliefs (45 runs each), 90 packets, the key, both judges' outputs and the report |
+| `evaluation/evidence_first_dev/` | Evidence first (exploratory), development screen: four arms (app default, + grounded beliefs, + evidence first, both; 45 runs each), 180 packets, the key, both judges' outputs and the reports |
+| `evaluation/evidence_first_test2/`, `evaluation/evidence_first_final/` | Evidence first with grounded beliefs against the app default on test set 2 (72 runs each) and the final test (48 runs each): the runs, the packets (125 and 96), the keys, both judges' outputs and the reports |
 | `evaluation/status_check/` | Seven runs of the company status check (Aquaporin diagnostics and development), version 1 and version 3 |
 | `evaluation/judge_qualification/` | The qualification results of each judge |
 | `MANIFEST.json` | Every published file with the file it was made from, and the sha256 of that original and of the published copy |
@@ -247,7 +250,7 @@ Every count below is taken from the published files.
 | Recovery Correction Rows (`correction-v1`) | 51 (18 companies) | `training/correction_rows.jsonl` |
 | Recorded / Accepted DeepSeek V4-Pro Investigations | 266 / 154 | `teacher_investigations/deepseek_v4_pro/`, `training/v3_rows_report.json` |
 | Version 3 DeepSeek Rows | 3,611 training (69 companies) + 262 validation (5 companies) | `training/v3_deepseek_*.jsonl` |
-| Judge Packets | dev 56, final 87, test2 133, final_v3 135, test2_v3 205, screen3 29, switch 207, system_test2 342, system_final 231, loop_guards_dev 135, loop_guards_test2 144, loop_guards_test2_fix 140, loop_guards_final 96 | `evaluation/*/judge_packets.jsonl` |
+| Judge Packets | dev 56, final 87, test2 133, final_v3 135, test2_v3 205, screen3 29, switch 207, system_test2 342, system_final 231, loop_guards_dev 135, loop_guards_test2 144, loop_guards_test2_fix 140, loop_guards_final 96, grounded_dev 90, evidence_first_dev 180, evidence_first_test2 125, evidence_first_final 96 | `evaluation/*/judge_packets.jsonl` |
 
 ## 10. Evaluation Files and Results
 
@@ -265,6 +268,10 @@ Quality is a blind rubric of nine dimensions scored 0 to 3. Each number below is
 | Test set 2, loop guards, exploratory (`loop_guards_test2/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.427, guards 1.584, guards + budget 1.589 | guards + budget +0.162 [0.049, 0.272], guards +0.157 [0.045, 0.266], 72 pairs each |
 | Final test, loop guards, exploratory (`loop_guards_final/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.441, guards + budget 1.560 | +0.119 [−0.000, 0.249], 48 pairs |
 | Test set 2, loop guards, corrected rerun, exploratory (`loop_guards_test2_fix/`) | Claude Code, Codex (gpt-6-sol) | as evaluated 1.427, guards + budget 1.589, guards + budget with the quote fix 1.638 | fixed minus as evaluated +0.211 [0.088, 0.334]; fixed minus before the fix +0.049 [0.000, 0.129], 72 pairs each |
+| Development, grounded beliefs, exploratory (`grounded_dev/`) | Claude Code, Codex (gpt-6-sol) | app default 1.565, + grounded beliefs 1.554 | −0.011 [−0.046, 0.026], 45 pairs |
+| Development, evidence first, exploratory (`evidence_first_dev/`) | Claude Code, Codex (gpt-6-sol) | app default 1.565, + grounded beliefs 1.554, + evidence first 1.625, both 1.631 | both minus app default +0.066 [0.028, 0.107]; evidence first alone +0.060 [0.029, 0.091], 45 pairs each |
+| Test set 2, evidence first, exploratory (`evidence_first_test2/`) | Claude Code, Codex (gpt-6-sol) | app default 1.638, evidence first 1.667 | +0.029 [−0.003, 0.061], 72 pairs |
+| Final test, evidence first, exploratory (`evidence_first_final/`) | Claude Code, Codex (gpt-6-sol) | app default 1.560, evidence first 1.621 | +0.061 [0.004, 0.113], 48 pairs |
 | Adapter switching, development (`switch/`) | Claude Code only | version 1 1.065, version 3 0.863, dig then reason 1.239 | dig then reason minus version 1: +0.173 [0.018, 0.346], 45 pairs |
 
 Investigations finished: final test 4 of 48 (base), 28 of 48 (version 1), 37 of 48 (version 3); test set 2: 2 of 72 (base), 32 of 72 (version 1), 57 of 72 (version 3).

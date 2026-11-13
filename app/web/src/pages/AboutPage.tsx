@@ -2,9 +2,9 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '../components/Icon.tsx';
 
-// About: four sections in one narrative (mission, how Aemon thinks, what makes it different, a closing statement).
+// About: four sections in one narrative (mission, how aemon thinks, what makes it different, a closing statement).
 // Every claim here is about the method; measured results and their limits live on the Methodology page, and the
-// people behind Aemon on the Who we are page.
+// people behind aemon on the Who we are page.
 
 // Fades a section in once, the first time it scrolls into view (instantly when motion is reduced)
 export function Reveal({ children, className = '', as: Tag = 'section' }: { children: ReactNode; className?: string; as?: 'section' | 'header' }) {
@@ -50,9 +50,9 @@ function Hero() {
   return (
     <Reveal as="header" className="ab-hero">
       <div className="ab-hero-text">
-        <span className="ab-eyebrow">About Aemon <i>/</i> Our mission</span>
+        <span className="ab-eyebrow">About aemon <i>/</i> Our mission</span>
         <h1 className="display ab-h1">Better decisions begin with better questions.</h1>
-        <p className="ab-lede">Aemon turns uncertain business questions into structured investigations — weighing competing explanations, tracing claims to evidence, and identifying what to test before making a big commitment.</p>
+        <p className="ab-lede">aemon turns uncertain business questions into structured investigations — weighing competing explanations, tracing claims to evidence, and identifying what to test before making a big commitment.</p>
         <p className="ab-sub">Built at the intersection of artificial intelligence, research methodology, and strategic decision-making.</p>
         <div className="ab-actions">
           <Link to="/investigate" className="button primary big">Start an investigation</Link>
@@ -113,7 +113,7 @@ function Different() {
         <article className="ab-feature">
           <span className="ab-eyebrow">Research approach</span>
           <h3 className="display">A smaller model. A more rigorous process.</h3>
-          <p>Aemon explores whether a small open model can learn careful investigation. Tiny Aya Global, with 3 billion parameters, was fine-tuned on investigations carried out by a more capable teacher model, Command A+, under strict research rules.</p>
+          <p>aemon explores whether a small open model can learn careful investigation. Tiny Aya Global, with 3 billion parameters, was fine-tuned on investigations carried out by a more capable teacher model, Command A+, under strict research rules.</p>
           <p>The aim is not plausible-sounding answers. It is investigations whose claims can be checked: every quote must match its source, every hypothesis must say who would change their behaviour and why, and a simulated result never counts as evidence.</p>
           <div className="ab-rules" aria-label="Rules every investigation follows">
             <span><Icon name="check" size={13} /> Quotes checked against sources</span>
@@ -134,7 +134,7 @@ function Closing() {
   return (
     <Reveal className="ab-close">
       <h2 className="display">The goal isn't to sound certain. It's to know what the evidence supports.</h2>
-      <p>We're building Aemon around a simple idea: a trustworthy assistant should help people understand not just an answer, but why that answer deserves confidence — and what remains to be tested.</p>
+      <p>We're building aemon around a simple idea: a trustworthy assistant should help people understand not just an answer, but why that answer deserves confidence — and what remains to be tested.</p>
       <Link to="/how" className="button primary big">Explore our methodology <Icon name="arrow" size={15} /></Link>
     </Reveal>
   );

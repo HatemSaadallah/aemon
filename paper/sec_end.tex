@@ -1,5 +1,6 @@
-\section{Aemon: the agent as a product}\label{sec:app}
-An agent that only exists in an evaluation harness is not useful to a manager. Aemon runs the fine-tuned model
+\section{aemon: the agent as a product}\label{sec:app}
+An agent that only exists in an evaluation harness is not useful to a manager. aemon runs the fine-tuned model (by default version~1 gathering the evidence and version~3 reasoning, with the
+loop guards of Section~\ref{sec:results})
 locally (FastAPI and React over a llama.cpp server) and is designed, after a review of how current research assistants
 present long-running work, for readers who are not analysts.
 
@@ -27,7 +28,7 @@ present long-running work, for readers who are not analysts.
   \item \textbf{Investigations that do not die.} Runs keep going when the page is closed; every turn is saved, and
         after a restart unfinished runs resume by replaying their saved turns, each of which must reproduce its saved
         result. A run that stops early can be continued from where it stopped, and if it ends without a recommendation
-        Aemon writes a labelled draft from what it found.
+        aemon writes a labelled draft from what it found.
   \item \textbf{Memory, projects, attachments and web search.} Notes about the person, the company or a project are
         given to the agent as context, never as evidence; attached files and links become quotable sources labelled as
         the person's own; an optional live web search saves every page it reads and labels it unchecked; a mind map
@@ -62,7 +63,8 @@ None of these features is part of the evaluated setup; the reported results appl
         the teacher's errors (Section~\ref{sec:negative}): invented numbers, wrong evidence kinds, overstated support,
         and, in historical training cases, sources published after the case date. The model reproduces the first two.
   \item \textbf{Our own instruments.} The mechanical experiment check is lenient: on development it passes 9 tests, 8
-        of which fail stricter design screens. The evidence-kind annotation is about 80\% reliable. Both are reported
+        of which fail stricter design screens. The evidence-kind annotation matches a blind relabelling on 75\% of records, 83\% counting defensible
+        alternatives. Both are reported
         as they are, and the frozen numbers use them unchanged.
   \item \textbf{Mechanical validity.} Few runs pass every check: 1 of 48 on the final test and 4 of 72 on the second.
         The quality gains are measured by blind judges, not by mechanical validity.

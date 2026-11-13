@@ -2,7 +2,7 @@
 
 *RATIONAL: a finished investigation.*
 
-- **Model:** Aemon (Tiny Aya Global + adapter, version 1)
+- **Model:** aemon (Tiny Aya Global + adapter, version 1)
 - **How it ended:** finished after 33 tool calls
 - **Blind judge score (0 to 3):** 1.56 (mean of judges; claude 1.12, codex 2.00)
 

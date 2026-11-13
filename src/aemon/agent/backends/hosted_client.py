@@ -1,6 +1,6 @@
 """A hosted teacher (DeepSeek's API) behind the same chat() signature as model_client.chat. NO TRAINING.
 
-Development only: used by pipeline/hosted_teacher.py, never by the evaluated runner, Aemon or the judges.
+Development only: used by pipeline/hosted_teacher.py, never by the evaluated runner, aemon or the judges.
 The llama.cpp server constrains a reply with a JSON schema. DeepSeek offers strict tool calling instead, which rejects
 maxLength, minItems and maxItems and needs every property required. So the schema is converted for the request, the reply
 is checked against the ORIGINAL schema here, a repair turn names what broke, and a reply that still breaks it is

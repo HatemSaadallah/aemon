@@ -126,3 +126,40 @@ def test_every_checkpoint_restores_exactly_and_holds_no_test_case():
             result = run.call(call['name'], call['arguments']) if call else {'error': problem}
             assert json.dumps(result, sort_keys=True) == json.dumps(turn['tool_result'], sort_keys=True)
         assert cp['turns_left'] == 45 - len(cp['prefix']) and cp['turns_left'] > 0
+
+
+def test_grounded_beliefs_allow_strong_beliefs_only_with_real_support_and_ask_for_beliefs_first():
+    from aemon.agent.tool_schemas import _narrow
+    run, ids = started(('grounded_beliefs',))
+    for i in ids[:3]:
+        run.call('read_source', {'id': i})
+    run.theories = {'T1': {'claim': 'a'}, 'T2': {'claim': 'b'}}
+    run.assessments = [{'theory_id': 'T1', 'evidence_id': ids[0], 'direction': 'supports'},
+                       {'theory_id': 'T2', 'evidence_id': ids[1], 'direction': 'contradicts'}]
+    for name in ('state_position', 'finish'):
+        props = _narrow(name, run)['properties']['arguments']['properties']
+        assert next(iter(props)) == 'beliefs'
+        assert 'likely' in props['beliefs']['properties']['T1']['enum']
+        assert not {'likely', 'very likely'} & set(props['beliefs']['properties']['T2']['enum'])
+    book = recovery.ledger(run)['by_theory']
+    assert book['T1']['supports'] == [ids[0]] and book['T2']['contradicts'] == [ids[1]]
+    plain, _ = started()  # off: unchanged order and every belief offered
+    for i in ids[:3]:
+        plain.call('read_source', {'id': i})
+    plain.theories, plain.assessments = run.theories, run.assessments
+    props = _narrow('state_position', plain)['properties']['arguments']['properties']
+    assert next(iter(props)) == 'favoured_theory' and 'very likely' in props['beliefs']['properties']['T2']['enum']
+
+
+def test_evidence_first_puts_the_limit_before_the_verdict_and_keeps_company_claims_as_assertions():
+    from aemon.agent.tool_schemas import _narrow
+    run, ids = started(('quote_menu', 'evidence_first'))
+    for i in ids[:3]:
+        run.call('read_source', {'id': i})
+    run.theories = {'T1': {'claim': 'a'}, 'T2': {'claim': 'b'}}
+    args = _narrow('assess_evidence', run)['properties']['arguments']
+    for v in args.get('anyOf', [args]):
+        order = list(v['properties'])
+        assert order.index('does_not_show') < order.index('direction') and order.index('quote') < order.index('direction')
+        if run._source(v['properties']['evidence_id']['const']).type == 'company_claim':
+            assert v['properties']['evidence_kind']['enum'] == ['company_assertion']

@@ -30,7 +30,7 @@ flowchart TD
     CV --> EV[run_investigations on the test sets]
     EV --> J[evaluation/judging/<br/>packets, judge_v1, report]
     EV --> D[evaluation/diagnostics/<br/>AuditKIT replay, failures, rescore]
-    TR --> APP[app/<br/>the Aemon web app]
+    TR --> APP[app/<br/>the aemon web app]
 ```
 
 A turn, in words: `loop.play` asks `tool_schemas.schema_for` which tools the stage controller has open, and sends the
@@ -56,7 +56,7 @@ investigation into the record every report, row builder and judge packet reads.
 | `evaluation/judging/` | blind judge packets (key kept apart), judge reports, and the frozen judge instrument `judge_v1/` (prompt, rubric, qualification sets, backends, receipts' configuration) | `packets`, `report`; `python src/aemon/evaluation/judging/judge_v1/run_campaign.py` |
 | `evaluation/diagnostics/` | AuditKIT replay, failure tables, rescoring, fixed policies, recovery benchmark | `rescore`, `failures`, `fixed_policies`, `recovery_bench`, `recovery_report` |
 
-Outside the package: `app/` is the Aemon web app, `jobs/` holds the Slurm jobs, `experiments/` holds one folder per
+Outside the package: `app/` is the aemon web app, `jobs/` holds the Slurm jobs, `experiments/` holds one folder per
 experiment (each with a README naming its decision entry), `scripts/` has `release/`, `cluster/` and `oneoff/` tools
 (`scripts/README.md`), `reports/` holds the recorded results, and `reviews/` holds the recorded review rounds the app
 reads.

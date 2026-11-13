@@ -4,7 +4,7 @@
 
 [All 96 runs of the frozen final test](README.md) · [all recorded investigations](../README.md)
 
-- **Model:** Aemon (Tiny Aya Global + adapter, version 1)
+- **Model:** aemon (Tiny Aya Global + adapter, version 1)
 - **How it ended:** repeated errors after 14 tool calls
 - **Blind judge score (0 to 3):** 0.28 (mean of judges; claude 0.11, codex 0.44)
 

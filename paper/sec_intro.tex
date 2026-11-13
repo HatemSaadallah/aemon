@@ -15,12 +15,12 @@ form. Our answer is a qualified yes. On a frozen test of four companies never us
 fine-tuned 3.35-billion-parameter student (Tiny Aya Global with a LoRA adapter) scores 1.48 on a blind nine-dimension
 rubric against 0.65 for the same base model under its best prompt, a paired difference of $+0.83$ with a 95\%
 case-cluster bootstrap interval of $[0.69, 0.97]$, and it finishes 28 of 48 investigations against 4. An investigation
-costs about \$0.03 of rented GPU time, against \$0.25 measured for Claude Opus on the same task.
+costs about \$0.03 of rented GPU time, against \$0.25 measured for Claude Opus on an earlier control run of the task.
 
 \paragraph{Contributions.}
 \begin{enumerate}
   \item \textbf{An executable investigation environment} (\cref{sec:env}): twelve guarded tools over a dossier of
-        1{,}334 verified public records, a stage controller that offers only the tools of the current step, and
+        1{,}334 verified public records when version~1 was trained and first tested (1{,}958 now), a stage controller that offers only the tools of the current step, and
         executable checks. Quotes must match a source word for word, theories must give distinct causal explanations, and
         a simulated what-if result may change a belief but can never support a recommendation about real demand.
   \item \textbf{A distillation pipeline with provenance} (\cref{sec:data,sec:training}): a Command A+ teacher runs the
@@ -34,11 +34,11 @@ costs about \$0.03 of rented GPU time, against \$0.25 measured for Claude Opus o
   \item \textbf{An honest diagnosis and iteration} (\cref{sec:diagnosis,sec:iteration}): where the agent still fails,
         why the training data explains it, and what environment changes and targeted teacher examples did and did not
         fix.
-  \item \textbf{A usable product} (\cref{sec:app}): Aemon, which runs the agent locally for people who are
+  \item \textbf{A usable product} (\cref{sec:app}): aemon, which runs the agent locally for people who are
         not analysts, with answer-first results, charts counted from the record, follow-up questions grounded in the
         investigation's sources, memory, attachments and PDF reports.
 \end{enumerate}
-All code, the model and a redacted copy of the data are public.\footnote{Model:
+All code, the model and the data are public.\footnote{Model:
 \url{https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent}; data:
 \url{https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations}.}
 

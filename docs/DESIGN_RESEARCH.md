@@ -1,6 +1,6 @@
-# Aemon design research (agent-compiled, with sources; the spec the app follows)
+# aemon design research (agent-compiled, with sources; the spec the app follows)
 
-# Aemon: UX research and design spec
+# aemon: UX research and design spec
 
 ## 1. What the research says (key findings)
 
@@ -65,7 +65,7 @@
 ## 3. Information architecture
 
 ```
-Top bar: [Aemon] [Company ▾]   Investigate · Mind map · How it works   [Memory] [Account ▾]
+Top bar: [aemon] [Company ▾]   Investigate · Mind map · How it works   [Memory] [Account ▾]
 ```
 - The "Research prototype" tag becomes a quiet grey "Prototype" chip.
 - **Memory** opens a right drawer (section 6).
@@ -229,7 +229,7 @@ Top bar: [Aemon] [Company ▾]   Investigate · Mind map · How it works   [Memo
 **Method:** a "Download PDF" button opens `/report/:id` and calls `window.print()`, so no library is needed. Use `@page { size: A4; margin: 18mm 16mm }`, `break-inside: avoid` on cards, charts and table rows, `break-before: page` per section, and `print-color-adjust: exact` for charts ([print CSS guide](https://21pdf-marketing.pages.dev/blog/css-print-complete-guide)). Tip shown on the page: "Choose 'Save as PDF'".
 
 **Page 1, executive summary** (must fit on one page):
-- Title (the question), company, date, "Prepared with Aemon (prototype)".
+- Title (the question), company, date, "Prepared with aemon (prototype)".
 - Recommendation box with the confidence category and its action.
 - Next step and test cost.
 - "What would change our mind".
@@ -336,7 +336,7 @@ Teal vs orange stays distinguishable for colour-blind readers (Okabe–Ito famil
 ## 11. Onboarding and other empty states
 
 **First-run card** (dismissible; dismissal remembered in `localStorage` inside try/catch):
-> **Welcome to Aemon.** 1. Ask a decision question. 2. It gathers public sources and weighs the evidence for each possible explanation (2–3 min). 3. You get a recommendation, how sure it is, and a small test you could run.
+> **Welcome to aemon.** 1. Ask a decision question. 2. It gathers public sources and weighs the evidence for each possible explanation (2–3 min). 3. You get a recommendation, how sure it is, and a small test you could run.
 > Buttons: [Try an example] [Tell it about your company] (opens Memory)
 
 **Other empty states:**

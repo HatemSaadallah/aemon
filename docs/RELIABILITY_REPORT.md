@@ -55,7 +55,7 @@ After 26 of the 27 reviews, V1 immediately rewrote its finish without new eviden
 late sources 29 of 31, missing support 13 of 16. The small model does not act on feedback it was never trained on.
 
 The step-budget controller studied earlier also left quality unchanged (+0.006, `docs/RECOVERY_REPORT.md`). The
-verification findings are shown to readers in Aemon as "check before relying". That is disclosure, not an
+verification findings are shown to readers in aemon as "check before relying". That is disclosure, not an
 improvement.
 
 ## 4. Does the corrective dataset qualify for V2?
@@ -79,7 +79,7 @@ result. The V2 training attempt is stopped, as the brief requires.
 
 The headline results are the frozen final test and test set 2. Test set 2 is Claude-only until the Codex judging is
 done. The recovery guard and the verification layer stay off by default; the guard is opt-in and labelled in the
-Aemon.
+aemon.
 
 ## 6. Limitations that must be disclosed
 1. **Training data:** V1's training data contains hindsight sources (about 12% of weighings), invented numbers (74% of

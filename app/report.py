@@ -225,7 +225,7 @@ def build(record: Json, m: Json, company: str, asked: str, followups: list[Json]
          f'<style>{CSS}</style></head><body>']
 
     # page one: executive summary
-    p.append(f'<div class="cover"><div class="brand"><b><i>a</i>Aemon</b><span>Strategy brief · {e(company)}</span></div>'
+    p.append(f'<div class="cover"><div class="brand"><b><i>a</i>aemon</b><span>Strategy brief · {e(company)}</span></div>'
              f'<h1>{e(asked)}</h1><p class="meta">{e(when)} · prepared from public sources by an AI research assistant</p></div>')
     if final:
         if final.get('draft'):
@@ -337,7 +337,7 @@ def build(record: Json, m: Json, company: str, asked: str, followups: list[Json]
 
 
 FOOTER = ('<div style="width:100%;font-family:Inter,Helvetica,Arial,sans-serif;font-size:7.5pt;color:#8a8f98;padding:0 15mm;display:flex;justify-content:space-between">'
-          '<span>Aemon · {company}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>')
+          '<span>aemon · {company}</span><span><span class="pageNumber"></span> / <span class="totalPages"></span></span></div>')
 
 
 def _free_port() -> int:

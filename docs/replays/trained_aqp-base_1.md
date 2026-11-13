@@ -2,7 +2,7 @@
 
 *Aquaporin: finished, well scored, and it misses the insolvency (the main limitation).*
 
-- **Model:** Aemon (Tiny Aya Global + adapter, version 1)
+- **Model:** aemon (Tiny Aya Global + adapter, version 1)
 - **How it ended:** finished after 27 tool calls
 - **Blind judge score (0 to 3):** 1.88 (mean of judges; claude 1.50, codex 2.25)
 

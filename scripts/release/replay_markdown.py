@@ -50,7 +50,7 @@ CHOSEN = [
     ('base', 'epro-base', 1, 'Electrolux Professional: the untrained base model, for contrast'),
 ]
 REPORTS = {'trained': 'final_test_trained_adapter.json', 'base': 'final_test_base_base.json'}
-ARM = {'trained': 'Aemon (Tiny Aya Global + adapter, version 1)', 'base': 'Tiny Aya Global without the adapter (best prompt)'}
+ARM = {'trained': 'aemon (Tiny Aya Global + adapter, version 1)', 'base': 'Tiny Aya Global without the adapter (best prompt)'}
 
 
 def scores(test: str = 'final') -> dict[tuple[str, str, int], dict[str, float]]:
@@ -265,7 +265,7 @@ def main() -> None:
         name = f'{arm}_{case}_{attempt}.md'
         (out / name).write_text(render(arm, record, why, score))
         mean = f'{statistics.mean(score.values()):.2f}' if score else 'n/a'
-        index.append(f'| [{why}]({name}) | {"Aemon" if arm == "trained" else "base"} | {record["stop_reason"]} | {mean} |')
+        index.append(f'| [{why}]({name}) | {"aemon" if arm == "trained" else "base"} | {record["stop_reason"]} | {mean} |')
     summaries = [gallery(test, out) for test in TESTS]
     index += ['', '## Every run', '',
               'Every run of both frozen tests, base and fine-tuned side by side, with filters (fine-tuned finished and base '

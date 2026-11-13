@@ -18,9 +18,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 REPO = Path(__file__).resolve().parents[2]
-DROP = ('papers/', 'sources/', 'docs/PUBLIC_README.md', 'SUMMARY.md', 'TODO.md')  # internal working notes stay private too  # the source papers and their extracted text are the publishers', not ours
+DROP = ('papers/', 'sources/', 'docs/PUBLIC_README.md', 'SUMMARY.md', 'TODO.md',
+        # working notes for the people and agents building it, and an older draft the README supersedes
+        'docs/AGENT_BRIEF.md', 'docs/SCHEDULE.md', 'docs/ARTICLE_DRAFT.md')
+# the source papers and their extracted text are the publishers', not ours; internal working notes stay private too
 # Personal and internal identifiers, replaced by placeholders in the public copy (named in the README)
-SCRUB = {'CLUSTER_ACCOUNT': 'CLUSTER_ACCOUNT', 'CLUSTER_HOST': 'CLUSTER_HOST', '/home/USER': '/home/USER', '/home/USER': '/home/USER'}
+SCRUB = {'CLUSTER_ACCOUNT': 'CLUSTER_ACCOUNT', 'CLUSTER_ACCOUNT_2': 'CLUSTER_ACCOUNT_2', 'CLUSTER_HOST': 'CLUSTER_HOST', '/home/USER': '/home/USER', '/home/USER': '/home/USER'}
 TEXT = {'.sha256', '.jinja', '.py', '.md', '.json', '.jsonl', '.txt', '.ts', '.tsx', '.js', '.css', '.html', '.sh', '.sbatch', '.toml', '.cfg', '.yml', '.yaml', '.csv', '.log', '.out', '.err', '.tex', '.bib', '.R'}
 
 

@@ -26,16 +26,16 @@ const REASON: Record<string, { title: string; text: string }> = {
   failed: { title: 'Could not finish', text: 'Something went wrong while this investigation ran.' },
   stopped: { title: 'Stopped by you', text: 'You stopped this investigation before it finished.' },
   unavailable: { title: 'Could not open the result', text: 'This investigation finished, but its result could not be loaded just now.' },
-  unreachable: { title: 'Lost the connection', text: 'The page could not reach Aemon. It may be restarting; investigations resume after a restart.' },
+  unreachable: { title: 'Lost the connection', text: 'The page could not reach aemon. It may be restarting; investigations resume after a restart.' },
 };
 // Technical reasons in plain words, keeping the original after a dash for whoever looks into it
 const plainReason = (error: string): string => {
   const known: [RegExp, string][] = [
-    [/restarted/i, 'Aemon was restarted while this ran, and this run could not be resumed'],
-    [/could not resume/i, 'Aemon restarted and could not resume this run'],
+    [/restarted/i, 'aemon was restarted while this ran, and this run could not be resumed'],
+    [/could not resume/i, 'aemon restarted and could not resume this run'],
     [/URLError|Connection refused|timed out|RemoteDisconnected/i, 'the assistant (the model server) stopped responding'],
     [/HTTPError|server refused/i, 'the assistant (the model server) refused a request'],
-    [/Request failed: 5\d\d/, 'Aemon hit an error loading it'],
+    [/Request failed: 5\d\d/, 'aemon hit an error loading it'],
   ];
   const hit = known.find(([re]) => re.test(error));
   return hit ? `${hit[1]} — ${error}` : error;
@@ -140,7 +140,7 @@ export function TryPage({ workspace: w, onError, onMemory, running = [] }: { wor
         else {
           await loadHistory(); await refresh();
           if (d.record) await loadDetail(id).catch(() => {});
-          if (d.status === 'finished' && !document.hasFocus()) document.title = '✓ Done · Aemon';
+          if (d.status === 'finished' && !document.hasFocus()) document.title = '✓ Done · aemon';
         }
       } catch {
         // The server may be restarting: keep trying, then ask the history what really happened (a restart resumes runs).
@@ -151,7 +151,7 @@ export function TryPage({ workspace: w, onError, onMemory, running = [] }: { wor
           const e = h.entries.find((x) => x.id === id);
           await loadHistory();
           if (e?.status === 'finished') { await loadDetail(id); setOpened((o) => (o && o.id === id ? { ...o, status: 'finished' } : o)); }
-          else setOpened((o) => (o && o.id === id ? { ...o, status: e?.status ?? 'interrupted', error: e?.error ?? 'Aemon stopped while this ran.' } : o));
+          else setOpened((o) => (o && o.id === id ? { ...o, status: e?.status ?? 'interrupted', error: e?.error ?? 'aemon stopped while this ran.' } : o));
         } catch (error: unknown) { setOpened((o) => (o && o.id === id ? { ...o, status: 'unreachable', error: errorText(error) } : o)); }
       }
     };
@@ -165,7 +165,7 @@ export function TryPage({ workspace: w, onError, onMemory, running = [] }: { wor
     const timer = window.setTimeout(() => { refresh().catch(onError); }, 5000);
     return () => window.clearTimeout(timer);
   }, [elsewhere, refresh, onError, data]);
-  useEffect(() => { const reset = (): void => { document.title = 'Aemon'; }; window.addEventListener('focus', reset); return () => window.removeEventListener('focus', reset); }, []);
+  useEffect(() => { const reset = (): void => { document.title = 'aemon'; }; window.addEventListener('focus', reset); return () => window.removeEventListener('focus', reset); }, []);
 
   const start = async (ask: Ask, fresh = false, options?: { depth?: string; live?: boolean; project?: string | null; context?: string; attachments?: string[] }): Promise<void> => {
     const question = text(ask.question).trim();
@@ -361,7 +361,7 @@ export function TryPage({ workspace: w, onError, onMemory, running = [] }: { wor
         ) : null}
         <header className="setup-head">
           <h1 className="display setup-title">What strategic decision are you facing?</h1>
-          <p className="pg-sub">Aemon reads {shortCompany(w.company)}'s sources, sets out competing explanations, weighs the evidence for and against each, and recommends what to do, with a small test when one is worth running. It takes a few minutes.</p>
+          <p className="pg-sub">aemon reads {shortCompany(w.company)}'s sources, sets out competing explanations, weighs the evidence for and against each, and recommends what to do, with a small test when one is worth running. It takes a few minutes.</p>
         </header>
         {composer}
         <section className="sec">

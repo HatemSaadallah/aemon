@@ -17,7 +17,7 @@ const root = document.getElementById('root');
 if (!root) throw new Error('The page has no #root element');
 const signIn = window.location.pathname === '/login';
 if (signIn) document.body.classList.add('login-page');
-document.title = signIn ? 'Sign in · Aemon' : 'Aemon';
+document.title = signIn ? 'Sign in · aemon' : 'aemon';
 
 createRoot(root).render(
   <StrictMode>

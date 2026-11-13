@@ -1,4 +1,4 @@
-# Failure-aware recovery for Aemon: final report (2026-11-09)
+# Failure-aware recovery for aemon: final report (2026-11-09)
 
 Pre-registration, audit, taxonomy and benchmark: `docs/RECOVERY_EXPERIMENT.md`. Analysis of D's invalid finishes and the
 next training proposal: `docs/CORRECTIVE_DISTILLATION_PROPOSAL.md`. Nothing here changes version 1, the evaluated
@@ -50,7 +50,7 @@ most full runs fail earlier, after four refusals in a row, which D does not touc
 4. adds no simulated-evidence citation: **passes** (0 in both)
 
 ## What was integrated, what stays experimental, what needs training
-**Integrated (optional, off by default, labelled):** Aemon has a *Finish-on-time guard* toggle next to Web
+**Integrated (optional, off by default, labelled):** aemon has a *Finish-on-time guard* toggle next to Web
 search. When on, the run's label says "experimental step-budget guard (not part of the evaluated setup)", saved results
 are never reused across it, and the page warns that answers can be rushed. Version 1, the frozen evaluation settings
 and every default are unchanged. In the Lab the step limits are 100–1000, so the guard only acts near the end of a long
@@ -66,7 +66,7 @@ independent evidence. The dominant end-to-end failure, four refusals in a row (1
 
 ## Recommendation
 **D should remain experimental.** It meets the pre-registered rule, but only by one finished run in 45, with quality and
-valid completion unchanged, so it is available in Aemon as an opt-in, labelled option and not as the
+valid completion unchanged, so it is available in aemon as an opt-in, labelled option and not as the
 default. It is not evidence of better investigations: its gain on stuck runs comes with rushed tests and borrowed
 numbers. Making it a default needs the corrective training first (reviewed examples, then a development comparison of
 version 1 + D against the new candidate + D), and one more safeguard: a run that finishes under the guard should be

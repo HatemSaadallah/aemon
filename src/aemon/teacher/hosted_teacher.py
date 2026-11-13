@@ -1,7 +1,7 @@
 """The corrective pipeline with a hosted teacher (DeepSeek) instead of the llama.cpp server. NO TRAINING. Development only.
 
 A separate entry point: corrections.chat and experiment_design.chat are pointed at common.hosted_client.chat for this
-process only, so the evaluated runner, Aemon and the Command A+ jobs are unchanged. The states, instructions,
+process only, so the evaluated runner, aemon and the Command A+ jobs are unchanged. The states, instructions,
 families and gates are the corrective pipeline's own (pipeline/corrective.py); only the model answering differs.
 
     DEEPSEEK_API_KEY=... python -m aemon.teacher.hosted_teacher ask --states S.json --manifest M.jsonl --output O.json

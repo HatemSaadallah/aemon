@@ -1,6 +1,6 @@
 """The model client: one chat request to a llama.cpp server, and parsing the tool call out of the reply.
 
-Used by strategy/, Aemon and the evaluation tools. NO TRAINING.
+Used by strategy/, aemon and the evaluation tools. NO TRAINING.
 """
 
 from __future__ import annotations

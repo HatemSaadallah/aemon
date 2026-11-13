@@ -68,7 +68,7 @@ export function App() {
         if (ended.length) {
           const last = ended[ended.length - 1];
           if (last && !window.location.hash.includes(last.id)) setDone(last);  // already watching it: no notice needed
-          if (!document.hasFocus()) document.title = '✓ Done · Aemon';
+          if (!document.hasFocus()) document.title = '✓ Done · aemon';
           window.dispatchEvent(new Event('investigation-ended'));
         }
         before.current = now;
@@ -141,13 +141,13 @@ export function App() {
       <div className={`shell${menu ? ' menu-open' : ''}`}>
       <header className="mbar">
         <button type="button" className="button ghost icon-only" aria-label="Menu" aria-expanded={menu} onClick={() => setMenu(!menu)}><Icon name="menu" size={18} /></button>
-        <span className="brandline"><Logo size={24} /><b>Aemon</b></span>
+        <span className="brandline"><Logo size={24} /><b>aemon</b></span>
         <NavLink to="/investigate" className="button primary small"><Icon name="plus" size={14} /> New</NavLink>
       </header>
       <aside className="side" aria-label="Workspace">
         <div className="side-brand">
           <Logo size={30} />
-          <div className="wordmark"><span className="wm-name">Aemon</span><span className="tagline">weigh what is known. test what is not.</span></div>
+          <div className="wordmark"><span className="wm-name">aemon</span><span className="tagline">weigh what is known. test what is not.</span></div>
         </div>
         {spaces && spaces.length ? <WorkspaceSwitcher spaces={spaces} current={ws} onChoose={(id) => { setWs(id); storeWorkspace(id); }} /> : null}
         <NavLink to="/investigate" end className="side-new"><Icon name="plus" size={15} /> New investigation</NavLink>

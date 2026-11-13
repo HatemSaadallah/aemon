@@ -160,6 +160,7 @@ def _narrow(name: str, run: Investigation) -> Json | None:
     if name == 'state_position':
         fields['favoured_theory'] = _only(theories)
         fields['beliefs'] = beliefs
+        tool['properties']['arguments']['properties'] = recovery.grounded_fields(run, fields, beliefs)
     if name == 'finish':
         fields['favoured_theory'] = _only(theories)
         fields['evidence_ids']['items'] = _only(recovery.citable(run, read))
@@ -167,6 +168,7 @@ def _narrow(name: str, run: Investigation) -> Json | None:
         if getattr(run, 'status_check', False):  # the company's current position, and how it bears on the recommendation
             fields['company_position'] = copy.deepcopy(_TEXT)
         tool['properties']['arguments']['required'] = sorted(fields)
+        tool['properties']['arguments']['properties'] = recovery.grounded_fields(run, fields, beliefs)
     return tool
 
 

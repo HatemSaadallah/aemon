@@ -1,4 +1,4 @@
-"""Aemon: try the agent, read the paired pilots, and follow training. Local only. Nothing here trains.
+"""aemon: try the agent, read the paired pilots, and follow training. Local only. Nothing here trains.
 
 Model text is data. It is served as JSON and the page renders it as text, never as markup.
 Every page and API route needs a signed-in user (accounts: app/users.py). Try it works inside one company workspace at
@@ -56,7 +56,7 @@ from aemon.rows.provenance import case_digest  # noqa: E402
 
 MODEL_URL = 'http://127.0.0.1:8091'
 
-app = FastAPI(title='Aemon', docs_url=None, redoc_url=None, openapi_url=None)
+app = FastAPI(title='aemon', docs_url=None, redoc_url=None, openapi_url=None)
 # The React build (app/web, `npm run build`; app/run.sh builds it on first start)
 DIST = Path(__file__).parent / 'web' / 'dist'
 NO_CACHE = {'Cache-Control': 'no-cache'}  # the page names the current build's files, so a refresh always gets the new build
@@ -225,9 +225,13 @@ STATUS_CHECK = os.environ.get('STATUS_CHECK') == '1'
 # run 3.1 against 5.2, blind quality +0.04 [-0.08, 0.15]): no re-assessing a pair already assessed, quotes picked from
 # the source's sentences, and an exact repeat drawn again before it counts. On for the default system; LOOP_GUARDS=0 turns them off.
 # With the budget guard as well (DECISIONS 06:40: 45 of 45 finished, +0.19 [0.10, 0.30] over plain, both judges).
-LOOP_GUARDS = () if os.environ.get('LOOP_GUARDS') == '0' else ('no_repeats', 'quote_menu', 'resample_repeats', 'budget')
+# Then evidence first and grounded beliefs (DECISIONS 2026-11-13 00:10, rule met at 02:40): the quote and what it does not
+# show before the evidence kind; 'likely' only for a theory a real weighed source supports. Mean of judges over the
+# guards alone: development +0.07, test set 2 +0.03, final test +0.06.
+LOOP_GUARDS = () if os.environ.get('LOOP_GUARDS') == '0' else ('no_repeats', 'quote_menu', 'resample_repeats', 'budget',
+                                                                'grounded_beliefs', 'evidence_first')
 MODELS = (
-    {'id': 'system', 'label': 'aemon: version 1 gathers the evidence, version 3 reasons' + (', with a company status check' if STATUS_CHECK else '') + (', loop guards on' if LOOP_GUARDS else '') + ' (4-bit base)',
+    {'id': 'system', 'label': 'aemon: version 1 gathers the evidence, version 3 reasons' + (', with a company status check' if STATUS_CHECK else '') + (', loop and evidence guards on' if LOOP_GUARDS else '') + ' (4-bit base)',
      'adapter': 'final_adapter.gguf', 'reasoner': 'v3_adapter.gguf', 'status_check': STATUS_CHECK, 'prompt': 'compact', 'loop_guards': bool(LOOP_GUARDS)},
     {'id': 'final', 'label': 'Fine-tuned Tiny Aya (final adapter; 4-bit base, the reported results used full precision)', 'adapter': 'final_adapter.gguf', 'prompt': 'compact'},
     {'id': 'untrained', 'label': 'Untrained Tiny Aya', 'adapter': None, 'prompt': 'staged'},
@@ -613,7 +617,7 @@ def _resume(wait: float = RESUME_WAIT) -> None:
     for e in store.running():
         settings, turns = e.get('run_settings') or {}, e.get('turns') or []
         if not settings or settings.get('live') or e.get('case') not in cases():
-            _record_history(e['user'], e['workspace'], e['id'], status='interrupted', error='Aemon restarted during this run', ended=time.time())
+            _record_history(e['user'], e['workspace'], e['id'], status='interrupted', error='aemon restarted during this run', ended=time.time())
             continue
         with _lock:
             _tries[e['id']] = {

@@ -1,4 +1,4 @@
-// The Aemon mark: a lowercase a whose bowl is an open eye. Inline, so it shows before sign-in too
+// The aemon mark: a lowercase a whose bowl is an open eye. Inline, so it shows before sign-in too
 // (the same drawing as public/brand/aemon/logo.svg).
 export function Logo({ size = 28, className = 'logo-mark' }: { size?: number; className?: string }) {
   return (

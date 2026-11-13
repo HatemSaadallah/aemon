@@ -2,7 +2,7 @@
 
 *Electrolux Professional: a run that stops after four refusals in a row.*
 
-- **Model:** Aemon (Tiny Aya Global + adapter, version 1)
+- **Model:** aemon (Tiny Aya Global + adapter, version 1)
 - **How it ended:** repeated errors after 25 tool calls
 - **Blind judge score (0 to 3):** 1.19 (mean of judges; claude 1.00, codex 1.38)
 

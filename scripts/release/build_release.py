@@ -24,7 +24,7 @@ from typing import Any
 REPO = Path(__file__).resolve().parents[2]
 # Personal and internal identifiers, replaced by the same placeholders as scripts/release/build_public_repo.py
 SCRUB = {
-    'CLUSTER_ACCOUNT': 'CLUSTER_ACCOUNT', 'CLUSTER_HOST': 'CLUSTER_HOST', '/home/USER': '/home/USER', '/home/USER': '/home/USER',
+    'CLUSTER_ACCOUNT': 'CLUSTER_ACCOUNT', 'CLUSTER_ACCOUNT_2': 'CLUSTER_ACCOUNT_2', 'CLUSTER_HOST': 'CLUSTER_HOST', '/home/USER': '/home/USER', '/home/USER': '/home/USER',
     '-home-hatem-': '-home-USER-',  # the same home folder inside a temporary-folder name
 }
 SURROGATE = re.compile(r'[\ud800-\udfff]')
@@ -161,6 +161,17 @@ def main() -> None:
                               'report_both_guarded_budget_vs_guarded.json')} | {'test2/packets.jsonl': 'judge_packets.jsonl'},
         'loop_guards_final': {f'final/{n}': n for n in ('plain.json', 'guarded_budget.json', 'key.jsonl', 'claudecode_predictions.jsonl',
                               'codexsol_predictions.jsonl', 'report_both_guarded_budget_vs_plain.json')} | {'final/packets.jsonl': 'judge_packets.jsonl'},
+        # grounded beliefs and evidence first (DECISIONS 2026-11-12 18:15, 19:55, 21:55): the development screens and
+        # the taken-forward arm on test set 2 and the final test, each judged by both judges with its control
+        'grounded_dev': {f'../grounded/{n}': n for n in ('A.json', 'B.json', 'key.jsonl', 'claudecode_predictions.jsonl', 'codexsol_predictions.jsonl',
+                         'report_both_B_vs_A.json')} | {'../grounded/packets.jsonl': 'judge_packets.jsonl'},
+        'evidence_first_dev': {f'../grounded/screen2/{n}': n for n in ('A.json', 'B.json', 'C.json', 'D.json', 'key.jsonl', 'claudecode_predictions.jsonl',
+                               'codexsol_predictions.jsonl', 'report_both_C_vs_A.json', 'report_both_D_vs_B.json', 'report_both_D_vs_A.json')}
+                              | {'../grounded/screen2/packets.jsonl': 'judge_packets.jsonl'},
+        'evidence_first_test2': {f'../grounded/test2/{n}': n for n in ('default.json', 'D.json', 'key.jsonl', 'claudecode_predictions.jsonl',
+                                 'codexsol_predictions.jsonl', 'report_both_D_vs_default.json')} | {'../grounded/test2/packets.jsonl': 'judge_packets.jsonl'},
+        'evidence_first_final': {f'../grounded/final/{n}': n for n in ('default.json', 'D.json', 'key.jsonl', 'claudecode_predictions.jsonl',
+                                 'codexsol_predictions.jsonl', 'report_both_D_vs_default.json')} | {'../grounded/final/packets.jsonl': 'judge_packets.jsonl'},
         'loop_guards_test2_fix': {f'test2_fix/{n}': n for n in ('plain.json', 'guarded_budget.json', 'guarded_budget_fix.json', 'key.jsonl',
                                   'claudecode_predictions.jsonl', 'codexsol_predictions.jsonl', 'report_both_guarded_budget_fix_vs_plain.json',
                                   'report_both_guarded_budget_fix_vs_guarded_budget.json')} | {'test2_fix/packets.jsonl': 'judge_packets.jsonl'},

@@ -1,0 +1,101 @@
+jobs ended 19:23:13
+A {"episodes": 45, "finished": 43, "end_to_end_success": 6, "stop_reasons": {"finished": 43, "repeated errors": 2}, "refused_calls": 150, "mean_calls": 40.86666666666667}
+B {"episodes": 45, "finished": 44, "end_to_end_success": 6, "stop_reasons": {"finished": 44, "repeated errors": 1}, "refused_calls": 149, "mean_calls": 40.86666666666667}
+{"packets": 90, "runs": 90, "runs_by_arm": {"A": 45, "B": 45}}
+{"packets": 90, "new": 90}
+sol round 1: 0 of 90 judged
+sol round 2: 0 of 90 judged
+sol resume round 1: 0 of 90 judged 20:57:16
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/01852e1ac1b51324': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/031e76272c1ec50d': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/09bce87950e24b30': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/0c58b6ba85dee0fa': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/0d19421539787d61': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/0d3dcd9c51ba06b0': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/0da7b0b644e05fb1': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/0e39d05c595430e3': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/1155b5fb0baa3f38': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/1185a758ca8c7081': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/11f19f2e8e00c074': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/12d183e9d7b93155': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/1314da0a328a7ec3': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/142cb7362c35e19a': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/161a1ddd4f8b04a9': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/199ae39db9638c7e': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/1e7a3592ff61ccdd': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/21fa626ca9ec6ff2': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/24d4cbc492aba093': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/24f201b51da785db': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/2cceb3cb12a68497': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/305ee97d83fa4466': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/36be25a46e31b46a': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/371764f79f51deb2': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/38f6794bb46507ae': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/3d3d0619383e961d': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/41ea8a5501058271': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/4342caae9bf71834': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/4441665c4a428172': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/49b6912790f1798e': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/4a79409b90255ba6': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/4ba377c6425b8be3': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/4e426db4f0ac391a': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/50d93652933bd0e2': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/51c3ee7b45a5fb9d': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/52ff92ea31302052': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/580e63b2e4d04d17': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/5c87971155d5a376': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/5e7d3ea24dd798c5': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/5f57ca0ac3885295': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/64c70df0f5e4e990': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/68c2818226f9216b': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/6bd812d9c7eb67bd': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/6ca490086f66b0ba': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/6e6f46ac3569f278': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/76cbd97b60be0213': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/772808c4f05bb9c5': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/78737882231c71c1': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/837bf56734c73db7': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/8c879ca9fb9b9b7f': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/8ec64ab8395d4eb0': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/8fdcde5a97ddf604': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/94e2c615fc0940b3': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/990c51df03eb3bd5': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/a395b80a01690aa3': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/a4660d9a732d0115': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/a554e711a16c9713': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/a65e84fbe68d8598': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/a8c0b0c9a165459f': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/aab0ec13b89ab58e': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/abe98c09bb8143dc': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/addcbaf29f7df4ca': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/aeb906b53c0a3602': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/aecc1608826fc895': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/af0b32e7c93579fb': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/b21578b99c0ef860': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/b3e7d2d2807fbf84': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/b951c91be1c269a3': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/c01fba25e49dd402': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/c10649e9962e227a': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/cb06a443b05cb418': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/cd05f1fd8265974a': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/ce5706def8bfbaa7': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/d3ea9853a66ae0b7': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/d68c2f88b8dacfde': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/d9b7d866c1db7b7d': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/da86e34928c556b7': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/dd8b77a361c7b654': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/e3f69c392bb8155d': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/e47d3a5d6060602c': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/ec646e617b15860c': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/ecc729ed847da494': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/eea2fd67e9b489fe': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/f2d60567bf04e680': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/f45c1ff554291a12': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/f63c7d4040afdb74': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/faa7fa0f70788fd1': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/fb232864b393fa86': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/fdde734bf68c75e4': Directory not empty
+mv: cannot overwrite '/home/USER/lexsi-backup/judge_results/grounded_screen/codexsol_archived_resume_r1/fee0ca8b65871af1': Directory not empty
+sol resume round 1: 0 of 90 judged 21:08:13
+sol resume round 1: 90 of 90 judged 21:32:38
+judged 21:32:39

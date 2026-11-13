@@ -47,7 +47,7 @@ def main() -> None:
     parser.add_argument('--status-check', action='store_true', help='company_status right after framing, and finish must cite a status source it read (off by default, as evaluated)')
     parser.add_argument('--min-assessed', type=int, default=1, help='weighed sources each theory needs before moving on (1 as evaluated)')
     parser.add_argument('--stuck-help', action='store_true', help='after two refusals in a row, say what the agent can do instead (off by default, as evaluated)')
-    parser.add_argument('--recovery', default='', help="experimental recovery features, comma-separated (docs/RECOVERY_EXPERIMENT.md); off as evaluated, development only")
+    parser.add_argument('--recovery', default='', help="experimental recovery features, comma-separated (docs/RECOVERY_EXPERIMENT.md); off as evaluated; development only, except the adopted guards, also allowed on the test sets (exploratory)")
     parser.add_argument('--max-tokens', type=int, default=520)
     parser.add_argument('--context', type=int, default=12288, help='the server context size, recorded with the run')
     parser.add_argument('--output', required=True)
@@ -66,9 +66,10 @@ def main() -> None:
     args = parser.parse_args()
     recovery_features = tuple(f for f in args.recovery.split(',') if f)
     # Experimental features run on development only. On test set 2 and the final test only the loop guards adopted on
-    # development and the budget guard with them (DECISIONS 2026-11-12 05:20, 06:40 and 16:30) may run, labelled
-    # exploratory (both sets have been run before; the final test's frozen result stands).
-    adopted = {'no_repeats', 'quote_menu', 'resample_repeats', 'budget'}
+    # development and the budget guard with them (DECISIONS 2026-11-12 05:20, 06:40 and 16:30), and the two features taken
+    # forward from the development screens of 18:15 and 19:55 (DECISIONS 21:55), may run, labelled exploratory (both sets
+    # have been run before; the final test's frozen result stands).
+    adopted = {'no_repeats', 'quote_menu', 'resample_repeats', 'budget', 'grounded_beliefs', 'evidence_first'}
     if recovery_features and args.split != 'development' and not (args.split in ('heldout', 'heldout2') and set(recovery_features) <= adopted):
         parser.error('recovery features are experimental: development only, except the adopted loop guards on test set 2 and the final test')
     if args.backend == 'claude':

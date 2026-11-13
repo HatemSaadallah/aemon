@@ -1,0 +1,286 @@
+{
+ "runs": 180,
+ "arms": [
+  "A",
+  "B",
+  "C",
+  "D"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "A": {
+     "mean": 1.29,
+     "n": 45
+    },
+    "B": {
+     "mean": 1.288,
+     "n": 45
+    },
+    "C": {
+     "mean": 1.349,
+     "n": 45
+    },
+    "D": {
+     "mean": 1.342,
+     "n": 45
+    }
+   },
+   "by_arm_company": {
+    "A": {
+     "acr": 1.389,
+     "deere": 1.266,
+     "hellberg": 1.387,
+     "jotun": 1.146,
+     "neumann": 1.174,
+     "tanita": 1.231
+    },
+    "B": {
+     "acr": 1.308,
+     "deere": 1.266,
+     "hellberg": 1.361,
+     "jotun": 1.262,
+     "neumann": 1.211,
+     "tanita": 1.211
+    },
+    "C": {
+     "acr": 1.368,
+     "deere": 1.292,
+     "hellberg": 1.438,
+     "jotun": 1.28,
+     "neumann": 1.231,
+     "tanita": 1.352
+    },
+    "D": {
+     "acr": 1.405,
+     "deere": 1.308,
+     "hellberg": 1.445,
+     "jotun": 1.222,
+     "neumann": 1.183,
+     "tanita": 1.333
+    }
+   },
+   "by_arm_dimension": {
+    "A": {
+     "assumptions_predictions": 1.622,
+     "causal_mechanism": 1.533,
+     "distinct_theories": 1.689,
+     "evidence_judgement": 0.622,
+     "experiment_design": 1.044,
+     "problem_framing": 1.6,
+     "recommendation": 1.0,
+     "revision": 1.667,
+     "seeking_challenge": 1.022
+    },
+    "B": {
+     "assumptions_predictions": 1.711,
+     "causal_mechanism": 1.533,
+     "distinct_theories": 1.667,
+     "evidence_judgement": 0.6,
+     "experiment_design": 1.044,
+     "problem_framing": 1.533,
+     "recommendation": 1.044,
+     "revision": 1.667,
+     "seeking_challenge": 1.0
+    },
+    "C": {
+     "assumptions_predictions": 1.622,
+     "causal_mechanism": 1.556,
+     "distinct_theories": 1.689,
+     "evidence_judgement": 0.956,
+     "experiment_design": 1.089,
+     "problem_framing": 1.689,
+     "recommendation": 0.978,
+     "revision": 1.667,
+     "seeking_challenge": 1.067
+    },
+    "D": {
+     "assumptions_predictions": 1.622,
+     "causal_mechanism": 1.556,
+     "distinct_theories": 1.689,
+     "evidence_judgement": 0.911,
+     "experiment_design": 1.111,
+     "problem_framing": 1.644,
+     "recommendation": 1.0,
+     "revision": 1.704,
+     "seeking_challenge": 1.044
+    }
+   },
+   "difference": {
+    "arms": "D minus B",
+    "pairs": 45,
+    "cases": 15,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.054,
+     0.002,
+     0.104
+    ],
+    "by_company": {
+     "acr": 0.097,
+     "deere": 0.042,
+     "hellberg": 0.084,
+     "jotun": -0.039,
+     "neumann": -0.028,
+     "tanita": 0.123
+    }
+   }
+  },
+  "codexsol": {
+   "by_arm": {
+    "A": {
+     "mean": 1.84,
+     "n": 45
+    },
+    "B": {
+     "mean": 1.82,
+     "n": 45
+    },
+    "C": {
+     "mean": 1.901,
+     "n": 45
+    },
+    "D": {
+     "mean": 1.92,
+     "n": 45
+    }
+   },
+   "by_arm_company": {
+    "A": {
+     "acr": 2.005,
+     "deere": 1.688,
+     "hellberg": 1.849,
+     "jotun": 1.752,
+     "neumann": 1.977,
+     "tanita": 1.755
+    },
+    "B": {
+     "acr": 2.058,
+     "deere": 1.72,
+     "hellberg": 1.766,
+     "jotun": 1.829,
+     "neumann": 1.951,
+     "tanita": 1.681
+    },
+    "C": {
+     "acr": 2.035,
+     "deere": 1.78,
+     "hellberg": 1.917,
+     "jotun": 1.775,
+     "neumann": 2.016,
+     "tanita": 1.861
+    },
+    "D": {
+     "acr": 2.039,
+     "deere": 1.701,
+     "hellberg": 1.906,
+     "jotun": 1.817,
+     "neumann": 2.176,
+     "tanita": 1.9
+    }
+   },
+   "by_arm_dimension": {
+    "A": {
+     "assumptions_predictions": 2.511,
+     "causal_mechanism": 2.533,
+     "distinct_theories": 2.533,
+     "evidence_judgement": 1.067,
+     "experiment_design": 1.133,
+     "problem_framing": 2.244,
+     "recommendation": 1.022,
+     "revision": 2.037,
+     "seeking_challenge": 1.578
+    },
+    "B": {
+     "assumptions_predictions": 2.556,
+     "causal_mechanism": 2.422,
+     "distinct_theories": 2.6,
+     "evidence_judgement": 1.111,
+     "experiment_design": 1.133,
+     "problem_framing": 2.089,
+     "recommendation": 1.089,
+     "revision": 2.037,
+     "seeking_challenge": 1.467
+    },
+    "C": {
+     "assumptions_predictions": 2.6,
+     "causal_mechanism": 2.511,
+     "distinct_theories": 2.533,
+     "evidence_judgement": 1.2,
+     "experiment_design": 1.067,
+     "problem_framing": 2.4,
+     "recommendation": 1.089,
+     "revision": 2.037,
+     "seeking_challenge": 1.756
+    },
+    "D": {
+     "assumptions_predictions": 2.578,
+     "causal_mechanism": 2.578,
+     "distinct_theories": 2.644,
+     "evidence_judgement": 1.2,
+     "experiment_design": 1.111,
+     "problem_framing": 2.311,
+     "recommendation": 1.111,
+     "revision": 2.037,
+     "seeking_challenge": 1.778
+    }
+   },
+   "difference": {
+    "arms": "D minus B",
+    "pairs": 45,
+    "cases": 15,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.1,
+     0.024,
+     0.177
+    ],
+    "by_company": {
+     "acr": -0.019,
+     "deere": -0.019,
+     "hellberg": 0.141,
+     "jotun": -0.012,
+     "neumann": 0.225,
+     "tanita": 0.22
+    }
+   }
+  }
+ },
+ "missing": [],
+ "agreement": {
+  "judges": [
+   "claudecode",
+   "codexsol"
+  ],
+  "episodes_scored_by_both": 180,
+  "spearman_episode_scores": 0.323,
+  "mean_absolute_difference": 0.554
+ },
+ "mean_of_judges": {
+  "by_arm": {
+   "A": 1.565,
+   "B": 1.554,
+   "C": 1.625,
+   "D": 1.631
+  },
+  "difference": {
+   "arms": "D minus B",
+   "pairs": 45,
+   "cases": 15,
+   "unpaired_runs": 0,
+   "mean_and_95_interval": [
+    0.077,
+    0.034,
+    0.122
+   ],
+   "by_company": {
+    "acr": 0.039,
+    "deere": 0.012,
+    "hellberg": 0.113,
+    "jotun": -0.025,
+    "neumann": 0.098,
+    "tanita": 0.171
+   }
+  }
+ }
+}

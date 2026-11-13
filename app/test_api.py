@@ -1,4 +1,4 @@
-"""Aemon API checks. Uses fixture runs in a temporary folder, and no model."""
+"""aemon API checks. Uses fixture runs in a temporary folder, and no model."""
 import os
 import sys
 from pathlib import Path

@@ -10,6 +10,13 @@ evaluated configuration:
 - ``budget``        an estimate of the fewest actions still required to finish; when the remaining turns are tight, a
   budget note, and optional exploration (extra searches, rereads, extra theories) is withdrawn.
 - ``citations``     finish may cite only real sources read; simulated results stay citable in revise_theory.
+- ``grounded_beliefs`` (DECISIONS 2026-11-12 18:45) state_position and finish offer 'likely' or 'very likely' only for
+  a theory with at least one supporting weighing of a real (not simulated) source, and ask for the beliefs before the
+  favoured theory and the recommendation text; at the position, update and conclude steps the state carries a ledger
+  of the run's own weighings per theory. The favoured theory and every text stay the model's choice.
+- ``evidence_first`` (DECISIONS 2026-11-12 19:55) assess_evidence asks for the quote and what it does not show before
+  the evidence kind and the direction, and for a source the environment marks as a company claim offers only the kind
+  company_assertion. Needs quote_menu (it shapes the same per-source variants).
 
 Nothing here writes to the record, invents evidence, chooses a recommendation, or relaxes a tool guard: every refusal
 still happens on the record, and termination rules are unchanged.
@@ -25,7 +32,7 @@ from aemon.common.constants.env import MIN_QUOTE
 from aemon.environment.dossier import normalise
 from aemon.environment.stages import current_stage
 
-FEATURES = ('mask_rereads', 'progress', 'budget', 'citations', 'no_repeats', 'quote_menu', 'resample_repeats')
+FEATURES = ('mask_rereads', 'progress', 'budget', 'citations', 'no_repeats', 'quote_menu', 'resample_repeats', 'grounded_beliefs', 'evidence_first')
 NO_PROGRESS_LIMIT = 3  # calls in a row without progress before the recovery note
 BUDGET_MARGIN = 3  # spare turns kept above the minimum before exploration is withdrawn
 EXPLORATORY = ('search_evidence', 'challenge_theory', 'add_theory', 'read_source', 'assess_evidence')
@@ -202,9 +209,57 @@ def assess_variants(run: Any, arguments: dict) -> list[dict] | None:
                     continue
                 v = copy.deepcopy(arguments)
                 v['properties'].update(theory_id={'const': t}, evidence_id={'const': i}, quote={'enum': menu})
+                if 'evidence_first' in features:
+                    v['properties'] = evidence_first(run, i, v['properties'])
                 variants.append(v)
         else:
             v = copy.deepcopy(arguments)
             v['properties'].update(theory_id={'const': t}, evidence_id={'enum': ids})
             variants.append(v)
     return variants
+
+
+STRONG = ('likely', 'very likely')
+LEDGER_STAGES = ('position', 'update', 'conclude')
+
+
+def supported_by_real(run: Any) -> set[str]:
+    """Theories with at least one supporting weighing of a real source (a simulated result is not evidence)."""
+    return {a['theory_id'] for a in run.assessments if a['direction'] == 'supports' and a['theory_id'] in run.theories
+            and run._source(a['evidence_id']).type != 'synthetic'}
+
+
+def grounded_fields(run: Any, fields: dict, beliefs: dict) -> dict:
+    """grounded_beliefs: no strong belief without support, and the beliefs written first. Returns the reordered fields."""
+    if 'grounded_beliefs' not in getattr(run, 'recovery', frozenset()):
+        return fields
+    backed = supported_by_real(run)
+    for t, spec in beliefs['properties'].items():
+        if t not in backed:
+            spec['enum'] = [b for b in spec['enum'] if b not in STRONG]
+    return {'beliefs': fields['beliefs'], **{k: v for k, v in fields.items() if k != 'beliefs'}}
+
+
+def ledger(run: Any) -> dict:
+    """The run's own weighings per theory, for the position, update and conclude steps."""
+    out = {}
+    for t in sorted(run.theories):
+        rows = [a for a in run.assessments if a['theory_id'] == t]
+        real = [a for a in rows if run._source(a['evidence_id']).type != 'synthetic']
+        out[t] = {d: sorted({a['evidence_id'] for a in real if a['direction'] == d}) for d in ('supports', 'contradicts', 'neutral')}
+        if len(real) < len(rows):
+            out[t]['simulated_results'] = sorted({a['evidence_id'] for a in rows if a not in real})
+    return {'by_theory': out, 'rule': "A theory can be rated likely only if a real source you weighed supports it. Your recommendation "
+            "follows from these weighings: say how it deals with each contradicting source, and if the favoured theory has no support, "
+            "recommend testing it before committing."}
+
+
+EVIDENCE_ORDER = ('theory_id', 'evidence_id', 'quote', 'does_not_show', 'evidence_kind', 'direction')
+
+
+def evidence_first(run: Any, evidence_id: str, props: dict) -> dict:
+    """The limit is written before the verdict; a company's own claim is offered only as a company assertion."""
+    props = {k: props[k] for k in EVIDENCE_ORDER if k in props} | {k: v for k, v in props.items() if k not in EVIDENCE_ORDER}
+    if run._source(evidence_id).type == 'company_claim':
+        props['evidence_kind'] = {'enum': ['company_assertion']}
+    return props

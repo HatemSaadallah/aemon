@@ -84,7 +84,7 @@ export function ResultView(props: Props) {
         <div className="result-actions">
           {record.depth && record.depth !== 'standard' ? <span className="status-chip quiet">{record.depth === 'quick' ? 'Quick' : 'Thorough'} depth</span> : null}
           {record.continued_after_turn ? <span className="status-chip quiet" title="It stopped early; you continued it from where it stopped.">Continued after step {record.continued_after_turn}</span> : null}
-          {record.resumed_after_turn ? <span className="status-chip quiet" title="Aemon restarted during this run; it replayed the saved steps and carried on.">Resumed after a restart</span> : null}
+          {record.resumed_after_turn ? <span className="status-chip quiet" title="aemon restarted during this run; it replayed the saved steps and carried on.">Resumed after a restart</span> : null}
           {detail.memory_used.length ? <span className="status-chip quiet" title={detail.memory_used.join('\n')}>Used {detail.memory_used.length} memory note{detail.memory_used.length === 1 ? '' : 's'}</span> : null}
           <span className="grow" />
           <a className="button primary" href={`/api/workspaces/${workspace}/history/${id}/report.pdf`} download><Icon name="doc" size={15} /> Download PDF</a>

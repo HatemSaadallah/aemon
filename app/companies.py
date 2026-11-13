@@ -1,4 +1,4 @@
-"""Company profiles for Aemon (UI only).
+"""Company profiles for aemon (UI only).
 
 Two sources, kept apart:
 - `app/profiles/company_profiles.json`: curated profile facts. Every fact cites records of the company's own dossier,

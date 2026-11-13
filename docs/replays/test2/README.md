@@ -2,7 +2,7 @@
 
 All 144 runs of the second frozen test, readable without a GPU: 72 pairs of a base run and a fine-tuned run on the same case and attempt. Each score links to that run's page (every tool call, what the environment accepted or refused, and the recommendation). Nothing is re-run, and every number here is computed from the files in `reports/judge/test2/` by `scripts/release/replay_markdown.py`.
 
-- **Base** is Tiny Aya Global without the adapter (best prompt); **fine-tuned** is Aemon (Tiny Aya Global + adapter, version 1).
+- **Base** is Tiny Aya Global without the adapter (best prompt); **fine-tuned** is aemon (Tiny Aya Global + adapter, version 1).
 - **Blind score** is 0 to 3: the mean of the two judges, then each judge (the judges did not know which model ran). A run has a mean of judges only when both judgments are valid, as in the published report.
 
 ## Summary

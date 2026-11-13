@@ -1,0 +1,232 @@
+{
+ "runs": 144,
+ "arms": [
+  "D",
+  "default"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "default": {
+     "mean": 1.322,
+     "n": 72
+    },
+    "D": {
+     "mean": 1.345,
+     "n": 72
+    }
+   },
+   "by_arm_company": {
+    "default": {
+     "ansell": 1.366,
+     "belimo": 1.361,
+     "draeger": 1.368,
+     "frankecoffee": 1.326,
+     "hach": 1.292,
+     "hoshizaki": 1.31,
+     "kingspan": 1.35,
+     "laerdal": 1.468,
+     "mettler": 1.417,
+     "tennant": 1.306,
+     "testo": 0.961,
+     "winterhalter": 1.343
+    },
+    "D": {
+     "ansell": 1.368,
+     "belimo": 1.468,
+     "draeger": 1.47,
+     "frankecoffee": 1.444,
+     "hach": 1.292,
+     "hoshizaki": 1.326,
+     "kingspan": 1.331,
+     "laerdal": 1.447,
+     "mettler": 1.417,
+     "tennant": 1.236,
+     "testo": 1.002,
+     "winterhalter": 1.345
+    }
+   },
+   "by_arm_dimension": {
+    "default": {
+     "assumptions_predictions": 1.75,
+     "causal_mechanism": 1.667,
+     "distinct_theories": 1.444,
+     "evidence_judgement": 0.597,
+     "experiment_design": 1.056,
+     "problem_framing": 1.819,
+     "recommendation": 0.986,
+     "revision": 1.889,
+     "seeking_challenge": 1.0
+    },
+    "D": {
+     "assumptions_predictions": 1.806,
+     "causal_mechanism": 1.639,
+     "distinct_theories": 1.375,
+     "evidence_judgement": 0.819,
+     "experiment_design": 1.069,
+     "problem_framing": 1.806,
+     "recommendation": 1.0,
+     "revision": 1.833,
+     "seeking_challenge": 1.014
+    }
+   },
+   "difference": {
+    "arms": "D minus default",
+    "pairs": 72,
+    "cases": 24,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.023,
+     -0.013,
+     0.059
+    ],
+    "by_company": {
+     "ansell": 0.002,
+     "belimo": 0.106,
+     "draeger": 0.102,
+     "frankecoffee": 0.118,
+     "hach": 0.0,
+     "hoshizaki": 0.016,
+     "kingspan": -0.019,
+     "laerdal": -0.021,
+     "mettler": 0.0,
+     "tennant": -0.069,
+     "testo": 0.042,
+     "winterhalter": 0.002
+    }
+   }
+  },
+  "codexsol": {
+   "by_arm": {
+    "default": {
+     "mean": 1.954,
+     "n": 72
+    },
+    "D": {
+     "mean": 1.989,
+     "n": 72
+    }
+   },
+   "by_arm_company": {
+    "default": {
+     "ansell": 2.134,
+     "belimo": 2.06,
+     "draeger": 2.025,
+     "frankecoffee": 1.981,
+     "hach": 1.694,
+     "hoshizaki": 1.919,
+     "kingspan": 2.0,
+     "laerdal": 2.123,
+     "mettler": 2.181,
+     "tennant": 1.938,
+     "testo": 1.343,
+     "winterhalter": 2.056
+    },
+    "D": {
+     "ansell": 2.16,
+     "belimo": 1.944,
+     "draeger": 2.067,
+     "frankecoffee": 2.088,
+     "hach": 1.764,
+     "hoshizaki": 2.037,
+     "kingspan": 1.947,
+     "laerdal": 2.192,
+     "mettler": 2.118,
+     "tennant": 2.053,
+     "testo": 1.421,
+     "winterhalter": 2.079
+    }
+   },
+   "by_arm_dimension": {
+    "default": {
+     "assumptions_predictions": 2.625,
+     "causal_mechanism": 2.625,
+     "distinct_theories": 2.264,
+     "evidence_judgement": 1.028,
+     "experiment_design": 1.222,
+     "problem_framing": 2.861,
+     "recommendation": 1.125,
+     "revision": 2.333,
+     "seeking_challenge": 1.681
+    },
+    "D": {
+     "assumptions_predictions": 2.694,
+     "causal_mechanism": 2.667,
+     "distinct_theories": 2.278,
+     "evidence_judgement": 1.181,
+     "experiment_design": 1.208,
+     "problem_framing": 2.806,
+     "recommendation": 1.042,
+     "revision": 2.333,
+     "seeking_challenge": 1.847
+    }
+   },
+   "difference": {
+    "arms": "D minus default",
+    "pairs": 72,
+    "cases": 24,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     0.035,
+     -0.015,
+     0.085
+    ],
+    "by_company": {
+     "ansell": 0.025,
+     "belimo": -0.116,
+     "draeger": 0.042,
+     "frankecoffee": 0.106,
+     "hach": 0.069,
+     "hoshizaki": 0.118,
+     "kingspan": -0.053,
+     "laerdal": 0.069,
+     "mettler": -0.062,
+     "tennant": 0.116,
+     "testo": 0.079,
+     "winterhalter": 0.023
+    }
+   }
+  }
+ },
+ "missing": [],
+ "agreement": {
+  "judges": [
+   "claudecode",
+   "codexsol"
+  ],
+  "episodes_scored_by_both": 144,
+  "spearman_episode_scores": 0.335,
+  "mean_absolute_difference": 0.638
+ },
+ "mean_of_judges": {
+  "by_arm": {
+   "D": 1.667,
+   "default": 1.638
+  },
+  "difference": {
+   "arms": "D minus default",
+   "pairs": 72,
+   "cases": 24,
+   "unpaired_runs": 0,
+   "mean_and_95_interval": [
+    0.029,
+    -0.003,
+    0.061
+   ],
+   "by_company": {
+    "ansell": 0.014,
+    "belimo": -0.005,
+    "draeger": 0.072,
+    "frankecoffee": 0.112,
+    "hach": 0.035,
+    "hoshizaki": 0.067,
+    "kingspan": -0.036,
+    "laerdal": 0.024,
+    "mettler": -0.031,
+    "tennant": 0.023,
+    "testo": 0.06,
+    "winterhalter": 0.013
+   }
+  }
+ }
+}

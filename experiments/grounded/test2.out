@@ -1,0 +1,13 @@
+job ended 23:46:22
+D {"episodes": 72, "finished": 65, "end_to_end_success": 12, "stop_reasons": {"finished": 65, "repeated errors": 4, "turn limit": 3}, "refused_calls": 240, "mean_calls": 38.59722222222222}
+{"packets": 125, "runs": 144, "runs_by_arm": {"default": 72, "D": 72}}
+{"judge": "claudecode", "packets": 125, "reused": 63, "new": 62}
+{"judge": "codexsol", "packets": 125, "reused": 63, "new": 62}
+codexsol round 1: 8 of 62 judged 23:48:44
+claudecode round 1: 62 of 62 judged 23:57:02
+codexsol round 2: 8 of 62 judged 00:20:00
+codexsol round 3: 8 of 62 judged 00:51:15
+codexsol round 4: 8 of 62 judged 01:22:29
+codexsol round 5: 8 of 62 judged 01:53:42
+codexsol round 6: 62 of 62 judged 02:31:33
+judged 02:31:34

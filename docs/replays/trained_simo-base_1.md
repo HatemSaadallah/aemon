@@ -2,7 +2,7 @@
 
 *Simonelli: a finished investigation.*
 
-- **Model:** Aemon (Tiny Aya Global + adapter, version 1)
+- **Model:** aemon (Tiny Aya Global + adapter, version 1)
 - **How it ended:** finished after 30 tool calls
 - **Blind judge score (0 to 3):** 1.44 (mean of judges; claude 1.25, codex 1.62)
 

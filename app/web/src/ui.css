@@ -1,4 +1,4 @@
-/* Aemon design system: the shell, type, layout containers and shared components. Loaded after style.css, so these
+/* aemon design system: the shell, type, layout containers and shared components. Loaded after style.css, so these
    are the authoritative definitions; page-specific blocks follow at the end. Tokens live at the top of style.css. */
 
 /* ---------- Base ---------- */
@@ -542,7 +542,7 @@ a { color: var(--accent-ink); text-underline-offset: 3px; text-decoration-thickn
 @media (max-width: 700px) { .ab-close { padding: 48px 8px; } .ab-close h2 { font-size: 28px; } }
 @media (max-width: 700px) { .ab-feature { padding: 24px 22px; } .ab-feature h3 { font-size: 25px; } .ab-principles li { padding: 18px 18px; } }
 
-/* ---------- Who we are: the two people behind Aemon ---------- */
+/* ---------- Who we are: the two people behind aemon ---------- */
 .tm { max-width: 1160px; margin: 0 auto; padding: 88px 56px 120px; display: flex; flex-direction: column; gap: 56px; }
 @media (max-width: 1100px) { .tm { padding: 48px 36px 96px; } }
 @media (max-width: 700px) { .tm { padding: 28px 18px 72px; gap: 40px; } }

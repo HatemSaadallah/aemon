@@ -1,0 +1,8 @@
+job ended 23:04:37
+D {"episodes": 48, "finished": 46, "end_to_end_success": 5, "stop_reasons": {"finished": 46, "repeated errors": 2}, "refused_calls": 136, "mean_calls": 37.833333333333336}
+{"packets": 96, "runs": 96, "runs_by_arm": {"default": 48, "D": 48}}
+{"judge": "claudecode", "packets": 96, "reused": 48, "new": 48}
+{"judge": "codexsol", "packets": 96, "reused": 48, "new": 48}
+codexsol round 1: 48 of 48 judged 23:12:05
+claudecode round 1: 48 of 48 judged 23:13:19
+judged 23:13:21

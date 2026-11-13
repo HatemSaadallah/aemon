@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/USER/Desktop/lexsi-ai-hackathon/src/aemon/evaluation/judging/judge_v1/run_campaign.py", line 50, in <module>
+    main()
+  File "/home/USER/Desktop/lexsi-ai-hackathon/src/aemon/evaluation/judging/judge_v1/run_campaign.py", line 45, in main
+    path = b.run_packets(a.backend, Path(a.packets), out, str(REPO), run_cap=a.run_cap, workers=a.workers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/USER/Desktop/lexsi-ai-hackathon/src/aemon/evaluation/judging/judge_v1/judge_backends.py", line 182, in run_packets
+    if target.exists():raise ValueError('aggregate already exists')
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: aggregate already exists

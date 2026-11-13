@@ -1,4 +1,4 @@
-# Model Card: Aemon, a Strategic Opportunity-Analysis Agent (Tiny Aya Fine-Tuned)
+# Model Card: aemon, a Strategic Opportunity-Analysis Agent (Tiny Aya Fine-Tuned)
 
 *weigh what is known. test what is not.*
 
@@ -16,7 +16,7 @@ Team Two-eyed Ravens: Hatem Saadallah and Nour Jennane | Lexsi AI Hackathon Trac
 
 ## 1. Model Details
 
-* **Model Name:** Aemon, a Strategic Opportunity-Analysis Agent (Fine-Tuned Tiny Aya Global)
+* **Model Name:** aemon, a Strategic Opportunity-Analysis Agent (Fine-Tuned Tiny Aya Global)
 * **Base Model:** [`CohereLabs/tiny-aya-global`](https://huggingface.co/CohereLabs/tiny-aya-global) (pinned commit `af89d21`)
 * **Base Architecture:** Compact multilingual autoregressive transformer
 * **Base Model License:** CC-BY-NC-4.0 (Non-Commercial)
@@ -104,7 +104,7 @@ three attempts per case and arm: 96 runs. No case was used for prompt developmen
 
 ## 6. Evaluation Results
 
-### Final test (run once, 2026-11-08)
+### Final test (run once on 7 November 2026, judged on 8 November)
 
 | | Base | Trained | Trained minus base, paired, 95% case-cluster bootstrap |
 |---|---|---|---|
@@ -146,8 +146,8 @@ The training data comes from the teacher, Command A+, and carries its weaknesses
 - **Invented numbers:** 74% of the teacher recommendations it was trained on use a number found in no source. The
   model does so in 21% (final test) and 31% (test set 2) of its finished recommendations.
 - **Evidence kinds:** they match the dossier's annotation in 38% of the teacher's weighings, and in 58% and 46% of the
-  model's. Encyclopedia, news and company-history text is often labelled `independent_study`. The annotation itself is
-  about 80% reliable on a blind relabelling.
+  model's. Encyclopedia, news and company-history text is often labelled `independent_study`. The annotation itself
+  matches a blind relabelling on 75% of records (83% counting defensible alternatives).
 - **Hindsight in historical training cases:** in 74 of the teacher's 109 historical cases (68%; 47% of all 158
   investigations) the recommendation cites a source published after the case date. In a content sample, about half of those quotes reveal later outcomes. The frozen tests
   are present-day cases, so their scores are unaffected.
@@ -185,8 +185,8 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
   cost comparison.
 - **Calibrated confidence.** Beliefs are the agent's own five-step verbal scale within one run, not probabilities. The
   belief check tests direction only (undermining evidence should not raise the affected theory, supporting evidence should
-  not lower it), and Aemon's confidence score summarises the run's own judgement and the sources it weighed.
-- **Real-world sources.** Evaluation used a fixed, curated dossier (1,334 records with short excerpts) and simulated
+  not lower it), and aemon's confidence score summarises the run's own judgement and the sources it weighed.
+- **Real-world sources.** Evaluation used a fixed, curated dossier (1,334 records for the final test and 221 more for test set 2, with short excerpts) and simulated
   what-if results written by the case authors. The open web was never used in evaluation; with live web search the
   agent reads unchecked pages, and its behaviour may differ.
 - **Business outcomes.** No recommendation was checked against what a company later did, and no proposed test was run.
@@ -196,9 +196,11 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
   test-design targets have a decision rule that stops mid-sentence.
 - **Negative controls on the final test.** The scripted always-keep and always-revise policies could not run on the
   held-out cases (they were written for the original earplug cases), so they are reported for development only.
-- **Aemon's settings.** The app adds a reread limit, help after refused steps, more allowed steps, draft
+- **aemon's settings.** The app adds a reread limit, help after refused steps, more allowed steps, draft
   answers when a run stops early, memory, attachments and web search. None of these were part of the evaluated setup;
-  the reported numbers apply to the evaluated settings (45 turns, 4 refusals in a row).
+  the reported numbers apply to the evaluated settings (45 turns, 4 refusals in a row). By default the app also runs
+  the two-adapter system (this adapter gathers the evidence, version 3 reasons) with decoding-time guards; see the
+  exploratory sections below.
 - **Exact reproduction from the public data.** Since 11 November the public dossier is byte-identical to the one the
   evaluated runs read (the release of 8 November had cut excerpts to one short quote).
 
@@ -209,4 +211,20 @@ replay-exact investigations). It did **not** pass its development adoption rule 
 published so the two-adapter system described in the write-up ("dig then reason": this card's adapter gathers the
 evidence, version 3 reasons) can be run by others. File: GGUF for llama.cpp, sha256 `ea919380…e1443`, the conversion
 the exploratory runs used. Blind scores, mean of two judges (Claude Code and Codex `gpt-6-sol`), base / version 1 /
-version 3: test set 2 0.56 / 1.06 / 1.48; final test 0.62 / 1.46 / 1.33. Dig then reason, mean of the same two judges: test set 2 1.43 (version 1 1.07); final test 1.44 (version 1 1.45, −0.01 [−0.20, 0.18]), so it is level with this adapter on the final test. Same licence as the base model, CC-BY-NC-4.0.
+version 3: test set 2 0.56 / 1.06 / 1.48; final test 0.62 / 1.46 / 1.33. Dig then reason, mean of the same two judges in the five-arm re-judging (which moves each arm by up to 0.02): test set 2 1.43 (version 1 1.07); final test 1.44 (version 1 1.45, −0.01 [−0.20, 0.18]), so it is level with this adapter on the final test. Same licence as the base model, CC-BY-NC-4.0.
+
+## Exploratory: decoding-time guards (the app's default)
+
+Built after every frozen result and labelled exploratory; they change what the model can produce at each step, not
+its weights, and the evaluated numbers above use none of them. With the two-adapter system ("dig then reason"):
+- **Loop guards**: a source already weighed for a theory and a search already run are not offered again, a quote is
+  picked from the source's own sentences, an exact repeat is drawn again before it counts, and a step-budget guard.
+  Finished runs: development 28 → 45 of 45, test set 2 43 → 69 of 72, final test 27 → 45 of 48. Blind quality, mean of
+  Claude Code and Codex `gpt-6-sol`: +0.19 [0.10, 0.30], +0.21 [0.09, 0.33] and +0.12 [0.00, 0.25].
+- **Evidence first, with grounded beliefs**: when weighing a source the quote and what it does not show come before
+  the evidence kind (a company claim can only be a company assertion), and 'likely' is offered only for a theory that
+  a real weighed source supports. Over the loop guards: +0.07 [0.03, 0.11], +0.03 [−0.00, 0.06] and +0.06 [0.00, 0.11];
+  evidence judgement rises for both judges on every set, the recommendation barely moves, and on test set 2 four fewer
+  runs finish (65 of 72).
+
+Code: `src/aemon/agent/recovery.py` (`--recovery no_repeats,quote_menu,resample_repeats,budget,grounded_beliefs,evidence_first`).
