@@ -71,9 +71,11 @@ _cases, _tries, _lock = {}, {}, threading.Lock()
 # Sign-in. Sessions and chat history live in the SQLite store (app/store.py), so both survive a restart.
 COOKIE = 'lexsi_session'
 SESSION_SECONDS = 12 * 3600
-FAILED_LIMIT, FAILED_WINDOW = 5, 60  # failed sign-ins per name per minute
+# Sign-in is by name alone: a new name opens a new account (in every company, with the seed investigations), and the
+# same name opens it again later. There is no password, so a name is not a secret.
+NEW_ACCOUNTS_PER_HOUR = int(os.environ.get('NEW_ACCOUNTS_PER_HOUR', '60'))
 OPEN = {'/login', '/api/login'}
-_failures, _auth_lock = collections.defaultdict(collections.deque), threading.Lock()
+_new_accounts, _auth_lock = collections.deque(), threading.Lock()
 
 
 
@@ -97,7 +99,7 @@ async def require_sign_in(request: Request, call_next: Callable[[Request], Await
 class SignIn(BaseModel):
     model_config = ConfigDict(extra='forbid')
     name: str = Field(max_length=64)
-    password: str = Field(max_length=256)
+    password: str = Field(default='', max_length=256)  # ignored: a name alone signs in
 
 
 @app.get('/login')
@@ -108,20 +110,21 @@ def login_page() -> Response:
 @app.post('/api/login')
 def login(body: SignIn) -> JSONResponse:
     name = body.name.strip().lower()
+    if not users.NAME.match(name):
+        raise HTTPException(400, 'a name is 1 to 32 lower-case letters, digits, dots, dashes or underscores')
     now = time.time()
-    with _auth_lock:
-        recent = _failures[name]
-        while recent and recent[0] < now - FAILED_WINDOW:
-            recent.popleft()
-        if len(recent) >= FAILED_LIMIT:
-            raise HTTPException(429, 'too many failed sign-ins for this name; wait a minute')
-    if not users.verify(name, body.password):
+    if store.user(name) is None:
         with _auth_lock:
-            _failures[name].append(now)
-        raise HTTPException(401, 'wrong name or password')
+            while _new_accounts and _new_accounts[0] < now - 3600:
+                _new_accounts.popleft()
+            if len(_new_accounts) >= NEW_ACCOUNTS_PER_HOUR:
+                raise HTTPException(429, 'too many new accounts this hour; sign in with an existing name or try later')
+            _new_accounts.append(now)
+        if users.open_account(name):
+            for w in workspaces():
+                store.join(name, w['id'])
+            _seed(name)
     token = secrets.token_urlsafe(32)
-    with _auth_lock:
-        _failures.pop(name, None)
     store.start_session(token, name, now + SESSION_SECONDS)
     response = JSONResponse({'user': name})
     response.set_cookie(COOKIE, token, max_age=SESSION_SECONDS, httponly=True, samesite='strict', secure=False, path='/')
@@ -1257,6 +1260,11 @@ def _test_account() -> None:
     users.add(name, password, WORKSPACES[0])
     for w in workspaces():
         store.join(name, w['id'])
+    _seed(name)
+
+
+def _seed(name: str) -> None:
+    """An account with no history gets the finished investigations in AEMON_SEED, so it has reports to open."""
     seed = os.environ.get('AEMON_SEED')
     if seed and Path(seed).is_file() and not any(store.history(name, w['id']) for w in workspaces()):
         for e in json.loads(Path(seed).read_text()):

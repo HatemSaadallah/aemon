@@ -22,7 +22,7 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 
 | | |
 |---|---|
-| **Live demo** | **[huggingface.co/spaces/HatemSaadallah/aemon](https://huggingface.co/spaces/HatemSaadallah/aemon)** (sign in with the test account from our submission; it runs the final system on two CPU cores and sleeps when idle, so the first page takes a moment; finished investigations open at once, a new one takes a while, and it runs one at a time for everyone) |
+| **Live demo** | **[huggingface.co/spaces/HatemSaadallah/aemon](https://huggingface.co/spaces/HatemSaadallah/aemon)** (pick any username to sign in, no password; it runs the final system on two CPU cores and sleeps when idle, so the first page takes a moment; finished investigations open at once, a new one takes a while, and it runs one at a time for everyone) |
 | Model | [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent) |
 | Dataset | [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) |
 | Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) |
@@ -594,8 +594,8 @@ cp /tmp/aemon-adapters/tiny-aya-global-strategy-lora-bf16.gguf ~/.cache/lexsi/ad
 cp /tmp/aemon-adapters/v3_adapter.gguf ~/.cache/lexsi/adapters/v3_adapter.gguf                  # version 3
 
 ./app/run_model.sh                                        # the model server, port 8091
-.venv/bin/python app/users.py add yourname hellberg       # an account (asks for a password); every page needs sign-in
-./app/run.sh                                              # the app, at http://127.0.0.1:8000 (needs Node once, to build)
+./app/run.sh                                              # the app, at http://127.0.0.1:8000 (needs Node once, to build);
+                                                          # sign in with any username: a new one opens an account
 ```
 
 With only version 1's adapter present the app runs version 1 alone. One investigation from the command line, against

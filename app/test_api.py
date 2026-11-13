@@ -30,7 +30,7 @@ def client(tmp_path, monkeypatch):
     server._sync_companies()
     users.add('tester', 'correct horse', 'hellberg')
     client = TestClient(server.app)
-    assert client.post('/api/login', json={'name': 'tester', 'password': 'correct horse'}).status_code == 200
+    assert client.post('/api/login', json={'name': 'tester'}).status_code == 200
     client.record = server.detail(client_record, case)
     return client
 

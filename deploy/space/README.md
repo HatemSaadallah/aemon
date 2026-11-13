@@ -18,7 +18,8 @@ A strategy-investigation agent: Tiny Aya Global (3.35B parameters) with LoRA ada
 investigation process over a dossier of public sources. Open the app, pick a company, and read a finished investigation
 or start one.
 
-- **Sign-in.** Use the test name and password the team gave you. The account is shared by everyone testing.
+- **Sign-in.** Pick any username: a new one opens a new account, and the same one brings you back to it. There is no
+  password, so a username is not private.
 - **Speed.** This Space runs the 4-bit model on CPU. Finished investigations open at once; a new one takes many minutes
   and stops after 45 steps, the budget of the evaluated runs.
 - **What runs.** The final system: version 1 of the adapter gathers the evidence and version 3 reasons over it (dig

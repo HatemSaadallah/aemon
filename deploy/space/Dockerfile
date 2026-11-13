@@ -28,6 +28,7 @@ RUN chmod +x start.sh
 USER 1000
 ENV HOME=/home/ubuntu AEMON_SEED=/home/ubuntu/aemon/seed/history.json LEXSI_DATA=/tmp/aemon-data \
     MAX_TURNS=45 PYTHONDONTWRITEBYTECODE=1 LD_LIBRARY_PATH=/opt/llama
-# The shared test account comes from two secrets set where this is hosted: AEMON_TEST_USER and AEMON_TEST_PASSWORD
+# Sign-in is by username alone (a new name opens an account, seeded from AEMON_SEED); the optional secrets
+# AEMON_TEST_USER and AEMON_TEST_PASSWORD still create a shared account at start
 EXPOSE 7860
 CMD ["./start.sh"]

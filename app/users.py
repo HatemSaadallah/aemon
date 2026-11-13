@@ -1,8 +1,8 @@
 """aemon accounts. Kept outside the repository, with salted scrypt hashes and never a plain password.
 
 Accounts live in aemon's SQLite database (app/store.py), which imports an older ~/.config/lexsi/users.json once.
-An account is a member of one or more companies and works in one company's workspace at a time. No default account
-exists: create one with
+An account is a member of one or more companies and works in one company's workspace at a time. The app signs in by
+username alone: a new name opens an account in every company (open_account). Accounts can also be managed here:
 
     python app/users.py add NAME COMPANY      (asks for the password twice; the account joins COMPANY)
     python app/users.py join NAME COMPANY     (adds another company's workspace to the account)
@@ -43,6 +43,18 @@ def add(name: str, password: str, company: str) -> None:
     salt = secrets.token_hex(16)
     store.put_user(name, salt, _hash(password, salt))
     store.join(name, company)
+
+
+def open_account(name: str) -> bool:
+    """Sign-in by name alone: an unknown name becomes an account (True), a known one is left as it is (False). Its stored
+    hash is of random bytes, so no password ever matches it."""
+    if not NAME.match(name):
+        raise ValueError('a name is 1 to 32 lower-case letters, digits, dots, dashes or underscores')
+    if store.user(name):
+        return False
+    salt = secrets.token_hex(16)
+    store.put_user(name, salt, secrets.token_hex(32))
+    return True
 
 
 def remove(name: str) -> None:

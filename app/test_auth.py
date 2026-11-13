@@ -25,7 +25,7 @@ def setup(tmp_path, monkeypatch):
     (tmp_path / 'adapters').mkdir()
     (tmp_path / 'adapters' / 'second_adapter.gguf').write_bytes(b'stand-in adapter')
     monkeypatch.setattr(server, 'ADAPTERS', tmp_path / 'adapters')
-    monkeypatch.setattr(server, '_failures', server.collections.defaultdict(server.collections.deque))
+    monkeypatch.setattr(server, '_new_accounts', server.collections.deque())
     server._sync_companies()
     for name in ('ada', 'bob'):  # members of every workspace, so the isolation tests below cover all of them
         users.add(name, PASSWORD, 'hellberg')
@@ -36,7 +36,7 @@ def setup(tmp_path, monkeypatch):
 
 def signed_in(name='ada'):
     client = TestClient(server.app)
-    assert client.post('/api/login', json={'name': name, 'password': PASSWORD}).status_code == 200
+    assert client.post('/api/login', json={'name': name}).status_code == 200
     return client
 
 
@@ -65,16 +65,28 @@ def test_every_page_and_api_route_needs_a_session(setup):
     assert client.get('/login').status_code == 200
 
 
-def test_a_wrong_password_or_unknown_name_is_refused(setup):
+def test_a_new_name_opens_an_account_in_every_company_and_the_same_name_reopens_it(setup):
     client = TestClient(server.app)
-    assert client.post('/api/login', json={'name': 'ada', 'password': 'wrong one'}).status_code == 401
-    assert client.post('/api/login', json={'name': 'nobody', 'password': PASSWORD}).status_code == 401
+    assert client.post('/api/login', json={'name': 'Newcomer'}).status_code == 200
+    me = client.get('/api/me').json()
+    assert me['user'] == 'newcomer' and set(me['companies']) == set(server.WORKSPACES)
+    salt = store.user('newcomer')['salt']
+    again = TestClient(server.app)
+    assert again.post('/api/login', json={'name': 'newcomer'}).status_code == 200
+    assert store.user('newcomer')['salt'] == salt  # the same account, not a new one
+    assert not users.verify('newcomer', '')  # no password matches an account opened by name
+
+
+def test_a_name_that_is_not_a_safe_folder_name_is_refused(setup):
+    client = TestClient(server.app)
+    for bad in ('../escape', '', 'two words', 'x' * 40):
+        assert client.post('/api/login', json={'name': bad}).status_code in (400, 422), bad
     assert client.get('/api/me').status_code == 401
 
 
 def test_the_session_cookie_is_http_only_and_strict(setup):
     client = TestClient(server.app)
-    response = client.post('/api/login', json={'name': 'ada', 'password': PASSWORD})
+    response = client.post('/api/login', json={'name': 'ada'})
     cookie = response.headers['set-cookie'].lower()
     assert 'httponly' in cookie and 'samesite=strict' in cookie and 'path=/' in cookie and 'max-age=43200' in cookie
     assert client.get('/api/me').json()['user'] == 'ada'
@@ -89,12 +101,13 @@ def test_signing_out_ends_the_session(setup):
     assert other.get('/api/me').status_code == 401
 
 
-def test_failed_sign_ins_are_rate_limited_per_name(setup):
+def test_new_accounts_are_rate_limited_but_existing_names_still_sign_in(setup, monkeypatch):
+    monkeypatch.setattr(server, 'NEW_ACCOUNTS_PER_HOUR', 2)
     client = TestClient(server.app)
-    for _ in range(server.FAILED_LIMIT):
-        assert client.post('/api/login', json={'name': 'ada', 'password': 'wrong one'}).status_code == 401
-    assert client.post('/api/login', json={'name': 'ada', 'password': PASSWORD}).status_code == 429
-    assert client.post('/api/login', json={'name': 'bob', 'password': PASSWORD}).status_code == 200
+    assert client.post('/api/login', json={'name': 'one'}).status_code == 200
+    assert client.post('/api/login', json={'name': 'two'}).status_code == 200
+    assert client.post('/api/login', json={'name': 'three'}).status_code == 429
+    assert client.post('/api/login', json={'name': 'ada'}).status_code == 200
 
 
 def test_workspaces_are_the_configured_companies_with_their_own_prompts(setup):
@@ -413,5 +426,5 @@ def test_a_hosted_copy_gets_its_shared_test_account_in_every_company(setup, monk
     server._test_account()
     client = TestClient(server.app)
     assert client.get('/api/me').status_code == 401  # sign-in is still required
-    assert client.post('/api/login', json={'name': 'judges', 'password': 'a long test phrase'}).status_code == 200
+    assert client.post('/api/login', json={'name': 'judges'}).status_code == 200
     assert set(client.get('/api/me').json()['companies']) == set(server.WORKSPACES)
