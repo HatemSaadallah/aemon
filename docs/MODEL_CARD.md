@@ -6,6 +6,7 @@ Team Two-eyed Ravens: Hatem Saadallah and Nour Jennane | Lexsi AI Hackathon Trac
 
 **[Live demo](https://huggingface.co/spaces/HatemSaadallah/aemon)** ·
 **[Full write-up and code](https://github.com/HatemSaadallah/aemon)** ·
+**[Article](https://huggingface.co/blog/HatemSaadallah/aemon)** ·
 [Dataset](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) ·
 [Collection](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) ·
 [Paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf)
