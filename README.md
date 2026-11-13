@@ -23,7 +23,9 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 
 ## 🎬 Watch the Demo
 
-[![Watch the aemon Demo](https://img.youtube.com/vi/Uow3miSSIIY/hqdefault.jpg)](https://youtu.be/Uow3miSSIIY)
+<a href="https://youtu.be/Uow3miSSIIY">
+  <img alt="Watch the aemon Demo" src="https://img.youtube.com/vi/Uow3miSSIIY/maxresdefault.jpg" width="720">
+</a>
 
 The video shows aemon at work: its agentic investigations, the interactive reasoning map, and the AI research behind
 them. Click the thumbnail to watch it on YouTube.
