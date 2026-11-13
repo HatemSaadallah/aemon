@@ -6,7 +6,7 @@ what it is for. Plans marked *registered* were fixed before the runs they descri
 ## The result and how it was measured
 | Document | What it is |
 |---|---|
-| [LATER_WORK.md](LATER_WORK.md) | Everything built and tried after the frozen tests (exploratory): version 3, adapter switching, the status check, loop guards, evidence first, what failed |
+| [LATER_WORK.md](LATER_WORK.md) | Everything built and tried after the frozen tests (exploratory): version 3, adapter switching, the status check, loop guards, evidence first, and what was not adopted |
 | [DECISIONS.md](DECISIONS.md) | Every decision, dated, with the numbers it rested on: the full history of the project |
 | [EVALUATION_PROTOCOL.md](EVALUATION_PROTOCOL.md) | How the agent is evaluated: frozen test sets, blind judges, paired comparisons |
 | [RUBRIC.md](RUBRIC.md) | The quality rubric the judges score against |

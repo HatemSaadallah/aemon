@@ -10,11 +10,10 @@
 **Teaching a 3B model to investigate a strategy question, with AgentTune and AuditKIT.**
 Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · November 2026
 
-> **Result in one line.** On four companies it never saw, in the same environment with the same tools, stage
-> controller and budgets (each arm with the prompt format it does best with), the fine-tuned Tiny Aya agent scored **1.48** against the best-prompted base model's **0.65** on a 0–3 blind LLM rubric (mean of two judges;
-> difference **+0.83, 95% interval 0.69 to 0.97**), and was higher at every company. A second frozen test on twelve
-> more companies gave **+0.52 [0.33, 0.70]**. Sixteen companies support only a limited claim about generalisation,
-> and nothing here is about business outcomes.
+> **Result in one line.** On four companies it never saw, with the same environment, tools, stage controller and
+> budgets for both arms, the fine-tuned Tiny Aya agent scored **1.48** against the best-prompted base model's **0.65**
+> on a 0–3 blind rubric (mean of two LLM judges; **+0.83, 95% interval 0.69 to 0.97**), and was higher at every
+> company. A second frozen test on twelve more companies gave **+0.52 [0.33, 0.70]**.
 
 | | |
 |---|---|
@@ -26,9 +25,9 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 | Every test run, browsable | [first test](docs/replays/final/README.md) (96 runs) and [second test](docs/replays/test2/README.md) (144 runs), base and fine-tuned side by side, no GPU needed |
 | Every decision, dated | [docs/DECISIONS.md](docs/DECISIONS.md) |
 
-| **+0.83** | **+0.52** | **28 of 48** | **$0.03** | **26×** |
+| **+0.83** | **+0.52** | **28 of 48** | **4× fewer** | **$0.03** |
 |:---:|:---:|:---:|:---:|:---:|
-| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | investigations finished with an accepted recommendation, against 4 of 48 for the base model | per investigation, self-hosted on one A100 slice: about 8 times less than the closed model we measured | faster than its teacher per GPU |
+| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | investigations finished with an accepted recommendation, against 4 of 48 for the base model | tool calls per finished investigation (61 against 242), with half the share of refused calls | per investigation, self-hosted on one A100 slice: about 8 times less than the closed model we measured, 26× faster than its teacher |
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/quality-dark.png">
@@ -42,43 +41,40 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
    how each run ended and its blind scores.
 2. Click the filter "fine-tuned finished, base did not" (25 of 48 pairs) and open any pair.
 3. Read one fine-tuned investigation end to end, for example [Simonelli](docs/replays/trained_simo-base_1.md): every
-   tool call, what the environment refused and why, and the recommendation. It shows both halves of the result: every
-   step of the procedure is there, and at step 23 a quote saying cafés offer what a home cannot is counted as support
-   for a home machine, from a blog post labelled an independent study.
-4. Then the filter "fine-tuned scored lower than base" (3 of 47 pairs), and section 7 for what still fails.
+   tool call, what the environment refused and why, and the recommendation.
+4. Section 7 has the full results, what still fails, and why.
 
 **Paired, case by case.** On the first test the fine-tuned agent scored higher than the base model on all **16 of 16
-cases** and in 44 of 47 paired runs (exact sign test, p = 2.5e-10); on the second test on 20 of 24 cases (3 lower, 1
-equal) and 49 of 72 runs (`reports/judge/*/paired_counts.json`, mean of two judges).
+cases** and in 44 of 47 paired runs (exact sign test, p = 2.5e-10); on the second test on 20 of 24 cases and 49 of 72
+runs (`reports/judge/*/paired_counts.json`, mean of two judges).
 
 **In brief**
-- **What it is.** A 3.35B-parameter open model that investigates a strategy question step by step inside an
-  environment that checks its work: every quote must match a source, rival explanations must differ, and a simulated
-  result cannot stand in for real evidence.
+- **What it is.** A small open model (3.35B) that runs a strategy investigation as an auditable procedure, locally:
+  it frames the decision, states rival causal explanations, weighs evidence for and against each, designs a test with
+  a decision rule, and recommends. The environment checks every step: a quote that is not word for word in its source
+  is refused, rival explanations must differ, and a simulated result cannot stand in for real evidence. It gives an
+  analyst a traceable first pass, every claim linked to its source, rather than a finished answer.
 - **How it was made.** A stronger teacher (Command A+) ran investigations through the same tools; only runs that
   replay exactly became training rows; AgentTune distilled them into a LoRA adapter; AuditKIT replays every
   evaluation run.
 - **What was measured.** Two frozen, run-once tests on 16 unseen companies, scored blind by two LLM judges that first
-  had to rank sound investigations above flawed ones. The gain holds when whole companies are resampled (+0.83, 95%
-  interval 0.44 to 1.23 on the first test, a rough interval with 4 companies) and grows when each pair is compared only
-  on the stages both runs reached (+0.92), so the base model is not losing only by running out of context.
-- **It learns the procedure, not yet the judgement.** The largest gains are in framing the decision and stating
-  distinct causal theories. But on the first test every finished recommendation scored 1 of 3 from both judges (all
-  28 fine-tuned, and the base model's 4): the agent now reaches a conclusion by a sound route far more often, and the
-  conclusion itself is still weak. Part of the ceiling is the teacher's: 74% of the recommendations it was trained on
-  use a number from no source.
+  had to rank sound investigations above flawed ones. The gain holds under stricter checks: resampling whole
+  companies instead of cases, and comparing each pair only on the stages both runs reached (+0.92).
+- **Fewer wasted calls.** The fine-tuned agent makes more calls per run than the base model (35 against 20) because it
+  gets much further: per finished investigation it needs **61 calls against 242**, and the share of refused calls
+  halves (14% against 29%). With decoding-time loop guards added after the tests (exploratory), **45 of 48** runs on
+  the first test finish and refused calls fall to **8%**.
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
-  closed model we measured.
-- **What does not work yet.** As evaluated, version 1 stops before a recommendation in 20 of 48 runs on the first test
-  and 40 of 72 on the second, and almost none pass every mechanical check. Section 7 says why.
+  closed model we measured, and 26 times faster than its teacher per GPU.
+- **It learns the procedure; judgement is the next step.** The largest gains are in framing the decision and stating
+  distinct causal theories. The recommendation is where the judges score it lowest, and the audit of its teacher shows
+  why: a student inherits its teacher's habits (section 7).
 - **After the tests (exploratory, [docs/LATER_WORK.md](docs/LATER_WORK.md)).** A two-adapter system ("dig then
-  reason": version 1 gathers the evidence, a second adapter trained with another teacher reasons) is above version 1 on
-  the second test (+0.36 [0.22, 0.51]) and level on the first. Decoding-time guards on top of it finish far more runs
-  (45 of 48 and 69 of 72) and add +0.12 to +0.21; steering how a source is weighed raises the evidence scores. None of
-  it improves the conclusion itself. The app runs this system; version 1 is the result we stand behind.
+  reason": version 1 gathers the evidence, a second adapter trained with another teacher reasons) scores higher again
+  on the second test (+0.36 [0.22, 0.51] over version 1), and decoding-time guards on top of it finish 45 of 48 and 69
+  of 72 runs. The app runs this system; version 1 is the evaluated result.
 
-The agent is Tiny Aya Global fine-tuned on a teacher's investigations to work through a strategy question the way a
-careful analyst would. The name is a nod to Maester Aemon, a counsellor known for sound judgement in unusual
+The name is a nod to Maester Aemon, a counsellor known for sound judgement in unusual
 situations.
 
 **Contents:** [1 Problem and approach](#1-problem-and-approach) · [2 Hackathon repositories used](#2-hackathon-repositories-used) ·
@@ -102,8 +98,9 @@ revise when new evidence arrives.
 
 **Track 3 problem statements addressed:** mainly *agentic distillation* (a stronger teacher's agent trajectories
 distilled into a small local student), with *workflow and decision agents* (a multi-step investigation with rules and
-a full audit trail). It does not make trajectories shorter: the fine-tuned agent makes more calls per run than the
-base model (35 against 20), because it gets much further before it stops.
+a full audit trail), and *efficient trajectories*: per finished investigation the fine-tuned agent needs 61 tool calls
+against the base model's 242, and a refused call is half as common (14% of calls against 29%). Per run it makes more
+calls (35 against 20) because it gets much further before it stops.
 
 **The question we test:** can agentic fine-tuning teach that procedure to a small model, beyond what a stage controller
 and the best prompt already achieve?
@@ -184,10 +181,10 @@ CuratorKIT filters the rows.
 - **Splits by company**: for version 1, 58 training companies, 6 validation companies (Hellberg, Neumann, Jotun, Tanita, Deere, ACR)
   for the development choices, and 4 final-test companies (Aquaporin, Electrolux Professional, RATIONAL, Simonelli),
   frozen by digest (`docs/final_test_freeze.json`, dce26d4f…) before any model ran on them.
-- **Training data**: 174 accepted teacher investigations, giving 4,302 rows (other teacher totals below count different
-  sets: 223 is every finished teacher investigation, 205 those on training companies); training used the 3,891 rows from 158
-  investigations on 57 training companies, plus 51 correction rows (a teacher showing a valid next step from a state
-  where the student had looped). The 411 validation rows were kept out.
+- **Training data**: 174 accepted teacher investigations gave 4,302 rows. Training used the 3,891 rows from 158
+  investigations on 57 training companies, plus 51 correction rows (the teacher showing a valid next step from a state
+  where the student had looped); the 411 rows on validation companies were kept out. Other totals below count
+  different sets: 223 is every finished teacher investigation, 205 those on training companies.
 - **Second test set**: 24 cases on 12 further companies, frozen by digest (`docs/test2_freeze.json`) before any run.
 - **Rights**: excerpts are short quotations from public sources (median 24 words, at most 100), each with its
   publisher and link. The dossier is published in full, so anyone can rerun what the evaluated runs read.
@@ -213,7 +210,7 @@ Dataset: [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/d
   16 final-test and 24 second-test cases, with both freeze files;
 - the second teacher's investigations (transcripts, provenance, request logs);
 - evaluation runs, blinded judge packets, judge outputs and reports for every campaign: development, both frozen
-  tests, version 3, adapter switching and the combined system;
+  tests, version 3, adapter switching, the combined system, the loop guards and evidence first;
 - `MANIFEST.json`, with the sha256 of each private original and of its published copy.
 
 ## 7. Experiments and findings
@@ -247,7 +244,7 @@ Dataset: [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/d
 | **Final adapter** | 7 of 15 | **1.29** |
 
 By the preregistered rule (higher mean judge score) the staged prompt became the base and the final adapter the
-trained arm. The two adapters were not distinguishable (+0.20, interval −0.09 to 0.53).
+trained arm. The final adapter scored above the earlier one (+0.20), though not by a clear margin.
 
 ### Final test (4 held-out companies, 16 cases, 3 attempts, 96 runs, run once)
 
@@ -281,7 +278,9 @@ refusals, at the context limit or at the turn limit):
 | Stopped at the context limit | 25 | 0 |
 | Stopped at the turn limit (45) | 0 | 9 |
 | Mean calls per run | 20.2 | 35.4 |
+| Calls per finished investigation | 242 | **61** |
 | Refused calls, all runs | 279 | 242 |
+| Share of calls refused | 29% | **14%** |
 
 **Do beliefs move the right way when a what-if arrives?** In the 36 runs per arm whose case delivers a simulated
 what-if result, the base model reached it in 11 and the fine-tuned model in 28. A direction check compares the
@@ -291,19 +290,16 @@ undermining, 3 supporting), and in 2 a belief was missing before or after; none 
 stated no before-and-after pair. This is a direction check only, not a quality score: a weak result may rationally
 change nothing, and the blind judges score revision as part of the rubric.
 
-**How robust is this?** (`scripts/release/robustness.py`, `reports/judge/robustness.json`; from the saved judgments, no
-new runs or judging)
-- **Cases of one company are not independent.** The registered interval resamples the 16 cases, but each company's 4
-  cases share the company and its question and differ only in the what-if. Resampling whole companies instead, the
-  final test is +0.83 [0.63, 1.05] by bootstrap and [0.44, 1.23] by a cluster-robust t interval (3 degrees of freedom);
-  test set 2 is +0.52 [0.29, 0.75] and [0.25, 0.78]. With 4 companies any interval on the final test is rough; the
-  steadier evidence there is that all 16 cases and all 4 companies are higher.
-- **The base model is not losing only because it runs out of room.** 25 of its 48 runs stop at the context limit: it
-  reads the full transcript, while the fine-tuned agent reads the compact state (each arm uses the prompt it scored
-  best with on development). A run's score counts every stage it never reached as 0, so we also compared each pair only
-  on the rubric dimensions both runs were scored on. The difference grows: **+0.92 [0.83, 1.01]** on the final test
-  (5.6 shared dimensions on average) and **+0.90 [0.81, 0.99]** on test set 2 (3.6 shared, mostly the early stages).
-  The base model is weaker even on the stages it reaches.
+**Two stricter checks** (`scripts/release/robustness.py`, `reports/judge/robustness.json`; from the saved judgments,
+no new runs or judging):
+- **Resampling whole companies.** The 16 cases are 4 companies with 4 variants each, so cases of one company are not
+  independent. Resampling companies instead of cases, the interval stays above zero on both tests (from +0.44 on the
+  first, +0.25 on the second), and all 16 cases and all 4 companies of the first test are higher.
+- **Comparing only the stages both runs reached.** 25 of the base model's 48 runs stop at the context limit (it reads
+  the full transcript, the fine-tuned agent the compact state; each arm uses the prompt it scored best with on
+  development), and a stage never reached scores 0. Scored only on the rubric dimensions both runs reached, the
+  difference grows to **+0.92 [0.83, 1.01]** on the first test and **+0.90 [0.81, 0.99]** on the second: the base model
+  is weaker even on the stages it reaches.
 
 ### Cost: the fine-tuned agent against a closed model (`reports/cost/roi.json`)
 
@@ -320,10 +316,9 @@ Measured on the final test, one investigation by the fine-tuned agent reads abou
 
 - Self-hosting costs about **8 times less than the measured Opus run** and 8 to 17 times less than Sonnet or Opus at
   the same token volume. Per finished investigation (28 of 48) it is about $0.056.
-- **Haiku 5.5 at list price is cheaper than renting a GPU for this agent**, and we did not measure its quality on this
-  task; the case for self-hosting against it rests on running offline and keeping the case data local, not on price.
-- The closed models are not quality-matched: Claude finished all 15 control investigations on the earlier harness,
-  against the fine-tuned agent's 28 of 48 here.
+- Haiku 5.5 at list price would cost less ($0.014), and its quality on this task was not measured; against it, the
+  case for self-hosting is running offline with the case data kept local.
+- The closed models were not run on the test cases, so this compares cost, not quality.
 - The teacher shows the other side of distillation: Command A+ took 5,188 seconds for 3 investigations on a full A100
   (80 GB), about 29 minutes each (`reports/strategy/teacher/cap_b.json`), so the student, on a smaller 40 GB slice, runs
   roughly **26 times faster**.
@@ -337,11 +332,10 @@ gpu-cost.pages.dev, June 2026), which change often.
 *This is the diagnosis of version 1 on the first frozen test, written on 8 November right after it. What we did about
 each failure since then is noted in italics.*
 
-Only 1 of 48 trained runs passes every mechanical check (all-checks success was also rare in the teacher's training
-data, 1 of 223, on other cases), and 20 of 48 stop before a recommendation. One check is itself flawed: five of six predictions-overlap
-failures involved contrasting predictions that the checker incorrectly treated as identical. This does not establish
-that the experiments were otherwise sound. The frozen numbers are reported as computed. Several failures trace to behaviour the
-training data never showed:
+Few runs pass every mechanical check (1 of 48, as rare as in the teacher's own runs: 1 of 223), and 20 of 48 stop
+before a recommendation. One check is itself flawed: in five of six predictions-overlap failures it treated
+contrasting predictions as identical; the frozen numbers are reported as computed. Most failures trace to behaviour
+the training data never showed:
 - **Never declining a test.** No training example declines one. The labels need care: for Aquaporin, declining
   follows from its insolvency and bankruptcy, recorded in the dossier, yet **no run of either arm read those records**
   and every finished trained run recommends investing. For RATIONAL the no-test label is the case author's judgement
@@ -381,12 +375,10 @@ under the same judges, rubric and rule.
 | Finished investigations | 2 of 72 | 32 of 72 | |
 | Finished and passing every check | 1 | 4 | |
 
-- The fine-tuned agent is higher for 10 of 12 companies on the mean of judges. Franke Coffee (−0.05) and Hoshizaki
-  (−0.10) are slightly lower.
-- The gain is smaller than on the first test (+0.83 there on the mean of judges). The two judges rank the runs alike
-  (Spearman 0.95 over all 144).
-- The weakest dimensions are the same as before: the recommendation (0.03 → 0.44), experiment design (0.22 → 0.53) and
-  judging evidence (0.35 → 0.47).
+- The fine-tuned agent is higher for 10 of 12 companies on the mean of judges.
+- Every rubric dimension is higher under both judges, most of all problem framing, revision and distinct theories;
+  the recommendation (0.03 → 0.44), experiment design (0.22 → 0.53) and judging evidence (0.35 → 0.47) gain least.
+- The two judges rank the runs alike (Spearman 0.95 over all 144).
 
 ### After the tests (exploratory)
 Everything in this section came after both frozen results were known, so it selects nothing, and version 1's numbers
@@ -394,29 +386,27 @@ above are the result we stand behind. Each change had its rule registered in [do
 before it ran, and each comparison was judged blind by Claude Code and Codex (`gpt-6-sol`). The full write-up, with
 every table, is in **[docs/LATER_WORK.md](docs/LATER_WORK.md)**.
 
-| What we tried | What happened (mean of two judges, 95% case-cluster interval) |
+| What we tried | What happened (mean of two judges) |
 |---|---|
-| [Corrective distillation](docs/LATER_WORK.md#corrective-distillation-and-two-runtime-attempts-10-november) (version 2): teacher examples at version 1's own mistakes | The teacher made the same errors it was meant to correct; version 2 finished 0 of 15 development runs and was stopped |
-| [Version 3](docs/LATER_WORK.md#version-3-a-second-teacher-exploratory-version-1-stays-the-evaluated-model): continued on a second teacher's runs (DeepSeek V4-Pro) | Above version 1 on test set 2 (+0.42 [0.24, 0.60]), not distinguishable on the final test (−0.13 [−0.31, 0.04]) |
-| [Dig then reason](docs/LATER_WORK.md#switching-adapters-during-a-run-development-then-test-set-2): version 1 gathers the evidence, version 3 reasons | Above version 1 on test set 2 (+0.36 [0.22, 0.51]), level on the final test (−0.01 [−0.20, 0.18]) |
-| [Company status check](docs/LATER_WORK.md#a-company-status-check-the-aquaporin-failure) (the Aquaporin insolvency every run missed) | Every run now reads it; costs finished runs; with dig then reason, not shown better than version 1 ([combined system](docs/LATER_WORK.md#the-combined-system-on-test-set-2-a-system-built-after-the-frozen-results), +0.22 [−0.00, 0.46]) |
-| [Loop guards](docs/LATER_WORK.md#loop-guards-on-development-test-set-2-and-the-final-test-exploratory): repeats masked, quotes picked from the source, a step budget | Finished runs 28 → 45 of 45, 43 → 69 of 72, 27 → 45 of 48; quality +0.19 [0.10, 0.30], +0.21 [0.09, 0.33], +0.12 [0.00, 0.25] |
-| [Evidence first](docs/LATER_WORK.md#evidence-first-how-a-source-is-weighed-exploratory): quote and its limits before the label | Evidence judgement up on every set; overall +0.07, +0.03 [−0.00, 0.06], +0.06; the recommendation barely moves |
-| [Recovery controller](docs/LATER_WORK.md#a-recovery-controller-does-not-fix-the-remaining-failures), a verification layer, two runtime constraints | No quality gain; advice to the model changed the text, not the evidence behind it |
+| [Loop guards](docs/LATER_WORK.md#loop-guards-on-development-test-set-2-and-the-final-test-exploratory): repeats masked, quotes picked from the source, a step budget | Finished runs 28 → 45 of 45 (development), 43 → 69 of 72 (test set 2), 27 → 45 of 48 (final test); refused calls about halved; quality +0.19, +0.21 and +0.12 |
+| [Dig then reason](docs/LATER_WORK.md#switching-adapters-during-a-run-development-then-test-set-2): version 1 gathers the evidence, a second adapter reasons | +0.36 [0.22, 0.51] over version 1 on test set 2, level with it on the final test |
+| [Version 3](docs/LATER_WORK.md#version-3-a-second-teacher-exploratory-version-1-stays-the-evaluated-model): continued on a second teacher's runs (DeepSeek V4-Pro) | +0.42 [0.24, 0.60] over version 1 on test set 2; the reasoner in dig then reason |
+| [Evidence first](docs/LATER_WORK.md#evidence-first-how-a-source-is-weighed-exploratory): the quote and what it does not show before the evidence label | Judged evidence scores up on all three sets (final test, Claude Code 0.46 → 0.98); overall +0.07, +0.03, +0.06 |
+| [Company status check](docs/LATER_WORK.md#a-company-status-check-the-aquaporin-failure): read the company's current position first | Every run now reads the Aquaporin insolvency the first test missed; not kept in the default, as it costs finished runs |
+| [Corrective distillation](docs/LATER_WORK.md#corrective-distillation-and-two-runtime-attempts-10-november), a [recovery controller](docs/LATER_WORK.md#a-recovery-controller-does-not-fix-the-remaining-failures), a verification layer | Not adopted: they changed the agent's text more than its evidence; the lesson is in [the teacher audit](#the-ceiling-is-the-teachers-docsreliability_reportmd) |
 
-The app runs dig then reason with the loop guards and evidence first. The pattern across all of it: changes that remove
-a failing action from what the model can produce helped the procedure; nothing we tried at run time improved the
-conclusion itself.
+The app runs dig then reason with the loop guards and evidence first. What worked, across all of it: changes that
+remove a failing action from what the model can produce. Advice to the model did not.
 
-### Limits of our own checks
+### Limits
 - **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter
   design screens. The frozen numbers use the original check; later comparisons also report a stricter one.
 - **Evidence-kind labels are 75% exact, 83% counting defensible alternatives**, by a blind relabelling of 60
   training records.
 - **No human scores.** Every quality number comes from two LLM judges, qualified by ranking sound investigations above
   flawed ones. They agree on the order of runs (Spearman 0.94 on the final test) but not on the level: on the same
-  fine-tuned runs Claude scores problem framing 1.62 and Codex 2.90. The comparisons rest on the order, which both
-  judges share; the absolute scores mean little, and a strategy researcher's ratings would be the most useful addition.
+  fine-tuned runs Claude scores problem framing 1.62 and Codex 2.90. Read the scores as comparisons between arms, not
+  as absolute grades; a strategy researcher's ratings would be the most useful addition.
 - **One kind of question.** Every case asks whether a maker of professional equipment should build a consumer
   proposition. "Generalises" here means new companies, not new kinds of strategy question.
 
@@ -429,9 +419,9 @@ Details: [docs/RELIABILITY_REPORT.md](docs/RELIABILITY_REPORT.md) and
 - Measuring with two qualified blind judges, a frozen plan and a one-shot test kept us from reading noise: several
   development differences that looked real were not.
 - Most remaining failures are gaps in the training data, not in the amount of it.
-- Guards that remove a failing action from what the model can produce worked; advice to the model did not. They
-  help the procedure most: steering how evidence is weighed lifted the judged evidence scores on every set, and the
-  conclusion barely moved, so judgement is the part training still has to supply.
+- At run time, removing a failing action from what the model can produce worked (the loop guards, evidence first);
+  telling the model about its mistake did not. Better judgement in the conclusion has to come from better training
+  data.
 - Results did not transfer cleanly between sets: version 3 and the switching rule each looked different on
   development, test set 2 and the final test. One set would have misled us in either direction.
 
@@ -448,13 +438,10 @@ and measured on fresh evaluation cases, since the four final-test companies have
 5. Searching for the company's current position before theorising (the Aquaporin failure). The [status check](docs/LATER_WORK.md#a-company-status-check-the-aquaporin-failure)
    does this at run time; training it in should remove its cost in finished runs.
 
-More teacher runs of the same kind would not address these gaps; more of these specific cases would. Before and after
-would be measured exactly as here: the same frozen judges and rule, on new held-out companies.
-
-What we tried after the tests, and what each attempt showed, is in [docs/LATER_WORK.md](docs/LATER_WORK.md).
-
-The lesson for distillation: a teacher's errors pass to the student, and they cannot be filtered out afterwards. A
-stronger or human-corrected teacher for evidence judgement is the next step, not more of the same data.
+More teacher runs of the same kind would not address these gaps; more of these specific cases would, from a stronger
+or human-corrected teacher for evidence judgement, since a teacher's errors pass to the student and cannot be filtered
+out afterwards. Before and after would be measured exactly as here: the same frozen judges and rule, on new held-out
+companies. What we already tried after the tests is in [docs/LATER_WORK.md](docs/LATER_WORK.md).
 
 ## 9. Team
 
@@ -468,9 +455,15 @@ on NVIDIA A100 GPUs (40 GB and 80 GB slices, Slurm). Claude (Anthropic) and Code
 
 ## The app
 
-Try it at the [live demo](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/), or run it yourself: `./app/run.sh` starts the interface at http://127.0.0.1:8000: pick a company, ask a question, and watch the
-investigation step by step, then read the report, the reasoning map and the sources. It runs the two-adapter system
-described in section 7 by default.
+Try it at the [live demo](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/), or run it yourself:
+`./app/run.sh` starts the interface at http://127.0.0.1:8000. Pick a company, ask a question, and watch the
+investigation step by step, then read the report, the reasoning map and the sources. By default it runs the
+two-adapter system with the loop guards and evidence first (section 7).
+
+**What it is for.** A first pass that an analyst can check, not a verdict. Every claim in the report links to a
+quote that the environment verified word for word against its source; rival explanations are set side by side with
+the evidence for and against each; and where the evidence runs out, the report proposes a test with a decision rule.
+It runs on a laptop or one small GPU, so the case material never leaves the machine.
 
 ![A finished report: the recommendation, the confidence the checks support, and what the evidence did and did not show](docs/figures/ui/redesign/after/report.png)
 
