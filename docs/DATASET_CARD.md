@@ -20,6 +20,8 @@ configs:
   data_files:
   - split: train
     path: training/rows.jsonl
+  - split: validation
+    path: training/validation_rows.jsonl
 - config_name: v3_deepseek_rows
   data_files:
   - split: train
@@ -50,6 +52,24 @@ The investigation task is inspired by the scientific approach to management and 
 
 Every row in the training dataset is distilled from a permitted teacher model running through an identical guarded stage controller: **Command A+** (open weights) for version 1 of the adapter, and **DeepSeek V4-Pro** (through its API) for the rows added in version 3. Trajectories are verified through deterministic tool replay and audited against an append-only provenance manifest.
 
+### Loading it
+
+The default config holds the version 1 rows, split as the adapter was trained: whole companies are either training or
+validation, never both, so the `validation` split is the 6 held-out companies (`acr`, `deere`, `hellberg`, `jotun`,
+`neumann`, `tanita`). Keep the splits apart: a model fitted on both has seen the development companies.
+
+```python
+from datasets import load_dataset
+rows = load_dataset("two-eyed-ravens/aemon")                  # train 3,891 rows, validation 411
+v3 = load_dataset("two-eyed-ravens/aemon", "v3_deepseek_rows")   # the second teacher's rows, train 3,611, validation 262
+fixes = load_dataset("two-eyed-ravens/aemon", "correction_rows") # 51 correction rows
+```
+
+Each row is one teacher turn: `messages` (the conversation up to that turn), the target tool call, and its provenance
+(`episode`, `case`, `stage`, `turn`, `target_index`, `teacher_weights`). The company is the prefix of `case`
+(`hellberg-base` is Hellberg). Section 2 describes a row in full; the evaluation runs and judgments are plain JSON and
+JSONL under `evaluation/`, not part of any config.
+
 ### What Is Published (release of 2026-11-11)
 
 This release replaces the one of 2026-11-08. That release cut every third-party excerpt to one short quote (its first sentence, at most 25 words) wherever it appeared. **This one publishes the excerpts as they are**: the dossier is byte for byte the file the experiments read, and the training rows, transcripts and judge packets carry the same text the models saw. It also adds the data produced since 8 November: test set 2, the version 3 rows and the teacher investigations behind them, the adapter-switching and status-check runs, and the outputs of two more judges.
@@ -57,7 +77,7 @@ This release replaces the one of 2026-11-08. That release cut every third-party 
 | Folder | What it holds |
 |---|---|
 | `dossier/` | `evidence.json`: 1,958 public records (1,246 independent observations, 712 company claims) with source, URL, date and the full excerpt. `cases.json`: 207 development cases on 99 companies. `cases_heldout.json`: the 16 final-test cases (4 companies). `cases_heldout2.json`: the 24 cases of test set 2 (12 companies, split `heldout2`). `final_test_freeze.json` and `test2_freeze.json`: the two frozen test definitions. `evidence_kinds_v2.json`: a proposed, unreviewed relabelling of evidence kinds for training companies |
-| `training/` | `rows.jsonl`: 4,302 rows from 174 accepted Command A+ investigations on 63 companies (3,891 rows on 57 training companies, 411 on the 6 validation companies). `correction_rows.jsonl`: 51 correction rows. `v3_deepseek_rows.jsonl`: 3,611 rows from 144 accepted DeepSeek V4-Pro investigations on 69 companies. `v3_deepseek_validation_rows.jsonl`: 262 rows from 10 more, held out for validation. `v3_rows_report.json`: the build report of the version 3 rows |
+| `training/` | `rows.jsonl`: 3,891 rows from 158 accepted Command A+ investigations on the 57 training companies; `validation_rows.jsonl`: 411 rows from 16 investigations on the 6 validation companies, held out of training and used for checkpoint selection (together, 4,302 rows on 63 companies). `correction_rows.jsonl`: 51 correction rows. `v3_deepseek_rows.jsonl`: 3,611 rows from 144 accepted DeepSeek V4-Pro investigations on 69 companies. `v3_deepseek_validation_rows.jsonl`: 262 rows from 10 more, held out for validation. `v3_rows_report.json`: the build report of the version 3 rows |
 | `teacher_investigations/deepseek_v4_pro/` | The 17 DeepSeek V4-Pro runs as recorded: transcripts (`*.episodes.jsonl`: 266 investigations, 154 of them finished, and 22 harness errors), the provenance manifests (266 entries), the per-request usage logs and the runner reports |
 | `evaluation/dev/`, `evaluation/final/` | As in the first release: development runs (6 companies) and the final test (16 cases × 3 attempts × 2 arms), with judge packets, the key, both judges' outputs and the reports |
 | `evaluation/test2/` | Test set 2, version 1 against the base model: 24 cases × 3 attempts × 2 arms, 133 judge packets, the key, both judges' outputs and the reports |
@@ -120,7 +140,7 @@ The target is the teacher's exact JSON tool call. In `src/aemon/rows/build_rows.
 
 ## 3. The Teacher Models
 
-The version 1 demonstrations (`training/rows.jsonl`, `training/correction_rows.jsonl`) are generated exclusively by **Command A+**, an open-weights model developed by Cohere:
+The version 1 demonstrations (`training/rows.jsonl`, `training/validation_rows.jsonl`, `training/correction_rows.jsonl`) are generated exclusively by **Command A+**, an open-weights model developed by Cohere:
 * **Hugging Face Model:** `CohereForAI/c4ai-command-a-plus-05-2026`
 * **GGUF Release:** `bartowski/command-a-plus-05-2026-GGUF`
 * **Revision:** `a26ba921242484b5e1a8ac8519169fe7421c3ab3`
@@ -246,8 +266,8 @@ Every count below is taken from the published files.
 | Final-Test / Test-Set-2 Evidence Records | 76 / 221 | `dossier/evidence.json` |
 | General Market Records | 107 | `dossier/evidence.json` |
 | Development Cases with `test_warranted: false` | 18 (9 companies) | `dossier/cases.json` |
-| Accepted Command A+ Investigations | 174 (158 on training, 16 on validation companies) | `training/rows.jsonl` |
-| Version 1 Supervised Rows | 4,302 (3,891 on training, 411 on validation companies) | `training/rows.jsonl` |
+| Accepted Command A+ Investigations | 174 (158 on training, 16 on validation companies) | `training/rows.jsonl`, `training/validation_rows.jsonl` |
+| Version 1 Supervised Rows | 4,302 (3,891 on training companies, 411 on validation companies) | `training/rows.jsonl` (train), `training/validation_rows.jsonl` (validation) |
 | Recovery Correction Rows (`correction-v1`) | 51 (18 companies) | `training/correction_rows.jsonl` |
 | Recorded / Accepted DeepSeek V4-Pro Investigations | 266 / 154 | `teacher_investigations/deepseek_v4_pro/`, `training/v3_rows_report.json` |
 | Version 3 DeepSeek Rows | 3,611 training (69 companies) + 262 validation (5 companies) | `training/v3_deepseek_*.jsonl` |

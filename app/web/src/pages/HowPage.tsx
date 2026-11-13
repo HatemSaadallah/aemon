@@ -44,9 +44,9 @@ const STAGES: Stage[] = [
 
 const LINKS: [string, string, string][] = [
   ['Public code', 'github.com/HatemSaadallah/aemon', 'https://github.com/HatemSaadallah/aemon'],
-  ['Model card', 'aemon on Hugging Face', 'https://huggingface.co/HatemSaadallah/aemon'],
-  ['Dataset card', 'Teacher investigations on Hugging Face', 'https://huggingface.co/datasets/HatemSaadallah/aemon'],
-  ['Collection', 'Model, data and results together', 'https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326'],
+  ['Model card', 'aemon on Hugging Face', 'https://huggingface.co/two-eyed-ravens/aemon'],
+  ['Dataset card', 'Teacher investigations on Hugging Face', 'https://huggingface.co/datasets/two-eyed-ravens/aemon'],
+  ['Collection', 'Model, data and results together', 'https://huggingface.co/collections/two-eyed-ravens/aemon-a-strategy-investigation-agent-6af71da6a81fe397ad0b38dd'],
 ];
 
 export function HowPage({ workspace: w }: { workspace?: Workspace | null }) {

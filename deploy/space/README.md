@@ -26,7 +26,7 @@ or start one.
   then reason), with decoding-time guards. Results, including a comparison with Claude Haiku 5.5, are in the
   [repository](https://github.com/HatemSaadallah/aemon).
 - **Model and licence.** Base model: [CohereLabs/tiny-aya-global](https://huggingface.co/CohereLabs/tiny-aya-global),
-  CC-BY-NC 4.0, non-commercial use. Adapter: [HatemSaadallah/aemon](https://huggingface.co/HatemSaadallah/aemon).
+  CC-BY-NC 4.0, non-commercial use. Adapter: [two-eyed-ravens/aemon](https://huggingface.co/two-eyed-ravens/aemon).
 - **Sources.** The dossier quotes public web pages, each shown with its publisher and link. Company banners and logos
   are from Wikimedia Commons with their licences recorded in `app/profiles/company_profiles.json`.
 

@@ -1983,3 +1983,33 @@ these failures are not rate limits.
   against Haiku, which costs a quarter as much per investigation and scores higher. The README, model card and paper
   now say so; the case for aemon is a small open model that runs offline with the case data kept local, and the
   measured gain of fine-tuning over its own base model.
+
+## 2026-11-13 afternoon and evening: the demo, the sign-in, the names, and two outside reviews
+
+- **Demo.** Modal's spend limit had taken the live demo down. Hatem took Hugging Face PRO (free Docker Spaces now need
+  it), and the demo is the Space `HatemSaadallah/aemon` (`scripts/release/build_space.py`; CPU, the final system, four
+  seeded investigations). Runs made on the Space do not survive a restart; accepted for a demo.
+- **Sign-in by username alone** (Hatem's request): a new name opens an account in every company, seeded with the
+  finished investigations; the same name reopens it; no password, so a name is not private; new accounts limited per
+  hour. The Space page shows the app in a frame from another site, where a strict cookie is never sent, so the hosted
+  copy sets a partitioned, secure, SameSite=None session cookie (`CROSS_SITE_COOKIE=1`); locally the strict cookie stays.
+- **Names.** The model (`tiny-aya-global-strategy-agent`) and the dataset (`strategy-agent-investigations`) were
+  renamed `HatemSaadallah/aemon`; the old ids redirect, the collection followed, every reference updated. The version 3
+  adapter was also placed at the top level of the model repository (`v3_adapter.gguf`; the `exploratory/` copy stays).
+- **Article.** Hatem reversed the 12 November decision and posted a Hugging Face article
+  (https://huggingface.co/blog/HatemSaadallah/aemon), first as the README verbatim; a 500-word abstract was written
+  (`docs/ABSTRACT.md`).
+- **Two outside reviews of the write-up** (pasted by Hatem; the reviewer worked from a ZIP snapshot older than the
+  Haiku result). Checked against the current files: (1) *dataset packaging*, confirmed and fixed: `training/rows.jsonl`
+  held all 4,302 version 1 rows and the Hub config exposed it as `train`, so the 411 rows on the 6 validation companies
+  were loaded as training data; the release now publishes `rows.jsonl` (3,891, training companies) and
+  `validation_rows.jsonl` (411) as `train` and `validation`, with a loading section in the card (dataset commit
+  aef81d73); (2) *which aemon is which*, confirmed: a table near the top of the README and the model card now maps
+  version 1, the final system and the experimental variants to their files and numbers; (3) *the closed-model
+  comparison* was already honest after the Haiku result; the licence (CC-BY-NC 4.0) now sits next to the first "open"
+  in the README, model card and abstract; (4) *demo before chronology*: the app section moved to the top matter;
+  (5) *labels*: done since the snapshot; the efficiency metric now says refused calls are included; (6) *one job per
+  page*: the article is rewritten as a story within Lexsi's nine sections (kickoff slide 29; the website's rules add
+  the metrics and why, the rationale for data and models, before-and-after on more than one metric, and an ROI
+  comparison), with a "why these metrics" paragraph before the results in both the README and the article.
+  The website now gives the deadline as 15 November 2026, 11:59 PM AoE.

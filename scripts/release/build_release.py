@@ -18,6 +18,8 @@ import hashlib
 import json
 import re
 import shutil
+import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -48,6 +50,8 @@ CAMPAIGNS: dict[str, dict[str, Any]] = {
     'system_final': {'finished': True},  # both judges finished 2026-11-12 04:00
 }
 HOSTED = 'experiments/hosted_investigations'
+sys.path.insert(0, str(REPO / 'src'))
+from aemon.data.splits import is_validation  # noqa: E402
 
 
 def sha(data: bytes) -> str:
@@ -114,7 +118,16 @@ def main() -> None:
     # Training rows: version 1 (Command A+), its correction rows, and the DeepSeek V4-Pro rows added for version 3
     rows = Path(args.rows)
     corrections = Path(args.corrections) if args.corrections else rows / 'final_corrections.jsonl'
-    publish(rows / 'final.jsonl', 'training/rows.jsonl', 'rows/final.jsonl')
+    # Version 1's rows are published as the split the adapter was trained with: the rows on the 6 validation companies
+    # (src/aemon/data/splits.py) were held out of training, so a loader must not see them as train
+    with tempfile.TemporaryDirectory() as tmp:
+        parts = {'train': [], 'validation': []}
+        for line in (rows / 'final.jsonl').read_text().splitlines():
+            parts['validation' if is_validation(json.loads(line)['case']) else 'train'].append(line)
+        for split, name in (('train', 'training/rows.jsonl'), ('validation', 'training/validation_rows.jsonl')):
+            part = Path(tmp) / f'{split}.jsonl'
+            part.write_text('\n'.join(parts[split]) + '\n')
+            publish(part, name, f'rows/final.jsonl ({split} companies only)')
     publish(corrections, 'training/correction_rows.jsonl', 'rows/final_corrections.jsonl')
     publish(rows / 'v3_deepseek_train.jsonl', 'training/v3_deepseek_rows.jsonl', 'rows/v3_deepseek_train.jsonl')
     publish(rows / 'v3_deepseek_val.jsonl', 'training/v3_deepseek_validation_rows.jsonl', 'rows/v3_deepseek_val.jsonl')

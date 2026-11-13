@@ -31,7 +31,7 @@ investigation it needs 39 tool calls against the base model's 242, and refused c
 A closed model does better. Claude Haiku 5.5, run through the same environment and judged blind alongside our arms,
 scores 2.28 against the final system's 1.62, for about $0.008 per investigation through the API against $0.03
 self-hosted. Fine-tuning takes the small model about 60% of the way from its base to Haiku. What it offers instead is
-control: it runs offline on one GPU or a laptop, keeps the case data on the machine, and its weights are open.
+control: it runs offline on one GPU or a laptop, keeps the case data on the machine, and its weights are open (CC-BY-NC 4.0, non-commercial).
 
 The model learned the procedure more than the judgement. Its largest gains are in framing the decision and stating
 distinct theories; its recommendations score lowest. An audit of the teacher shows why: 74% of the teacher's

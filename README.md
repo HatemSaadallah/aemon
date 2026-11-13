@@ -18,14 +18,15 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 > scores **+1.02** over the base model on the first test's cases and **+1.11** on the second's, and finishes **46 of
 > 48** and **65 of 72** investigations (the base model 4 and 2). Claude Haiku 5.5, a closed model run through the same
 > environment, scores higher still (**2.28** against the final system's 1.62) at a quarter of the cost; what aemon offers
-> instead is a small open model that runs offline, with the case data kept on the machine.
+> instead is a small open-weights model (CC-BY-NC 4.0, non-commercial) that runs offline, with the case data kept on
+> the machine.
 
 | | |
 |---|---|
 | **Live demo** | **[huggingface.co/spaces/HatemSaadallah/aemon](https://huggingface.co/spaces/HatemSaadallah/aemon)** (pick any username to sign in, no password; it runs the final system on two CPU cores and sleeps when idle, so the first page takes a moment; finished investigations open at once, a new one takes a while, and it runs one at a time for everyone) |
-| Model | [HatemSaadallah/aemon](https://huggingface.co/HatemSaadallah/aemon) |
-| Dataset | [HatemSaadallah/aemon](https://huggingface.co/datasets/HatemSaadallah/aemon) |
-| Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) |
+| Model | [two-eyed-ravens/aemon](https://huggingface.co/two-eyed-ravens/aemon) |
+| Dataset | [two-eyed-ravens/aemon](https://huggingface.co/datasets/two-eyed-ravens/aemon) |
+| Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/two-eyed-ravens/aemon-a-strategy-investigation-agent-6af71da6a81fe397ad0b38dd) |
 | Article | [huggingface.co/blog/HatemSaadallah/aemon](https://huggingface.co/blog/HatemSaadallah/aemon) |
 | Paper | [docs/PAPER.pdf](docs/PAPER.pdf) |
 | Every test run, browsable | [first test](docs/replays/final/README.md) (96 runs) and [second test](docs/replays/test2/README.md) (144 runs), base and fine-tuned side by side, no GPU needed |
@@ -41,7 +42,15 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 
 | **+1.02** | **46 of 48** | **6× fewer** |
 |:---:|:---:|:---:|
-| blind quality over the base model on the first test's cases (95% interval 0.92 to 1.10; +1.11 on the second test's) | investigations finished with an accepted recommendation (65 of 72 on the second test), against 4 of 48 for the base model | tool calls per finished investigation (39 against 242); 7.5% of calls refused, against 29% |
+| blind quality over the base model on the first test's cases (95% interval 0.92 to 1.10; +1.11 on the second test's) | investigations finished with an accepted recommendation (65 of 72 on the second test), against 4 of 48 for the base model | tool calls per finished investigation, refused calls included (39 against 242); 7.5% of calls refused, against 29% |
+
+**Which aemon is which**
+
+| | What it is | Files | Numbers |
+|---|---|---|---|
+| **Version 1** | the evaluated adapter: one LoRA on Tiny Aya Global, distilled from Command A+ | `tiny-aya-global-strategy-lora-bf16.gguf` on the [model page](https://huggingface.co/two-eyed-ravens/aemon) (with the PEFT adapter) | +0.83 and +0.52 on the two frozen tests, run once (section 7) |
+| **Final system** | what the app and the live demo run: version 1 gathers the evidence, version 3 (continued on a second teacher's runs) reasons, with decoding-time guards that remove failing actions | both adapters (`v3_adapter.gguf` added); `app/run_model.sh` serves them and `app/server.py` sets the guards ([Run it](#run-it)) | +1.02 and +1.11 over the base model on the same cases, measured after the tests |
+| Experimental variants | adapter-switching rules, a company status check, a recovery controller, corrective distillation, a verification layer, grounded beliefs | runs and judgments under `experiments/` | [docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md); none is in the app |
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/quality-dark.png">
@@ -64,7 +73,8 @@ cases** and in 44 of 47 paired runs (exact sign test, p = 2.5e-10); on the secon
 runs (`reports/judge/*/paired_counts.json`, mean of two judges).
 
 **In brief**
-- **What it is.** A small open model (3.35B) that runs a strategy investigation as an auditable procedure, locally:
+- **What it is.** A small open-weights model (3.35B; CC-BY-NC 4.0, non-commercial) that runs a strategy investigation
+  as an auditable procedure, locally:
   it frames the decision, states rival causal explanations, weighs evidence for and against each, designs a test with
   a decision rule, and recommends. The environment checks every step: a quote that is not word for word in its source
   is refused, rival explanations must differ, and a simulated result cannot stand in for real evidence. It gives an
@@ -97,6 +107,20 @@ runs (`reports/judge/*/paired_counts.json`, mean of two judges).
 
 The name is a nod to Maester Aemon, a counsellor known for sound judgement in unusual
 situations.
+
+## The app
+
+Try it at the [live demo](https://huggingface.co/spaces/HatemSaadallah/aemon), or run it yourself:
+`./app/run.sh` starts the interface at http://127.0.0.1:8000. Pick a company, ask a question, and watch the
+investigation step by step, then read the report, the reasoning map and the sources. By default it runs the
+two-adapter system with the loop guards and evidence first (section 7).
+
+**What it is for.** A first pass that an analyst can check, not a verdict. Every claim in the report links to a
+quote that the environment verified word for word against its source; rival explanations are set side by side with
+the evidence for and against each; and where the evidence runs out, the report proposes a test with a decision rule.
+It runs on a laptop or one small GPU, so the case material never leaves the machine.
+
+![A finished report: the recommendation, the confidence the checks support, and what the evidence did and did not show](docs/figures/ui/redesign/after/report.png)
 
 **Contents:** [1 Problem and approach](#1-problem-and-approach) · [2 Hackathon repositories used](#2-hackathon-repositories-used) ·
 [3 Models and licences](#3-models-and-licences) · [4 Data, cases and licences](#4-data-cases-and-licences) ·
@@ -214,8 +238,8 @@ CuratorKIT filters the rows.
 
 ## 5. Model artifacts
 
-Collection: [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326).
-Model: [HatemSaadallah/aemon](https://huggingface.co/HatemSaadallah/aemon)
+Collection: [aemon: a strategy-investigation agent](https://huggingface.co/collections/two-eyed-ravens/aemon-a-strategy-investigation-agent-6af71da6a81fe397ad0b38dd).
+Model: [two-eyed-ravens/aemon](https://huggingface.co/two-eyed-ravens/aemon)
 (a derivative of Tiny Aya, so CC-BY-NC-4.0):
 - the LoRA adapter (`adapter_model.safetensors`, `adapter_config.json`; sha256 740c4a9b…);
 - the converted GGUF adapter for llama.cpp (`tiny-aya-global-strategy-lora-bf16.gguf`, sha256 41794b57…), the exact
@@ -225,7 +249,7 @@ Model: [HatemSaadallah/aemon](https://huggingface.co/HatemSaadallah/aemon)
 
 ## 6. Data artifacts
 
-Dataset: [HatemSaadallah/aemon](https://huggingface.co/datasets/HatemSaadallah/aemon)
+Dataset: [two-eyed-ravens/aemon](https://huggingface.co/datasets/two-eyed-ravens/aemon)
 (in the same collection):
 - the training rows: 4,302 from the Command A+ teacher, 51 correction rows, and 3,611 (plus 262 for validation) from
   the DeepSeek V4-Pro teacher, each bound to its teacher episode;
@@ -237,6 +261,13 @@ Dataset: [HatemSaadallah/aemon](https://huggingface.co/datasets/HatemSaadallah/a
 - `MANIFEST.json`, with the sha256 of each private original and of its published copy.
 
 ## 7. Experiments and findings
+
+**The metrics, and why.** Every arm is measured the same way, before and after: **finished investigations** (did the
+run reach an accepted recommendation: the reliability of the workflow), **tool calls per finished investigation and
+the share of calls refused** (wasted actions: a refused call is a broken rule), and **blind quality** on a
+nine-dimension 0–3 rubric from two qualified LLM judges (whether the investigation is any good: the only measure that
+tells a finished run from a sound one). **Cost per investigation**, self-hosted against closed-model billing, is the
+ROI comparison.
 
 ### Early development (small runs, diagnostic only)
 - **The untrained model cannot do the task.** In an open workflow it quit after a step or two; under the stage
@@ -301,7 +332,7 @@ refusals, at the context limit or at the turn limit):
 | Stopped at the context limit | 25 | 0 |
 | Stopped at the turn limit (45) | 0 | 9 |
 | Mean calls per run | 20.2 | 35.4 |
-| Calls per finished investigation | 242 | **61** |
+| Calls per finished investigation (refused calls included) | 242 | **61** |
 | Refused calls, all runs | 279 | 242 |
 | Share of calls refused | 29% | **14%** |
 
@@ -426,7 +457,7 @@ test's 48 runs, and **1.67 against 0.56, +1.11 [1.01, 1.20]** on the second's 72
 | Investigations finished | 4 | 28 | **46** | 44 |
 | Investigations finished, second test (of 72) | 2 | 32 | **65** | 63 |
 | Tool calls per run | 20.2 | 35.4 | 37.8 | 22.2 |
-| Tool calls per finished investigation | 242 | 61 | **39** | 24 |
+| Tool calls per finished investigation (refused calls included) | 242 | 61 | **39** | 24 |
 | Share of calls refused | 28.8% | 14.3% | **7.5%** | 13.9% |
 
 **What each part adds** (mean of two judges; intervals in [docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)):
@@ -520,20 +551,6 @@ on NVIDIA A100 GPUs (40 GB and 80 GB slices, Slurm). Claude (Anthropic) and Code
 
 ---
 
-## The app
-
-Try it at the [live demo](https://huggingface.co/spaces/HatemSaadallah/aemon), or run it yourself:
-`./app/run.sh` starts the interface at http://127.0.0.1:8000. Pick a company, ask a question, and watch the
-investigation step by step, then read the report, the reasoning map and the sources. By default it runs the
-two-adapter system with the loop guards and evidence first (section 7).
-
-**What it is for.** A first pass that an analyst can check, not a verdict. Every claim in the report links to a
-quote that the environment verified word for word against its source; rival explanations are set side by side with
-the evidence for and against each; and where the evidence runs out, the report proposes a test with a decision rule.
-It runs on a laptop or one small GPU, so the case material never leaves the machine.
-
-![A finished report: the recommendation, the confidence the checks support, and what the evidence did and did not show](docs/figures/ui/redesign/after/report.png)
-
 ## Repository layout
 
 ```
@@ -589,7 +606,7 @@ curl -L https://github.com/ggml-org/llama.cpp/releases/download/b12032/llama-b12
   --revision a602ea7eeec3a4ad6f77a1b8cf6a53512824922b
 
 # the adapters, saved under the names the app loads
-.venv/bin/hf download HatemSaadallah/aemon tiny-aya-global-strategy-lora-bf16.gguf \
+.venv/bin/hf download two-eyed-ravens/aemon tiny-aya-global-strategy-lora-bf16.gguf \
   v3_adapter.gguf --local-dir /tmp/aemon-adapters
 cp /tmp/aemon-adapters/tiny-aya-global-strategy-lora-bf16.gguf ~/.cache/lexsi/adapters/final_adapter.gguf   # version 1
 cp /tmp/aemon-adapters/v3_adapter.gguf ~/.cache/lexsi/adapters/v3_adapter.gguf                  # version 3

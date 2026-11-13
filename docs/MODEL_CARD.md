@@ -7,13 +7,24 @@ Team Two-eyed Ravens: Hatem Saadallah and Nour Jennane | Lexsi AI Hackathon Trac
 **[Live demo](https://huggingface.co/spaces/HatemSaadallah/aemon)** ·
 **[Full write-up and code](https://github.com/HatemSaadallah/aemon)** ·
 **[Article](https://huggingface.co/blog/HatemSaadallah/aemon)** ·
-[Dataset](https://huggingface.co/datasets/HatemSaadallah/aemon) ·
-[Collection](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) ·
+[Dataset](https://huggingface.co/datasets/two-eyed-ravens/aemon) ·
+[Collection](https://huggingface.co/collections/two-eyed-ravens/aemon-a-strategy-investigation-agent-6af71da6a81fe397ad0b38dd) ·
 [Paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf)
 
 > On four companies it never saw, this adapter scored **1.48** against the best-prompted base model's **0.65** on a
 > 0–3 blind rubric (mean of two judges; **+0.83, 95% interval 0.69 to 0.97**). A second frozen test on twelve more
 > companies gave **+0.52 [0.33, 0.70]**.
+
+## Which file is which
+
+| | Files on this page | What they are for | Numbers |
+|---|---|---|---|
+| **Version 1, the evaluated adapter** | `adapter_model.safetensors` + `adapter_config.json` (PEFT); `tiny-aya-global-strategy-lora-bf16.gguf` (llama.cpp; the exact file evaluated) | the results in sections 5 and 6: one adapter on Tiny Aya Global, distilled from Command A+ | +0.83 and +0.52, frozen tests run once |
+| **Version 3, the final system's reasoner** | `v3_adapter.gguf` | the app and the [live demo](https://huggingface.co/spaces/HatemSaadallah/aemon): version 1 gathers the evidence, version 3 reasons, with decoding-time guards the app sets (`app/server.py`) | +1.02 and +1.11 over the base model on the same cases, measured after the tests (the two sections at the end) |
+
+To run the final system, follow [Run it](https://github.com/HatemSaadallah/aemon#run-it) in the repository; with
+only version 1's file present the app runs version 1 alone. Both adapters derive from Tiny Aya Global, so both are
+CC-BY-NC 4.0 (non-commercial).
 
 ## 1. Model Details
 
@@ -193,7 +204,7 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
   judged blind with this model, version 1's base and the final system, scores 2.28 and 2.30 against the final system's
   1.62 and 1.67 (final system minus Haiku −0.67 [−0.79, −0.52] and −0.63 [−0.75, −0.52]; Codex alone −0.43), at about
   $0.008 per investigation through the API against $0.03 self-hosted. What this model offers is local, offline use with
-  open weights and the case data kept on the machine. The teacher (Command A+) was not run on the test sets for
+  open weights (CC-BY-NC 4.0, non-commercial) and the case data kept on the machine. The teacher (Command A+) was not run on the test sets for
   quality.
 - **Calibrated confidence.** Beliefs are the agent's own five-step verbal scale within one run, not probabilities. The
   belief check tests direction only (undermining evidence should not raise the affected theory, supporting evidence should
