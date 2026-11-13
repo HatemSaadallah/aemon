@@ -175,6 +175,13 @@ def main() -> None:
         'loop_guards_test2_fix': {f'test2_fix/{n}': n for n in ('plain.json', 'guarded_budget.json', 'guarded_budget_fix.json', 'key.jsonl',
                                   'claudecode_predictions.jsonl', 'codexsol_predictions.jsonl', 'report_both_guarded_budget_fix_vs_plain.json',
                                   'report_both_guarded_budget_fix_vs_guarded_budget.json')} | {'test2_fix/packets.jsonl': 'judge_packets.jsonl'},
+        # Claude Haiku 5.5 as a closed-model baseline on both test sets (DECISIONS 2026-11-13), judged blind with the
+        # base model, version 1 and the final system; Haiku's outputs are evaluation only, never training data
+        **{f'haiku_{t}': {f'../haiku/{t}_merged.json': 'haiku.json', '../haiku/summary.json': 'summary.json'}
+           | {f'../haiku/{t}/{n}': n for n in ('key.jsonl', 'claudecode_predictions.jsonl', 'codexsol_predictions.jsonl',
+                                                 'report_both_final_system_vs_haiku.json', 'report_both_v1_vs_haiku.json',
+                                                 'report_both_haiku_vs_base.json')}
+           | {f'../haiku/{t}/packets.jsonl': 'judge_packets.jsonl'} for t in ('final', 'test2')},
     }
     for split, files in LOOP_GUARDS.items():
         for rel, name in files.items():

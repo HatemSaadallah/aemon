@@ -73,6 +73,7 @@ This release replaces the one of 2026-11-08. That release cut every third-party 
 | `evaluation/grounded_dev/` | Grounded beliefs, development screen: the app default and the same with grounded beliefs (45 runs each), 90 packets, the key, both judges' outputs and the report |
 | `evaluation/evidence_first_dev/` | Evidence first, development screen: four arms (app default, + grounded beliefs, + evidence first, both; 45 runs each), 180 packets, the key, both judges' outputs and the reports |
 | `evaluation/evidence_first_test2/`, `evaluation/evidence_first_final/` | Evidence first with grounded beliefs against the app default on test set 2 (72 runs each) and the final test (48 runs each): the runs, the packets (125 and 96), the keys, both judges' outputs and the reports |
+| `evaluation/haiku_final/`, `evaluation/haiku_test2/` | Claude Haiku 5.5 as a closed-model baseline on the final test (48 runs) and test set 2 (72 runs), judged blind with the base model, version 1 and the final system (183 and 268 packets): Haiku's runs (`haiku.json`, with the episodes rerun after API errors), the keys, both judges' outputs, the three reports and `summary.json`. **Evaluation only: Claude outputs are never training data** (Anthropic's commercial terms) |
 | `evaluation/status_check/` | Seven runs of the company status check (Aquaporin diagnostics and development), version 1 and version 3 |
 | `evaluation/judge_qualification/` | The qualification results of each judge |
 | `MANIFEST.json` | Every published file with the file it was made from, and the sha256 of that original and of the published copy |
@@ -250,7 +251,7 @@ Every count below is taken from the published files.
 | Recovery Correction Rows (`correction-v1`) | 51 (18 companies) | `training/correction_rows.jsonl` |
 | Recorded / Accepted DeepSeek V4-Pro Investigations | 266 / 154 | `teacher_investigations/deepseek_v4_pro/`, `training/v3_rows_report.json` |
 | Version 3 DeepSeek Rows | 3,611 training (69 companies) + 262 validation (5 companies) | `training/v3_deepseek_*.jsonl` |
-| Judge Packets | dev 56, final 87, test2 133, final_v3 135, test2_v3 205, screen3 29, switch 207, system_test2 342, system_final 231, loop_guards_dev 135, loop_guards_test2 144, loop_guards_test2_fix 140, loop_guards_final 96, grounded_dev 90, evidence_first_dev 180, evidence_first_test2 125, evidence_first_final 96 | `evaluation/*/judge_packets.jsonl` |
+| Judge Packets | dev 56, final 87, test2 133, final_v3 135, test2_v3 205, screen3 29, switch 207, system_test2 342, system_final 231, loop_guards_dev 135, loop_guards_test2 144, loop_guards_test2_fix 140, loop_guards_final 96, grounded_dev 90, evidence_first_dev 180, evidence_first_test2 125, evidence_first_final 96, haiku_final 183, haiku_test2 268 | `evaluation/*/judge_packets.jsonl` |
 
 ## 10. Evaluation Files and Results
 
@@ -272,6 +273,8 @@ Quality is a blind rubric of nine dimensions scored 0 to 3. Each number below is
 | Development, evidence first (`evidence_first_dev/`) | Claude Code, Codex (gpt-6-sol) | app default 1.565, + grounded beliefs 1.554, + evidence first 1.625, both 1.631 | both minus app default +0.066 [0.028, 0.107]; evidence first alone +0.060 [0.029, 0.091], 45 pairs each |
 | Test set 2, evidence first (`evidence_first_test2/`) | Claude Code, Codex (gpt-6-sol) | app default 1.638, evidence first 1.667 | +0.029 [−0.003, 0.061], 72 pairs |
 | Final test, evidence first (`evidence_first_final/`) | Claude Code, Codex (gpt-6-sol) | app default 1.560, evidence first 1.621 | +0.061 [0.004, 0.113], 48 pairs |
+| Final test, Claude Haiku 5.5 (`haiku_final/`) | Claude Code, Codex (gpt-6-sol) | base 0.605, version 1 1.452, final system 1.621, Haiku 2.278 | final system minus Haiku −0.665 [−0.785, −0.518], 45 pairs |
+| Test set 2, Claude Haiku 5.5 (`haiku_test2/`) | Claude Code, Codex (gpt-6-sol) | base 0.556, version 1 1.065, final system 1.667, Haiku 2.300 | final system minus Haiku −0.632 [−0.747, −0.522], 70 pairs |
 | Adapter switching, development (`switch/`) | Claude Code only | version 1 1.065, version 3 0.863, dig then reason 1.239 | dig then reason minus version 1: +0.173 [0.018, 0.346], 45 pairs |
 
 Investigations finished: final test 4 of 48 (base), 28 of 48 (version 1), 37 of 48 (version 3); test set 2: 2 of 72 (base), 32 of 72 (version 1), 57 of 72 (version 3).
