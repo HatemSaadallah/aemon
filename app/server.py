@@ -107,6 +107,21 @@ def login_page() -> Response:
     return FileResponse(PAGE, headers=NO_CACHE) if PAGE else HTMLResponse(NO_BUILD, status_code=503)
 
 
+def _cookie_policy() -> dict[str, Any]:
+    """Strict and same-site by default. A hosted copy shown inside another site's page (a Hugging Face Space is framed by
+    huggingface.co) sets CROSS_SITE_COOKIE=1: a strict cookie is never sent from inside that frame, so the session is
+    a partitioned, secure cookie that only works over HTTPS and only inside that frame's site."""
+    if os.environ.get('CROSS_SITE_COOKIE') == '1':
+        return {'httponly': True, 'samesite': 'none', 'secure': True}
+    return {'httponly': True, 'samesite': 'strict', 'secure': False}
+
+
+def _partition(response: Response) -> None:
+    """Chrome drops a third-party cookie unless it is Partitioned, which Starlette sets only on Python 3.14 and later."""
+    if os.environ.get('CROSS_SITE_COOKIE') == '1':
+        response.raw_headers = [(k, v + b'; Partitioned') if k == b'set-cookie' else (k, v) for k, v in response.raw_headers]
+
+
 @app.post('/api/login')
 def login(body: SignIn) -> JSONResponse:
     name = body.name.strip().lower()
@@ -127,7 +142,8 @@ def login(body: SignIn) -> JSONResponse:
     token = secrets.token_urlsafe(32)
     store.start_session(token, name, now + SESSION_SECONDS)
     response = JSONResponse({'user': name})
-    response.set_cookie(COOKIE, token, max_age=SESSION_SECONDS, httponly=True, samesite='strict', secure=False, path='/')
+    response.set_cookie(COOKIE, token, max_age=SESSION_SECONDS, path='/', **_cookie_policy())
+    _partition(response)
     return response
 
 
@@ -135,7 +151,8 @@ def login(body: SignIn) -> JSONResponse:
 def logout(request: Request) -> JSONResponse:
     store.end_session(request.cookies.get(COOKIE))
     response = JSONResponse({'signed_out': True})
-    response.delete_cookie(COOKIE, path='/')
+    response.delete_cookie(COOKIE, path='/', **_cookie_policy())
+    _partition(response)
     return response
 
 

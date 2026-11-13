@@ -27,7 +27,7 @@ COPY --chown=1000:1000 --from=web /web/dist app/web/dist
 RUN chmod +x start.sh
 USER 1000
 ENV HOME=/home/ubuntu AEMON_SEED=/home/ubuntu/aemon/seed/history.json LEXSI_DATA=/tmp/aemon-data \
-    MAX_TURNS=45 PYTHONDONTWRITEBYTECODE=1 LD_LIBRARY_PATH=/opt/llama
+    MAX_TURNS=45 PYTHONDONTWRITEBYTECODE=1 LD_LIBRARY_PATH=/opt/llama CROSS_SITE_COOKIE=1
 # Sign-in is by username alone (a new name opens an account, seeded from AEMON_SEED); the optional secrets
 # AEMON_TEST_USER and AEMON_TEST_PASSWORD still create a shared account at start
 EXPOSE 7860

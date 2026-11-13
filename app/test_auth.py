@@ -92,6 +92,12 @@ def test_the_session_cookie_is_http_only_and_strict(setup):
     assert client.get('/api/me').json()['user'] == 'ada'
 
 
+def test_a_hosted_copy_in_another_sites_frame_gets_a_partitioned_secure_cookie(setup, monkeypatch):
+    monkeypatch.setenv('CROSS_SITE_COOKIE', '1')
+    cookie = TestClient(server.app).post('/api/login', json={'name': 'ada'}).headers['set-cookie'].lower()
+    assert 'samesite=none' in cookie and 'secure' in cookie and 'partitioned' in cookie and 'httponly' in cookie
+
+
 def test_signing_out_ends_the_session(setup):
     client = signed_in()
     token = client.cookies.get(server.COOKIE)
