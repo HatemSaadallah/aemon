@@ -1,0 +1,42 @@
+{
+  "final_test": {
+    "pairs": 48,
+    "base_mean_of_judges": 0.605,
+    "final_system_mean_of_judges": 1.621,
+    "difference_case_cluster": [
+      1.016,
+      0.923,
+      1.105
+    ],
+    "difference_company_cluster": [
+      1.016,
+      0.927,
+      1.122
+    ],
+    "difference_per_judge": {
+      "claudecode": 0.763,
+      "codexsol": 1.269
+    },
+    "companies_higher": "4 of 4"
+  },
+  "test_set_2": {
+    "pairs": 72,
+    "base_mean_of_judges": 0.556,
+    "final_system_mean_of_judges": 1.667,
+    "difference_case_cluster": [
+      1.111,
+      1.011,
+      1.196
+    ],
+    "difference_company_cluster": [
+      1.111,
+      1.0,
+      1.195
+    ],
+    "difference_per_judge": {
+      "claudecode": 0.861,
+      "codexsol": 1.361
+    },
+    "companies_higher": "12 of 12"
+  }
+}

@@ -212,10 +212,11 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
 - **Exact reproduction from the public data.** Since 11 November the public dossier is byte-identical to the one the
   evaluated runs read (the release of 8 November had cut excerpts to one short quote).
 
-## The final system: the version 3 adapter (`exploratory/v3_adapter.gguf`)
+## The final system: the version 3 adapter (`v3_adapter.gguf`)
 
 A second adapter, continued from this one on rows from a second teacher (DeepSeek V4-Pro; 3,611 rows from 144
-replay-exact investigations). On its own it did not pass its development adoption rule; it is the reasoner of the final system. It is
+replay-exact investigations). On its own it did not pass its development adoption rule; as the reasoner of dig then reason it did (+0.17 [0.02,
+0.35] over version 1 on development), and that is how the final system uses it. It is
 published so the two-adapter system described in the write-up ("dig then reason": this card's adapter gathers the
 evidence, version 3 reasons) can be run by others. File: GGUF for llama.cpp, sha256 `ea919380…e1443`, the conversion
 the final system's runs used. Blind scores, mean of two judges (Claude Code and Codex `gpt-6-sol`), base / version 1 /
@@ -224,7 +225,10 @@ version 3: test set 2 0.56 / 1.06 / 1.48; final test 0.62 / 1.46 / 1.33. Dig the
 ## The final system: decoding-time guards (the app's default)
 
 They change what the model can produce at each step, not its weights; the version 1 numbers above use none of
-them. With the two-adapter system ("dig then reason"):
+them. They were built after both frozen tests, partly from the failures in their runs (the loop guards from the
+refused calls of the final-test runs), and measured on the same cases, so version 1's numbers stay the run-once
+result. Against the base model, the final system scores +1.02 [0.92, 1.10] on the first test's cases and +1.11
+[1.01, 1.20] on the second's, judged by the same two judges in separate batches. With the two-adapter system ("dig then reason"):
 - **Loop guards**: a source already weighed for a theory and a search already run are not offered again, a quote is
   picked from the source's own sentences, an exact repeat is drawn again before it counts, and a step-budget guard.
   Finished runs: development 28 → 45 of 45, test set 2 43 → 69 of 72, final test 27 → 45 of 48. Blind quality, mean of

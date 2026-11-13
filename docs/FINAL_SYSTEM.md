@@ -1,11 +1,13 @@
 # The final system: how it was built, and what was not adopted
 
-The final system builds on version 1, whose two frozen tests are in the README
-([first](../README.md#final-test-4-held-out-companies-16-cases-3-attempts-96-runs-run-once),
-[second](../README.md#second-frozen-test-12-new-companies-24-cases-3-attempts-144-runs-run-once-docstest2_freezejson)).
-Each change below had its rule written in [DECISIONS.md](DECISIONS.md) before it ran, was measured on development and
-on the same two test sets, and each comparison was judged blind by two LLM judges (Claude Code and Codex on
-`gpt-6-sol`) unless stated. The [README](../README.md#the-final-system) has the summary.
+The final system builds on version 1. Everything here came after version 1's two frozen results were known, and some
+of it was designed from the failures in those runs, so the test cases were no longer unseen: version 1 on the
+[first](../README.md#final-test-4-held-out-companies-16-cases-3-attempts-96-runs-run-once) and
+[second](../README.md#second-frozen-test-12-new-companies-24-cases-3-attempts-144-runs-run-once-docstest2_freezejson)
+frozen tests is the run-once result. Each change below had its rule written in [DECISIONS.md](DECISIONS.md) before it
+ran, was measured on development and on the same two test sets, and each comparison was judged blind by two LLM judges
+(Claude Code and Codex on `gpt-6-sol`) unless stated. Against the base model, the final system scores +1.02 [0.92,
+1.10] on the first test's cases and +1.11 [1.01, 1.20] on the second's (`scripts/release/final_system_vs_base.py`). The [README](../README.md#the-final-system) has the summary.
 
 **Contents:** [Corrective distillation](#corrective-distillation-and-two-runtime-attempts-10-november) ·
 [Version 3](#version-3-a-second-teacher) ·
@@ -132,8 +134,9 @@ was selected on test set 2, but that set had been run before.
   1.48). The status check fixes what it was built for and costs finished runs.
 
 ## Loop guards on development, test set 2 and the final test
-Most of dig then reason's refused calls were the model repeating itself: the same search again, or weighing a source
-it had already weighed for that theory. Four refusals in a row end a run, so these loops were most of the unfinished runs. Three guards act only
+The last thing we built, after every frozen result. In the final-test runs of dig then reason, 233 of 274 refused
+calls were the model repeating itself: the same search again (130) or weighing a source it had already weighed for that
+theory (103). Four refusals in a row end a run, so these loops were most of the unfinished runs. Three guards act only
 on decoding, with no retraining and no guard of the environment changed (`agent/recovery.py`, `agent/loop.py`):
 - **no repeats**: the tool schema offers, per theory, only the sources not yet weighed for it;
 - **quote menu**: a quote is chosen from the source's own sentences, so it cannot be misquoted;
@@ -180,7 +183,7 @@ ones kept their judgments):
   budget arm before running it ([DECISIONS](DECISIONS.md), 12 November 11:35): 66 of 72 runs reproduced call for
   call, and the 6 Belimo runs all finished. **Corrected guards + budget minus as evaluated: +0.21 [0.09, 0.33]**
   (Claude Code +0.16 [0.05, 0.28], gpt-6-sol +0.26 [0.12, 0.40]); against the run before the fix, +0.05 [0.00, 0.13],
-  all of it Belimo. The first result stays in the table.
+  all of it Belimo. The first result stays in the table; test set 2 has now also been used to find a bug.
 
 **The final test** (registered before the run,
 [DECISIONS](DECISIONS.md), 12 November 16:30). The guards + budget arm with the fixed quote picker, 16 cases × 3
@@ -203,7 +206,8 @@ seeds):
   the final test in `final/`).
 
 ## Evidence first: how a source is weighed
-With the loop guards in place, evidence judgement was the lowest judged dimension. The judges' reasons repeat two patterns: a quote counted as support
+With the loop guards in place, the lowest judged dimension on the app default's final-test runs was evidence
+judgement (Claude Code 0.46, gpt-6-sol 0.96 of 3). The judges' reasons repeat two patterns: a quote counted as support
 for a theory it does not address, and a company's own estimate labelled as independent evidence. Two more changes act
 only at decoding, each registered with its adoption rule before it ran ([DECISIONS](DECISIONS.md), 12 November
 18:15 and 19:55):

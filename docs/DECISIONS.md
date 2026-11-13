@@ -1906,3 +1906,28 @@ Nothing was rerun or rejudged, and the registered numbers are unchanged.
   investigation against 242; refused calls 14% of calls against 29%; 8% with the loop guards). Detailed intervals for
   the later systems, per-company losses and the Simonelli critique live in `docs/FINAL_SYSTEM.md`, the paper and this log
   rather than in the README's summary. No number was changed or removed from the repository.
+
+## 2026-11-13 afternoon: the final system as a result
+
+Hatem asked for the work after the frozen tests to be presented as the final result rather than as exploratory.
+`docs/LATER_WORK.md` is renamed `docs/FINAL_SYSTEM.md` (links in this log updated), and the README leads with the
+final system: dig then reason with the loop guards and evidence first, which the app runs. A third review then
+asked to keep the disclosure, and it is kept everywhere the final system is reported:
+- the final system was built after both frozen tests had been run and read; the loop guards came from the refused calls
+  of the final-test runs, evidence first from the judges' lowest dimension there, and a quote-picker bug was found on
+  test set 2;
+- it is measured on the same cases, so **version 1's +0.83 [0.69, 0.97] and +0.52 [0.33, 0.70] stay the run-once
+  result**; the README's tiles are labelled by system.
+
+**New number, from saved judgments only** (`scripts/release/final_system_vs_base.py`,
+`reports/judge/final_system_vs_base.json`): the final system (arm D of `experiments/grounded/`) against the base model,
+paired by case and attempt, both judged by Claude Code and Codex on `gpt-6-sol` with the same instrument (cca85a72…)
+in separate batches. First test's cases: 1.62 against 0.61, **+1.02 [0.92, 1.10]** (companies resampled [0.93,
+1.12]; Claude Code +0.76, gpt-6-sol +1.27; 4 of 4 companies higher). Second test's cases: 1.67 against 0.56, **+1.11
+[1.01, 1.20]** (12 of 12). Finished runs: 46 of 48 and 65 of 72 (base 4 and 2); 39 calls per finished investigation on
+the first test (base 242); 7.5% of calls refused (base 28.8%).
+
+**Showcase run.** The 60-second view now opens a final-system run (RATIONAL, `rational-new-evidence-irrelevant`,
+attempt 2: fifteen sources weighed, each with what its quote does not show; recommends a test before committing;
+mean of judges 1.83). The three version 1 showcase runs weigh two sources each, and two of them mislabel a company's
+claim or a blog post as an independent study.

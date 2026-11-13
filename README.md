@@ -13,9 +13,10 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 > **Result in one line.** On four companies it never saw, with the same environment, tools, stage controller and
 > budgets for both arms, the fine-tuned Tiny Aya agent scored **1.48** against the best-prompted base model's **0.65**
 > on a 0–3 blind rubric (mean of two LLM judges; **+0.83, 95% interval 0.69 to 0.97**), and was higher at every
-> company. A second frozen test on twelve more companies gave **+0.52 [0.33, 0.70]**. The final system adds a second
-> adapter and decoding-time guards: it finishes **46 of 48** investigations on the first test (the base model 4), with
-> **39 tool calls** per finished investigation (the base model 242).
+> company. A second frozen test on twelve more companies gave **+0.52 [0.33, 0.70]**. These are version 1's
+> run-once results. The final system, built after both tests by adding a second adapter and decoding-time guards,
+> scores **+1.02** over the base model on the first test's cases and **+1.11** on the second's, and finishes **46 of
+> 48** and **65 of 72** investigations (the base model 4 and 2).
 
 | | |
 |---|---|
@@ -27,9 +28,17 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 | Every test run, browsable | [first test](docs/replays/final/README.md) (96 runs) and [second test](docs/replays/test2/README.md) (144 runs), base and fine-tuned side by side, no GPU needed |
 | Every decision, dated | [docs/DECISIONS.md](docs/DECISIONS.md) |
 
-| **+0.83** | **+0.52** | **46 of 48** | **6× fewer** | **$0.03** |
-|:---:|:---:|:---:|:---:|:---:|
-| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | investigations the final system finishes with an accepted recommendation on the first test, against 4 of 48 for the base model | tool calls per finished investigation (39 against 242); 7.5% of calls refused, against 29% | per investigation for the fine-tuned model, self-hosted on one A100 slice: about 8 times less than the closed model we measured, 26× faster than its teacher |
+**Version 1, frozen tests run once**
+
+| **+0.83** | **+0.52** | **$0.03** |
+|:---:|:---:|:---:|
+| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | per investigation, self-hosted on one A100 slice: about 8 times less than the closed model we measured, 26× faster than its teacher |
+
+**Final system, built after both tests and measured on the same cases**
+
+| **+1.02** | **46 of 48** | **6× fewer** |
+|:---:|:---:|:---:|
+| blind quality over the base model on the first test's cases (95% interval 0.92 to 1.10; +1.11 on the second test's) | investigations finished with an accepted recommendation (65 of 72 on the second test), against 4 of 48 for the base model | tool calls per finished investigation (39 against 242); 7.5% of calls refused, against 29% |
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/quality-dark.png">
@@ -42,8 +51,9 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 1. Open the [first test's run gallery](docs/replays/final/README.md): every case, base and fine-tuned side by side, with
    how each run ended and its blind scores.
 2. Click the filter "fine-tuned finished, base did not" (25 of 48 pairs) and open any pair.
-3. Read one fine-tuned investigation end to end, for example [Simonelli](docs/replays/trained_simo-base_1.md): every
-   tool call, what the environment refused and why, and the recommendation.
+3. Read one investigation end to end: [RATIONAL, by the final system](docs/replays/system_rational-new-evidence-irrelevant_2.md)
+   weighs fifteen sources, says what each quote does not show, and recommends a test before any commitment. Every
+   tool call is there, with what the environment refused and why.
 4. Section 7 has the full results, what still fails, and why.
 
 **Paired, case by case.** On the first test the fine-tuned agent scored higher than the base model on all **16 of 16
@@ -65,7 +75,7 @@ runs (`reports/judge/*/paired_counts.json`, mean of two judges).
 - **Fewer wasted calls.** The fine-tuned agent makes more calls per run than the base model (35 against 20) because it
   gets much further: per finished investigation it needs **61 calls against 242**, and the share of refused calls
   halves (14% against 29%). The final system, with decoding-time guards, finishes **46 of 48** runs on the first test
-  with **39 calls** each, and refused calls fall to **7.5%**.
+  with **39 calls** each (65 of 72 on the second test), and refused calls fall to **7.5%**.
 - **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
   closed model we measured, and 26 times faster than its teacher per GPU.
 - **It learns the procedure; judgement is the next step.** The largest gains are in framing the decision and stating
@@ -74,8 +84,9 @@ runs (`reports/judge/*/paired_counts.json`, mean of two judges).
 - **The final system ([docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)).** Two adapters ("dig then reason": version 1
   gathers the evidence, version 3, trained further on a second teacher's runs, reasons) with decoding-time guards that
   remove failing actions: no repeated calls, quotes picked from the source, a step budget, and the quote written before
-  the evidence label. The guards add **+0.12** and **+0.21** in judged quality on the two tests, evidence first another
-  **+0.06** and **+0.03**, and the judged evidence score doubles. The app runs this system.
+  the evidence label. It was built after both frozen tests, partly from the failures in their runs, and measured on
+  the same cases: +1.02 and +1.11 over the base model. Version 1's +0.83 and +0.52 remain the run-once result. The app
+  runs the final system.
 
 The name is a nod to Maester Aemon, a counsellor known for sound judgement in unusual
 situations.
@@ -385,16 +396,25 @@ under the same judges, rubric and rule.
 - The two judges rank the runs alike (Spearman 0.95 over all 144).
 
 ### The final system
-The final system is what the app runs: two adapters ("dig then reason") with decoding-time guards. Each part was
+The final system is what the app runs: two adapters ("dig then reason") with decoding-time guards. **It was built
+after both frozen tests had been run and read.** The loop guards came from the refused calls in the final-test runs (most
+were the model repeating itself), and evidence first from the judges' lowest-scored dimension in them. Each part was
 compared with the system before it, with its adoption rule registered in [docs/DECISIONS.md](docs/DECISIONS.md) before
-it ran, on development and on the same two test sets, judged blind by Claude Code and Codex (`gpt-6-sol`). The full
-write-up, with every table, is in **[docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)**.
+it ran, on development and on the same two test sets, judged blind by Claude Code and Codex (`gpt-6-sol`). Because the
+test cases were no longer unseen, **version 1's +0.83 and +0.52 remain the run-once result**; the numbers below are the
+final system's own. The full write-up, with every table, is in **[docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)**.
+
+**Quality against the base model** (mean of the same two judges, same instrument, base and final system judged in
+separate batches; `scripts/release/final_system_vs_base.py`): **1.62 against 0.61, +1.02 [0.92, 1.10]** on the first
+test's 48 runs, and **1.67 against 0.56, +1.11 [1.01, 1.20]** on the second's 72, higher at every company (4 of 4 and
+12 of 12); each judge alone is above +0.76.
 
 **How it runs** (first test, 48 runs each, same cases, settings and seeds):
 
 | | Base model | Version 1 | **Final system** |
 |---|---|---|---|
 | Investigations finished | 4 | 28 | **46** |
+| Investigations finished, second test (of 72) | 2 | 32 | **65** |
 | Tool calls per run | 20.2 | 35.4 | 37.8 |
 | Tool calls per finished investigation | 242 | 61 | **39** |
 | Share of calls refused | 28.8% | 14.3% | **7.5%** |
@@ -404,8 +424,8 @@ write-up, with every table, is in **[docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)
 | Part | First test | Second test | Development |
 |---|---|---|---|
 | [Dig then reason](docs/FINAL_SYSTEM.md#switching-adapters-during-a-run-development-then-test-set-2): version 1 gathers the evidence, [version 3](docs/FINAL_SYSTEM.md#version-3-a-second-teacher) reasons | level with version 1 | **+0.36** over version 1 | +0.17 (one judge) |
-| [Loop guards](docs/FINAL_SYSTEM.md#loop-guards-on-development-test-set-2-and-the-final-test): no repeated calls, quotes picked from the source, a step budget | **+0.12**; finished 27 → 45 | **+0.21**; finished 43 → 69 | +0.19; finished 28 → 45 |
-| [Evidence first](docs/FINAL_SYSTEM.md#evidence-first-how-a-source-is-weighed): the quote and what it does not show, before the evidence label | **+0.06**; judged evidence 0.46 → 0.98 | +0.03 | +0.07 |
+| [Loop guards](docs/FINAL_SYSTEM.md#loop-guards-on-development-test-set-2-and-the-final-test): no repeated calls, quotes picked from the source, a step budget | +0.12 [0.00, 0.25]; finished 27 → 45 | **+0.21**; finished 43 → 69 | +0.19; finished 28 → 45 |
+| [Evidence first](docs/FINAL_SYSTEM.md#evidence-first-how-a-source-is-weighed): the quote and what it does not show, before the evidence label | +0.06; judged evidence 0.46 → 0.98 | +0.03; finished 69 → 65 | +0.07 |
 
 What worked: changes that remove a failing action from what the model can produce. Advice to the model did not, and
 we also tried, and did not adopt, a company status check, corrective distillation, a recovery controller and a
@@ -435,6 +455,8 @@ Details: [docs/RELIABILITY_REPORT.md](docs/RELIABILITY_REPORT.md) and
 - At run time, removing a failing action from what the model can produce worked (the loop guards, evidence first);
   telling the model about its mistake did not. Better judgement in the conclusion has to come from better training
   data.
+- Results did not transfer cleanly between sets: version 3 and the switching rule each looked different on
+  development, test set 2 and the final test. One set would have misled us in either direction.
 
 ## 8. With more credits
 
@@ -534,9 +556,9 @@ curl -L https://github.com/ggml-org/llama.cpp/releases/download/b12032/llama-b12
 
 # the adapters, saved under the names the app loads
 .venv/bin/hf download HatemSaadallah/tiny-aya-global-strategy-agent tiny-aya-global-strategy-lora-bf16.gguf \
-  exploratory/v3_adapter.gguf --local-dir /tmp/aemon-adapters
+  v3_adapter.gguf --local-dir /tmp/aemon-adapters
 cp /tmp/aemon-adapters/tiny-aya-global-strategy-lora-bf16.gguf ~/.cache/lexsi/adapters/final_adapter.gguf   # version 1
-cp /tmp/aemon-adapters/exploratory/v3_adapter.gguf ~/.cache/lexsi/adapters/v3_adapter.gguf                  # version 3
+cp /tmp/aemon-adapters/v3_adapter.gguf ~/.cache/lexsi/adapters/v3_adapter.gguf                  # version 3
 
 ./app/run_model.sh                                        # the model server, port 8091
 .venv/bin/python app/users.py add yourname hellberg       # an account (asks for a password); every page needs sign-in

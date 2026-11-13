@@ -42,6 +42,7 @@ ENDED = {'finished': 'finished', 'repeated errors': 'stopped on refused calls', 
 # (arm, case, attempt, why it is shown). The best-judged finished trained run of each company's base case, one
 # trained run that stopped on refusals, and the untrained base model on the same case for contrast.
 CHOSEN = [
+    ('system', 'rational-new-evidence-irrelevant', 2, 'RATIONAL: the final system, fifteen sources weighed, and a test before any commitment'),
     ('trained', 'epro-base', 1, 'Electrolux Professional: a finished investigation'),
     ('trained', 'rational-base', 0, 'RATIONAL: a finished investigation'),
     ('trained', 'simo-base', 1, 'Simonelli: a finished investigation'),
@@ -50,7 +51,27 @@ CHOSEN = [
     ('base', 'epro-base', 1, 'Electrolux Professional: the untrained base model, for contrast'),
 ]
 REPORTS = {'trained': 'final_test_trained_adapter.json', 'base': 'final_test_base_base.json'}
-ARM = {'trained': 'aemon (Tiny Aya Global + adapter, version 1)', 'base': 'Tiny Aya Global without the adapter (best prompt)'}
+ARM = {'trained': 'aemon (Tiny Aya Global + adapter, version 1)', 'base': 'Tiny Aya Global without the adapter (best prompt)',
+       'system': 'aemon, final system (version 1 gathers the evidence, version 3 reasons; decoding-time guards and evidence first)'}
+# The final system's run of the final test's cases (made after the frozen test), and its two judges' predictions.
+SYSTEM = {'dir': REPO / 'experiments/grounded/final', 'report': 'D.json', 'arm': 'D',
+          'judges': {'claude': 'claudecode_predictions.jsonl', 'codex': 'codexsol_predictions.jsonl'},
+          'name': "the final system's run of the final test's cases, after the frozen test"}
+
+
+def system_scores() -> dict[tuple[str, str, int], dict[str, float]]:
+    """Each judge's episode score for the final system's runs, keyed like scores()."""
+    key = [json.loads(line) for line in (SYSTEM['dir'] / 'key.jsonl').read_text().splitlines() if line.strip()]
+    out: dict[tuple[str, str, int], dict[str, float]] = {}
+    for judge, path in SYSTEM['judges'].items():
+        preds = load(str(SYSTEM['dir'] / path))
+        for k in key:
+            p = preds.get(k['packet_id'])
+            if k['arm'] == SYSTEM['arm'] and p and 'judgment' in p:
+                s, _ = episode_scores(p['judgment'])
+                if s is not None:
+                    out.setdefault(('system', k['case'], k['attempt']), {})[judge] = s
+    return out
 
 
 def scores(test: str = 'final') -> dict[tuple[str, str, int], dict[str, float]]:
@@ -129,7 +150,7 @@ def render(arm: str, record: dict, why: str, score: dict[str, float], test: str 
         lines += [back, '']
     lines += [f'- **Model:** {ARM[arm]}', f'- **How it ended:** {record["stop_reason"]} after {len(record["calls"])} tool calls',
               f'- **Blind judge score (0 to 3):** {score_line}', '',
-              f'Recorded during {TESTS[test]["name"]}; nothing here is re-run. Excerpts are shown whole.', '',
+              f'Recorded during {SYSTEM["name"] if arm == "system" else TESTS[test]["name"]}; nothing here is re-run. Excerpts are shown whole.', '',
               '| # | Stage | Tool call | Environment |', '|---|---|---|---|']
     for i, c in enumerate(record['calls'], 1):
         ok = '' if c.get('accepted') else ' (refused)'
@@ -254,9 +275,11 @@ def main() -> None:
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     reports = {arm: {(r['case'], r['attempt']): r for r in json.loads((FINAL / f).read_text())['records']} for arm, f in REPORTS.items()}
-    judged = scores()
+    reports['system'] = {(r['case'], r['attempt']): r for r in json.loads((SYSTEM['dir'] / SYSTEM['report']).read_text())['records']}
+    judged = scores() | system_scores()
     index = ['# Recorded investigations', '',
-             'Six runs from the frozen final test (four companies the model never saw), readable without a GPU. Each '
+             'Seven runs on the final test\'s cases (four companies the model never saw): one by the final system, six '
+             'from the frozen test itself, readable without a GPU. Each '
              'page shows every tool call, what the environment accepted or refused, and the recommendation.', '',
              '| Run | Model | Ended | Judge score |', '|---|---|---|---|']
     for arm, case, attempt, why in CHOSEN:
@@ -265,7 +288,7 @@ def main() -> None:
         name = f'{arm}_{case}_{attempt}.md'
         (out / name).write_text(render(arm, record, why, score))
         mean = f'{statistics.mean(score.values()):.2f}' if score else 'n/a'
-        index.append(f'| [{why}]({name}) | {"aemon" if arm == "trained" else "base"} | {record["stop_reason"]} | {mean} |')
+        index.append(f'| [{why}]({name}) | {"aemon, final system" if arm == "system" else "aemon, version 1" if arm == "trained" else "base"} | {record["stop_reason"]} | {mean} |')
     summaries = [gallery(test, out) for test in TESTS]
     index += ['', '## Every run', '',
               'Every run of both frozen tests, base and fine-tuned side by side, with filters (fine-tuned finished and base '
