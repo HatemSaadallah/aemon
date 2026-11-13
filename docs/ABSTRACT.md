@@ -1,36 +1,41 @@
 # Abstract
 
-**Teaching a 3B model to investigate a strategy question: agentic distillation with AgentTune and AuditKIT.**
-Team Two-eyed Ravens, Lexsi hackathon Track 3 (agentic distillation; efficient trajectories; workflow and decision agents).
+**aemon: teaching a 3B model to investigate a strategy question, with AgentTune and AuditKIT.**
+Team Two-eyed Ravens, Lexsi AI Hackathon, Track 3 (agentic distillation; workflow and decision agents; efficient
+trajectories).
 
-Asked whether a manufacturer should take its technology to a new market, language models tend to write consulting
-prose: unsourced numbers and evidence gathered only for the answer they started with. We built an investigation
-environment in which an agent must work like a scientist: frame the decision, state rival causal theories, assess
-quoted evidence from a dossier of 1,334 public records, look for evidence against its favourite, propose a test with a
-decision rule (or decline one), revise when a what-if result arrives, and recommend. Twelve guarded tools and a stage
-controller enforce the procedure; every call is replayable.
+Asked whether a manufacturer should take its technology into a new market, language models tend to write consulting
+prose: unsourced numbers, and evidence gathered only for the answer they started with. We built an environment in
+which an agent must investigate instead: frame the decision, state rival causal theories, weigh quoted evidence from a
+dossier of public records for and against each, look for evidence against its favourite, propose a test with a
+decision rule, revise when new evidence arrives, and recommend. Twelve guarded tools and a stage controller enforce
+the procedure: a quote that is not word for word in its source is refused, and every call can be replayed.
 
-Command A+ served as the teacher. Its investigations were replayed through the environment, and only those that
-reproduced exactly and reached an accepted finish became training data: 3,891 rows from 158 investigations on 57
-training companies, plus 51 correction rows (the other 411 rows, from 16 investigations on 6 validation companies, were
-held out). We fine-tuned Tiny Aya Global with AgentTune's distillation trainer (LoRA, two
-epochs) and evaluated with AuditKIT replay and diagnostics, executable checks, and two blind LLM judges (Claude and
-Codex), each qualified on 20 matched sound/flawed pairs. Six validation companies chose the base prompt and the
-adapter; a frozen final test then ran once on four companies never used for anything else: 16 cases, three attempts,
-96 runs. Every converted adapter had to match its PEFT original before evaluation, and the evaluated file is the gated
-one.
+Command A+ served as the teacher. Only its investigations that replayed exactly and reached an accepted finish became
+training data: 3,891 rows from 158 investigations, plus 51 correction rows. We fine-tuned Tiny Aya Global (3.35B
+parameters) with AgentTune (LoRA), replayed every evaluation run with AuditKIT, and scored runs with executable checks
+and two blind LLM judges, both qualified beforehand.
 
-On the final test the fine-tuned agent scored **1.48** against the best-prompted base model's **0.65** on the 0-3
-rubric (mean of the two judges; **+0.83, 95% case-cluster interval 0.69 to 0.97**), higher at every company under both
-judges and for every kind of new evidence. It finished 28 of 48 investigations against 4 of 48. Self-hosted, an
-investigation takes 66 seconds on one A100 slice, about $0.03 at a median rental price, against $0.25 measured for
-Claude Opus 5.5.
+On a frozen test of four companies never used for training or selection, run once, the fine-tuned model scored 1.48
+against 0.65 for the base model under its best prompt (0–3 rubric; +0.83, 95% interval 0.69 to 0.97). It was higher on
+all 16 cases and finished 28 of 48 investigations against 4. A second frozen test on twelve new companies gave +0.52
+[0.33, 0.70]. The gain holds when whole companies are resampled, and on the stages both runs
+reached (+0.92).
 
-What still fails is specific: only 1 of 48 runs passes every mechanical check, and 20 stop before recommending.
-Several failures trace to behaviour the training data never showed: no example declines a test, few what-if results
-bear on a theory, and there is no recovery from rereading or from citing simulated evidence. On Aquaporin no run found the
-insolvency recorded in its dossier, and every finished fine-tuned run recommends investing. Four companies support only a limited claim about generalisation; the
-improvement plan targets these gaps, to be measured on fresh companies.
+The final system was built after both tests, partly from failures seen in their runs, so its numbers are not held out.
+It adds a second adapter and decoding-time guards that remove failing
+actions: repeated calls, misquotes, and an evidence label chosen before the quote. On the same cases it scores +1.02
+[0.92, 1.10] and +1.11 [1.01, 1.20] over the base model, and finishes 46 of 48 and 65 of 72 investigations. Per finished
+investigation it needs 39 tool calls against the base model's 242, and refused calls fall from 29% to 7.5%.
 
-Code: https://github.com/HatemSaadallah/aemon. Models, data and traces: Hugging Face collection
-(link to follow).
+A closed model does better. Claude Haiku 5.5, run through the same environment and judged blind alongside our arms,
+scores 2.28 against the final system's 1.62, for about $0.008 per investigation through the API against $0.03
+self-hosted. Fine-tuning takes the small model about 60% of the way from its base to Haiku. What it offers instead is
+control: it runs offline on one GPU or a laptop, keeps the case data on the machine, and its weights are open.
+
+The model learned the procedure more than the judgement. Its largest gains are in framing the decision and stating
+distinct theories; its recommendations score lowest. An audit of the teacher shows why: 74% of the teacher's
+recommendations use a number found in no source, and the student inherits such habits. At run time, removing a failing
+action from what the model can produce worked; telling the model about its mistake did not.
+
+The model, the data, every judged run, a live demo and the code are public.

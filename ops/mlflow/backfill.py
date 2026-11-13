@@ -241,7 +241,7 @@ MODELS = {
     'aemon-v1': ('v1, the submitted adapter: LoRA r16 on Tiny Aya Global, 2 epochs on 3,891 teacher rows plus 51 corrections', 'final_pilot',
                  {'safetensors_sha256': '740c4a9b2f415c7b83162cb463d9eaec56a34feff090d9bf882680914eb3a112',
                   'gguf_sha256': '41794b5756b9e0f87c58dd14e451756d15c897d595886dee9921181298fdb9d1',
-                  'location': 'cluster runs/final_pilot/adapter; https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent', 'status': 'submitted'},
+                  'location': 'cluster runs/final_pilot/adapter; https://huggingface.co/HatemSaadallah/aemon', 'status': 'submitted'},
                  ('dev_final_adapter', 'final_test_trained_adapter', 'test2_trained_adapter', 'screen3_v1_adapter', 'switch_v1', 'status_aqp_v1', 'status_dev_v1')),
     'aemon-v2': ('v2, DeepSeek corrective rows; failed its development screen', 'v2_deepseek',
                  {'safetensors_sha256': 'f4c419f7aefebbb128c4ecc2d92c1ade156e7dcd59e5d49b966c9068f063b57f', 'location': 'cluster runs/v2_deepseek/adapter',

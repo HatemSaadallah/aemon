@@ -27,8 +27,8 @@ Built for the Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning), with AgentTune,
 
 - **[Live demo](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/)**: sign in with the test account from our submission. It runs on CPU and sleeps when idle.
 - **[Write-up and code](https://github.com/HatemSaadallah/aemon)**: the full submission write-up is the repository's README.
-- **[Model](https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent)**: the LoRA adapter for Tiny Aya Global, with its GGUF conversion.
-- **[Dataset](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations)**: training rows, the dossier, every case, and all evaluation runs and judge outputs.
+- **[Model](https://huggingface.co/HatemSaadallah/aemon)**: the LoRA adapter for Tiny Aya Global, with its GGUF conversion.
+- **[Dataset](https://huggingface.co/datasets/HatemSaadallah/aemon)**: training rows, the dossier, every case, and all evaluation runs and judge outputs.
 - **[Collection](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326)** · **[Paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf)**
 
 ![The reasoning map of one investigation](https://raw.githubusercontent.com/HatemSaadallah/aemon/main/docs/figures/ui/redesign/after/map.png)

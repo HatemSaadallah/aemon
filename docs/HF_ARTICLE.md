@@ -18,8 +18,8 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 | | |
 |---|---|
 | **Live demo** | **[huggingface.co/spaces/HatemSaadallah/aemon](https://huggingface.co/spaces/HatemSaadallah/aemon)** (pick any username to sign in, no password; it runs the final system on two CPU cores and sleeps when idle, so the first page takes a moment; finished investigations open at once, a new one takes a while, and it runs one at a time for everyone) |
-| Model | [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent) |
-| Dataset | [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) |
+| Model | [HatemSaadallah/aemon](https://huggingface.co/HatemSaadallah/aemon) |
+| Dataset | [HatemSaadallah/aemon](https://huggingface.co/datasets/HatemSaadallah/aemon) |
 | Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) |
 | Paper | [docs/PAPER.pdf](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf) |
 | Every test run, browsable | [first test](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/final/README.md) (96 runs) and [second test](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/test2/README.md) (144 runs), base and fine-tuned side by side, no GPU needed |
@@ -200,7 +200,7 @@ CuratorKIT filters the rows.
 ## 5. Model artifacts
 
 Collection: [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326).
-Model: [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent)
+Model: [HatemSaadallah/aemon](https://huggingface.co/HatemSaadallah/aemon)
 (a derivative of Tiny Aya, so CC-BY-NC-4.0):
 - the LoRA adapter (`adapter_model.safetensors`, `adapter_config.json`; sha256 740c4a9b…);
 - the converted GGUF adapter for llama.cpp (`tiny-aya-global-strategy-lora-bf16.gguf`, sha256 41794b57…), the exact
@@ -210,7 +210,7 @@ Model: [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/Ha
 
 ## 6. Data artifacts
 
-Dataset: [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations)
+Dataset: [HatemSaadallah/aemon](https://huggingface.co/datasets/HatemSaadallah/aemon)
 (in the same collection):
 - the training rows: 4,302 from the Command A+ teacher, 51 correction rows, and 3,611 (plus 262 for validation) from
   the DeepSeek V4-Pro teacher, each bound to its teacher episode;

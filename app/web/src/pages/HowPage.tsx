@@ -44,8 +44,8 @@ const STAGES: Stage[] = [
 
 const LINKS: [string, string, string][] = [
   ['Public code', 'github.com/HatemSaadallah/aemon', 'https://github.com/HatemSaadallah/aemon'],
-  ['Model card', 'Strategy Agent V1 on Hugging Face', 'https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent'],
-  ['Dataset card', 'Teacher investigations on Hugging Face', 'https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations'],
+  ['Model card', 'aemon on Hugging Face', 'https://huggingface.co/HatemSaadallah/aemon'],
+  ['Dataset card', 'Teacher investigations on Hugging Face', 'https://huggingface.co/datasets/HatemSaadallah/aemon'],
   ['Collection', 'Model, data and results together', 'https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326'],
 ];
 
