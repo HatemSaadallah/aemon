@@ -44,7 +44,7 @@ ENDED = {'finished': 'finished', 'repeated errors': 'stopped on refused calls', 
 CHOSEN = [
     ('trained', 'epro-base', 1, 'Electrolux Professional: a finished investigation'),
     ('trained', 'rational-base', 0, 'RATIONAL: a finished investigation'),
-    ('trained', 'simo-base', 1, 'Simonelli: a finished investigation'),
+    ('trained', 'simo-base', 1, 'Simonelli: a complete procedure, and a quote misread as support (step 23: a line about cafés counted for a home machine, and a blog post labelled an independent study)'),
     ('trained', 'aqp-base', 1, 'Aquaporin: finished, well scored, and it misses the insolvency (the main limitation)'),
     ('trained', 'epro-base', 0, 'Electrolux Professional: a run that stops after four refusals in a row'),
     ('base', 'epro-base', 1, 'Electrolux Professional: the untrained base model, for contrast'),

@@ -6,7 +6,7 @@ Six runs from the frozen final test (four companies the model never saw), readab
 |---|---|---|---|
 | [Electrolux Professional: a finished investigation](trained_epro-base_1.md) | aemon | finished | 1.62 |
 | [RATIONAL: a finished investigation](trained_rational-base_0.md) | aemon | finished | 1.56 |
-| [Simonelli: a finished investigation](trained_simo-base_1.md) | aemon | finished | 1.44 |
+| [Simonelli: a complete procedure, and a quote misread as support (step 23: a line about cafés counted for a home machine, and a blog post labelled an independent study)](trained_simo-base_1.md) | aemon | finished | 1.44 |
 | [Aquaporin: finished, well scored, and it misses the insolvency (the main limitation)](trained_aqp-base_1.md) | aemon | finished | 1.88 |
 | [Electrolux Professional: a run that stops after four refusals in a row](trained_epro-base_0.md) | aemon | repeated errors | 1.19 |
 | [Electrolux Professional: the untrained base model, for contrast](base_epro-base_1.md) | base | repeated errors | 0.50 |

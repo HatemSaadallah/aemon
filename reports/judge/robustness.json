@@ -1,0 +1,100 @@
+{
+  "final_test": {
+    "pairs": 47,
+    "cases": 16,
+    "companies": 4,
+    "registered_case_cluster_bootstrap": [
+      0.832,
+      0.689,
+      0.965
+    ],
+    "company_cluster_bootstrap": [
+      0.832,
+      0.628,
+      1.045
+    ],
+    "company_cluster_t": [
+      0.832,
+      0.437,
+      1.227
+    ],
+    "by_company": {
+      "aqp": 1.104,
+      "epro": 0.6,
+      "rational": 0.657,
+      "simo": 0.981
+    },
+    "reached_only": {
+      "mean_and_95_interval_case_cluster": [
+        0.919,
+        0.828,
+        1.012
+      ],
+      "mean_and_95_interval_company_cluster": [
+        0.919,
+        0.787,
+        1.091
+      ],
+      "pairs": 47,
+      "mean_dimensions_scored_in_both": 5.57
+    },
+    "base_stop_reasons": {
+      "repeated errors": 19,
+      "finished": 4,
+      "context limit": 25
+    }
+  },
+  "test_set_2": {
+    "pairs": 72,
+    "cases": 24,
+    "companies": 12,
+    "registered_case_cluster_bootstrap": [
+      0.518,
+      0.334,
+      0.703
+    ],
+    "company_cluster_bootstrap": [
+      0.518,
+      0.294,
+      0.746
+    ],
+    "company_cluster_t": [
+      0.518,
+      0.253,
+      0.782
+    ],
+    "by_company": {
+      "ansell": 0.667,
+      "belimo": 0.297,
+      "draeger": 0.193,
+      "frankecoffee": -0.053,
+      "hach": 0.549,
+      "hoshizaki": -0.102,
+      "kingspan": 1.093,
+      "laerdal": 0.641,
+      "mettler": 1.095,
+      "tennant": 1.053,
+      "testo": 0.285,
+      "winterhalter": 0.497
+    },
+    "reached_only": {
+      "mean_and_95_interval_case_cluster": [
+        0.903,
+        0.81,
+        0.987
+      ],
+      "mean_and_95_interval_company_cluster": [
+        0.903,
+        0.772,
+        1.005
+      ],
+      "pairs": 72,
+      "mean_dimensions_scored_in_both": 3.6
+    },
+    "base_stop_reasons": {
+      "context limit": 32,
+      "repeated errors": 38,
+      "finished": 2
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Simonelli Group: `simo-base`, attempt 1
 
-*Simonelli: a finished investigation.*
+*Simonelli: a complete procedure, and a quote misread as support (step 23: a line about cafés counted for a home machine, and a blog post labelled an independent study).*
 
 - **Model:** aemon (Tiny Aya Global + adapter, version 1)
 - **How it ended:** finished after 30 tool calls

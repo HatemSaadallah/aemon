@@ -1880,3 +1880,24 @@ would remove the first kind; not built.
 `LOOP_GUARDS` adds `grounded_beliefs` and `evidence_first`). Across the three sets: development +0.066 [0.028, 0.107],
 test set 2 +0.029 [−0.003, 0.061], final test +0.061 [0.004, 0.113]; all exploratory. Table:
 `scripts/release/evidence_first_table.py`.
+
+## 2026-11-13 morning: an outside review of the write-up, and what changed
+
+A review of the README (pasted by Hatem) made six points. Each was checked against the saved reports; all held.
+Nothing was rerun or rejudged, and the registered numbers are unchanged.
+- **Procedure, not judgement.** Confirmed: both judges gave 1 of 3 to every finished recommendation on the final test
+  (28 fine-tuned, and the base model's 4). The Simonelli run shown as an example counts a quote about cafés as support
+  for a home machine, from a blog post labelled an independent study; its replay page and the README now say so.
+- **Intervals.** The 16 final-test cases are 4 companies × 4 variants. Resampling companies
+  (`scripts/release/robustness.py`, `reports/judge/robustness.json`): final test +0.83 [0.63, 1.05] bootstrap, [0.44,
+  1.23] cluster-robust t (3 df); test set 2 +0.52 [0.29, 0.75], [0.25, 0.78]. The case-cluster interval stays the
+  registered one; the company-level ones are reported beside it.
+- **Baseline.** 25 of 48 base runs stop at the context limit, and an unreached stage scores 0. Comparing each pair only
+  on dimensions both runs were scored on: +0.92 [0.83, 1.01] (final test), +0.90 [0.81, 0.99] (test set 2).
+- **Absolute scores.** The judges agree on order, not level (framing 1.62 against 2.90). No human scores exist; Hatem
+  asked for Codex scoring instead, which would add a third model's view, not a human anchor, so none was run and the
+  limit is stated.
+- **Scope.** One question template; stated as a limit.
+- **Length.** Everything after the second test moved to `docs/LATER_WORK.md` (README 59 KB → 44 KB), with a summary
+  table in its place; the teacher audit (74% of its recommendations use a number from no source) moved next to the
+  result.

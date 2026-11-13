@@ -118,6 +118,12 @@ Higher at every company under both judges (mean of judges: Aquaporin +1.10, Simo
 Electrolux Professional +0.60) and for every kind of new evidence. AuditKIT replay mismatches: 0 in every run.
 Reports: `reports/judge/final/`.
 
+Two robustness checks (`reports/judge/robustness.json`): resampling whole companies instead of cases gives +0.83 [0.63,
+1.05] by bootstrap or [0.44, 1.23] by a cluster-robust t interval (4 companies, so rough); and since 25 of the base
+model's 48 runs stop at the context limit and an unreached stage scores 0, comparing each pair only on the dimensions
+both runs reached gives +0.92 [0.83, 1.01]. On test set 2 the same checks give [0.29, 0.75] / [0.25, 0.78] and
++0.90 [0.81, 0.99].
+
 ### Second frozen test (12 new companies, 24 cases, 3 attempts; `docs/test2_freeze.json`)
 | | Base, staged prompt | This adapter | Difference, paired, 95% case-cluster bootstrap |
 |---|---|---|---|
@@ -173,10 +179,12 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
   longer count as unseen for any later claim.
 - **Independent replications.** Each case was run three times, but at temperature 0 (0.4 only on a retry after a refused
   call), so the attempts are close to repeats. The effective sample is nearer 16 cases than 48 runs; the intervals
-  resample whole cases for that reason.
+  resample whole cases for that reason. The cases are 4 companies with 4 variants of one question, so resampling
+  companies is stricter still (above).
 - **Human expert judgement.** Quality was scored by two LLM judges (Claude and Codex), each qualified first on 20 matched
-  sound and flawed investigations. They agree closely (Spearman 0.94), but they can share biases, for example towards
-  structure or length, and no strategy expert has scored the runs.
+  sound and flawed investigations. They agree closely on the order of runs (Spearman 0.94) but not on the level (on the
+  same fine-tuned runs, problem framing 1.62 from Claude and 2.90 from Codex), so absolute scores mean little. They can
+  share biases, for example towards structure or length, and no strategy expert has scored the runs.
 - **Good absolute quality.** The fine-tuned agent averages 1.48 on a 0 to 3 rubric. 20 of its 48 final-test runs ended
   before a recommendation (11 after repeated refused calls, 9 at the turn limit, 8 of them rereading sources), and its
   weakest dimensions remain the recommendation, revision after new evidence, experiment design and judging evidence.

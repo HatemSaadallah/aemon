@@ -42,13 +42,22 @@ None of these features is part of the evaluated setup; the reported results appl
         question, support only a limited claim. The second test set addresses this partly; other industries and other
         kinds of strategic question remain untested.
   \item \textbf{Replications.} Three attempts per case at temperature 0 are close to repeats; the effective sample is
-        nearer 16 cases than 48 runs, which is why the intervals resample whole cases.
-  \item \textbf{Judges.} Both judges are language models. They were qualified and agree closely, but they may share
-        biases, and no strategy expert has scored the runs.
+        nearer 16 cases than 48 runs, which is why the intervals resample whole cases. The cases are themselves 4
+        companies with 4 variants of one question, identical until the what-if arrives; resampling whole companies
+        widens the final-test interval to $[0.63, 1.05]$ (bootstrap) or $[0.44, 1.23]$ (cluster-robust $t$, 3 degrees of
+        freedom), and test set 2's to $[0.29, 0.75]$ or $[0.25, 0.78]$. With 4 companies any interval is rough; all 16
+        cases and all 4 companies are higher.
+  \item \textbf{Judges.} Both judges are language models. They were qualified and agree closely on the order of runs,
+        but not on the level (on the same fine-tuned runs, problem framing 1.62 from Claude and 2.90 from Codex), so the
+        comparisons rest on the order and absolute scores mean little. They may share biases, and no strategy expert has
+        scored the runs.
   \item \textbf{Absolute quality.} 1.48 of 3 is a large relative gain but a modest absolute score; 20 of 48 runs ended
         before a recommendation, and the recommendation, revision, experiment design and evidence judgement remain the
         weakest dimensions.
-  \item \textbf{Comparators.} The comparison is with the same base model under its best prompt. Neither the teacher nor
+  \item \textbf{Comparators.} The comparison is with the same base model under its best prompt, which reads the full
+        transcript: 25 of its 48 runs stop at the context limit, and a stage never reached scores 0. Comparing each pair
+        only on the dimensions both runs were scored on gives $+0.92$ [0.83, 1.01] (test set 2: $+0.90$ [0.81, 0.99]), so
+        the base model is weaker even on the stages it reaches (\texttt{reports/judge/robustness.json}). Neither the teacher nor
         a closed model was run on the final test for quality; Claude appears only in the cost comparison.
   \item \textbf{Beliefs and confidence.} Beliefs are the agent's own verbal scale, not calibrated probabilities, and the
         belief check tests direction only.
