@@ -22,7 +22,7 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 
 | | |
 |---|---|
-| **Live demo** | **[saadallah-r-hatem--aemon-serve.us-east.modal.run](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/)** (sign in with the test account from our submission; it runs on CPU and sleeps when idle, so the first page takes a moment; finished investigations open at once, a new one takes about 15 minutes, and it runs one at a time for everyone) |
+| **Live demo** | **[huggingface.co/spaces/HatemSaadallah/aemon](https://huggingface.co/spaces/HatemSaadallah/aemon)** (sign in with the test account from our submission; it runs the final system on two CPU cores and sleeps when idle, so the first page takes a moment; finished investigations open at once, a new one takes a while, and it runs one at a time for everyone) |
 | Model | [HatemSaadallah/tiny-aya-global-strategy-agent](https://huggingface.co/HatemSaadallah/tiny-aya-global-strategy-agent) |
 | Dataset | [HatemSaadallah/strategy-agent-investigations](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) |
 | Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) |
@@ -521,7 +521,7 @@ on NVIDIA A100 GPUs (40 GB and 80 GB slices, Slurm). Claude (Anthropic) and Code
 
 ## The app
 
-Try it at the [live demo](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/), or run it yourself:
+Try it at the [live demo](https://huggingface.co/spaces/HatemSaadallah/aemon), or run it yourself:
 `./app/run.sh` starts the interface at http://127.0.0.1:8000. Pick a company, ask a question, and watch the
 investigation step by step, then read the report, the reasoning map and the sources. By default it runs the
 two-adapter system with the loop guards and evidence first (section 7).

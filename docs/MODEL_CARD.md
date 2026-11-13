@@ -4,7 +4,7 @@
 
 Team Two-eyed Ravens: Hatem Saadallah and Nour Jennane | Lexsi AI Hackathon Track 3 (Agentic Fine-Tuning) | November 2026
 
-**[Live demo](https://saadallah-r-hatem--aemon-serve.us-east.modal.run/)** ·
+**[Live demo](https://huggingface.co/spaces/HatemSaadallah/aemon)** ·
 **[Full write-up and code](https://github.com/HatemSaadallah/aemon)** ·
 [Dataset](https://huggingface.co/datasets/HatemSaadallah/strategy-agent-investigations) ·
 [Collection](https://huggingface.co/collections/HatemSaadallah/strategy-investigation-agent-6af0d2ab19339ae58d020326) ·
