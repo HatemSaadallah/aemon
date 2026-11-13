@@ -26,7 +26,8 @@ against 0.65 for the base model under its best prompt on a nine-dimension 0--3 r
 finishes 28 of 48 investigations against 4, at about \$0.03 per investigation against \$0.25 for Claude Opus. A final
 system, built after the frozen tests and measured on the same cases, adds a second adapter and decoding-time guards
 that remove failing actions: it finishes 46 of 48 investigations with 39 tool calls each (the base model needs 242)
-and scores $+1.02$ $[0.92, 1.10]$ over the base model. A diagnosis
+and scores $+1.02$ $[0.92, 1.10]$ over the base model. Claude Haiku 5.5, a closed model run through the same
+environment, scores higher still (2.28 against 1.62) for about \$0.008 per investigation. A diagnosis
 traces the remaining failures (no declined tests, little directional new evidence, decision rules cut by a length cap)
 to gaps in the training data, and we report what environment changes and targeted examples did and did not fix.
 \end{abstract}

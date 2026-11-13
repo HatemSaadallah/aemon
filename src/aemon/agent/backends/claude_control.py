@@ -16,7 +16,7 @@ from typing import TYPE_CHECKING, Any, cast
 
 from dotenv import dotenv_values
 
-from aemon.common.constants.claude import MAX_OUTPUT, MODEL, PRICES, TOTAL_CAP_USD  # noqa: F401
+from aemon.common.constants.claude import LONG_PROMPT, MAX_OUTPUT, MODEL, PRICES, TOTAL_CAP_USD  # noqa: F401
 from aemon.common.paths import LEDGER, ROOT
 from aemon.common.types import Json, Message, Schema
 
@@ -50,6 +50,8 @@ def spent(ledger: Path = LEDGER) -> float | int:
 
 def cost(model: str, usage: Json) -> Any:
     price = PRICES[model]
+    if model in LONG_PROMPT and usage['input'] + usage['cache_write'] + usage['cache_read'] > LONG_PROMPT[model][0]:
+        price = LONG_PROMPT[model][1]
     return (
         usage['input'] * price['input']
         + usage['cache_write'] * price['cache_write']
@@ -120,6 +122,12 @@ class Claude:
         )
         usd = self._charge(response.usage)
         text = ''.join(block.text for block in response.content if block.type == 'text')
+        # The API refuses an empty text block in the history, which a reply cut off at MAX_OUTPUT while thinking can
+        # leave. It is dropped from what is sent back; a reply with no text left says so, and still counts as a failed
+        # call, since the harness parses `text` (empty), not this.
+        raw = [b for b in (block.to_dict() for block in response.content) if b.get('type') != 'text' or str(b.get('text', '')).strip()]
+        if not any(b.get('type') == 'text' for b in raw):
+            raw.append({'type': 'text', 'text': f'(no reply: stopped at {response.stop_reason})'})
         return {
             'text': _bare_json(text),
             'prompt_tokens': response.usage.input_tokens,
@@ -127,5 +135,5 @@ class Claude:
             'seconds': time.perf_counter() - started,
             'usd': round(usd, 5),
             'stop_reason': response.stop_reason,
-            'raw': [block.to_dict() for block in response.content],
+            'raw': raw,
         }

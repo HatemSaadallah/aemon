@@ -188,9 +188,12 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
 - **Good absolute quality.** The fine-tuned agent averages 1.48 on a 0 to 3 rubric. 20 of its 48 final-test runs ended
   before a recommendation (11 after repeated refused calls, 9 at the turn limit, 8 of them rereading sources), and its
   weakest dimensions remain the recommendation, revision after new evidence, experiment design and judging evidence.
-- **A comparison with stronger models on quality.** The comparison is with the same base model under its best prompt.
-  The teacher (Command A+) and closed models were not run on the final test for quality; Claude Opus appears only in the
-  cost comparison.
+- **Better than a closed model.** It is not. Claude Haiku 5.5, run on both test sets through the same environment and
+  judged blind with this model, version 1's base and the final system, scores 2.28 and 2.30 against the final system's
+  1.62 and 1.67 (final system minus Haiku −0.67 [−0.79, −0.52] and −0.63 [−0.75, −0.52]; Codex alone −0.43), at about
+  $0.008 per investigation through the API against $0.03 self-hosted. What this model offers is local, offline use with
+  open weights and the case data kept on the machine. The teacher (Command A+) was not run on the test sets for
+  quality.
 - **Calibrated confidence.** Beliefs are the agent's own five-step verbal scale within one run, not probabilities. The
   belief check tests direction only (undermining evidence should not raise the affected theory, supporting evidence should
   not lower it), and aemon's confidence score summarises the run's own judgement and the sources it weighed.

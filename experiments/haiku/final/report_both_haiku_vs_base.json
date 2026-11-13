@@ -1,0 +1,295 @@
+{
+ "runs": 192,
+ "arms": [
+  "base",
+  "final_system",
+  "haiku",
+  "v1"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "base": {
+     "mean": 0.539,
+     "n": 48
+    },
+    "v1": {
+     "mean": 1.182,
+     "n": 48
+    },
+    "final_system": {
+     "mean": 1.303,
+     "n": 48
+    },
+    "haiku": {
+     "mean": 2.202,
+     "n": 45
+    }
+   },
+   "by_arm_company": {
+    "base": {
+     "aqp": 0.633,
+     "epro": 0.498,
+     "rational": 0.64,
+     "simo": 0.387
+    },
+    "v1": {
+     "aqp": 1.512,
+     "epro": 0.969,
+     "rational": 1.051,
+     "simo": 1.198
+    },
+    "final_system": {
+     "aqp": 1.273,
+     "epro": 1.323,
+     "rational": 1.271,
+     "simo": 1.344
+    },
+    "haiku": {
+     "aqp": 1.928,
+     "epro": 2.086,
+     "rational": 2.376,
+     "simo": 2.481
+    }
+   },
+   "by_arm_dimension": {
+    "base": {
+     "assumptions_predictions": 0.917,
+     "causal_mechanism": 0.917,
+     "distinct_theories": 0.604,
+     "evidence_judgement": 0.146,
+     "experiment_design": 0.396,
+     "problem_framing": 1.0,
+     "recommendation": 0.083,
+     "revision": 0.222,
+     "seeking_challenge": 0.479
+    },
+    "v1": {
+     "assumptions_predictions": 1.646,
+     "causal_mechanism": 1.417,
+     "distinct_theories": 1.521,
+     "evidence_judgement": 0.875,
+     "experiment_design": 0.958,
+     "problem_framing": 1.542,
+     "recommendation": 0.583,
+     "revision": 0.972,
+     "seeking_challenge": 1.062
+    },
+    "final_system": {
+     "assumptions_predictions": 1.583,
+     "causal_mechanism": 1.396,
+     "distinct_theories": 1.688,
+     "evidence_judgement": 0.979,
+     "experiment_design": 1.083,
+     "problem_framing": 1.646,
+     "recommendation": 1.0,
+     "revision": 1.361,
+     "seeking_challenge": 1.021
+    },
+    "haiku": {
+     "assumptions_predictions": 2.6,
+     "causal_mechanism": 2.778,
+     "distinct_theories": 2.778,
+     "evidence_judgement": 1.533,
+     "experiment_design": 1.778,
+     "problem_framing": 2.556,
+     "recommendation": 1.956,
+     "revision": 1.788,
+     "seeking_challenge": 1.911
+    }
+   },
+   "difference": {
+    "arms": "haiku minus base",
+    "pairs": 45,
+    "cases": 16,
+    "unpaired_runs": 3,
+    "mean_and_95_interval": [
+     1.667,
+     1.472,
+     1.849
+    ],
+    "by_company": {
+     "aqp": 1.295,
+     "epro": 1.588,
+     "rational": 1.749,
+     "simo": 2.117
+    }
+   }
+  },
+  "codexsol": {
+   "by_arm": {
+    "base": {
+     "mean": 0.672,
+     "n": 48
+    },
+    "v1": {
+     "mean": 1.723,
+     "n": 48
+    },
+    "final_system": {
+     "mean": 1.94,
+     "n": 48
+    },
+    "haiku": {
+     "mean": 2.367,
+     "n": 48
+    }
+   },
+   "by_arm_company": {
+    "base": {
+     "aqp": 0.679,
+     "epro": 0.633,
+     "rational": 0.874,
+     "simo": 0.5
+    },
+    "v1": {
+     "aqp": 2.045,
+     "epro": 1.411,
+     "rational": 1.715,
+     "simo": 1.719
+    },
+    "final_system": {
+     "aqp": 1.941,
+     "epro": 1.87,
+     "rational": 2.049,
+     "simo": 1.9
+    },
+    "haiku": {
+     "aqp": 2.258,
+     "epro": 2.19,
+     "rational": 2.516,
+     "simo": 2.503
+    }
+   },
+   "by_arm_dimension": {
+    "base": {
+     "assumptions_predictions": 1.208,
+     "causal_mechanism": 1.146,
+     "distinct_theories": 0.833,
+     "evidence_judgement": 0.292,
+     "experiment_design": 0.396,
+     "problem_framing": 1.167,
+     "recommendation": 0.083,
+     "revision": 0.028,
+     "seeking_challenge": 0.708
+    },
+    "v1": {
+     "assumptions_predictions": 2.417,
+     "causal_mechanism": 2.5,
+     "distinct_theories": 2.562,
+     "evidence_judgement": 1.188,
+     "experiment_design": 1.042,
+     "problem_framing": 2.417,
+     "recommendation": 0.583,
+     "revision": 1.0,
+     "seeking_challenge": 1.604
+    },
+    "final_system": {
+     "assumptions_predictions": 2.417,
+     "causal_mechanism": 2.542,
+     "distinct_theories": 2.896,
+     "evidence_judgement": 1.312,
+     "experiment_design": 1.188,
+     "problem_framing": 2.458,
+     "recommendation": 1.125,
+     "revision": 1.722,
+     "seeking_challenge": 1.75
+    },
+    "haiku": {
+     "assumptions_predictions": 2.917,
+     "causal_mechanism": 2.875,
+     "distinct_theories": 2.938,
+     "evidence_judgement": 1.75,
+     "experiment_design": 1.604,
+     "problem_framing": 2.938,
+     "recommendation": 1.938,
+     "revision": 2.028,
+     "seeking_challenge": 2.208
+    }
+   },
+   "difference": {
+    "arms": "haiku minus base",
+    "pairs": 48,
+    "cases": 16,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     1.695,
+     1.548,
+     1.842
+    ],
+    "by_company": {
+     "aqp": 1.579,
+     "epro": 1.557,
+     "rational": 1.642,
+     "simo": 2.003
+    }
+   }
+  }
+ },
+ "missing": [
+  {
+   "judge": "claudecode",
+   "packet_id": "983df4fe5316b760",
+   "arm": "haiku",
+   "case": "rational-new-evidence-irrelevant",
+   "error": {
+    "type": "ValueError",
+    "message": "accepted trajectory carries a critical red flag"
+   }
+  },
+  {
+   "judge": "claudecode",
+   "packet_id": "d98f9650edbf2f9c",
+   "arm": "haiku",
+   "case": "simo-new-evidence-favours-learning",
+   "error": {
+    "type": "ValueError",
+    "message": "accepted trajectory carries a critical red flag"
+   }
+  },
+  {
+   "judge": "claudecode",
+   "packet_id": "4ed669bcb0c35d2f",
+   "arm": "haiku",
+   "case": "simo-new-evidence-undermines-learning",
+   "error": {
+    "type": "ValueError",
+    "message": "accepted trajectory carries a critical red flag"
+   }
+  }
+ ],
+ "agreement": {
+  "judges": [
+   "claudecode",
+   "codexsol"
+  ],
+  "episodes_scored_by_both": 189,
+  "spearman_episode_scores": 0.911,
+  "mean_absolute_difference": 0.386
+ },
+ "mean_of_judges": {
+  "by_arm": {
+   "base": 0.605,
+   "final_system": 1.621,
+   "haiku": 2.278,
+   "v1": 1.452
+  },
+  "difference": {
+   "arms": "haiku minus base",
+   "pairs": 45,
+   "cases": 16,
+   "unpaired_runs": 3,
+   "mean_and_95_interval": [
+    1.677,
+    1.511,
+    1.842
+   ],
+   "by_company": {
+    "aqp": 1.437,
+    "epro": 1.572,
+    "rational": 1.684,
+    "simo": 2.083
+   }
+  }
+ }
+}

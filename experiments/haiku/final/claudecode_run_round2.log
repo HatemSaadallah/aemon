@@ -1,0 +1,8 @@
+{"judge": "claudecode", "packet": "adc5e69acf5882c3", "valid": true}
+{"judge": "claudecode", "packet": "c3821ba450bf1b69", "valid": true}
+{"judge": "claudecode", "packet": "4ed669bcb0c35d2f", "valid": false}
+{"judge": "claudecode", "packet": "983df4fe5316b760", "valid": false}
+{"judge": "claudecode", "packet": "d98f9650edbf2f9c", "valid": false}
+{"judge": "claudecode", "packet": "556f6dd917583124", "valid": false}
+{"judge": "claudecode", "packet": "61b3b70f8cbe8168", "valid": false}
+{"predictions": "/home/USER/lexsi-backup/judge_results/haiku_final/claudecode/predictions.jsonl", "diagnostic_only": false}

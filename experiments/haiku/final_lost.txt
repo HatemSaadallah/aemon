@@ -1,0 +1,10 @@
+aqp-base 2
+simo-new-evidence-irrelevant 1
+rational-base 1
+rational-base 2
+rational-new-evidence-irrelevant 1
+aqp-new-evidence-undermines-maintenance 2
+simo-new-evidence-undermines-learning 0
+simo-new-evidence-favours-learning 1
+rational-new-evidence-favours-installation 0
+rational-new-evidence-favours-installation 1

@@ -1,0 +1,45 @@
+{
+ "summary": {
+  "episodes": 0,
+  "finished": 0,
+  "end_to_end_success": 0,
+  "stop_reasons": {},
+  "furthest_stage": {},
+  "checks": {},
+  "rejections": {},
+  "shock_coverage": {
+   "cases": 0,
+   "delivered": 0,
+   "read": 0,
+   "held_affected_theory": 0,
+   "addressed_an_affected_theory": 0,
+   "bore_on_favoured": 0,
+   "cited_in_revision": 0,
+   "favoured_changed": 0
+  },
+  "supporting_evidence_attempted": 0,
+  "rejected_finishes": 0,
+  "harness_actions": 0,
+  "refused_calls": 0,
+  "recovered_after_refusal": 0,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 0,
+   "completion_tokens": 0,
+   "seconds": 0,
+   "usd": 0
+  },
+  "mean_calls": 0.0
+ },
+ "auditkit": {
+  "cases": 0,
+  "replay_mismatches": 0,
+  "guards_cleared": 0,
+  "guards_not_cleared": 0,
+  "other": 0,
+  "known_tool_names": null,
+  "redundant_tool_calls": null,
+  "no_looping": null
+ }
+}
+1 episodes failed in the harness, and the server refused []

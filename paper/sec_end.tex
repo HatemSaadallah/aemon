@@ -57,8 +57,9 @@ None of these features is part of the evaluated setup; the reported results appl
   \item \textbf{Comparators.} The comparison is with the same base model under its best prompt, which reads the full
         transcript: 25 of its 48 runs stop at the context limit, and a stage never reached scores 0. Comparing each pair
         only on the dimensions both runs were scored on gives $+0.92$ [0.83, 1.01] (test set 2: $+0.90$ [0.81, 0.99]), so
-        the base model is weaker even on the stages it reaches (\texttt{reports/judge/robustness.json}). Neither the teacher nor
-        a closed model was run on the final test for quality; Claude appears only in the cost comparison.
+        the base model is weaker even on the stages it reaches (\texttt{reports/judge/robustness.json}). The teacher was not run
+        on the test sets for quality. Claude Haiku 5.5 was, after the frozen results, and scores higher than the final
+        system ($-0.67$ and $-0.63$) at lower cost.
   \item \textbf{Beliefs and confidence.} Beliefs are the agent's own verbal scale, not calibrated probabilities, and the
         belief check tests direction only.
   \item \textbf{Sources and outcomes.} The dossier is fixed and curated, with short excerpts; what-if results are
@@ -83,7 +84,7 @@ None of these features is part of the evaluated setup; the reported results appl
 A small open model can learn a meaningful part of a disciplined strategy procedure from a larger model's tool-using
 investigations, provided the environment makes the procedure executable and the data are filtered for exactness. On a
 frozen test it framed problems better, built genuinely distinct causal theories, gathered and weighed quoted evidence and
-finished far more investigations than its base model, at a fraction of the cost of a closed model. It did not learn what
+finished far more investigations than its base model. A closed small model (Claude Haiku 5.5) still does better, and for less. It did not learn what
 its teacher rarely showed it: declining a test that is not worth its cost, responding to directional new evidence, and
 writing complete decision rules, and it inherited the teacher's habits of unsupported numbers and loose evidence
 labels. Neither runtime aids nor corrective examples from the same teacher repaired these, which places the remaining

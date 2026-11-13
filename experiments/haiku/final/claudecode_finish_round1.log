@@ -1,0 +1,5 @@
+{"judge": "claudecode", "packet": "983df4fe5316b760", "valid": false}
+{"judge": "claudecode", "packet": "556f6dd917583124", "valid": true}
+{"judge": "claudecode", "packet": "d98f9650edbf2f9c", "valid": false}
+{"judge": "claudecode", "packet": "4ed669bcb0c35d2f", "valid": false}
+{"predictions": "/home/USER/lexsi-backup/judge_results/haiku_final/claudecode/predictions.jsonl", "diagnostic_only": false}

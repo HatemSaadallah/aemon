@@ -1931,3 +1931,55 @@ the first test (base 242); 7.5% of calls refused (base 28.8%).
 attempt 2: fifteen sources weighed, each with what its quote does not show; recommends a test before committing;
 mean of judges 1.83). The three version 1 showcase runs weigh two sources each, and two of them mislabel a company's
 claim or a blog post as an independent study.
+
+## 2026-11-13: a closed-model baseline, Claude Haiku 5.5 (registered before any run)
+
+Hatem asked for a Haiku baseline; two outside reviews had asked for one. Claude Haiku 5.5 (`claude-haiku-5-5`) is the
+cheapest current closed model and the one our cost table says would undercut self-hosting, so its quality is the
+missing comparison. It is a baseline only: **its outputs are never training data** (provider terms; the provenance
+manifest marks every Claude episode as a control).
+
+**Setup, fixed before the run.** Both test sets, every case, 3 attempts (48 and 72 runs). The base model's
+best-prompt setup: prompt `staged` (the full transcript; Haiku's context is 1M, so it never reaches the context limit
+the base model hits), the same environment, tools, stage controller and limits (45 turns, 4 refusals in a row).
+Anthropic API, `--backend claude --claude-model claude-haiku-5-5`, effort `medium` (the model's default), adaptive
+thinking (the model's default), no seed or temperature, so runs do not repeat exactly. One development case first as
+a smoke test, which selects nothing. Spending cap: $10 for the whole baseline, on the Claude ledger.
+
+**Judging.** Blind, by the same two judges and instrument as every other comparison (Claude Code and Codex on
+`gpt-6-sol`), with the base model, version 1 and the final system in the same packet set; judgments of packets already
+judged are reused. A Claude judge scoring a Claude model may favour it; both judges are reported separately.
+
+**Reported whatever it shows:** the final system minus Haiku, version 1 minus Haiku, and Haiku minus the base model
+(mean of judges, case-cluster bootstrap), finished runs, calls per finished investigation, refused calls, and cost per
+investigation. No decision about the final system depends on it.
+
+### Result (14:20): Claude Haiku 5.5 does better than the final system, for less
+
+Runs: `experiments/haiku/` (`run.sh`; the merged reports `final_merged.json` and `test2_merged.json`). Anthropic
+returned HTTP 500 after the SDK's retries on 29 of the 120 episodes (10 and 19); each was rerun until it completed
+(`rerun.sh`; three needed a second or third try), which is the API's fault, not the model's. A reply cut off at the
+output limit while thinking left an empty text block that the API refuses in the history; the backend now drops it
+(found on the development smoke run, fixed before the test runs). Total Haiku spend $1.06 (ledger total $47.37 of the
+$60 cap).
+
+Judging (`judge.sh`, `finish.sh`): base, version 1 and the final system reused their judgments; the 120 Haiku packets
+were judged by both judges. The Claude Code judge's answer for 5 Haiku runs (3 and 2) kept failing the instrument's
+validity check (a critical red flag on a run the environment accepted), so those runs have no mean of judges and are
+left out of the pairs. The 15-minute pause between judging rounds, inherited from the cluster scripts, was dropped:
+these failures are not rate limits.
+
+| | Base | Version 1 | Final system | Haiku 5.5 | Final system minus Haiku | Haiku minus base |
+|---|---|---|---|---|---|---|
+| Final test, mean of judges | 0.61 | 1.45 | 1.62 | 2.28 | −0.67 [−0.79, −0.52] (45 pairs) | +1.68 [1.51, 1.84] |
+| Test set 2, mean of judges | 0.56 | 1.07 | 1.67 | 2.30 | −0.63 [−0.75, −0.52] (70 pairs) | +1.75 [1.65, 1.85] |
+
+- Per judge, final system minus Haiku: Claude Code −0.90 and −0.86, Codex −0.43 and −0.42. Lower at every company (4 of
+  4, 12 of 12) and on all nine dimensions; largest on the recommendation (1.06 against 1.95, final test) and the causal
+  mechanism (1.97 against 2.83).
+- Haiku runs: finished 44 of 48 and 63 of 72; 22.2 and 20.8 calls per run; 24 per finished investigation; 13.9% and
+  12.1% of calls refused; $0.0085 and $0.0083 per investigation; 71 and 77 seconds.
+- **Consequence for the write-up.** The claim that self-hosting is cheaper than a closed model held against Opus, not
+  against Haiku, which costs a quarter as much per investigation and scores higher. The README, model card and paper
+  now say so; the case for aemon is a small open model that runs offline with the case data kept local, and the
+  measured gain of fine-tuning over its own base model.

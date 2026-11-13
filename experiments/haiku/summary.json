@@ -1,0 +1,446 @@
+{
+  "final": {
+    "haiku_runs": {
+      "runs": 48,
+      "finished": 44,
+      "calls_per_run": 22.2,
+      "calls_per_finished": 24,
+      "refused_share": 0.139,
+      "usd_per_investigation": 0.0085,
+      "seconds_per_investigation": 71
+    },
+    "comparisons": {
+      "final_system_vs_haiku": {
+        "by_arm": {
+          "base": 0.605,
+          "final_system": 1.621,
+          "haiku": 2.278,
+          "v1": 1.452
+        },
+        "difference": {
+          "arms": "final_system minus haiku",
+          "pairs": 45,
+          "cases": 16,
+          "unpaired_runs": 3,
+          "mean_and_95_interval": [
+            -0.665,
+            -0.785,
+            -0.518
+          ],
+          "by_company": {
+            "aqp": -0.486,
+            "epro": -0.541,
+            "rational": -0.79,
+            "simo": -0.89
+          }
+        },
+        "per_judge": {
+          "claudecode": [
+            -0.904,
+            -1.057,
+            -0.728
+          ],
+          "codexsol": [
+            -0.427,
+            -0.522,
+            -0.31
+          ]
+        },
+        "missing_judgments": 3,
+        "agreement": {
+          "judges": [
+            "claudecode",
+            "codexsol"
+          ],
+          "episodes_scored_by_both": 189,
+          "spearman_episode_scores": 0.911,
+          "mean_absolute_difference": 0.386
+        }
+      },
+      "v1_vs_haiku": {
+        "by_arm": {
+          "base": 0.605,
+          "final_system": 1.621,
+          "haiku": 2.278,
+          "v1": 1.452
+        },
+        "difference": {
+          "arms": "v1 minus haiku",
+          "pairs": 45,
+          "cases": 16,
+          "unpaired_runs": 3,
+          "mean_and_95_interval": [
+            -0.816,
+            -1.035,
+            -0.594
+          ],
+          "by_company": {
+            "aqp": -0.315,
+            "epro": -0.948,
+            "rational": -1.042,
+            "simo": -1.009
+          }
+        },
+        "per_judge": {
+          "claudecode": [
+            -1.013,
+            -1.255,
+            -0.757
+          ],
+          "codexsol": [
+            -0.644,
+            -0.831,
+            -0.455
+          ]
+        },
+        "missing_judgments": 3,
+        "agreement": {
+          "judges": [
+            "claudecode",
+            "codexsol"
+          ],
+          "episodes_scored_by_both": 189,
+          "spearman_episode_scores": 0.911,
+          "mean_absolute_difference": 0.386
+        }
+      },
+      "haiku_vs_base": {
+        "by_arm": {
+          "base": 0.605,
+          "final_system": 1.621,
+          "haiku": 2.278,
+          "v1": 1.452
+        },
+        "difference": {
+          "arms": "haiku minus base",
+          "pairs": 45,
+          "cases": 16,
+          "unpaired_runs": 3,
+          "mean_and_95_interval": [
+            1.677,
+            1.511,
+            1.842
+          ],
+          "by_company": {
+            "aqp": 1.437,
+            "epro": 1.572,
+            "rational": 1.684,
+            "simo": 2.083
+          }
+        },
+        "per_judge": {
+          "claudecode": [
+            1.667,
+            1.472,
+            1.849
+          ],
+          "codexsol": [
+            1.695,
+            1.548,
+            1.842
+          ]
+        },
+        "missing_judgments": 3,
+        "agreement": {
+          "judges": [
+            "claudecode",
+            "codexsol"
+          ],
+          "episodes_scored_by_both": 189,
+          "spearman_episode_scores": 0.911,
+          "mean_absolute_difference": 0.386
+        }
+      }
+    },
+    "dimensions": {
+      "problem_framing": {
+        "base": 1.08,
+        "v1": 1.98,
+        "final_system": 2.05,
+        "haiku": 2.75
+      },
+      "causal_mechanism": {
+        "base": 1.03,
+        "v1": 1.96,
+        "final_system": 1.97,
+        "haiku": 2.83
+      },
+      "distinct_theories": {
+        "base": 0.72,
+        "v1": 2.04,
+        "final_system": 2.29,
+        "haiku": 2.86
+      },
+      "assumptions_predictions": {
+        "base": 1.06,
+        "v1": 2.03,
+        "final_system": 2,
+        "haiku": 2.76
+      },
+      "evidence_judgement": {
+        "base": 0.22,
+        "v1": 1.03,
+        "final_system": 1.15,
+        "haiku": 1.65
+      },
+      "seeking_challenge": {
+        "base": 0.59,
+        "v1": 1.33,
+        "final_system": 1.39,
+        "haiku": 2.06
+      },
+      "experiment_design": {
+        "base": 0.4,
+        "v1": 1,
+        "final_system": 1.14,
+        "haiku": 1.69
+      },
+      "revision": {
+        "base": 0.09,
+        "v1": 0.74,
+        "final_system": 1.16,
+        "haiku": 1.42
+      },
+      "recommendation": {
+        "base": 0.08,
+        "v1": 0.58,
+        "final_system": 1.06,
+        "haiku": 1.95
+      }
+    }
+  },
+  "test2": {
+    "haiku_runs": {
+      "runs": 72,
+      "finished": 63,
+      "calls_per_run": 20.8,
+      "calls_per_finished": 24,
+      "refused_share": 0.121,
+      "usd_per_investigation": 0.0083,
+      "seconds_per_investigation": 77
+    },
+    "comparisons": {
+      "final_system_vs_haiku": {
+        "by_arm": {
+          "base": 0.556,
+          "final_system": 1.667,
+          "haiku": 2.3,
+          "v1": 1.065
+        },
+        "difference": {
+          "arms": "final_system minus haiku",
+          "pairs": 70,
+          "cases": 24,
+          "unpaired_runs": 2,
+          "mean_and_95_interval": [
+            -0.632,
+            -0.747,
+            -0.522
+          ],
+          "by_company": {
+            "ansell": -0.605,
+            "belimo": -0.655,
+            "draeger": -0.546,
+            "frankecoffee": -0.625,
+            "hach": -0.9,
+            "hoshizaki": -0.642,
+            "kingspan": -0.765,
+            "laerdal": -0.438,
+            "mettler": -0.642,
+            "tennant": -0.394,
+            "testo": -1.065,
+            "winterhalter": -0.308
+          }
+        },
+        "per_judge": {
+          "claudecode": [
+            -0.857,
+            -0.943,
+            -0.772
+          ],
+          "codexsol": [
+            -0.422,
+            -0.575,
+            -0.281
+          ]
+        },
+        "missing_judgments": 2,
+        "agreement": {
+          "judges": [
+            "claudecode",
+            "codexsol"
+          ],
+          "episodes_scored_by_both": 286,
+          "spearman_episode_scores": 0.938,
+          "mean_absolute_difference": 0.36
+        }
+      },
+      "v1_vs_haiku": {
+        "by_arm": {
+          "base": 0.556,
+          "final_system": 1.667,
+          "haiku": 2.3,
+          "v1": 1.065
+        },
+        "difference": {
+          "arms": "v1 minus haiku",
+          "pairs": 70,
+          "cases": 24,
+          "unpaired_runs": 2,
+          "mean_and_95_interval": [
+            -1.235,
+            -1.417,
+            -1.053
+          ],
+          "by_company": {
+            "ansell": -1.225,
+            "belimo": -1.463,
+            "draeger": -1.409,
+            "frankecoffee": -1.823,
+            "hach": -1.352,
+            "hoshizaki": -1.947,
+            "kingspan": -0.92,
+            "laerdal": -0.971,
+            "mettler": -0.729,
+            "tennant": -0.601,
+            "testo": -1.323,
+            "winterhalter": -1.093
+          }
+        },
+        "per_judge": {
+          "claudecode": [
+            -1.332,
+            -1.49,
+            -1.177
+          ],
+          "codexsol": [
+            -1.153,
+            -1.368,
+            -0.935
+          ]
+        },
+        "missing_judgments": 2,
+        "agreement": {
+          "judges": [
+            "claudecode",
+            "codexsol"
+          ],
+          "episodes_scored_by_both": 286,
+          "spearman_episode_scores": 0.938,
+          "mean_absolute_difference": 0.36
+        }
+      },
+      "haiku_vs_base": {
+        "by_arm": {
+          "base": 0.556,
+          "final_system": 1.667,
+          "haiku": 2.3,
+          "v1": 1.065
+        },
+        "difference": {
+          "arms": "haiku minus base",
+          "pairs": 70,
+          "cases": 24,
+          "unpaired_runs": 2,
+          "mean_and_95_interval": [
+            1.749,
+            1.645,
+            1.852
+          ],
+          "by_company": {
+            "ansell": 1.845,
+            "belimo": 1.83,
+            "draeger": 1.601,
+            "frankecoffee": 1.731,
+            "hach": 1.86,
+            "hoshizaki": 1.896,
+            "kingspan": 1.987,
+            "laerdal": 1.579,
+            "mettler": 1.815,
+            "tennant": 1.663,
+            "testo": 1.655,
+            "winterhalter": 1.557
+          }
+        },
+        "per_judge": {
+          "claudecode": [
+            1.725,
+            1.629,
+            1.823
+          ],
+          "codexsol": [
+            1.782,
+            1.664,
+            1.89
+          ]
+        },
+        "missing_judgments": 2,
+        "agreement": {
+          "judges": [
+            "claudecode",
+            "codexsol"
+          ],
+          "episodes_scored_by_both": 286,
+          "spearman_episode_scores": 0.938,
+          "mean_absolute_difference": 0.36
+        }
+      }
+    },
+    "dimensions": {
+      "problem_framing": {
+        "base": 1.03,
+        "v1": 2.12,
+        "final_system": 2.31,
+        "haiku": 2.82
+      },
+      "causal_mechanism": {
+        "base": 0.87,
+        "v1": 1.38,
+        "final_system": 2.15,
+        "haiku": 2.8
+      },
+      "distinct_theories": {
+        "base": 0.54,
+        "v1": 1.15,
+        "final_system": 1.83,
+        "haiku": 2.81
+      },
+      "assumptions_predictions": {
+        "base": 1.05,
+        "v1": 1.47,
+        "final_system": 2.25,
+        "haiku": 2.77
+      },
+      "evidence_judgement": {
+        "base": 0.34,
+        "v1": 0.5,
+        "final_system": 1,
+        "haiku": 1.58
+      },
+      "seeking_challenge": {
+        "base": 0.61,
+        "v1": 0.94,
+        "final_system": 1.43,
+        "haiku": 2.13
+      },
+      "experiment_design": {
+        "base": 0.22,
+        "v1": 0.56,
+        "final_system": 1.14,
+        "haiku": 1.7
+      },
+      "revision": {
+        "base": 0.01,
+        "v1": 0.53,
+        "final_system": 1.04,
+        "haiku": 1.25
+      },
+      "recommendation": {
+        "base": 0.03,
+        "v1": 0.44,
+        "final_system": 1.02,
+        "haiku": 1.82
+      }
+    }
+  }
+}

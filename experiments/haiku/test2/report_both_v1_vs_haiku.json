@@ -1,0 +1,373 @@
+{
+ "runs": 288,
+ "arms": [
+  "base",
+  "final_system",
+  "haiku",
+  "v1"
+ ],
+ "judges": {
+  "claudecode": {
+   "by_arm": {
+    "base": {
+     "mean": 0.484,
+     "n": 72
+    },
+    "v1": {
+     "mean": 0.872,
+     "n": 72
+    },
+    "final_system": {
+     "mean": 1.345,
+     "n": 72
+    },
+    "haiku": {
+     "mean": 2.205,
+     "n": 70
+    }
+   },
+   "by_arm_company": {
+    "base": {
+     "ansell": 0.465,
+     "belimo": 0.451,
+     "draeger": 0.574,
+     "frankecoffee": 0.648,
+     "hach": 0.47,
+     "hoshizaki": 0.472,
+     "kingspan": 0.356,
+     "laerdal": 0.648,
+     "mettler": 0.47,
+     "tennant": 0.306,
+     "testo": 0.535,
+     "winterhalter": 0.414
+    },
+    "v1": {
+     "ansell": 0.868,
+     "belimo": 0.762,
+     "draeger": 0.769,
+     "frankecoffee": 0.463,
+     "hach": 0.919,
+     "hoshizaki": 0.299,
+     "kingspan": 1.236,
+     "laerdal": 0.984,
+     "mettler": 1.389,
+     "tennant": 1.116,
+     "testo": 0.875,
+     "winterhalter": 0.792
+    },
+    "final_system": {
+     "ansell": 1.368,
+     "belimo": 1.468,
+     "draeger": 1.47,
+     "frankecoffee": 1.444,
+     "hach": 1.292,
+     "hoshizaki": 1.326,
+     "kingspan": 1.331,
+     "laerdal": 1.447,
+     "mettler": 1.417,
+     "tennant": 1.236,
+     "testo": 1.002,
+     "winterhalter": 1.345
+    },
+    "haiku": {
+     "ansell": 2.227,
+     "belimo": 2.271,
+     "draeger": 2.271,
+     "frankecoffee": 2.252,
+     "hach": 2.289,
+     "hoshizaki": 2.322,
+     "kingspan": 2.356,
+     "laerdal": 2.139,
+     "mettler": 2.269,
+     "tennant": 1.986,
+     "testo": 2.104,
+     "winterhalter": 2.0
+    }
+   },
+   "by_arm_dimension": {
+    "base": {
+     "assumptions_predictions": 0.847,
+     "causal_mechanism": 0.75,
+     "distinct_theories": 0.431,
+     "evidence_judgement": 0.306,
+     "experiment_design": 0.222,
+     "problem_framing": 1.042,
+     "recommendation": 0.028,
+     "revision": 0.056,
+     "seeking_challenge": 0.444
+    },
+    "v1": {
+     "assumptions_predictions": 1.139,
+     "causal_mechanism": 1.042,
+     "distinct_theories": 0.944,
+     "evidence_judgement": 0.431,
+     "experiment_design": 0.514,
+     "problem_framing": 1.819,
+     "recommendation": 0.444,
+     "revision": 1.0,
+     "seeking_challenge": 0.611
+    },
+    "final_system": {
+     "assumptions_predictions": 1.806,
+     "causal_mechanism": 1.639,
+     "distinct_theories": 1.375,
+     "evidence_judgement": 0.819,
+     "experiment_design": 1.069,
+     "problem_framing": 1.806,
+     "recommendation": 1.0,
+     "revision": 1.833,
+     "seeking_challenge": 1.014
+    },
+    "haiku": {
+     "assumptions_predictions": 2.643,
+     "causal_mechanism": 2.7,
+     "distinct_theories": 2.729,
+     "evidence_judgement": 1.4,
+     "experiment_design": 1.814,
+     "problem_framing": 2.757,
+     "recommendation": 1.714,
+     "revision": 2.25,
+     "seeking_challenge": 1.886
+    }
+   },
+   "difference": {
+    "arms": "v1 minus haiku",
+    "pairs": 70,
+    "cases": 24,
+    "unpaired_runs": 2,
+    "mean_and_95_interval": [
+     -1.332,
+     -1.49,
+     -1.177
+    ],
+    "by_company": {
+     "ansell": -1.359,
+     "belimo": -1.509,
+     "draeger": -1.502,
+     "frankecoffee": -1.789,
+     "hach": -1.37,
+     "hoshizaki": -2.014,
+     "kingspan": -1.12,
+     "laerdal": -1.155,
+     "mettler": -0.903,
+     "tennant": -0.87,
+     "testo": -1.229,
+     "winterhalter": -1.208
+    }
+   }
+  },
+  "codexsol": {
+   "by_arm": {
+    "base": {
+     "mean": 0.628,
+     "n": 72
+    },
+    "v1": {
+     "mean": 1.258,
+     "n": 72
+    },
+    "final_system": {
+     "mean": 1.989,
+     "n": 72
+    },
+    "haiku": {
+     "mean": 2.411,
+     "n": 72
+    }
+   },
+   "by_arm_company": {
+    "base": {
+     "ansell": 0.583,
+     "belimo": 0.611,
+     "draeger": 0.854,
+     "frankecoffee": 0.671,
+     "hach": 0.667,
+     "hoshizaki": 0.613,
+     "kingspan": 0.477,
+     "laerdal": 0.708,
+     "mettler": 0.692,
+     "tennant": 0.444,
+     "testo": 0.708,
+     "winterhalter": 0.512
+    },
+    "v1": {
+     "ansell": 1.421,
+     "belimo": 1.035,
+     "draeger": 1.044,
+     "frankecoffee": 0.674,
+     "hach": 1.234,
+     "hoshizaki": 0.535,
+     "kingspan": 1.731,
+     "laerdal": 1.588,
+     "mettler": 1.979,
+     "tennant": 1.759,
+     "testo": 1.032,
+     "winterhalter": 1.062
+    },
+    "final_system": {
+     "ansell": 2.16,
+     "belimo": 1.944,
+     "draeger": 2.067,
+     "frankecoffee": 2.088,
+     "hach": 1.764,
+     "hoshizaki": 2.037,
+     "kingspan": 1.947,
+     "laerdal": 2.192,
+     "mettler": 2.118,
+     "tennant": 2.053,
+     "testo": 1.421,
+     "winterhalter": 2.079
+    },
+    "haiku": {
+     "ansell": 2.512,
+     "belimo": 2.451,
+     "draeger": 2.359,
+     "frankecoffee": 2.53,
+     "hach": 2.567,
+     "hoshizaki": 2.519,
+     "kingspan": 2.451,
+     "laerdal": 2.375,
+     "mettler": 2.588,
+     "tennant": 2.09,
+     "testo": 2.449,
+     "winterhalter": 2.039
+    }
+   },
+   "by_arm_dimension": {
+    "base": {
+     "assumptions_predictions": 1.25,
+     "causal_mechanism": 0.986,
+     "distinct_theories": 0.653,
+     "evidence_judgement": 0.375,
+     "experiment_design": 0.222,
+     "problem_framing": 1.014,
+     "recommendation": 0.028,
+     "revision": 0.0,
+     "seeking_challenge": 0.778
+    },
+    "v1": {
+     "assumptions_predictions": 1.792,
+     "causal_mechanism": 1.708,
+     "distinct_theories": 1.347,
+     "evidence_judgement": 0.569,
+     "experiment_design": 0.611,
+     "problem_framing": 2.417,
+     "recommendation": 0.444,
+     "revision": 1.139,
+     "seeking_challenge": 1.278
+    },
+    "final_system": {
+     "assumptions_predictions": 2.694,
+     "causal_mechanism": 2.667,
+     "distinct_theories": 2.278,
+     "evidence_judgement": 1.181,
+     "experiment_design": 1.208,
+     "problem_framing": 2.806,
+     "recommendation": 1.042,
+     "revision": 2.333,
+     "seeking_challenge": 1.847
+    },
+    "haiku": {
+     "assumptions_predictions": 2.889,
+     "causal_mechanism": 2.889,
+     "distinct_theories": 2.889,
+     "evidence_judgement": 1.75,
+     "experiment_design": 1.597,
+     "problem_framing": 2.889,
+     "recommendation": 1.917,
+     "revision": 2.667,
+     "seeking_challenge": 2.361
+    }
+   },
+   "difference": {
+    "arms": "v1 minus haiku",
+    "pairs": 72,
+    "cases": 24,
+    "unpaired_runs": 0,
+    "mean_and_95_interval": [
+     -1.153,
+     -1.368,
+     -0.935
+    ],
+    "by_company": {
+     "ansell": -1.09,
+     "belimo": -1.417,
+     "draeger": -1.315,
+     "frankecoffee": -1.856,
+     "hach": -1.333,
+     "hoshizaki": -1.984,
+     "kingspan": -0.72,
+     "laerdal": -0.787,
+     "mettler": -0.609,
+     "tennant": -0.331,
+     "testo": -1.417,
+     "winterhalter": -0.977
+    }
+   }
+  }
+ },
+ "missing": [
+  {
+   "judge": "claudecode",
+   "packet_id": "717117661a305cbb",
+   "arm": "haiku",
+   "case": "hoshizaki-base",
+   "error": {
+    "type": "ValueError",
+    "message": "accepted trajectory carries a critical red flag"
+   }
+  },
+  {
+   "judge": "claudecode",
+   "packet_id": "79e1cb025cc3475a",
+   "arm": "haiku",
+   "case": "mettler-base",
+   "error": {
+    "type": "ValueError",
+    "message": "accepted trajectory carries a critical red flag"
+   }
+  }
+ ],
+ "agreement": {
+  "judges": [
+   "claudecode",
+   "codexsol"
+  ],
+  "episodes_scored_by_both": 286,
+  "spearman_episode_scores": 0.938,
+  "mean_absolute_difference": 0.36
+ },
+ "mean_of_judges": {
+  "by_arm": {
+   "base": 0.556,
+   "final_system": 1.667,
+   "haiku": 2.3,
+   "v1": 1.065
+  },
+  "difference": {
+   "arms": "v1 minus haiku",
+   "pairs": 70,
+   "cases": 24,
+   "unpaired_runs": 2,
+   "mean_and_95_interval": [
+    -1.235,
+    -1.417,
+    -1.053
+   ],
+   "by_company": {
+    "ansell": -1.225,
+    "belimo": -1.463,
+    "draeger": -1.409,
+    "frankecoffee": -1.823,
+    "hach": -1.352,
+    "hoshizaki": -1.947,
+    "kingspan": -0.92,
+    "laerdal": -0.971,
+    "mettler": -0.729,
+    "tennant": -0.601,
+    "testo": -1.323,
+    "winterhalter": -1.093
+   }
+  }
+ }
+}

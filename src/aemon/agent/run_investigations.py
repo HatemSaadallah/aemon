@@ -21,6 +21,7 @@ from typing import TYPE_CHECKING
 from aemon.agent.adapter_routing import loaded_adapters, lora_route
 from aemon.agent.backends.claude_control import MODEL as CLAUDE_MODEL
 from aemon.agent.backends.claude_control import Claude
+from aemon.common.constants.claude import PRICES
 from aemon.agent.backends.llama_client import chat
 from aemon.agent.loop import play
 from aemon.agent.records import model_of, protocol_of, record_of, server_props, suite_of, summary
@@ -62,6 +63,7 @@ def main() -> None:
     parser.add_argument('--server-settings', help='JSON of how the server was started, such as {"reasoning_budget": 512}; recorded in every manifest entry')
     parser.add_argument('--lora-route', help="stage to adapter id, such as 'default=0,test=1', for adapters loaded on the server; 'stuck=ID' (with 'stuck_after=N', default 2) hands a turn to another adapter after N refusals in a row")
     parser.add_argument('--effort', default='medium', help='claude backend only')
+    parser.add_argument('--claude-model', default=CLAUDE_MODEL, choices=sorted(PRICES), help='claude backend only: the control model, or Haiku as a closed-model baseline')
     parser.add_argument('--run-cap-usd', type=float, default=5.0, help='claude backend only')
     args = parser.parse_args()
     recovery_features = tuple(f for f in args.recovery.split(',') if f)
@@ -73,8 +75,8 @@ def main() -> None:
     if recovery_features and args.split != 'development' and not (args.split in ('heldout', 'heldout2') and set(recovery_features) <= adopted):
         parser.error('recovery features are experimental: development only, except the adopted loop guards on test set 2 and the final test')
     if args.backend == 'claude':
-        respond = Claude(f'control {args.prompt}', args.run_cap_usd, args.effort)
-        model, runtime = CLAUDE_MODEL, f'Anthropic API, effort {args.effort}, no seed or temperature, so runs do not repeat exactly'
+        respond = Claude(f'control {args.prompt} {args.claude_model}', args.run_cap_usd, args.effort, model=args.claude_model)
+        model, runtime = args.claude_model, f'Anthropic API, effort {args.effort}, no seed or temperature, so runs do not repeat exactly'
         model_id = model_of('claude', model)
     else:
         respond = lambda messages, seed, max_tokens, schema, temperature, lora=None: chat(args.url, messages, seed, max_tokens, schema, temperature, lora=lora)  # noqa: E731

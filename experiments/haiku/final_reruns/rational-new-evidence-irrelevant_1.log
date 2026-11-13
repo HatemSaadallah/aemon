@@ -1,0 +1,156 @@
+{"case": "rational-new-evidence-irrelevant", "attempt": 1, "stop": "finished", "turns": 27, "passed": 14, "failed": ["evidence_kinds", "experiment"]}
+{
+ "summary": {
+  "episodes": 1,
+  "finished": 1,
+  "end_to_end_success": 0,
+  "stop_reasons": {
+   "finished": 1
+  },
+  "furthest_stage": {
+   "finish": 1
+  },
+  "checks": {
+   "finished": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "framing": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "theories": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "causal_form": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "testable_predictions": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_use": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_classes": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_kinds": {
+    "passed": 0,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_limits": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "disconfirmation": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "experiment": {
+    "passed": 0,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "revision": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "existing_offering": {
+    "passed": 0,
+    "reached": 0,
+    "applied": 0,
+    "of_all": 1
+   },
+   "no_invented_numbers": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "simulated_not_used": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "recommendation": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "tool_use": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   }
+  },
+  "rejections": {
+   "arguments": 1,
+   "unread_evidence": 1,
+   "stage": 2
+  },
+  "shock_coverage": {
+   "cases": 1,
+   "delivered": 1,
+   "read": 1,
+   "held_affected_theory": 0,
+   "addressed_an_affected_theory": 0,
+   "bore_on_favoured": 0,
+   "cited_in_revision": 1,
+   "favoured_changed": 0
+  },
+  "supporting_evidence_attempted": 1,
+  "rejected_finishes": 2,
+  "harness_actions": 0,
+  "refused_calls": 4,
+  "recovered_after_refusal": 2,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 108,
+   "completion_tokens": 10751,
+   "seconds": 66.835,
+   "usd": 0.009
+  },
+  "mean_calls": 25.0
+ },
+ "auditkit": {
+  "cases": 1,
+  "replay_mismatches": 0,
+  "guards_cleared": 0,
+  "guards_not_cleared": 1,
+  "other": 0,
+  "known_tool_names": 1.0,
+  "redundant_tool_calls": 0.04,
+  "no_looping": 0.0
+ }
+}

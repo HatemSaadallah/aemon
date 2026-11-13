@@ -16,7 +16,9 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 > company. A second frozen test on twelve more companies gave **+0.52 [0.33, 0.70]**. These are version 1's
 > run-once results. The final system, built after both tests by adding a second adapter and decoding-time guards,
 > scores **+1.02** over the base model on the first test's cases and **+1.11** on the second's, and finishes **46 of
-> 48** and **65 of 72** investigations (the base model 4 and 2).
+> 48** and **65 of 72** investigations (the base model 4 and 2). Claude Haiku 5.5, a closed model run through the same
+> environment, scores higher still (**2.28** against the final system's 1.62) at a quarter of the cost; what aemon offers
+> instead is a small open model that runs offline, with the case data kept on the machine.
 
 | | |
 |---|---|
@@ -32,7 +34,7 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 
 | **+0.83** | **+0.52** | **$0.03** |
 |:---:|:---:|:---:|
-| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | per investigation, self-hosted on one A100 slice: about 8 times less than the closed model we measured, 26× faster than its teacher |
+| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | per investigation, self-hosted on one A100 slice, with the case data kept on the machine; 26× faster than its teacher |
 
 **Final system, built after both tests and measured on the same cases**
 
@@ -76,8 +78,12 @@ runs (`reports/judge/*/paired_counts.json`, mean of two judges).
   gets much further: per finished investigation it needs **61 calls against 242**, and the share of refused calls
   halves (14% against 29%). The final system, with decoding-time guards, finishes **46 of 48** runs on the first test
   with **39 calls** each (65 of 72 on the second test), and refused calls fall to **7.5%**.
-- **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, roughly 8 times less than the
-  closed model we measured, and 26 times faster than its teacher per GPU.
+- **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, 8 times less than the Claude Opus
+  run we measured and 26 times faster than its teacher per GPU.
+- **Against a closed model.** Claude Haiku 5.5, run through the same environment, scores higher than the final system
+  (2.28 against 1.62 on the first test, 2.30 against 1.67 on the second) and costs less ($0.009 per investigation
+  through the API). What a small open model offers instead: it runs offline on one GPU or a laptop, the case data never
+  leaves the machine, and the weights can be audited and changed.
 - **It learns the procedure; judgement is the next step.** The largest gains are in framing the decision and stating
   distinct causal theories. The recommendation is where the judges score it lowest, and the audit of its teacher shows
   why: a student inherits its teacher's habits (section 7).
@@ -328,12 +334,14 @@ Measured on the final test, one investigation by the fine-tuned agent reads abou
 | Claude Opus 5.5, the same token volume at list price, no caching ($4 / $20 per million) | $0.54 | $5,442 |
 | Claude Sonnet 5.5, the same token volume ($2 / $10) | $0.27 | $2,721 |
 | Claude Haiku 5.5, the same token volume ($0.10 / $0.50) | $0.014 | $136 |
+| **Claude Haiku 5.5, measured on both test sets** (120 investigations; $1.06 in all with the runs lost to API errors; effort medium, with caching) | **$0.0084** | **$84** |
 
 - Self-hosting costs about **8 times less than the measured Opus run** and 8 to 17 times less than Sonnet or Opus at
   the same token volume. Per finished investigation (28 of 48) it is about $0.056.
-- Haiku 5.5 at list price would cost less ($0.014), and its quality on this task was not measured; against it, the
-  case for self-hosting is running offline with the case data kept local.
-- The closed models were not run on the test cases, so this compares cost, not quality.
+- **Claude Haiku 5.5 costs less than self-hosting, and scores higher** (measured on both test sets, next section but
+  one): about $0.008 per investigation, a quarter of the self-hosted cost. Against it, the case for self-hosting is
+  running offline, with the case data kept local and weights that can be audited and changed, not price.
+- Opus and Sonnet were not run on the test cases, so their rows compare cost, not quality.
 - The teacher shows the other side of distillation: Command A+ took 5,188 seconds for 3 investigations on a full A100
   (80 GB), about 29 minutes each (`reports/strategy/teacher/cap_b.json`), so the student, on a smaller 40 GB slice, runs
   roughly **26 times faster**.
@@ -409,15 +417,15 @@ separate batches; `scripts/release/final_system_vs_base.py`): **1.62 against 0.6
 test's 48 runs, and **1.67 against 0.56, +1.11 [1.01, 1.20]** on the second's 72, higher at every company (4 of 4 and
 12 of 12); each judge alone is above +0.76.
 
-**How it runs** (first test, 48 runs each, same cases, settings and seeds):
+**How it runs** (first test, 48 runs each, same cases, settings and seeds; Claude Haiku 5.5 for reference, next section):
 
-| | Base model | Version 1 | **Final system** |
-|---|---|---|---|
-| Investigations finished | 4 | 28 | **46** |
-| Investigations finished, second test (of 72) | 2 | 32 | **65** |
-| Tool calls per run | 20.2 | 35.4 | 37.8 |
-| Tool calls per finished investigation | 242 | 61 | **39** |
-| Share of calls refused | 28.8% | 14.3% | **7.5%** |
+| | Base model | Version 1 | **Final system** | Claude Haiku 5.5 |
+|---|---|---|---|---|
+| Investigations finished | 4 | 28 | **46** | 44 |
+| Investigations finished, second test (of 72) | 2 | 32 | **65** | 63 |
+| Tool calls per run | 20.2 | 35.4 | 37.8 | 22.2 |
+| Tool calls per finished investigation | 242 | 61 | **39** | 24 |
+| Share of calls refused | 28.8% | 14.3% | **7.5%** | 13.9% |
 
 **What each part adds** (mean of two judges; intervals in [docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)):
 
@@ -430,6 +438,30 @@ test's 48 runs, and **1.67 against 0.56, +1.11 [1.01, 1.20]** on the second's 72
 What worked: changes that remove a failing action from what the model can produce. Advice to the model did not, and
 we also tried, and did not adopt, a company status check, corrective distillation, a recovery controller and a
 verification layer ([docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)).
+
+### Against a closed model: Claude Haiku 5.5 (`experiments/haiku/`)
+Registered before it ran ([DECISIONS](docs/DECISIONS.md), 13 November): Claude Haiku 5.5, the cheapest current closed
+model, on both test sets through the same environment, tools, stage controller and limits, with the base model's best
+prompt (the full transcript; Haiku's context is large enough that it never reaches a limit), effort medium, 3 attempts
+per case. Judged blind with the base model, version 1 and the final system by the same two judges. 29 of the 120 runs
+were lost to Anthropic API errors (HTTP 500) and rerun; 5 Haiku runs have no Claude Code judgment (rejected by the
+instrument's validity check) and are left out of the pairs. Haiku's outputs are never training data.
+
+| Mean of judges (0–3) | Base model | Version 1 | Final system | **Claude Haiku 5.5** | Final system minus Haiku |
+|---|---|---|---|---|---|
+| First test (48 runs each) | 0.61 | 1.45 | 1.62 | **2.28** | −0.67 [−0.79, −0.52] |
+| Second test (72 runs each) | 0.56 | 1.07 | 1.67 | **2.30** | −0.63 [−0.75, −0.52] |
+
+- **Haiku is better on this task.** It scores higher at every company on both sets and on all nine rubric dimensions,
+  most of all on the recommendation (1.95 against 1.06 on the first test) and on stating the causal mechanism (2.83
+  against 1.97). Both judges agree: Codex alone gives −0.43 on both sets; the Claude Code judge, scoring a Claude model,
+  gives −0.90 and −0.86.
+- **It is also cheaper and quicker to a finish**: $0.008 per investigation through the API, 24 tool calls per finished
+  investigation against the final system's 39.
+- **What the fine-tuning bought.** It takes a 3B open model from 0.61 to 1.62, about 60% of the way to Haiku's 2.28 from
+  the same starting point. What a small open model offers is not quality or price but control: it runs offline on one
+  GPU or a laptop, the case data never leaves the machine, and its weights can be inspected and trained further.
+- Tables: `scripts/release/haiku_table.py` (`experiments/haiku/summary.json`).
 
 ### Limits
 - **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter

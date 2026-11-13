@@ -1,0 +1,1901 @@
+{
+ "inference_only": true,
+ "trained": false,
+ "code_revision": "da811d3",
+ "uncommitted_changes": false,
+ "arguments": {
+  "url": "http://127.0.0.1:8091",
+  "prompt": "staged",
+  "cases": "frankecoffee-new-evidence-irrelevant",
+  "split": "heldout2",
+  "max_turns": 45,
+  "max_errors": 4,
+  "reread_limit": null,
+  "source_dates": false,
+  "status_check": false,
+  "min_assessed": 1,
+  "stuck_help": false,
+  "recovery": "",
+  "max_tokens": 520,
+  "context": 12288,
+  "output": "experiments/haiku/test2_reruns/frankecoffee-new-evidence-irrelevant_2.json",
+  "backend": "claude",
+  "model_label": "tiny-aya-global-q4_k_m.gguf a602ea7",
+  "weights_sha256": null,
+  "manifest": "/home/USER/Desktop/lexsi-ai-hackathon/reports/strategy/provenance.jsonl",
+  "temperature": 0,
+  "attempts": 1,
+  "workers": 1,
+  "first_attempt": 2,
+  "server_settings": null,
+  "lora_route": null,
+  "effort": "medium",
+  "claude_model": "claude-haiku-5-5",
+  "run_cap_usd": 1.0
+ },
+ "system_prompt": "You are a strategy analyst investigating an opportunity for a manufacturer. Use these tools:\nread_brief {} : read the company, the question and your budgets.\nframe_problem {\"objective\":\"...\",\"constraints\":[\"...\"],\"alternatives\":[\"...\"]} : state the real objective and the options, including ones the question did not suggest. Accepted once.\nsearch_evidence {\"query\":\"...\"} : keyword search of the evidence. Uses one search.\nchallenge_theory {\"theory_id\":\"T1\",\"query\":\"...\"} : search for evidence that could prove a theory wrong. Uses one search.\nread_source {\"id\":\"...\"} : read a result found by search.\nadd_theory {\"claim\":\"...\",\"who_benefits\":\"...\",\"why_behaviour_changes\":\"...\",\"how_value_is_captured\":\"...\",\"assumptions\":[\"...\"],\"predictions\":[\"...\"]} : add one causal theory of value. Returns its id.\nassess_evidence {\"theory_id\":\"T1\",\"evidence_id\":\"...\",\"direction\":\"supports or contradicts or neutral\",\"quote\":\"exact words from the source\",\"evidence_kind\":\"company_assertion or customer_observation or independent_study or regulation or analogy or market_fact\",\"does_not_show\":\"what this evidence cannot establish\"} : say how evidence bears on a theory, honestly. Use neutral if it does neither.\npropose_test {\"name\":\"...\",\"theories\":[\"T1\",\"T2\"],\"method\":\"...\",\"sample\":\"...\",\"measure\":\"...\",\"prediction_by_theory\":{\"T1\":\"...\",\"T2\":\"...\"},\"decision_rule\":\"...\",\"cost_eur\":N,\"weeks\":N} : design an experiment where the theories predict different results.\nrevise_theory {\"theory_id\":\"T1\",\"status\":\"kept or revised or rejected\",\"reason\":\"...\",\"new_claim\":\"the changed claim, or none\",\"evidence_ids\":[\"...\"]} : update a theory after new evidence.\nfinish {\"recommendation\":\"...\",\"target_customer\":\"...\",\"value_proposition\":\"...\",\"favoured_theory\":\"T1\",\"next_action\":\"...\",\"uncertainty\":\"...\",\"would_change_if\":[\"...\"],\"evidence_ids\":[\"...\"]} : end the investigation.\n\nReply with one JSON object: {\"name\": \"<tool>\", \"arguments\": {...}}. A user turn that starts with \"Tool result:\" is the output of your call. End by calling finish.\n\nWork like a scientist, not a consultant.\n1. read_brief, then frame_problem. List at least three alternatives, including no expansion and options the question did not suggest.\n2. Search before you theorise. Find out what the company already sells to individual buyers, and do not assume. Read at least three sources.\n3. add_theory at least twice, and a third time if you have a different cause. A theory is a causal explanation of why people behave as they do, not advice. Do not write \"the company should\". Each theory needs a different cause: who benefits, why they would change behaviour, how the manufacturer captures value. Give assumptions, and predictions someone could measure.\nFor example, from eyewear: \"People treat glasses as a medical necessity. If they came to see them as fashion, they would own several pairs, so a maker that controls design and retail could earn premium prices.\" A rival theory would name a different cause.\n4. assess_evidence for every theory, quoting the source's exact words. Say what kind of evidence it is and what it cannot show. A company's own claim is not proof of demand. Use challenge_theory to look for evidence that could prove your favoured theory wrong. If you find nothing against it, say so. Never force a contradiction.\n5. propose_test: an affordable experiment where the theories predict different results, with a decision rule that has a threshold.\n6. If new evidence arrives, read it and use revise_theory.\n7. finish. Say what you recommend, the next action, what is uncertain, and what would change your mind.\n\nEvery number or fact you present as observed must come from a source you read. Numbers you propose, such as a test's sample, budget, duration, threshold or an estimate, are allowed when you label them as proposed or estimated. Your theories are hypotheses, not facts. Results marked SIMULATED are not real demand, so never cite one in finish.\n\nA controller opens the tools for each stage, and each tool result lists them. Before you finish you will also use:\ndecline_test {\"reason\":\"...\"} : say why more information is not worth its cost here, instead of proposing a test.\nstate_position {\"favoured_theory\":\"T1\",\"recommendation\":\"...\",\"beliefs\":{\"T1\":\"likely\",\"T2\":\"uncertain\"}} : say what you believe now, rating each theory very unlikely, unlikely, uncertain, likely or very likely. finish then also takes \"beliefs\".\nA SIMULATED result is a what-if exercise. Reason as if it were real, and say what it would mean for your theories. A result can change nothing. Still keep it out of the evidence you cite.",
+ "tool_schema": {
+  "anyOf": [
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "read_brief"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {}
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "frame_problem"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "alternatives",
+       "constraints",
+       "objective"
+      ],
+      "properties": {
+       "objective": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "constraints": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       },
+       "alternatives": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "search_evidence"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "query"
+      ],
+      "properties": {
+       "query": {
+        "type": "string",
+        "maxLength": 120
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "challenge_theory"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "query",
+       "theory_id"
+      ],
+      "properties": {
+       "theory_id": {
+        "type": "string",
+        "maxLength": 4
+       },
+       "query": {
+        "type": "string",
+        "maxLength": 120
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "read_source"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "id"
+      ],
+      "properties": {
+       "id": {
+        "type": "string",
+        "maxLength": 40
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "add_theory"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "assumptions",
+       "claim",
+       "how_value_is_captured",
+       "predictions",
+       "who_benefits",
+       "why_behaviour_changes"
+      ],
+      "properties": {
+       "claim": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "who_benefits": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "why_behaviour_changes": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "how_value_is_captured": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "assumptions": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       },
+       "predictions": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "assess_evidence"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "direction",
+       "does_not_show",
+       "evidence_id",
+       "evidence_kind",
+       "quote",
+       "theory_id"
+      ],
+      "properties": {
+       "theory_id": {
+        "type": "string",
+        "maxLength": 4
+       },
+       "evidence_id": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "direction": {
+        "enum": [
+         "supports",
+         "contradicts",
+         "neutral"
+        ]
+       },
+       "quote": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "evidence_kind": {
+        "enum": [
+         "company_assertion",
+         "customer_observation",
+         "independent_study",
+         "regulation",
+         "analogy",
+         "market_fact"
+        ]
+       },
+       "does_not_show": {
+        "type": "string",
+        "maxLength": 240
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "propose_test"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "cost_eur",
+       "decision_rule",
+       "measure",
+       "method",
+       "name",
+       "prediction_by_theory",
+       "sample",
+       "theories",
+       "weeks"
+      ],
+      "properties": {
+       "name": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "theories": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 4
+        },
+        "maxItems": 5
+       },
+       "method": {
+        "type": "string",
+        "maxLength": 900
+       },
+       "sample": {
+        "type": "string",
+        "maxLength": 500
+       },
+       "measure": {
+        "type": "string",
+        "maxLength": 500
+       },
+       "prediction_by_theory": {
+        "type": "object",
+        "additionalProperties": {
+         "type": "string",
+         "maxLength": 600
+        }
+       },
+       "decision_rule": {
+        "type": "string",
+        "maxLength": 900
+       },
+       "cost_eur": {
+        "type": "number"
+       },
+       "weeks": {
+        "type": "number"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "revise_theory"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "evidence_ids",
+       "new_claim",
+       "reason",
+       "status",
+       "theory_id"
+      ],
+      "properties": {
+       "theory_id": {
+        "type": "string",
+        "maxLength": 4
+       },
+       "status": {
+        "enum": [
+         "kept",
+         "revised",
+         "rejected"
+        ]
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "new_claim": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "evidence_ids": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "minItems": 1,
+        "maxItems": 8
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "finish"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "evidence_ids",
+       "favoured_theory",
+       "next_action",
+       "recommendation",
+       "target_customer",
+       "uncertainty",
+       "value_proposition",
+       "would_change_if"
+      ],
+      "properties": {
+       "recommendation": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "target_customer": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "value_proposition": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "favoured_theory": {
+        "type": "string",
+        "maxLength": 4
+       },
+       "next_action": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "uncertainty": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "would_change_if": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       },
+       "evidence_ids": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "minItems": 1,
+        "maxItems": 8
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "guidance_in_tool_results": true,
+ "finish_needs_every_stage": false,
+ "stage_controller": true,
+ "server_context": 12288,
+ "model": "claude-haiku-5-5",
+ "runtime": "Anthropic API, effort medium, no seed or temperature, so runs do not repeat exactly",
+ "protocol": {
+  "id": "a9ae82c15692",
+  "parts": {
+   "controller": "b3b5efe0632f",
+   "tools": "dbadcc63f3c9",
+   "checks": "b8a2151117f3",
+   "constants": "57e4a43cb10a",
+   "prompts": "d8ed089d8692",
+   "evidence": "eafe7c896fbf",
+   "cases": "b5b81df51714",
+   "runner": "7d91d62c571d",
+   "chat": "6fb24e3e67f1",
+   "system_prompt": "8fd01826842f",
+   "generation": "d27449780da4"
+  },
+  "generation": {
+   "prompt": "staged",
+   "split": "heldout2",
+   "max_turns": 45,
+   "consecutive_errors": 4,
+   "max_tokens": 520,
+   "context": 12288,
+   "temperature": 0,
+   "retry_temperature": 0.4
+  }
+ },
+ "suite": {
+  "id": "2048378fdd20",
+  "cases": [
+   "frankecoffee-new-evidence-irrelevant"
+  ],
+  "attempts": 1,
+  "first_attempt": 2
+ },
+ "model_identity": {
+  "backend": "claude",
+  "name": "claude-haiku-5-5",
+  "weights_sha256": null,
+  "build": null,
+  "template": "12ae32cb1ec0",
+  "file": "",
+  "slots": null,
+  "generation": {},
+  "id": "a01b6a414f5b"
+ },
+ "prompt": "staged",
+ "summary": {
+  "episodes": 1,
+  "finished": 1,
+  "end_to_end_success": 1,
+  "stop_reasons": {
+   "finished": 1
+  },
+  "furthest_stage": {
+   "finish": 1
+  },
+  "checks": {
+   "finished": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "framing": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "theories": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "causal_form": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "testable_predictions": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_use": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_classes": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_kinds": {
+    "passed": 0,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_limits": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "disconfirmation": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "experiment": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "revision": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "existing_offering": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "no_invented_numbers": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "simulated_not_used": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "recommendation": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "tool_use": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   }
+  },
+  "rejections": {
+   "unread_evidence": 1,
+   "stage": 1
+  },
+  "shock_coverage": {
+   "cases": 1,
+   "delivered": 1,
+   "read": 1,
+   "held_affected_theory": 0,
+   "addressed_an_affected_theory": 0,
+   "bore_on_favoured": 0,
+   "cited_in_revision": 1,
+   "favoured_changed": 0
+  },
+  "supporting_evidence_attempted": 1,
+  "rejected_finishes": 1,
+  "harness_actions": 0,
+  "refused_calls": 2,
+  "recovered_after_refusal": 1,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 100,
+   "completion_tokens": 9194,
+   "seconds": 61.268,
+   "usd": 0.008
+  },
+  "mean_calls": 23.0
+ },
+ "harness_errors": [],
+ "records": [
+  {
+   "stopping_point": {
+    "furthest_stage": "finish",
+    "calls": 23,
+    "most_common_rejection": "unread_evidence",
+    "stage_at_stop": "done",
+    "rejected_finishes": 1,
+    "harness_actions": 0,
+    "refused": 2,
+    "recovered_after_refusal": 1
+   },
+   "challenge_searches": [
+    {
+     "theory_id": "T1",
+     "query": "home consumers premium espresso machine sales decline or price sensitivity",
+     "found": [
+      "frankecoffee-delonghi-premiumisation",
+      "frankecoffee-mahlkonig-retired",
+      "frankecoffee-linea-micra"
+     ]
+    }
+   ],
+   "case": "frankecoffee-new-evidence-irrelevant",
+   "company": "Franke Coffee Systems",
+   "simulated_case": false,
+   "checks": {
+    "finished": {
+     "passed": true,
+     "detail": "finished",
+     "status": "passed"
+    },
+    "framing": {
+     "passed": true,
+     "detail": "6 alternatives",
+     "status": "passed"
+    },
+    "theories": {
+     "passed": true,
+     "detail": "2 distinct theories",
+     "status": "passed"
+    },
+    "causal_form": {
+     "passed": true,
+     "detail": "theories are not phrased as advice",
+     "status": "passed"
+    },
+    "testable_predictions": {
+     "passed": true,
+     "detail": "each theory has a specific measurable prediction",
+     "status": "passed"
+    },
+    "evidence_use": {
+     "passed": true,
+     "detail": "3 quoted assessments across 5 sources",
+     "status": "passed"
+    },
+    "evidence_classes": {
+     "passed": true,
+     "detail": "no theory rests only on company claims",
+     "status": "passed"
+    },
+    "evidence_kinds": {
+     "passed": false,
+     "detail": "0 of 3 kinds match the annotation",
+     "status": "failed"
+    },
+    "evidence_limits": {
+     "passed": true,
+     "detail": "limits are stated in the analyst's own words",
+     "status": "passed"
+    },
+    "disconfirmation": {
+     "passed": true,
+     "detail": "1 challenge searches on T1, 1 contradictions recorded",
+     "status": "passed"
+    },
+    "experiment": {
+     "passed": true,
+     "detail": "1 of 1 tests discriminate",
+     "status": "passed"
+    },
+    "revision": {
+     "passed": true,
+     "detail": "changed nothing on irrelevant evidence",
+     "status": "passed"
+    },
+    "existing_offering": {
+     "passed": true,
+     "detail": "read the existing offering",
+     "status": "passed"
+    },
+    "no_invented_numbers": {
+     "passed": true,
+     "detail": "every number has a source",
+     "status": "passed"
+    },
+    "simulated_not_used": {
+     "passed": true,
+     "detail": "recommendation does not lean on it",
+     "status": "passed"
+    },
+    "recommendation": {
+     "passed": true,
+     "detail": "4 sources, 4 conditions that would change it",
+     "status": "passed"
+    },
+    "tool_use": {
+     "passed": true,
+     "detail": "21 of 23 calls accepted, 2 searches",
+     "status": "passed"
+    }
+   },
+   "rejections": {
+    "unread_evidence": 1,
+    "stage": 1
+   },
+   "settings": {
+    "complete_workflow": false,
+    "staged": true,
+    "quote_marks": true
+   },
+   "coverage": {
+    "supporting_evidence_assessed": 2,
+    "test_declined": null,
+    "shock": {
+     "direction": "irrelevant",
+     "delivered": true,
+     "read": true,
+     "affected_theories": [],
+     "cited_in_revision": true,
+     "bears_on_favoured": false,
+     "favoured_before": "T1",
+     "favoured_after": "T1",
+     "favoured_changed": false,
+     "beliefs_before": {
+      "T1": "uncertain",
+      "T2": "uncertain"
+     },
+     "beliefs_after": {
+      "T1": "uncertain",
+      "T2": "uncertain"
+     },
+     "affected_addressed": []
+    }
+   },
+   "position": {
+    "favoured_theory": "T1",
+    "recommendation": "Do not commit to a consumer product yet. Run the proposed low-cost test to see whether home buyers pay for a professional-origin claim, and in parallel check whether consumer brands would license Franke components. Decide between a home-branded product and a licensing route only after the test results.",
+    "beliefs": {
+     "T1": "uncertain",
+     "T2": "uncertain"
+    }
+   },
+   "test_declined": null,
+   "frame": {
+    "objective": "Decide whether Franke Coffee Systems should invest in a differentiated consumer (individual buyer) proposition for a specific use case, beyond its professional machines, and identify what evidence would justify that investment.",
+    "constraints": [
+     "Outside analyst using public sources only; the company has not asked and nothing here describes its intentions",
+     "Financial and contractual detail may be non-public; state what could not be found",
+     "Test budget EUR 20,000 and 12-week limit are analyst assumptions, not company figures",
+     "Search budget is 8 (7 remaining); no simulated results may be cited in finish",
+     "Must establish how far the company already reaches individual buyers rather than assume"
+    ],
+    "alternatives": [
+     "No expansion: keep the professional-only focus through subsidiaries and service/distribution partners",
+     "Route change: sell existing professional machines to individual buyers via existing partners or retail, with no product redesign",
+     "Product redesign: a smaller, simpler or differently priced machine for a specific home or small-office use case",
+     "Different customer group: a non-home segment such as small offices, hospitality micro-sites or workplace pantries, with a subscription or service model",
+     "Service-led proposition: maintenance, bean supply or subscription bundled with professional machines for small buyers",
+     "Partner licensing or white-label: an existing consumer appliance brand carries a Franke-engineered machine, and Franke captures value through component or licence fees"
+    ]
+   },
+   "theories": {
+    "T1": {
+     "claim": "Home buyers are trading up to professional-grade machines, so a Franke-engineered machine scaled for a home kitchen could capture premium prices from individuals who currently buy from consumer brands.",
+     "who_benefits": "Affluent home coffee enthusiasts who want caf\u00e9-quality espresso; Franke, which would sell at a premium margin.",
+     "why_behaviour_changes": "Buyers see coffee at home as a status and quality purchase, so they pay more for machines that look and perform like professional equipment.",
+     "how_value_is_captured": "Franke sells its own branded home model at premium prices through retail or direct channels, keeping the margin that consumer brands now earn.",
+     "assumptions": [
+      "Premiumisation among home buyers is real and growing (De'Longhi cites it)",
+      "Buyers will pay a clear premium for professional engineering in a home-sized form",
+      "Franke can build a small-footprint model without losing the reliability that defines its professional brand",
+      "Consumer retail or direct-to-consumer channels are open to a new entrant from the professional segment"
+     ],
+     "predictions": [
+      "Home buyers in target markets will show willingness to pay a measurable premium (e.g., 20% or more) for a professional-grade home model over a consumer model in a conjoint or pre-order test",
+      "Sales of the premium consumer segment will grow faster than the overall home machine market over the next 3 years",
+      "Pre-orders will be concentrated among existing professional-machine users or serious enthusiasts, not general households"
+     ],
+     "status": "kept",
+     "first_claim": "Home buyers are trading up to professional-grade machines, so a Franke-engineered machine scaled for a home kitchen could capture premium prices from individuals who currently buy from consumer brands."
+    },
+    "T2": {
+     "claim": "Individual buyers value convenience and consistency over engineering pedigree, so a professional machine's strengths (durability, service network, high-volume performance) do not transfer to the home and Franke's value is captured better by supplying a component or platform to consumer brands than by selling its own home machine.",
+     "who_benefits": "Consumer appliance brands that lack espresso engineering, and Franke, which avoids building consumer brand, distribution and marketing costs.",
+     "why_behaviour_changes": "Home buyers choose on price, ease of use, look and brand trust in consumer retail; they rarely judge a machine by commercial-grade specifications, so an engineering-led brand adds little to their purchase decision.",
+     "how_value_is_captured": "Franke earns a per-unit component, platform or licence fee from a consumer brand that owns the retail relationship, rather than funding its own consumer brand.",
+     "assumptions": [
+      "Consumer brands are willing to buy engineered components or platforms from outside suppliers",
+      "Home buyers do not pay a meaningful premium for a professional-origin badge",
+      "Franke's professional strengths (service network, durability) are not required by home buyers",
+      "A licence or component model would not cannibalise the professional business"
+     ],
+     "predictions": [
+      "Consumer brands that license professional-grade components show higher unit volumes than professional brands that launch their own home models",
+      "Home buyers in a choice test rate ease of use and price above professional-origin claims",
+      "Companies that tried home-only entry from the professional segment have exited or shrunk their home lines"
+     ],
+     "status": "kept",
+     "first_claim": "Individual buyers value convenience and consistency over engineering pedigree, so a professional machine's strengths (durability, service network, high-volume performance) do not transfer to the home and Franke's value is captured better by supplying a component or platform to consumer brands than by selling its own home machine."
+    }
+   },
+   "assessments": [
+    {
+     "theory_id": "T1",
+     "evidence_id": "frankecoffee-delonghi-premiumisation",
+     "direction": "supports",
+     "quote": "growing premiumisation among home consumers",
+     "class": "verified_observation",
+     "evidence_kind": "company_assertion",
+     "does_not_show": "Whether home buyers would pay a premium for a professional-origin machine from Franke, how large that segment is, or whether Franke's margins would hold. It is a competitor's own description of its results, reported by trade press, not an independent measure of demand for a professional-grade home product."
+    },
+    {
+     "theory_id": "T2",
+     "evidence_id": "frankecoffee-mahlkonig-retired",
+     "direction": "contradicts",
+     "quote": "the Mahlk\u00f6nig Vario Home, would be retired from the product line.",
+     "class": "verified_observation",
+     "evidence_kind": "market_fact",
+     "does_not_show": "Why the home model was retired. The excerpt gives no reason, so it cannot show whether home buyers rejected engineering pedigree, whether the line was unprofitable, or whether it was a strategic choice. It is one case from a grinder brand, and it does not tell us about Franke. As written it cuts against T1 more than T2, since it shows a professional-origin brand leaving the home market."
+    },
+    {
+     "theory_id": "T1",
+     "evidence_id": "frankecoffee-linea-micra",
+     "direction": "supports",
+     "quote": "The Linea Micra is the first La Marzocco espresso machine designed for dedicated use in the home.",
+     "class": "verified_observation",
+     "evidence_kind": "market_fact",
+     "does_not_show": "Whether the Linea Micra sold well, at what premium, or to whom. A launch shows that a professional brand chose to enter the home, not that the home segment is profitable. The excerpt does not give volumes, prices or results. It also does not show that Franke's brand would transfer to the home."
+    }
+   ],
+   "tests": {
+    "X1": {
+     "name": "Home premium WTP and brand-origin conjoint with consumer-brand licensing interviews",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Two parallel tracks over 12 weeks. (a) Online discrete-choice (conjoint) survey of home espresso buyers who bought a machine above EUR 500 in the last 3 years, testing price, ease of use, and a 'professional-engineered' origin claim, with and without a Franke name. (b) Structured interviews with product or sourcing managers at consumer appliance brands, testing interest in buying a professional-grade component or platform. Costs are proposed estimates.",
+     "sample": "Proposed: about 400 completed survey respondents in one market (e.g., Germany or Italy), and about 10 to 12 interviews with consumer appliance brand buyers across Europe.",
+     "measure": "(a) Relative importance of the origin claim versus price and ease of use, and the implied WTP premium for a professional-origin home model. (b) Share of interviewed brands that would consider a licensed or component supply, and any stated volume or price terms.",
+     "prediction_by_theory": {
+      "T1": "The professional-origin attribute carries a implied premium of at least 20% over the same machine without it, and at least 15% of respondents rank it first among attributes.",
+      "T2": "Price and ease of use outweigh origin claim (origin under 10% of importance). At least half of interviewed consumer brands express interest in a component or licence supply."
+     },
+     "decision_rule": "Proceed to a home-branded product only if the origin premium is at least 15% and origin ranks in the top two attributes for at least 25% of respondents, and pre-order or deposit intent is at least 5% among qualified respondents. If origin importance is under 10% and at least half of brands show interest, pursue the licensing route instead. Otherwise do not invest beyond the test.",
+     "cost_eur": 20000,
+     "weeks": 12
+    }
+   },
+   "revisions": [
+    {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "The simulated result SYN-D (label printer, warehouse packing errors) measures nothing about buyers, so it does not bear on T1 and changes nothing. T1 is kept on the real evidence already assessed: the De'Longhi premiumisation claim and the Linea Micra launch, both of which are company-side and do not establish demand for a Franke product.",
+     "new_claim": null,
+     "evidence_ids": [
+      "frankecoffee-delonghi-premiumisation",
+      "frankecoffee-linea-micra"
+     ]
+    },
+    {
+     "theory_id": "T2",
+     "status": "kept",
+     "reason": "SYN-D is simulated and measures label printer packing errors, not buyers or licensing interest. It bears on neither T1 nor T2 and is not cited. T2 is kept as untested. I also correct my earlier assessment: the Mahlk\u00f6nig retirement was recorded against T2, but it bears more on T1, since it shows a professional brand leaving the home market.",
+     "new_claim": null,
+     "evidence_ids": [
+      "frankecoffee-mahlkonig-retired",
+      "frankecoffee-about"
+     ]
+    },
+    {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Even if SYN-D were real, a label printer's effect on warehouse packing errors would say nothing about home buyers' willingness to pay for professional-origin machines, so it would change nothing for T1. It is not cited. T1 stays uncertain on real evidence: one competitor's claim of home premiumisation, and one professional brand's home launch without sales data.",
+     "new_claim": null,
+     "evidence_ids": [
+      "frankecoffee-delonghi-premiumisation",
+      "frankecoffee-linea-micra"
+     ]
+    },
+    {
+     "theory_id": "T1",
+     "status": "kept",
+     "reason": "Supposing SYN-D were real: a label printer reducing warehouse packing errors would change nothing for T1, because it measures no buyers, prices or preferences. The result is simulated and is excluded from the evidence cited in finish.",
+     "new_claim": null,
+     "evidence_ids": [
+      "SYN-D"
+     ]
+    }
+   ],
+   "final": {
+    "recommendation": "Do not commit to a consumer proposition yet. The evidence I could find does not show that individual buyers would pay for a Franke-engineered home machine, and I found no public evidence that Franke already sells to individuals. Test the question cheaply first (proposed budget EUR 20,000, 12 weeks) before choosing between a home-branded product and a component or licensing route.",
+    "target_customer": "Not chosen. Candidate under T1: affluent home espresso buyers who already buy premium machines. Alternative under T2: consumer appliance brands as component or licence buyers.",
+    "value_proposition": "Unproven. Under T1, a professional-engineered home machine that earns a premium from its origin. Under T2, a component or platform that consumer brands buy because they lack espresso engineering.",
+    "favoured_theory": "T1",
+    "next_action": "Run the proposed test X1: about 400 conjoint respondents in one market plus 10 to 12 consumer-brand interviews (sample and budget are my proposals). Before that, check Franke's existing individual-buyer channels from sources I did not find.",
+    "uncertainty": "High. Evidence is company-side or trade press. The De'Longhi quote is a competitor describing its own results. The Linea Micra launch shows intent, not sales. The Mahlk\u00f6nig home line was retired with no reason given, so it bears more on T1 than T2; I first logged it against T2 and have corrected that in revisions. I found no public data on Franke's consumer sales, margins, contracts with consumer brands, or independent willingness-to-pay studies. Test figures are my proposals, not observations.",
+    "would_change_if": [
+     "Conjoint shows origin claim under 10% of importance and at least half of consumer brands interested in supply: shift to T2 and the licensing route.",
+     "Origin premium at least 15%, origin in top two attributes for at least 25% of respondents, and at least 5% pre-order intent: move toward a home-branded product (T1).",
+     "Public evidence that Franke already sells consumer or small-buyer products profitably, or that comparable professional-brand home lines were profitable.",
+     "Evidence that the Linea Micra or similar home launches sold poorly for reasons of price or ease of use, not brand origin."
+    ],
+    "evidence_ids": [
+     "frankecoffee-about",
+     "frankecoffee-delonghi-premiumisation",
+     "frankecoffee-mahlkonig-retired",
+     "frankecoffee-linea-micra"
+    ],
+    "beliefs": {
+     "T1": "uncertain",
+     "T2": "uncertain"
+    }
+   },
+   "searches": [
+    "Franke Coffee Systems consumer home machines individual buyers",
+    "home consumers premium espresso machine sales decline or price sensitivity"
+   ],
+   "read": [
+    "SYN-D",
+    "frankecoffee-about",
+    "frankecoffee-delonghi-premiumisation",
+    "frankecoffee-linea-micra",
+    "frankecoffee-mahlkonig-retired"
+   ],
+   "calls": [
+    {
+     "name": "read_brief",
+     "arguments": {},
+     "stage": "brief",
+     "accepted": true,
+     "result": {
+      "company": "Franke Coffee Systems",
+      "question": "Should Franke Coffee Systems develop a differentiated consumer proposition for a specific use case, beyond its existing professional coffee machines? What evidence would justify that investment?",
+      "brief": "Franke Coffee Systems makes professional fully automatic, semi-automatic and traditional coffee machines. It is a division of the Swiss Franke Group and sells through its own subsidiaries and a network of service and distribution partners. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+      "search_budget": 8,
+      "test_budget_eur": 20000,
+      "max_test_weeks": 12,
+      "simulated_case": false
+     }
+    },
+    {
+     "name": "frame_problem",
+     "arguments": {
+      "objective": "Decide whether Franke Coffee Systems should invest in a differentiated consumer (individual buyer) proposition for a specific use case, beyond its professional machines, and identify what evidence would justify that investment.",
+      "constraints": [
+       "Outside analyst using public sources only; the company has not asked and nothing here describes its intentions",
+       "Financial and contractual detail may be non-public; state what could not be found",
+       "Test budget EUR 20,000 and 12-week limit are analyst assumptions, not company figures",
+       "Search budget is 8 (7 remaining); no simulated results may be cited in finish",
+       "Must establish how far the company already reaches individual buyers rather than assume"
+      ],
+      "alternatives": [
+       "No expansion: keep the professional-only focus through subsidiaries and service/distribution partners",
+       "Route change: sell existing professional machines to individual buyers via existing partners or retail, with no product redesign",
+       "Product redesign: a smaller, simpler or differently priced machine for a specific home or small-office use case",
+       "Different customer group: a non-home segment such as small offices, hospitality micro-sites or workplace pantries, with a subscription or service model",
+       "Service-led proposition: maintenance, bean supply or subscription bundled with professional machines for small buyers",
+       "Partner licensing or white-label: an existing consumer appliance brand carries a Franke-engineered machine, and Franke captures value through component or licence fees"
+      ]
+     },
+     "stage": "frame",
+     "accepted": true,
+     "result": {
+      "accepted": true
+     }
+    },
+    {
+     "name": "search_evidence",
+     "arguments": {
+      "query": "Franke Coffee Systems consumer home machines individual buyers"
+     },
+     "stage": "evidence",
+     "accepted": true,
+     "result": {
+      "results": [
+       {
+        "id": "frankecoffee-delonghi-premiumisation",
+        "title": "La Marzocco and Eversys boost De'Longhi's full-year revenues (World Coffee Portal)",
+        "class": "verified_observation"
+       },
+       {
+        "id": "frankecoffee-mahlkonig-retired",
+        "title": "Mahlk\u00f6nig Re-Entering the Home Market with X54 Allround Grinder (Daily Coffee News)",
+        "class": "verified_observation"
+       },
+       {
+        "id": "frankecoffee-about",
+        "title": "Franke press release: new A Line (About Franke Coffee Systems)",
+        "class": "company_claim"
+       }
+      ],
+      "searches_left": 7
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "frankecoffee-about"
+     },
+     "stage": "evidence",
+     "accepted": true,
+     "result": {
+      "id": "frankecoffee-about",
+      "class": "company_claim",
+      "title": "Franke press release: new A Line (About Franke Coffee Systems)",
+      "url": "https://www.franke.com/content/dam/franke/language-masters/en/coffee-systems/documents/press_releases/en/Franke_Press_Release_New_A_Line_20251017_en.pdf",
+      "date": "2025-10-17",
+      "geography": "International",
+      "excerpt": "Franke Coffee Systems, a division of the Franke Group, is a world-leading developer and manufacturer of professional coffee machines. Headquartered in Aarburg, Switzerland, the company brings together Swiss engineering excellence, state-of-the-art technology, and profound coffee expertise. Around 900 employees, together with an optimized service and distribution network of more than 300 partners, support businesses in 80 countries.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "frankecoffee-mahlkonig-retired"
+     },
+     "stage": "evidence",
+     "accepted": true,
+     "result": {
+      "id": "frankecoffee-mahlkonig-retired",
+      "class": "verified_observation",
+      "title": "Mahlk\u00f6nig Re-Entering the Home Market with X54 Allround Grinder (Daily Coffee News)",
+      "url": "https://dailycoffeenews.com/2021/05/06/mahlkonig-re-entering-the-home-market-with-x54-allround-grinder/",
+      "date": "2021-05-06",
+      "geography": "Global",
+      "excerpt": "In February of 2020 the company announced that its previous consumer-oriented machine with flat 54-millimeter burrs, the Mahlk\u00f6nig Vario Home, would be retired from the product line.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "frankecoffee-delonghi-premiumisation"
+     },
+     "stage": "evidence",
+     "accepted": true,
+     "result": {
+      "id": "frankecoffee-delonghi-premiumisation",
+      "class": "verified_observation",
+      "title": "La Marzocco and Eversys boost De'Longhi's full-year revenues (World Coffee Portal)",
+      "url": "https://www.worldcoffeeportal.com/news/la-marzocco-and-eversys-boost-delonghis-full-year-revenues/",
+      "date": "2025-01-31",
+      "geography": "Europe / global",
+      "excerpt": "In a press release, De\u2019Longhi reported a positive performance across all regions, with sales in Europe particularly high following rising demand for professional fully automatic coffee machines and growing premiumisation among home consumers.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "add_theory",
+     "arguments": {
+      "claim": "Home buyers are trading up to professional-grade machines, so a Franke-engineered machine scaled for a home kitchen could capture premium prices from individuals who currently buy from consumer brands.",
+      "who_benefits": "Affluent home coffee enthusiasts who want caf\u00e9-quality espresso; Franke, which would sell at a premium margin.",
+      "why_behaviour_changes": "Buyers see coffee at home as a status and quality purchase, so they pay more for machines that look and perform like professional equipment.",
+      "how_value_is_captured": "Franke sells its own branded home model at premium prices through retail or direct channels, keeping the margin that consumer brands now earn.",
+      "assumptions": [
+       "Premiumisation among home buyers is real and growing (De'Longhi cites it)",
+       "Buyers will pay a clear premium for professional engineering in a home-sized form",
+       "Franke can build a small-footprint model without losing the reliability that defines its professional brand",
+       "Consumer retail or direct-to-consumer channels are open to a new entrant from the professional segment"
+      ],
+      "predictions": [
+       "Home buyers in target markets will show willingness to pay a measurable premium (e.g., 20% or more) for a professional-grade home model over a consumer model in a conjoint or pre-order test",
+       "Sales of the premium consumer segment will grow faster than the overall home machine market over the next 3 years",
+       "Pre-orders will be concentrated among existing professional-machine users or serious enthusiasts, not general households"
+      ]
+     },
+     "stage": "theories",
+     "accepted": true,
+     "result": {
+      "theory_id": "T1"
+     }
+    },
+    {
+     "name": "add_theory",
+     "arguments": {
+      "claim": "Individual buyers value convenience and consistency over engineering pedigree, so a professional machine's strengths (durability, service network, high-volume performance) do not transfer to the home and Franke's value is captured better by supplying a component or platform to consumer brands than by selling its own home machine.",
+      "who_benefits": "Consumer appliance brands that lack espresso engineering, and Franke, which avoids building consumer brand, distribution and marketing costs.",
+      "why_behaviour_changes": "Home buyers choose on price, ease of use, look and brand trust in consumer retail; they rarely judge a machine by commercial-grade specifications, so an engineering-led brand adds little to their purchase decision.",
+      "how_value_is_captured": "Franke earns a per-unit component, platform or licence fee from a consumer brand that owns the retail relationship, rather than funding its own consumer brand.",
+      "assumptions": [
+       "Consumer brands are willing to buy engineered components or platforms from outside suppliers",
+       "Home buyers do not pay a meaningful premium for a professional-origin badge",
+       "Franke's professional strengths (service network, durability) are not required by home buyers",
+       "A licence or component model would not cannibalise the professional business"
+      ],
+      "predictions": [
+       "Consumer brands that license professional-grade components show higher unit volumes than professional brands that launch their own home models",
+       "Home buyers in a choice test rate ease of use and price above professional-origin claims",
+       "Companies that tried home-only entry from the professional segment have exited or shrunk their home lines"
+      ]
+     },
+     "stage": "theories",
+     "accepted": true,
+     "result": {
+      "theory_id": "T2"
+     }
+    },
+    {
+     "name": "assess_evidence",
+     "arguments": {
+      "theory_id": "T1",
+      "evidence_id": "frankecoffee-delonghi-premiumisation",
+      "direction": "supports",
+      "quote": "growing premiumisation among home consumers",
+      "evidence_kind": "company_assertion",
+      "does_not_show": "Whether home buyers would pay a premium for a professional-origin machine from Franke, how large that segment is, or whether Franke's margins would hold. It is a competitor's own description of its results, reported by trade press, not an independent measure of demand for a professional-grade home product."
+     },
+     "stage": "assessment",
+     "accepted": true,
+     "result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "name": "assess_evidence",
+     "arguments": {
+      "theory_id": "T2",
+      "evidence_id": "frankecoffee-mahlkonig-retired",
+      "direction": "contradicts",
+      "quote": "the Mahlk\u00f6nig Vario Home, would be retired from the product line.",
+      "evidence_kind": "market_fact",
+      "does_not_show": "Why the home model was retired. The excerpt gives no reason, so it cannot show whether home buyers rejected engineering pedigree, whether the line was unprofitable, or whether it was a strategic choice. It is one case from a grinder brand, and it does not tell us about Franke. As written it cuts against T1 more than T2, since it shows a professional-origin brand leaving the home market."
+     },
+     "stage": "assessment",
+     "accepted": true,
+     "result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "name": "challenge_theory",
+     "arguments": {
+      "theory_id": "T1",
+      "query": "home consumers premium espresso machine sales decline or price sensitivity"
+     },
+     "stage": "challenge",
+     "accepted": true,
+     "result": {
+      "results": [
+       {
+        "id": "frankecoffee-delonghi-premiumisation",
+        "title": "La Marzocco and Eversys boost De'Longhi's full-year revenues (World Coffee Portal)",
+        "class": "verified_observation"
+       },
+       {
+        "id": "frankecoffee-mahlkonig-retired",
+        "title": "Mahlk\u00f6nig Re-Entering the Home Market with X54 Allround Grinder (Daily Coffee News)",
+        "class": "verified_observation"
+       },
+       {
+        "id": "frankecoffee-linea-micra",
+        "title": "La Marzocco launches the new Linea Micra (Comunicaff\u00e8 International)",
+        "class": "verified_observation"
+       }
+      ],
+      "searches_left": 6
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "frankecoffee-linea-micra"
+     },
+     "stage": "test",
+     "accepted": true,
+     "result": {
+      "id": "frankecoffee-linea-micra",
+      "class": "verified_observation",
+      "title": "La Marzocco launches the new Linea Micra (Comunicaff\u00e8 International)",
+      "url": "https://comunicaffe.com/la-marzocco-launches-the-new-linea-micra",
+      "date": "2022-11-10",
+      "geography": "Global",
+      "excerpt": "The Linea Micra is the first La Marzocco espresso machine designed for dedicated use in the home.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "assess_evidence",
+     "arguments": {
+      "theory_id": "T1",
+      "evidence_id": "frankecoffee-linea-micra",
+      "direction": "supports",
+      "quote": "The Linea Micra is the first La Marzocco espresso machine designed for dedicated use in the home.",
+      "evidence_kind": "market_fact",
+      "does_not_show": "Whether the Linea Micra sold well, at what premium, or to whom. A launch shows that a professional brand chose to enter the home, not that the home segment is profitable. The excerpt does not give volumes, prices or results. It also does not show that Franke's brand would transfer to the home."
+     },
+     "stage": "test",
+     "accepted": true,
+     "result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "name": "propose_test",
+     "arguments": {
+      "name": "Home premium WTP and brand-origin conjoint with consumer-brand licensing interviews",
+      "theories": [
+       "T1",
+       "T2"
+      ],
+      "method": "Two parallel tracks over 12 weeks. (a) Online discrete-choice (conjoint) survey of home espresso buyers who bought a machine above EUR 500 in the last 3 years, testing price, ease of use, and a 'professional-engineered' origin claim, with and without a Franke name. (b) Structured interviews with product or sourcing managers at consumer appliance brands, testing interest in buying a professional-grade component or platform. Costs are proposed estimates.",
+      "sample": "Proposed: about 400 completed survey respondents in one market (e.g., Germany or Italy), and about 10 to 12 interviews with consumer appliance brand buyers across Europe.",
+      "measure": "(a) Relative importance of the origin claim versus price and ease of use, and the implied WTP premium for a professional-origin home model. (b) Share of interviewed brands that would consider a licensed or component supply, and any stated volume or price terms.",
+      "prediction_by_theory": {
+       "T1": "The professional-origin attribute carries a implied premium of at least 20% over the same machine without it, and at least 15% of respondents rank it first among attributes.",
+       "T2": "Price and ease of use outweigh origin claim (origin under 10% of importance). At least half of interviewed consumer brands express interest in a component or licence supply."
+      },
+      "decision_rule": "Proceed to a home-branded product only if the origin premium is at least 15% and origin ranks in the top two attributes for at least 25% of respondents, and pre-order or deposit intent is at least 5% among qualified respondents. If origin importance is under 10% and at least half of brands show interest, pursue the licensing route instead. Otherwise do not invest beyond the test.",
+      "cost_eur": 20000,
+      "weeks": 12
+     },
+     "stage": "test",
+     "accepted": true,
+     "result": {
+      "test_id": "X1",
+      "note": "Proposed only. Nothing has been run, and its figures are analyst assumptions."
+     }
+    },
+    {
+     "name": "state_position",
+     "arguments": {
+      "favoured_theory": "T1",
+      "recommendation": "Do not commit to a consumer product yet. Run the proposed low-cost test to see whether home buyers pay for a professional-origin claim, and in parallel check whether consumer brands would license Franke components. Decide between a home-branded product and a licensing route only after the test results.",
+      "beliefs": {
+       "T1": "uncertain",
+       "T2": "uncertain"
+      }
+     },
+     "stage": "position",
+     "accepted": true,
+     "result": {
+      "recorded": true,
+      "update": {
+       "id": "SYN-D",
+       "title": "Simulated warehouse test",
+       "class": "synthetic",
+       "note": "A new SIMULATED result is available. Read it with read_source."
+      }
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "SYN-D"
+     },
+     "stage": "new_evidence",
+     "accepted": true,
+     "result": {
+      "id": "SYN-D",
+      "class": "synthetic",
+      "title": "Simulated warehouse test",
+      "url": "n/a",
+      "date": "n/a",
+      "geography": "unknown",
+      "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+      "access_limitation": "synthetic"
+     }
+    },
+    {
+     "name": "revise_theory",
+     "arguments": {
+      "theory_id": "T1",
+      "status": "kept",
+      "reason": "SYN-D is a simulated warehouse test about label printer packing errors. It measures nothing about buyers or wearers, so it does not bear on T1. It changes nothing, and it is not cited.",
+      "new_claim": "none",
+      "evidence_ids": []
+     },
+     "stage": "update",
+     "accepted": false,
+     "category": "unread_evidence",
+     "result": {
+      "error": "evidence_ids must list evidence you have read"
+     }
+    },
+    {
+     "name": "revise_theory",
+     "arguments": {
+      "theory_id": "T1",
+      "status": "kept",
+      "reason": "The simulated result SYN-D (label printer, warehouse packing errors) measures nothing about buyers, so it does not bear on T1 and changes nothing. T1 is kept on the real evidence already assessed: the De'Longhi premiumisation claim and the Linea Micra launch, both of which are company-side and do not establish demand for a Franke product.",
+      "new_claim": "none",
+      "evidence_ids": [
+       "frankecoffee-delonghi-premiumisation",
+       "frankecoffee-linea-micra"
+      ]
+     },
+     "stage": "update",
+     "accepted": true,
+     "result": {
+      "recorded": true
+     }
+    },
+    {
+     "name": "finish",
+     "arguments": {
+      "recommendation": "Do not commit to a consumer proposition yet. Found evidence does not show that individual buyers would pay for a Franke-engineered home machine, and it does not show that Franke already sells to individuals. Spend up to the proposed EUR 20,000 on the conjoint and consumer-brand interview test before choosing between a home-branded product and a licensing route. Do not build a home product on current evidence.",
+      "target_customer": "Not chosen. Candidate: affluent home espresso buyers who already buy premium machines (T1). Alternative: consumer appliance brands as component or licence buyers (T2).",
+      "value_proposition": "Unproven. Under T1, a professional-engineered home machine that earns a premium on its origin. Under T2, a component or platform that consumer brands buy because they lack espresso engineering.",
+      "favoured_theory": "T1",
+      "next_action": "Run test X1 (proposed: about 400 conjoint respondents plus 10 to 12 consumer-brand interviews, EUR 20,000, 12 weeks). Before that, check Franke's existing individual-buyer channels, which I did not establish from public sources.",
+      "uncertainty": "High. Evidence is company-side or trade press. The De'Longhi quote is a competitor's own description of its results. The Linea Micra launch shows intent, not sales. The Mahlk\u00f6nig home line was retired, but the excerpt gives no reason, so it cuts against T1 more than T2. I assessed it as contradicting T2 when its direction bears on T1; the finish should be read with that correction. I found no public data on Franke's consumer sales, margins, or contracts with consumer brands, and no independent study of home premium willingness to pay. Test figures are my proposals, not observed.",
+      "would_change_if": [
+       "Conjoint shows origin claim under 10% of importance, with at least half of consumer brands interested in supply: shift to T2 and the licensing route.",
+       "Origin premium at least 15% and origin in top two attributes for at least 25% of respondents, with at least 5% pre-order intent: proceed toward a home-branded product (T1).",
+       "Public evidence that Franke already sells consumer or small-buyer products successfully, or that comparable professional-brand home lines were profitable.",
+       "Evidence that the Linea Micra or similar launches sold poorly or were withdrawn with reasons pointing to price or ease of use."
+      ],
+      "evidence_ids": [
+       "frankecoffee-about",
+       "frankecoffee-delonghi-premiumisation",
+       "frankecoffee-mahlkonig-retired",
+       "frankecoffee-linea-micra"
+      ],
+      "beliefs": {
+       "T1": "uncertain",
+       "T2": "uncertain"
+      }
+     },
+     "stage": "update",
+     "accepted": false,
+     "category": "stage",
+     "result": {
+      "error": "not at this stage (update). Open now: ['revise_theory']"
+     }
+    },
+    {
+     "name": "revise_theory",
+     "arguments": {
+      "theory_id": "T2",
+      "status": "kept",
+      "reason": "SYN-D is simulated and measures label printer packing errors, not buyers or licensing interest. It bears on neither T1 nor T2 and is not cited. T2 is kept as untested. I also correct my earlier assessment: the Mahlk\u00f6nig retirement was recorded against T2, but it bears more on T1, since it shows a professional brand leaving the home market.",
+      "new_claim": "none",
+      "evidence_ids": [
+       "frankecoffee-mahlkonig-retired",
+       "frankecoffee-about"
+      ]
+     },
+     "stage": "update",
+     "accepted": true,
+     "result": {
+      "recorded": true
+     }
+    },
+    {
+     "name": "revise_theory",
+     "arguments": {
+      "theory_id": "T1",
+      "status": "kept",
+      "reason": "Even if SYN-D were real, a label printer's effect on warehouse packing errors would say nothing about home buyers' willingness to pay for professional-origin machines, so it would change nothing for T1. It is not cited. T1 stays uncertain on real evidence: one competitor's claim of home premiumisation, and one professional brand's home launch without sales data.",
+      "new_claim": "none",
+      "evidence_ids": [
+       "frankecoffee-delonghi-premiumisation",
+       "frankecoffee-linea-micra"
+      ]
+     },
+     "stage": "update",
+     "accepted": true,
+     "result": {
+      "recorded": true
+     }
+    },
+    {
+     "name": "revise_theory",
+     "arguments": {
+      "theory_id": "T1",
+      "status": "kept",
+      "reason": "Supposing SYN-D were real: a label printer reducing warehouse packing errors would change nothing for T1, because it measures no buyers, prices or preferences. The result is simulated and is excluded from the evidence cited in finish.",
+      "new_claim": "none",
+      "evidence_ids": [
+       "SYN-D"
+      ]
+     },
+     "stage": "update",
+     "accepted": true,
+     "result": {
+      "recorded": true
+     }
+    },
+    {
+     "name": "finish",
+     "arguments": {
+      "recommendation": "Do not commit to a consumer proposition yet. The evidence I could find does not show that individual buyers would pay for a Franke-engineered home machine, and I found no public evidence that Franke already sells to individuals. Test the question cheaply first (proposed budget EUR 20,000, 12 weeks) before choosing between a home-branded product and a component or licensing route.",
+      "target_customer": "Not chosen. Candidate under T1: affluent home espresso buyers who already buy premium machines. Alternative under T2: consumer appliance brands as component or licence buyers.",
+      "value_proposition": "Unproven. Under T1, a professional-engineered home machine that earns a premium from its origin. Under T2, a component or platform that consumer brands buy because they lack espresso engineering.",
+      "favoured_theory": "T1",
+      "next_action": "Run the proposed test X1: about 400 conjoint respondents in one market plus 10 to 12 consumer-brand interviews (sample and budget are my proposals). Before that, check Franke's existing individual-buyer channels from sources I did not find.",
+      "uncertainty": "High. Evidence is company-side or trade press. The De'Longhi quote is a competitor describing its own results. The Linea Micra launch shows intent, not sales. The Mahlk\u00f6nig home line was retired with no reason given, so it bears more on T1 than T2; I first logged it against T2 and have corrected that in revisions. I found no public data on Franke's consumer sales, margins, contracts with consumer brands, or independent willingness-to-pay studies. Test figures are my proposals, not observations.",
+      "would_change_if": [
+       "Conjoint shows origin claim under 10% of importance and at least half of consumer brands interested in supply: shift to T2 and the licensing route.",
+       "Origin premium at least 15%, origin in top two attributes for at least 25% of respondents, and at least 5% pre-order intent: move toward a home-branded product (T1).",
+       "Public evidence that Franke already sells consumer or small-buyer products profitably, or that comparable professional-brand home lines were profitable.",
+       "Evidence that the Linea Micra or similar home launches sold poorly for reasons of price or ease of use, not brand origin."
+      ],
+      "evidence_ids": [
+       "frankecoffee-about",
+       "frankecoffee-delonghi-premiumisation",
+       "frankecoffee-mahlkonig-retired",
+       "frankecoffee-linea-micra"
+      ],
+      "beliefs": {
+       "T1": "uncertain",
+       "T2": "uncertain"
+      }
+     },
+     "stage": "conclude",
+     "accepted": true,
+     "result": {
+      "finished": true
+     }
+    }
+   ],
+   "stop_reason": "finished",
+   "model_turns": [
+    {
+     "text": "{\"name\": \"read_brief\", \"arguments\": {}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 20,
+     "seconds": 1.2106825939990813,
+     "usd": 3e-05,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "company": "Franke Coffee Systems",
+      "question": "Should Franke Coffee Systems develop a differentiated consumer proposition for a specific use case, beyond its existing professional coffee machines? What evidence would justify that investment?",
+      "brief": "Franke Coffee Systems makes professional fully automatic, semi-automatic and traditional coffee machines. It is a division of the Swiss Franke Group and sells through its own subsidiaries and a network of service and distribution partners. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Some of its financial and contractual detail may not be public, so say what you could not find. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures. ",
+      "search_budget": 8,
+      "test_budget_eur": 20000,
+      "max_test_weeks": 12,
+      "simulated_case": false
+     }
+    },
+    {
+     "text": "{\"name\": \"frame_problem\", \"arguments\": {\"objective\": \"Decide whether Franke Coffee Systems should invest in a differentiated consumer (individual buyer) proposition for a specific use case, beyond its professional machines, and identify what evidence would justify that investment.\", \"constraints\": [\"Outside analyst using public sources only; company has not asked and nothing describes its intentions\", \"Financial and contractual detail may be non-public; must state what could not be found\", \"Test budget EUR 20,000 and 12-week limit are analyst assumptions, not company figures\", \"Search budget of 8 searches (7 remaining); no simulated results may be cited in finish\", \"Must establish how far the company already reaches individual buyers rather than assume\"], \"alternatives\": [\"No expansion: keep professional-only focus through its subsidiaries and service/distribution partners\", \"Route change: sell existing professional machines to individual buyers via existing partners or retail channels, with no product redesign\", \"Product redesign: develop a smaller, simpler or differently priced machine for a specific home or small-office use case\", \"Different customer group: target a non-home segment such as small offices, hospitality micro-sites, or workplace pantries with a subscription or service model\", \"Service-led proposition: offer maintenance, bean supply or subscription bundled with professional machines for small buyers\", \"Partner licensing or white-label: let an existing consumer appliance brand carry a Franke-engineered machine, capturing value through component or licence fees\"]}",
+     "prompt_tokens": 4,
+     "completion_tokens": 487,
+     "seconds": 3.041015998009243,
+     "usd": 0.00026,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "error": "That was not valid JSON: Expecting ',' delimiter."
+     }
+    },
+    {
+     "text": "{\"name\": \"frame_problem\", \"arguments\": {\"objective\": \"Decide whether Franke Coffee Systems should invest in a differentiated consumer (individual buyer) proposition for a specific use case, beyond its professional machines, and identify what evidence would justify that investment.\", \"constraints\": [\"Outside analyst using public sources only; the company has not asked and nothing here describes its intentions\", \"Financial and contractual detail may be non-public; state what could not be found\", \"Test budget EUR 20,000 and 12-week limit are analyst assumptions, not company figures\", \"Search budget is 8 (7 remaining); no simulated results may be cited in finish\", \"Must establish how far the company already reaches individual buyers rather than assume\"], \"alternatives\": [\"No expansion: keep the professional-only focus through subsidiaries and service/distribution partners\", \"Route change: sell existing professional machines to individual buyers via existing partners or retail, with no product redesign\", \"Product redesign: a smaller, simpler or differently priced machine for a specific home or small-office use case\", \"Different customer group: a non-home segment such as small offices, hospitality micro-sites or workplace pantries, with a subscription or service model\", \"Service-led proposition: maintenance, bean supply or subscription bundled with professional machines for small buyers\", \"Partner licensing or white-label: an existing consumer appliance brand carries a Franke-engineered machine, and Franke captures value through component or licence fees\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 681,
+     "seconds": 2.902555676002521,
+     "usd": 0.00044,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "accepted": true
+     }
+    },
+    {
+     "text": "{\"name\": \"search_evidence\", \"arguments\": {\"query\": \"Franke Coffee Systems consumer home machines individual buyers\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 47,
+     "seconds": 0.9899689159938134,
+     "usd": 0.00015,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "results": [
+       {
+        "id": "frankecoffee-delonghi-premiumisation",
+        "title": "La Marzocco and Eversys boost De'Longhi's full-year revenues (World Coffee Portal)",
+        "class": "verified_observation"
+       },
+       {
+        "id": "frankecoffee-mahlkonig-retired",
+        "title": "Mahlk\u00f6nig Re-Entering the Home Market with X54 Allround Grinder (Daily Coffee News)",
+        "class": "verified_observation"
+       },
+       {
+        "id": "frankecoffee-about",
+        "title": "Franke press release: new A Line (About Franke Coffee Systems)",
+        "class": "company_claim"
+       }
+      ],
+      "searches_left": 7
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"frankecoffee-about\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 32,
+     "seconds": 0.9138131139916368,
+     "usd": 0.0001,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "frankecoffee-about",
+      "class": "company_claim",
+      "title": "Franke press release: new A Line (About Franke Coffee Systems)",
+      "url": "https://www.franke.com/content/dam/franke/language-masters/en/coffee-systems/documents/press_releases/en/Franke_Press_Release_New_A_Line_20251017_en.pdf",
+      "date": "2025-10-17",
+      "geography": "International",
+      "excerpt": "Franke Coffee Systems, a division of the Franke Group, is a world-leading developer and manufacturer of professional coffee machines. Headquartered in Aarburg, Switzerland, the company brings together Swiss engineering excellence, state-of-the-art technology, and profound coffee expertise. Around 900 employees, together with an optimized service and distribution network of more than 300 partners, support businesses in 80 countries.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"frankecoffee-mahlkonig-retired\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 40,
+     "seconds": 0.9887746629974572,
+     "usd": 0.00012,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "frankecoffee-mahlkonig-retired",
+      "class": "verified_observation",
+      "title": "Mahlk\u00f6nig Re-Entering the Home Market with X54 Allround Grinder (Daily Coffee News)",
+      "url": "https://dailycoffeenews.com/2021/05/06/mahlkonig-re-entering-the-home-market-with-x54-allround-grinder/",
+      "date": "2021-05-06",
+      "geography": "Global",
+      "excerpt": "In February of 2020 the company announced that its previous consumer-oriented machine with flat 54-millimeter burrs, the Mahlk\u00f6nig Vario Home, would be retired from the product line.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"frankecoffee-delonghi-premiumisation\"}}\n```",
+     "prompt_tokens": 4,
+     "completion_tokens": 45,
+     "seconds": 1.0329374419961823,
+     "usd": 0.00011,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "error": "That was not valid JSON: Extra data."
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"frankecoffee-delonghi-premiumisation\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 41,
+     "seconds": 0.9278369559906423,
+     "usd": 9e-05,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "frankecoffee-delonghi-premiumisation",
+      "class": "verified_observation",
+      "title": "La Marzocco and Eversys boost De'Longhi's full-year revenues (World Coffee Portal)",
+      "url": "https://www.worldcoffeeportal.com/news/la-marzocco-and-eversys-boost-delonghis-full-year-revenues/",
+      "date": "2025-01-31",
+      "geography": "Europe / global",
+      "excerpt": "In a press release, De\u2019Longhi reported a positive performance across all regions, with sales in Europe particularly high following rising demand for professional fully automatic coffee machines and growing premiumisation among home consumers.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"add_theory\", \"arguments\": {\"claim\": \"Home buyers are trading up to professional-grade machines, so a Franke-engineered machine scaled for a home kitchen could capture premium prices from individuals who currently buy from consumer brands.\", \"who_benefits\": \"Affluent home coffee enthusiasts who want caf\u00e9-quality espresso; Franke, which would sell at a premium margin.\", \"why_behaviour_changes\": \"Buyers see coffee at home as a status and quality purchase, so they pay more for machines that look and perform like professional equipment.\", \"how_value_is_captured\": \"Franke sells its own branded home model at premium prices through retail or direct channels, keeping the margin that consumer brands now earn.\", \"assumptions\": [\"Premiumisation among home buyers is real and growing (De'Longhi cites it)\", \"Buyers will pay a clear premium for professional engineering in a home-sized form\", \"Franke can build a small-footprint model without losing the reliability that defines its professional brand\", \"Consumer retail or direct-to-consumer channels are open to a new entrant from the professional segment\"], \"predictions\": [\"Home buyers in target markets will show willingness to pay a measurable premium (e.g., 20% or more) for a professional-grade home model over a consumer model in a conjoint or pre-order test\", \"Sales of the premium consumer segment will grow faster than the overall home machine market over the next 3 years\", \"Pre-orders will be concentrated among existing professional-machine users or serious enthusiasts, not general households\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 865,
+     "seconds": 5.395789820991922,
+     "usd": 0.00053,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "theory_id": "T1"
+     }
+    },
+    {
+     "text": "{\"name\": \"add_theory\", \"arguments\": {\"claim\": \"Individual buyers value convenience and consistency over engineering pedigree, so a professional machine's strengths (durability, service network, high-volume performance) do not transfer to the home and Franke's value is captured better by supplying a component or platform to consumer brands than by selling its own home machine.\", \"who_benefits\": \"Consumer appliance brands that lack espresso engineering, and Franke, which avoids building consumer brand, distribution and marketing costs.\", \"why_behaviour_changes\": \"Home buyers choose on price, ease of use, look and brand trust in consumer retail; they rarely judge a machine by commercial-grade specifications, so an engineering-led brand adds little to their purchase decision.\", \"how_value_is_captured\": \"Franke earns a per-unit component, platform or licence fee from a consumer brand that owns the retail relationship, rather than funding its own consumer brand.\", \"assumptions\": [\"Consumer brands are willing to buy engineered components or platforms from outside suppliers\", \"Home buyers do not pay a meaningful premium for a professional-origin badge\", \"Franke's professional strengths (service network, durability) are not required by home buyers\", \"A licence or component model would not cannibalise the professional business\"], \"predictions\": [\"Consumer brands that license professional-grade components show higher unit volumes than professional brands that launch their own home models\", \"Home buyers in a choice test rate ease of use and price above professional-origin claims\", \"Companies that tried home-only entry from the professional segment have exited or shrunk their home lines\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 523,
+     "seconds": 3.3609647779958323,
+     "usd": 0.00044,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "theory_id": "T2"
+     }
+    },
+    {
+     "text": "{\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"frankecoffee-delonghi-premiumisation\", \"direction\": \"supports\", \"quote\": \"growing premiumisation among home consumers\", \"evidence_kind\": \"company_assertion\", \"does_not_show\": \"Whether home buyers would pay a premium for a professional-origin machine from Franke, how large that segment is, or whether Franke's margins would hold. It is a competitor's own description of its results, reported by trade press, not an independent measure of demand for a professional-grade home product.\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 566,
+     "seconds": 3.3930120750010246,
+     "usd": 0.00043,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "text": "{\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T2\", \"evidence_id\": \"frankecoffee-mahlkonig-retired\", \"direction\": \"contradicts\", \"quote\": \"the Mahlk\u00f6nig Vario Home, would be retired from the product line.\", \"evidence_kind\": \"market_fact\", \"does_not_show\": \"Why the home model was retired. The excerpt gives no reason, so it cannot show whether home buyers rejected engineering pedigree, whether the line was unprofitable, or whether it was a strategic choice. It is one case from a grinder brand, and it does not tell us about Franke. As written it cuts against T1 more than T2, since it shows a professional-origin brand leaving the home market.\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 244,
+     "seconds": 1.8195933739916654,
+     "usd": 0.00029,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "text": "{\"name\": \"challenge_theory\", \"arguments\": {\"theory_id\": \"T1\", \"query\": \"home consumers premium espresso machine sales decline or price sensitivity\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 302,
+     "seconds": 2.1049769160017604,
+     "usd": 0.00027,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "results": [
+       {
+        "id": "frankecoffee-delonghi-premiumisation",
+        "title": "La Marzocco and Eversys boost De'Longhi's full-year revenues (World Coffee Portal)",
+        "class": "verified_observation"
+       },
+       {
+        "id": "frankecoffee-mahlkonig-retired",
+        "title": "Mahlk\u00f6nig Re-Entering the Home Market with X54 Allround Grinder (Daily Coffee News)",
+        "class": "verified_observation"
+       },
+       {
+        "id": "frankecoffee-linea-micra",
+        "title": "La Marzocco launches the new Linea Micra (Comunicaff\u00e8 International)",
+        "class": "verified_observation"
+       }
+      ],
+      "searches_left": 6
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"frankecoffee-linea-micra\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 80,
+     "seconds": 1.155894208990503,
+     "usd": 0.0002,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "frankecoffee-linea-micra",
+      "class": "verified_observation",
+      "title": "La Marzocco launches the new Linea Micra (Comunicaff\u00e8 International)",
+      "url": "https://comunicaffe.com/la-marzocco-launches-the-new-linea-micra",
+      "date": "2022-11-10",
+      "geography": "Global",
+      "excerpt": "The Linea Micra is the first La Marzocco espresso machine designed for dedicated use in the home.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"frankecoffee-linea-micra\", \"direction\": \"supports\", \"quote\": \"The Linea Micra is the first La Marzocco espresso machine designed for dedicated use in the home.\", \"evidence_kind\": \"market_fact\", \"does_not_show\": \"Whether the Linea Micra sold well, at what premium, or to whom. A launch shows that a professional brand chose to enter the home, not that the home segment is profitable. The excerpt does not give volumes, prices or results. It also does not show that Franke's brand would transfer to the home.\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 300,
+     "seconds": 2.153815201992984,
+     "usd": 0.00029,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "text": "{\"name\": \"propose_test\", \"arguments\": {\"name\": \"Home premium WTP and brand-origin conjoint with consumer-brand licensing interviews\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Two parallel tracks over 12 weeks. (a) Online discrete-choice (conjoint) survey of home espresso buyers who bought a machine above EUR 500 in the last 3 years, testing price, ease of use, and a 'professional-engineered' origin claim, with and without a Franke name. (b) Structured interviews with product or sourcing managers at consumer appliance brands, testing interest in buying a professional-grade component or platform. Costs are proposed estimates.\", \"sample\": \"Proposed: about 400 completed survey respondents in one market (e.g., Germany or Italy), and about 10 to 12 interviews with consumer appliance brand buyers across Europe.\", \"measure\": \"(a) Relative importance of the origin claim versus price and ease of use, and the implied WTP premium for a professional-origin home model. (b) Share of interviewed brands that would consider a licensed or component supply, and any stated volume or price terms.\", \"prediction_by_theory\": {\"T1\": \"The professional-origin attribute carries a implied premium of at least 20% over the same machine without it, and at least 15% of respondents rank it first among attributes.\", \"T2\": \"Price and ease of use outweigh origin claim (origin under 10% of importance). At least half of interviewed consumer brands express interest in a component or licence supply.\"}, \"decision_rule\": \"Proceed to a home-branded product only if the origin premium is at least 15% and origin ranks in the top two attributes for at least 25% of respondents, and pre-order or deposit intent is at least 5% among qualified respondents. If origin importance is under 10% and at least half of brands show interest, pursue the licensing route instead. Otherwise do not invest beyond the test.\", \"cost_eur\": 20000, \"weeks\": 12}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 919,
+     "seconds": 5.30773431599664,
+     "usd": 0.00061,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "test_id": "X1",
+      "note": "Proposed only. Nothing has been run, and its figures are analyst assumptions."
+     }
+    },
+    {
+     "text": "{\"name\": \"state_position\", \"arguments\": {\"favoured_theory\": \"T1\", \"recommendation\": \"Do not commit to a consumer product yet. Run the proposed low-cost test to see whether home buyers pay for a professional-origin claim, and in parallel check whether consumer brands would license Franke components. Decide between a home-branded product and a licensing route only after the test results.\", \"beliefs\": {\"T1\": \"uncertain\", \"T2\": \"uncertain\"}}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 354,
+     "seconds": 2.9799317699944368,
+     "usd": 0.00041,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "recorded": true,
+      "update": {
+       "id": "SYN-D",
+       "title": "Simulated warehouse test",
+       "class": "synthetic",
+       "note": "A new SIMULATED result is available. Read it with read_source."
+      }
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"SYN-D\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 70,
+     "seconds": 1.1391981649940135,
+     "usd": 0.0002,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "SYN-D",
+      "class": "synthetic",
+      "title": "Simulated warehouse test",
+      "url": "n/a",
+      "date": "n/a",
+      "geography": "unknown",
+      "excerpt": "SIMULATED RESULT, NOT REAL DATA. In this simulated warehouse test, a new label printer reduced packing errors slightly. Nothing about wearers or buyers was measured.",
+      "access_limitation": "synthetic"
+     }
+    },
+    {
+     "text": "{\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"SYN-D is a simulated warehouse test about label printer packing errors. It measures nothing about buyers or wearers, so it does not bear on T1. It changes nothing, and it is not cited.\", \"new_claim\": \"none\", \"evidence_ids\": []}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 260,
+     "seconds": 1.8541367769939825,
+     "usd": 0.00028,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "error": "evidence_ids must list evidence you have read"
+     }
+    },
+    {
+     "text": "{\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"The simulated result SYN-D (label printer, warehouse packing errors) measures nothing about buyers, so it does not bear on T1 and changes nothing. T1 is kept on the real evidence already assessed: the De'Longhi premiumisation claim and the Linea Micra launch, both of which are company-side and do not establish demand for a Franke product.\", \"new_claim\": \"none\", \"evidence_ids\": [\"frankecoffee-delonghi-premiumisation\", \"frankecoffee-linea-micra\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 262,
+     "seconds": 1.7818006300076377,
+     "usd": 0.0003,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "recorded": true
+     }
+    },
+    {
+     "text": "{\"name\": \"finish\", \"arguments\": {\"recommendation\": \"Do not commit to a consumer proposition yet. Found evidence does not show that individual buyers would pay for a Franke-engineered home machine, and it does not show that Franke already sells to individuals. Spend up to the proposed EUR 20,000 on the conjoint and consumer-brand interview test before choosing between a home-branded product and a licensing route. Do not build a home product on current evidence.\", \"target_customer\": \"Not chosen. Candidate: affluent home espresso buyers who already buy premium machines (T1). Alternative: consumer appliance brands as component or licence buyers (T2).\", \"value_proposition\": \"Unproven. Under T1, a professional-engineered home machine that earns a premium on its origin. Under T2, a component or platform that consumer brands buy because they lack espresso engineering.\", \"favoured_theory\": \"T1\", \"next_action\": \"Run test X1 (proposed: about 400 conjoint respondents plus 10 to 12 consumer-brand interviews, EUR 20,000, 12 weeks). Before that, check Franke's existing individual-buyer channels, which I did not establish from public sources.\", \"uncertainty\": \"High. Evidence is company-side or trade press. The De'Longhi quote is a competitor's own description of its results. The Linea Micra launch shows intent, not sales. The Mahlk\u00f6nig home line was retired, but the excerpt gives no reason, so it cuts against T1 more than T2. I assessed it as contradicting T2 when its direction bears on T1; the finish should be read with that correction. I found no public data on Franke's consumer sales, margins, or contracts with consumer brands, and no independent study of home premium willingness to pay. Test figures are my proposals, not observed.\", \"would_change_if\": [\"Conjoint shows origin claim under 10% of importance, with at least half of consumer brands interested in supply: shift to T2 and the licensing route.\", \"Origin premium at least 15% and origin in top two attributes for at least 25% of respondents, with at least 5% pre-order intent: proceed toward a home-branded product (T1).\", \"Public evidence that Franke already sells consumer or small-buyer products successfully, or that comparable professional-brand home lines were profitable.\", \"Evidence that the Linea Micra or similar launches sold poorly or were withdrawn with reasons pointing to price or ease of use.\"], \"evidence_ids\": [\"frankecoffee-about\", \"frankecoffee-delonghi-premiumisation\", \"frankecoffee-mahlkonig-retired\", \"frankecoffee-linea-micra\"], \"beliefs\": {\"T1\": \"uncertain\", \"T2\": \"uncertain\"}}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 1083,
+     "seconds": 5.749456887002452,
+     "usd": 0.00071,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "error": "not at this stage (update). Open now: ['revise_theory']"
+     }
+    },
+    {
+     "text": "{\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T2\", \"status\": \"kept\", \"reason\": \"SYN-D is simulated and measures label printer packing errors, not buyers or licensing interest. It bears on neither T1 nor T2 and is not cited. T2 is kept as untested. I also correct my earlier assessment: the Mahlk\u00f6nig retirement was recorded against T2, but it bears more on T1, since it shows a professional brand leaving the home market.\", \"new_claim\": \"none\", \"evidence_ids\": [\"frankecoffee-mahlkonig-retired\", \"frankecoffee-about\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 395,
+     "seconds": 2.524984992996906,
+     "usd": 0.00047,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "recorded": true
+     }
+    },
+    {
+     "text": "{\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Even if SYN-D were real, a label printer's effect on warehouse packing errors would say nothing about home buyers' willingness to pay for professional-origin machines, so it would change nothing for T1. It is not cited. T1 stays uncertain on real evidence: one competitor's claim of home premiumisation, and one professional brand's home launch without sales data.\", \"new_claim\": \"none\", \"evidence_ids\": [\"frankecoffee-delonghi-premiumisation\", \"frankecoffee-linea-micra\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 441,
+     "seconds": 2.7820688180072466,
+     "usd": 0.00042,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "recorded": true
+     }
+    },
+    {
+     "text": "{\"name\": \"revise_theory\", \"arguments\": {\"theory_id\": \"T1\", \"status\": \"kept\", \"reason\": \"Supposing SYN-D were real: a label printer reducing warehouse packing errors would change nothing for T1, because it measures no buyers, prices or preferences. The result is simulated and is excluded from the evidence cited in finish.\", \"new_claim\": \"none\", \"evidence_ids\": [\"SYN-D\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 282,
+     "seconds": 2.151527605004958,
+     "usd": 0.00035,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "recorded": true
+     }
+    },
+    {
+     "text": "{\"name\": \"finish\", \"arguments\": {\"recommendation\": \"Do not commit to a consumer proposition yet. The evidence I could find does not show that individual buyers would pay for a Franke-engineered home machine, and I found no public evidence that Franke already sells to individuals. Test the question cheaply first (proposed budget EUR 20,000, 12 weeks) before choosing between a home-branded product and a component or licensing route.\", \"target_customer\": \"Not chosen. Candidate under T1: affluent home espresso buyers who already buy premium machines. Alternative under T2: consumer appliance brands as component or licence buyers.\", \"value_proposition\": \"Unproven. Under T1, a professional-engineered home machine that earns a premium from its origin. Under T2, a component or platform that consumer brands buy because they lack espresso engineering.\", \"favoured_theory\": \"T1\", \"next_action\": \"Run the proposed test X1: about 400 conjoint respondents in one market plus 10 to 12 consumer-brand interviews (sample and budget are my proposals). Before that, check Franke's existing individual-buyer channels from sources I did not find.\", \"uncertainty\": \"High. Evidence is company-side or trade press. The De'Longhi quote is a competitor describing its own results. The Linea Micra launch shows intent, not sales. The Mahlk\u00f6nig home line was retired with no reason given, so it bears more on T1 than T2; I first logged it against T2 and have corrected that in revisions. I found no public data on Franke's consumer sales, margins, contracts with consumer brands, or independent willingness-to-pay studies. Test figures are my proposals, not observations.\", \"would_change_if\": [\"Conjoint shows origin claim under 10% of importance and at least half of consumer brands interested in supply: shift to T2 and the licensing route.\", \"Origin premium at least 15%, origin in top two attributes for at least 25% of respondents, and at least 5% pre-order intent: move toward a home-branded product (T1).\", \"Public evidence that Franke already sells consumer or small-buyer products profitably, or that comparable professional-brand home lines were profitable.\", \"Evidence that the Linea Micra or similar home launches sold poorly for reasons of price or ease of use, not brand origin.\"], \"evidence_ids\": [\"frankecoffee-about\", \"frankecoffee-delonghi-premiumisation\", \"frankecoffee-mahlkonig-retired\", \"frankecoffee-linea-micra\"], \"beliefs\": {\"T1\": \"uncertain\", \"T2\": \"uncertain\"}}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 855,
+     "seconds": 3.6059702660131734,
+     "usd": 0.00062,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "finished": true
+     }
+    }
+   ],
+   "attempt": 2,
+   "episode": "c12c6f8809cfad021421de9d335f89adcba4813e141c7333ea5ce672a377219f"
+  }
+ ],
+ "auditkit": {
+  "cases": 1,
+  "replay_mismatches": 0,
+  "guards_cleared": 1,
+  "guards_not_cleared": 0,
+  "other": 0,
+  "known_tool_names": 1.0,
+  "redundant_tool_calls": 0.0,
+  "no_looping": 1.0
+ }
+}

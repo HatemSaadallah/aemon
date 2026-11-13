@@ -1,0 +1,1802 @@
+{
+ "inference_only": true,
+ "trained": false,
+ "code_revision": "da811d3",
+ "uncommitted_changes": false,
+ "arguments": {
+  "url": "http://127.0.0.1:8091",
+  "prompt": "staged",
+  "cases": "rational-base",
+  "split": "heldout",
+  "max_turns": 45,
+  "max_errors": 4,
+  "reread_limit": null,
+  "source_dates": false,
+  "status_check": false,
+  "min_assessed": 1,
+  "stuck_help": false,
+  "recovery": "",
+  "max_tokens": 520,
+  "context": 12288,
+  "output": "experiments/haiku/final_reruns/rational-base_1.json",
+  "backend": "claude",
+  "model_label": "tiny-aya-global-q4_k_m.gguf a602ea7",
+  "weights_sha256": null,
+  "manifest": "/home/USER/Desktop/lexsi-ai-hackathon/reports/strategy/provenance.jsonl",
+  "temperature": 0,
+  "attempts": 1,
+  "workers": 1,
+  "first_attempt": 1,
+  "server_settings": null,
+  "lora_route": null,
+  "effort": "medium",
+  "claude_model": "claude-haiku-5-5",
+  "run_cap_usd": 1.0
+ },
+ "system_prompt": "You are a strategy analyst investigating an opportunity for a manufacturer. Use these tools:\nread_brief {} : read the company, the question and your budgets.\nframe_problem {\"objective\":\"...\",\"constraints\":[\"...\"],\"alternatives\":[\"...\"]} : state the real objective and the options, including ones the question did not suggest. Accepted once.\nsearch_evidence {\"query\":\"...\"} : keyword search of the evidence. Uses one search.\nchallenge_theory {\"theory_id\":\"T1\",\"query\":\"...\"} : search for evidence that could prove a theory wrong. Uses one search.\nread_source {\"id\":\"...\"} : read a result found by search.\nadd_theory {\"claim\":\"...\",\"who_benefits\":\"...\",\"why_behaviour_changes\":\"...\",\"how_value_is_captured\":\"...\",\"assumptions\":[\"...\"],\"predictions\":[\"...\"]} : add one causal theory of value. Returns its id.\nassess_evidence {\"theory_id\":\"T1\",\"evidence_id\":\"...\",\"direction\":\"supports or contradicts or neutral\",\"quote\":\"exact words from the source\",\"evidence_kind\":\"company_assertion or customer_observation or independent_study or regulation or analogy or market_fact\",\"does_not_show\":\"what this evidence cannot establish\"} : say how evidence bears on a theory, honestly. Use neutral if it does neither.\npropose_test {\"name\":\"...\",\"theories\":[\"T1\",\"T2\"],\"method\":\"...\",\"sample\":\"...\",\"measure\":\"...\",\"prediction_by_theory\":{\"T1\":\"...\",\"T2\":\"...\"},\"decision_rule\":\"...\",\"cost_eur\":N,\"weeks\":N} : design an experiment where the theories predict different results.\nrevise_theory {\"theory_id\":\"T1\",\"status\":\"kept or revised or rejected\",\"reason\":\"...\",\"new_claim\":\"the changed claim, or none\",\"evidence_ids\":[\"...\"]} : update a theory after new evidence.\nfinish {\"recommendation\":\"...\",\"target_customer\":\"...\",\"value_proposition\":\"...\",\"favoured_theory\":\"T1\",\"next_action\":\"...\",\"uncertainty\":\"...\",\"would_change_if\":[\"...\"],\"evidence_ids\":[\"...\"]} : end the investigation.\n\nReply with one JSON object: {\"name\": \"<tool>\", \"arguments\": {...}}. A user turn that starts with \"Tool result:\" is the output of your call. End by calling finish.\n\nWork like a scientist, not a consultant.\n1. read_brief, then frame_problem. List at least three alternatives, including no expansion and options the question did not suggest.\n2. Search before you theorise. Find out what the company already sells to individual buyers, and do not assume. Read at least three sources.\n3. add_theory at least twice, and a third time if you have a different cause. A theory is a causal explanation of why people behave as they do, not advice. Do not write \"the company should\". Each theory needs a different cause: who benefits, why they would change behaviour, how the manufacturer captures value. Give assumptions, and predictions someone could measure.\nFor example, from eyewear: \"People treat glasses as a medical necessity. If they came to see them as fashion, they would own several pairs, so a maker that controls design and retail could earn premium prices.\" A rival theory would name a different cause.\n4. assess_evidence for every theory, quoting the source's exact words. Say what kind of evidence it is and what it cannot show. A company's own claim is not proof of demand. Use challenge_theory to look for evidence that could prove your favoured theory wrong. If you find nothing against it, say so. Never force a contradiction.\n5. propose_test: an affordable experiment where the theories predict different results, with a decision rule that has a threshold.\n6. If new evidence arrives, read it and use revise_theory.\n7. finish. Say what you recommend, the next action, what is uncertain, and what would change your mind.\n\nEvery number or fact you present as observed must come from a source you read. Numbers you propose, such as a test's sample, budget, duration, threshold or an estimate, are allowed when you label them as proposed or estimated. Your theories are hypotheses, not facts. Results marked SIMULATED are not real demand, so never cite one in finish.\n\nA controller opens the tools for each stage, and each tool result lists them. Before you finish you will also use:\ndecline_test {\"reason\":\"...\"} : say why more information is not worth its cost here, instead of proposing a test.\nstate_position {\"favoured_theory\":\"T1\",\"recommendation\":\"...\",\"beliefs\":{\"T1\":\"likely\",\"T2\":\"uncertain\"}} : say what you believe now, rating each theory very unlikely, unlikely, uncertain, likely or very likely. finish then also takes \"beliefs\".\nA SIMULATED result is a what-if exercise. Reason as if it were real, and say what it would mean for your theories. A result can change nothing. Still keep it out of the evidence you cite.",
+ "tool_schema": {
+  "anyOf": [
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "read_brief"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [],
+      "properties": {}
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "frame_problem"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "alternatives",
+       "constraints",
+       "objective"
+      ],
+      "properties": {
+       "objective": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "constraints": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       },
+       "alternatives": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "search_evidence"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "query"
+      ],
+      "properties": {
+       "query": {
+        "type": "string",
+        "maxLength": 120
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "challenge_theory"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "query",
+       "theory_id"
+      ],
+      "properties": {
+       "theory_id": {
+        "type": "string",
+        "maxLength": 4
+       },
+       "query": {
+        "type": "string",
+        "maxLength": 120
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "read_source"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "id"
+      ],
+      "properties": {
+       "id": {
+        "type": "string",
+        "maxLength": 40
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "add_theory"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "assumptions",
+       "claim",
+       "how_value_is_captured",
+       "predictions",
+       "who_benefits",
+       "why_behaviour_changes"
+      ],
+      "properties": {
+       "claim": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "who_benefits": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "why_behaviour_changes": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "how_value_is_captured": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "assumptions": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       },
+       "predictions": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "assess_evidence"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "direction",
+       "does_not_show",
+       "evidence_id",
+       "evidence_kind",
+       "quote",
+       "theory_id"
+      ],
+      "properties": {
+       "theory_id": {
+        "type": "string",
+        "maxLength": 4
+       },
+       "evidence_id": {
+        "type": "string",
+        "maxLength": 40
+       },
+       "direction": {
+        "enum": [
+         "supports",
+         "contradicts",
+         "neutral"
+        ]
+       },
+       "quote": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "evidence_kind": {
+        "enum": [
+         "company_assertion",
+         "customer_observation",
+         "independent_study",
+         "regulation",
+         "analogy",
+         "market_fact"
+        ]
+       },
+       "does_not_show": {
+        "type": "string",
+        "maxLength": 240
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "propose_test"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "cost_eur",
+       "decision_rule",
+       "measure",
+       "method",
+       "name",
+       "prediction_by_theory",
+       "sample",
+       "theories",
+       "weeks"
+      ],
+      "properties": {
+       "name": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "theories": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 4
+        },
+        "maxItems": 5
+       },
+       "method": {
+        "type": "string",
+        "maxLength": 900
+       },
+       "sample": {
+        "type": "string",
+        "maxLength": 500
+       },
+       "measure": {
+        "type": "string",
+        "maxLength": 500
+       },
+       "prediction_by_theory": {
+        "type": "object",
+        "additionalProperties": {
+         "type": "string",
+         "maxLength": 600
+        }
+       },
+       "decision_rule": {
+        "type": "string",
+        "maxLength": 900
+       },
+       "cost_eur": {
+        "type": "number"
+       },
+       "weeks": {
+        "type": "number"
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "revise_theory"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "evidence_ids",
+       "new_claim",
+       "reason",
+       "status",
+       "theory_id"
+      ],
+      "properties": {
+       "theory_id": {
+        "type": "string",
+        "maxLength": 4
+       },
+       "status": {
+        "enum": [
+         "kept",
+         "revised",
+         "rejected"
+        ]
+       },
+       "reason": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "new_claim": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "evidence_ids": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "minItems": 1,
+        "maxItems": 8
+       }
+      }
+     }
+    }
+   },
+   {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "arguments"
+    ],
+    "properties": {
+     "name": {
+      "const": "finish"
+     },
+     "arguments": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "evidence_ids",
+       "favoured_theory",
+       "next_action",
+       "recommendation",
+       "target_customer",
+       "uncertainty",
+       "value_proposition",
+       "would_change_if"
+      ],
+      "properties": {
+       "recommendation": {
+        "type": "string",
+        "maxLength": 420
+       },
+       "target_customer": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "value_proposition": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "favoured_theory": {
+        "type": "string",
+        "maxLength": 4
+       },
+       "next_action": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "uncertainty": {
+        "type": "string",
+        "maxLength": 240
+       },
+       "would_change_if": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        },
+        "maxItems": 6
+       },
+       "evidence_ids": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 40
+        },
+        "minItems": 1,
+        "maxItems": 8
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "guidance_in_tool_results": true,
+ "finish_needs_every_stage": false,
+ "stage_controller": true,
+ "server_context": 12288,
+ "model": "claude-haiku-5-5",
+ "runtime": "Anthropic API, effort medium, no seed or temperature, so runs do not repeat exactly",
+ "protocol": {
+  "id": "5436e7c61bbb",
+  "parts": {
+   "controller": "b3b5efe0632f",
+   "tools": "dbadcc63f3c9",
+   "checks": "b8a2151117f3",
+   "constants": "57e4a43cb10a",
+   "prompts": "d8ed089d8692",
+   "evidence": "eafe7c896fbf",
+   "cases": "b5b81df51714",
+   "runner": "7d91d62c571d",
+   "chat": "6fb24e3e67f1",
+   "system_prompt": "8fd01826842f",
+   "generation": "976f7d0fb9de"
+  },
+  "generation": {
+   "prompt": "staged",
+   "split": "heldout",
+   "max_turns": 45,
+   "consecutive_errors": 4,
+   "max_tokens": 520,
+   "context": 12288,
+   "temperature": 0,
+   "retry_temperature": 0.4
+  }
+ },
+ "suite": {
+  "id": "7ffca8f0fbcf",
+  "cases": [
+   "rational-base"
+  ],
+  "attempts": 1,
+  "first_attempt": 1
+ },
+ "model_identity": {
+  "backend": "claude",
+  "name": "claude-haiku-5-5",
+  "weights_sha256": null,
+  "build": null,
+  "template": "12ae32cb1ec0",
+  "file": "",
+  "slots": null,
+  "generation": {},
+  "id": "a01b6a414f5b"
+ },
+ "prompt": "staged",
+ "summary": {
+  "episodes": 1,
+  "finished": 1,
+  "end_to_end_success": 0,
+  "stop_reasons": {
+   "finished": 1
+  },
+  "furthest_stage": {
+   "finish": 1
+  },
+  "checks": {
+   "finished": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "framing": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "theories": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "causal_form": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "testable_predictions": {
+    "passed": 0,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_use": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_classes": {
+    "passed": 0,
+    "reached": 0,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_kinds": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "evidence_limits": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "disconfirmation": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "experiment": {
+    "passed": 0,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "revision": {
+    "passed": 0,
+    "reached": 0,
+    "applied": 0,
+    "of_all": 1
+   },
+   "existing_offering": {
+    "passed": 0,
+    "reached": 0,
+    "applied": 0,
+    "of_all": 1
+   },
+   "no_invented_numbers": {
+    "passed": 0,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "simulated_not_used": {
+    "passed": 0,
+    "reached": 0,
+    "applied": 0,
+    "of_all": 1
+   },
+   "recommendation": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   },
+   "tool_use": {
+    "passed": 1,
+    "reached": 1,
+    "applied": 1,
+    "of_all": 1
+   }
+  },
+  "rejections": {
+   "arguments": 2
+  },
+  "shock_coverage": {
+   "cases": 0,
+   "delivered": 0,
+   "read": 0,
+   "held_affected_theory": 0,
+   "addressed_an_affected_theory": 0,
+   "bore_on_favoured": 0,
+   "cited_in_revision": 0,
+   "favoured_changed": 0
+  },
+  "supporting_evidence_attempted": 0,
+  "rejected_finishes": 1,
+  "harness_actions": 0,
+  "refused_calls": 2,
+  "recovered_after_refusal": 2,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 92,
+   "completion_tokens": 15012,
+   "seconds": 216.064,
+   "usd": 0.01
+  },
+  "mean_calls": 20.0
+ },
+ "harness_errors": [],
+ "records": [
+  {
+   "stopping_point": {
+    "furthest_stage": "finish",
+    "calls": 20,
+    "most_common_rejection": "arguments",
+    "stage_at_stop": "done",
+    "rejected_finishes": 1,
+    "harness_actions": 0,
+    "refused": 2,
+    "recovered_after_refusal": 2
+   },
+   "challenge_searches": [
+    {
+     "theory_id": "T1",
+     "query": "consumer willingness to pay premium professional brand home appliance versus consumer brand",
+     "found": [
+      "rational-anova-electrolux",
+      "rational-combi-household",
+      "rational-focus-quote"
+     ]
+    }
+   ],
+   "case": "rational-base",
+   "company": "RATIONAL AG",
+   "simulated_case": false,
+   "checks": {
+    "finished": {
+     "passed": true,
+     "detail": "finished",
+     "status": "passed"
+    },
+    "framing": {
+     "passed": true,
+     "detail": "6 alternatives",
+     "status": "passed"
+    },
+    "theories": {
+     "passed": true,
+     "detail": "2 distinct theories",
+     "status": "passed"
+    },
+    "causal_form": {
+     "passed": true,
+     "detail": "theories are not phrased as advice",
+     "status": "passed"
+    },
+    "testable_predictions": {
+     "passed": false,
+     "detail": "no specific measurable prediction in ['T1']",
+     "status": "failed"
+    },
+    "evidence_use": {
+     "passed": true,
+     "detail": "3 quoted assessments across 5 sources",
+     "status": "passed"
+    },
+    "evidence_classes": {
+     "passed": null,
+     "detail": "no supporting evidence to judge",
+     "status": "not_evaluated"
+    },
+    "evidence_kinds": {
+     "passed": true,
+     "detail": "3 of 3 kinds match the annotation",
+     "status": "passed"
+    },
+    "evidence_limits": {
+     "passed": true,
+     "detail": "limits are stated in the analyst's own words",
+     "status": "passed"
+    },
+    "disconfirmation": {
+     "passed": true,
+     "detail": "1 challenge searches on T1, 0 contradictions recorded",
+     "status": "passed"
+    },
+    "experiment": {
+     "passed": false,
+     "detail": "proposed a test where more information is not worth its cost",
+     "status": "failed"
+    },
+    "revision": {
+     "passed": null,
+     "detail": "no new evidence in this case",
+     "status": "not_applicable"
+    },
+    "existing_offering": {
+     "passed": null,
+     "detail": "no premise to check in this case",
+     "status": "not_applicable"
+    },
+    "no_invented_numbers": {
+     "passed": false,
+     "detail": "numbers with no source: ['18500']",
+     "status": "failed"
+    },
+    "simulated_not_used": {
+     "passed": null,
+     "detail": "no simulated result was seen",
+     "status": "not_applicable"
+    },
+    "recommendation": {
+     "passed": true,
+     "detail": "5 sources, 5 conditions that would change it",
+     "status": "passed"
+    },
+    "tool_use": {
+     "passed": true,
+     "detail": "18 of 20 calls accepted, 3 searches",
+     "status": "passed"
+    }
+   },
+   "rejections": {
+    "arguments": 2
+   },
+   "settings": {
+    "complete_workflow": false,
+    "staged": true,
+    "quote_marks": true
+   },
+   "coverage": {
+    "supporting_evidence_assessed": 0,
+    "test_declined": null,
+    "shock": null
+   },
+   "position": {
+    "favoured_theory": "T1",
+    "recommendation": "Do not commit to a home-cook product yet. Keep the professional focus as the base case. Run the proposed X1 concept test before any build decision. T1 is the only theory with a direct route to a brand-led compact unit, so it is the one to test first, but neither theory has evidence in its favour yet.",
+    "beliefs": {
+     "T1": "uncertain",
+     "T2": "uncertain"
+    }
+   },
+   "test_declined": null,
+   "frame": {
+    "objective": "Decide whether RATIONAL AG should develop a differentiated proposition for home cooks using its commercial combi-steamer technology, or keep its focus on professional kitchens, and identify what evidence would justify each choice. The test is whether a home offering would earn a return that justifies the diversion from core commercial growth and brand risk.",
+    "constraints": [
+     "Outside analyst working only from public sources; no company contact or access to internal data",
+     "RATIONAL has not asked this question and nothing here describes its intentions",
+     "Partly public financials: note what cannot be found or reconciled",
+     "Test budget 20000 EUR and 12-week limit are analyst assumptions, not company figures",
+     "Seven searches remain; spend them carefully",
+     "Must first establish how far RATIONAL already sells to individual buyers rather than assume"
+    ],
+    "alternatives": [
+     "A. No expansion: stay with professional kitchens and optimise the commercial core (service, financing, hospitality and institutional channels)",
+     "B. Consumer-grade combi-steamer sold directly to home cooks under the RATIONAL brand, with a redesigned smaller unit",
+     "C. Licensing or co-branding the commercial technology to an established household appliance maker, which owns retail, marketing and home service",
+     "D. Prosumer line for serious home cooks sold through specialist retail, with a smaller price gap to commercial models",
+     "E. Channel-led entry: sell through existing dealers or kitchen-design partners to affluent renovation customers, without a separate consumer product",
+     "F. Bridge via small food-service operators (caf\u00e9s, caterers, catering schools) before any home product, or software and cooking-data services around existing commercial units"
+    ]
+   },
+   "theories": {
+    "T1": {
+     "claim": "Affluent home cooks buy professional-grade cooking equipment as a status and performance signal. A compact, clearly commercial-derived unit sold directly to them would command a price premium that a home-appliance maker without a professional reputation cannot match.",
+     "who_benefits": "Affluent serious home cooks, who gain perceived performance and status; RATIONAL, which captures premium margin on a brand already associated with professional kitchens.",
+     "why_behaviour_changes": "Buyers who already spend heavily on pro-style ranges and cookware treat the professional brand as evidence of quality, so they will pay more for it than for an equivalent consumer appliance.",
+     "how_value_is_captured": "Direct or specialist-retail sales of a smaller, higher-priced unit, with margin protected by the brand rather than by commercial service contracts.",
+     "assumptions": [
+      "A meaningful segment of home buyers already pays premium prices for pro-style kitchen appliances",
+      "The commercial brand carries recognition among these buyers",
+      "A smaller unit can be built at a cost that still allows premium pricing",
+      "Home buyers will accept the footprint and power requirements"
+     ],
+     "predictions": [
+      "Stated willingness to pay for a pro-branded home unit exceeds that for an otherwise identical unit with a consumer brand",
+      "Purchase intent concentrates in households that already own pro-style ranges or cookware",
+      "Conversion falls sharply if the price gap to consumer models is large relative to perceived brand benefit"
+     ],
+     "status": "open",
+     "first_claim": "Affluent home cooks buy professional-grade cooking equipment as a status and performance signal. A compact, clearly commercial-derived unit sold directly to them would command a price premium that a home-appliance maker without a professional reputation cannot match."
+    },
+    "T2": {
+     "claim": "Home cooks rarely use a combi-steamer after buying it because the value depends on knowing what to cook and how, not on the hardware. The hardware earns little repeat value on its own, so the durable revenue sits in guided recipes and cooking-program content, which a manufacturer with existing commercial program libraries can license.",
+     "who_benefits": "Home cooks who want to use the appliance regularly; RATIONAL, which could earn recurring revenue from recipe and program content rather than one-off hardware sales.",
+     "why_behaviour_changes": "Owners who receive tested programs for everyday dishes keep using the appliance, while owners left with only the manual abandon it after the first few uses.",
+     "how_value_is_captured": "Subscription or per-program fees for cooking content, or bundled content sold with the existing commercial hardware, rather than a new home unit.",
+     "assumptions": [
+      "Home owners underuse ovens and steamers without guided programs",
+      "Owners will pay recurring fees for programs they cannot easily build themselves",
+      "Commercial program libraries can be adapted to domestic dishes and portion sizes",
+      "The hardware installed base in homes is large enough to sell content to"
+     ],
+     "predictions": [
+      "Households given guided programs use the appliance more often over eight weeks than households given only a manual",
+      "Willingness to pay for a program subscription is positive in owners but low in non-owners",
+      "Usage drop-off after month two is steeper without guided content"
+     ],
+     "status": "open",
+     "first_claim": "Home cooks rarely use a combi-steamer after buying it because the value depends on knowing what to cook and how, not on the hardware. The hardware earns little repeat value on its own, so the durable revenue sits in guided recipes and cooking-program content, which a manufacturer with existing commercial program libraries can license."
+    }
+   },
+   "assessments": [
+    {
+     "theory_id": "T1",
+     "evidence_id": "rational-combi-makers",
+     "direction": "neutral",
+     "quote": "Germany: RATIONAL AG , Gaggenau Hausger\u00e4te , PALUX, Convotherm, MKN, ELOMA, Miele , AEG (part of Electrolux), Bosch.",
+     "class": "verified_observation",
+     "evidence_kind": "market_fact",
+     "does_not_show": "Shows that home-appliance makers (Gaggenau, Miele, AEG, Bosch) already list combi-steamers in Germany, so the home segment has competition. It does not show whether home buyers pay a premium for a professional brand, what prices are charged, or whether RATIONAL sells any product to households."
+    },
+    {
+     "theory_id": "T2",
+     "evidence_id": "rational-ir-customers",
+     "direction": "neutral",
+     "quote": "The customer base ranges from restaurants and hotels, company canteens, hospitals, schools, universities, the military, prisons and retirement homes to fast-food restaurants, party services, supermarkets, bakeries and snack bars, butchers, petrol stations and delivery services, including so-called ghost kitchens.",
+     "class": "company_claim",
+     "evidence_kind": "company_assertion",
+     "does_not_show": "This is the company's own description of its customers. It lists only commercial and institutional buyers and says nothing about household use, usage frequency, or whether owners need recipe content to keep using a unit. It cannot test T2."
+    },
+    {
+     "theory_id": "T1",
+     "evidence_id": "rational-combi-household",
+     "direction": "neutral",
+     "quote": "In addition to the professional food-service models, there are also smaller combi steamers for private household use.",
+     "class": "verified_observation",
+     "evidence_kind": "market_fact",
+     "does_not_show": "Confirms that smaller household combi-steamers exist, which makes the home segment real. It does not show that buyers pay more for a professional brand, what price premium exists, or whether RATIONAL sells to households. The challenge found no evidence against T1 yet, and this source does not contradict it."
+    }
+   ],
+   "tests": {
+    "X1": {
+     "name": "Price-gap and guided-use concept test for a pro-branded compact unit",
+     "theories": [
+      "T1",
+      "T2"
+     ],
+     "method": "Online conjoint and stated-preference survey of German households that already own a premium oven or range, with two arms: (a) same compact unit shown with the RATIONAL brand versus a consumer brand, at the same price; (b) unit shown with versus without a guided-program subscription, priced at a proposed monthly fee. Followed by a 4-week diary sub-sample of 60 households receiving a loaned unit with guided programs versus manual only.",
+     "sample": "Proposed: about 600 online respondents screened for premium cooking appliance ownership, plus 60 diary households (30 per arm). Estimated panel cost within budget.",
+     "measure": "Stated willingness to pay (brand arm), purchase intent, and subscription take-up (program arm); weekly self-reported and logged use of the unit in the diary sub-sample.",
+     "prediction_by_theory": {
+      "T1": "Pro brand raises stated willingness to pay by a clear margin over the consumer brand at equal price; the uplift concentrates in owners of pro-style ranges and cookware.",
+      "T2": "Brand uplift is small or absent; the diary arm with guided programs shows materially higher weekly use and subscription take-up than manual-only."
+     },
+     "decision_rule": "Pursue a brand-led compact product (T1) only if the pro-brand arm shows at least a 15% higher stated willingness to pay than the consumer-brand arm, with the effect concentrated in pro-appliance owners. Pursue a content-led model (T2) only if guided-program households use the unit at least 50% more often weekly and at least 25% of them take up a subscription at the proposed fee. If neither threshold is met, do not expand into home cooks. The 15% and 50% thresholds and 25% take-up are proposed analyst thresholds, not observed values.",
+     "cost_eur": 18500,
+     "weeks": 10
+    }
+   },
+   "revisions": [],
+   "final": {
+    "recommendation": "Stay with professional kitchens as the base case. Do not commit to a home-cook product now. Run the proposed X1 concept test (about EUR 18,500, 10 weeks, proposed figures) before any build decision.",
+    "target_customer": "No home-cook target yet. If X1 supports it, the first candidates are affluent households that already own premium or pro-style ranges and cookware.",
+    "value_proposition": "Untested. A compact unit carrying the professional brand (T1), or guided-program content (T2). Neither is supported by evidence yet.",
+    "favoured_theory": "T1",
+    "next_action": "Run the X1 test with a panel or partner, collecting the brand-versus-consumer willingness-to-pay arm and the guided-program diary arm, then apply the decision rule.",
+    "uncertainty": "High. Public sources show RATIONAL's customers are commercial and institutional, and home combi-steamers exist from other makers. I found no source showing RATIONAL sells to households, no pricing or margin data for a home unit, and no evidence that home buyers pay a premium for a professional brand. The company's 4.8 million potential-customer claim is unverified. Thresholds are my proposals.",
+    "would_change_if": [
+     "X1 shows at least 15% higher stated willingness to pay for the pro-branded arm, concentrated in pro-appliance owners",
+     "Guided-program households use the unit at least 50% more often and at least 25% take up a subscription",
+     "Independent data showing a large, growing household segment with proven premium pricing",
+     "Evidence that RATIONAL already sells to households, changing the baseline",
+     "Evidence that home buyers do not pay for a professional brand, shifting the question toward content or channel options"
+    ],
+    "evidence_ids": [
+     "rational-ir-potential",
+     "rational-wiki-icombi90",
+     "rational-combi-makers",
+     "rational-ir-customers",
+     "rational-combi-household"
+    ],
+    "beliefs": {
+     "T1": "uncertain",
+     "T2": "uncertain"
+    }
+   },
+   "searches": [
+    "RATIONAL combi steamer home cooking consumer sales",
+    "RATIONAL home cooking appliance households private customers",
+    "consumer willingness to pay premium professional brand home appliance versus consumer brand"
+   ],
+   "read": [
+    "rational-combi-household",
+    "rational-combi-makers",
+    "rational-ir-customers",
+    "rational-ir-potential",
+    "rational-wiki-icombi90"
+   ],
+   "calls": [
+    {
+     "name": "read_brief",
+     "arguments": {},
+     "stage": "brief",
+     "accepted": true,
+     "result": {
+      "company": "RATIONAL AG",
+      "question": "Should RATIONAL develop a differentiated proposition for home cooks, building on its commercial combi-steamer technology, or stay with professional kitchens? What evidence would justify either choice?",
+      "brief": "RATIONAL AG is a German maker of combi-steamers and other cooking systems for commercial kitchens. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data is partly public, so say what you could not find or reconcile. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures.",
+      "search_budget": 8,
+      "test_budget_eur": 20000,
+      "max_test_weeks": 12,
+      "simulated_case": false
+     }
+    },
+    {
+     "name": "frame_problem",
+     "arguments": {
+      "objective": "Decide whether RATIONAL AG should develop a differentiated proposition for home cooks using its commercial combi-steamer technology, or keep its focus on professional kitchens, and identify what evidence would justify each choice. The test is whether a home offering would earn a return that justifies the diversion from core commercial growth and brand risk.",
+      "constraints": [
+       "Outside analyst working only from public sources; no company contact or access to internal data",
+       "RATIONAL has not asked this question and nothing here describes its intentions",
+       "Partly public financials: note what cannot be found or reconciled",
+       "Test budget 20000 EUR and 12-week limit are analyst assumptions, not company figures",
+       "Seven searches remain; one challenge_theory and up to three read_source calls should be spent carefully",
+       "Must first establish how far RATIONAL already sells to individual buyers, rather than assume"
+      ],
+      "alternatives": [
+       "A. No expansion: stay with professional kitchens and optimise the commercial core (service, financing, hospitality and institutional channels)",
+       "B. Consumer-grade combi-steamer sold directly to home cooks under the RATIONAL brand, with a redesigned smaller unit and home-specific features",
+       "C. Licensing or co-branding the commercial technology to an established household appliance maker, which owns retail, marketing and home service",
+       "D. Prosumer or semi-professional line for serious home cooks and enthusiasts, sold through specialist retail, with a smaller price gap to commercial models",
+       "E. Channel-led entry: sell through existing dealers or kitchen-design partners to affluent renovation customers, without a separate consumer product",
+       "F. Adjacent customer group: small food-service operators (caf\u00e9s, caterers, catering schools) as a bridge before any home product, rather than individual home cooks",
+       "G. Software or recipe and cooking-data service around existing commercial units, monetised without a new home hardware product"
+      ]
+     },
+     "stage": "frame",
+     "accepted": false,
+     "category": "arguments",
+     "result": {
+      "error": "alternatives: expected a list of 2 to 6 items"
+     }
+    },
+    {
+     "name": "frame_problem",
+     "arguments": {
+      "objective": "Decide whether RATIONAL AG should develop a differentiated proposition for home cooks using its commercial combi-steamer technology, or keep its focus on professional kitchens, and identify what evidence would justify each choice. The test is whether a home offering would earn a return that justifies the diversion from core commercial growth and brand risk.",
+      "constraints": [
+       "Outside analyst working only from public sources; no company contact or access to internal data",
+       "RATIONAL has not asked this question and nothing here describes its intentions",
+       "Partly public financials: note what cannot be found or reconciled",
+       "Test budget 20000 EUR and 12-week limit are analyst assumptions, not company figures",
+       "Seven searches remain; spend them carefully",
+       "Must first establish how far RATIONAL already sells to individual buyers rather than assume"
+      ],
+      "alternatives": [
+       "A. No expansion: stay with professional kitchens and optimise the commercial core (service, financing, hospitality and institutional channels)",
+       "B. Consumer-grade combi-steamer sold directly to home cooks under the RATIONAL brand, with a redesigned smaller unit",
+       "C. Licensing or co-branding the commercial technology to an established household appliance maker, which owns retail, marketing and home service",
+       "D. Prosumer line for serious home cooks sold through specialist retail, with a smaller price gap to commercial models",
+       "E. Channel-led entry: sell through existing dealers or kitchen-design partners to affluent renovation customers, without a separate consumer product",
+       "F. Bridge via small food-service operators (caf\u00e9s, caterers, catering schools) before any home product, or software and cooking-data services around existing commercial units"
+      ]
+     },
+     "stage": "frame",
+     "accepted": true,
+     "result": {
+      "accepted": true
+     }
+    },
+    {
+     "name": "search_evidence",
+     "arguments": {
+      "query": "RATIONAL combi steamer home cooking consumer sales"
+     },
+     "stage": "evidence",
+     "accepted": true,
+     "result": {
+      "results": [
+       {
+        "id": "rational-ir-potential",
+        "title": "Investor Relations - RATIONAL AG",
+        "class": "company_claim"
+       },
+       {
+        "id": "rational-wiki-icombi90",
+        "title": "Rational AG - Wikipedia",
+        "class": "verified_observation"
+       },
+       {
+        "id": "rational-combi-makers",
+        "title": "Combi steamer - Wikipedia",
+        "class": "verified_observation"
+       }
+      ],
+      "searches_left": 7
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "rational-ir-potential"
+     },
+     "stage": "evidence",
+     "accepted": true,
+     "result": {
+      "id": "rational-ir-potential",
+      "class": "company_claim",
+      "title": "Investor Relations - RATIONAL AG",
+      "url": "https://www.rational-online.com/en_gb/company/investor-relations/",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "global",
+      "excerpt": "According to company estimates, the global market potential for combi-steamers is 4.8 million customers, around 75% of whom still use traditional cooking appliances.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "rational-wiki-icombi90"
+     },
+     "stage": "evidence",
+     "accepted": true,
+     "result": {
+      "id": "rational-wiki-icombi90",
+      "class": "verified_observation",
+      "title": "Rational AG - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rational_AG",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "global",
+      "excerpt": "Combi ovens (iCombi product line) generate approximately 90% of Rational's appliance sales, while about 10% comes from the iVario series and newly added iHexagon appliances.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "rational-combi-makers"
+     },
+     "stage": "evidence",
+     "accepted": true,
+     "result": {
+      "id": "rational-combi-makers",
+      "class": "verified_observation",
+      "title": "Combi steamer - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Combi_steamer",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "Germany",
+      "excerpt": "Germany: RATIONAL AG , Gaggenau Hausger\u00e4te , PALUX, Convotherm, MKN, ELOMA, Miele , AEG (part of Electrolux), Bosch.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "search_evidence",
+     "arguments": {
+      "query": "RATIONAL home cooking appliance households private customers"
+     },
+     "stage": "theories",
+     "accepted": true,
+     "result": {
+      "results": [
+       {
+        "id": "rational-ir-potential",
+        "title": "Investor Relations - RATIONAL AG",
+        "class": "company_claim"
+       },
+       {
+        "id": "rational-ir-customers",
+        "title": "Investor Relations - RATIONAL AG",
+        "class": "company_claim"
+       },
+       {
+        "id": "rational-combi-history",
+        "title": "Combi steamer - Wikipedia",
+        "class": "verified_observation"
+       }
+      ],
+      "searches_left": 6
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "rational-ir-customers"
+     },
+     "stage": "theories",
+     "accepted": true,
+     "result": {
+      "id": "rational-ir-customers",
+      "class": "company_claim",
+      "title": "Investor Relations - RATIONAL AG",
+      "url": "https://www.rational-online.com/en_gb/company/investor-relations/",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "global",
+      "excerpt": "The customer base ranges from restaurants and hotels, company canteens, hospitals, schools, universities, the military, prisons and retirement homes to fast-food restaurants, party services, supermarkets, bakeries and snack bars, butchers, petrol stations and delivery services, including so-called ghost kitchens.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "add_theory",
+     "arguments": {
+      "claim": "Affluent home cooks buy professional-grade cooking equipment as a status and performance signal. A compact, clearly commercial-derived unit sold directly to them would command a price premium that a home-appliance maker without a professional reputation cannot match.",
+      "who_benefits": "Affluent serious home cooks, who gain perceived performance and status; RATIONAL, which captures premium margin on a brand already associated with professional kitchens.",
+      "why_behaviour_changes": "Buyers who already spend heavily on pro-style ranges and cookware treat the professional brand as evidence of quality, so they will pay more for it than for an equivalent consumer appliance.",
+      "how_value_is_captured": "Direct or specialist-retail sales of a smaller, higher-priced unit, with margin protected by the brand rather than by commercial service contracts.",
+      "assumptions": [
+       "A meaningful segment of home buyers already pays premium prices for pro-style kitchen appliances",
+       "The commercial brand carries recognition among these buyers",
+       "A smaller unit can be built at a cost that still allows premium pricing",
+       "Home buyers will accept the footprint and power requirements"
+      ],
+      "predictions": [
+       "Stated willingness to pay for a pro-branded home unit exceeds that for an otherwise identical unit with a consumer brand",
+       "Purchase intent concentrates in households that already own pro-style ranges or cookware",
+       "Conversion falls sharply if the price gap to consumer models is large relative to perceived brand benefit"
+      ]
+     },
+     "stage": "theories",
+     "accepted": true,
+     "result": {
+      "theory_id": "T1"
+     }
+    },
+    {
+     "name": "add_theory",
+     "arguments": {
+      "claim": "Home cooks rarely use a combi-steamer after buying it because the value depends on knowing what to cook and how, not on the hardware. The hardware earns little repeat value on its own, so the durable revenue sits in guided recipes and cooking-program content, which a manufacturer with existing commercial program libraries can license.",
+      "who_benefits": "Home cooks who want to use the appliance regularly; RATIONAL, which could earn recurring revenue from recipe and program content rather than one-off hardware sales.",
+      "why_behaviour_changes": "Owners who receive tested programs for everyday dishes keep using the appliance, while owners left with only the manual abandon it after the first few uses.",
+      "how_value_is_captured": "Subscription or per-program fees for cooking content, or bundled content sold with the existing commercial hardware, rather than a new home unit.",
+      "assumptions": [
+       "Home owners underuse ovens and steamers without guided programs",
+       "Owners will pay recurring fees for programs they cannot easily build themselves",
+       "Commercial program libraries can be adapted to domestic dishes and portion sizes",
+       "The hardware installed base in homes is large enough to sell content to"
+      ],
+      "predictions": [
+       "Households given guided programs use the appliance more often over eight weeks than households given only a manual",
+       "Willingness to pay for a program subscription is positive in owners but low in non-owners",
+       "Usage drop-off after month two is steeper without guided content"
+      ]
+     },
+     "stage": "theories",
+     "accepted": true,
+     "result": {
+      "theory_id": "T2"
+     }
+    },
+    {
+     "name": "assess_evidence",
+     "arguments": {
+      "theory_id": "T1",
+      "evidence_id": "rational-combi-makers",
+      "direction": "neutral",
+      "quote": "Germany: RATIONAL AG , Gaggenau Hausger\u00e4te , PALUX, Convotherm, MKN, ELOMA, Miele , AEG (part of Electrolux), Bosch.",
+      "evidence_kind": "market_fact",
+      "does_not_show": "Shows that home-appliance makers (Gaggenau, Miele, AEG, Bosch) already list combi-steamers in Germany, so the home segment has competition. It does not show whether home buyers pay a premium for a professional brand, what prices are charged, or whether RATIONAL sells any product to households."
+     },
+     "stage": "assessment",
+     "accepted": true,
+     "result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "name": "assess_evidence",
+     "arguments": {
+      "theory_id": "T2",
+      "evidence_id": "rational-ir-customers",
+      "direction": "neutral",
+      "quote": "The customer base ranges from restaurants and hotels, company canteens, hospitals, schools, universities, the military, prisons and retirement homes to fast-food restaurants, party services, supermarkets, bakeries and snack bars, butchers, petrol stations and delivery services, including so-called ghost kitchens.",
+      "evidence_kind": "company_assertion",
+      "does_not_show": "This is the company's own description of its customers. It lists only commercial and institutional buyers and says nothing about household use, usage frequency, or whether owners need recipe content to keep using a unit. It cannot test T2."
+     },
+     "stage": "assessment",
+     "accepted": true,
+     "result": {
+      "assessed": true,
+      "class_of_evidence": "company_claim"
+     }
+    },
+    {
+     "name": "challenge_theory",
+     "arguments": {
+      "theory_id": "T1",
+      "query": "consumer willingness to pay premium professional brand home appliance versus consumer brand"
+     },
+     "stage": "challenge",
+     "accepted": true,
+     "result": {
+      "results": [
+       {
+        "id": "rational-anova-electrolux",
+        "title": "Anova Culinary - Wikipedia",
+        "class": "verified_observation"
+       },
+       {
+        "id": "rational-combi-household",
+        "title": "Combi steamer - Wikipedia",
+        "class": "verified_observation"
+       },
+       {
+        "id": "rational-focus-quote",
+        "title": "RATIONAL AG (RAA): A Hidden Champion of Professional Kitchens | RhinoInsight",
+        "class": "company_claim"
+       }
+      ],
+      "searches_left": 5
+     }
+    },
+    {
+     "name": "read_source",
+     "arguments": {
+      "id": "rational-combi-household"
+     },
+     "stage": "challenge_reading",
+     "accepted": true,
+     "result": {
+      "id": "rational-combi-household",
+      "class": "verified_observation",
+      "title": "Combi steamer - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Combi_steamer",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "unknown (mainly Europe)",
+      "excerpt": "In addition to the professional food-service models, there are also smaller combi steamers for private household use.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "name": "assess_evidence",
+     "arguments": {
+      "theory_id": "T1",
+      "evidence_id": "rational-combi-household",
+      "direction": "neutral",
+      "quote": "In addition to the professional food-service models, there are also smaller combi steamers for private household use.",
+      "evidence_kind": "market_fact",
+      "does_not_show": "Confirms that smaller household combi-steamers exist, which makes the home segment real. It does not show that buyers pay more for a professional brand, what price premium exists, or whether RATIONAL sells to households. The challenge found no evidence against T1 yet, and this source does not contradict it."
+     },
+     "stage": "test",
+     "accepted": true,
+     "result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "name": "propose_test",
+     "arguments": {
+      "name": "Price-gap and guided-use concept test for a pro-branded compact unit",
+      "theories": [
+       "T1",
+       "T2"
+      ],
+      "method": "Online conjoint and stated-preference survey of German households that already own a premium oven or range, with two arms: (a) same compact unit shown with the RATIONAL brand versus a consumer brand, at the same price; (b) unit shown with versus without a guided-program subscription, priced at a proposed monthly fee. Followed by a 4-week diary sub-sample of 60 households receiving a loaned unit with guided programs versus manual only.",
+      "sample": "Proposed: about 600 online respondents screened for premium cooking appliance ownership, plus 60 diary households (30 per arm). Estimated panel cost within budget.",
+      "measure": "Stated willingness to pay (brand arm), purchase intent, and subscription take-up (program arm); weekly self-reported and logged use of the unit in the diary sub-sample.",
+      "prediction_by_theory": {
+       "T1": "Pro brand raises stated willingness to pay by a clear margin over the consumer brand at equal price; the uplift concentrates in owners of pro-style ranges and cookware.",
+       "T2": "Brand uplift is small or absent; the diary arm with guided programs shows materially higher weekly use and subscription take-up than manual-only."
+      },
+      "decision_rule": "Pursue a brand-led compact product (T1) only if the pro-brand arm shows at least a 15% higher stated willingness to pay than the consumer-brand arm, with the effect concentrated in pro-appliance owners. Pursue a content-led model (T2) only if guided-program households use the unit at least 50% more often weekly and at least 25% of them take up a subscription at the proposed fee. If neither threshold is met, do not expand into home cooks. The 15% and 50% thresholds and 25% take-up are proposed analyst thresholds, not observed values.",
+      "cost_eur": 18500,
+      "weeks": 10
+     },
+     "stage": "test",
+     "accepted": true,
+     "result": {
+      "test_id": "X1",
+      "note": "Proposed only. Nothing has been run, and its figures are analyst assumptions."
+     }
+    },
+    {
+     "name": "state_position",
+     "arguments": {
+      "favoured_theory": "T1",
+      "recommendation": "Do not commit to a home-cook product yet. Keep the professional focus as the base case. Run the proposed X1 concept test before any build decision. T1 is the only theory with a direct route to a brand-led compact unit, so it is the one to test first, but neither theory has evidence in its favour yet.",
+      "beliefs": {
+       "T1": "uncertain",
+       "T2": "uncertain"
+      }
+     },
+     "stage": "position",
+     "accepted": true,
+     "result": {
+      "recorded": true
+     }
+    },
+    {
+     "name": "finish",
+     "arguments": {
+      "recommendation": "Stay with professional kitchens as the base case. Do not commit to a home-cook product now. Run the proposed X1 concept test (about EUR 18,500, 10 weeks, proposed figures) before any build decision.",
+      "target_customer": "No home-cook target yet. If X1 supports it, the first candidates are affluent households that already own premium or pro-style ranges and cookware.",
+      "value_proposition": "Untested. A compact unit that carries the professional brand (T1), or a guided-program content offer on existing or compact units (T2). Neither is supported by evidence.",
+      "favoured_theory": "T1",
+      "next_action": "Run the X1 test. Use a partner or panel to collect the brand-versus-consumer willingness-to-pay arm and the guided-program diary arm, then apply the decision rule.",
+      "uncertainty": "High. Public sources show RATIONAL's customers are commercial and institutional, and that home combi-steamers exist from other makers. I found no source showing RATIONAL sells to households, no pricing or margin data for a home unit, and no measure of whether home buyers pay a premium for a professional brand. The financial data I could read did not show a home segment, and I could not reconcile the company's market-potential estimate with any independent figure. The company claim of 4.8 million potential customers is unverified. The X1 thresholds (15%, 50%, 25%) are my proposals, not observed values.",
+      "would_change_if": [
+       "X1 shows at least a 15% higher stated willingness to pay for the pro-branded arm, concentrated in pro-appliance owners",
+       "Guided-program households use the unit at least 50% more often and at least 25% take up a subscription",
+       "Independent market data showing a large, growing household segment for combi-steamers with proven premium pricing",
+       "Evidence that RATIONAL already sells to households through another channel, which would change the baseline",
+       "Evidence that home buyers do not pay for a professional brand, which would weaken T1 and shift the question to content or channel options"
+      ],
+      "evidence_ids": [
+       "rational-ir-potential",
+       "rational-wiki-icombi90",
+       "rational-combi-makers",
+       "rational-ir-customers",
+       "rational-combi-household"
+      ],
+      "beliefs": {
+       "T1": "uncertain",
+       "T2": "uncertain"
+      }
+     },
+     "stage": "conclude",
+     "accepted": false,
+     "category": "arguments",
+     "result": {
+      "error": "uncertainty: expected text of at most 600 characters"
+     }
+    },
+    {
+     "name": "finish",
+     "arguments": {
+      "recommendation": "Stay with professional kitchens as the base case. Do not commit to a home-cook product now. Run the proposed X1 concept test (about EUR 18,500, 10 weeks, proposed figures) before any build decision.",
+      "target_customer": "No home-cook target yet. If X1 supports it, the first candidates are affluent households that already own premium or pro-style ranges and cookware.",
+      "value_proposition": "Untested. A compact unit carrying the professional brand (T1), or guided-program content (T2). Neither is supported by evidence yet.",
+      "favoured_theory": "T1",
+      "next_action": "Run the X1 test with a panel or partner, collecting the brand-versus-consumer willingness-to-pay arm and the guided-program diary arm, then apply the decision rule.",
+      "uncertainty": "High. Public sources show RATIONAL's customers are commercial and institutional, and home combi-steamers exist from other makers. I found no source showing RATIONAL sells to households, no pricing or margin data for a home unit, and no evidence that home buyers pay a premium for a professional brand. The company's 4.8 million potential-customer claim is unverified. Thresholds are my proposals.",
+      "would_change_if": [
+       "X1 shows at least 15% higher stated willingness to pay for the pro-branded arm, concentrated in pro-appliance owners",
+       "Guided-program households use the unit at least 50% more often and at least 25% take up a subscription",
+       "Independent data showing a large, growing household segment with proven premium pricing",
+       "Evidence that RATIONAL already sells to households, changing the baseline",
+       "Evidence that home buyers do not pay for a professional brand, shifting the question toward content or channel options"
+      ],
+      "evidence_ids": [
+       "rational-ir-potential",
+       "rational-wiki-icombi90",
+       "rational-combi-makers",
+       "rational-ir-customers",
+       "rational-combi-household"
+      ],
+      "beliefs": {
+       "T1": "uncertain",
+       "T2": "uncertain"
+      }
+     },
+     "stage": "conclude",
+     "accepted": true,
+     "result": {
+      "finished": true
+     }
+    }
+   ],
+   "stop_reason": "finished",
+   "model_turns": [
+    {
+     "text": "{\"name\": \"read_brief\", \"arguments\": {}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 20,
+     "seconds": 1.0403885480045574,
+     "usd": 3e-05,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "company": "RATIONAL AG",
+      "question": "Should RATIONAL develop a differentiated proposition for home cooks, building on its commercial combi-steamer technology, or stay with professional kitchens? What evidence would justify either choice?",
+      "brief": "RATIONAL AG is a German maker of combi-steamers and other cooking systems for commercial kitchens. You have not been told how far it already reaches individual buyers, so find out. You are an outside analyst working only from public sources. This company has not asked this question, has not been contacted, and nothing here describes its intentions. Its financial data is partly public, so say what you could not find or reconcile. Product redesign, a different route to buyers, a different customer group and no expansion are all open. The test budget of 20000 euros and the 12-week limit are analyst assumptions for this exercise, not company figures.",
+      "search_budget": 8,
+      "test_budget_eur": 20000,
+      "max_test_weeks": 12,
+      "simulated_case": false
+     }
+    },
+    {
+     "text": "{\"name\": \"frame_problem\", \"arguments\": {\"objective\": \"Decide whether RATIONAL AG should develop a differentiated proposition for home cooks using its commercial combi-steamer technology, or keep its focus on professional kitchens, and identify what evidence would justify each choice. The test is whether a home offering would earn a return that justifies the diversion from core commercial growth and brand risk.\", \"constraints\": [\"Outside analyst working only from public sources; no company contact or access to internal data\", \"RATIONAL has not asked this question and nothing here describes its intentions\", \"Partly public financials: note what cannot be found or reconciled\", \"Test budget 20000 EUR and 12-week limit are analyst assumptions, not company figures\", \"Seven searches remain; one challenge_theory and up to three read_source calls should be spent carefully\", \"Must first establish how far RATIONAL already sells to individual buyers, rather than assume\"], \"alternatives\": [\"A. No expansion: stay with professional kitchens and optimise the commercial core (service, financing, hospitality and institutional channels)\", \"B. Consumer-grade combi-steamer sold directly to home cooks under the RATIONAL brand, with a redesigned smaller unit and home-specific features\", \"C. Licensing or co-branding the commercial technology to an established household appliance maker, which owns retail, marketing and home service\", \"D. Prosumer or semi-professional line for serious home cooks and enthusiasts, sold through specialist retail, with a smaller price gap to commercial models\", \"E. Channel-led entry: sell through existing dealers or kitchen-design partners to affluent renovation customers, without a separate consumer product\", \"F. Adjacent customer group: small food-service operators (caf\u00e9s, caterers, catering schools) as a bridge before any home product, rather than individual home cooks\", \"G. Software or recipe and cooking-data service around existing commercial units, monetised without a new home hardware product\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 728,
+     "seconds": 4.8786994659894845,
+     "usd": 0.00043,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "error": "alternatives: expected a list of 2 to 6 items"
+     }
+    },
+    {
+     "text": "{\"name\": \"frame_problem\", \"arguments\": {\"objective\": \"Decide whether RATIONAL AG should develop a differentiated proposition for home cooks using its commercial combi-steamer technology, or keep its focus on professional kitchens, and identify what evidence would justify each choice. The test is whether a home offering would earn a return that justifies the diversion from core commercial growth and brand risk.\", \"constraints\": [\"Outside analyst working only from public sources; no company contact or access to internal data\", \"RATIONAL has not asked this question and nothing here describes its intentions\", \"Partly public financials: note what cannot be found or reconciled\", \"Test budget 20000 EUR and 12-week limit are analyst assumptions, not company figures\", \"Seven searches remain; spend them carefully\", \"Must first establish how far RATIONAL already sells to individual buyers rather than assume\"], \"alternatives\": [\"A. No expansion: stay with professional kitchens and optimise the commercial core (service, financing, hospitality and institutional channels)\", \"B. Consumer-grade combi-steamer sold directly to home cooks under the RATIONAL brand, with a redesigned smaller unit\", \"C. Licensing or co-branding the commercial technology to an established household appliance maker, which owns retail, marketing and home service\", \"D. Prosumer line for serious home cooks sold through specialist retail, with a smaller price gap to commercial models\", \"E. Channel-led entry: sell through existing dealers or kitchen-design partners to affluent renovation customers, without a separate consumer product\", \"F. Bridge via small food-service operators (caf\u00e9s, caterers, catering schools) before any home product, or software and cooking-data services around existing commercial units\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 586,
+     "seconds": 2.399353079003049,
+     "usd": 0.00042,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "accepted": true
+     }
+    },
+    {
+     "text": "{\"name\": \"search_evidence\", \"arguments\": {\"query\": \"RATIONAL combi steamer home cooking consumer sales\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 48,
+     "seconds": 1.772124982002424,
+     "usd": 0.00014,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "results": [
+       {
+        "id": "rational-ir-potential",
+        "title": "Investor Relations - RATIONAL AG",
+        "class": "company_claim"
+       },
+       {
+        "id": "rational-wiki-icombi90",
+        "title": "Rational AG - Wikipedia",
+        "class": "verified_observation"
+       },
+       {
+        "id": "rational-combi-makers",
+        "title": "Combi steamer - Wikipedia",
+        "class": "verified_observation"
+       }
+      ],
+      "searches_left": 7
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"rational-ir-potential\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 34,
+     "seconds": 1.0798791429988341,
+     "usd": 9e-05,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "rational-ir-potential",
+      "class": "company_claim",
+      "title": "Investor Relations - RATIONAL AG",
+      "url": "https://www.rational-online.com/en_gb/company/investor-relations/",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "global",
+      "excerpt": "According to company estimates, the global market potential for combi-steamers is 4.8 million customers, around 75% of whom still use traditional cooking appliances.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"rational-wiki-icombi90\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 37,
+     "seconds": 1.3075796460034326,
+     "usd": 0.0001,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "rational-wiki-icombi90",
+      "class": "verified_observation",
+      "title": "Rational AG - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Rational_AG",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "global",
+      "excerpt": "Combi ovens (iCombi product line) generate approximately 90% of Rational's appliance sales, while about 10% comes from the iVario series and newly added iHexagon appliances.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"rational-combi-makers\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 34,
+     "seconds": 1.322693377995165,
+     "usd": 0.0001,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "rational-combi-makers",
+      "class": "verified_observation",
+      "title": "Combi steamer - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Combi_steamer",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "Germany",
+      "excerpt": "Germany: RATIONAL AG , Gaggenau Hausger\u00e4te , PALUX, Convotherm, MKN, ELOMA, Miele , AEG (part of Electrolux), Bosch.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"search_evidence\", \"arguments\": {\"query\": \"RATIONAL home cooking appliance households private customers\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 205,
+     "seconds": 1.5107768719899468,
+     "usd": 0.00019,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "results": [
+       {
+        "id": "rational-ir-potential",
+        "title": "Investor Relations - RATIONAL AG",
+        "class": "company_claim"
+       },
+       {
+        "id": "rational-ir-customers",
+        "title": "Investor Relations - RATIONAL AG",
+        "class": "company_claim"
+       },
+       {
+        "id": "rational-combi-history",
+        "title": "Combi steamer - Wikipedia",
+        "class": "verified_observation"
+       }
+      ],
+      "searches_left": 6
+     }
+    },
+    {
+     "text": "",
+     "prompt_tokens": 4,
+     "completion_tokens": 8000,
+     "seconds": 161.04043711000122,
+     "usd": 0.0041,
+     "stop_reason": "max_tokens",
+     "tool_result": {
+      "error": "That was not valid JSON: Expecting value."
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"rational-ir-customers\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 32,
+     "seconds": 1.0885481779987458,
+     "usd": 0.00012,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "rational-ir-customers",
+      "class": "company_claim",
+      "title": "Investor Relations - RATIONAL AG",
+      "url": "https://www.rational-online.com/en_gb/company/investor-relations/",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "global",
+      "excerpt": "The customer base ranges from restaurants and hotels, company canteens, hospitals, schools, universities, the military, prisons and retirement homes to fast-food restaurants, party services, supermarkets, bakeries and snack bars, butchers, petrol stations and delivery services, including so-called ghost kitchens.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"add_theory\", \"arguments\": {\"claim\": \"Affluent home cooks buy professional-grade cooking equipment as a status and performance signal. A compact, clearly commercial-derived unit sold directly to them would command a price premium that a home-appliance maker without a professional reputation cannot match.\", \"who_benefits\": \"Affluent serious home cooks, who gain perceived performance and status; RATIONAL, which captures premium margin on a brand already associated with professional kitchens.\", \"why_behaviour_changes\": \"Buyers who already spend heavily on pro-style ranges and cookware treat the professional brand as evidence of quality, so they will pay more for it than for an equivalent consumer appliance.\", \"how_value_is_captured\": \"Direct or specialist-retail sales of a smaller, higher-priced unit, with margin protected by the brand rather than by commercial service contracts.\", \"assumptions\": [\"A meaningful segment of home buyers already pays premium prices for pro-style kitchen appliances\", \"The commercial brand carries recognition among these buyers\", \"A smaller unit can be built at a cost that still allows premium pricing\", \"Home buyers will accept the footprint and power requirements\"], \"predictions\": [\"Stated willingness to pay for a pro-branded home unit exceeds that for an otherwise identical unit with a consumer brand\", \"Purchase intent concentrates in households that already own pro-style ranges or cookware\", \"Conversion falls sharply if the price gap to consumer models is large relative to perceived brand benefit\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 871,
+     "seconds": 5.441925160994288,
+     "usd": 0.00054,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "theory_id": "T1"
+     }
+    },
+    {
+     "text": "",
+     "prompt_tokens": 4,
+     "completion_tokens": 3,
+     "seconds": 0.9254607839975506,
+     "usd": 0.00018,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "error": "That was not valid JSON: Expecting value."
+     }
+    },
+    {
+     "text": "{\"name\": \"add_theory\", \"arguments\": {\"claim\": \"Home cooks rarely use a combi-steamer after buying it because the value depends on knowing what to cook and how, not on the hardware. The hardware earns little repeat value on its own, so the durable revenue sits in guided recipes and cooking-program content, which a manufacturer with existing commercial program libraries can license.\", \"who_benefits\": \"Home cooks who want to use the appliance regularly; RATIONAL, which could earn recurring revenue from recipe and program content rather than one-off hardware sales.\", \"why_behaviour_changes\": \"Owners who receive tested programs for everyday dishes keep using the appliance, while owners left with only the manual abandon it after the first few uses.\", \"how_value_is_captured\": \"Subscription or per-program fees for cooking content, or bundled content sold with the existing commercial hardware, rather than a new home unit.\", \"assumptions\": [\"Home owners underuse ovens and steamers without guided programs\", \"Owners will pay recurring fees for programs they cannot easily build themselves\", \"Commercial program libraries can be adapted to domestic dishes and portion sizes\", \"The hardware installed base in homes is large enough to sell content to\"], \"predictions\": [\"Households given guided programs use the appliance more often over eight weeks than households given only a manual\", \"Willingness to pay for a program subscription is positive in owners but low in non-owners\", \"Usage drop-off after month two is steeper without guided content\"]}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 490,
+     "seconds": 3.524783461005427,
+     "usd": 0.00033,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "theory_id": "T2"
+     }
+    },
+    {
+     "text": "{\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"rational-combi-makers\", \"direction\": \"neutral\", \"quote\": \"Germany: RATIONAL AG , Gaggenau Hausger\\u00e4te , PALUX, Convotherm, MKN, ELOMA, Miele , AEG (part of Electrolux), Bosch.\", \"evidence_kind\": \"market_fact\", \"does_not_show\": \"Shows that home-appliance makers (Gaggenau, Miele, AEG, Bosch) already list combi-steamers in Germany, so the home segment has competition. It does not show whether home buyers pay a premium for a professional brand, what prices are charged, or whether RATIONAL sells any product to households.\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 561,
+     "seconds": 3.3729677390074357,
+     "usd": 0.00043,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "text": "{\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T2\", \"evidence_id\": \"rational-ir-customers\", \"direction\": \"neutral\", \"quote\": \"The customer base ranges from restaurants and hotels, company canteens, hospitals, schools, universities, the military, prisons and retirement homes to fast-food restaurants, party services, supermarkets, bakeries and snack bars, butchers, petrol stations and delivery services, including so-called ghost kitchens.\", \"evidence_kind\": \"company_assertion\", \"does_not_show\": \"This is the company's own description of its customers. It lists only commercial and institutional buyers and says nothing about household use, usage frequency, or whether owners need recipe content to keep using a unit. It cannot test T2.\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 376,
+     "seconds": 2.21111189200019,
+     "usd": 0.00036,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "assessed": true,
+      "class_of_evidence": "company_claim"
+     }
+    },
+    {
+     "text": "{\"name\": \"challenge_theory\", \"arguments\": {\"theory_id\": \"T1\", \"query\": \"consumer willingness to pay premium professional brand home appliance versus consumer brand\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 128,
+     "seconds": 1.37330352999561,
+     "usd": 0.00021,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "results": [
+       {
+        "id": "rational-anova-electrolux",
+        "title": "Anova Culinary - Wikipedia",
+        "class": "verified_observation"
+       },
+       {
+        "id": "rational-combi-household",
+        "title": "Combi steamer - Wikipedia",
+        "class": "verified_observation"
+       },
+       {
+        "id": "rational-focus-quote",
+        "title": "RATIONAL AG (RAA): A Hidden Champion of Professional Kitchens | RhinoInsight",
+        "class": "company_claim"
+       }
+      ],
+      "searches_left": 5
+     }
+    },
+    {
+     "text": "{\"name\": \"read_source\", \"arguments\": {\"id\": \"rational-combi-household\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 32,
+     "seconds": 1.0672429239930352,
+     "usd": 0.00016,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "id": "rational-combi-household",
+      "class": "verified_observation",
+      "title": "Combi steamer - Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Combi_steamer",
+      "date": "unknown (accessed 2026-11-03)",
+      "geography": "unknown (mainly Europe)",
+      "excerpt": "In addition to the professional food-service models, there are also smaller combi steamers for private household use.",
+      "access_limitation": "none"
+     }
+    },
+    {
+     "text": "{\"name\": \"assess_evidence\", \"arguments\": {\"theory_id\": \"T1\", \"evidence_id\": \"rational-combi-household\", \"direction\": \"neutral\", \"quote\": \"In addition to the professional food-service models, there are also smaller combi steamers for private household use.\", \"evidence_kind\": \"market_fact\", \"does_not_show\": \"Confirms that smaller household combi-steamers exist, which makes the home segment real. It does not show that buyers pay more for a professional brand, what price premium exists, or whether RATIONAL sells to households. The challenge found no evidence against T1 yet, and this source does not contradict it.\"}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 335,
+     "seconds": 2.5209788210049737,
+     "usd": 0.0003,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "assessed": true,
+      "class_of_evidence": "verified_observation"
+     }
+    },
+    {
+     "text": "(no reply: stopped at max_tokens)",
+     "prompt_tokens": 4,
+     "completion_tokens": 223,
+     "seconds": 5.088723918001051,
+     "usd": 0.00027,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "error": "That was not valid JSON: Expecting value."
+     }
+    },
+    {
+     "text": "{\"name\": \"propose_test\", \"arguments\": {\"name\": \"Price-gap and guided-use concept test for a pro-branded compact unit\", \"theories\": [\"T1\", \"T2\"], \"method\": \"Online conjoint and stated-preference survey of German households that already own a premium oven or range, with two arms: (a) same compact unit shown with the RATIONAL brand versus a consumer brand, at the same price; (b) unit shown with versus without a guided-program subscription, priced at a proposed monthly fee. Followed by a 4-week diary sub-sample of 60 households receiving a loaned unit with guided programs versus manual only.\", \"sample\": \"Proposed: about 600 online respondents screened for premium cooking appliance ownership, plus 60 diary households (30 per arm). Estimated panel cost within budget.\", \"measure\": \"Stated willingness to pay (brand arm), purchase intent, and subscription take-up (program arm); weekly self-reported and logged use of the unit in the diary sub-sample.\", \"prediction_by_theory\": {\"T1\": \"Pro brand raises stated willingness to pay by a clear margin over the consumer brand at equal price; the uplift concentrates in owners of pro-style ranges and cookware.\", \"T2\": \"Brand uplift is small or absent; the diary arm with guided programs shows materially higher weekly use and subscription take-up than manual-only.\"}, \"decision_rule\": \"Pursue a brand-led compact product (T1) only if the pro-brand arm shows at least a 15% higher stated willingness to pay than the consumer-brand arm, with the effect concentrated in pro-appliance owners. Pursue a content-led model (T2) only if guided-program households use the unit at least 50% more often weekly and at least 25% of them take up a subscription at the proposed fee. If neither threshold is met, do not expand into home cooks. The 15% and 50% thresholds and 25% take-up are proposed analyst thresholds, not observed values.\", \"cost_eur\": 18500, \"weeks\": 10}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 671,
+     "seconds": 4.441054934999556,
+     "usd": 0.00046,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "test_id": "X1",
+      "note": "Proposed only. Nothing has been run, and its figures are analyst assumptions."
+     }
+    },
+    {
+     "text": "{\"name\": \"state_position\", \"arguments\": {\"favoured_theory\": \"T1\", \"recommendation\": \"Do not commit to a home-cook product yet. Keep the professional focus as the base case. Run the proposed X1 concept test before any build decision. T1 is the only theory with a direct route to a brand-led compact unit, so it is the one to test first, but neither theory has evidence in its favour yet.\", \"beliefs\": {\"T1\": \"uncertain\", \"T2\": \"uncertain\"}}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 164,
+     "seconds": 1.7117223690001993,
+     "usd": 0.00029,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "recorded": true
+     }
+    },
+    {
+     "text": "{\"name\": \"finish\", \"arguments\": {\"recommendation\": \"Stay with professional kitchens as the base case. Do not commit to a home-cook product now. Run the proposed X1 concept test (about EUR 18,500, 10 weeks, proposed figures) before any build decision.\", \"target_customer\": \"No home-cook target yet. If X1 supports it, the first candidates are affluent households that already own premium or pro-style ranges and cookware.\", \"value_proposition\": \"Untested. A compact unit that carries the professional brand (T1), or a guided-program content offer on existing or compact units (T2). Neither is supported by evidence.\", \"favoured_theory\": \"T1\", \"next_action\": \"Run the X1 test. Use a partner or panel to collect the brand-versus-consumer willingness-to-pay arm and the guided-program diary arm, then apply the decision rule.\", \"uncertainty\": \"High. Public sources show RATIONAL's customers are commercial and institutional, and that home combi-steamers exist from other makers. I found no source showing RATIONAL sells to households, no pricing or margin data for a home unit, and no measure of whether home buyers pay a premium for a professional brand. The financial data I could read did not show a home segment, and I could not reconcile the company's market-potential estimate with any independent figure. The company claim of 4.8 million potential customers is unverified. The X1 thresholds (15%, 50%, 25%) are my proposals, not observed values.\", \"would_change_if\": [\"X1 shows at least a 15% higher stated willingness to pay for the pro-branded arm, concentrated in pro-appliance owners\", \"Guided-program households use the unit at least 50% more often and at least 25% take up a subscription\", \"Independent market data showing a large, growing household segment for combi-steamers with proven premium pricing\", \"Evidence that RATIONAL already sells to households through another channel, which would change the baseline\", \"Evidence that home buyers do not pay for a professional brand, which would weaken T1 and shift the question to content or channel options\"], \"evidence_ids\": [\"rational-ir-potential\", \"rational-wiki-icombi90\", \"rational-combi-makers\", \"rational-ir-customers\", \"rational-combi-household\"], \"beliefs\": {\"T1\": \"uncertain\", \"T2\": \"uncertain\"}}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 763,
+     "seconds": 4.116842303003068,
+     "usd": 0.00053,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "error": "uncertainty: expected text of at most 600 characters"
+     }
+    },
+    {
+     "text": "{\"name\": \"finish\", \"arguments\": {\"recommendation\": \"Stay with professional kitchens as the base case. Do not commit to a home-cook product now. Run the proposed X1 concept test (about EUR 18,500, 10 weeks, proposed figures) before any build decision.\", \"target_customer\": \"No home-cook target yet. If X1 supports it, the first candidates are affluent households that already own premium or pro-style ranges and cookware.\", \"value_proposition\": \"Untested. A compact unit carrying the professional brand (T1), or guided-program content (T2). Neither is supported by evidence yet.\", \"favoured_theory\": \"T1\", \"next_action\": \"Run the X1 test with a panel or partner, collecting the brand-versus-consumer willingness-to-pay arm and the guided-program diary arm, then apply the decision rule.\", \"uncertainty\": \"High. Public sources show RATIONAL's customers are commercial and institutional, and home combi-steamers exist from other makers. I found no source showing RATIONAL sells to households, no pricing or margin data for a home unit, and no evidence that home buyers pay a premium for a professional brand. The company's 4.8 million potential-customer claim is unverified. Thresholds are my proposals.\", \"would_change_if\": [\"X1 shows at least 15% higher stated willingness to pay for the pro-branded arm, concentrated in pro-appliance owners\", \"Guided-program households use the unit at least 50% more often and at least 25% take up a subscription\", \"Independent data showing a large, growing household segment with proven premium pricing\", \"Evidence that RATIONAL already sells to households, changing the baseline\", \"Evidence that home buyers do not pay for a professional brand, shifting the question toward content or channel options\"], \"evidence_ids\": [\"rational-ir-potential\", \"rational-wiki-icombi90\", \"rational-combi-makers\", \"rational-ir-customers\", \"rational-combi-household\"], \"beliefs\": {\"T1\": \"uncertain\", \"T2\": \"uncertain\"}}}",
+     "prompt_tokens": 4,
+     "completion_tokens": 671,
+     "seconds": 2.827203285007272,
+     "usd": 0.00056,
+     "stop_reason": "end_turn",
+     "tool_result": {
+      "finished": true
+     }
+    }
+   ],
+   "attempt": 1,
+   "episode": "fbc2bd2e78b84ada76ab015c919b8ba110c25599d72aa7b152397443b47f40c3"
+  }
+ ],
+ "auditkit": {
+  "cases": 1,
+  "replay_mismatches": 0,
+  "guards_cleared": 0,
+  "guards_not_cleared": 1,
+  "other": 0,
+  "known_tool_names": 1.0,
+  "redundant_tool_calls": 0.0,
+  "no_looping": 1.0
+ }
+}

@@ -1,0 +1,199 @@
+{"case": "epro-base", "attempt": 1, "stop": "finished", "turns": 18, "passed": 13, "failed": ["testable_predictions", "evidence_classes"]}
+{"case": "epro-base", "attempt": 2, "stop": "finished", "turns": 18, "passed": 13, "failed": ["evidence_classes", "no_invented_numbers"]}
+{"case": "epro-base", "attempt": 0, "stop": "finished", "turns": 20, "passed": 14, "failed": ["evidence_classes"]}
+{"case": "epro-new-evidence-irrelevant", "attempt": 0, "stop": "finished", "turns": 24, "passed": 14, "failed": ["evidence_classes", "evidence_kinds", "no_invented_numbers"]}
+{"case": "aqp-base", "attempt": 0, "stop": "finished", "turns": 21, "passed": 14, "failed": ["no_invented_numbers"]}
+{"case": "epro-new-evidence-irrelevant", "attempt": 1, "stop": "finished", "turns": 26, "passed": 14, "failed": ["evidence_kinds", "no_invented_numbers"]}
+{"case": "aqp-base", "attempt": 1, "stop": "finished", "turns": 20, "passed": 13, "failed": ["experiment", "existing_offering"]}
+{"case": "epro-new-evidence-irrelevant", "attempt": 2, "stop": "finished", "turns": 25, "passed": 15, "failed": ["evidence_classes", "no_invented_numbers"]}
+{"case": "aqp-new-evidence-irrelevant", "attempt": 0, "stop": "finished", "turns": 26, "passed": 14, "failed": ["evidence_classes", "no_invented_numbers", "tool_use"]}
+{"case": "aqp-new-evidence-irrelevant", "attempt": 1, "stop": "finished", "turns": 25, "passed": 15, "failed": ["evidence_classes", "no_invented_numbers"]}
+{"case": "aqp-new-evidence-irrelevant", "attempt": 2, "stop": "finished", "turns": 25, "passed": 15, "failed": ["evidence_classes", "no_invented_numbers"]}
+{"case": "simo-base", "attempt": 1, "stop": "finished", "turns": 20, "passed": 13, "failed": ["evidence_kinds", "no_invented_numbers"]}
+{"case": "simo-base", "attempt": 0, "stop": "finished", "turns": 21, "passed": 12, "failed": ["testable_predictions", "evidence_kinds", "no_invented_numbers"]}
+{"case": "simo-base", "attempt": 2, "stop": "finished", "turns": 24, "passed": 11, "failed": ["testable_predictions", "evidence_kinds", "no_invented_numbers", "tool_use"]}
+{"case": "simo-new-evidence-irrelevant", "attempt": 0, "stop": "finished", "turns": 22, "passed": 15, "failed": ["testable_predictions", "no_invented_numbers"]}
+{"case": "simo-new-evidence-irrelevant", "attempt": 2, "stop": "finished", "turns": 24, "passed": 13, "failed": ["causal_form", "evidence_kinds", "no_invented_numbers", "tool_use"]}
+{"case": "rational-base", "attempt": 0, "stop": "finished", "turns": 23, "passed": 11, "failed": ["testable_predictions", "experiment", "no_invented_numbers"]}
+{"case": "rational-new-evidence-irrelevant", "attempt": 0, "stop": "finished", "turns": 25, "passed": 12, "failed": ["testable_predictions", "evidence_kinds", "experiment", "no_invented_numbers"]}
+{"case": "rational-new-evidence-irrelevant", "attempt": 2, "stop": "finished", "turns": 29, "passed": 12, "failed": ["testable_predictions", "evidence_classes", "experiment", "no_invented_numbers"]}
+{"case": "epro-new-evidence-undermines-durability", "attempt": 1, "stop": "finished", "turns": 19, "passed": 14, "failed": ["testable_predictions", "evidence_classes", "no_invented_numbers"]}
+{"case": "epro-new-evidence-undermines-durability", "attempt": 2, "stop": "finished", "turns": 18, "passed": 15, "failed": ["testable_predictions", "evidence_classes"]}
+{"case": "epro-new-evidence-favours-durability", "attempt": 0, "stop": "repeated errors", "turns": 5, "passed": 0, "failed": ["finished", "tool_use"]}
+{"case": "epro-new-evidence-favours-durability", "attempt": 1, "stop": "finished", "turns": 21, "passed": 15, "failed": ["evidence_classes", "no_invented_numbers"]}
+{"case": "epro-new-evidence-favours-durability", "attempt": 2, "stop": "repeated errors", "turns": 30, "passed": 9, "failed": ["finished", "evidence_classes"]}
+{"case": "aqp-new-evidence-undermines-maintenance", "attempt": 0, "stop": "finished", "turns": 35, "passed": 12, "failed": ["testable_predictions", "evidence_classes", "experiment", "no_invented_numbers", "tool_use"]}
+{"case": "epro-new-evidence-undermines-durability", "attempt": 0, "stop": "finished", "turns": 27, "passed": 16, "failed": ["evidence_classes"]}
+{"case": "aqp-new-evidence-favours-maintenance", "attempt": 0, "stop": "repeated errors", "turns": 33, "passed": 7, "failed": ["finished", "testable_predictions", "evidence_classes", "tool_use"]}
+{"case": "aqp-new-evidence-favours-maintenance", "attempt": 1, "stop": "finished", "turns": 27, "passed": 14, "failed": ["evidence_classes", "no_invented_numbers"]}
+{"case": "aqp-new-evidence-favours-maintenance", "attempt": 2, "stop": "finished", "turns": 24, "passed": 14, "failed": ["testable_predictions", "evidence_classes", "experiment"]}
+{"case": "aqp-new-evidence-undermines-maintenance", "attempt": 1, "stop": "finished", "turns": 22, "passed": 14, "failed": ["evidence_classes", "experiment", "no_invented_numbers"]}
+{"case": "simo-new-evidence-undermines-learning", "attempt": 1, "stop": "finished", "turns": 24, "passed": 14, "failed": ["evidence_kinds", "no_invented_numbers"]}
+{"case": "simo-new-evidence-undermines-learning", "attempt": 2, "stop": "finished", "turns": 27, "passed": 13, "failed": ["testable_predictions", "evidence_kinds", "no_invented_numbers"]}
+{"case": "simo-new-evidence-favours-learning", "attempt": 0, "stop": "finished", "turns": 26, "passed": 14, "failed": ["evidence_kinds", "no_invented_numbers"]}
+{"case": "simo-new-evidence-favours-learning", "attempt": 2, "stop": "finished", "turns": 28, "passed": 13, "failed": ["testable_predictions", "evidence_kinds", "no_invented_numbers"]}
+{"case": "rational-new-evidence-favours-installation", "attempt": 2, "stop": "finished", "turns": 23, "passed": 12, "failed": ["testable_predictions", "evidence_kinds", "experiment"]}
+{"case": "rational-new-evidence-undermines-installation", "attempt": 1, "stop": "finished", "turns": 30, "passed": 14, "failed": ["experiment", "no_invented_numbers"]}
+{"case": "rational-new-evidence-undermines-installation", "attempt": 0, "stop": "finished", "turns": 32, "passed": 13, "failed": ["experiment", "no_invented_numbers"]}
+{"case": "rational-new-evidence-undermines-installation", "attempt": 2, "stop": "finished", "turns": 30, "passed": 14, "failed": ["experiment", "no_invented_numbers"]}
+{
+ "summary": {
+  "episodes": 38,
+  "finished": 35,
+  "end_to_end_success": 4,
+  "stop_reasons": {
+   "finished": 35,
+   "repeated errors": 3
+  },
+  "furthest_stage": {
+   "finish": 35,
+   "read_brief": 1,
+   "revise_theory": 2
+  },
+  "checks": {
+   "finished": {
+    "passed": 35,
+    "reached": 38,
+    "applied": 38,
+    "of_all": 38
+   },
+   "framing": {
+    "passed": 37,
+    "reached": 37,
+    "applied": 38,
+    "of_all": 38
+   },
+   "theories": {
+    "passed": 37,
+    "reached": 37,
+    "applied": 38,
+    "of_all": 38
+   },
+   "causal_form": {
+    "passed": 36,
+    "reached": 37,
+    "applied": 38,
+    "of_all": 38
+   },
+   "testable_predictions": {
+    "passed": 22,
+    "reached": 37,
+    "applied": 38,
+    "of_all": 38
+   },
+   "evidence_use": {
+    "passed": 37,
+    "reached": 37,
+    "applied": 38,
+    "of_all": 38
+   },
+   "evidence_classes": {
+    "passed": 17,
+    "reached": 36,
+    "applied": 38,
+    "of_all": 38
+   },
+   "evidence_kinds": {
+    "passed": 25,
+    "reached": 37,
+    "applied": 38,
+    "of_all": 38
+   },
+   "evidence_limits": {
+    "passed": 37,
+    "reached": 37,
+    "applied": 38,
+    "of_all": 38
+   },
+   "disconfirmation": {
+    "passed": 35,
+    "reached": 35,
+    "applied": 38,
+    "of_all": 38
+   },
+   "experiment": {
+    "passed": 26,
+    "reached": 37,
+    "applied": 38,
+    "of_all": 38
+   },
+   "revision": {
+    "passed": 19,
+    "reached": 19,
+    "applied": 29,
+    "of_all": 38
+   },
+   "existing_offering": {
+    "passed": 27,
+    "reached": 28,
+    "applied": 31,
+    "of_all": 38
+   },
+   "no_invented_numbers": {
+    "passed": 7,
+    "reached": 35,
+    "applied": 38,
+    "of_all": 38
+   },
+   "simulated_not_used": {
+    "passed": 26,
+    "reached": 26,
+    "applied": 29,
+    "of_all": 38
+   },
+   "recommendation": {
+    "passed": 35,
+    "reached": 35,
+    "applied": 38,
+    "of_all": 38
+   },
+   "tool_use": {
+    "passed": 32,
+    "reached": 38,
+    "applied": 38,
+    "of_all": 38
+   }
+  },
+  "rejections": {
+   "arguments": 46,
+   "unread_evidence": 25,
+   "stage": 33,
+   "misquote": 7,
+   "order": 4
+  },
+  "shock_coverage": {
+   "cases": 29,
+   "delivered": 28,
+   "read": 28,
+   "held_affected_theory": 11,
+   "addressed_an_affected_theory": 9,
+   "bore_on_favoured": 4,
+   "cited_in_revision": 26,
+   "favoured_changed": 0
+  },
+  "supporting_evidence_attempted": 36,
+  "rejected_finishes": 52,
+  "harness_actions": 0,
+  "refused_calls": 115,
+  "recovered_after_refusal": 67,
+  "harness_corrections": 0,
+  "resources": {
+   "prompt_tokens": 3668,
+   "completion_tokens": 371334,
+   "seconds": 2647.519,
+   "usd": 0.32
+  },
+  "mean_calls": 22.105263157894736
+ },
+ "auditkit": {
+  "cases": 38,
+  "replay_mismatches": 0,
+  "guards_cleared": 4,
+  "guards_not_cleared": 34,
+  "other": 0,
+  "known_tool_names": 1.0,
+  "redundant_tool_calls": 0.013984874774348458,
+  "no_looping": 0.8421052631578947
+ }
+}
+10 episodes failed in the harness, and the server refused []
