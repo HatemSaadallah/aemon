@@ -200,6 +200,10 @@ a stronger or human-corrected teacher for evidence judgement, is the open direct
 - **Good absolute quality.** The fine-tuned agent averages 1.48 on a 0 to 3 rubric. 20 of its 48 final-test runs ended
   before a recommendation (11 after repeated refused calls, 9 at the turn limit, 8 of them rereading sources), and its
   weakest dimensions remain the recommendation, revision after new evidence, experiment design and judging evidence.
+- **Degraded outside its task.** Not measurably, on a small check: 500 MMLU and 300 ARC-Challenge test items,
+  zero-shot, scored by first-token log-probabilities, give 60.9% for the base model and 60.9% with either adapter
+  loaded (paired difference 0.0 points, 95% interval −1.3 to +1.3; `reports/retention/` in the repository). The check
+  bounds the loss at about a point and a half, not less, and no safety benchmark was run.
 - **Better than a closed model.** It is not. Claude Haiku 5.5, run on both test sets through the same environment and
   judged blind with this model, version 1's base and the final system, scores 2.28 and 2.30 against the final system's
   1.62 and 1.67 (final system minus Haiku −0.67 [−0.79, −0.52] and −0.63 [−0.75, −0.52]; Codex alone −0.43), at about

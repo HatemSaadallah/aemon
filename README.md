@@ -478,6 +478,25 @@ instrument's validity check) and are left out of the pairs. Haiku's outputs are 
   start. What it offers is control, not quality or price: offline on one GPU or a laptop, the case data kept on the
   machine, weights that can be inspected and trained further. Tables: `experiments/haiku/summary.json`.
 
+### General-capability retention (`reports/retention/`)
+What the fine-tuning cost the model outside this environment, measured on 500 MMLU test items (every subject, evenly)
+and 300 ARC-Challenge test items, zero-shot, scored by the most probable letter among the first token's top-20
+log-probabilities. The three arms are one llama-server process on the evaluated bf16 GGUF, with the adapters' scale
+switched between 0 and 1, so weights, prompt and decoding are otherwise identical (`scripts/bench/retention.py`,
+`jobs/retention.sbatch`; registered in [docs/DECISIONS.md](docs/DECISIONS.md) before it ran).
+
+| | MMLU (500) | ARC-Challenge (300) | All 800 | Difference from base, 95% bootstrap over items |
+|---|---|---|---|---|
+| Base Tiny Aya Global | 53.4% | 73.3% | 60.9% | |
+| With the version 1 adapter | 53.2% | 73.7% | 60.9% | 0.0 points [−1.3, +1.3] |
+| With the version 3 adapter | 53.0% | 74.0% | 60.9% | 0.0 points [−1.4, +1.4] |
+
+The adapters change the answer on 42 and 52 of the 800 items, and the changes cancel: nothing measurable was lost.
+Two caveats: 800 items bound the loss at about a point and a half, not less, and this is a zero-shot letter-choice
+check, not a generation benchmark. A first run that parsed a short generated reply instead is kept in the decision log
+and not used: the base model answered 411 of 800 items without a letter (the fine-tuned model, 0), a formatting
+difference that the log-probability scoring removes.
+
 ### Limits
 - **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter
   design screens. The frozen numbers use the original check; later comparisons also report a stricter one.

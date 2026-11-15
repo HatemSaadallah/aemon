@@ -2054,3 +2054,9 @@ documents (frozen tests: Claude and Codex 20 of 20 each, Claude after requalific
 of 20, Codex on gpt-6-sol 20 of 20), the Haiku cost is $0.008 everywhere, and both documents explain why the second
 test's gain is smaller (version 1 finished fewer runs there; on the stages both runs reached the tests agree, +0.92
 and +0.90).
+
+**Retention result (job 766367, 15:19).** Base 60.9% (MMLU 53.4%, ARC-Challenge 73.3%); version 1 adapter 60.9% (53.2%,
+73.7%); version 3 adapter 60.9% (53.0%, 74.0%). Paired differences 0.0 points, 95% bootstrap [−1.3, +1.3] and
+[−1.4, +1.4]; the adapters change the answer on 42 and 52 of 800 items and the changes cancel. Files:
+`reports/retention/` (results, replies, items, hashes: base GGUF 4d884566, v1 41794b57, v3 ea919380). Reported in the
+README, the article and the model card.

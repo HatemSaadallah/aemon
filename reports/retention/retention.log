@@ -1,0 +1,110 @@
+4d8845665456cb90 /home/CLUSTER_ACCOUNT/lexsi/models/tiny-aya-global-bf16.gguf
+41794b5756b9e0f8 /home/CLUSTER_ACCOUNT/lexsi/runs/eval/final_test_trained_adapter.gguf
+ea9193807fe9d513 /home/CLUSTER_ACCOUNT/lexsi/runs/eval/final_test_v3_adapter.gguf
+server ready 15:15:05
+[{"id":0,"path":"/home/CLUSTER_ACCOUNT/lexsi/runs/eval/final_test_trained_adapter.gguf","scale":1.0,"task_name":"","prompt_prefix":""},{"id":1,"path":"/home/CLUSTER_ACCOUNT/lexsi/runs/eval/final_test_v3_adapter.gguf","scale":1.0,"task_name":"","prompt_prefix":""}]
+base: accuracy 0.609, by logprob 800, no letter 0, 69 s
+v1: accuracy 0.609, by logprob 800, no letter 0, 85 s
+v3: accuracy 0.609, by logprob 800, no letter 0, 85 s
+{
+ "items": 800,
+ "arms": {
+  "base": {
+   "arc_challenge": {
+    "n": 300,
+    "accuracy": 0.7333333333333333,
+    "by_logprob": 300,
+    "no_letter": 0
+   },
+   "mmlu": {
+    "n": 500,
+    "accuracy": 0.534,
+    "by_logprob": 500,
+    "no_letter": 0
+   },
+   "all": {
+    "n": 800,
+    "accuracy": 0.60875,
+    "by_logprob": 800,
+    "no_letter": 0
+   }
+  },
+  "v1": {
+   "arc_challenge": {
+    "n": 300,
+    "accuracy": 0.7366666666666667,
+    "by_logprob": 300,
+    "no_letter": 0
+   },
+   "mmlu": {
+    "n": 500,
+    "accuracy": 0.532,
+    "by_logprob": 500,
+    "no_letter": 0
+   },
+   "all": {
+    "n": 800,
+    "accuracy": 0.60875,
+    "by_logprob": 800,
+    "no_letter": 0
+   }
+  },
+  "v3": {
+   "arc_challenge": {
+    "n": 300,
+    "accuracy": 0.74,
+    "by_logprob": 300,
+    "no_letter": 0
+   },
+   "mmlu": {
+    "n": 500,
+    "accuracy": 0.53,
+    "by_logprob": 500,
+    "no_letter": 0
+   },
+   "all": {
+    "n": 800,
+    "accuracy": 0.60875,
+    "by_logprob": 800,
+    "no_letter": 0
+   }
+  }
+ },
+ "differences": {
+  "v1_minus_base": {
+   "arc_challenge": [
+    0.0033333333333333335,
+    -0.01,
+    0.016666666666666666
+   ],
+   "mmlu": [
+    -0.002,
+    -0.02,
+    0.016
+   ],
+   "all": [
+    0.0,
+    -0.0125,
+    0.0125
+   ]
+  },
+  "v3_minus_base": {
+   "arc_challenge": [
+    0.006666666666666667,
+    -0.01,
+    0.02666666666666667
+   ],
+   "mmlu": [
+    -0.004,
+    -0.024,
+    0.014
+   ],
+   "all": [
+    0.0,
+    -0.01375,
+    0.01375
+   ]
+  }
+ }
+}
+done 15:19:15
