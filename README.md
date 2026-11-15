@@ -37,6 +37,7 @@ them. Click the thumbnail to watch it on YouTube.
 | Dataset | [two-eyed-ravens/aemon](https://huggingface.co/datasets/two-eyed-ravens/aemon) |
 | Collection | [aemon: a strategy-investigation agent](https://huggingface.co/collections/two-eyed-ravens/aemon-a-strategy-investigation-agent-6af71da6a81fe397ad0b38dd) |
 | Article | [huggingface.co/blog/HatemSaadallah/aemon](https://huggingface.co/blog/HatemSaadallah/aemon) |
+| Demo video | [youtu.be/Uow3miSSIIY](https://youtu.be/Uow3miSSIIY) |
 | Paper | [docs/PAPER.pdf](docs/PAPER.pdf) |
 | Every test run, browsable | [first test](docs/replays/final/README.md) (96 runs) and [second test](docs/replays/test2/README.md) (144 runs), base and fine-tuned side by side, no GPU needed |
 | Every decision, dated | [docs/DECISIONS.md](docs/DECISIONS.md) |

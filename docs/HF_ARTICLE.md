@@ -1,4 +1,4 @@
-*Code, every run and every decision: [github.com/HatemSaadallah/aemon](https://github.com/HatemSaadallah/aemon) · Try it: [the live demo](https://huggingface.co/spaces/HatemSaadallah/aemon) (any username, no password) · Model and data: [the Two-Eyed Ravens collection](https://huggingface.co/collections/two-eyed-ravens/aemon-a-strategy-investigation-agent-6af71da6a81fe397ad0b38dd) · [Paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf)*
+*Code, every run and every decision: [github.com/HatemSaadallah/aemon](https://github.com/HatemSaadallah/aemon) · Try it: [the live demo](https://huggingface.co/spaces/HatemSaadallah/aemon) (any username, no password) · Watch it: [demo video](https://youtu.be/Uow3miSSIIY) · Model and data: [the Two-Eyed Ravens collection](https://huggingface.co/collections/two-eyed-ravens/aemon-a-strategy-investigation-agent-6af71da6a81fe397ad0b38dd) · [Paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf)*
 
 *weigh what is known. test what is not.*
 
@@ -37,7 +37,7 @@ The model, the data, every judged run, a live demo and the code are public.
 > - **Result:** blind quality 0.65 → 1.48 (+0.83 [0.69, 0.97]) on a frozen test run once; +0.52 [0.33, 0.70] on a second; the final system reaches 1.62 and finishes 46 of 48 investigations in 39 tool calls each (base model: 4 of 48, 242 calls).
 > - **The caveat we state ourselves:** Claude Haiku 5.5 scores 2.28 through the same tools for a quarter of the cost. The small model's case is offline, open-weights, auditable use.
 > - **See it in 60 seconds:** [one finished run as a page](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/system_rational-new-evidence-irrelevant_2.md), every tool call and refusal included; or [the live demo](https://huggingface.co/spaces/HatemSaadallah/aemon), any username, where finished investigations open at once.
-> - **Everything public:** [model](https://huggingface.co/two-eyed-ravens/aemon), [dataset with every judged run](https://huggingface.co/datasets/two-eyed-ravens/aemon), [code and dated decisions](https://github.com/HatemSaadallah/aemon), [paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf).
+> - **Everything public:** [model](https://huggingface.co/two-eyed-ravens/aemon), [dataset with every judged run](https://huggingface.co/datasets/two-eyed-ravens/aemon), [code and dated decisions](https://github.com/HatemSaadallah/aemon), [paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf), [demo video](https://youtu.be/Uow3miSSIIY).
 
 ## 1. Problem and approach
 
