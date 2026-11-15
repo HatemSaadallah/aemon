@@ -4,6 +4,41 @@
 
 Team Two-Eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · November 2026
 
+**One-line claim.** Agentic distillation with AgentTune takes a 3B open model from unable to finish a strategy investigation to **+0.83** blind quality over its best-prompted self on a frozen test run once, with every step replayable through AuditKIT; a closed model still does better, and we say by how much.
+
+**Tracks and problem statements covered**
+
+- Track 3, Agentic Fine-Tuning, problem statement 3: **Agentic distillation**.
+- Track 3, problem statement 7: **Business workflow and decision agents**.
+- Problem statement 2, Efficient trajectories, is measured (39 tool calls per finished investigation against the base model's 242) but was a result, not a goal.
+
+**Headline, before → after.** Blind quality **0.65 → 1.48** (0–3 rubric, mean of two blind judges; +0.83, 95% interval 0.69 to 0.97) and finished investigations **4 → 28 of 48**, on four companies never seen, run once. The final system, built afterwards, on the same cases: **0.61 → 1.62** and **4 → 46 of 48**.
+
+**Base model and method, in one line.** Tiny Aya Global (3.35B, CC-BY-NC-4.0), LoRA rank 16 on every linear layer, trained with AgentTune's distillation trainer on 158 Command A+ investigations that replayed exactly in our tool environment, then evaluated by AuditKIT replay, executable checks and two blind LLM judges.
+
+### Abstract
+
+Asked whether a manufacturer should take its technology into a new market, language models tend to write consulting prose: unsourced numbers, and evidence gathered only for the answer they started with. We built an environment in which an agent must investigate instead: frame the decision, state rival causal theories, weigh quoted evidence from a dossier of public records for and against each, look for evidence against its favourite, propose a test with a decision rule, revise when new evidence arrives, and recommend. Twelve guarded tools and a stage controller enforce the procedure: a quote that is not word for word in its source is refused, and every call can be replayed.
+
+Command A+ served as the teacher. Only its investigations that replayed exactly and reached an accepted finish became training data: 3,891 rows from 158 investigations, plus 51 correction rows. We fine-tuned Tiny Aya Global (3.35B parameters) with AgentTune (LoRA), replayed every evaluation run with AuditKIT, and scored runs with executable checks and two blind LLM judges, both qualified beforehand.
+
+On a frozen test of four companies never used for training or selection, run once, the fine-tuned model scored 1.48 against 0.65 for the base model under its best prompt (0–3 rubric; +0.83, 95% interval 0.69 to 0.97). It was higher on all 16 cases and finished 28 of 48 investigations against 4. A second frozen test on twelve new companies gave +0.52 [0.33, 0.70]. The gain holds when whole companies are resampled.
+
+The final system was built after both tests, partly from failures seen in their runs, so its numbers are not held out. It adds a second adapter and decoding-time guards that remove failing actions: repeated calls, misquotes, and an evidence label chosen before the quote. On the same cases it scores +1.02 [0.92, 1.10] and +1.11 [1.01, 1.20] over the base model, finishes 46 of 48 and 65 of 72 investigations, and needs 39 tool calls per finished investigation against the base model's 242.
+
+A closed model does better. Claude Haiku 5.5, run through the same environment and judged blind alongside our arms, scores 2.28 against the final system's 1.62, at about $0.008 per investigation through the API against $0.03 self-hosted. Fine-tuning takes the small model about 60% of the way from its base to Haiku. What it offers instead is control: it runs offline on one GPU or a laptop, keeps the case data on the machine, and its weights are open (CC-BY-NC 4.0).
+
+The model learned the procedure more than the judgement. Its largest gains are in framing the decision and stating distinct theories; its recommendations score lowest. An audit of the teacher shows why: 74% of the teacher's recommendations use a number found in no source, and the student inherits such habits. At run time, removing a failing action from what the model can produce worked; telling the model about its mistake did not.
+
+The model, the data, every judged run, a live demo and the code are public.
+
+> **For judges: one minute.**
+> - **What:** a 3B open model taught, by distillation from Command A+ with AgentTune, to run a strategy investigation through twelve guarded tools, with AuditKIT replaying every evaluated run.
+> - **Result:** blind quality 0.65 → 1.48 (+0.83 [0.69, 0.97]) on a frozen test run once; +0.52 [0.33, 0.70] on a second; the final system reaches 1.62 and finishes 46 of 48 investigations in 39 tool calls each (base model: 4 of 48, 242 calls).
+> - **The caveat we state ourselves:** Claude Haiku 5.5 scores 2.28 through the same tools for a quarter of the cost. The small model's case is offline, open-weights, auditable use.
+> - **See it in 60 seconds:** [one finished run as a page](https://github.com/HatemSaadallah/aemon/blob/main/docs/replays/system_rational-new-evidence-irrelevant_2.md), every tool call and refusal included; or [the live demo](https://huggingface.co/spaces/HatemSaadallah/aemon), any username, where finished investigations open at once.
+> - **Everything public:** [model](https://huggingface.co/two-eyed-ravens/aemon), [dataset with every judged run](https://huggingface.co/datasets/two-eyed-ravens/aemon), [code and dated decisions](https://github.com/HatemSaadallah/aemon), [paper](https://github.com/HatemSaadallah/aemon/blob/main/docs/PAPER.pdf).
+
 ## 1. Problem and approach
 
 Ask a language model whether a maker of professional espresso machines should sell one for the home, and you get consulting prose: a list of factors, a confident market size with no source, and evidence collected only for the answer it started with. Strategy research describes a better habit (Camuffo, Cordova, Gambardella and Spina, 2020, *Management Science*; Camuffo, Gambardella and Pignataro, 2024, *Strategy Science*). Frame the decision and its real alternatives. State rival causal theories of who would change their behaviour and why. Look for the evidence that would prove your favourite wrong. Run a test with a decision rule when the information is worth its cost. Revise when new evidence arrives.
@@ -16,7 +51,9 @@ A stronger teacher, Command A+, ran investigations through those tools. Only the
 
 **The answer, in one line.** On four companies it never saw, run once, the fine-tuned model scored **1.48 against 0.65** for the base model under its best prompt on a 0–3 blind rubric (**+0.83**, 95% interval 0.69 to 0.97), was higher at every company, and finished 28 of 48 investigations against 4. A second frozen test on twelve more companies gave **+0.52** [0.33, 0.70]. The final system, built after both tests, finishes **46 of 48** investigations with **39 tool calls** each, where the base model needs 242. A closed model, Claude Haiku 5.5, still does better through the same tools, and for less; section 7 says by how much, and what aemon offers instead.
 
-**Track 3 problem statements:** agentic distillation, and business workflow and decision agents. Efficient trajectories came out of it as a measured result rather than a goal.
+**Track 3 problem statements:** 3, agentic distillation, and 7, business workflow and decision agents. Efficient trajectories (2) came out of it as a measured result rather than a goal.
+
+**Why this problem, and who would use it.** Adjacent-market decisions of this kind are made every year by mid-sized manufacturers that have no strategy department: whether a maker of professional kitchen equipment, water filters or hearing protection should sell to consumers. The people who make them are the owner, a product lead and a consultant's slide deck. An investigation that cites only checked quotes, shows what the evidence does not support, and can be replayed is useful to them exactly because the recommendation can be argued with. It also has to run on their own machine, since the dossier for a real decision is often confidential; that is why the student is a 3B model and not an API call.
 
 ![The reasoning map of one investigation: question, rival hypotheses, the evidence weighed for each, the challenge, the proposed test and the recommendation](https://raw.githubusercontent.com/HatemSaadallah/aemon/main/docs/figures/ui/redesign/after/map.png)
 
@@ -51,6 +88,10 @@ No benchmark existed for this task, so the data is ours, and all of it is publis
 - **Splits by company**, never by case: 58 training companies, 6 validation companies for every development choice (Hellberg, Neumann, Jotun, Tanita, Deere, ACR), 4 final-test companies (Aquaporin, Electrolux Professional, RATIONAL, Simonelli) frozen by digest before any model ran on them, and the second test's 12, frozen the same way.
 - **Training data**: 174 accepted teacher investigations gave 4,302 rows. Training used the 3,891 rows from 158 investigations on 57 training companies, plus 51 correction rows (the teacher showing a valid next step from a state where the student had looped); the 411 rows on validation companies were held out, and the published dataset keeps them as a separate `validation` split. Version 3 added 3,611 rows from 144 DeepSeek V4-Pro investigations on 69 companies (262 validation rows on 5 more).
 - **Rights**: the dossier quotes public sources with attribution, and is published in full so anyone can rerun what the evaluated runs read. The rows derive from Command A+ (Apache 2.0) and DeepSeek V4-Pro outputs; nothing from Claude or Codex is in them.
+- **Languages**: English only. Every case, prompt, training row and dossier excerpt is in English; the companies are European, American and Japanese, but their records were taken from English-language sources.
+- **Leak check**: splits are by company, never by case or row, because the rows of one investigation are near copies of each other and a row split would leak. The row builder takes only investigations on training companies (`src/aemon/data/splits.py`), so no row from a validation or test company can be in the training data; the test companies' cases were frozen by digest before any model ran on them. The dossier is shared across splits, since it is the environment the agent searches, not an answer key. We ran no embedding or MinHash check: company identity is recorded on every row, so the exact check is the complete one here.
+- **Tool and task environment, trajectories**: the environment is the twelve guarded tools and the stage controller described in section 1, over the dossier and the cases above. A trajectory is the event log of one investigation (every call, argument, result and refusal), in AgentTune's event format, replayable with AuditKIT. Every trajectory we evaluated is published in the dataset's evaluation folders with its judge packet and judgments, and the two frozen tests are also readable as pages in the repository.
+- **General-capability retention**: none was measured. The adapter is used only inside this environment through the app, and we list the missing retention check among the known weaknesses in section 7.
 
 ## 5. Model artifacts
 
@@ -76,11 +117,36 @@ The repository adds every test run as a readable page ([first test](https://gith
 
 **The metrics, and why.** Every arm is measured the same way, before and after. **Finished investigations**: did the run reach an accepted recommendation? That is the reliability of the workflow. **Tool calls per finished investigation, and the share of calls refused**: wasted actions, since a refused call is a broken rule. **Blind quality** on a nine-dimension 0–3 rubric from two qualified LLM judges: whether the investigation is any good, the only measure that tells a finished run from a sound one. And **cost per investigation**, self-hosted against closed-model billing: the ROI comparison. Each judge first scored 20 matched pairs of investigations, sound and flawed, and had to rank the sound one higher in at least 17; packets carry no model name, and the key stays outside the judges' reach.
 
+The metrics, with their direction:
+
+- **Blind quality**, 0–3, mean of two judges over nine rubric dimensions ([the rubric](https://github.com/HatemSaadallah/aemon/blob/main/docs/RUBRIC.md)): higher is better. The primary result is the paired difference between arms with a 95% case-cluster bootstrap interval.
+- **Finished investigations**, the task success rate (an accepted recommendation reached): higher is better.
+- **Tool calls per finished investigation**, refused calls included: lower is better. **Share of calls refused**, the tool-call accuracy inverted: lower is better.
+- **Replay mismatches** under AuditKIT, a run whose tool results do not reproduce: must be zero, and is, in all 22 run reports.
+- **Latency and cost per investigation**: lower is better; 66 seconds and about $0.03 for version 1 on one A100 slice.
+- **Checking the judges**: each judge ranked the sound investigation above the flawed one in 19 of 20 and 20 of 20 matched pairs; the two judges agree on the order of runs (Spearman 0.94 on the first test). No human has scored a run, which is the first limit listed below.
+
 ### Getting to a first result
 
 The untrained model could not do the task at all: in an open workflow it quit after a step or two, and under the stage controller it stalled, mostly by repeating a theory or a search it had already made. Four small discoveries got us to a first adapter. Full chat histories did not fit: late-stage rows exceeded 8,192 tokens and were refused rather than truncated, so most conclusion rows were lost, until we replaced the history with a compact state (theories, quotes, tests and revisions in full, everything else summarised). The first fine-tuned runs went much deeper but looped on refused calls at temperature 0, so we added correction rows and made the state say plainly that rereading a source returns the same text. And every adapter was converted to GGUF and replayed against the PEFT adapter on the GPU before it was evaluated (effect cosine at least 0.99, probability-weighted residual at most 0.15; the final adapter passed at 0.9990 and 0.080), because an adapter that is not the one you trained is not a result.
 
 On the six validation companies the base model finished 0 of 15 investigations under either prompt (quality 0.14 and 0.43), an earlier adapter 6 of 15 (1.09), and the final adapter 7 of 15 (1.29). By the preregistered rule the staged prompt became the base arm and the final adapter the trained arm, and we froze the test.
+
+### Training setup and hyperparameters
+
+Version 1 was trained with `src/aemon/training/train.py`, which calls AgentTune's `create_distill_trainer` (TRL SFT with PEFT LoRA) on the rows and leaves every AgentTune default in place except the values below. One A100, bfloat16, seed 7.
+
+| | |
+|---|---|
+| LoRA | rank 16, alpha 32, dropout 0.05, every linear layer, `CAUSAL_LM` |
+| Optimiser and schedule | AdamW, learning rate 1e-4, linear warm-up over 5% of steps, cosine decay |
+| Batch | 1 per device, gradient accumulation 4 (effective 4) |
+| Data and length | 3,942 rows (3,891 teacher rows and 51 correction rows), 2 epochs, 1,971 optimiser steps; rows over 8,192 tokens refused, never truncated |
+| Loss | on the target tool call only; context tokens labelled −100, checked on real rows by the masking gate before the job starts |
+| Checkpoint | lowest held-out loss on the six validation companies (the last checkpoint: 0.713, from 1.045) |
+| Gates | an overfit run on 10 rows must reproduce at least 8 targets greedily; the GGUF conversion must match the PEFT adapter (cosine at least 0.99, residual at most 0.15 on every replayed point) |
+
+Version 3 continued from version 1 on the second teacher's 3,611 rows with the same LoRA and seed, a lower learning rate (2.5e-5), one epoch and 10% warm-up (`jobs/train_v3.sbatch`). AuditKIT ran with its defaults plus our replay predicate and the four diagnostic scorers named in section 2; CuratorKIT ran with exact deduplication and the secrets gate. Evaluation decoding was greedy (temperature 0) for every arm, three attempts per case, which differ through the environment's state, so the attempts are repetitions rather than independent samples.
 
 ### The frozen test, run once
 
@@ -140,6 +206,19 @@ Haiku is better on this task: higher at every company on both sets and on all ni
 
 ![A finished report: the recommendation, the confidence the checks support, and what the evidence did and did not show](https://raw.githubusercontent.com/HatemSaadallah/aemon/main/docs/figures/ui/redesign/after/report.png)
 
+### Compute used, and cost per 1,000 investigations
+
+All GPU work ran on a university Slurm cluster, on NVIDIA A100 slices (40 GB and 80 GB), at no cost to the team. The teacher was the largest item: about 223 Command A+ investigations at about 29 minutes each on an 80 GB slice, roughly 110 GPU hours. Version 1's training took about 4.6 hours on one A100 (1,971 steps); version 3's continuation ran within a 700-minute cap on one A100. The evaluation runs, several hundred across development, both frozen tests, the final-system campaigns and the conversion gates, cost about a minute of GPU each. Our estimate for the whole project is on the order of 150 A100 hours, which would be about $270 at the October 2026 median rental price. Paid APIs: about $47 on Claude for blind judging, an early control run and the Haiku baseline (capped at $60 by a spending ledger), DeepSeek credit for the second teacher under a harness cap of $10 per round, and Codex through a subscription.
+
+| Per 1,000 investigations | Cost | Basis |
+|---|---|---|
+| **Fine-tuned Tiny Aya, self-hosted** | **$32** ($16 to $68) | 66 s each on one A100 40 GB slice, one at a time; $1.76 per hour (range $0.89 to $3.67) |
+| Claude Haiku 5.5, measured | **$8.40** | 120 investigations on both test sets, $1.06 in all, effort medium, with caching |
+| Claude Opus 5.5, measured | $250 | 15 investigations on an earlier control run, $3.73 |
+| Claude Opus 5.5 at list price, no caching | $540 | the student's token volume, 121,700 in and 2,900 out, at $4 and $20 per million |
+
+Self-hosting is 8 times cheaper than the measured Opus run and 4 times dearer than Haiku. Serving several investigations at once on one GPU, which llama.cpp supports, would lower the self-hosted figure; we did not measure it.
+
 ### What else we tested
 
 Everything is in [docs/FINAL_SYSTEM.md](https://github.com/HatemSaadallah/aemon/blob/main/docs/FINAL_SYSTEM.md) and the dataset's evaluation folders, with its registered rule and its judgments.
@@ -152,7 +231,7 @@ Everything is in [docs/FINAL_SYSTEM.md](https://github.com/HatemSaadallah/aemon/
 
 ### Limits
 
-No human has scored a run: the judges agree on the order of runs (Spearman 0.94) but not on the level, so read every score as a comparison between arms, not a grade. The mechanical experiment check is too lenient (8 of the 9 tests it accepts on development fail stricter design screens; the frozen numbers use the original check). Evidence-kind labels are 75% exact on a blind relabelling of 60 records. And every case asks one kind of question, whether a maker of professional equipment should build a consumer proposition: "generalises" here means new companies, not new kinds of strategy question.
+No human has scored a run: the judges agree on the order of runs (Spearman 0.94) but not on the level, so read every score as a comparison between arms, not a grade. The mechanical experiment check is too lenient (8 of the 9 tests it accepts on development fail stricter design screens; the frozen numbers use the original check). Evidence-kind labels are 75% exact on a blind relabelling of 60 records. Every case asks one kind of question, whether a maker of professional equipment should build a consumer proposition: "generalises" here means new companies, not new kinds of strategy question. The data is English only. No general-capability or safety benchmark was run on the adapter, so we cannot say what the fine-tuning cost the model outside this environment. The final system's numbers are not held out. And the student inherits the teacher's judgement, invented numbers included, which no filter we tried removes.
 
 ### Lessons
 
@@ -169,8 +248,46 @@ The diagnosis gives a concrete plan. The credits would buy teacher runs and trai
 
 Before and after would then be reported exactly as here: the frozen numbers of version 1 as the baseline, the final system as the current state, and the new system beside them, with every judgment published.
 
+**Expected before → after.** A forecast, not a measurement, and the adoption rule above decides, not the forecast. It rests on what each gap moved when we addressed it at run time: the second teacher's reasoning added +0.36 on the second test, the status check made every run read the record the first test missed, and Haiku's 2.28 through the same tools shows what the environment allows a stronger reasoner.
+
+| On a fresh frozen set, mean of judges | Final system now | Expected after the plan |
+|---|---|---|
+| Blind quality (0–3) | 1.62 | about 1.9 (we would call 1.8 a success and 2.0 a good one) |
+| Recommendation dimension | 1.06 (Haiku: 1.95) | about 1.5, the dimension the targeted examples aim at |
+| Finished investigations | 46 of 48 | no fewer; the rule forbids a fall |
+| Finished recommendations using a number from no source | 21% to 31% (version 1 on the two tests) | under 10%, from the correction examples and a corrected teacher |
+| Tool calls per finished investigation | 39 | about 30, as the propose-versus-decline and status-check examples replace run-time guards |
+
+If the recommendation dimension does not move, the plan has failed in the way the diagnosis predicts it might: the limit would then be the small model's judgement, not its data.
+
 ## 9. Team
 
 Team Two-Eyed Ravens: [Hatem Saadallah](https://huggingface.co/HatemSaadallah) (@HatemSaadallah) and [Nour Jennane](https://huggingface.co/Nour1928) (@Nour1928), Master's students in artificial intelligence and AI researchers.
 
 Built with AgentTune, AuditKIT and CuratorKIT (Lexsi Labs), Tiny Aya and Command A+ (Cohere), PEFT, TRL and llama.cpp, on NVIDIA A100 GPUs. Claude (Anthropic) and Codex (OpenAI) served as blind judges and as coding assistants. Code: Apache 2.0; the adapters derive from Tiny Aya Global and are CC-BY-NC-4.0.
+
+### Reproduction
+
+The repository's [README](https://github.com/HatemSaadallah/aemon#readme) has the layout and the commands; in short:
+
+- **Requirements**: Python 3.12 with `requirements.lock.txt` (the exact set the frozen runs used), llama.cpp release b12032, Node once to build the interface, and one GPU with 40 GB for the evaluated speed. The app and the demo also run on CPU, slowly. Reading the results needs nothing: every frozen-test run is a page under `docs/replays/`.
+- **Layout**: `src/aemon/environment/` the tools, stage controller, cases and dossier search; `src/aemon/agent/` the runner and model clients; `src/aemon/teacher/` the teacher runs; `src/aemon/rows/` row building, provenance and CuratorKIT curation; `src/aemon/training/` AgentTune training and the masking gate; `src/aemon/evaluation/` AuditKIT replay, the conversion gate and blind judging; `app/` the interface; `jobs/` the Slurm scripts for every stage; `reports/` and `experiments/` every result, packet and judgment; `docs/` the decision log and the plans frozen before each test.
+- **Commands**: `./run_tests.sh` for the suites; `jobs/command_a_plus.sbatch` for teacher investigations; `NAME=final COMPACT=1 ROW_PROMPT=compact EPOCHS=2 sbatch jobs/train_after_teacher.sbatch` for rows and training; `jobs/diagnose_conversion.sbatch` for the GGUF gate; `jobs/eval_adapter.sbatch` with `SPLIT=heldout ATTEMPTS=3` for the frozen test, once with the adapter and once without; `python -m aemon.evaluation.judging.report` for the judge report; `./app/run.sh` for the app.
+
+### Declaration of work done outside the hackathon
+
+None. The first commit is dated 1 November 2026, the day the hackathon opened, and everything here (the environment, the dossier and cases, the teacher runs, the training, the evaluations, the app, the paper and this write-up) was done between then and the deadline. What we brought in was public: the Lexsi kits, Cohere's models, PEFT, TRL and llama.cpp, and the strategy literature cited in section 1.
+
+### LLM usage statement
+
+Claude Code and Codex wrote most of the code and drafted most of the documents under our direction; we chose every design, registered every rule before a run, read every result and rewrote the text. Their role in the experiments was confined to blind judging, with a provenance check that keeps any Claude or Codex output out of the training data.
+
+### References
+
+Camuffo, A., Cordova, A., Gambardella, A. and Spina, C. (2020). A scientific approach to entrepreneurial decision making. *Management Science* 66(2). · Camuffo, A., Gambardella, A. and Pignataro, A. (2024). Theory-driven strategic management decisions. *Strategy Science*. · Lexsi Labs: [AgentTune](https://agenttune.lexsi.ai/), [AuditKIT](https://auditkit.lexsi.ai/), CuratorKIT. · Cohere Labs: [Tiny Aya Global](https://huggingface.co/CohereLabs/tiny-aya-global), Command A+. · Hugging Face [PEFT](https://github.com/huggingface/peft) and [TRL](https://github.com/huggingface/trl). · [llama.cpp](https://github.com/ggml-org/llama.cpp).
+
+### Appendix
+
+- The judge rubric: [docs/RUBRIC.md](https://github.com/HatemSaadallah/aemon/blob/main/docs/RUBRIC.md); the judge prompt: [judge_prompt_v1.txt](https://github.com/HatemSaadallah/aemon/blob/main/src/aemon/evaluation/judging/judge_v1/judge_prompt_v1.txt).
+- The agent prompts and the stage controller's guidance: [prompts.py](https://github.com/HatemSaadallah/aemon/blob/main/src/aemon/common/constants/prompts.py).
+- Every table behind the numbers above, with the registered rule for each change: [docs/FINAL_SYSTEM.md](https://github.com/HatemSaadallah/aemon/blob/main/docs/FINAL_SYSTEM.md) and [docs/DECISIONS.md](https://github.com/HatemSaadallah/aemon/blob/main/docs/DECISIONS.md).

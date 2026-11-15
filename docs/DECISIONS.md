@@ -2013,3 +2013,18 @@ these failures are not rate limits.
   the metrics and why, the rationale for data and models, before-and-after on more than one metric, and an ROI
   comparison), with a "why these metrics" paragraph before the results in both the README and the article.
   The website now gives the deadline as 15 November 2026, 11:59 PM AoE.
+
+## 2026-11-15: the article checked against Lexsi's write-up checklist
+
+Lexsi published a write-up checklist (required, optional and track-dependent items). The article kept its nine sections
+and gained the required front matter (one-line claim; tracks and problem statements as a numbered list, 3 and 7, with 2
+measured; an abstract under 500 words, 495; headline before → after; base model and method in one line; a "for judges:
+one minute" box), a why-this-problem paragraph, the Track 3 dataset items (languages, English only; the leak check,
+splits by company with no embedding or MinHash check and why; the tool environment and trajectories; no retention
+benchmark, declared), an explicit metric list with directions and the judge check, a training-setup table (version 1:
+LoRA 16/32/0.05 on all linear layers, 1e-4, cosine, effective batch 4, 2 epochs, 1,971 steps; version 3: 2.5e-5, one
+epoch, 10% warm-up), compute used and cost per 1,000 investigations ($32 self-hosted, $8.40 Haiku measured, $250 Opus
+measured), an expected before → after table in section 8 labelled as a forecast, and in section 9 reproduction
+(requirements, layout, commands), a declaration that no work predates the hackathon (first commit 1 November 2026), an
+LLM usage statement, references and an appendix of prompt and rubric links. Not added, pending the authors: author
+contributions and an approximate share for the LLM usage statement.
