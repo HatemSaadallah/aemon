@@ -12,7 +12,7 @@ Team Two-Eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 - Track 3, problem statement 7: **Business workflow and decision agents**.
 - Problem statement 2, Efficient trajectories, is measured (39 tool calls per finished investigation against the base model's 242) but was a result, not a goal.
 
-**Headline, before → after.** Blind quality **0.65 → 1.48** (0–3 rubric, mean of two blind judges; +0.83, 95% interval 0.69 to 0.97) and finished investigations **4 → 28 of 48**, on four companies never seen, run once. The final system, built afterwards, on the same cases: **0.61 → 1.62** and **4 → 46 of 48**.
+**Headline, before → after.** Blind quality **0.65 → 1.48** (0–3 rubric, mean of two blind judges; +0.83, 95% interval 0.69 to 0.97 over cases, 0.44 to 1.23 resampling whole companies) and finished investigations **4 → 28 of 48**, on four companies never seen, run once. The final system, built afterwards and measured on the same cases, so not held out: **0.61 → 1.62** and **4 → 46 of 48**.
 
 **Base model and method, in one line.** Tiny Aya Global (3.35B, CC-BY-NC-4.0), LoRA rank 16 on every linear layer, trained with AgentTune's distillation trainer on 158 Command A+ investigations that replayed exactly in our tool environment, then evaluated by AuditKIT replay, executable checks and two blind LLM judges.
 
@@ -49,7 +49,7 @@ A stronger teacher, Command A+, ran investigations through those tools. Only the
 
 **The question we test:** can agentic fine-tuning teach the procedure to a small model, beyond what the stage controller and the best prompt already give the base model?
 
-**The answer, in one line.** On four companies it never saw, run once, the fine-tuned model scored **1.48 against 0.65** for the base model under its best prompt on a 0–3 blind rubric (**+0.83**, 95% interval 0.69 to 0.97), was higher at every company, and finished 28 of 48 investigations against 4. A second frozen test on twelve more companies gave **+0.52** [0.33, 0.70]. The final system, built after both tests, finishes **46 of 48** investigations with **39 tool calls** each, where the base model needs 242. A closed model, Claude Haiku 5.5, still does better through the same tools, and for less; section 7 says by how much, and what aemon offers instead.
+**The answer, in one line.** On four companies it never saw, run once, the fine-tuned model scored **1.48 against 0.65** for the base model under its best prompt on a 0–3 blind rubric (**+0.83**, 95% interval 0.69 to 0.97 over cases, 0.44 to 1.23 resampling whole companies), was higher at every company, and finished 28 of 48 investigations against 4. A second frozen test on twelve more companies gave **+0.52** [0.33, 0.70]. The final system, built after both tests, finishes **46 of 48** investigations with **39 tool calls** each, where the base model needs 242. A closed model, Claude Haiku 5.5, still does better through the same tools, and for less; section 7 says by how much, and what aemon offers instead.
 
 **Track 3 problem statements:** 3, agentic distillation, and 7, business workflow and decision agents. Efficient trajectories (2) came out of it as a measured result rather than a goal.
 
@@ -91,7 +91,9 @@ No benchmark existed for this task, so the data is ours, and all of it is publis
 - **Languages**: English only. Every case, prompt, training row and dossier excerpt is in English; the companies are European, American and Japanese, but their records were taken from English-language sources.
 - **Leak check**: splits are by company, never by case or row, because the rows of one investigation are near copies of each other and a row split would leak. The row builder takes only investigations on training companies (`src/aemon/data/splits.py`), so no row from a validation or test company can be in the training data; the test companies' cases were frozen by digest before any model ran on them. The dossier is shared across splits, since it is the environment the agent searches, not an answer key. We ran no embedding or MinHash check: company identity is recorded on every row, so the exact check is the complete one here.
 - **Tool and task environment, trajectories**: the environment is the twelve guarded tools and the stage controller described in section 1, over the dossier and the cases above. A trajectory is the event log of one investigation (every call, argument, result and refusal), in AgentTune's event format, replayable with AuditKIT. Every trajectory we evaluated is published in the dataset's evaluation folders with its judge packet and judgments, and the two frozen tests are also readable as pages in the repository.
-- **General-capability retention**: none was measured. The adapter is used only inside this environment through the app, and we list the missing retention check among the known weaknesses in section 7.
+- **General-capability retention**: a small check, reported in section 7 whichever way it goes: base Tiny Aya against the same server with the adapter loaded, on 500 MMLU and 300 ARC-Challenge test items, zero-shot.
+
+**Threat model: what the environment defends against, and what it does not.** The threats are to the investigation's honesty. The environment defends against the ones we saw the teacher and the student commit: *fabricated quotes* (a quote is accepted only if it is word for word in its source; the final system picks quotes from the source's own sentences); *simulated results standing in for evidence* (a what-if result can move a belief but cannot be cited in a recommendation, and a finish that rests on one is refused); *outcome leakage from post-dated sources* (records written after a case's decision date are flagged, and the teacher audit counts recommendations that cite them); *a company's claims about itself passing as evidence* (399 company claims are kept apart from 935 independent observations, and the final system can label such a record only as a company assertion); and *invented numbers* (a mechanical check flags a figure found in no cited source and the report shows it to the reader). Every call is logged and replayable. It does not defend against a *poisoned dossier* (the checks verify that a quote is in its source, not that the source is true), an *adversarial user* who writes a case to steer the recommendation, or *prompt injection* carried by a source excerpt, which the model reads as text. The judges are language models that fluent prose can game; the qualification and mechanical checks limit that, and the human review we did not do would limit it more.
 
 ## 5. Model artifacts
 
@@ -124,7 +126,21 @@ The metrics, with their direction:
 - **Tool calls per finished investigation**, refused calls included: lower is better. **Share of calls refused**, the tool-call accuracy inverted: lower is better.
 - **Replay mismatches** under AuditKIT, a run whose tool results do not reproduce: must be zero, and is, in all 22 run reports.
 - **Latency and cost per investigation**: lower is better; 66 seconds and about $0.03 for version 1 on one A100 slice.
-- **Checking the judges**: each judge ranked the sound investigation above the flawed one in 19 of 20 and 20 of 20 matched pairs; the two judges agree on the order of runs (Spearman 0.94 on the first test). No human has scored a run, which is the first limit listed below.
+- **Checking the judges**: the two judges of the frozen tests (Claude, Codex) each ranked the sound investigation above the flawed one in 20 of 20 matched pairs, Claude after its output limit was raised and it was requalified; the final system's judges (Claude Code, Codex on `gpt-6-sol`) in 19 of 20 and 20 of 20. The two judges agree on the order of runs (Spearman 0.94 on the first test). No human has scored a run, which is the first limit listed below.
+
+**The Track 3 metrics by name**, per company, from the saved runs (`scripts/release/track3_metrics.py`): task success is the share of runs that finish with an accepted recommendation; tool-call accuracy is accepted calls over all calls; latency is 66 seconds per investigation for version 1 on one A100 40 GB slice (the other arms were not timed).
+
+| First test | Base model | Version 1 | Final system | Base model | Version 1 | Final system |
+|---|---|---|---|---|---|---|
+| | *task success* | | | *tool-call accuracy* | | |
+| Aquaporin | 2 of 12 | 11 of 12 | 12 of 12 | 81% | 93% | 97% |
+| Electrolux Professional | 1 of 12 | 6 of 12 | 12 of 12 | 66% | 79% | 91% |
+| RATIONAL | 1 of 12 | 6 of 12 | 12 of 12 | 67% | 94% | 95% |
+| Simonelli | 0 of 12 | 5 of 12 | 10 of 12 | 70% | 77% | 86% |
+| **All 48 runs** | **4** | **28** | **46** | **71%** | **86%** | **93%** |
+| **Second test, all 72 runs** | **2** | **32** | **65** | **64%** | **75%** | **91%** |
+
+On the second test version 1 beats the base model in task success for 11 of 12 companies and in tool-call accuracy for 9 of 12; the final system beats it in both for every company but one.
 
 ### Getting to a first result
 
@@ -175,7 +191,7 @@ Then we audited the 158 teacher investigations that trained version 1, and found
 
 ### The second frozen test
 
-Twelve more companies never used for training, development or the diagnosis above, 24 cases, 144 runs, frozen before any run, under the same judges, rubric and rule: **0.57 → 1.09, +0.52 [0.33, 0.70]** (Claude +0.41, Codex +0.63), 32 of 72 investigations finished against 2, higher for 10 of 12 companies and on every rubric dimension under both judges. The gains are largest in framing, revision and distinct theories; the recommendation (0.03 → 0.44), experiment design and judging evidence gain least. That pattern, large gains on the procedure and small ones on the judgement, is the project's main finding about distillation.
+Twelve more companies never used for training, development or the diagnosis above, 24 cases, 144 runs, frozen before any run, under the same judges, rubric and rule: **0.57 → 1.09, +0.52 [0.33, 0.70]** (Claude +0.41, Codex +0.63), 32 of 72 investigations finished against 2, higher for 10 of 12 companies and on every rubric dimension under both judges. The gains are largest in framing, revision and distinct theories; the recommendation (0.03 → 0.44), experiment design and judging evidence gain least. Why smaller than the first test's +0.83: version 1 finished fewer runs here (32 of 72 against 28 of 48), a stage never reached scores 0, and the gain is smallest for the four companies where it finished one or two runs of six (Franke, Hoshizaki, Dräger, Belimo). On the stages both runs reached, the two tests agree: +0.92 and +0.90. That pattern, large gains on the procedure and small ones on the judgement, is the project's main finding about distillation.
 
 ### The final system, built after the tests
 

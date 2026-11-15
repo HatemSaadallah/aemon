@@ -1,0 +1,520 @@
+{
+ "latency_seconds_per_investigation": {
+  "Version 1": 66,
+  "source": "reports/cost/roi.json; the other arms were not timed"
+ },
+ "final": {
+  "Base model": {
+   "all": {
+    "runs": 48,
+    "finished": 4,
+    "task_success": 0.08333333333333333,
+    "calls": 970,
+    "accepted": 691,
+    "tool_call_accuracy": 0.7123711340206186,
+    "calls_per_run": 20.208333333333332
+   },
+   "by_company": {
+    "Aquaporin A/S": {
+     "runs": 12,
+     "finished": 2,
+     "task_success": 0.16666666666666666,
+     "calls": 268,
+     "accepted": 217,
+     "tool_call_accuracy": 0.8097014925373134,
+     "calls_per_run": 22.333333333333332
+    },
+    "Electrolux Professional Group": {
+     "runs": 12,
+     "finished": 1,
+     "task_success": 0.08333333333333333,
+     "calls": 198,
+     "accepted": 131,
+     "tool_call_accuracy": 0.6616161616161617,
+     "calls_per_run": 16.5
+    },
+    "RATIONAL AG": {
+     "runs": 12,
+     "finished": 1,
+     "task_success": 0.08333333333333333,
+     "calls": 284,
+     "accepted": 190,
+     "tool_call_accuracy": 0.6690140845070423,
+     "calls_per_run": 23.666666666666668
+    },
+    "Simonelli Group": {
+     "runs": 12,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 220,
+     "accepted": 153,
+     "tool_call_accuracy": 0.6954545454545454,
+     "calls_per_run": 18.333333333333332
+    }
+   }
+  },
+  "Version 1": {
+   "all": {
+    "runs": 48,
+    "finished": 28,
+    "task_success": 0.5833333333333334,
+    "calls": 1697,
+    "accepted": 1455,
+    "tool_call_accuracy": 0.8573954036535062,
+    "calls_per_run": 35.354166666666664
+   },
+   "by_company": {
+    "Aquaporin A/S": {
+     "runs": 12,
+     "finished": 11,
+     "task_success": 0.9166666666666666,
+     "calls": 368,
+     "accepted": 343,
+     "tool_call_accuracy": 0.9320652173913043,
+     "calls_per_run": 30.666666666666668
+    },
+    "Electrolux Professional Group": {
+     "runs": 12,
+     "finished": 6,
+     "task_success": 0.5,
+     "calls": 374,
+     "accepted": 297,
+     "tool_call_accuracy": 0.7941176470588235,
+     "calls_per_run": 31.166666666666668
+    },
+    "RATIONAL AG": {
+     "runs": 12,
+     "finished": 6,
+     "task_success": 0.5,
+     "calls": 483,
+     "accepted": 453,
+     "tool_call_accuracy": 0.937888198757764,
+     "calls_per_run": 40.25
+    },
+    "Simonelli Group": {
+     "runs": 12,
+     "finished": 5,
+     "task_success": 0.4166666666666667,
+     "calls": 472,
+     "accepted": 362,
+     "tool_call_accuracy": 0.7669491525423728,
+     "calls_per_run": 39.333333333333336
+    }
+   }
+  },
+  "Final system": {
+   "all": {
+    "runs": 48,
+    "finished": 46,
+    "task_success": 0.9583333333333334,
+    "calls": 1816,
+    "accepted": 1680,
+    "tool_call_accuracy": 0.9251101321585903,
+    "calls_per_run": 37.833333333333336
+   },
+   "by_company": {
+    "Aquaporin A/S": {
+     "runs": 12,
+     "finished": 12,
+     "task_success": 1.0,
+     "calls": 454,
+     "accepted": 441,
+     "tool_call_accuracy": 0.9713656387665198,
+     "calls_per_run": 37.833333333333336
+    },
+    "Electrolux Professional Group": {
+     "runs": 12,
+     "finished": 12,
+     "task_success": 1.0,
+     "calls": 398,
+     "accepted": 364,
+     "tool_call_accuracy": 0.914572864321608,
+     "calls_per_run": 33.166666666666664
+    },
+    "RATIONAL AG": {
+     "runs": 12,
+     "finished": 12,
+     "task_success": 1.0,
+     "calls": 516,
+     "accepted": 489,
+     "tool_call_accuracy": 0.9476744186046512,
+     "calls_per_run": 43.0
+    },
+    "Simonelli Group": {
+     "runs": 12,
+     "finished": 10,
+     "task_success": 0.8333333333333334,
+     "calls": 448,
+     "accepted": 386,
+     "tool_call_accuracy": 0.8616071428571429,
+     "calls_per_run": 37.333333333333336
+    }
+   }
+  }
+ },
+ "test2": {
+  "Base model": {
+   "all": {
+    "runs": 72,
+    "finished": 2,
+    "task_success": 0.027777777777777776,
+    "calls": 1363,
+    "accepted": 870,
+    "tool_call_accuracy": 0.6382978723404256,
+    "calls_per_run": 18.930555555555557
+   },
+   "by_company": {
+    "Ansell Limited": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 130,
+     "accepted": 88,
+     "tool_call_accuracy": 0.676923076923077,
+     "calls_per_run": 21.666666666666668
+    },
+    "Belimo Holding AG": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 127,
+     "accepted": 81,
+     "tool_call_accuracy": 0.6377952755905512,
+     "calls_per_run": 21.166666666666668
+    },
+    "Dr\u00e4gerwerk AG & Co. KGaA": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 120,
+     "accepted": 77,
+     "tool_call_accuracy": 0.6416666666666667,
+     "calls_per_run": 20.0
+    },
+    "Franke Coffee Systems": {
+     "runs": 6,
+     "finished": 1,
+     "task_success": 0.16666666666666666,
+     "calls": 119,
+     "accepted": 94,
+     "tool_call_accuracy": 0.7899159663865546,
+     "calls_per_run": 19.833333333333332
+    },
+    "Hach Company": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 95,
+     "accepted": 54,
+     "tool_call_accuracy": 0.5684210526315789,
+     "calls_per_run": 15.833333333333334
+    },
+    "Hoshizaki Corporation": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 109,
+     "accepted": 70,
+     "tool_call_accuracy": 0.6422018348623854,
+     "calls_per_run": 18.166666666666668
+    },
+    "Kingspan Group plc": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 89,
+     "accepted": 58,
+     "tool_call_accuracy": 0.651685393258427,
+     "calls_per_run": 14.833333333333334
+    },
+    "Laerdal Medical": {
+     "runs": 6,
+     "finished": 1,
+     "task_success": 0.16666666666666666,
+     "calls": 143,
+     "accepted": 85,
+     "tool_call_accuracy": 0.5944055944055944,
+     "calls_per_run": 23.833333333333332
+    },
+    "Mettler-Toledo International Inc.": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 130,
+     "accepted": 77,
+     "tool_call_accuracy": 0.5923076923076923,
+     "calls_per_run": 21.666666666666668
+    },
+    "Tennant Company": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 86,
+     "accepted": 57,
+     "tool_call_accuracy": 0.6627906976744186,
+     "calls_per_run": 14.333333333333334
+    },
+    "Testo SE & Co. KGaA": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 133,
+     "accepted": 87,
+     "tool_call_accuracy": 0.6541353383458647,
+     "calls_per_run": 22.166666666666668
+    },
+    "Winterhalter Gastronom GmbH": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 82,
+     "accepted": 42,
+     "tool_call_accuracy": 0.5121951219512195,
+     "calls_per_run": 13.666666666666666
+    }
+   }
+  },
+  "Version 1": {
+   "all": {
+    "runs": 72,
+    "finished": 32,
+    "task_success": 0.4444444444444444,
+    "calls": 2342,
+    "accepted": 1758,
+    "tool_call_accuracy": 0.7506404782237404,
+    "calls_per_run": 32.52777777777778
+   },
+   "by_company": {
+    "Ansell Limited": {
+     "runs": 6,
+     "finished": 3,
+     "task_success": 0.5,
+     "calls": 213,
+     "accepted": 161,
+     "tool_call_accuracy": 0.755868544600939,
+     "calls_per_run": 35.5
+    },
+    "Belimo Holding AG": {
+     "runs": 6,
+     "finished": 1,
+     "task_success": 0.16666666666666666,
+     "calls": 201,
+     "accepted": 118,
+     "tool_call_accuracy": 0.5870646766169154,
+     "calls_per_run": 33.5
+    },
+    "Dr\u00e4gerwerk AG & Co. KGaA": {
+     "runs": 6,
+     "finished": 2,
+     "task_success": 0.3333333333333333,
+     "calls": 190,
+     "accepted": 130,
+     "tool_call_accuracy": 0.6842105263157895,
+     "calls_per_run": 31.666666666666668
+    },
+    "Franke Coffee Systems": {
+     "runs": 6,
+     "finished": 1,
+     "task_success": 0.16666666666666666,
+     "calls": 211,
+     "accepted": 131,
+     "tool_call_accuracy": 0.6208530805687204,
+     "calls_per_run": 35.166666666666664
+    },
+    "Hach Company": {
+     "runs": 6,
+     "finished": 3,
+     "task_success": 0.5,
+     "calls": 159,
+     "accepted": 133,
+     "tool_call_accuracy": 0.8364779874213837,
+     "calls_per_run": 26.5
+    },
+    "Hoshizaki Corporation": {
+     "runs": 6,
+     "finished": 0,
+     "task_success": 0.0,
+     "calls": 186,
+     "accepted": 102,
+     "tool_call_accuracy": 0.5483870967741935,
+     "calls_per_run": 31.0
+    },
+    "Kingspan Group plc": {
+     "runs": 6,
+     "finished": 5,
+     "task_success": 0.8333333333333334,
+     "calls": 200,
+     "accepted": 187,
+     "tool_call_accuracy": 0.935,
+     "calls_per_run": 33.333333333333336
+    },
+    "Laerdal Medical": {
+     "runs": 6,
+     "finished": 3,
+     "task_success": 0.5,
+     "calls": 203,
+     "accepted": 159,
+     "tool_call_accuracy": 0.7832512315270936,
+     "calls_per_run": 33.833333333333336
+    },
+    "Mettler-Toledo International Inc.": {
+     "runs": 6,
+     "finished": 6,
+     "task_success": 1.0,
+     "calls": 213,
+     "accepted": 195,
+     "tool_call_accuracy": 0.9154929577464789,
+     "calls_per_run": 35.5
+    },
+    "Tennant Company": {
+     "runs": 6,
+     "finished": 3,
+     "task_success": 0.5,
+     "calls": 237,
+     "accepted": 200,
+     "tool_call_accuracy": 0.8438818565400844,
+     "calls_per_run": 39.5
+    },
+    "Testo SE & Co. KGaA": {
+     "runs": 6,
+     "finished": 3,
+     "task_success": 0.5,
+     "calls": 161,
+     "accepted": 120,
+     "tool_call_accuracy": 0.7453416149068323,
+     "calls_per_run": 26.833333333333332
+    },
+    "Winterhalter Gastronom GmbH": {
+     "runs": 6,
+     "finished": 2,
+     "task_success": 0.3333333333333333,
+     "calls": 168,
+     "accepted": 122,
+     "tool_call_accuracy": 0.7261904761904762,
+     "calls_per_run": 28.0
+    }
+   }
+  },
+  "Final system": {
+   "all": {
+    "runs": 72,
+    "finished": 65,
+    "task_success": 0.9027777777777778,
+    "calls": 2779,
+    "accepted": 2539,
+    "tool_call_accuracy": 0.9136379992803166,
+    "calls_per_run": 38.59722222222222
+   },
+   "by_company": {
+    "Ansell Limited": {
+     "runs": 6,
+     "finished": 6,
+     "task_success": 1.0,
+     "calls": 220,
+     "accepted": 212,
+     "tool_call_accuracy": 0.9636363636363636,
+     "calls_per_run": 36.666666666666664
+    },
+    "Belimo Holding AG": {
+     "runs": 6,
+     "finished": 5,
+     "task_success": 0.8333333333333334,
+     "calls": 224,
+     "accepted": 204,
+     "tool_call_accuracy": 0.9107142857142857,
+     "calls_per_run": 37.333333333333336
+    },
+    "Dr\u00e4gerwerk AG & Co. KGaA": {
+     "runs": 6,
+     "finished": 5,
+     "task_success": 0.8333333333333334,
+     "calls": 222,
+     "accepted": 186,
+     "tool_call_accuracy": 0.8378378378378378,
+     "calls_per_run": 37.0
+    },
+    "Franke Coffee Systems": {
+     "runs": 6,
+     "finished": 6,
+     "task_success": 1.0,
+     "calls": 220,
+     "accepted": 204,
+     "tool_call_accuracy": 0.9272727272727272,
+     "calls_per_run": 36.666666666666664
+    },
+    "Hach Company": {
+     "runs": 6,
+     "finished": 6,
+     "task_success": 1.0,
+     "calls": 186,
+     "accepted": 186,
+     "tool_call_accuracy": 1.0,
+     "calls_per_run": 31.0
+    },
+    "Hoshizaki Corporation": {
+     "runs": 6,
+     "finished": 6,
+     "task_success": 1.0,
+     "calls": 239,
+     "accepted": 217,
+     "tool_call_accuracy": 0.9079497907949791,
+     "calls_per_run": 39.833333333333336
+    },
+    "Kingspan Group plc": {
+     "runs": 6,
+     "finished": 4,
+     "task_success": 0.6666666666666666,
+     "calls": 239,
+     "accepted": 226,
+     "tool_call_accuracy": 0.9456066945606695,
+     "calls_per_run": 39.833333333333336
+    },
+    "Laerdal Medical": {
+     "runs": 6,
+     "finished": 6,
+     "task_success": 1.0,
+     "calls": 204,
+     "accepted": 190,
+     "tool_call_accuracy": 0.9313725490196079,
+     "calls_per_run": 34.0
+    },
+    "Mettler-Toledo International Inc.": {
+     "runs": 6,
+     "finished": 6,
+     "task_success": 1.0,
+     "calls": 252,
+     "accepted": 252,
+     "tool_call_accuracy": 1.0,
+     "calls_per_run": 42.0
+    },
+    "Tennant Company": {
+     "runs": 6,
+     "finished": 6,
+     "task_success": 1.0,
+     "calls": 253,
+     "accepted": 246,
+     "tool_call_accuracy": 0.9723320158102767,
+     "calls_per_run": 42.166666666666664
+    },
+    "Testo SE & Co. KGaA": {
+     "runs": 6,
+     "finished": 4,
+     "task_success": 0.6666666666666666,
+     "calls": 260,
+     "accepted": 181,
+     "tool_call_accuracy": 0.6961538461538461,
+     "calls_per_run": 43.333333333333336
+    },
+    "Winterhalter Gastronom GmbH": {
+     "runs": 6,
+     "finished": 5,
+     "task_success": 0.8333333333333334,
+     "calls": 260,
+     "accepted": 235,
+     "tool_call_accuracy": 0.9038461538461539,
+     "calls_per_run": 43.333333333333336
+    }
+   }
+  }
+ }
+}

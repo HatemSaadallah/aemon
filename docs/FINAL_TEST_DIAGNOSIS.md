@@ -115,3 +115,14 @@ And on Aquaporin's evidence: searching for the company's current position before
 These patterns should be confirmed on development cases before any new training examples are selected. Any future
 performance claim needs fresh evaluation cases: these four companies have now informed this diagnosis, so they can no
 longer serve as an untouched test. The frozen final-test scores stand as reported; none of this changes them.
+
+## Do beliefs move the right way when a what-if arrives? (moved from the README, 15 November)
+
+**Do beliefs move the right way when a what-if arrives?** In the 36 runs per arm whose case delivers a simulated
+what-if result, the base model reached it in 11 and the fine-tuned model in 28. A direction check compares the
+affected theory's five-point belief before and after: undermining evidence should not raise it, supporting evidence
+should not lower it. Of the fine-tuned runs where both beliefs were stated, 6 of 6 moved in the allowed direction (3
+undermining, 3 supporting), and in 2 a belief was missing before or after; none moved the wrong way. The base model
+stated no before-and-after pair. This is a direction check only, not a quality score: a weak result may rationally
+change nothing, and the blind judges score revision as part of the rubric.
+

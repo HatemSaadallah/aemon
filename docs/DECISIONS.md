@@ -2028,3 +2028,29 @@ measured), an expected before → after table in section 8 labelled as a forecas
 (requirements, layout, commands), a declaration that no work predates the hackathon (first commit 1 November 2026), an
 LLM usage statement, references and an appendix of prompt and rubric links. Not added, pending the authors: author
 contributions and an approximate share for the LLM usage statement.
+
+## 2026-11-15: five reviewer notes on the README and article, and a retention check
+
+An outside reviewer's notes, checked against the files and acted on: (1) a **threat model** (what the environment
+defends against: fabricated quotes, simulated results as evidence, post-dated sources, company claims as evidence,
+invented numbers; and what it does not: a poisoned dossier, an adversarial user, prompt injection in a source, judges
+that fluent prose can game) added to section 4 of the README and the article; (2) a **general-capability retention
+check**, registered here before it ran: base Tiny Aya (the evaluated bf16 GGUF) against the same llama-server process
+with the version 1 adapter at scale 1 and with the version 3 adapter at scale 1, on 500 MMLU test items (every subject,
+evenly) and 300 ARC-Challenge test items, zero-shot, scored by the most probable letter among the first token's top-20
+log-probabilities (`scripts/bench/`, `jobs/retention.sbatch`; items sha256 7ce21200…); the result is reported whichever
+way it goes, with a 95% bootstrap interval over items on the paired difference; a first run that parsed a generated
+reply instead (job 766356) is discarded because the base model answered 411 of 800 items without a letter, a format
+failure rather than a capability one, which the log-probability scoring removes; (3) the **Track 3 metrics by name**
+(task success, tool-call accuracy, latency) per company and per test, from the saved runs
+(`scripts/release/track3_metrics.py`, `reports/track3_metrics.json`), in both documents; (4) the README's opening and
+tiles now carry the **company-level interval** (0.44 to 1.23, company-cluster t) beside +0.83 and label the final
+system's numbers "not held out" wherever they appear; (5) the **README cut** from 7,276 to about 6,900 words (the early
+development, failure diagnosis, teacher audit, parts table and lessons condensed with links; the beliefs direction
+check moved to `docs/FINAL_TEST_DIAGNOSIS.md`), and the **retired first conversion gate** explained in one sentence in
+the controls section with a note beside `reports/judge/final/final_test_trained_conversion.json`, whose `passed:
+false` is that retired criterion. The reviewer's follow-up: the judge-qualification account is now the same in both
+documents (frozen tests: Claude and Codex 20 of 20 each, Claude after requalification; final system: Claude Code 19
+of 20, Codex on gpt-6-sol 20 of 20), the Haiku cost is $0.008 everywhere, and both documents explain why the second
+test's gain is smaller (version 1 finished fewer runs there; on the stages both runs reached the tests agree, +0.92
+and +0.90).

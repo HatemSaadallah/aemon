@@ -12,9 +12,9 @@ Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · Nov
 
 > **Result in one line.** On four companies it never saw, with the same environment, tools, stage controller and
 > budgets for both arms, the fine-tuned Tiny Aya agent scored **1.48** against the best-prompted base model's **0.65**
-> on a 0–3 blind rubric (mean of two LLM judges; **+0.83, 95% interval 0.69 to 0.97**), and was higher at every
+> on a 0–3 blind rubric (mean of two LLM judges; **+0.83, 95% interval 0.69 to 0.97**; 0.44 to 1.23 resampling whole companies), and was higher at every
 > company. A second frozen test on twelve more companies gave **+0.52 [0.33, 0.70]**. These are version 1's
-> run-once results. The final system, built after both tests by adding a second adapter and decoding-time guards,
+> run-once results. The final system, built after both tests by adding a second adapter and decoding-time guards (so its numbers are not held out),
 > scores **+1.02** over the base model on the first test's cases and **+1.11** on the second's, and finishes **46 of
 > 48** and **65 of 72** investigations (the base model 4 and 2). Claude Haiku 5.5, a closed model run through the same
 > environment, scores higher still (**2.28** against the final system's 1.62) at a quarter of the cost; what aemon offers
@@ -46,9 +46,9 @@ them. Click the thumbnail to watch it on YouTube.
 
 | **+0.83** | **+0.52** | **$0.03** |
 |:---:|:---:|:---:|
-| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | per investigation, self-hosted on one A100 slice, with the case data kept on the machine; 26× faster than its teacher |
+| blind quality over the best-prompted base model on the first frozen test (0–3 scale, 95% interval 0.69 to 0.97; 0.44 to 1.23 resampling whole companies) | on a second frozen test, 12 more unseen companies (0.33 to 0.70) | per investigation, self-hosted on one A100 slice, with the case data kept on the machine; 26× faster than its teacher |
 
-**Final system, built after both tests and measured on the same cases**
+**Final system, built after both tests and measured on the same cases: not held out**
 
 | **+1.02** | **46 of 48** | **6× fewer** |
 |:---:|:---:|:---:|
@@ -59,7 +59,7 @@ them. Click the thumbnail to watch it on YouTube.
 | | What it is | Files | Numbers |
 |---|---|---|---|
 | **Version 1** | the evaluated adapter: one LoRA on Tiny Aya Global, distilled from Command A+ | `tiny-aya-global-strategy-lora-bf16.gguf` on the [model page](https://huggingface.co/two-eyed-ravens/aemon) (with the PEFT adapter) | +0.83 and +0.52 on the two frozen tests, run once (section 7) |
-| **Final system** | what the app and the live demo run: version 1 gathers the evidence, version 3 (continued on a second teacher's runs) reasons, with decoding-time guards that remove failing actions | both adapters (`v3_adapter.gguf` added); `app/run_model.sh` serves them and `app/server.py` sets the guards ([Run it](#run-it)) | +1.02 and +1.11 over the base model on the same cases, measured after the tests |
+| **Final system** | what the app and the live demo run: version 1 gathers the evidence, version 3 (continued on a second teacher's runs) reasons, with decoding-time guards that remove failing actions | both adapters (`v3_adapter.gguf` added); `app/run_model.sh` serves them and `app/server.py` sets the guards ([Run it](#run-it)) | +1.02 and +1.11 over the base model on the same cases, measured after the tests (not held out) |
 | Experimental variants | adapter-switching rules, a company status check, a recovery controller, corrective distillation, a verification layer, grounded beliefs | runs and judgments under `experiments/` | [docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md); none is in the app |
 
 <picture>
@@ -84,36 +84,21 @@ runs (`reports/judge/*/paired_counts.json`, mean of two judges).
 
 **In brief**
 - **What it is.** A small open-weights model (3.35B; CC-BY-NC 4.0, non-commercial) that runs a strategy investigation
-  as an auditable procedure, locally:
-  it frames the decision, states rival causal explanations, weighs evidence for and against each, designs a test with
-  a decision rule, and recommends. The environment checks every step: a quote that is not word for word in its source
-  is refused, rival explanations must differ, and a simulated result cannot stand in for real evidence. It gives an
-  analyst a traceable first pass, every claim linked to its source, rather than a finished answer.
-- **How it was made.** A stronger teacher (Command A+) ran investigations through the same tools; only runs that
-  replay exactly became training rows; AgentTune distilled them into a LoRA adapter; AuditKIT replays every
-  evaluation run.
+  as an auditable procedure, locally: it frames the decision, states rival causal explanations, weighs evidence for and
+  against each, designs a test with a decision rule, and recommends. The environment checks every step: a quote that
+  is not word for word in its source is refused, rival explanations must differ, and a simulated result cannot stand
+  in for real evidence.
+- **How it was made.** Command A+ ran investigations through the same tools; only runs that replay exactly became
+  training rows; AgentTune distilled them into a LoRA adapter; AuditKIT replays every evaluation run.
 - **What was measured.** Two frozen, run-once tests on 16 unseen companies, scored blind by two LLM judges that first
-  had to rank sound investigations above flawed ones. The gain holds under stricter checks: resampling whole
-  companies instead of cases, and comparing each pair only on the stages both runs reached (+0.92).
-- **Fewer wasted calls.** The fine-tuned agent makes more calls per run than the base model (35 against 20) because it
-  gets much further: per finished investigation it needs **61 calls against 242**, and the share of refused calls
-  halves (14% against 29%). The final system, with decoding-time guards, finishes **46 of 48** runs on the first test
-  with **39 calls** each (65 of 72 on the second test), and refused calls fall to **7.5%**.
-- **What it costs.** About $0.03 and 66 seconds per investigation on one A100 slice, 8 times less than the Claude Opus
-  run we measured and 26 times faster than its teacher per GPU.
-- **Against a closed model.** Claude Haiku 5.5, run through the same environment, scores higher than the final system
-  (2.28 against 1.62 on the first test, 2.30 against 1.67 on the second) and costs less ($0.009 per investigation
-  through the API). What a small open model offers instead: it runs offline on one GPU or a laptop, the case data never
-  leaves the machine, and the weights can be audited and changed.
-- **It learns the procedure; judgement is the next step.** The largest gains are in framing the decision and stating
-  distinct causal theories. The recommendation is where the judges score it lowest, and the audit of its teacher shows
-  why: a student inherits its teacher's habits (section 7).
-- **The final system ([docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)).** Two adapters ("dig then reason": version 1
-  gathers the evidence, version 3, trained further on a second teacher's runs, reasons) with decoding-time guards that
-  remove failing actions: no repeated calls, quotes picked from the source, a step budget, and the quote written before
-  the evidence label. It was built after both frozen tests, partly from the failures in their runs, and measured on
-  the same cases: +1.02 and +1.11 over the base model. Version 1's +0.83 and +0.52 remain the run-once result. The app
-  runs the final system.
+  had to rank sound investigations above flawed ones. The gain holds when whole companies are resampled (0.44 to 1.23)
+  and on the stages both runs reached (+0.92).
+- **Efficiency and cost.** Per finished investigation version 1 needs 61 tool calls against the base model's 242, the
+  final system 39; refused calls fall from 29% to 7.5%. About $0.03 and 66 seconds per investigation on one A100 slice.
+- **Against a closed model.** Claude Haiku 5.5 through the same environment scores higher than the final system (2.28
+  against 1.62) and costs less ($0.008 per investigation). The small open model's case is control: offline, the case
+  data kept on the machine, weights that can be audited and changed. It learned the procedure; the recommendation is
+  where it is weakest, and its teacher's audit shows why (section 7).
 
 The name is a nod to Maester Aemon, a counsellor known for sound judgement in unusual
 situations.
@@ -151,26 +136,20 @@ theories of who would change their behaviour and why; derive predictions that te
 evidence against the favoured theory; design a test with a decision rule when information is worth its cost; and
 revise when new evidence arrives.
 
-**Track 3 problem statements addressed:** mainly *agentic distillation* (a stronger teacher's agent trajectories
-distilled into a small local student), with *workflow and decision agents* (a multi-step investigation with rules and
-a full audit trail), and *efficient trajectories*: per finished investigation the fine-tuned agent needs 61 tool calls
-against the base model's 242, and a refused call is half as common (14% of calls against 29%). Per run it makes more
-calls (35 against 20) because it gets much further before it stops. The final system, with decoding-time guards, needs
-39 calls per finished investigation and finishes 46 of 48 runs.
+**Track 3 problem statements:** 3, *agentic distillation* (a stronger teacher's agent trajectories distilled into a
+small local student), and 7, *business workflow and decision agents* (a multi-step investigation with rules and a full
+audit trail). *Efficient trajectories* (2) came out as a measured result: 61 tool calls per finished investigation
+against the base model's 242, and 39 for the final system.
 
 **The question we test:** can agentic fine-tuning teach that procedure to a small model, beyond what a stage controller
 and the best prompt already achieve?
 
-**The framework behind the procedure.** Camuffo, Gambardella and Pignataro (2024) formalise a theory as a restriction
-on beliefs: stating that one thing causes another rules out parameter values, which raises or lowers the expected
-value of acting, and an experiment is worth running only while the theory's value is close to its rival's. The paper
-([docs/PAPER.pdf](docs/PAPER.pdf), section 2) works through their example.
-
-**How the agent carries this out.** The agent follows these steps in words, with tools and evidence; neither it nor
-the harness computes a Bayesian update, because that would need an invented network and invented numbers, and assumed
-ratios could create the very revision we want to measure. Instead, when it states its position and again after a
-what-if result, the agent rates each theory on a five-point scale (very unlikely, unlikely, uncertain, likely, very
-likely). The scale is a signal within one run, not a calibrated probability.
+**How the agent carries the procedure out.** In words, with tools and evidence. Neither the agent nor the harness
+computes a Bayesian update, which would need an invented network and invented numbers; instead, when it states its
+position and again after a what-if result, the agent rates each theory on a five-point scale from very unlikely to
+very likely, a signal within one run rather than a calibrated probability. The framework behind the procedure
+(Camuffo, Gambardella and Pignataro, 2024, who formalise a theory as a restriction on beliefs) is worked through in
+[docs/PAPER.pdf](docs/PAPER.pdf), section 2.
 
 **The setup.**
 - **An investigation environment** with twelve tools (`read_brief`, `frame_problem`, `search_evidence`, `read_source`,
@@ -246,6 +225,25 @@ CuratorKIT filters the rows.
 - **Rights**: excerpts are short quotations from public sources (median 24 words, at most 100), each with its
   publisher and link. The dossier is published in full, so anyone can rerun what the evaluated runs read.
 
+### What the environment defends against, and what it does not
+
+The threats are to the investigation's honesty, not to a user. The environment defends against the ones we saw the
+teacher and the student commit: **fabricated quotes** (a quote is accepted only if it is word for word in its source,
+and the final system picks quotes from the source's own sentences); **simulated results standing in for evidence** (a
+what-if result can move a belief but cannot be cited in a recommendation, and a finish that rests on one is refused);
+**outcome leakage from post-dated sources** (records written after a case's decision date are flagged, and the teacher
+audit counts recommendations that cite them); **a company's claims about itself passing as evidence** (the dossier keeps
+399 company claims apart from 935 independent observations, and the final system can label such a record only as a
+company assertion); and **invented numbers** (a mechanical check flags a figure that appears in no cited source; the
+report shows it to the reader rather than blocking the run). Every call is logged and replayable, so a reader can
+check any of this after the fact.
+
+It does not defend against a **poisoned dossier**: the checks verify that a quote is in its source, not that the source
+is true, so a false record that enters the dossier is quoted faithfully. It does not defend against an **adversarial
+user** who writes a case to steer the recommendation, or against prompt injection carried by a source excerpt, which
+the model reads as text. And the judges are language models that can be gamed by fluent prose; the qualification check
+and the mechanical checks limit that, the human review we did not do would limit it more.
+
 ## 5. Model artifacts
 
 Collection: [aemon: a strategy-investigation agent](https://huggingface.co/collections/two-eyed-ravens/aemon-a-strategy-investigation-agent-6af71da6a81fe397ad0b38dd).
@@ -279,24 +277,26 @@ nine-dimension 0–3 rubric from two qualified LLM judges (whether the investiga
 tells a finished run from a sound one). **Cost per investigation**, self-hosted against closed-model billing, is the
 ROI comparison.
 
-### Early development (small runs, diagnostic only)
-- **The untrained model cannot do the task.** In an open workflow it quit after a step or two; under the stage
-  controller it stalled, mostly by repeating a theory or search it had already made.
-- **Full chat histories did not fit.** Late-stage rows exceeded 8,192 tokens and were refused rather than truncated, so
-  most conclusion rows were lost. We replaced the history with a compact state (theories, quotes, tests and revisions in
-  full, everything else summarised), which kept every row.
-- **Loops at temperature 0.** The first fine-tuned runs went much deeper but repeated refused calls. We added
-  correction rows and made the state say plainly that rereading a source returns the same text.
-- **A better teacher.** Aya Expanse 32B followed the workflow but reasoned weakly and was rejected as a teacher;
-  Command A+ replaced it.
+### Getting to a first result
+The untrained model could not do the task: in an open workflow it quit after a step or two, and under the stage
+controller it stalled by repeating itself. Three changes got us to a first adapter: a compact state in place of the
+full chat history (late-stage rows exceeded 8,192 tokens and were refused rather than truncated), correction rows and a
+state that says plainly that rereading a source returns the same text (the first fine-tuned runs looped on refused
+calls at temperature 0), and a stronger teacher (Aya Expanse 32B followed the workflow but reasoned weakly; Command A+
+replaced it). Details: [docs/DECISIONS.md](docs/DECISIONS.md), 1 to 7 November.
 
 ### Controls that the result rests on
 - **Conversion check.** Every evaluated adapter was converted to GGUF and replayed against the PEFT adapter on the GPU:
   effect cosine at least 0.99 and probability-weighted residual at most 0.15 on every point, plus a weight-file audit.
   The final adapter passed (cosine 0.9990, residual 0.080), and the evaluated file is byte-identical to the gated one.
+  A first, cruder check was retired on 6 November because its "conversion adds at most 0.15 to the base gap" criterion
+  measured kernel noise as much as conversion error; the final-test job still ran it, so
+  `reports/judge/final/final_test_trained_conversion.json` says `passed: false` under that retired criterion while
+  passing the other four. The gate that counts is the replay above (`reports/conversion/`; note beside the file).
 - **Judges.** Each judge first scored 20 matched pairs of investigations, sound and flawed, and had to rank the sound
   one higher in at least 17. Claude did so in 20 of 20 (after its output limit was raised and it was requalified),
-  Codex in 20 of 20. Packets carry no model name; the key stays outside the judges' reach.
+  Codex in 20 of 20; the final system's judges, Claude Code and Codex on `gpt-6-sol`, in 19 of 20 and 20 of 20.
+  Packets carry no model name; the key stays outside the judges' reach.
 
 ### Development (6 validation companies, 15 cases, one attempt each)
 
@@ -326,11 +326,7 @@ trained arm. The final adapter scored above the earlier one (+0.20), though not 
 - The largest gains are in distinct theories, framing, causal mechanism, and assumptions and predictions; the weakest
   dimensions for the trained agent remain the recommendation, revision, experiment design and judging evidence.
 
-![Blind quality score on the final test, base model and fine-tuned, per judge](docs/figures/quality-light.png)
-
-![Fine-tuned minus base by kind of new evidence, with 95% intervals](docs/figures/difference-light.png)
-
-![Score per rubric dimension, base and fine-tuned](docs/figures/dimensions-light.png)
+Per rubric dimension and per kind of new evidence: `docs/figures/dimensions-light.png`, `docs/figures/difference-light.png`.
 
 **How each run ended** (48 runs per arm; a run is refused a call when it breaks a rule, and stops after repeated
 refusals, at the context limit or at the turn limit):
@@ -346,24 +342,33 @@ refusals, at the context limit or at the turn limit):
 | Refused calls, all runs | 279 | 242 |
 | Share of calls refused | 29% | **14%** |
 
-**Do beliefs move the right way when a what-if arrives?** In the 36 runs per arm whose case delivers a simulated
-what-if result, the base model reached it in 11 and the fine-tuned model in 28. A direction check compares the
-affected theory's five-point belief before and after: undermining evidence should not raise it, supporting evidence
-should not lower it. Of the fine-tuned runs where both beliefs were stated, 6 of 6 moved in the allowed direction (3
-undermining, 3 supporting), and in 2 a belief was missing before or after; none moved the wrong way. The base model
-stated no before-and-after pair. This is a direction check only, not a quality score: a weak result may rationally
-change nothing, and the blind judges score revision as part of the rubric.
+**Two stricter checks** (`scripts/release/robustness.py`, `reports/judge/robustness.json`, from the saved judgments):
+resampling whole companies instead of cases, since the 16 cases are 4 companies with 4 variants each, keeps the
+interval above zero on both tests (first test 0.44 to 1.23 by the company-cluster t interval, 0.63 to 1.05 by
+bootstrap; second test from +0.25); and scoring each pair only on the rubric dimensions both runs reached, which
+removes the base model's 25 context-limit stops from the comparison, makes the difference larger, **+0.92 [0.83, 1.01]**
+and **+0.90 [0.81, 0.99]**.
 
-**Two stricter checks** (`scripts/release/robustness.py`, `reports/judge/robustness.json`; from the saved judgments,
-no new runs or judging):
-- **Resampling whole companies.** The 16 cases are 4 companies with 4 variants each, so cases of one company are not
-  independent. Resampling companies instead of cases, the interval stays above zero on both tests (from +0.44 on the
-  first, +0.25 on the second), and all 16 cases and all 4 companies of the first test are higher.
-- **Comparing only the stages both runs reached.** 25 of the base model's 48 runs stop at the context limit (it reads
-  the full transcript, the fine-tuned agent the compact state; each arm uses the prompt it scored best with on
-  development), and a stage never reached scores 0. Scored only on the rubric dimensions both runs reached, the
-  difference grows to **+0.92 [0.83, 1.01]** on the first test and **+0.90 [0.81, 0.99]** on the second: the base model
-  is weaker even on the stages it reaches.
+### The Track 3 metrics by name: task success, tool-call accuracy, latency
+
+Per company, from the saved runs (`scripts/release/track3_metrics.py`, `reports/track3_metrics.json`). Task success
+is the share of runs that finish with an accepted recommendation; tool-call accuracy is accepted calls over all calls
+(1 minus the refused share). Latency: version 1 takes 66 seconds per investigation on one A100 40 GB slice, one at a
+time (`reports/cost/roi.json`); the other arms were not timed.
+
+| First test | Base model | Version 1 | Final system | Base model | Version 1 | Final system |
+|---|---|---|---|---|---|---|
+| | *task success* | | | *tool-call accuracy* | | |
+| Aquaporin | 2 of 12 | 11 of 12 | 12 of 12 | 81% | 93% | 97% |
+| Electrolux Professional | 1 of 12 | 6 of 12 | 12 of 12 | 66% | 79% | 91% |
+| RATIONAL | 1 of 12 | 6 of 12 | 12 of 12 | 67% | 94% | 95% |
+| Simonelli | 0 of 12 | 5 of 12 | 10 of 12 | 70% | 77% | 86% |
+| **All 48 runs** | **4** | **28** | **46** | **71%** | **86%** | **93%** |
+| **Second test, all 72 runs** | **2** | **32** | **65** | **64%** | **75%** | **91%** |
+
+On the second test version 1 is higher than the base model in task success for 11 of 12 companies and in tool-call
+accuracy for 9 of 12 (`reports/track3_metrics.json` has every row); the final system is higher in both for every
+company but one (Testo, tool-call accuracy 70% against 65%).
 
 ### Cost: the fine-tuned agent against a closed model (`reports/cost/roi.json`)
 
@@ -375,59 +380,30 @@ Measured on the final test, one investigation by the fine-tuned agent reads abou
 | **Fine-tuned Tiny Aya, self-hosted** (A100 40 GB, Oct 2026 median $1.76/h; range $0.89-$3.67) | **$0.032** ($0.016-$0.068) | **$324** (184 GPU hours; $164-$676) |
 | Claude Opus 5.5, measured on our earlier control run (15 investigations, $3.73) | $0.25 | $2,483 |
 | Claude Opus 5.5, the same token volume at list price, no caching ($4 / $20 per million) | $0.54 | $5,442 |
-| Claude Sonnet 5.5, the same token volume ($2 / $10) | $0.27 | $2,721 |
-| Claude Haiku 5.5, the same token volume ($0.10 / $0.50) | $0.014 | $136 |
 | **Claude Haiku 5.5, measured on both test sets** (120 investigations; $1.06 in all with the runs lost to API errors; effort medium, with caching) | **$0.0084** | **$84** |
 
-- Self-hosting costs about **8 times less than the measured Opus run** and 8 to 17 times less than Sonnet or Opus at
-  the same token volume. Per finished investigation (28 of 48) it is about $0.056.
-- **Claude Haiku 5.5 costs less than self-hosting, and scores higher** (measured on both test sets, next section but
-  one): about $0.008 per investigation, a quarter of the self-hosted cost. Against it, the case for self-hosting is
-  running offline, with the case data kept local and weights that can be audited and changed, not price.
-- Opus and Sonnet were not run on the test cases, so their rows compare cost, not quality.
-- The teacher shows the other side of distillation: Command A+ took 5,188 seconds for 3 investigations on a full A100
-  (80 GB), about 29 minutes each (`reports/strategy/teacher/cap_b.json`), so the student, on a smaller 40 GB slice, runs
-  roughly **26 times faster**.
-- Not measured: running several investigations at once on one GPU, which llama.cpp supports and would lower the
-  self-hosted cost further.
+- Self-hosting costs about **8 times less than the measured Opus run**; per finished investigation (28 of 48) about
+  $0.056. **Claude Haiku 5.5 costs less than self-hosting, and scores higher** (next section but one): the case for
+  self-hosting is running offline, with the case data kept local and weights that can be audited, not price.
+- Opus and Sonnet were not run on the test cases, so their rows compare cost, not quality. The teacher, Command A+,
+  took about 29 minutes per investigation on a full A100, so the student runs roughly **26 times faster** per GPU.
+  Serving several investigations at once, which llama.cpp supports, was not measured.
 
-Prices: Anthropic list prices as of October 2026; GPU prices from aggregator snapshots (amcompute.com, October 2026;
-gpu-cost.pages.dev, June 2026), which change often.
+Prices: Anthropic list prices and GPU aggregator snapshots, October 2026; both change often.
 
-### What still fails, and why (`docs/FINAL_TEST_DIAGNOSIS.md`)
-*This is the diagnosis of version 1 on the first frozen test, written on 8 November right after it. What we did about
-each failure since then is noted in italics.*
-
-Few runs pass every mechanical check (1 of 48, as rare as in the teacher's own runs: 1 of 223), and 20 of 48 stop
-before a recommendation. One check is itself flawed: in five of six predictions-overlap failures it treated
-contrasting predictions as identical; the frozen numbers are reported as computed. Most failures trace to behaviour
-the training data never showed:
-- **Never declining a test.** No training example declines one. The labels need care: for Aquaporin, declining
-  follows from its insolvency and bankruptcy, recorded in the dossier, yet **no run of either arm read those records**
-  and every finished trained run recommends investing. For RATIONAL the no-test label is the case author's judgement
-  and is contestable. *Since then: a [company status check](docs/FINAL_SYSTEM.md#a-company-status-check-the-aquaporin-failure) makes every run read those records.*
-- **Little what-if evidence that matters.** Only 8 of 205 teacher investigations had supporting or undermining
-  results; the student handles irrelevant evidence correctly and revises the wrong theory on Aquaporin's pair. *Still
-  open: it needs new training examples.*
-- **Simulated-only finishes.** Eight runs try to finish citing only the simulated result and are refused; seven repeat
-  it until the error limit, and one reaches the turn limit. *Still open.*
-- **Rereading.** Nine runs reach the turn limit; in eight of them the agent rereads the same few sources. *Since
-  then: the app refuses a third read of one source; the evaluated setup is unchanged.*
-
-### The ceiling is the teacher's (`docs/RELIABILITY_REPORT.md`)
-An audit of the 158 teacher investigations that trained version 1 found the same weaknesses the judges score lowest in
-the student:
-- 74% of the teacher's recommendations use a number from no source (the student: 21% of its finished recommendations
-  on the final test, 31% on test set 2);
-- 38% of its evidence kinds match the dossier's annotation;
-- in 74 of its 109 historical cases (68%; 47% of all 158 investigations) the recommendation cites a source published
-  after the case date, and about half of those quotes reveal later outcomes. The frozen tests are present-day cases, so
-  their scores are unaffected.
-
-Distillation passed on the procedure and the teacher's judgement with it. When we tried to correct the teacher's
-mistakes with the same teacher, it made them again ([corrective distillation](docs/FINAL_SYSTEM.md#corrective-distillation-and-two-runtime-attempts-10-november)).
-A student can be filtered for following the rules, not for judging well; that needs a better or human-corrected
-teacher.
+### What still fails, and why (`docs/FINAL_TEST_DIAGNOSIS.md`, `docs/RELIABILITY_REPORT.md`)
+Few runs pass every mechanical check (1 of 48, as rare as in the teacher's own runs, 1 of 223), and 20 of 48 stop
+before a recommendation. Most failures trace to behaviour the training data never showed: no training example declines
+a test, so the student never does, even for Aquaporin, whose insolvency is in the dossier and which no run of either arm
+read; only 8 of 205 teacher investigations had a supporting or undermining what-if result, so the student fumbles the
+rest; eight runs try to finish citing only the simulated result; nine reach the turn limit, eight of them rereading the
+same sources. An audit of the 158 teacher investigations found the same weaknesses the judges score lowest in the
+student: 74% of the teacher's recommendations use a number from no source (the student: 21% and 31% on the two tests),
+38% of its evidence kinds match the dossier's annotation, and in 68% of its historical cases the recommendation cites a
+source published after the case date. Distillation passed on the procedure and the teacher's judgement with it; when
+we tried to correct the teacher's mistakes with the same teacher, it made them again. A student can be filtered for
+following the rules, not for judging well. What we did about each failure since is in
+[docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md).
 
 ### Second frozen test (12 new companies, 24 cases, 3 attempts, 144 runs, run once; `docs/test2_freeze.json`)
 A second test on companies never used for training, development or the diagnosis above. It was frozen before any run,
@@ -445,15 +421,17 @@ under the same judges, rubric and rule.
 - Every rubric dimension is higher under both judges, most of all problem framing, revision and distinct theories;
   the recommendation (0.03 → 0.44), experiment design (0.22 → 0.53) and judging evidence (0.35 → 0.47) gain least.
 - The two judges rank the runs alike (Spearman 0.95 over all 144).
+- Why smaller than the first test's +0.83: version 1 finished fewer runs here (32 of 72 against 28 of 48), a stage
+  never reached scores 0, and the gain is smallest for the four companies where it finished one or two runs of six
+  (Franke, Hoshizaki, Dräger, Belimo). On the stages both runs reached, the two tests agree: +0.92 and +0.90.
 
 ### The final system
-The final system is what the app runs: two adapters ("dig then reason") with decoding-time guards. **It was built
-after both frozen tests had been run and read.** The loop guards came from the refused calls in the final-test runs (most
-were the model repeating itself), and evidence first from the judges' lowest-scored dimension in them. Each part was
-compared with the system before it, with its adoption rule registered in [docs/DECISIONS.md](docs/DECISIONS.md) before
-it ran, on development and on the same two test sets, judged blind by Claude Code and Codex (`gpt-6-sol`). Because the
-test cases were no longer unseen, **version 1's +0.83 and +0.52 remain the run-once result**; the numbers below are the
-final system's own. The full write-up, with every table, is in **[docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)**.
+What the app runs: two adapters ("dig then reason") with decoding-time guards. **It was built after both frozen tests
+had been run and read**, partly from their failures (the loop guards from the refused calls, most of them the model
+repeating itself; evidence first from the judges' lowest-scored dimension), so **version 1's +0.83 and +0.52 remain
+the run-once result** and the numbers below are not held out. Each part had its adoption rule registered in
+[docs/DECISIONS.md](docs/DECISIONS.md) before it ran and was judged blind by Claude Code and Codex (`gpt-6-sol`); every
+table is in **[docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)**.
 
 **Quality against the base model** (mean of the same two judges, same instrument, base and final system judged in
 separate batches; `scripts/release/final_system_vs_base.py`): **1.62 against 0.61, +1.02 [0.92, 1.10]** on the first
@@ -470,13 +448,10 @@ test's 48 runs, and **1.67 against 0.56, +1.11 [1.01, 1.20]** on the second's 72
 | Tool calls per finished investigation (refused calls included) | 242 | 61 | **39** | 24 |
 | Share of calls refused | 28.8% | 14.3% | **7.5%** | 13.9% |
 
-**What each part adds** (mean of two judges; intervals in [docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)):
-
-| Part | First test | Second test | Development |
-|---|---|---|---|
-| [Dig then reason](docs/FINAL_SYSTEM.md#switching-adapters-during-a-run-development-then-test-set-2): version 1 gathers the evidence, [version 3](docs/FINAL_SYSTEM.md#version-3-a-second-teacher) reasons | level with version 1 | **+0.36** over version 1 | +0.17 (one judge) |
-| [Loop guards](docs/FINAL_SYSTEM.md#loop-guards-on-development-test-set-2-and-the-final-test): no repeated calls, quotes picked from the source, a step budget | +0.12 [0.00, 0.25]; finished 27 → 45 | **+0.21**; finished 43 → 69 | +0.19; finished 28 → 45 |
-| [Evidence first](docs/FINAL_SYSTEM.md#evidence-first-how-a-source-is-weighed): the quote and what it does not show, before the evidence label | +0.06; judged evidence 0.46 → 0.98 | +0.03; finished 69 → 65 | +0.07 |
+**What each part adds** (mean of two judges; intervals and every table in [docs/FINAL_SYSTEM.md](docs/FINAL_SYSTEM.md)):
+dig then reason is level with version 1 on the first test and **+0.36** over it on the second; the loop guards add
++0.12 [0.00, 0.25] and **+0.21**, with finished runs 27 → 45 and 43 → 69; evidence first adds +0.06 and +0.03, and the
+judged evidence score doubles (0.46 → 0.98) on the first test.
 
 What worked: changes that remove a failing action from what the model can produce. Advice to the model did not, and
 we also tried, and did not adopt, a company status check, corrective distillation, a recovery controller and a
@@ -495,16 +470,13 @@ instrument's validity check) and are left out of the pairs. Haiku's outputs are 
 | First test (48 runs each) | 0.61 | 1.45 | 1.62 | **2.28** | −0.67 [−0.79, −0.52] |
 | Second test (72 runs each) | 0.56 | 1.07 | 1.67 | **2.30** | −0.63 [−0.75, −0.52] |
 
-- **Haiku is better on this task.** It scores higher at every company on both sets and on all nine rubric dimensions,
-  most of all on the recommendation (1.95 against 1.06 on the first test) and on stating the causal mechanism (2.83
-  against 1.97). Both judges agree: Codex alone gives −0.43 on both sets; the Claude Code judge, scoring a Claude model,
-  gives −0.90 and −0.86.
-- **It is also cheaper and quicker to a finish**: $0.008 per investigation through the API, 24 tool calls per finished
-  investigation against the final system's 39.
-- **What the fine-tuning bought.** It takes a 3B open model from 0.61 to 1.62, about 60% of the way to Haiku's 2.28 from
-  the same starting point. What a small open model offers is not quality or price but control: it runs offline on one
-  GPU or a laptop, the case data never leaves the machine, and its weights can be inspected and trained further.
-- Tables: `scripts/release/haiku_table.py` (`experiments/haiku/summary.json`).
+- **Haiku is better on this task**: higher at every company on both sets and on all nine rubric dimensions, most on
+  the recommendation (1.95 against 1.06) and the causal mechanism (2.83 against 1.97); Codex alone, not judging its
+  own family, gives −0.43 on both sets. It is also cheaper ($0.008 per investigation) and quicker to a finish (24 tool
+  calls per finished investigation against 39).
+- **What the fine-tuning bought**: a 3B open model from 0.61 to 1.62, about 60% of the way to Haiku from the same
+  start. What it offers is control, not quality or price: offline on one GPU or a laptop, the case data kept on the
+  machine, weights that can be inspected and trained further. Tables: `experiments/haiku/summary.json`.
 
 ### Limits
 - **The mechanical experiment check is too lenient**: 8 of the 9 tests it accepts on development fail stricter
@@ -523,15 +495,11 @@ Details: [docs/RELIABILITY_REPORT.md](docs/RELIABILITY_REPORT.md) and
 
 ### Lessons
 - The controller, the guards and replay made the teacher's data trustworthy, and the same machinery made every
-  evaluation run auditable.
-- Measuring with two qualified blind judges, a frozen plan and a one-shot test kept us from reading noise: several
-  development differences that looked real were not.
+  evaluation run auditable. Two qualified blind judges, a frozen plan and a one-shot test kept us from reading noise:
+  several development differences that looked real were not, and results did not transfer cleanly between sets.
 - Most remaining failures are gaps in the training data, not in the amount of it.
-- At run time, removing a failing action from what the model can produce worked (the loop guards, evidence first);
-  telling the model about its mistake did not. Better judgement in the conclusion has to come from better training
-  data.
-- Results did not transfer cleanly between sets: version 3 and the switching rule each looked different on
-  development, test set 2 and the final test. One set would have misled us in either direction.
+- At run time, removing a failing action from what the model can produce worked; telling the model about its mistake
+  did not. Better judgement in the conclusion has to come from better training data.
 
 ## 8. With more credits
 
