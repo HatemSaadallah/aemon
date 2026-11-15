@@ -49,7 +49,9 @@ A stronger teacher, Command A+, ran investigations through those tools. Only the
 
 **The question we test:** can agentic fine-tuning teach the procedure to a small model, beyond what the stage controller and the best prompt already give the base model?
 
-**The answer, in one line.** On four companies it never saw, run once, the fine-tuned model scored **1.48 against 0.65** for the base model under its best prompt on a 0–3 blind rubric (**+0.83**, 95% interval 0.69 to 0.97 over cases, 0.44 to 1.23 resampling whole companies), was higher at every company, and finished 28 of 48 investigations against 4. A second frozen test on twelve more companies gave **+0.52** [0.33, 0.70]. The final system, built after both tests, finishes **46 of 48** investigations with **39 tool calls** each, where the base model needs 242. A closed model, Claude Haiku 5.5, still does better through the same tools, and for less; section 7 says by how much, and what aemon offers instead.
+**The answer, run once.** On four companies it never saw, the fine-tuned model scored **1.48 against 0.65** for the base model under its best prompt on a 0–3 blind rubric: **+0.83**, 95% interval 0.69 to 0.97 over cases and 0.44 to 1.23 resampling whole companies, higher at every company, with 28 of 48 investigations finished against 4. A second frozen test on twelve more companies gave **+0.52** [0.33, 0.70].
+
+**Afterwards.** The final system, built after both tests and measured on the same cases, so not held out, finishes **46 of 48** investigations with **39 tool calls** each, where the base model needs 242. A closed model, Claude Haiku 5.5, still does better through the same tools, and for less; section 7 says by how much, and what aemon offers instead.
 
 **Track 3 problem statements:** 3, agentic distillation, and 7, business workflow and decision agents. Efficient trajectories (2) came out of it as a measured result rather than a goal.
 

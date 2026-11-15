@@ -10,16 +10,18 @@
 **Teaching a 3B model to investigate a strategy question, with AgentTune and AuditKIT.**
 Team Two-eyed Ravens · Lexsi AI Hackathon, Track 3 (Agentic Fine-Tuning) · November 2026
 
-> **Result in one line.** On four companies it never saw, with the same environment, tools, stage controller and
+> **Result, run once.** On four companies it never saw, with the same environment, tools, stage controller and
 > budgets for both arms, the fine-tuned Tiny Aya agent scored **1.48** against the best-prompted base model's **0.65**
-> on a 0–3 blind rubric (mean of two LLM judges; **+0.83, 95% interval 0.69 to 0.97**; 0.44 to 1.23 resampling whole companies), and was higher at every
-> company. A second frozen test on twelve more companies gave **+0.52 [0.33, 0.70]**. These are version 1's
-> run-once results. The final system, built after both tests by adding a second adapter and decoding-time guards (so its numbers are not held out),
-> scores **+1.02** over the base model on the first test's cases and **+1.11** on the second's, and finishes **46 of
+> on a 0–3 blind rubric, the mean of two LLM judges: **+0.83**, 95% interval 0.69 to 0.97 over cases and 0.44 to 1.23
+> resampling whole companies, higher at every company. A second frozen test on twelve more companies gave
+> **+0.52 [0.33, 0.70]**. These are version 1's run-once results.
+>
+> **Afterwards.** The final system, built after both tests by adding a second adapter and decoding-time guards, so its
+> numbers are not held out, scores **+1.02** and **+1.11** over the base model on the same cases and finishes **46 of
 > 48** and **65 of 72** investigations (the base model 4 and 2). Claude Haiku 5.5, a closed model run through the same
-> environment, scores higher still (**2.28** against the final system's 1.62) at a quarter of the cost; what aemon offers
-> instead is a small open-weights model (CC-BY-NC 4.0, non-commercial) that runs offline, with the case data kept on
-> the machine.
+> environment, scores higher still (**2.28** against the final system's 1.62) at a quarter of the cost; what aemon
+> offers instead is a small open-weights model (CC-BY-NC 4.0, non-commercial) that runs offline, with the case data
+> kept on the machine.
 
 ## 🎬 Watch the Demo
 
