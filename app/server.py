@@ -139,6 +139,9 @@ def login(body: SignIn) -> JSONResponse:
             for w in workspaces():
                 store.join(name, w['id'])
             _seed(name)
+            print(f'usage: new account {name}', flush=True)
+    else:
+        print(f'usage: sign-in {name}', flush=True)
     token = secrets.token_urlsafe(32)
     store.start_session(token, name, now + SESSION_SECONDS)
     response = JSONResponse({'user': name})
@@ -1168,6 +1171,7 @@ def start_try(body: Attempt, request: Request) -> Json:
     if len(items) != len(set(body.attachments)) or any(i['workspace'] != body.workspace for i in items):
         raise HTTPException(404, 'an attachment was not found')
     case = _prepared(case, items, body.context)
+    print(f'usage: investigation started by {user} in {body.workspace}, depth {body.depth}', flush=True)
     asked_online = not body.live_research and asks_online(f'{body.question or ""} {body.context or ""}')
     if asked_online:  # "search online" in the question or the new information turns web search on, and the page says why
         body.live_research = True

@@ -8,4 +8,4 @@ export CODE_REVISION="$(cat REVISION 2>/dev/null || echo unknown)"
   -c 12288 --parallel 1 --jinja --reasoning-format none --host 127.0.0.1 --port 8091 --no-webui \
   -t "${LLAMA_THREADS:-$(nproc)}" > /tmp/llama-server.log 2>&1 &
 echo "aemon demo: model server starting, app on port ${PORT:-7860}"
-exec /opt/venv/bin/python -m uvicorn server:app --host 0.0.0.0 --port "${PORT:-7860}" --app-dir app --log-level warning
+exec /opt/venv/bin/python -m uvicorn server:app --host 0.0.0.0 --port "${PORT:-7860}" --app-dir app --log-level info --proxy-headers --forwarded-allow-ips "*"
